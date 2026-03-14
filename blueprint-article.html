@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4 Rank Tracking Methods for AI Search | The Blueprint Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #F7C600;
+    --yellow-dark: #D9AE00;
+    --black: #0B0E1A;
+    --dark: #111421;
+    --dark2: #181C2E;
+    --dark3: #1F2438;
+    --border: rgba(255,255,255,0.07);
+    --white: #FFFFFF;
+    --gray: #8A90A8;
+    --gray-light: #C8CEDF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 48px;
+    background: rgba(11,14,26,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(247,198,0,0.12);
+  }
+  .nav-cta {
+    background: var(--yellow); color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 10px 24px; text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--yellow-dark); }
+
+  hr.divider { border: none; border-top: 1px solid var(--border); }
+
+  /* ── ARTICLE HERO ── */
+  .article-hero {
+    padding: 130px 24px 0;
+    position: relative; overflow: hidden;
+  }
+  .article-hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(247,198,0,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(247,198,0,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .article-hero-inner {
+    max-width: 860px; margin: 0 auto;
+    padding: 56px 0 0; position: relative;
+  }
+  .article-breadcrumb {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 12px;
+    font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray); margin-bottom: 24px;
+  }
+  .article-breadcrumb a { color: var(--gray); text-decoration: none; }
+  .article-breadcrumb a:hover { color: var(--yellow); }
+  .article-breadcrumb span { color: rgba(255,255,255,0.2); }
+  .article-cat-badge {
+    display: inline-block;
+    background: rgba(247,198,0,0.1); border: 1px solid rgba(247,198,0,0.25);
+    color: var(--yellow);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 4px 14px; margin-bottom: 20px;
+  }
+  .article-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 6vw, 80px); line-height: 0.95;
+    letter-spacing: 0.02em; text-transform: uppercase;
+    color: var(--white); margin-bottom: 28px;
+  }
+  .article-meta-row {
+    display: flex; align-items: center; gap: 24px;
+    padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    margin-bottom: 0; flex-wrap: wrap;
+  }
+  .article-author-block { display: flex; align-items: center; gap: 10px; }
+  .author-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--dark3); border: 2px solid rgba(247,198,0,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 14px; color: var(--yellow);
+  }
+  .author-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); }
+  .author-title { font-size: 12px; color: var(--gray); }
+  .article-meta-divider { width: 1px; height: 32px; background: var(--border); }
+  .article-meta-item { font-size: 13px; color: var(--gray); display: flex; align-items: center; gap: 6px; }
+  .article-meta-item strong { color: var(--gray-light); font-weight: 600; }
+
+  /* ── HERO IMAGE ── */
+  .article-hero-image {
+    max-width: 860px; margin: 0 auto;
+  }
+  .article-hero-image img {
+    display: block; width: 100%; height: 420px; object-fit: cover;
+    border: 1px solid var(--border);
+  }
+
+  /* ── LAYOUT: ARTICLE + SIDEBAR ── */
+  .article-layout {
+    max-width: 1200px; margin: 0 auto;
+    padding: 56px 24px 96px;
+    display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start;
+  }
+
+  /* ── ARTICLE BODY ── */
+  .article-body { min-width: 0; }
+
+  .article-body p {
+    font-size: 17px; line-height: 1.85; color: var(--gray-light);
+    margin-bottom: 24px;
+  }
+  .article-body p strong { color: var(--white); }
+  .article-body p em { color: var(--gray-light); font-style: italic; }
+
+  .article-body h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 3.5vw, 44px); line-height: 1.0;
+    letter-spacing: 0.02em; text-transform: uppercase;
+    color: var(--white); margin: 48px 0 20px;
+    padding-top: 48px; border-top: 1px solid var(--border);
+  }
+  .article-body h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .article-body h3 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+    font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--yellow); margin: 36px 0 14px;
+  }
+
+  .article-body h4 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray-light); margin: 28px 0 10px;
+  }
+
+  .article-body ul, .article-body ol {
+    padding-left: 0; margin-bottom: 24px; list-style: none;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .article-body ul li, .article-body ol li {
+    font-size: 16px; color: var(--gray-light); line-height: 1.7;
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 16px; background: var(--dark); border-left: 2px solid rgba(247,198,0,0.3);
+  }
+  .article-body ul li::before { content: '→'; color: var(--yellow); flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+  .article-body ol { counter-reset: item; }
+  .article-body ol li { counter-increment: item; }
+  .article-body ol li::before { content: counter(item); color: var(--yellow); font-family: 'Bebas Neue', sans-serif; font-size: 20px; flex-shrink: 0; line-height: 1; }
+
+  /* Callout / key insight boxes */
+  .callout {
+    background: rgba(247,198,0,0.05); border: 1px solid rgba(247,198,0,0.2);
+    border-left: 4px solid var(--yellow);
+    padding: 24px 28px; margin: 32px 0;
+  }
+  .callout-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--yellow); margin-bottom: 10px;
+  }
+  .callout p { font-size: 16px; color: var(--gray-light); line-height: 1.7; margin-bottom: 0; }
+
+  /* Method cards */
+  .method-card {
+    background: var(--dark); border: 1px solid var(--border);
+    padding: 32px 28px; margin: 32px 0; position: relative;
+  }
+  .method-num {
+    position: absolute; top: -16px; left: 28px;
+    background: var(--yellow); color: var(--black);
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px;
+    letter-spacing: 0.06em; padding: 3px 16px;
+  }
+  .method-title {
+    font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+    letter-spacing: 0.02em; text-transform: uppercase;
+    color: var(--white); margin-bottom: 14px; margin-top: 4px;
+  }
+  .method-body p {
+    font-size: 16px; color: var(--gray); line-height: 1.75; margin-bottom: 16px;
+  }
+  .method-body p:last-child { margin-bottom: 0; }
+  .method-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray); margin-bottom: 16px;
+  }
+  .method-tag.when { color: #22C55E; }
+  .method-tag.limit { color: #E24B4A; }
+  .method-tag.when::before { content: '✓'; }
+  .method-tag.limit::before { content: '!'; }
+
+  /* ── TABLE OF CONTENTS SIDEBAR ── */
+  .sidebar { position: sticky; top: 90px; }
+  .toc-box {
+    background: var(--dark); border: 1px solid var(--border); padding: 28px 24px;
+    margin-bottom: 24px;
+  }
+  .toc-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--yellow); margin-bottom: 18px; display: flex; align-items: center; gap: 8px;
+  }
+  .toc-label::before { content:''; display:block; width:20px; height:2px; background:var(--yellow); }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .toc-list li a {
+    display: block; padding: 9px 0;
+    font-size: 14px; color: var(--gray); text-decoration: none;
+    border-bottom: 1px solid var(--border); transition: color 0.2s;
+    line-height: 1.4;
+  }
+  .toc-list li:last-child a { border-bottom: none; }
+  .toc-list li a:hover { color: var(--yellow); }
+  .toc-list li a.active { color: var(--yellow); }
+
+  .sidebar-cta {
+    background: var(--yellow); padding: 28px 24px;
+  }
+  .sidebar-cta-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(11,14,26,0.5); margin-bottom: 10px;
+  }
+  .sidebar-cta h4 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1.0;
+    text-transform: uppercase; color: var(--black); margin-bottom: 12px;
+  }
+  .sidebar-cta p { font-size: 14px; color: rgba(11,14,26,0.65); line-height: 1.6; margin-bottom: 20px; }
+  .sidebar-cta a {
+    display: block; text-align: center;
+    background: var(--black); color: var(--yellow);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 14px 20px; text-decoration: none; transition: all 0.2s;
+  }
+  .sidebar-cta a:hover { background: #111; }
+
+  /* ── AUTHOR BIO ── */
+  .author-bio {
+    max-width: 860px; margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+  .author-bio-card {
+    background: var(--dark); border: 1px solid var(--border);
+    padding: 32px 28px; display: flex; gap: 24px; align-items: flex-start;
+  }
+  .author-bio-avatar {
+    width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+    background: var(--dark3); border: 2px solid rgba(247,198,0,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 22px; color: var(--yellow);
+  }
+  .author-bio-name {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--white); margin-bottom: 2px;
+  }
+  .author-bio-role { font-size: 13px; color: var(--yellow); margin-bottom: 12px; letter-spacing: 0.06em; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; }
+  .author-bio-text { font-size: 15px; color: var(--gray); line-height: 1.7; }
+
+  /* ── BOTTOM CTA ── */
+  .bottom-cta {
+    background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 64px 24px; text-align: center;
+  }
+  .bottom-cta h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 64px); line-height: 0.95;
+    text-transform: uppercase; color: var(--white); margin-bottom: 14px;
+  }
+  .bottom-cta h2 span { color: var(--yellow); }
+  .bottom-cta p { font-size: 16px; color: var(--gray); max-width: 520px; margin: 0 auto 32px; line-height: 1.7; }
+  .btn-cta-yellow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--yellow); color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 18px 44px; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-cta-yellow:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  /* ── RELATED ── */
+  .related { padding: 64px 24px 96px; }
+  .related-inner { max-width: 1200px; margin: 0 auto; }
+  .related-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--yellow);
+    margin-bottom: 14px; display: flex; align-items: center; gap: 12px;
+  }
+  .related-label::before { content:''; display:block; width:28px; height:2px; background:var(--yellow); }
+  .related-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px; line-height: 0.95; letter-spacing: 0.02em;
+    text-transform: uppercase; color: var(--white); margin-bottom: 36px;
+  }
+  .related-title span { color: var(--yellow); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .related-card {
+    background: var(--dark); border: 1px solid var(--border);
+    padding: 28px 24px; text-decoration: none; transition: all 0.3s;
+  }
+  .related-card:hover { background: var(--dark2); border-color: rgba(247,198,0,0.25); }
+  .related-card-cat {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--yellow); margin-bottom: 12px;
+  }
+  .related-card-title {
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; line-height: 1.05;
+    letter-spacing: 0.02em; text-transform: uppercase; color: var(--white);
+    margin-bottom: 12px; transition: color 0.2s;
+  }
+  .related-card:hover .related-card-title { color: var(--yellow); }
+  .related-card-desc { font-size: 14px; color: var(--gray); line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--dark); border-top: 1px solid var(--border); padding: 40px 24px; }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-copy { font-size: 13px; color: var(--gray); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: var(--gray); text-decoration: none; }
+  .footer-links a:hover { color: var(--white); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .article-layout { grid-template-columns: 1fr; gap: 48px; }
+    .sidebar { position: static; }
+    nav { padding: 14px 20px; }
+    .related-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .article-hero-image img { height: 240px; }
+  }
+
+  /* ── NAV ── */
+  .nav-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #0B0E1A;
+    border-bottom: 2px solid #F7C600;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: stretch; height: 66px; padding: 0 24px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; padding-right: 28px;
+    border-right: 1px solid rgba(255,255,255,0.07); margin-right: 4px; flex-shrink: 0;
+  }
+  .nav-logo-mark { width: 36px; height: 36px; background: #F7C600; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-wm { display: flex; flex-direction: column; gap: 1px; }
+  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.32em; color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 15px; font-weight: 800; color: #F7C600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.36em; color: rgba(255,255,255,0.22); text-transform: uppercase; line-height: 1; margin-top: 1px; }
+  .nav-links { display: flex; align-items: stretch; flex: 1; }
+  .nav-item { position: relative; display: flex; align-items: stretch; }
+  .nav-item-btn {
+    display: flex; align-items: center; gap: 6px;
+    background: none; border: none; cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
+    color: #C8CEDF; padding: 0 16px; transition: color 0.15s;
+    border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
+  }
+  .nav-item-btn:hover, .nav-item-btn.open { color: #fff; }
+  .nav-item-btn.open { color: #F7C600; border-bottom-color: #F7C600; }
+  .nav-item-btn .nav-arr { font-size: 9px; opacity: 0.5; transition: transform 0.2s; display: inline-block; margin-top: 3px; }
+  .nav-item-btn.open .nav-arr { transform: rotate(180deg); }
+  .nav-item-link {
+    display: flex; align-items: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
+    color: #C8CEDF; padding: 0 16px; text-decoration: none; transition: color 0.15s;
+    border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
+  }
+  .nav-item-link:hover { color: #fff; }
+  .nav-right { display: flex; align-items: center; margin-left: auto; }
+  .nav-login {
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
+    color: #8A90A8; background: none; border: none; cursor: pointer;
+    padding: 0 16px; text-decoration: none; transition: color 0.15s;
+  }
+  .nav-login:hover { color: #fff; }
+  .nav-cta-btn {
+    background: #F7C600; color: #0B0E1A;
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
+    padding: 0 28px; text-decoration: none; transition: background 0.15s;
+    display: flex; align-items: center; height: 100%;
+  }
+  .nav-cta-btn:hover { background: #D9AE00; }
+
+  /* Dropdowns */
+  .nav-dropdown, .nav-mega {
+    display: none; position: absolute; top: calc(100% + 2px); left: 0; z-index: 400;
+    background: #111421;
+    border-top: 2px solid #F7C600;
+    border-left: 1px solid rgba(255,255,255,0.07);
+    border-right: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-dropdown.open, .nav-mega.open { display: block; }
+  .nav-mega.open { display: flex; }
+  .nav-dd-row {
+    display: flex; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    text-decoration: none; transition: background 0.15s;
+  }
+  .nav-dd-row:last-child { border-bottom: none; }
+  .nav-dd-row:hover { background: #181C2E; }
+  .nav-dd-row:hover .nav-dd-acc { background: #F7C600; }
+  .nav-dd-acc { width: 3px; align-self: stretch; flex-shrink: 0; background: transparent; transition: background 0.15s; }
+  .nav-dd-body { padding: 12px 16px; flex: 1; min-width: 200px; }
+  .nav-dd-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin-bottom: 2px; white-space: nowrap; }
+  .nav-dd-desc { font-size: 12px; color: #8A90A8; line-height: 1.3; white-space: nowrap; }
+
+  /* Mega */
+  .nav-mega-col { min-width: 210px; border-right: 1px solid rgba(255,255,255,0.07); }
+  .nav-mega-col:last-of-type { border-right: none; }
+  .nav-mega-head { padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.07); font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.06em; color: #F7C600; }
+  .nav-mega-row {
+    display: flex; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    text-decoration: none; transition: background 0.15s;
+  }
+  .nav-mega-row:last-child { border-bottom: none; }
+  .nav-mega-row:hover { background: #181C2E; }
+  .nav-mega-row:hover .nav-mega-acc { background: #F7C600; }
+  .nav-mega-acc { width: 3px; align-self: stretch; flex-shrink: 0; background: transparent; transition: background 0.15s; }
+  .nav-mega-body { padding: 10px 15px; flex: 1; }
+  .nav-mega-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin-bottom: 1px; white-space: nowrap; }
+  .nav-mega-desc { font-size: 11px; color: #8A90A8; line-height: 1.3; white-space: nowrap; }
+  .nav-mega-featured {
+    width: 210px; background: rgba(247,198,0,0.05);
+    border-left: 1px solid rgba(247,198,0,0.18);
+    display: flex; flex-direction: column;
+  }
+  .nav-mf-top { padding: 20px 18px; flex: 1; }
+  .nav-mf-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #F7C600; margin-bottom: 8px; }
+  .nav-mf-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.02em; text-transform: uppercase; color: #fff; line-height: 1.0; margin-bottom: 8px; }
+  .nav-mf-desc { font-size: 12px; color: #8A90A8; line-height: 1.5; }
+  .nav-mf-cta {
+    display: block; text-align: center; background: #F7C600; color: #0B0E1A;
+    font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 0.06em;
+    padding: 12px 16px; text-decoration: none; transition: background 0.15s;
+  }
+  .nav-mf-cta:hover { background: #D9AE00; }
+
+</style>
+</head>
+<body>
+<!-- NAV -->
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a href="https://theblueprint.training" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="36" height="36" viewBox="0 0 60 60">
+          <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+          <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+          <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
+          <circle cx="39" cy="12" r="2" fill="#0B0E1A" opacity="0.18"/>
+          <circle cx="21" cy="21" r="2" fill="#0B0E1A" opacity="0.18"/><circle cx="30" cy="21" r="2" fill="#0B0E1A" opacity="0.18"/>
+          <circle cx="39" cy="30" r="2" fill="#0B0E1A" opacity="0.18"/>
+          <circle cx="21" cy="39" r="2" fill="#0B0E1A" opacity="0.18"/><circle cx="30" cy="39" r="2" fill="#0B0E1A" opacity="0.18"/>
+          <circle cx="39" cy="48" r="2" fill="#0B0E1A" opacity="0.18"/>
+        </svg>
+      </div>
+      <div class="nav-logo-wm">
+        <span>The</span><span>Blueprint</span><span>Training</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+
+      <!-- Programs -->
+      <div class="nav-item" id="nni-programs">
+        <button class="nav-item-btn" onclick="navTog('programs',this)">Programs <span class="nav-arr">&#9660;</span></button>
+        <div class="nav-mega" id="ndd-programs">
+          <div class="nav-mega-col">
+            <div class="nav-mega-head">Core Programs</div>
+            <a href="https://theblueprint.training/agency-training/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Video Training</div><div class="nav-mega-desc">300+ AI-powered agency lessons</div></div></a>
+            <a href="#" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">AI Agent Library</div><div class="nav-mega-desc">Deploy-ready Claude agents</div></div></a>
+            <a href="https://theblueprint.training/templates-and-sops/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Templates + SOPs</div><div class="nav-mega-desc">21+ done-for-you templates</div></div></a>
+            <a href="https://theblueprint.training/bootcamps/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Live Bootcamps</div><div class="nav-mega-desc">Monthly expert workshops</div></div></a>
+            <a href="https://theblueprint.training/slack-channel/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Community</div><div class="nav-mega-desc">5,000+ agency owners on Pruvae</div></div></a>
+            <a href="https://theblueprint.training/coaching/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">1:1 Coaching</div><div class="nav-mega-desc">Direct access to Blueprint coaches</div></div></a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-mega-head">Specialty Courses</div>
+            <a href="https://theblueprint.training/one-person-agency/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">One-Person Agency</div><div class="nav-mega-desc">Build a 7-figure solo operation</div></div></a>
+            <a href="https://theblueprint.training/local-seo-blueprint/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Local SEO Blueprint</div><div class="nav-mega-desc">Rank in the Maps Pack</div></div></a>
+            <a href="https://theblueprint.training/link-building/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Link Building</div><div class="nav-mega-desc">Outreach & acquisition at scale</div></div></a>
+            <a href="https://theblueprint.training/content-production/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Content Production</div><div class="nav-mega-desc">AI-powered content workflows</div></div></a>
+            <a href="https://theblueprint.training/client-reporting/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Client Reporting</div><div class="nav-mega-desc">Automated monthly reporting</div></div></a>
+            <a href="https://theblueprint.training/sales-closing/" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Sales & Closing</div><div class="nav-mega-desc">Close deals at premium prices</div></div></a>
+          </div>
+          <div class="nav-mega-featured">
+            <div class="nav-mf-top">
+              <div class="nav-mf-label">New Program</div>
+              <div class="nav-mf-title">The One-Person Agency</div>
+              <div class="nav-mf-desc">Build a 7-figure SEO agency solo — using Claude agents to automate every workflow.</div>
+            </div>
+            <a href="https://theblueprint.training/one-person-agency/" class="nav-mf-cta">Learn More &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Knowledge -->
+      <div class="nav-item" id="nni-knowledge">
+        <button class="nav-item-btn" onclick="navTog('knowledge',this)">Knowledge <span class="nav-arr">&#9660;</span></button>
+        <div class="nav-dropdown" id="ndd-knowledge">
+          <a href="https://theblueprint.training/blog/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">All Articles</div><div class="nav-dd-desc">200+ free guides and tactics</div></div></a>
+          <a href="https://theblueprint.training/blog/?cat=ai" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">AI & Automation</div><div class="nav-dd-desc">Agents, workflows, and AI tools</div></div></a>
+          <a href="https://theblueprint.training/blog/?cat=tactics" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Tactics</div><div class="nav-dd-desc">What's working in SEO right now</div></div></a>
+          <a href="https://theblueprint.training/blog/?cat=agency" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Agency Operations</div><div class="nav-dd-desc">Hiring, systems, and scaling</div></div></a>
+          <a href="https://theblueprint.training/bootcamps/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Bootcamp Recaps</div><div class="nav-dd-desc">Key takeaways from live sessions</div></div></a>
+          <a href="https://theblueprint.training/templates-and-sops/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Templates & SOPs</div><div class="nav-dd-desc">Free frameworks to download</div></div></a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="nav-item" id="nni-company">
+        <button class="nav-item-btn" onclick="navTog('company',this)">Company <span class="nav-arr">&#9660;</span></button>
+        <div class="nav-dropdown" id="ndd-company">
+          <a href="https://theblueprint.training/about/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">About Us</div><div class="nav-dd-desc">The team and the mission</div></div></a>
+          <a href="https://theblueprint.training/reviews/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Results</div><div class="nav-dd-desc">500+ member wins documented</div></div></a>
+          <a href="https://theblueprint.training/agency-podcast/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Podcast</div><div class="nav-dd-desc">A weekly show for agencies</div></div></a>
+          <a href="https://theblueprint.training/book/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">The Book</div><div class="nav-dd-desc">Free copy of The Agency Blueprint</div></div></a>
+          <a href="https://theblueprint.training/white-label-ppc/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Agency Services</div><div class="nav-dd-desc">White-label search marketing</div></div></a>
+        </div>
+      </div>
+
+      <a href="https://theblueprint.training/reviews/" class="nav-item-link">Results</a>
+
+    </div>
+
+    <div class="nav-right">
+      <a href="https://skool.com/the-blueprint-training/" class="nav-login">Login</a>
+      <a href="https://theblueprint.training/sign-up/" class="nav-cta-btn">Get Started</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="article-hero-grid"></div>
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="https://theblueprint.training">Home</a>
+      <span>/</span>
+      <a href="https://theblueprint.training/blog/">Knowledge</a>
+      <span>/</span>
+      <span style="color:var(--gray-light);">AI &amp; Automation</span>
+    </div>
+    <div class="article-cat-badge">AI &amp; Automation</div>
+    <h1 class="article-title">4 Rank Tracking Methods<br>for AI Search</h1>
+    <div class="article-meta-row">
+      <div class="article-author-block">
+        <div class="author-avatar">ED</div>
+        <div>
+          <div class="author-name">Elena Dimova</div>
+          <div class="author-title">Head of Operations, The Blueprint</div>
+        </div>
+      </div>
+      <div class="article-meta-divider"></div>
+      <div class="article-meta-item"><strong>Published:</strong> October 9, 2025</div>
+      <div class="article-meta-divider"></div>
+      <div class="article-meta-item"><strong>Read time:</strong> 12 min</div>
+      <div class="article-meta-divider"></div>
+      <div class="article-meta-item"><strong>Category:</strong> AI &amp; Automation</div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO IMAGE -->
+<div class="article-hero-image" style="padding: 0 24px;">
+  <img src="https://theblueprint.training/wp-content/uploads/2025/10/Untitled-design-1.jpg" alt="4 Rank Tracking Methods for AI Search" loading="lazy">
+</div>
+
+<!-- ARTICLE LAYOUT -->
+<div class="article-layout">
+
+  <!-- MAIN CONTENT -->
+  <article class="article-body">
+
+    <p>Picture this scenario. You're an SEO agency owner. Your client's website ranks beautifully on page one of Google for their most important keywords. Traffic is steady. Leads are coming in. Everything looks great in your monthly reports.</p>
+
+    <p>Then your client calls with a concerning question: <strong>"I just asked ChatGPT for recommendations in our industry, and we're not mentioned anywhere. My competitor is. What's going on?"</strong></p>
+
+    <p>You check Perplexity. Same story. You try Gemini. Still nothing. Suddenly, those traditional Google rankings don't feel quite as secure anymore.</p>
+
+    <div class="callout">
+      <div class="callout-label">Key Insight</div>
+      <p>Millions of users have quietly migrated to AI search platforms. If your clients aren't showing up in AI-generated responses, they're losing visibility with an increasingly important segment of searchers — and you have no way to track it with traditional tools.</p>
+    </div>
+
+    <h2 id="why-traditional">Why Traditional SEO Metrics No Longer Tell the Whole Story</h2>
+
+    <p>The digital landscape is shifting beneath our feet. While you've been optimizing for Google's algorithm, millions of users have quietly migrated to AI search platforms for their queries.</p>
+
+    <p>These users aren't clicking through ten blue links anymore. They're getting direct answers, curated recommendations, and synthesized information from AI assistants.</p>
+
+    <p>The frustration builds when you realize something even more unsettling: <strong>you have no reliable way to track this.</strong> Your Ahrefs dashboard shows traditional rankings. Your Google Search Console tracks organic clicks. But neither tool tells you whether your client appears when someone asks ChatGPT for "best car accident lawyer in Miami."</p>
+
+    <p>You're flying blind in what's rapidly becoming a critical channel for client visibility. The requests from clients are piling up. <em>"Can you check if we show up in ChatGPT?" "Why aren't we appearing in Perplexity?" "Our competitor is getting mentioned in AI search results, but we're not."</em></p>
+
+    <h2 id="four-methods">The Solution: Four Methods to Track AI Search Rankings</h2>
+
+    <p>Here are four distinct approaches to tracking your client's visibility in AI search engines, ranging from quick manual checks to fully automated monitoring systems.</p>
+
+    <div class="method-card" id="method-1">
+      <div class="method-num">Method 01</div>
+      <div class="method-title">Manual Testing for Baseline Rankings</div>
+      <div class="method-body">
+        <p>The simplest starting point is manual testing. This approach works perfectly when you need quick answers for proposals or prospect conversations.</p>
+        <p><strong>How it works:</strong> Create a list of keyword queries relevant to your client's business and manually enter them into ChatGPT, Perplexity, Gemini, and other AI search platforms. Document which brands, companies, or websites get mentioned in the responses.</p>
+        <p>Example queries might include: "Best car accident lawyer in Miami", "Top personal injury firms near me", "Who should I hire for a workplace injury case?"</p>
+        <p>The beauty of this method is its simplicity. You can even ask ChatGPT itself to generate a comprehensive list of relevant queries for your client's industry, giving you dozens of prompts to test in minutes.</p>
+        <div style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+          <div>
+            <div class="method-tag when">When to use</div>
+            <p style="font-size:14px; color:var(--gray); margin:0; max-width:280px;">Initial audits, prospect proposals, or when a client asks a specific question about AI visibility.</p>
+          </div>
+          <div>
+            <div class="method-tag limit">Limitations</div>
+            <p style="font-size:14px; color:var(--gray); margin:0; max-width:280px;">Results vary by user. AI platforms personalize based on conversation history. Doesn't scale beyond a handful of queries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-card" id="method-2">
+      <div class="method-num">Method 02</div>
+      <div class="method-title">Building a Standardized Prompt Bank</div>
+      <div class="method-body">
+        <p>The next evolution is creating a systematic approach with standardized prompts and consistent tracking.</p>
+        <p><strong>How it works:</strong> Develop a comprehensive list of standard prompts covering all important query variations for your client's business. Run these prompts weekly from a single AI search account to maintain consistency. Document every result in a spreadsheet, tracking which companies appear, in what order, and in what context.</p>
+        <p>Many agencies assign a virtual assistant to run these prompts on a weekly schedule. The VA logs into a designated ChatGPT account, runs through the entire prompt list, and records which brands appear in each response. Over time, this creates a valuable dataset showing trends in AI search visibility.</p>
+        <div style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+          <div>
+            <div class="method-tag when">When to use</div>
+            <p style="font-size:14px; color:var(--gray); margin:0; max-width:280px;">Ongoing client reporting. Provides concrete data points you can chart and analyze month over month.</p>
+          </div>
+          <div>
+            <div class="method-tag limit">Limitations</div>
+            <p style="font-size:14px; color:var(--gray); margin:0; max-width:280px;">Still contains inherent bias based on the specific account used. Labor-intensive — requires dedicated hours each week.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-card" id="method-3">
+      <div class="method-num">Method 03</div>
+      <div class="method-title">Using Third-Party SEO Tools</div>
+      <div class="method-body">
+        <p>As AI search has grown in importance, traditional SEO platforms have started adding AI search tracking features. Platforms like Ahrefs now include modules for tracking visibility in AI overviews, ChatGPT, Perplexity, and Gemini.</p>
+        <p><strong>The current reality:</strong> These tools represent the industry's first attempts at solving the AI search tracking problem, but they have significant limitations. The tracking methodology for conversational AI platforms remains unclear.</p>
+        <p><strong>Cost considerations:</strong> Ahrefs charges $700 monthly for access to their AI search tracking module. For most agencies, this represents a significant investment for functionality that's still in early stages.</p>
+        <div style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+          <div>
+            <div class="method-tag when">When to use</div>
+            <p style="font-size:14px; color:var(--gray); margin:0; max-width:280px;">If already subscribed to premium SEO tools and want to track AI overview appearances in Google Search results.</p>
+          </div>
+          <div>
+            <div class="method-tag limit">Limitations</div>
+            <p style="font-size:14px; color:var(--gray); margin:0; max-width:280px;">Accuracy for conversational AI search remains questionable. Methodology isn't transparent. High cost for early-stage features.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-card" id="method-4">
+      <div class="method-num">Method 04</div>
+      <div class="method-title">Automating with API Integration</div>
+      <div class="method-body">
+        <p>The most sophisticated approach involves building automated systems that continuously monitor AI search visibility without manual intervention.</p>
+        <p><strong>How it works:</strong> Using platforms like Make.com or Zapier, agencies can build workflows that automatically submit prompts to AI search engines via their APIs, capture responses, log them in spreadsheets, and create visualizations of the data over time.</p>
+        <p>The system typically includes: automated prompt generation using AI, API calls to AI search platforms, data logging that captures which brands appear, analytics dashboards, and alert systems that notify you when visibility changes significantly.</p>
+        <p><strong>Building your automation:</strong> You'll likely need developer support to set up the initial system, though no-code platforms like Make.com make this more accessible. The upfront investment pays off through time savings and more comprehensive data collection.</p>
+        <div style="display:flex; gap:24px; flex-wrap:wrap; margin-top:16px;">
+          <div>
+            <div class="method-tag when">When to use</div>
+            <p style="font-size:14px; color:var(--gray); margin:0; max-width:280px;">Managing multiple clients, need scalable tracking, or want to offer AI search optimization as a premium service.</p>
+          </div>
+          <div>
+            <div class="method-tag limit">Limitations</div>
+            <p style="font-size:14px; color:var(--gray); margin:0; max-width:280px;">Requires technical setup and maintenance. API access to some platforms may be limited. Ongoing cost for API calls.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="outcome">The Outcome: Data-Driven AI Search Optimization</h2>
+
+    <p>Implementing systematic AI search tracking transforms your agency's capabilities. Instead of guessing whether your clients appear in AI search results, you have concrete data to guide optimization decisions and demonstrate progress.</p>
+
+    <p>The agencies that master AI search visibility tracking now will be positioned to offer it as a premium service as demand grows. More importantly, they'll be able to genuinely deliver on it — not just promise it.</p>
+
+    <div class="callout">
+      <div class="callout-label">The Bottom Line</div>
+      <p>Start with manual testing to establish baseline visibility. Build out standardized prompt banks for ongoing reporting. Consider API automation when you're managing multiple clients and need to scale. Third-party tools are worth watching but aren't yet reliable enough to replace manual processes.</p>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="toc-box">
+      <div class="toc-label">Table of Contents</div>
+      <ul class="toc-list">
+        <li><a href="#why-traditional">Why Traditional Metrics Fall Short</a></li>
+        <li><a href="#four-methods">Four Methods Overview</a></li>
+        <li><a href="#method-1">Method 1: Manual Testing</a></li>
+        <li><a href="#method-2">Method 2: Prompt Bank</a></li>
+        <li><a href="#method-3">Method 3: SEO Tools</a></li>
+        <li><a href="#method-4">Method 4: API Automation</a></li>
+        <li><a href="#outcome">The Outcome</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-cta">
+      <div class="sidebar-cta-label">Want the full system?</div>
+      <h4>Build an AI agency that stays ahead.</h4>
+      <p>Get access to Blueprint's complete AI agent library, live coaching, and 5,000+ agency owners doing this work alongside you.</p>
+      <a href="https://theblueprint.training/sign-up/">Join The Blueprint →</a>
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- AUTHOR BIO -->
+<div class="author-bio">
+  <div class="author-bio-card">
+    <div class="author-bio-avatar">ED</div>
+    <div>
+      <div class="author-bio-name">Elena Dimova</div>
+      <div class="author-bio-role">Head of Operations · The Blueprint Training</div>
+      <p class="author-bio-text">Elena manages day-to-day operations, client onboarding, and community support at The Blueprint Training. She works directly with hundreds of agency owners and writes about the tactical challenges facing modern SEO agencies.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <h2>The knowledge is free.<br><span>The system is inside.</span></h2>
+  <p>This article is a taste of what Blueprint members get every week. Join 5,000+ agency owners who are building AI-powered businesses that outdeliver and outscale the competition.</p>
+  <a href="https://theblueprint.training/sign-up/" class="btn-cta-yellow">Join The Blueprint →</a>
+</div>
+
+<!-- RELATED ARTICLES -->
+<section class="related">
+  <div class="related-inner">
+    <div class="related-label">Keep Reading</div>
+    <div class="related-title">More from the <span>Knowledge Base</span></div>
+    <div class="related-grid">
+      <a href="https://theblueprint.training/ai-seo-process/" class="related-card">
+        <div class="related-card-cat">AI &amp; Automation</div>
+        <div class="related-card-title">How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow</div>
+        <p class="related-card-desc">The complete system for running enterprise-level SEO delivery with AI agents doing the heavy lifting.</p>
+      </a>
+      <a href="https://theblueprint.training/generate-leads-meta-ads/" class="related-card">
+        <div class="related-card-cat">Tactics</div>
+        <div class="related-card-title">Generate 15–20 Qualified Leads With Meta Ads</div>
+        <p class="related-card-desc">The exact Meta Ads framework Blueprint uses to generate consistent, qualified agency leads every month.</p>
+      </a>
+      <a href="https://theblueprint.training/blog/" class="related-card">
+        <div class="related-card-cat">Agency</div>
+        <div class="related-card-title">How to Productize Your SEO Service in 30 Days</div>
+        <p class="related-card-desc">Stop delivering custom work for every client. Build a repeatable, scalable SEO product in one month.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <svg width="36" height="36" viewBox="0 0 60 60">
+        <rect width="60" height="60" fill="#F7C600"/>
+        <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+        <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+        <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+        <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+        <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+        <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+        <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
+      </svg>
+      <div style="display:flex; flex-direction:column; gap:1px;">
+        <span style="font-family:Orbitron,sans-serif; font-size:7px; font-weight:600; letter-spacing:0.32em; color:rgba(255,255,255,0.28); text-transform:uppercase; line-height:1;">The</span>
+        <span style="font-family:Orbitron,sans-serif; font-size:13px; font-weight:800; color:#F7C600; letter-spacing:0.06em; text-transform:uppercase; line-height:1;">Blueprint</span>
+        <span style="font-family:Orbitron,sans-serif; font-size:6.5px; font-weight:600; letter-spacing:0.36em; color:rgba(255,255,255,0.22); text-transform:uppercase; line-height:1; margin-top:1px;">Training</span>
+      </div>
+    </div>
+    <div class="footer-copy">© 2024 The Blueprint Training LLC + Webris LLC</div>
+    <div class="footer-links">
+      <a href="https://theblueprint.training/blog/">Knowledge</a>
+      <a href="https://theblueprint.training/about/">About</a>
+      <a href="https://theblueprint.training/sign-up/">Join</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Highlight active TOC item on scroll
+const sections = document.querySelectorAll('[id]');
+const tocLinks = document.querySelectorAll('.toc-list a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  tocLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+
+</body>
+</html>
