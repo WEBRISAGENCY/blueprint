@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Webinar: The One-Person Agency | The Blueprint Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@700;800&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --y:#F7C600; --yd:#D9AE00; --black:#0B0E1A;
+  --dark:#111421; --dark2:#181C2E; --b:rgba(255,255,255,0.07);
+  --w:#fff; --g:#8A90A8; --gl:#C8CEDF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--w);font-family:'Barlow',sans-serif;overflow-x:hidden;}
+
+/* NAV */
+
+/* HERO */
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:72px 24px 56px;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:1000px;height:600px;background:radial-gradient(ellipse,rgba(247,198,0,0.08) 0%,transparent 65%);pointer-events:none;}
+
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:var(--g);margin-bottom:14px;position:relative;}
+
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,110px);line-height:0.9;letter-spacing:0.01em;text-transform:uppercase;position:relative;margin-bottom:0;}
+.hero h1 .line2{color:var(--y);display:inline;}
+.hero-sub{font-size:18px;color:var(--g);line-height:1.7;max-width:620px;margin:0 auto 24px;position:relative;}
+
+.hero-divider{width:1px;height:64px;background:rgba(247,198,0,0.25);margin:36px auto;}
+
+.hero-date-row{display:flex;align-items:center;justify-content:center;gap:32px;margin-bottom:24px;position:relative;flex-wrap:wrap;}
+.hero-date-item{text-align:center;}
+.hero-date-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--g);margin-bottom:4px;}
+.hero-date-value{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.04em;color:var(--w);}
+.hero-date-sep{color:rgba(255,255,255,0.12);font-size:28px;font-family:'Bebas Neue',sans-serif;}
+
+.btn-hero{display:inline-flex;align-items:center;gap:12px;background:var(--y);color:var(--black);font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:20px 56px;border:none;cursor:pointer;transition:all 0.2s;position:relative;}
+.btn-hero:hover{background:var(--yd);transform:translateY(-2px);}
+.btn-hero-sub{font-size:13px;color:var(--g);margin-top:8px;letter-spacing:0.04em;position:relative;}
+
+.hero-presenters{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:64px;padding-top:40px;border-top:1px solid var(--b);position:relative;flex-wrap:wrap;}
+.hero-presenter{display:flex;align-items:center;gap:12px;}
+.hp-avatar{width:44px;height:44px;border-radius:50%;border:2px solid rgba(247,198,0,0.3);overflow:hidden;flex-shrink:0;background:var(--dark2);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--y);}
+.hp-avatar img{width:100%;height:100%;object-fit:cover;}
+.hp-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;color:var(--w);}
+.hp-role{font-size:12px;color:var(--g);}
+.hp-sep{width:1px;height:40px;background:var(--b);}
+
+/* PITCH SECTION */
+.pitch{background:var(--dark);padding:72px 24px;border-top:1px solid var(--b);}
+.pitch-inner{max-width:760px;margin:0 auto;text-align:center;}
+.pitch-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--y);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.pitch-label::before,.pitch-label::after{content:'';display:block;width:28px;height:1px;background:rgba(247,198,0,0.4);}
+.pitch h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,64px);line-height:0.95;text-transform:uppercase;margin-bottom:40px;}
+.pitch h2 span{color:var(--y);}
+.pitch p{font-size:18px;color:var(--gl);line-height:1.85;margin-bottom:16px;}
+.pitch p:last-of-type{margin-bottom:0;}
+
+/* VIDEO */
+.video-section{background:var(--black);padding:80px 24px;border-top:1px solid var(--b);}
+.video-inner{max-width:860px;margin:0 auto;}
+.video-wrap{border:1px solid var(--b);overflow:hidden;}
+.video-frame{position:relative;padding-bottom:56.25%;height:0;background:var(--dark2);}
+.video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.video-cap{background:var(--dark);padding:14px 20px;font-size:13px;color:var(--g);border-top:1px solid var(--b);}
+
+/* WHO */
+.who{background:var(--dark);padding:100px 24px;border-top:1px solid var(--b);}
+.who-inner{max-width:760px;margin:0 auto;text-align:center;}
+.who-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px;text-align:left;}
+.who-list li{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:var(--black);font-size:15px;color:var(--gl);line-height:1.55;}
+.who-list li::before{content:'→';color:var(--y);flex-shrink:0;font-size:14px;margin-top:1px;}
+
+/* SPEAKERS */
+.speakers{background:var(--black);padding:100px 24px;border-top:1px solid var(--b);}
+.speakers-inner{max-width:900px;margin:0 auto;text-align:center;}
+.speakers-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px;text-align:left;}
+.speaker-card{background:var(--dark);border:1px solid var(--b);padding:40px 36px;}
+.speaker-top{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+.speaker-photo{width:64px;height:64px;border-radius:50%;flex-shrink:0;border:2px solid rgba(247,198,0,0.3);overflow:hidden;background:var(--dark2);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--y);}
+.speaker-photo img{width:100%;height:100%;object-fit:cover;}
+.speaker-name{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.02em;text-transform:uppercase;color:var(--w);line-height:1;}
+.speaker-role{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--y);margin-top:3px;}
+.speaker-bio{font-size:14px;color:var(--g);line-height:1.7;}
+
+/* BOTTOM CTA */
+.bottom-cta{background:var(--y);padding:100px 24px;text-align:center;position:relative;overflow:hidden;}
+.bottom-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.05) 1px,transparent 1px);background-size:40px 40px;}
+.bottom-cta-inner{position:relative;max-width:600px;margin:0 auto;}
+.bottom-cta-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(0,0,0,0.4);margin-bottom:20px;}
+.bottom-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,88px);line-height:0.9;text-transform:uppercase;color:var(--black);margin-bottom:12px;}
+.bottom-cta p{font-size:17px;color:rgba(0,0,0,0.6);line-height:1.7;margin-bottom:36px;}
+.btn-dark{background:var(--black);color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:20px 56px;border:none;cursor:pointer;transition:all 0.2s;}
+.btn-dark:hover{background:#111;transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid var(--b);padding:36px 24px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-copy{font-size:13px;color:var(--g);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:13px;color:var(--g);text-decoration:none;}
+.footer-links a:hover{color:var(--w);}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,14,26,0.92);z-index:999;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--dark);border:2px solid rgba(247,198,0,0.3);padding:44px 40px;width:100%;max-width:480px;position:relative;}
+.modal-close{position:absolute;top:16px;right:18px;background:none;border:none;color:var(--g);font-size:20px;cursor:pointer;line-height:1;}
+.modal-close:hover{color:var(--w);}
+.modal-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--y);margin-bottom:10px;}
+.modal-title{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:0.95;text-transform:uppercase;color:var(--w);margin-bottom:6px;}
+.modal-sub{font-size:14px;color:var(--g);line-height:1.55;margin-bottom:28px;}
+.form-row{margin-bottom:14px;}
+.form-row label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--g);margin-bottom:6px;}
+.form-row input,.form-row select{width:100%;background:var(--dark2);border:1px solid rgba(255,255,255,0.1);color:var(--w);font-family:'Barlow',sans-serif;font-size:15px;padding:13px 14px;outline:none;appearance:none;transition:border-color 0.2s;}
+.form-row input::placeholder{color:var(--g);}
+.form-row input:focus,.form-row select:focus{border-color:rgba(247,198,0,0.5);}
+.form-row select option{background:var(--dark2);}
+.btn-submit{display:block;width:100%;text-align:center;background:var(--y);color:var(--black);font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:17px 24px;border:none;cursor:pointer;margin-top:22px;transition:background 0.2s;}
+.btn-submit:hover{background:var(--yd);}
+.modal-note{text-align:center;font-size:12px;color:var(--g);margin-top:12px;}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{padding:56px 20px 40px;}
+  .hero h1{font-size:clamp(36px,11vw,64px);}
+  .hero-date-row{gap:16px;}
+  .who-list{grid-template-columns:1fr;}
+  .speakers-grid{grid-template-columns:1fr;}
+  .speaker-card{padding:28px 20px;}
+  .bottom-cta{padding:64px 20px;}
+  .modal-box{padding:32px 24px;}
+  .modal-overlay{align-items:flex-end;padding:0;}
+  .modal-box{max-height:92vh;overflow-y:auto;}
+}
+</style>
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,"script",
+"https://connect.facebook.net/en_US/fbevents.js");
+fbq("init","702253184199010");
+fbq("track","PageView");
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=702253184199010&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel -->
+</head>
+<body>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
+  <p class="hero-eyebrow">The Blueprint Training &nbsp;&middot;&nbsp; Presents</p>
+
+  <h1>The <span class="line2">One-Person</span> Agency.</h1>
+
+  <p class="hero-sub">How to build a 7-figure agency using AI to automate workflows, client work, and deliver better results.</p>
+
+  <div class="hero-date-row">
+    <div class="hero-date-item">
+      <div class="hero-date-label">Date</div>
+      <div class="hero-date-value">April 1st, 2026</div>
+    </div>
+    <div class="hero-date-sep">/</div>
+    <div class="hero-date-item">
+      <div class="hero-date-label">Time</div>
+      <div class="hero-date-value">2:00 PM ET</div>
+    </div>
+    <div class="hero-date-sep">/</div>
+    <div class="hero-date-item">
+      <div class="hero-date-label">Format</div>
+      <div class="hero-date-value">Live &middot; Free</div>
+    </div>
+  </div>
+
+  <button class="btn-hero" onclick="openModal()">Reserve Your Free Seat &rarr;</button>
+  <p class="btn-hero-sub">Limited spots &nbsp;&middot;&nbsp; Replay sent to all registrants</p>
+
+
+</section>
+
+<!-- PITCH -->
+<section class="pitch">
+  <div class="pitch-inner">
+    <div class="pitch-label">What We&rsquo;re Covering</div>
+    <h2>This will forever change<br><span>how you run your agency.</span></h2>
+    <div class="video-wrap" style="margin-bottom:48px;text-align:left;">
+      <div class="video-frame">
+        <iframe src="https://fast.wistia.com/embed/medias/f86tfgzfoc" title="Webinar Preview" allowfullscreen></iframe>
+      </div>
+      <div class="video-cap">Watch: A quick preview of what we&rsquo;re covering live on April 1st</div>
+    </div>
+    <p>The agency model has changed. Not gradually — overnight. The tools that used to require a team of five can now be handled by a single operator with the right AI infrastructure. We&rsquo;re not talking about using ChatGPT to write emails. We&rsquo;re talking about deploying purpose-built agents that run your entire delivery workflow — audits, strategy, content, outreach, reporting — autonomously, on your SOPs, at a fraction of the cost.</p>
+    <p>We&rsquo;re at an inflection point. The agencies that figure this out in the next 12 months are going to dominate their markets for the next decade. The ones that don&rsquo;t are going to get undercut on price, outpaced on delivery, and wonder what happened. AI isn&rsquo;t coming for the agency model — it&rsquo;s already here. The question is whether you&rsquo;re going to use it or compete against it.</p>
+    <p>In this live session, Ryan and David are going to show you exactly how to build the AI-powered agency — the agent stack, the workflows, the automation infrastructure — so you can run leaner, deliver better results, and scale past seven figures without adding headcount. This is what the next generation of agencies looks like. Come see it built live.</p>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="who">
+  <div class="who-inner">
+    <div class="pitch-label">Who This Is For</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,64px);line-height:0.95;text-transform:uppercase;margin-bottom:0;">This webinar is built for you if&hellip;</h2>
+    <ul class="who-list">
+      <li>You know AI is changing the agency model but haven&rsquo;t figured out how to actually use it in your business</li>
+      <li>You&rsquo;re watching competitors move faster and you&rsquo;re not sure how they&rsquo;re doing it</li>
+      <li>You&rsquo;re still doing manually what should already be automated &mdash; and you know it</li>
+      <li>You&rsquo;ve tried AI tools but never built anything that actually runs your workflows end to end</li>
+      <li>You&rsquo;re worried about being left behind as the market shifts to AI-first agencies</li>
+      <li>You want to see exactly what the next generation of agency looks like &mdash; built live, not on slides</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section class="speakers">
+  <div class="speakers-inner">
+    <div class="pitch-label">Your Presenters</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,64px);line-height:0.95;text-transform:uppercase;margin-bottom:0;">Meet the people running this live.</h2>
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <div class="speaker-top">
+          <div class="speaker-photo">
+            <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198.png" alt="Ryan Stewart" onerror="this.style.display='none';this.parentNode.textContent='RS'">
+          </div>
+          <div>
+            <div class="speaker-name">Ryan Stewart</div>
+            <div class="speaker-role">Founder &middot; Blueprint Training &amp; Webris</div>
+          </div>
+        </div>
+        <p class="speaker-bio">Ryan built and sold two agencies for 7-figure sums and currently runs Webris, where the Blueprint methodology was born. He&rsquo;s spent the last two years rebuilding his entire operation around AI and is here to show you exactly how he did it.</p>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-top">
+          <div class="speaker-photo">DK</div>
+          <div>
+            <div class="speaker-name">David Krevitt</div>
+            <div class="speaker-role">Lead AI Coach &middot; Blueprint Training</div>
+          </div>
+        </div>
+        <p class="speaker-bio">David leads AI implementation inside The Blueprint Training, teaching agency owners how to build and deploy Claude agents for real client work. Expect live demos, not slides.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="bottom-cta-inner">
+    <div class="bottom-cta-label">April 1st &middot; 2:00 PM ET &middot; Free</div>
+    <h2>Seats are limited.<br>Register now.</h2>
+    <p>This is a live event with limited capacity. Register now to secure your seat &mdash; and get the replay link sent automatically if you can&rsquo;t make it live.</p>
+    <button class="btn-dark" onclick="openModal()">Reserve Your Free Seat &rarr;</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <svg width="32" height="32" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg>
+      <div style="display:flex;flex-direction:column;gap:1px;">
+        <span style="font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:0.32em;color:rgba(255,255,255,0.28);text-transform:uppercase;line-height:1;">The</span>
+        <span style="font-family:Orbitron,sans-serif;font-size:13px;font-weight:800;color:#F7C600;letter-spacing:0.06em;text-transform:uppercase;line-height:1;">Blueprint</span>
+        <span style="font-family:Orbitron,sans-serif;font-size:6.5px;font-weight:700;letter-spacing:0.36em;color:rgba(255,255,255,0.22);text-transform:uppercase;line-height:1;margin-top:1px;">Training</span>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2026 The Blueprint Training LLC. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="/blueprint-about.html">About</a>
+      <a href="/blueprint-results.html">Results</a>
+      <a href="/blueprint-signup.html">Join</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&#10005;</button>
+    <div class="modal-eyebrow">Free &middot; April 1st &middot; 2:00 PM ET</div>
+    <div class="modal-title">Reserve Your Seat</div>
+    <p class="modal-sub">Enter your details to register. You&rsquo;ll get a confirmation email with the join link and a reminder before we go live.</p>
+    <div class="form-row"><label>First Name</label><input type="text" id="reg-name" placeholder="Your first name"></div>
+    <div class="form-row"><label>Agency Email</label><input type="email" id="reg-email" placeholder="your@agency.com"></div>
+    <button class="btn-submit" id="reg-submit" onclick="submitForm()">Register Now &mdash; It&rsquo;s Free &rarr;</button>
+    <div id="reg-success" style="display:none;text-align:center;padding:16px 0;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--y);margin-bottom:6px;">You&rsquo;re registered!</div>
+      <div style="font-size:14px;color:var(--g);">Check your inbox for the confirmation and join link.</div>
+    </div>
+    <div class="modal-note">&#128274; No spam. Replay sent to all registrants.</div>
+  </div>
+</div>
+
+<script>
+function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+async function submitForm(){
+  var name = document.getElementById('reg-name').value.trim();
+  var email = document.getElementById('reg-email').value.trim();
+  if(!name || !email){alert('Please enter your name and email.');return;}
+
+  var btn = document.getElementById('reg-submit');
+  btn.textContent = 'Registering...';
+  btn.disabled = true;
+
+  var AC_URL = 'https://theblueprint29100.api-us1.com/api/3';
+  var AC_KEY = '4dbb561616a848bfbe77e45ec0eb16ebaab1732206aab0e38d2b455761ff5e26c5a19066';
+  var LIST_ID = 105;
+
+  try {
+    // Create or update contact
+    var contactRes = await fetch(AC_URL + '/contacts', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json','Api-Token':AC_KEY},
+      body: JSON.stringify({contact:{email:email,firstName:name}})
+    });
+    var contactData = await contactRes.json();
+    var contactId = contactData.contact ? contactData.contact.id : null;
+
+    // If duplicate, fetch existing contact ID
+    if(!contactId && contactData.contacts && contactData.contacts.length){
+      contactId = contactData.contacts[0].id;
+    }
+
+    if(contactId){
+      // Add to list 105
+      await fetch(AC_URL + '/contactLists', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','Api-Token':AC_KEY},
+        body: JSON.stringify({contactList:{list:LIST_ID,contact:contactId,status:1}})
+      });
+    }
+
+    // Show success
+    document.getElementById('reg-submit').style.display = 'none';
+    document.getElementById('reg-success').style.display = 'block';
+    document.querySelector('.form-row:nth-child(1)').style.display = 'none';
+    document.querySelector('.form-row:nth-child(2)').style.display = 'none';
+
+    // FB Pixel Lead event — replace PIXEL_ID with your actual ID
+    fbq("track","Lead");
+
+  } catch(err) {
+    btn.textContent = 'Register Now — It\'s Free →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again.');
+  }
+}
+</script>
+</body>
+</html>
