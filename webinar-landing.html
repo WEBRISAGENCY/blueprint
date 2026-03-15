@@ -335,6 +335,10 @@ function handleSubmit(e){
     document.getElementById('ac-form').style.display='none';
     document.getElementById('reg-success').style.display='block';
     if(typeof fbq!=='undefined') fbq('track','Lead');
+    // Redirect to thank-you page after brief success flash
+    setTimeout(function(){
+      window.location.href='https://ai.theblueprint.training/thank-you.html';
+    }, 1200);
   }, 1500);
 }
 </script>
