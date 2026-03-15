@@ -341,10 +341,10 @@ function handleSubmit(e){
   data.append('firstname', name);
   data.append('email', email);
 
-  fetch('https://theblueprint29100.activehosted.com/proc.php', {
+  fetch('/.netlify/functions/subscribe', {
     method: 'POST',
-    body: data,
-    mode: 'no-cors'
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: 'firstname=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email)
   }).finally(function(){
     if(typeof fbq!=='undefined') fbq('track','Lead');
     window.location.href = 'https://ai.theblueprint.training/thank-you.html';
