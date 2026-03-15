@@ -1761,7 +1761,7 @@
   .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.32em; color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1; }
   .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 15px; font-weight: 800; color: #F7C600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
   .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.36em; color: rgba(255,255,255,0.22); text-transform: uppercase; line-height: 1; margin-top: 1px; }
-  .nav-links { display: flex; align-items: stretch; flex: 1; }
+  .nav-links { display: flex; align-items: stretch; flex: 1; justify-content: center; }
   .nav-item { position: relative; display: flex; align-items: stretch; }
   .nav-item-btn {
     display: flex; align-items: center; gap: 6px;
@@ -1886,9 +1886,9 @@
 
     <div class="nav-links">
 
-      <!-- Programs -->
+      <!-- Features (formerly Programs) -->
       <div class="nav-item" id="nni-programs">
-        <button class="nav-item-btn" onclick="navTog('programs',this)">Programs <span class="nav-arr">&#9660;</span></button>
+        <button class="nav-item-btn" onclick="navTog('programs',this)">Features <span class="nav-arr">&#9660;</span></button>
         <div class="nav-mega" id="ndd-programs">
           <div class="nav-mega-col">
             <div class="nav-mega-head">Core Programs</div>
@@ -1919,30 +1919,9 @@
         </div>
       </div>
 
-      <!-- Knowledge -->
-      <div class="nav-item" id="nni-knowledge">
-        <button class="nav-item-btn" onclick="navTog('knowledge',this)">Knowledge <span class="nav-arr">&#9660;</span></button>
-        <div class="nav-dropdown" id="ndd-knowledge">
-          <a href="https://theblueprint.training/blog/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">All Articles</div><div class="nav-dd-desc">200+ free guides and tactics</div></div></a>
-          <a href="https://theblueprint.training/blog/?cat=ai" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">AI & Automation</div><div class="nav-dd-desc">Agents, workflows, and AI tools</div></div></a>
-          <a href="https://theblueprint.training/blog/?cat=tactics" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Tactics</div><div class="nav-dd-desc">What's working in SEO right now</div></div></a>
-          <a href="https://theblueprint.training/blog/?cat=agency" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Agency Operations</div><div class="nav-dd-desc">Hiring, systems, and scaling</div></div></a>
-          <a href="https://theblueprint.training/bootcamps/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Bootcamp Recaps</div><div class="nav-dd-desc">Key takeaways from live sessions</div></div></a>
-          <a href="https://theblueprint.training/templates-and-sops/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Templates & SOPs</div><div class="nav-dd-desc">Free frameworks to download</div></div></a>
-        </div>
-      </div>
+      <a href="https://theblueprint.training/blog/" class="nav-item-link">Knowledge</a>
 
-      <!-- Company -->
-      <div class="nav-item" id="nni-company">
-        <button class="nav-item-btn" onclick="navTog('company',this)">Company <span class="nav-arr">&#9660;</span></button>
-        <div class="nav-dropdown" id="ndd-company">
-          <a href="https://theblueprint.training/about/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">About Us</div><div class="nav-dd-desc">The team and the mission</div></div></a>
-          <a href="https://theblueprint.training/reviews/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Results</div><div class="nav-dd-desc">500+ member wins documented</div></div></a>
-          <a href="https://theblueprint.training/agency-podcast/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Podcast</div><div class="nav-dd-desc">A weekly show for agencies</div></div></a>
-          <a href="https://theblueprint.training/book/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">The Book</div><div class="nav-dd-desc">Free copy of The Agency Blueprint</div></div></a>
-          <a href="https://theblueprint.training/white-label-ppc/" class="nav-dd-row"><div class="nav-dd-acc"></div><div class="nav-dd-body"><div class="nav-dd-name">Agency Services</div><div class="nav-dd-desc">White-label search marketing</div></div></a>
-        </div>
-      </div>
+      <a href="https://theblueprint.training/about/" class="nav-item-link">About</a>
 
       <a href="https://theblueprint.training/reviews/" class="nav-item-link">Results</a>
 
@@ -1972,7 +1951,7 @@
   <p class="hero-sub-headline">Build a 7-figure agency with no employees.</p>
 
   <p class="hero-desc">
-    Layer Claude AI agents on top of your agency and <strong>automate everything</strong> — from onboarding to link building to client reporting. The future of agency work is a single operator running an entire business through intelligent automation.
+    The future of agency work is here. AI can now automate proven workflows end to end — and deliver better results than a full team. The operators who adopt this now own their market.
   </p>
 
   <div class="hero-cta-group">
@@ -2069,7 +2048,7 @@
 <section class="modules" id="curriculum">
   <div class="container">
     <p class="section-label">What's Inside</p>
-    <h2 class="section-title">Everything you need to build<br><span>a one-person agency.</span></h2>
+    <h2 class="section-title">Everything you need to<br><span>automate your agency.</span></h2>
     <p class="section-body">One membership gives you the full stack — training, agents, live coaching, and a community of agency owners doing exactly what you're doing.</p>
 
     <div class="whats-inside-grid">
@@ -2120,7 +2099,7 @@
         <div class="wi-icon">🏘️</div>
         <div class="wi-content">
           <div class="wi-num">04</div>
-          <div class="wi-title">Pruvae Community Access</div>
+          <div class="wi-title">Private Community Access</div>
           <p class="wi-desc">Join a private community of agency owners building the one-person agency alongside you. Share wins, troubleshoot agents, and stay ahead of every new development in AI-powered SEO.</p>
           <ul class="wi-bullets">
             <li>Private community on Pruvae</li>
@@ -2423,7 +2402,7 @@
           <div class="testimonial-avatar">CK</div>
           <div>
             <div class="testimonial-name">Christopher Kindig</div>
-            <div class="testimonial-role">Long-time Blueprint Member</div>
+            
           </div>
         </div>
       </div>
@@ -2435,7 +2414,7 @@
           <div class="testimonial-avatar">JS</div>
           <div>
             <div class="testimonial-name">John D. Saunders</div>
-            <div class="testimonial-role">Local Guide · 81 Reviews</div>
+            
           </div>
         </div>
       </div>
@@ -2447,7 +2426,7 @@
           <div class="testimonial-avatar">JW</div>
           <div>
             <div class="testimonial-name">Jason Whitworth</div>
-            <div class="testimonial-role">Blueprint Member since 2015</div>
+            
           </div>
         </div>
       </div>
@@ -2521,7 +2500,7 @@
 
         <ul class="pricing-features">
           <li>9 full training modules with video walkthroughs</li>
-          <li>9 pre-built Claude agent templates (deploy-ready)</li>
+          <li>Pre-built Claude agent templates (deploy-ready)</li>
           <li>All Blueprint SOPs — updated for AI automation</li>
           <li>Local SEO Blueprint included ($199 value)</li>
           <li>Weekly live coaching with Ryan & David Krevitt</li>
@@ -2542,16 +2521,14 @@
             <div class="breakdown-title">Agency OS + AI Infrastructure</div>
             <div class="breakdown-desc">Full Claude setup, Cowork + Code configuration, agent deployment framework</div>
           </div>
-          <div class="breakdown-value">$297</div>
         </div>
 
         <div class="breakdown-item">
           <div class="breakdown-icon">🤖</div>
           <div>
-            <div class="breakdown-title">9 Pre-Built Claude Agents</div>
+            <div class="breakdown-title">Pre-Built Claude Agents</div>
             <div class="breakdown-desc">Deploy-ready agents for every role in your agency — tested and Blueprint-trained</div>
           </div>
-          <div class="breakdown-value">$497</div>
         </div>
 
         <div class="breakdown-item">
@@ -2560,7 +2537,14 @@
             <div class="breakdown-title">Local SEO Blueprint</div>
             <div class="breakdown-desc">SOPs, templates, and agents for GBP, reviews, citations, and Maps Pack domination</div>
           </div>
-          <div class="breakdown-value">$199</div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">📣</div>
+          <div>
+            <div class="breakdown-title">Facebook Ads Blueprint</div>
+            <div class="breakdown-desc">Paid social strategy, ad frameworks, and AI-powered campaign workflows for agencies</div>
+          </div>
         </div>
 
         <div class="breakdown-item">
@@ -2569,24 +2553,13 @@
             <div class="breakdown-title">Live Training + Community</div>
             <div class="breakdown-desc">Monthly Q&A, private Slack, Blueprint community of 1,000+ agency owners</div>
           </div>
-          <div class="breakdown-value">$197</div>
         </div>
 
         <div class="breakdown-item">
           <div class="breakdown-icon">♾️</div>
           <div>
-            <div class="breakdown-title">Lifetime Updates</div>
-            <div class="breakdown-desc">As Claude evolves, so does the program. Pay once, stay current forever.</div>
-          </div>
-          <div class="breakdown-value">Priceless</div>
-        </div>
-
-        <div class="breakdown-total">
-          <div>
-            <div class="breakdown-total-label">Total Value</div>
-          </div>
-          <div class="breakdown-total-value">
-            <s>$1,190</s>$199
+            <div class="breakdown-title">Weekly Updates</div>
+            <div class="breakdown-desc">New agents, SOPs, and training added every week as Claude and the market evolve.</div>
           </div>
         </div>
       </div>
@@ -2656,9 +2629,9 @@
     </div>
     <div class="final-cta-text">
       <div class="final-cta-eyebrow">From Ryan Stewart, Founder</div>
-      <h2 class="final-cta-headline">Run your agency.<br>Automate everything.<br>Scale solo.</h2>
-      <p class="final-cta-desc">The agencies that adopt AI now will own the market in five years. The question isn't whether to make the shift — it's whether you do it first.</p>
-      <a href="#pricing" class="btn-final">Enroll Now — $199</a>
+      <h2 class="final-cta-headline">The Future Is Now.</h2>
+      <p class="final-cta-desc">The agency model has already changed. AI can now handle the audits, the content, the outreach, the reporting — everything that used to require a team. The operators building this infrastructure today will be impossible to compete with in two years. Don't wait for the market to force your hand.</p>
+      <a href="#pricing" class="btn-final">Enroll Now — $249</a>
     </div>
   </div>
 </section>
