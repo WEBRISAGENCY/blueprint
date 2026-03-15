@@ -316,45 +316,39 @@ async function submitForm(){
   btn.textContent = 'Registering...';
   btn.disabled = true;
 
-  var AC_URL = 'https://theblueprint29100.api-us1.com/api/3';
-  var AC_KEY = '4dbb561616a848bfbe77e45ec0eb16ebaab1732206aab0e38d2b455761ff5e26c5a19066';
-  var LIST_ID = 105;
-
   try {
-    // Create or update contact
-    var contactRes = await fetch(AC_URL + '/contacts', {
+    // Use AC's hosted form endpoint — avoids CORS issues
+    var formData = new FormData();
+    formData.append('u', '9');       // AC form ID
+    formData.append('f', '9');
+    formData.append('s', '');
+    formData.append('c', '0');
+    formData.append('m', '0');
+    formData.append('act', 'sub');
+    formData.append('v', '2');
+    formData.append('or', window.location.href);
+    formData.append('email', email);
+    formData.append('firstname', name);
+    formData.append('p[105]', '105'); // list 105
+
+    await fetch('https://theblueprint29100.activehosted.com/proc.php', {
       method: 'POST',
-      headers: {'Content-Type':'application/json','Api-Token':AC_KEY},
-      body: JSON.stringify({contact:{email:email,firstName:name}})
+      body: formData,
+      mode: 'no-cors'
     });
-    var contactData = await contactRes.json();
-    var contactId = contactData.contact ? contactData.contact.id : null;
 
-    // If duplicate, fetch existing contact ID
-    if(!contactId && contactData.contacts && contactData.contacts.length){
-      contactId = contactData.contacts[0].id;
-    }
-
-    if(contactId){
-      // Add to list 105
-      await fetch(AC_URL + '/contactLists', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json','Api-Token':AC_KEY},
-        body: JSON.stringify({contactList:{list:LIST_ID,contact:contactId,status:1}})
-      });
-    }
-
-    // Show success
+    // no-cors means we can't read the response, but submission goes through
+    // Show success immediately
     document.getElementById('reg-submit').style.display = 'none';
     document.getElementById('reg-success').style.display = 'block';
     document.querySelector('.form-row:nth-child(1)').style.display = 'none';
     document.querySelector('.form-row:nth-child(2)').style.display = 'none';
 
-    // FB Pixel Lead event — replace PIXEL_ID with your actual ID
-    fbq("track","Lead");
+    // FB Pixel Lead event
+    if(typeof fbq !== 'undefined') fbq('track','Lead');
 
   } catch(err) {
-    btn.textContent = 'Register Now — It\'s Free →';
+    btn.textContent = "Register Now \u2014 It\u2019s Free \u2192";
     btn.disabled = false;
     alert('Something went wrong. Please try again.');
   }
