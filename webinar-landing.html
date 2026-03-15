@@ -319,7 +319,7 @@ async function submitForm(){
   try {
     // Use AC's hosted form endpoint — avoids CORS issues
     var formData = new FormData();
-    formData.append('u', '9');       // AC form ID
+    formData.append('u', '9');
     formData.append('f', '9');
     formData.append('s', '');
     formData.append('c', '0');
@@ -329,7 +329,8 @@ async function submitForm(){
     formData.append('or', window.location.href);
     formData.append('email', email);
     formData.append('firstname', name);
-    formData.append('p[105]', '105'); // list 105
+    formData.append('p[105]', '105');
+    formData.append('_gotcha', '');
 
     await fetch('https://theblueprint29100.activehosted.com/proc.php', {
       method: 'POST',
