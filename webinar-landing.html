@@ -285,14 +285,13 @@ fbq("track","PageView");
 </footer>
 
 <!-- MODAL -->
-<iframe name="ac-target" style="display:none;"></iframe>
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">&#10005;</button>
     <div class="modal-eyebrow">Free &middot; April 1st &middot; 2:00 PM ET</div>
     <div class="modal-title">Reserve Your Seat</div>
     <p class="modal-sub">Enter your details to register. You&rsquo;ll get a confirmation email with the join link and a reminder before we go live.</p>
-    <form id="ac-form" action="https://theblueprint29100.activehosted.com/proc.php" method="POST" target="ac-target" onsubmit="handleSubmit(event)">
+    <form id="ac-form" onsubmit="handleSubmit(event)">
       <input type="hidden" name="u" value="9">
       <input type="hidden" name="f" value="9">
       <input type="hidden" name="s" value="">
@@ -314,32 +313,42 @@ fbq("track","PageView");
   </div>
 </div>
 
-<iframe name="ac-target" style="display:none;width:0;height:0;border:0;"></iframe>
-
 <script>
 function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
 
 function handleSubmit(e){
+  e.preventDefault();
   var name = document.getElementById('reg-name').value.trim();
   var email = document.getElementById('reg-email').value.trim();
-  if(!name||!email){e.preventDefault();alert('Please enter your name and email.');return;}
+  if(!name||!email) return;
 
-  document.getElementById('reg-submit').textContent='Registering...';
-  document.getElementById('reg-submit').disabled=true;
+  var btn = document.getElementById('reg-submit');
+  btn.textContent = 'Registering...';
+  btn.disabled = true;
 
-  // Let the form POST to AC via the hidden iframe
-  // Show success after a short delay
-  setTimeout(function(){
-    document.getElementById('ac-form').style.display='none';
-    document.getElementById('reg-success').style.display='block';
+  var data = new FormData();
+  data.append('u','9');
+  data.append('f','9');
+  data.append('s','');
+  data.append('c','0');
+  data.append('m','0');
+  data.append('act','sub');
+  data.append('v','2');
+  data.append('p[105]','105');
+  data.append('_gotcha','');
+  data.append('firstname', name);
+  data.append('email', email);
+
+  fetch('https://theblueprint29100.activehosted.com/proc.php', {
+    method: 'POST',
+    body: data,
+    mode: 'no-cors'
+  }).finally(function(){
     if(typeof fbq!=='undefined') fbq('track','Lead');
-    // Redirect to thank-you page after brief success flash
-    setTimeout(function(){
-      window.location.href='https://ai.theblueprint.training/thank-you.html';
-    }, 1200);
-  }, 1500);
+    window.location.href = 'https://ai.theblueprint.training/thank-you.html';
+  });
 }
 </script>
 </body>
