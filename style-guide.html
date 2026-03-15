@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blueprint Training — Brand Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --yellow:      #F7C600;
+  --yellow-dark: #D9AE00;
+  --black:       #0B0E1A;
+  --dark:        #111421;
+  --dark2:       #181C2E;
+  --dark3:       #1F2438;
+  --border:      rgba(255,255,255,0.07);
+  --border-y:    rgba(247,198,0,0.20);
+  --white:       #FFFFFF;
+  --gray:        #8A90A8;
+  --gray-light:  #C8CEDF;
+  --yellow-glow: rgba(247,198,0,0.10);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--black); color:var(--white); font-family:'Barlow',sans-serif; overflow-x:hidden; }
+
+/* ── UTILS ── */
+.container { max-width:1160px; margin:0 auto; }
+
+.section-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--yellow);
+  display:flex; align-items:center; gap:12px;
+  margin-bottom:16px;
+}
+.section-label::before { content:''; display:block; width:32px; height:2px; background:var(--yellow); flex-shrink:0; }
+
+.page-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:700;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--gray); opacity:.6;
+}
+
+.section-title {
+  -webkit-text-stroke: 1.5px currentColor;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(42px,6vw,80px);
+  line-height:.95; letter-spacing:.02em;
+  margin-bottom:24px;
+}
+.section-title span { color:var(--yellow); }
+
+.section-body {
+  font-size:17px; line-height:1.8;
+  color:var(--gray-light); max-width:640px;
+}
+.section-body strong { color:var(--white); }
+
+.divider { border:none; border-top:1px solid rgba(255,255,255,.09); margin:0; }
+
+.yellow { color:var(--yellow); }
+.gray   { color:var(--gray); }
+
+/* ── LOGO SVG MARK ── */
+.bpt-mark {
+  display:inline-flex; align-items:center; gap:14px;
+  text-decoration:none;
+}
+.bpt-mark svg { flex-shrink:0; }
+.bpt-wordstack { display:flex; flex-direction:column; gap:1px; }
+.bpt-wordstack .the    { font-family:'Orbitron',sans-serif; font-size:7px; font-weight:600; letter-spacing:.32em; color:rgba(255,255,255,.28); text-transform:uppercase; line-height:1; }
+.bpt-wordstack .bp     { font-family:'Orbitron',sans-serif; font-size:13px; font-weight:800; color:var(--yellow); letter-spacing:.06em; text-transform:uppercase; line-height:1; }
+.bpt-wordstack .train  { font-family:'Orbitron',sans-serif; font-size:6.5px; font-weight:600; letter-spacing:.36em; color:rgba(255,255,255,.22); text-transform:uppercase; line-height:1; margin-top:1px; }
+
+/* large logo */
+.bpt-mark.lg .bpt-wordstack .the   { font-size:9px; }
+.bpt-mark.lg .bpt-wordstack .bp    { font-size:22px; }
+.bpt-mark.lg .bpt-wordstack .train { font-size:8px; }
+
+/* ── COVER PAGE ── */
+.cover {
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:space-between;
+  padding:64px;
+  position:relative; overflow:hidden;
+  background:var(--black);
+}
+.cover-grid {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(247,198,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,198,0,.04) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.cover-glow {
+  position:absolute; top:10%; left:50%;
+  transform:translateX(-50%);
+  width:900px; height:500px;
+  background:radial-gradient(ellipse, rgba(247,198,0,.12) 0%, transparent 65%);
+  pointer-events:none;
+}
+.cover-top {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  position:relative; z-index:2;
+}
+.cover-meta {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--gray);
+  text-align:right; line-height:2;
+}
+.cover-center {
+  position:relative; z-index:2;
+  flex:1; display:flex; align-items:center;
+}
+.cover-headline {
+  -webkit-text-stroke: 1.5px currentColor;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(80px,12vw,160px);
+  line-height:.9; letter-spacing:.01em;
+  color:var(--white);
+}
+.cover-headline .accent { color:var(--yellow); }
+.cover-bottom {
+  display:flex; justify-content:space-between; align-items:flex-end;
+  position:relative; z-index:2;
+  padding-top:40px;
+  border-top:1px solid rgba(247,198,0,.15);
+}
+.cover-bottom-desc {
+  font-size:16px; color:var(--gray);
+  line-height:1.7; max-width:420px;
+}
+.cover-bottom-meta {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; color:var(--gray);
+  letter-spacing:.12em; text-transform:uppercase;
+  text-align:right; line-height:2;
+}
+
+/* ── PAGE SPREAD ── */
+.spread {
+  min-height:100vh;
+  display:flex; flex-direction:column;
+  padding:64px;
+  position:relative;
+}
+.spread.dark  { background:var(--dark); }
+.spread.dark2 { background:var(--dark2); }
+.spread.black { background:var(--black); }
+
+.spread-header {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:64px;
+}
+
+/* ── CHAPTER OPENER ── */
+.chapter {
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:space-between;
+  padding:64px;
+  position:relative; overflow:hidden;
+}
+.chapter.yellow-bg { background:var(--yellow); }
+.chapter.dark-bg   { background:var(--dark); }
+.chapter.black-bg  { background:var(--black); }
+
+.chapter-grid-y {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.chapter-grid-d {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(247,198,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,198,0,.04) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.chapter-num {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:14px; letter-spacing:.2em;
+  position:relative; z-index:2;
+}
+.chapter.yellow-bg .chapter-num { color:rgba(0,0,0,.35); }
+.chapter.dark-bg .chapter-num   { color:rgba(255,255,255,.2); }
+.chapter.black-bg .chapter-num  { color:rgba(255,255,255,.2); }
+
+.chapter-title {
+  -webkit-text-stroke: 1.5px currentColor; -webkit-text-stroke: 2px currentColor;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(72px,10vw,140px);
+  line-height:.9; letter-spacing:.02em;
+  position:relative; z-index:2;
+}
+.chapter.yellow-bg .chapter-title {
+  -webkit-text-stroke: 1.5px currentColor; -webkit-text-stroke: 2px currentColor; color:var(--black); }
+.chapter.dark-bg .chapter-title,
+.chapter.black-bg .chapter-title  { color:var(--white); }
+.chapter.dark-bg .chapter-title span,
+.chapter.black-bg .chapter-title span { color:var(--yellow); }
+
+.chapter-desc {
+  font-size:17px; line-height:1.7;
+  position:relative; z-index:2; max-width:520px;
+}
+.chapter.yellow-bg .chapter-desc { color:rgba(0,0,0,.6); }
+.chapter.dark-bg .chapter-desc,
+.chapter.black-bg .chapter-desc  { color:var(--gray-light); }
+
+/* ── CONTENT GRIDS ── */
+.two-col   { display:grid; grid-template-columns:300px 1fr; gap:80px; }
+.three-col { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; }
+.two-even  { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.four-col  { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:2px; }
+
+/* ── SIDEBAR ── */
+.sidebar-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:42px; line-height:.95;
+  letter-spacing:.02em;
+  color:var(--white); margin-bottom:20px;
+}
+.sidebar-body {
+  font-size:15px; color:var(--gray);
+  line-height:1.75;
+}
+.sidebar-body p + p { margin-top:14px; }
+.sidebar-body strong { color:var(--white); }
+
+/* ── CARDS ── */
+.card {
+  background:var(--dark2);
+  border:1px solid var(--border);
+  padding:28px;
+  position:relative; overflow:hidden;
+  transition:all .3s;
+}
+.card::before {
+  content:''; position:absolute;
+  top:0; left:0; right:0; height:3px;
+  background:var(--yellow);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .3s;
+}
+.card:hover::before { transform:scaleX(1); }
+.card:hover { border-color:rgba(247,198,0,.2); background:var(--dark3); }
+
+.card-num {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:48px; color:rgba(247,198,0,.15);
+  line-height:1; margin-bottom:16px;
+}
+.card-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:17px;
+  letter-spacing:.05em; text-transform:uppercase;
+  color:var(--white); margin-bottom:10px;
+}
+.card-body { font-size:14px; color:var(--gray); line-height:1.65; }
+
+/* active card */
+.card.active {
+  border-color:rgba(247,198,0,.4);
+  background:rgba(247,198,0,.04);
+}
+.card.active .card-title { color:var(--yellow); }
+
+/* ── STAT BLOCK ── */
+.stat-block {
+  background:var(--dark);
+  border:1px solid var(--border);
+  padding:40px 28px; text-align:center;
+}
+.stat-num {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:60px; color:var(--yellow); line-height:1;
+  margin-bottom:8px;
+}
+.stat-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--gray);
+}
+
+/* ── VOICE CARDS ── */
+.voice-card {
+  background:var(--dark2);
+  border:1px solid var(--border);
+  padding:36px;
+}
+.voice-card.yes { border-color:rgba(74,222,128,.2); background:rgba(74,222,128,.03); }
+.voice-card.no  { border-color:rgba(248,113,113,.18); background:rgba(248,113,113,.03); }
+
+.voice-verdict {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase;
+  margin-bottom:16px;
+  display:flex; align-items:center; gap:8px;
+}
+.voice-verdict.yes { color:#4ADE80; }
+.voice-verdict.no  { color:#F87171; }
+.voice-verdict.yes::before { content:'✓'; }
+.voice-verdict.no::before  { content:'✗'; }
+
+.voice-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px; letter-spacing:.02em;
+  color:var(--white); margin-bottom:16px;
+}
+.voice-desc { font-size:14px; color:var(--gray); line-height:1.65; margin-bottom:20px; }
+
+.attr-list { display:flex; flex-wrap:wrap; gap:8px; }
+.attr {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  padding:4px 12px;
+  border:1px solid var(--border); color:var(--gray);
+}
+.attr.yes { border-color:rgba(74,222,128,.35); color:#4ADE80; }
+.attr.no  { border-color:rgba(248,113,113,.3);  color:#F87171; }
+
+/* ── TONE TABLE ── */
+.tone-split { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+
+.tone-col { background:var(--dark2); border:1px solid var(--border); padding:36px; }
+.tone-col .tone-head {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:13px;
+  letter-spacing:.2em; text-transform:uppercase;
+  padding-bottom:16px; margin-bottom:24px;
+  border-bottom:2px solid;
+}
+.tone-col.ok .tone-head  { color:#4ADE80; border-color:#4ADE80; }
+.tone-col.no .tone-head  { color:#F87171; border-color:#F87171; }
+
+.tone-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.tone-list li {
+  font-size:14px; color:var(--gray);
+  line-height:1.55; display:flex; gap:10px;
+}
+.tone-col.ok .tone-list li::before { content:'→'; color:#4ADE80; flex-shrink:0; font-size:12px; margin-top:1px; }
+.tone-col.no .tone-list li::before { content:'→'; color:#F87171; flex-shrink:0; font-size:12px; margin-top:1px; }
+
+.tone-example {
+  margin-top:24px; padding:16px 20px;
+  background:rgba(0,0,0,.3);
+  border-left:3px solid;
+  font-style:italic; font-size:13px;
+  color:var(--gray-light); line-height:1.6;
+}
+.tone-col.ok .tone-example { border-color:rgba(74,222,128,.4); }
+.tone-col.no .tone-example { border-color:rgba(248,113,113,.4); }
+
+/* ── RULE CARDS ── */
+.rule-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:40px; }
+
+.rule-card {
+  background:var(--dark);
+  border:1px solid var(--border);
+  padding:32px;
+}
+.rule-num {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px; color:rgba(247,198,0,.15);
+  line-height:1; margin-bottom:14px;
+}
+.rule-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:17px;
+  letter-spacing:.05em; text-transform:uppercase;
+  color:var(--white); margin-bottom:10px;
+}
+.rule-body { font-size:14px; color:var(--gray); line-height:1.65; }
+
+/* ── COLOR SWATCHES ── */
+.swatch-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; }
+.swatch {
+  min-height:220px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:28px;
+}
+.swatch-name {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:20px;
+  letter-spacing:.04em; text-transform:uppercase;
+  margin-bottom:10px;
+}
+.swatch-vals {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; letter-spacing:.06em;
+  text-transform:uppercase; line-height:2;
+}
+
+.tint-row { display:flex; gap:4px; margin-bottom:4px; }
+.tint {
+  flex:1; height:40px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:700;
+  letter-spacing:.08em; text-transform:uppercase;
+}
+
+/* ── LOGO DISPLAY ── */
+.logo-box {
+  border:1px solid var(--border);
+  padding:48px;
+  display:flex; align-items:center; justify-content:center;
+  min-height:200px;
+  position:relative; overflow:hidden;
+}
+.logo-box.on-dark   { background:var(--dark2); }
+.logo-box.on-black  { background:var(--black); }
+.logo-box.on-yellow { background:var(--yellow); }
+.logo-box.on-white  { background:#FFFFFF; }
+.logo-box-grid {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(247,198,0,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,198,0,.05) 1px, transparent 1px);
+  background-size:40px 40px;
+}
+
+.logo-box-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--gray); margin-top:12px;
+}
+
+/* ── TYPE SPECIMENS ── */
+.type-row {
+  background:var(--dark);
+  border:1px solid var(--border);
+  padding:32px; margin-bottom:2px;
+}
+.type-meta-row {
+  display:grid; grid-template-columns:1fr 220px;
+  align-items:center; gap:24px;
+}
+.type-specs {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--gray);
+  line-height:2;
+  border-left:2px solid rgba(247,198,0,.2);
+  padding-left:16px;
+}
+.type-specs strong { color:var(--yellow); }
+
+/* ── PHOTO PLACEHOLDER ── */
+.photo-ph {
+  background:var(--dark2); border:1px solid var(--border);
+  aspect-ratio:4/3;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:10px; position:relative; overflow:hidden;
+}
+.photo-ph::before {
+  content:''; position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(247,198,0,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,198,0,.03) 1px, transparent 1px);
+  background-size:32px 32px;
+}
+.photo-ph-label {
+  position:relative; z-index:2;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(138,144,168,.5); text-align:center; line-height:1.8;
+}
+
+/* ── BADGE ── */
+.badge {
+  display:inline-flex; align-items:center; gap:8px;
+  border:1px solid rgba(247,198,0,.3);
+  padding:6px 16px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase;
+  color:var(--yellow);
+}
+
+/* ── ERROR CARDS ── */
+.error-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; margin-top:40px; }
+.error-card {
+  background:var(--dark2);
+  border:1px solid rgba(248,113,113,.18);
+  padding:28px;
+}
+.error-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:#F87171; margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(248,113,113,.2);
+}
+.error-body { font-size:13px; color:var(--gray); line-height:1.6; margin-top:10px; }
+
+/* ── SPEC LIST ── */
+.spec-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.spec-list li {
+  display:flex; gap:12px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px; letter-spacing:.04em;
+  color:var(--gray);
+}
+.spec-list li span:first-child { color:var(--yellow); min-width:90px; text-transform:uppercase; font-size:11px; font-weight:700; letter-spacing:.12em; padding-top:2px; }
+
+/* ── BCARD MOCKUP ── */
+.bcard {
+  width:340px; height:190px;
+  background:var(--dark2); border:1px solid var(--border-y);
+  padding:24px; display:flex; flex-direction:column; justify-content:space-between;
+  position:relative; overflow:hidden;
+}
+.bcard::before {
+  content:''; position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(247,198,0,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,198,0,.03) 1px, transparent 1px);
+  background-size:20px 20px;
+}
+.bcard-back {
+  width:340px; height:190px;
+  background:var(--yellow);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.bcard-back::before {
+  content:''; position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(0,0,0,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.07) 1px, transparent 1px);
+  background-size:20px 20px;
+}
+.bcard-name {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:17px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--white);
+}
+.bcard-role {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--yellow); margin-top:3px;
+}
+.bcard-contact {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; letter-spacing:.05em;
+  color:var(--gray); line-height:1.9;
+}
+
+/* ── GRID VIZ ── */
+.grid-viz {
+  border:1px solid var(--border);
+  position:relative; overflow:hidden;
+  height:320px;
+  background:var(--dark2);
+}
+.grid-viz-inner {
+  position:absolute; inset:24px;
+  display:flex; gap:6px;
+}
+.grid-col {
+  flex:1;
+  background:rgba(247,198,0,.06);
+  border:1px solid rgba(247,198,0,.15);
+}
+.grid-viz-label {
+  position:absolute; bottom:12px; left:50%;
+  transform:translateX(-50%);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:700;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(247,198,0,.4);
+  white-space:nowrap;
+}
+.grid-bg-y {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(247,198,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,198,0,.04) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+
+/* ── CLOSING ── */
+.closing {
+  min-height:100vh;
+  background:var(--black);
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  text-align:center; padding:64px;
+  position:relative; overflow:hidden;
+}
+.closing-grid {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(247,198,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,198,0,.04) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.closing-glow {
+  position:absolute; bottom:-200px; left:50%;
+  transform:translateX(-50%);
+  width:900px; height:600px;
+  background:radial-gradient(ellipse, rgba(247,198,0,.18) 0%, transparent 65%);
+  pointer-events:none;
+}
+.closing-title {
+  -webkit-text-stroke: 1.5px currentColor;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(60px,10vw,130px);
+  line-height:.9; letter-spacing:.02em;
+  position:relative; z-index:2; margin-bottom:32px;
+}
+.closing-title span { color:var(--yellow); }
+.closing-body {
+  font-size:18px; color:var(--gray-light);
+  line-height:1.8; max-width:560px;
+  position:relative; z-index:2;
+}
+
+/* ── ICON ROWS ── */
+.icon-row { display:flex; gap:32px; flex-wrap:wrap; margin-top:28px; }
+.icon-item { display:flex; flex-direction:column; align-items:center; gap:10px; }
+.icon-box {
+  width:56px; height:56px;
+  background:var(--dark3); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  transition:all .3s;
+}
+.icon-box:hover { border-color:rgba(247,198,0,.35); background:rgba(247,198,0,.08); }
+.icon-name {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--gray);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     COVER
+══════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+
+  <div class="cover-top">
+    <!-- Logo -->
+    <a class="bpt-mark" href="#">
+      <svg width="44" height="44" viewBox="0 0 60 60">
+        <rect width="60" height="60" fill="#F7C600"/>
+        <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+        <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+        <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+        <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+        <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/>
+        <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/>
+        <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
+      </svg>
+      <div class="bpt-wordstack">
+        <span class="the">The</span>
+        <span class="bp">Blueprint</span>
+        <span class="train">Training</span>
+      </div>
+    </a>
+    <div class="cover-meta">
+      BLUEPRINTTRAINING.COM<br>
+      COPYRIGHT ©2025<br>
+      VERSION 1.0
+    </div>
+  </div>
+
+  <div class="cover-center">
+    <div class="cover-headline">
+      Brand<br>
+      <span class="accent">Style</span><br>
+      Guide.
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <p class="cover-bottom-desc">The definitive reference for voice, tone, and visual identity across all Blueprint Training communications and brand touchpoints.</p>
+    <div class="cover-bottom-meta">
+      BLUEPRINTTRAINING.COM &nbsp;·&nbsp; COPYRIGHT ©2025
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     WELCOME
+══════════════════════════════════════ -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Introduction</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 02</span>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.9;color:var(--white);">Welcome.</div>
+    </div>
+    <div>
+      <div style="margin-bottom:32px;">
+        <div class="section-label">Purpose of This Guide</div>
+        <p class="section-body">This Style Guide ensures that every piece of Blueprint Training content — written, visual, digital, or spoken — carries a consistent identity that is compelling, credible, and unmistakably ours. It should be used by any internal or external resource creating branded messaging on behalf of Blueprint Training.</p>
+      </div>
+      <div>
+        <div class="section-label">Brand Image</div>
+        <p class="section-body">Blueprint Training's brand does not exist in a vacuum. It is dynamic, and is built every time we publish a video, send an email, post on LinkedIn, or onboard a new member. In the nine years Blueprint has operated, it has built a steady reputation for <strong>radical transparency, practitioner-grade content, and systems that actually work</strong> — all with the member's results first.</p>
+        <p class="section-body" style="margin-top:16px;">To ensure a unified brand voice, a common language must be adopted for all brand communications. This guide is that language.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     TABLE OF CONTENTS
+══════════════════════════════════════ -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Introduction</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 03</span>
+  </div>
+
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:.9;color:var(--white);margin-bottom:64px;">Contents</div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:48px;">
+    <div>
+      <div class="section-label" style="font-size:10px;margin-bottom:20px;">Introduction</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">02.</span>Welcome</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">03.</span>Table of Contents</div>
+      </div>
+      <div class="section-label" style="font-size:10px;margin-bottom:20px;margin-top:36px;">About Blueprint</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">05.</span>Brand Foundation</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label" style="font-size:10px;margin-bottom:20px;">Voice &amp; Tone</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">07.</span>Brand Voice</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">09.</span>Tone</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">10.</span>Stylistic Rules</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">11.</span>General Usage Rules</div>
+      </div>
+      <div class="section-label" style="font-size:10px;margin-bottom:20px;margin-top:36px;">Brand Logo</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">13.</span>Icon Meaning</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">15.</span>Primary Lockup</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">17.</span>Color Variations</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">22.</span>Clear Space</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">24.</span>Logo Placement</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">29.</span>Common Errors</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label" style="font-size:10px;margin-bottom:20px;">Brand Colors</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">31.</span>Primary Color Palette</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">33.</span>Using Tints</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">34.</span>Using White &amp; Black</div>
+      </div>
+      <div class="section-label" style="font-size:10px;margin-bottom:20px;margin-top:36px;">Typography</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">35.</span>Primary Typefaces</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">36.</span>Weights</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">37.</span>Using Type</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">38.</span>Digital Type</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">41.</span>Common Errors</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label" style="font-size:10px;margin-bottom:20px;">Visual Style</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">43.</span>Grids</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">46.</span>Iconography</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">47.</span>Elements</div>
+      </div>
+      <div class="section-label" style="font-size:10px;margin-bottom:20px;margin-top:36px;">Photography</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">49.</span>Tone</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">50.</span>Examples</div>
+      </div>
+      <div class="section-label" style="font-size:10px;margin-bottom:20px;margin-top:36px;">Brand Collateral</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">52.</span>Stationery</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">54.</span>Signage</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">55.</span>Collateral</div>
+        <div style="font-size:14px;color:var(--gray);"><span style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;margin-right:12px;">58.</span>Advertising</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CH 01 — ABOUT BLUEPRINT
+══════════════════════════════════════ -->
+<div class="chapter yellow-bg">
+  <div class="chapter-grid-y"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;">
+    <span class="chapter-num">01</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.3);">The Blueprint Training Style Guide</span>
+  </div>
+  <div class="chapter-title">About<br>Blueprint<br>Training</div>
+  <div class="chapter-desc">Nine years. Hundreds of agency owners. One obsession — building systems that actually work.</div>
+</div>
+
+<!-- Brand Foundation -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">About Blueprint Training</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 04</span>
+  </div>
+  <div class="two-col">
+    <div>
+      <div class="sidebar-title">Committed<br>to <span class="yellow">Member<br>Results.</span></div>
+    </div>
+    <div class="sidebar-body">
+      <p>The Blueprint Training was built by a working agency owner, for agency owners. For nine years, Blueprint has been the highest-signal SEO education program in the market — producing graduates who run real, profitable agencies backed by real systems and documented results.</p>
+      <p>We don't teach theory. We teach exactly what we do inside Webris, updated in real time as the market shifts. That radical commitment to authenticity is the bedrock of the Blueprint brand and the reason our community trusts us.</p>
+      <p>Today, Blueprint sits at the frontier of AI-native agency operations. Through the <strong>Agency Build</strong> membership and programs like <strong>The One-Person Agency</strong>, we're showing solo operators how to run seven-figure businesses using Claude AI agents to systematize every function — from SEO delivery to sales re-engagement to client reporting.</p>
+      <p>When Blueprint communicates, it speaks with the earned authority of someone who has done it, is still doing it, and is relentlessly improving. That voice must be consistent across every touchpoint.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Foundation Pyramid -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">About Blueprint Training</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 05</span>
+  </div>
+  <div style="display:grid;grid-template-columns:360px 1fr;gap:80px;align-items:start;">
+    <div>
+      <div class="sidebar-title">Brand<br>Foundation</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:20px;">The Brand Foundation is a simple declaration of what Blueprint stands for. Its essence should consistently permeate all brand communications — written, verbal, visual, and digital. It speaks to the member first, backed by Blueprint's unique character and track record.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:3px;">
+      <!-- What -->
+      <div style="display:grid;grid-template-columns:100px 1fr;gap:20px;align-items:center;">
+        <div style="text-align:right;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);">What</div>
+          <div style="font-size:12px;color:rgba(138,144,168,.5);line-height:1.4;margin-top:4px;">Our reason<br>for being</div>
+        </div>
+        <div style="background:var(--yellow);padding:20px 28px;display:flex;align-items:center;max-width:420px;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.03em;color:var(--black);line-height:1.5;">If you run — or want to run — a real SEO agency, Blueprint gives you the exact playbook, systems, and AI infrastructure to make it happen.</p>
+        </div>
+      </div>
+      <!-- Why -->
+      <div style="display:grid;grid-template-columns:100px 1fr;gap:20px;align-items:center;">
+        <div style="text-align:right;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);">Why</div>
+          <div style="font-size:12px;color:rgba(138,144,168,.5);line-height:1.4;margin-top:4px;">Personal<br>&amp; inspiring</div>
+        </div>
+        <div style="background:rgba(247,198,0,.7);padding:18px 28px;max-width:540px;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.03em;color:var(--black);line-height:1.5;">The agency model is broken for most operators. Too much overhead, too little margin, too many unknowns. AI changes the math — and we're the ones who've figured out how.</p>
+        </div>
+      </div>
+      <!-- How -->
+      <div style="display:grid;grid-template-columns:100px 1fr;gap:20px;align-items:center;">
+        <div style="text-align:right;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);">How</div>
+          <div style="font-size:12px;color:rgba(138,144,168,.5);line-height:1.4;margin-top:4px;">Deliver<br>on promise</div>
+        </div>
+        <div style="background:rgba(247,198,0,.4);padding:18px 28px;max-width:660px;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.03em;color:var(--white);line-height:1.5;">Live inside a real agency. Build and share AI systems openly. Deliver curriculum updated as the market changes, not when a course refresh is scheduled.</p>
+        </div>
+      </div>
+      <!-- Personality -->
+      <div style="display:grid;grid-template-columns:100px 1fr;gap:20px;align-items:center;">
+        <div style="text-align:right;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);">Personality</div>
+          <div style="font-size:12px;color:rgba(138,144,168,.5);line-height:1.4;margin-top:4px;">Voice<br>&amp; tone</div>
+        </div>
+        <div style="background:rgba(247,198,0,.15);border:1px solid rgba(247,198,0,.2);padding:18px 28px;max-width:800px;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.03em;color:var(--gray-light);font-style:italic;line-height:1.5;">Direct. Confident. No-BS. Technically sophisticated but plain-spoken. Smart. Experienced. Successful. Attentive. Dependable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CH 02 — VOICE & TONE
+══════════════════════════════════════ -->
+<div class="chapter dark-bg">
+  <div class="chapter-grid-d"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;">
+    <span class="chapter-num" style="color:rgba(255,255,255,.2);">02</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2);">The Blueprint Training Style Guide</span>
+  </div>
+  <div class="chapter-title">Voice<br>&amp; <span>Tone</span></div>
+  <div class="chapter-desc">Voice is WHO we are. Tone is HOW we speak in context. One is constant; the other adapts to the moment.</div>
+</div>
+
+<!-- Voice vs Tone -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Voice &amp; Tone</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 06</span>
+  </div>
+  <div class="two-col">
+    <div class="sidebar-title">Voice<br>vs. Tone</div>
+    <div class="sidebar-body">
+      <p>Think of voice as the constant and tone as the variable. Our voice is the identity of Blueprint Training — it doesn't change. It's built from nine years of practitioner credibility and a founder who still runs an active agency every day.</p>
+      <p>Tone, however, adapts to context. The tone in a program launch email is energetic and direct. The tone in a reply to a struggling member is patient and encouraging. Both are still unmistakably Blueprint — but they read differently in the moment.</p>
+      <p>Always ask: <strong>Is this how a brilliant, no-BS practitioner would explain this to a peer?</strong> If yes, you're on brand.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Voice -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Voice &amp; Tone</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 07</span>
+  </div>
+  <div style="margin-bottom:32px;">
+    <div class="section-label">Brand Voice</div>
+    <div class="section-title" style="font-size:56px;">Brand Personality:<br>If Blueprint Were a Person</div>
+  </div>
+  <div class="two-even">
+    <div class="voice-card yes">
+      <div class="voice-verdict yes">YES</div>
+      <div class="voice-name">The Practitioner</div>
+      <p class="voice-desc">A working agency founder who still runs campaigns, tests AI systems, and shares real results — wins and failures. Teaches because they're compelled to share what works, not to sell a lifestyle. Shows the dashboard, not the Lambo.</p>
+      <div class="attr-list">
+        <div class="attr yes">Direct</div>
+        <div class="attr yes">Credible</div>
+        <div class="attr yes">Systematic</div>
+        <div class="attr yes">No-BS</div>
+        <div class="attr yes">Generous</div>
+        <div class="attr yes">Current</div>
+        <div class="attr yes">Practical</div>
+        <div class="attr yes">Confident</div>
+        <div class="attr yes">Dependable</div>
+        <div class="attr yes">Sincere</div>
+      </div>
+    </div>
+    <div class="voice-card no">
+      <div class="voice-verdict no">NO</div>
+      <div class="voice-name">The Guru</div>
+      <p class="voice-desc">Someone who sold an agency five years ago and now teaches from screenshots of old wins. Speaks in hype, avoids specifics, and prioritizes personal brand over member results. Lots of lifestyle content. Zero systems documentation.</p>
+      <div class="attr-list">
+        <div class="attr no">Vague</div>
+        <div class="attr no">Hype-Driven</div>
+        <div class="attr no">Lifestyle-First</div>
+        <div class="attr no">Preachy</div>
+        <div class="attr no">Salesy</div>
+        <div class="attr no">Theoretical</div>
+        <div class="attr no">Gatekeeping</div>
+        <div class="attr no">Self-Centered</div>
+        <div class="attr no">Exploitative</div>
+        <div class="attr no">Flashy</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second Voice Pair -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Voice &amp; Tone</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 08</span>
+  </div>
+  <div class="two-even">
+    <div class="voice-card yes">
+      <div class="voice-verdict yes">YES</div>
+      <div class="voice-name">The Systems Builder</div>
+      <p class="voice-desc">Methodical, smart, always thinking in processes. Explains complex ideas in plain language. Comfortable with technical depth. Respected by peers. Never talks down to the audience — always talks alongside them.</p>
+      <div class="attr-list">
+        <div class="attr yes">Smart</div>
+        <div class="attr yes">Experienced</div>
+        <div class="attr yes">Professional</div>
+        <div class="attr yes">Focused</div>
+        <div class="attr yes">Systematic</div>
+        <div class="attr yes">Unflappable</div>
+        <div class="attr yes">Successful</div>
+        <div class="attr yes">Protective</div>
+      </div>
+    </div>
+    <div class="voice-card no">
+      <div class="voice-verdict no">NO</div>
+      <div class="voice-name">The Hype Machine</div>
+      <p class="voice-desc">Leads with vibes instead of substance. Content is indistinguishable from any other marketing educator. Leans on FOMO, countdown timers, and manufactured urgency. Never shows the actual work.</p>
+      <div class="attr-list">
+        <div class="attr no">Egotistical</div>
+        <div class="attr no">Goofy</div>
+        <div class="attr no">Insecure</div>
+        <div class="attr no">Amateurish</div>
+        <div class="attr no">Indecisive</div>
+        <div class="attr no">Immature</div>
+        <div class="attr no">Unknowledgeable</div>
+        <div class="attr no">Awkward</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tone — OK / Not OK -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Voice &amp; Tone</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 09</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="sidebar-title">Tone</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gray);margin-bottom:20px;">Expressing the Voice</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;">Blueprint speaks to agency owners who are smart, busy, and skeptical of fluff. Every message should respect their intelligence, get to the point fast, and leave them with something immediately actionable. Appeal to both logic and proof.</p>
+    </div>
+    <div class="tone-split">
+      <div class="tone-col ok">
+        <div class="tone-head">✓ OK</div>
+        <ul class="tone-list">
+          <li>Specific, actionable language — name the exact tactic</li>
+          <li>First-person perspective from real agency experience</li>
+          <li>Lead with the outcome the member cares about</li>
+          <li>Everyday, conversational phrases</li>
+          <li>Emphasis on expertise, track record, and results</li>
+          <li>Short sentences. Plain words. No jargon padding.</li>
+        </ul>
+        <div class="tone-example">"Here's exactly how we're using Claude to automate prospecting inside Webris — step by step, including the prompts."</div>
+        <div class="tone-example">"This took us 3 hours to build. Now it runs itself. Here's the full breakdown."</div>
+      </div>
+      <div class="tone-col no">
+        <div class="tone-head">✗ NOT OK</div>
+        <ul class="tone-list">
+          <li>Hyperbole or boastful phrasing without proof</li>
+          <li>Sales-y, cheesy language</li>
+          <li>Phrasing that puts brand needs at the forefront</li>
+          <li>Transactional or manipulative language</li>
+          <li>Vague aspiration without specifics</li>
+          <li>Content that could have been written by anyone</li>
+        </ul>
+        <div class="tone-example">"Are you leaving money on the table? Join our REVOLUTIONARY AI-powered methodology and TRANSFORM your agency TODAY!"</div>
+        <div class="tone-example">"In today's rapidly evolving digital landscape, agencies must leverage best-in-class solutions to remain competitive."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Stylistic Rules -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Voice &amp; Tone</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 10</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div class="sidebar-title">Stylistic<br>Rules</div>
+    <div class="rule-grid">
+      <div class="rule-card"><div class="rule-num">01</div><div class="rule-title">Be Concise</div><div class="rule-body">Online visitors scan, they don't read. Use short sentences that stick to one idea. Leverage bullets, subheadings, and whitespace to make information quickly digestible. Less is more.</div></div>
+      <div class="rule-card"><div class="rule-num">02</div><div class="rule-title">Lead With a Benefit</div><div class="rule-body">Use concepts that impact the reader emotionally or intellectually. Emphasize how Blueprint content will improve their agency. "Build a seven-figure solo agency" before "Here's our program."</div></div>
+      <div class="rule-card"><div class="rule-num">03</div><div class="rule-title">Write in 2nd Person</div><div class="rule-body">Avoid "the member" or "students." Simply write "you" and "your." It's more direct, more human, and more respectful of the reader's intelligence. Blueprint speaks to one person at a time.</div></div>
+      <div class="rule-card"><div class="rule-num">04</div><div class="rule-title">Brand Name Usage</div><div class="rule-body">"The Blueprint Training" on first reference, then "Blueprint." "Agency Build" for the membership product. "The One-Person Agency" for the flagship program. Never abbreviate to "BPT" in external content.</div></div>
+      <div class="rule-card"><div class="rule-num">05</div><div class="rule-title">Print Rules</div><div class="rule-body">Out-of-home and print collateral compete for attention in the physical world. One simple headline and subhead is all the copy you can afford. Exception: close-inspection formats like brochures allow more detail.</div></div>
+      <div class="rule-card"><div class="rule-num">06</div><div class="rule-title">Punctuation &amp; Style</div><div class="rule-body">Use the serial comma. Em-dashes without spaces. Headlines in Title Case. Use "&" in headlines instead of "and." Periods on sentences in bullet lists. AP Style as the default fallback guide.</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CH 03 — BRAND LOGO
+══════════════════════════════════════ -->
+<div class="chapter yellow-bg">
+  <div class="chapter-grid-y"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;">
+    <span class="chapter-num">03</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.3);">The Blueprint Training Style Guide</span>
+  </div>
+  <div class="chapter-title">Brand<br>Logo</div>
+  <div class="chapter-desc">The heart, soul, and center of our brand identity. Present it correctly in every execution.</div>
+</div>
+
+<!-- Icon Meaning -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Brand Logo</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 13</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+    <div>
+      <div class="section-label">What Our Icon Stands For</div>
+      <p class="section-body" style="margin-bottom:20px;">The Blueprint Training mark is a yellow square carrying a circuit-board node pattern — the visual language of precision engineering and systematic thinking. The grid lines and dot nodes reference the actual notation of a technical blueprint document.</p>
+      <p class="section-body" style="margin-bottom:20px;">The nodes form a deliberate path — representing the progression a member takes through the Blueprint Training system, from raw operator to systematized agency owner. Every node is a milestone. The path is the program.</p>
+      <p class="section-body">The Orbitron wordstack communicates technical authority and future-forward thinking. "Blueprint" in gold sits above the quieter "Training" — the brand name dominates, the category descriptor recedes.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:32px;">
+      <svg width="200" height="200" viewBox="0 0 60 60">
+        <rect width="60" height="60" fill="#F7C600"/>
+        <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+        <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+        <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+        <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+        <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/>
+        <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/>
+        <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
+      </svg>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);text-align:center;">Precision · Systems · Progression</div>
+    </div>
+  </div>
+</div>
+
+<!-- Primary Lockup / Flexible Identity -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Brand Logo</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 14</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="sidebar-title">A Flexible<br>Identity<br>System</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:20px;">Trying to fit the same mark on a billboard and a favicon is a challenge. Our identity system is designed for flexibility, consistency, and brand recognition across every surface. Use the appropriate lockup for the available space.</p>
+      <div style="margin-top:32px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:8px;">Minimum Size</div>
+        <p style="font-size:13px;color:var(--gray);">50px / 0.75" for primary lockup<br>40px / 0.5" for horizontal lockup<br>32px / 0.4" for icon-only mark</p>
+      </div>
+    </div>
+    <div>
+      <!-- Primary lockup -->
+      <div style="margin-bottom:24px;">
+        <div class="logo-box on-dark" style="min-height:180px;">
+          <div class="logo-box-grid"></div>
+          <div style="position:relative;z-index:2;">
+            <a class="bpt-mark lg" href="#">
+              <svg width="72" height="72" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#F7C600"/>
+                <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+                <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+                <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+                <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/>
+                <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/>
+                <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/>
+                <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
+                <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
+                <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
+                <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
+                <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
+              </svg>
+              <div class="bpt-wordstack">
+                <span class="the">The</span>
+                <span class="bp">Blueprint</span>
+                <span class="train">Training</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="logo-box-label">PRIMARY LOCKUP — DEFAULT FOR ALL EXECUTIONS</div>
+      </div>
+      <!-- Alternate lockups -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;">
+        <div>
+          <div class="logo-box on-dark" style="min-height:120px;padding:28px;">
+            <div class="logo-box-grid"></div>
+            <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;">
+              <svg width="44" height="44" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg>
+              <div class="bpt-wordstack" style="align-items:center;text-align:center;">
+                <span class="the">The</span>
+                <span class="bp">Blueprint</span>
+                <span class="train">Training</span>
+              </div>
+            </div>
+          </div>
+          <div class="logo-box-label">VERTICAL LOCKUP</div>
+        </div>
+        <div>
+          <div class="logo-box on-dark" style="min-height:120px;padding:24px;">
+            <div class="logo-box-grid"></div>
+            <div style="position:relative;z-index:2;">
+              <svg width="44" height="44" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg>
+            </div>
+          </div>
+          <div class="logo-box-label">ICON ONLY</div>
+        </div>
+        <div>
+          <div class="logo-box on-dark" style="min-height:120px;padding:24px;">
+            <div class="logo-box-grid"></div>
+            <div style="position:relative;z-index:2;">
+              <div style="font-family:'Orbitron',sans-serif;font-size:18px;font-weight:800;color:var(--yellow);letter-spacing:.06em;text-transform:uppercase;line-height:1;">Blueprint</div>
+            </div>
+          </div>
+          <div class="logo-box-label">WORDMARK ONLY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Color Variations -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Brand Logo</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 17</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="sidebar-title">Color<br>Variations</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:20px;">Each logo lockup has approved color variations for different background types. When in doubt, use the version with the highest legibility contrast for the surface it occupies.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+      <div>
+        <div class="logo-box on-dark" style="min-height:140px;">
+          <div class="logo-box-grid"></div>
+          <div style="position:relative;z-index:2;"><a class="bpt-mark" href="#"><svg width="36" height="36" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg><div class="bpt-wordstack"><span class="the">The</span><span class="bp">Blueprint</span><span class="train">Training</span></div></a></div>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-top:10px;line-height:2;">Mark: Yellow Square<br>Wordmark: Yellow + White<br>Use: Dark backgrounds</div>
+      </div>
+      <div>
+        <div class="logo-box on-black" style="min-height:140px;border-color:rgba(247,198,0,.15);">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,.04) 1px,transparent 1px);background-size:40px 40px;"></div>
+          <div style="position:relative;z-index:2;"><a class="bpt-mark" href="#"><svg width="36" height="36" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg><div class="bpt-wordstack"><span class="the">The</span><span class="bp">Blueprint</span><span class="train">Training</span></div></a></div>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-top:10px;line-height:2;">Mark: Yellow Square<br>Wordmark: Yellow + White<br>Use: Pure black backgrounds</div>
+      </div>
+      <div>
+        <div class="logo-box on-white" style="min-height:140px;">
+          <div style="position:relative;z-index:2;display:flex;align-items:center;gap:14px;">
+            <svg width="36" height="36" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg>
+            <div class="bpt-wordstack"><span class="the" style="color:rgba(11,14,26,.28);">The</span><span class="bp" style="color:var(--yellow-dark);">Blueprint</span><span class="train" style="color:rgba(11,14,26,.22);">Training</span></div>
+          </div>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-top:10px;line-height:2;">Mark: Yellow Square<br>Wordmark: Yellow Dark + Black<br>Use: White / light backgrounds</div>
+      </div>
+      <div>
+        <div class="logo-box on-yellow" style="min-height:140px;">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.07) 1px,transparent 1px);background-size:40px 40px;"></div>
+          <div style="position:relative;z-index:2;display:flex;align-items:center;gap:14px;">
+            <svg width="36" height="36" viewBox="0 0 60 60"><rect width="60" height="60" fill="#0B0E1A"/><line x1="12" y1="12" x2="30" y2="12" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2"/><polyline points="30,12 39,21 30,30" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><circle cx="12" cy="12" r="4" fill="#F7C600"/><circle cx="21" cy="12" r="4" fill="#F7C600"/><circle cx="30" cy="12" r="4" fill="#F7C600"/><circle cx="12" cy="21" r="4" fill="#F7C600"/><circle cx="39" cy="21" r="4" fill="#F7C600"/><circle cx="12" cy="30" r="4" fill="#F7C600"/><circle cx="21" cy="30" r="4" fill="#F7C600"/><circle cx="30" cy="30" r="4" fill="#F7C600"/><circle cx="12" cy="39" r="4" fill="#F7C600"/><circle cx="39" cy="39" r="4" fill="#F7C600"/><circle cx="12" cy="48" r="4" fill="#F7C600"/><circle cx="21" cy="48" r="4" fill="#F7C600"/><circle cx="30" cy="48" r="4" fill="#F7C600"/></svg>
+            <div class="bpt-wordstack"><span class="the" style="color:rgba(11,14,26,.4);">The</span><span class="bp" style="color:var(--black);">Blueprint</span><span class="train" style="color:rgba(11,14,26,.35);">Training</span></div>
+          </div>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-top:10px;line-height:2;">Mark: Black Square<br>Wordmark: Black + Black<br>Use: Yellow backgrounds</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Logo Common Errors -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Brand Logo</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 29</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="sidebar-title">Common<br>Errors</div>
+      <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-top:16px;">Note: This is not a comprehensive list of errors. These are the most common and egregious violations of logo integrity.</p>
+    </div>
+    <div class="error-grid">
+      <div class="error-card"><div class="error-label">✗ Do Not Stretch</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(248,113,113,.5);letter-spacing:.04em;transform:scaleX(1.4);transform-origin:left;display:inline-block;">Blueprint</div><div class="error-body">Do not stretch, squash, skew, or distort the logo or mark in any way.</div></div>
+      <div class="error-card"><div class="error-label">✗ Off-Brand Color</div><div style="font-family:'Orbitron',sans-serif;font-size:14px;font-weight:800;color:#FF0080;">Blueprint</div><div class="error-body">Do not edit the logo color, use an off-brand color, or reduce the logo opacity.</div></div>
+      <div class="error-card"><div class="error-label">✗ Drop Shadow</div><div style="font-family:'Orbitron',sans-serif;font-size:14px;font-weight:800;color:var(--yellow);text-shadow:4px 4px 8px rgba(247,198,0,.8);">Blueprint</div><div class="error-body">Do not add graphic effects including drop shadows, glows, or outlines to the wordmark.</div></div>
+      <div class="error-card"><div class="error-label">✗ Busy Background</div><div style="background:repeating-linear-gradient(45deg,rgba(247,198,0,.2),rgba(247,198,0,.2) 4px,transparent 4px,transparent 12px);padding:8px;display:inline-block;"><span style="font-family:'Orbitron',sans-serif;font-size:12px;font-weight:800;color:var(--yellow);">Blueprint</span></div><div class="error-body">Do not place the logo on a high-contrast pattern or busy background.</div></div>
+      <div class="error-card"><div class="error-label">✗ Change Layout</div><div style="display:flex;align-items:center;gap:4px;margin-bottom:8px;"><div class="bpt-wordstack"><span class="bp" style="font-size:10px;">Blueprint</span></div><svg width="24" height="24" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/></svg></div><div class="error-body">Do not rearrange the relationship between the mark and wordmark elements.</div></div>
+      <div class="error-card"><div class="error-label">✗ Encroach Clear Space</div><div style="font-size:24px;line-height:1;color:var(--yellow);margin-bottom:8px;">→</div><div class="error-body">Always maintain clear space equal to the width of the mark on all four sides of the logo.</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CH 04 — BRAND COLORS
+══════════════════════════════════════ -->
+<div class="chapter black-bg">
+  <div class="chapter-grid-d"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;">
+    <span class="chapter-num">04</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2);">The Blueprint Training Style Guide</span>
+  </div>
+  <div class="chapter-title">Brand<br><span>Colors</span></div>
+  <div class="chapter-desc">Color sets us apart and helps invoke authority and precision. Use the palette faithfully across all touchpoints.</div>
+</div>
+
+<!-- Primary Palette -->
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;min-height:50vh;">
+  <div class="swatch" style="background:#F7C600;">
+    <div class="swatch-name" style="color:#0B0E1A;">Blueprint Yellow</div>
+    <div class="swatch-vals" style="color:rgba(11,14,26,.6);">HEX: #F7C600<br>RGB: 247, 198, 0<br>CMYK: 0, 20, 100, 3<br>PMS: 7548 C</div>
+  </div>
+  <div class="swatch" style="background:#0B0E1A;border-right:1px solid rgba(255,255,255,.07);">
+    <div class="swatch-name" style="color:#fff;">Blueprint Black</div>
+    <div class="swatch-vals" style="color:var(--gray);">HEX: #0B0E1A<br>RGB: 11, 14, 26<br>CMYK: 58, 46, 0, 90<br>PMS: Black 6 C</div>
+  </div>
+  <div class="swatch" style="background:#181C2E;border-right:1px solid rgba(255,255,255,.07);">
+    <div class="swatch-name" style="color:#fff;">Deep Navy</div>
+    <div class="swatch-vals" style="color:var(--gray);">HEX: #181C2E<br>RGB: 24, 28, 46<br>CMYK: 48, 39, 0, 82<br>PMS: 2768 C</div>
+  </div>
+</div>
+
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Brand Colors</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 31</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="sidebar-title">Primary<br>Color<br>Palette</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:20px;">The consistent use of color is vital to effective brand recognition. Blueprint Yellow is the dominant accent. Blueprint Black is the primary background. Deep Navy and its variants provide depth and layering.</p>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:16px;"><strong style="color:var(--white);">Do not use unauthorized colors.</strong> Use the Pantone Matching System for printed materials to ensure color consistency.</p>
+    </div>
+    <div>
+      <!-- Secondary palette -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-bottom:40px;">
+        <div style="background:#111421;padding:20px;border:1px solid var(--border);">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--white);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;">Dark</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.06em;color:var(--gray);text-transform:uppercase;line-height:2;">HEX: #111421<br>Use: Surface layers</div>
+        </div>
+        <div style="background:#1F2438;padding:20px;border:1px solid var(--border);">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--white);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;">Dark 2</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.06em;color:var(--gray);text-transform:uppercase;line-height:2;">HEX: #1F2438<br>Use: Card surfaces</div>
+        </div>
+        <div style="background:#8A90A8;padding:20px;border:1px solid var(--border);">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--black);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;">Gray</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.06em;color:rgba(11,14,26,.6);text-transform:uppercase;line-height:2;">HEX: #8A90A8<br>Use: Body text</div>
+        </div>
+      </div>
+      <!-- Tints -->
+      <div class="section-label" style="margin-bottom:16px;">Using Tints</div>
+      <p style="font-size:14px;color:var(--gray);margin-bottom:20px;line-height:1.6;">When tints are necessary (UI hover states, background washes), use a 20% step system. Any tint below 60% requires dark text for legibility.</p>
+      <div>
+        <div class="tint-row">
+          <div class="tint" style="background:#F7C600;color:#0B0E1A;">100%</div>
+          <div class="tint" style="background:rgba(247,198,0,.8);color:#0B0E1A;">80%</div>
+          <div class="tint" style="background:rgba(247,198,0,.6);color:#0B0E1A;">60%</div>
+          <div class="tint" style="background:rgba(247,198,0,.4);color:var(--white);">40%</div>
+          <div class="tint" style="background:rgba(247,198,0,.2);color:var(--white);">20%</div>
+          <div class="tint" style="background:rgba(247,198,0,.1);color:var(--white);">10%</div>
+        </div>
+        <div class="tint-row" style="margin-top:4px;">
+          <div class="tint" style="background:#0B0E1A;color:#fff;border:1px solid var(--border);">100%</div>
+          <div class="tint" style="background:rgba(11,14,26,.8);color:var(--gray);border:1px solid var(--border);">80%</div>
+          <div class="tint" style="background:rgba(11,14,26,.6);color:var(--gray);border:1px solid var(--border);">60%</div>
+          <div class="tint" style="background:rgba(11,14,26,.4);color:var(--gray);border:1px solid var(--border);">40%</div>
+          <div class="tint" style="background:rgba(11,14,26,.2);color:var(--gray);border:1px solid var(--border);">20%</div>
+          <div class="tint" style="background:rgba(11,14,26,.1);color:var(--gray);border:1px solid var(--border);">10%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CH 05 — TYPOGRAPHY
+══════════════════════════════════════ -->
+<div class="chapter yellow-bg">
+  <div class="chapter-grid-y"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;">
+    <span class="chapter-num">05</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.3);">The Blueprint Training Style Guide</span>
+  </div>
+  <div class="chapter-title">Typog-<br>raphy</div>
+  <div class="chapter-desc">Three typefaces. Distinct roles. Together they carry the authority, precision, and warmth of the Blueprint brand.</div>
+</div>
+
+<!-- Typefaces -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Typography</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 35</span>
+  </div>
+
+  <div class="type-row" style="margin-bottom:2px;">
+    <div class="type-meta-row">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;">Primary Display — Bebas Neue</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.9;letter-spacing:.02em;color:var(--white);">Bebas Neue</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.04em;color:var(--gray);margin-top:8px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+      </div>
+      <div class="type-specs"><strong>USE:</strong> Section titles<br>Hero headlines<br>Chapter openers<br>Stats &amp; numbers<br><strong>WEIGHT:</strong> Regular only<br><strong>SOURCE:</strong> Google Fonts</div>
+    </div>
+  </div>
+
+  <div class="type-row" style="margin-bottom:2px;">
+    <div class="type-meta-row">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;">Secondary / Labels — Barlow Condensed</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:700;line-height:.95;letter-spacing:.02em;color:var(--white);">Barlow Condensed</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray);margin-top:8px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+      </div>
+      <div class="type-specs"><strong>USE:</strong> Eyebrows &amp; labels<br>Buttons &amp; CTAs<br>Nav items<br>Card titles<br><strong>WEIGHTS:</strong> 600, 700, 800<br><strong>SOURCE:</strong> Google Fonts</div>
+    </div>
+  </div>
+
+  <div class="type-row" style="margin-bottom:2px;">
+    <div class="type-meta-row">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;">Body / Long-Form — Barlow</div>
+        <div style="font-family:'Barlow',sans-serif;font-size:28px;font-weight:400;line-height:1.3;color:var(--white);">Barlow is our workhorse for long-form reading. Its <strong>clean geometry and generous spacing</strong> make it readable at all sizes.</div>
+        <div style="font-family:'Barlow',sans-serif;font-size:16px;color:var(--gray);margin-top:12px;">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+      </div>
+      <div class="type-specs"><strong>USE:</strong> Body copy<br>Email content<br>Course material<br>Descriptions<br><strong>WEIGHTS:</strong> 400, 500, 600, 700<br><strong>SOURCE:</strong> Google Fonts</div>
+    </div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta-row">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;">Logo / Accent — Orbitron</div>
+        <div style="font-family:'Orbitron',sans-serif;font-size:36px;font-weight:800;color:var(--yellow);line-height:1;letter-spacing:.04em;">Blueprint</div>
+        <div style="font-family:'Orbitron',sans-serif;font-size:16px;font-weight:600;color:var(--gray);margin-top:12px;letter-spacing:.08em;">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0 1 2 3 4 5 6 7 8 9</div>
+      </div>
+      <div class="type-specs"><strong>USE:</strong> Logo wordmark only<br>Do not use for<br>body or headlines<br><strong>WEIGHTS:</strong> 600, 700, 800, 900<br><strong>SOURCE:</strong> Google Fonts</div>
+    </div>
+  </div>
+</div>
+
+<!-- Type Scale -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Typography</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 38</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="sidebar-title">Digital<br>Type Scale</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:20px;">The heading structure shown here is the standard breakdown of heading size and style for digital properties. H-levels should follow SEO and development best practices. Exceptions exist between page templates.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1px;">
+      <div style="background:var(--dark);border:1px solid var(--border);padding:24px 28px;display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.95;letter-spacing:.02em;color:var(--white);">Heading One</div>
+        <div class="type-specs" style="border-left:2px solid rgba(247,198,0,.2);padding-left:16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--gray);line-height:2;letter-spacing:.06em;text-transform:uppercase;">Bebas Neue<br>72–110px<br>Hero &amp; page titles</div>
+      </div>
+      <div style="background:var(--dark);border:1px solid var(--border);padding:24px 28px;display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:.95;letter-spacing:.02em;color:var(--white);">Heading Two</div>
+        <div class="type-specs" style="border-left:2px solid rgba(247,198,0,.2);padding-left:16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--gray);line-height:2;letter-spacing:.06em;text-transform:uppercase;">Bebas Neue<br>42–56px<br>Section headings</div>
+      </div>
+      <div style="background:var(--dark);border:1px solid var(--border);padding:24px 28px;display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:28px;letter-spacing:.04em;text-transform:uppercase;color:var(--white);">Heading Three</div>
+        <div class="type-specs" style="border-left:2px solid rgba(247,198,0,.2);padding-left:16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--gray);line-height:2;letter-spacing:.06em;text-transform:uppercase;">Barlow Condensed 700<br>24–32px<br>Subsections</div>
+      </div>
+      <div style="background:var(--dark);border:1px solid var(--border);padding:24px 28px;display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);display:flex;align-items:center;gap:10px;"><span style="display:block;width:28px;height:2px;background:var(--yellow);flex-shrink:0;"></span>Heading Four / Label</div>
+        <div class="type-specs" style="border-left:2px solid rgba(247,198,0,.2);padding-left:16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--gray);line-height:2;letter-spacing:.06em;text-transform:uppercase;">Barlow Condensed 700<br>11–13px · +0.2em<br>Section labels</div>
+      </div>
+      <div style="background:var(--dark);border:1px solid var(--border);padding:24px 28px;display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;">
+        <div style="font-family:'Barlow',sans-serif;font-size:17px;line-height:1.75;color:var(--gray-light);max-width:480px;">Body copy is set in Barlow at 16–18px with 1.75 line height. Use gray-light (#C8CEDF) on dark backgrounds. Max-width 640px for readability.</div>
+        <div class="type-specs" style="border-left:2px solid rgba(247,198,0,.2);padding-left:16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--gray);line-height:2;letter-spacing:.06em;text-transform:uppercase;">Barlow 400<br>16–18px · 1.75 lh<br>Paragraphs</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CH 06 — VISUAL STYLE
+══════════════════════════════════════ -->
+<div class="chapter dark-bg">
+  <div class="chapter-grid-d"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;">
+    <span class="chapter-num" style="color:rgba(255,255,255,.2);">06</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2);">The Blueprint Training Style Guide</span>
+  </div>
+  <div class="chapter-title">Visual<br><span>Style</span></div>
+  <div class="chapter-desc">Ingredients for on-brand layouts and compositions — grids, icons, and visual elements that create systematic precision.</div>
+</div>
+
+<!-- Grids -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Visual Style</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 43</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+    <div>
+      <div class="sidebar-title">The Grid<br>System</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:20px;">All Blueprint layouts are built on an explicit grid. The yellow micro-grid background is both structural and decorative — it directly references the blueprint document aesthetic that the brand takes its name from.</p>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:16px;"><strong style="color:var(--white);">Digital:</strong> 12-column responsive, 24px gutters, 6% side margins. <br><strong style="color:var(--white);">Presentation:</strong> 12-column landscape grid, left-weighted content zone. <br><strong style="color:var(--white);">Print:</strong> 4-column portrait grid with generous margins.</p>
+      <div style="margin-top:32px;">
+        <div class="section-label" style="margin-bottom:16px;">Background Grid</div>
+        <div style="background:var(--dark);border:1px solid var(--border-y);padding:24px;display:flex;align-items:center;gap:20px;">
+          <div style="width:80px;height:60px;position:relative;overflow:hidden;flex-shrink:0;">
+            <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,.08) 1px,transparent 1px);background-size:16px 16px;"></div>
+          </div>
+          <div style="font-size:13px;color:var(--gray);line-height:1.6;">Yellow grid at 4–8% opacity on dark backgrounds. 60px cell size. Applied to hero sections, chapter openers, and full-bleed surfaces.</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <!-- Grid visualization -->
+      <div class="grid-viz">
+        <div class="grid-bg-y"></div>
+        <div class="grid-viz-inner">
+          <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+          <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+          <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+          <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+        </div>
+        <div class="grid-viz-label">12 COLUMNS · 24px GUTTERS · 6% SIDE MARGINS</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Iconography + Elements -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Visual Style</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 46</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;">
+    <div>
+      <div class="sidebar-title" style="font-size:36px;">Iconography</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:16px;">Blueprint icons use a single-weight stroke style at 1.5px. Geometric, minimal, purposeful. Outlines preferred over fills. The style references technical notation and systems design. Icon source library: <strong style="color:var(--white);">Lucide Icons</strong> (open source).</p>
+      <div class="icon-row">
+        <div class="icon-item">
+          <div class="icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M8 4V2M16 4V2M3 9h18"/></svg>
+          </div>
+          <div class="icon-name">Calendar</div>
+        </div>
+        <div class="icon-item">
+          <div class="icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+          </div>
+          <div class="icon-name">Activity</div>
+        </div>
+        <div class="icon-item">
+          <div class="icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg>
+          </div>
+          <div class="icon-name">Clock</div>
+        </div>
+        <div class="icon-item">
+          <div class="icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div class="icon-name">Edit</div>
+        </div>
+        <div class="icon-item">
+          <div class="icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="icon-name">Monitor</div>
+        </div>
+        <div class="icon-item">
+          <div class="icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="icon-name">Layers</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="sidebar-title" style="font-size:36px;">Elements</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:16px;">Blueprint uses a constrained set of decorative elements to create depth and visual consistency.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+        <div style="background:var(--dark2);border:1px solid var(--border);padding:20px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;">Yellow Rule</div>
+          <div style="display:flex;align-items:center;gap:10px;"><div style="width:28px;height:2px;background:var(--yellow);"></div><span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);">Section Label</span></div>
+          <div style="font-size:13px;color:var(--gray);margin-top:10px;line-height:1.5;">32px yellow rule preceding all section label text. Primary wayfinding motif throughout all layouts.</div>
+        </div>
+        <div style="background:var(--dark2);border:1px solid var(--border);padding:20px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;">Yellow Glow</div>
+          <div style="height:32px;background:radial-gradient(ellipse at center, rgba(247,198,0,.3) 0%, transparent 70%);margin-bottom:10px;"></div>
+          <div style="font-size:13px;color:var(--gray);line-height:1.5;">Radial yellow glow used behind hero sections and chapter openers. rgba(247,198,0,.12) for subtle; rgba(247,198,0,.3) for prominent.</div>
+        </div>
+        <div style="background:var(--dark2);border:1px solid var(--border);padding:20px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;">3px Top Border</div>
+          <div style="height:3px;background:var(--yellow);margin-bottom:10px;"></div>
+          <div style="font-size:13px;color:var(--gray);line-height:1.5;">Yellow 3px top-border on hover for all card surfaces. Applied via CSS :hover pseudoclass, transforms from scaleX(0) to scaleX(1).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CH 07 — PHOTOGRAPHY
+══════════════════════════════════════ -->
+<div class="chapter black-bg">
+  <div class="chapter-grid-d"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;">
+    <span class="chapter-num">07</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2);">The Blueprint Training Style Guide</span>
+  </div>
+  <div class="chapter-title">Photog-<br>raphy</div>
+  <div class="chapter-desc">Authentic. High-contrast. Purposeful. Real work environments — not stock photo studios.</div>
+</div>
+
+<!-- Photography Tone + Examples -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Photography</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 49</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="section-label">Tone</div>
+      <div class="sidebar-title" style="font-size:36px;">Dark.<br>Real.<br><span class="yellow">Precise.</span></div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:20px;">Blueprint photography should feel like it was captured inside a working agency — not a stock photo shoot. Dark environments, screen glow, real dashboards, working setups. If it could appear on a generic SaaS landing page, it's too polished.</p>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:16px;">Post-process toward cooler shadows, reduced red saturation, and slightly darkened blacks. The palette should complement the brand's dark + yellow aesthetic.</p>
+    </div>
+    <div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:24px;">
+        <div class="photo-ph"><div class="photo-ph-label">Agency workspace<br>Dark · Monitor glow<br>Real tools visible</div></div>
+        <div class="photo-ph"><div class="photo-ph-label">Dashboard / analytics<br>Real data preferred<br>Screen-capture aesthetic</div></div>
+        <div class="photo-ph" style="aspect-ratio:unset;min-height:120px;"><div class="photo-ph-label">Close-up detail<br>Keyboard · notebook</div></div>
+        <div class="photo-ph" style="aspect-ratio:unset;min-height:120px;"><div class="photo-ph-label">Person at work<br>Not posed · Candid</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+        <div style="background:rgba(74,222,128,.05);border:1px solid rgba(74,222,128,.2);padding:20px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#4ADE80;margin-bottom:14px;">✓ DO</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--gray);"><span style="color:#4ADE80;flex-shrink:0;">→</span>Dark-biased lighting with intentional shadows</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--gray);"><span style="color:#4ADE80;flex-shrink:0;">→</span>Real brand tools and dashboards visible in frame</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--gray);"><span style="color:#4ADE80;flex-shrink:0;">→</span>High contrast between subject and background</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--gray);"><span style="color:#4ADE80;flex-shrink:0;">→</span>Cool shadow tones that complement the brand palette</li>
+          </ul>
+        </div>
+        <div style="background:rgba(248,113,113,.04);border:1px solid rgba(248,113,113,.18);padding:20px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#F87171;margin-bottom:14px;">✗ DON'T</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--gray);"><span style="color:#F87171;flex-shrink:0;">→</span>Bright, saturated lifestyle photography</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--gray);"><span style="color:#F87171;flex-shrink:0;">→</span>Generic stock with people smiling at cameras</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--gray);"><span style="color:#F87171;flex-shrink:0;">→</span>Low-quality or blurry screenshots</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--gray);"><span style="color:#F87171;flex-shrink:0;">→</span>Warm-filtered or heavily saturated tones</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CH 08 — BRAND COLLATERAL
+══════════════════════════════════════ -->
+<div class="chapter yellow-bg">
+  <div class="chapter-grid-y"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;">
+    <span class="chapter-num">08</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.3);">The Blueprint Training Style Guide</span>
+  </div>
+  <div class="chapter-title">Brand<br>Collateral</div>
+  <div class="chapter-desc">Pre-designed layouts, crafted with care. Every touchpoint carries the Blueprint identity forward.</div>
+</div>
+
+<!-- Stationery -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Brand Collateral</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 52</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="sidebar-title">Stationery</div>
+      <div style="margin-top:32px;">
+        <div class="section-label" style="margin-bottom:16px;">Business Cards</div>
+        <ul class="spec-list">
+          <li><span>Size</span><span>Standard 3.5" × 2"</span></li>
+          <li><span>Paper</span><span>Uncoated 120# cover</span></li>
+          <li><span>Finish</span><span>Spot UV on mark (back)</span></li>
+          <li><span>Front</span><span>Blueprint Black, grid motif</span></li>
+          <li><span>Back</span><span>Full-bleed Blueprint Yellow</span></li>
+        </ul>
+        <div class="section-label" style="margin-bottom:16px;margin-top:28px;">Letterhead</div>
+        <ul class="spec-list">
+          <li><span>Size</span><span>Standard 8.5" × 11"</span></li>
+          <li><span>Paper</span><span>Uncoated 80# text</span></li>
+          <li><span>Print</span><span>2-color (Black + Yellow)</span></li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;">
+      <div>
+        <div class="bcard">
+          <div style="position:relative;z-index:2;display:flex;align-items:center;gap:12px;">
+            <svg width="28" height="28" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg>
+            <div class="bpt-wordstack"><span class="the">The</span><span class="bp">Blueprint</span><span class="train">Training</span></div>
+          </div>
+          <div style="position:relative;z-index:2;">
+            <div class="bcard-name">Ryan Stewart</div>
+            <div class="bcard-role">Founder &amp; Lead Instructor</div>
+            <div class="bcard-contact" style="margin-top:10px;">ryan@blueprinttraining.com<br>blueprinttraining.com</div>
+          </div>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-top:10px;">FRONT — Blueprint Black + Grid</div>
+      </div>
+      <div>
+        <div class="bcard-back">
+          <div style="position:relative;z-index:2;display:flex;align-items:center;gap:14px;">
+            <svg width="40" height="40" viewBox="0 0 60 60"><rect width="60" height="60" fill="#0B0E1A"/><line x1="12" y1="12" x2="30" y2="12" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2"/><polyline points="30,12 39,21 30,30" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#F7C600" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><circle cx="12" cy="12" r="4" fill="#F7C600"/><circle cx="21" cy="12" r="4" fill="#F7C600"/><circle cx="30" cy="12" r="4" fill="#F7C600"/><circle cx="12" cy="21" r="4" fill="#F7C600"/><circle cx="39" cy="21" r="4" fill="#F7C600"/><circle cx="12" cy="30" r="4" fill="#F7C600"/><circle cx="21" cy="30" r="4" fill="#F7C600"/><circle cx="30" cy="30" r="4" fill="#F7C600"/><circle cx="12" cy="39" r="4" fill="#F7C600"/><circle cx="39" cy="39" r="4" fill="#F7C600"/><circle cx="12" cy="48" r="4" fill="#F7C600"/><circle cx="21" cy="48" r="4" fill="#F7C600"/><circle cx="30" cy="48" r="4" fill="#F7C600"/></svg>
+            <div class="bpt-wordstack"><span class="the">The</span><span class="bp" style="font-size:16px;">Blueprint</span><span class="train">Training</span></div>
+          </div>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-top:10px;">BACK — Full-Bleed Yellow + Spot UV</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Digital Collateral -->
+<div class="spread black">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Brand Collateral</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 55</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="sidebar-title">Digital<br>Touch-<br>points</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:20px;">Blueprint operates primarily in digital environments — the member portal, YouTube, email, LinkedIn, and course platforms. Each requires specific logo and asset treatments consistent with the brand system.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+      <!-- Social Avatar -->
+      <div>
+        <div style="background:var(--dark);border:1px solid var(--border-y);padding:24px;min-height:120px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,.04) 1px,transparent 1px);background-size:20px 20px;"></div>
+          <div style="position:relative;z-index:2;width:72px;height:72px;background:var(--yellow);display:flex;align-items:center;justify-content:center;border-radius:4px;">
+            <svg width="44" height="44" viewBox="0 0 60 60"><rect width="60" height="60" fill="transparent"/><line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="2" stroke-opacity="0.3"/><line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="2" stroke-opacity="0.3"/><line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="2" stroke-opacity="0.3"/><line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="2" stroke-opacity="0.3"/><polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="2" stroke-opacity="0.3" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="2" stroke-opacity="0.3" fill="none"/><circle cx="12" cy="12" r="4.5" fill="#0B0E1A"/><circle cx="21" cy="12" r="4.5" fill="#0B0E1A"/><circle cx="30" cy="12" r="4.5" fill="#0B0E1A"/><circle cx="12" cy="21" r="4.5" fill="#0B0E1A"/><circle cx="39" cy="21" r="4.5" fill="#0B0E1A"/><circle cx="12" cy="30" r="4.5" fill="#0B0E1A"/><circle cx="21" cy="30" r="4.5" fill="#0B0E1A"/><circle cx="30" cy="30" r="4.5" fill="#0B0E1A"/><circle cx="12" cy="39" r="4.5" fill="#0B0E1A"/><circle cx="39" cy="39" r="4.5" fill="#0B0E1A"/><circle cx="12" cy="48" r="4.5" fill="#0B0E1A"/><circle cx="21" cy="48" r="4.5" fill="#0B0E1A"/><circle cx="30" cy="48" r="4.5" fill="#0B0E1A"/></svg>
+          </div>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-top:10px;line-height:1.8;">Social Avatar<br>Icon mark · 400×400px</div>
+      </div>
+      <!-- YouTube Thumbnail -->
+      <div>
+        <div style="background:var(--dark2);border:1px solid var(--border);aspect-ratio:16/9;display:flex;align-items:flex-end;padding:12px;position:relative;overflow:hidden;min-height:120px;">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,.03) 1px,transparent 1px);background-size:20px 20px;"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(transparent,rgba(11,14,26,.9));"></div>
+          <div style="position:relative;z-index:2;display:flex;align-items:center;gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><circle cx="12" cy="12" r="3.5" fill="#0B0E1A"/><circle cx="21" cy="12" r="3.5" fill="#0B0E1A"/><circle cx="30" cy="12" r="3.5" fill="#0B0E1A"/><circle cx="12" cy="30" r="3.5" fill="#0B0E1A"/><circle cx="12" cy="48" r="3.5" fill="#0B0E1A"/></svg>
+            <div style="font-family:'Orbitron',sans-serif;font-size:8px;font-weight:800;color:var(--yellow);letter-spacing:.04em;">Blueprint</div>
+          </div>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-top:10px;line-height:1.8;">YouTube Thumbnail<br>Lower-left lockup · 1280×720px</div>
+      </div>
+      <!-- Email Sig -->
+      <div>
+        <div style="background:var(--dark);border:1px solid var(--border-y);padding:16px;min-height:120px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+            <svg width="22" height="22" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><circle cx="12" cy="12" r="3.5" fill="#0B0E1A"/><circle cx="21" cy="12" r="3.5" fill="#0B0E1A"/><circle cx="30" cy="12" r="3.5" fill="#0B0E1A"/><circle cx="12" cy="21" r="3.5" fill="#0B0E1A"/><circle cx="12" cy="30" r="3.5" fill="#0B0E1A"/><circle cx="12" cy="48" r="3.5" fill="#0B0E1A"/></svg>
+            <div style="font-family:'Orbitron',sans-serif;font-size:9px;font-weight:800;color:var(--yellow);letter-spacing:.06em;">Blueprint</div>
+          </div>
+          <div style="height:1px;background:rgba(247,198,0,.15);margin-bottom:10px;"></div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.04em;color:var(--gray);line-height:2;">Ryan Stewart<br><span style="color:var(--yellow);">Founder · Blueprint Training</span><br>blueprinttraining.com</div>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-top:10px;line-height:1.8;">Email Signature<br>Compact horizontal lockup</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Advertising -->
+<div class="spread dark">
+  <div class="spread-header">
+    <span class="section-label" style="margin-bottom:0;">Brand Collateral</span>
+    <span class="page-label">The Blueprint Training Style Guide &nbsp;·&nbsp; 58</span>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:80px;">
+    <div>
+      <div class="sidebar-title">Adver-<br>tising</div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:20px;">Out-of-home and digital advertising should carry the same visual energy as the rest of the brand — dark, precise, and credibility-first. Partner-forward approaches work. Lifestyle approaches do not.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <!-- Billboard mockup -->
+      <div style="background:var(--dark2);border:1px solid var(--border-y);padding:48px;position:relative;overflow:hidden;min-height:220px;display:flex;align-items:center;gap:40px;">
+        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,.04) 1px,transparent 1px);background-size:40px 40px;"></div>
+        <div style="position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(ellipse,rgba(247,198,0,.12) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:relative;z-index:2;flex:1;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;display:flex;align-items:center;gap:10px;"><span style="display:block;width:24px;height:2px;background:var(--yellow);"></span>The Blueprint Training</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.95;color:var(--white);">Build The <span style="color:var(--yellow);">Agency</span><br>Everyone Else<br>Is Afraid To.</div>
+        </div>
+        <div style="position:relative;z-index:2;flex-shrink:0;">
+          <a class="bpt-mark lg" href="#">
+            <svg width="52" height="52" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg>
+            <div class="bpt-wordstack"><span class="the">The</span><span class="bp">Blueprint</span><span class="train">Training</span></div>
+          </a>
+        </div>
+      </div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);">Billboard / OOH — Credibility-Forward Approach</div>
+
+      <!-- Stats row -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:8px;">
+        <div class="stat-block"><div class="stat-num">9</div><div class="stat-label">Years Running</div></div>
+        <div class="stat-block"><div class="stat-num">500+</div><div class="stat-label">Agency Graduates</div></div>
+        <div class="stat-block"><div class="stat-num">100%</div><div class="stat-label">Practitioner Built</div></div>
+        <div class="stat-block" style="background:var(--yellow);"><div class="stat-num" style="color:var(--black);">AI</div><div class="stat-label" style="color:rgba(11,14,26,.6);">Native Systems</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CLOSING
+══════════════════════════════════════ -->
+<div class="closing">
+  <div class="closing-grid"></div>
+  <div class="closing-glow"></div>
+
+  <div style="position:relative;z-index:2;margin-bottom:40px;">
+    <a class="bpt-mark lg" href="#">
+      <svg width="56" height="56" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2"/><polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.2" fill="none"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg>
+      <div class="bpt-wordstack"><span class="the">The</span><span class="bp">Blueprint</span><span class="train">Training</span></div>
+    </a>
+  </div>
+
+  <div class="closing-title">
+    We've Come<br>To The End.<br><span>Now Build.</span>
+  </div>
+
+  <p class="closing-body">We've come to the end of this guide, but this is where the brand journey really begins. Every piece of content created under the Blueprint name is an opportunity to reinforce what we stand for — precision, results, and radical transparency.</p>
+
+  <div style="position:relative;z-index:2;margin-top:64px;padding-top:40px;border-top:1px solid rgba(247,198,0,.15);width:100%;max-width:560px;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);">BLUEPRINTTRAINING.COM &nbsp;·&nbsp; BRAND STYLE GUIDE &nbsp;·&nbsp; VERSION 1.0 &nbsp;·&nbsp; 2025</div>
+  </div>
+</div>
+
+</body>
+</html>
