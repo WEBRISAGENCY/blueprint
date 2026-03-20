@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inside The P&L Of A 7 Figure Agency — Webinar Replay | Blueprint Training</title>
+<title>The One-Person Agency | Blueprint Training</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--yellow:#F7C800;--black:#0B0B1A;--navy:#181C2E;--dark:#111421;--dark2:#1F2438;--gray:#8A9090;--body:#C8CEDF;--white:#FFFFFF;}
@@ -35,82 +35,25 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .header-cta:hover{background:#FFD500;}
 
 /* HERO */
-.hero{padding:72px 0 48px;text-align:center;position:relative;overflow:hidden;}
+.hero{padding:48px 0 24px;text-align:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(247,200,0,0.07) 0%,transparent 70%);pointer-events:none;}
 .hero-inner{max-width:820px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
-.eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;}
-.eyebrow::before,.eyebrow::after{content:'';display:block;width:24px;height:2px;background:var(--yellow);}
-h1.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,88px);line-height:.95;color:var(--white);letter-spacing:.02em;margin-bottom:20px;}
+h1.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,88px);line-height:.95;color:var(--white);letter-spacing:.02em;margin-bottom:0;}
 h1.hero-title span{color:var(--yellow);}
-.replay-sub{font-size:0.35em;color:var(--gray);letter-spacing:.08em;line-height:1;display:block;margin-top:-0.1em;}
-.hero-desc{font-size:18px;color:var(--body);max-width:580px;margin:0 auto 16px;line-height:1.7;}
 
 /* VIDEO */
-.video-section{max-width:860px;margin:0 auto;padding:0 24px 64px;}
+.video-section{max-width:860px;margin:0 auto;padding:24px 24px 48px;}
 .video-wrapper{position:relative;width:100%;aspect-ratio:16/9;background:var(--dark);border:1px solid rgba(247,200,0,0.15);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6);}
 .video-wrapper::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);z-index:2;}
 .video-wrapper iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
-
-/* STATS */
-.stats-section{max-width:860px;margin:0 auto 80px;padding:0 24px;}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(247,200,0,0.12);}
-.stat-item{padding:32px;border-right:1px solid rgba(247,200,0,0.12);text-align:center;}
-.stat-item:last-child{border-right:none;}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--yellow);line-height:1;margin-bottom:6px;}
-.stat-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);}
-
-/* SECTION LABEL */
-.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
-.section-label::before{content:'';width:24px;height:2px;background:var(--yellow);}
-
-/* CONTENT */
-.content-section{max-width:860px;margin:0 auto 80px;padding:0 24px;}
-.content-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,52px);line-height:1;color:var(--white);margin-bottom:16px;letter-spacing:.02em;}
-.content-section h2 span{color:var(--yellow);}
-.content-section p{font-size:16px;color:var(--body);line-height:1.75;max-width:640px;margin-bottom:32px;}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:32px;}
-.col-card{background:var(--navy);border:1px solid rgba(247,200,0,0.08);padding:32px;position:relative;overflow:hidden;}
-.col-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
-.col-card.bad::before{background:rgba(220,50,50,0.6);}
-.col-card.good::before{background:var(--yellow);}
-.col-card-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-.col-card.bad .col-card-label{color:#FF6B6B;}
-.col-card.good .col-card-label{color:var(--yellow);}
-.col-card h3{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--white);margin-bottom:12px;letter-spacing:.04em;}
-.col-card p{font-size:14px;color:var(--body);line-height:1.7;margin-bottom:16px;}
-.tag-row{display:flex;flex-wrap:wrap;gap:8px;}
-.tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border:1px solid;}
-.tag-good{color:var(--yellow);border-color:rgba(247,200,0,0.3);}
-.tag-bad{color:#FF6B6B;border-color:rgba(220,50,50,0.3);}
-
-/* WINS TICKER 2 */
-.wins-ticker{background:var(--navy);border-top:1px solid rgba(247,200,0,0.1);border-bottom:1px solid rgba(247,200,0,0.1);overflow:hidden;padding:14px 0;margin-bottom:80px;}
-.wins-track{display:flex;animation:ticker 45s linear infinite;white-space:nowrap;}
-.win-item{font-family:'Barlow',sans-serif;font-size:14px;color:var(--body);padding:0 32px;flex-shrink:0;}
-.win-item strong{color:var(--yellow);}
-.win-item::after{content:'→';margin-left:32px;color:rgba(247,200,0,0.3);}
-
-/* COMMUNITY */
-.community-section{max-width:860px;margin:0 auto 80px;padding:0 24px;}
-.community-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,52px);color:var(--white);margin-bottom:32px;letter-spacing:.02em;}
-.community-section h2 span{color:var(--yellow);}
-.community-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-.community-post{background:var(--navy);border:1px solid rgba(247,200,0,0.08);padding:24px;border-top:2px solid rgba(247,200,0,0.15);}
-.post-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-.post-avatar{width:36px;height:36px;background:rgba(247,200,0,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--yellow);flex-shrink:0;}
-.post-meta{flex:1;}
-.post-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--white);letter-spacing:.04em;}
-.post-time{font-size:12px;color:var(--gray);}
-.post-body{font-size:14px;color:var(--body);line-height:1.7;}
-.post-body strong{color:var(--yellow);}
-.post-reactions{display:flex;gap:12px;margin-top:14px;}
-.reaction{font-size:12px;color:var(--gray);}
 
 /* CTA */
 .cta-section{max-width:860px;margin:0 auto 80px;padding:0 24px;}
 .cta-box{background:var(--navy);border:1px solid rgba(247,200,0,0.2);border-top:3px solid var(--yellow);padding:64px 56px;text-align:center;position:relative;overflow:hidden;}
 .cta-box::before{content:'';position:absolute;bottom:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(247,200,0,0.06) 0%,transparent 70%);pointer-events:none;}
 .cta-box .eyebrow{justify-content:center;}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:24px;height:2px;background:var(--yellow);}
 .cta-box h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,5vw,60px);line-height:1;color:var(--white);margin:0 auto 12px;letter-spacing:.02em;}
 .cta-box h2 span{color:var(--yellow);}
 .cta-box > p{font-size:17px;color:var(--body);max-width:520px;margin:0 auto 32px;line-height:1.7;}
@@ -123,6 +66,16 @@ h1.hero-title span{color:var(--yellow);}
 .cta-btn:hover svg{transform:translateX(4px);}
 .cta-btn svg{transition:transform .2s;}
 .cta-lock{margin-top:18px;font-size:13px;color:rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;gap:6px;}
+
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:28px 0 36px;text-align:left;}
+.feature-card{background:rgba(247,200,0,0.04);border:1px solid rgba(247,200,0,0.1);padding:20px 24px;}
+.feature-card h4{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--white);letter-spacing:.04em;margin-bottom:6px;}
+.feature-card p{font-size:14px;color:var(--body);line-height:1.6;margin:0;}
+
+/* SECTION LABEL */
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+.section-label::before{content:'';width:24px;height:2px;background:var(--yellow);}
 
 /* FAQ */
 .faq-section{max-width:860px;margin:0 auto 80px;padding:0 24px;}
@@ -147,11 +100,7 @@ h1.hero-title span{color:var(--yellow);}
 .fu1{animation-delay:.1s}.fu2{animation-delay:.25s}.fu3{animation-delay:.4s}.fu4{animation-delay:.55s}.fu5{animation-delay:.7s}
 
 @media(max-width:680px){
-  .modal-box{padding:36px 24px;}.modal-title{font-size:34px;}
-  .two-col,.community-grid{grid-template-columns:1fr;}
-  .stats-grid{grid-template-columns:1fr;}
-  .stat-item{border-right:none;border-bottom:1px solid rgba(247,200,0,0.12);}
-  .stat-item:last-child{border-bottom:none;}
+  .features-grid{grid-template-columns:1fr;}
   .cta-box{padding:40px 24px;}.price-amount{font-size:60px;}
 }
 </style>
@@ -165,26 +114,26 @@ h1.hero-title span{color:var(--yellow);}
   <!-- TICKER -->
   <div class="ticker-bar">
     <div class="ticker-track">
-      <span class="ticker-item">🔥 Austin C. — $70K deal signed</span>
-      <span class="ticker-item">💰 Grant H. — 80K/year contract closed</span>
-      <span class="ticker-item">🚀 Jason D. — $31K+ monthly revenue</span>
-      <span class="ticker-item">🎉 Charline T. — Hit $10K first time ever</span>
-      <span class="ticker-item">💪 Nicole S. — $18K client on the books</span>
-      <span class="ticker-item">🔥 Benji A. — $17,500 in sprints in one day</span>
-      <span class="ticker-item">🏆 John H. — $500K in 12 months</span>
-      <span class="ticker-item">⚡ James D. — Charged 33% more using sprints</span>
-      <span class="ticker-item">✅ Glen M. — First client £2K/month</span>
-      <span class="ticker-item">🎯 Matt V. — First Blueprint client this week</span>
-      <span class="ticker-item">🔥 Austin C. — $70K deal signed</span>
-      <span class="ticker-item">💰 Grant H. — 80K/year contract closed</span>
-      <span class="ticker-item">🚀 Jason D. — $31K+ monthly revenue</span>
-      <span class="ticker-item">🎉 Charline T. — Hit $10K first time ever</span>
-      <span class="ticker-item">💪 Nicole S. — $18K client on the books</span>
-      <span class="ticker-item">🔥 Benji A. — $17,500 in sprints in one day</span>
-      <span class="ticker-item">🏆 John H. — $500K in 12 months</span>
-      <span class="ticker-item">⚡ James D. — Charged 33% more using sprints</span>
-      <span class="ticker-item">✅ Glen M. — First client £2K/month</span>
-      <span class="ticker-item">🎯 Matt V. — First Blueprint client this week</span>
+      <span class="ticker-item">Austin C. — $70K deal signed</span>
+      <span class="ticker-item">Grant H. — 80K/year contract closed</span>
+      <span class="ticker-item">Jason D. — $31K+ monthly revenue</span>
+      <span class="ticker-item">Charline T. — Hit $10K first time ever</span>
+      <span class="ticker-item">Nicole S. — $18K client on the books</span>
+      <span class="ticker-item">Benji A. — $17,500 in sprints in one day</span>
+      <span class="ticker-item">John H. — $500K in 12 months</span>
+      <span class="ticker-item">James D. — Charged 33% more using sprints</span>
+      <span class="ticker-item">Glen M. — First client £2K/month</span>
+      <span class="ticker-item">Matt V. — First Blueprint client this week</span>
+      <span class="ticker-item">Austin C. — $70K deal signed</span>
+      <span class="ticker-item">Grant H. — 80K/year contract closed</span>
+      <span class="ticker-item">Jason D. — $31K+ monthly revenue</span>
+      <span class="ticker-item">Charline T. — Hit $10K first time ever</span>
+      <span class="ticker-item">Nicole S. — $18K client on the books</span>
+      <span class="ticker-item">Benji A. — $17,500 in sprints in one day</span>
+      <span class="ticker-item">John H. — $500K in 12 months</span>
+      <span class="ticker-item">James D. — Charged 33% more using sprints</span>
+      <span class="ticker-item">Glen M. — First client £2K/month</span>
+      <span class="ticker-item">Matt V. — First Blueprint client this week</span>
     </div>
   </div>
 
@@ -199,144 +148,58 @@ h1.hero-title span{color:var(--yellow);}
         </div>
         <span class="logo-wordmark"><em>BLUEPRINT</em> TRAINING</span>
       </a>
-      <a href="https://ai.theblueprint.training/presale.html" class="header-cta" target="_blank">Lock In $199/mo &rarr;</a>
+      <a href="https://ai.theblueprint.training/presale.html" class="header-cta" target="_blank">Get Early Bird Access — $249/mo &rarr;</a>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="eyebrow fu fu1">Webinar Replay — Watch Now</div>
-      <h1 class="hero-title fu fu2">Inside The P&L Of A<br><span>7 Figure Agency</span><br><span class="replay-sub">(Replay)</span></h1>
-      <p class="hero-desc fu fu3">I opened our books. Every expense, every dollar of revenue — broken down as percentages so you can apply it to your own agency. Watch it.</p>
+      <h1 class="hero-title fu fu1">Inside The P&L Of A <span>7 Figure Agency</span></h1>
     </div>
   </section>
 
   <!-- VIDEO -->
-  <div class="video-section fu fu3">
+  <div class="video-section fu fu2">
     <div class="video-wrapper">
-      <iframe src="https://player.vimeo.com/video/1175489870?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="What An Agency Profit Actually Looks Like (At Scale) — Webinar Replay"></iframe>
+      <iframe src="https://www.youtube.com/embed/8B4GozwN3ZI" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen title="Inside The P&L Of A 7 Figure Agency"></iframe>
     </div>
   </div>
-
-  <!-- STATS -->
-  <div class="stats-section fu fu4">
-    <div class="stats-grid">
-      <div class="stat-item"><div class="stat-num">9</div><div class="stat-label">Years Running</div></div>
-      <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Agency Graduates</div></div>
-      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Practitioner Built</div></div>
-    </div>
-  </div>
-
-  <!-- OLD VS NEW -->
-  <section class="content-section fu fu5">
-    <div class="section-label">What's In This Replay</div>
-    <h2>Most Agency Owners<br>Don't Know Their <span>Real Numbers.</span></h2>
-    <p>I've done hundreds of one-on-ones. I look at a lot of books. And most of the time, everything is jammed into one expense bucket — no separation, no visibility. You can't fix what you can't see. This webinar is me showing you exactly how we structure ours so you can do the same.</p>
-    <div class="two-col">
-      <div class="col-card bad">
-        <div class="col-card-label">❌ What I See All The Time</div>
-        <h3>Broken Books</h3>
-        <p>One expense line. No gross margin. Owner paying themselves off the top like it's personal money. No idea if the business is actually profitable or just busy.</p>
-        <div class="tag-row">
-          <span class="tag tag-bad">No Visibility</span>
-          <span class="tag tag-bad">Can't Scale</span>
-          <span class="tag tag-bad">Can't Sell</span>
-          <span class="tag tag-bad">Always Guessing</span>
-        </div>
-      </div>
-      <div class="col-card good">
-        <div class="col-card-label">✅ What Healthy Looks Like</div>
-        <h3>Clean Books</h3>
-        <p>COGS separate from OpEx. Gross margin north of 70%. You know exactly what it costs to deliver. Owner comp is structured. AI is already cutting your delivery line.</p>
-        <div class="tag-row">
-          <span class="tag tag-good">70%+ Gross Margin</span>
-          <span class="tag tag-good">Profitable at Scale</span>
-          <span class="tag tag-good">Exit-Ready</span>
-          <span class="tag tag-good">AI-Powered Delivery</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WINS TICKER 2 -->
-  <div class="wins-ticker">
-    <div class="wins-track">
-      <span class="win-item"><strong>Austin C.</strong> — "$70K deal signed yesterday"</span>
-      <span class="win-item"><strong>Grant H.</strong> — "80K/year contract closed"</span>
-      <span class="win-item"><strong>Jason D.</strong> — "Finally over $31K monthly revenue"</span>
-      <span class="win-item"><strong>Charline T.</strong> — "Hit $10K revenue for the first time EVER"</span>
-      <span class="win-item"><strong>Nicole S.</strong> — "18K client is on the books"</span>
-      <span class="win-item"><strong>Benji A.</strong> — "Just sold $17,500 of sprints. This works."</span>
-      <span class="win-item"><strong>John H.</strong> — "Made $500K in my first 12 months"</span>
-      <span class="win-item"><strong>James D.</strong> — "Charged 33% more using sprints"</span>
-      <span class="win-item"><strong>Glen M.</strong> — "Landed first client, £2K/month"</span>
-      <span class="win-item"><strong>Matt V.</strong> — "Won my first Blueprint client this week"</span>
-      <span class="win-item"><strong>Austin C.</strong> — "$70K deal signed yesterday"</span>
-      <span class="win-item"><strong>Grant H.</strong> — "80K/year contract closed"</span>
-      <span class="win-item"><strong>Jason D.</strong> — "Finally over $31K monthly revenue"</span>
-      <span class="win-item"><strong>Charline T.</strong> — "Hit $10K revenue for the first time EVER"</span>
-      <span class="win-item"><strong>Nicole S.</strong> — "18K client is on the books"</span>
-      <span class="win-item"><strong>Benji A.</strong> — "Just sold $17,500 of sprints. This works."</span>
-      <span class="win-item"><strong>John H.</strong> — "Made $500K in my first 12 months"</span>
-      <span class="win-item"><strong>James D.</strong> — "Charged 33% more using sprints"</span>
-    </div>
-  </div>
-
-  <!-- COMMUNITY POSTS -->
-  <section class="community-section">
-    <div class="section-label">Live Wins From The Community</div>
-    <h2>Real Agencies. <span>Real Results.</span></h2>
-    <div class="community-grid">
-      <div class="community-post">
-        <div class="post-header">
-          <div class="post-avatar">AC</div>
-          <div class="post-meta"><div class="post-name">Austin Cline</div><div class="post-time">Today at 3:10 PM</div></div>
-        </div>
-        <div class="post-body">Used the Blueprint tools for the entire process — onboarding, sale, kickoff, audit. They signed a <strong>$70,000 deal yesterday.</strong> Thank you Ryan.</div>
-        <div class="post-reactions"><span class="reaction">🔥 7</span><span class="reaction">💪 4</span><span class="reaction">🎉 3</span></div>
-      </div>
-      <div class="community-post">
-        <div class="post-header">
-          <div class="post-avatar">NS</div>
-          <div class="post-meta"><div class="post-name">Nicole Schmied</div><div class="post-time">Just now</div></div>
-        </div>
-        <div class="post-body">56 Days in: The <strong>18K client is on the books! 🎉</strong> Invoice paid, kickoff call next week. The Blueprint system is keeping me in my zone of genius.</div>
-        <div class="post-reactions"><span class="reaction">❤️ 3</span><span class="reaction">🙌 2</span><span class="reaction">💥 2</span></div>
-      </div>
-      <div class="community-post">
-        <div class="post-header">
-          <div class="post-avatar">GH</div>
-          <div class="post-meta"><div class="post-name">Grant Higginson</div><div class="post-time">Yesterday at 7:45 PM</div></div>
-        </div>
-        <div class="post-body">Signed up a few days ago and already closed an <strong>80k/year SEM contract</strong> using the onboarding SOPs. Looking forward to the rest of the course.</div>
-        <div class="post-reactions"><span class="reaction">🔥 12</span><span class="reaction">💰 8</span></div>
-      </div>
-      <div class="community-post">
-        <div class="post-header">
-          <div class="post-avatar">BA</div>
-          <div class="post-meta"><div class="post-name">Benji Albrecht, MBA</div><div class="post-time">7 minutes ago</div></div>
-        </div>
-        <div class="post-body">Just sold <strong>$17,500 of sprints</strong> mere hours after watching the modules. This sh*t works. Lol 😂</div>
-        <div class="post-reactions"><span class="reaction">😂 5</span><span class="reaction">🔥 8</span><span class="reaction">💪 3</span></div>
-      </div>
-    </div>
-  </section>
 
   <!-- CTA -->
   <section class="cta-section">
     <div class="cta-box">
-      <div class="eyebrow">🔒 Pre-Sale — Founder Price Locks In Forever</div>
-      <h2>This Is What We're<br>Building Inside <span>Agency Build.</span></h2>
-      <p>Nine years running a real agency. Every system we use — the AI agents, the delivery infrastructure, the P&L model you just watched — is inside Agency Build. We teach exactly what we do. Nothing else. Lock in at $199/mo before this goes public and the price goes up.</p>
+      <div class="eyebrow">Early Bird Pricing — Ends April 1</div>
+      <h2>Build A Lean, Profitable Agency<br><span>With One Person.</span></h2>
+      <p>The One-Person Agency is the complete system for building and running a high-margin agency without a team. You get the exact AI workflows, client acquisition playbooks, delivery SOPs, and financial models we use inside Webris — everything you need to operate like a 10-person shop on your own. Get early bird access at a discounted price before April 1, when the price goes up.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>AI-Powered Delivery</h4>
+          <p>The same Claude workflows our team uses daily — built for one person to deliver enterprise-level work.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Client Acquisition System</h4>
+          <p>Positioning, outbound, Meta ads funnels, and the sales process that closes $10K+ deals on repeat.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Productized Service Model</h4>
+          <p>SEO sprints, offer design, and pricing structures that let you scale revenue without scaling headcount.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Financial Playbook</h4>
+          <p>The P&L model, expense structure, and margin targets you just watched — yours to copy and run.</p>
+        </div>
+      </div>
+
       <div class="price-block">
-        <div class="price-amount">$199</div>
+        <div class="price-amount">$249</div>
         <div class="price-per">/mo</div>
       </div>
-      <span class="price-note">Founder pricing — locks in forever. Price increases after pre-sale.</span>
+      <span class="price-note">Early bird pricing — discounted rate locks in forever. Price increases after April 1.</span>
       <br>
       <a href="https://ai.theblueprint.training/presale.html" class="cta-btn" target="_blank">
-        Lock In Founder Price
+        Get Discounted Access Now
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <div class="cta-lock">
@@ -380,10 +243,10 @@ h1.hero-title span{color:var(--yellow);}
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Why $199/mo and why now?</span>
+        <span class="faq-q-text">Why $249/mo and why now?</span>
         <span class="faq-icon"></span>
       </button>
-      <div class="faq-a">This is founder pricing. It locks in forever — meaning when the price goes up after launch, you stay at $199. We're doing this because we want people who are serious, not people who impulse buy and churn.</div>
+      <div class="faq-a">This is early bird pricing at a discounted rate — and it locks in forever. After April 1 the price goes up, and you won't be able to get this rate again. We're doing this because we want people who are serious, not people who impulse buy and churn.</div>
     </div>
   </section>
 
