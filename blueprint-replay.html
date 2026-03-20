@@ -38,6 +38,8 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .hero{padding:48px 0 24px;text-align:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(247,200,0,0.07) 0%,transparent 70%);pointer-events:none;}
 .hero-inner{max-width:820px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:24px;height:2px;background:var(--yellow);}
 h1.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,88px);line-height:.95;color:var(--white);letter-spacing:.02em;margin-bottom:0;}
 h1.hero-title span{color:var(--yellow);}
 
@@ -47,13 +49,15 @@ h1.hero-title span{color:var(--yellow);}
 .video-wrapper::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);z-index:2;}
 .video-wrapper iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 
+/* SECTION LABEL */
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+.section-label::before{content:'';width:24px;height:2px;background:var(--yellow);}
+
 /* CTA */
 .cta-section{max-width:860px;margin:0 auto 80px;padding:0 24px;}
 .cta-box{background:var(--navy);border:1px solid rgba(247,200,0,0.2);border-top:3px solid var(--yellow);padding:64px 56px;text-align:center;position:relative;overflow:hidden;}
 .cta-box::before{content:'';position:absolute;bottom:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(247,200,0,0.06) 0%,transparent 70%);pointer-events:none;}
 .cta-box .eyebrow{justify-content:center;}
-.eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;}
-.eyebrow::before,.eyebrow::after{content:'';display:block;width:24px;height:2px;background:var(--yellow);}
 .cta-box h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,5vw,60px);line-height:1;color:var(--white);margin:0 auto 12px;letter-spacing:.02em;}
 .cta-box h2 span{color:var(--yellow);}
 .cta-box > p{font-size:17px;color:var(--body);max-width:520px;margin:0 auto 32px;line-height:1.7;}
@@ -72,10 +76,6 @@ h1.hero-title span{color:var(--yellow);}
 .feature-card{background:rgba(247,200,0,0.04);border:1px solid rgba(247,200,0,0.1);padding:20px 24px;}
 .feature-card h4{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--white);letter-spacing:.04em;margin-bottom:6px;}
 .feature-card p{font-size:14px;color:var(--body);line-height:1.6;margin:0;}
-
-/* SECTION LABEL */
-.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
-.section-label::before{content:'';width:24px;height:2px;background:var(--yellow);}
 
 /* FAQ */
 .faq-section{max-width:860px;margin:0 auto 80px;padding:0 24px;}
@@ -148,7 +148,7 @@ h1.hero-title span{color:var(--yellow);}
         </div>
         <span class="logo-wordmark"><em>BLUEPRINT</em> TRAINING</span>
       </a>
-      <a href="https://ai.theblueprint.training/presale.html" class="header-cta" target="_blank">Get Early Bird Access — $249/mo &rarr;</a>
+      <a href="https://blueprint.spiffy.co/checkout/bpt-program" class="header-cta" target="_blank">Get Early Bird Access — $249/mo &rarr;</a>
     </div>
   </header>
 
@@ -198,7 +198,7 @@ h1.hero-title span{color:var(--yellow);}
       </div>
       <span class="price-note">Early bird pricing — discounted rate locks in forever. Price increases after April 1.</span>
       <br>
-      <a href="https://ai.theblueprint.training/presale.html" class="cta-btn" target="_blank">
+      <a href="https://blueprint.spiffy.co/checkout/bpt-program" class="cta-btn" target="_blank">
         Get Discounted Access Now
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
