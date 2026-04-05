@@ -329,7 +329,7 @@
     .sidebar { position: static; }
   }
 
-  /* ─── FOOTER ─── */
+    /* ─── FOOTER ─── */
   footer {
     background: #111421;
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -341,21 +341,8 @@
     margin: 0 auto;
     padding: 64px 24px 48px;
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-columns: 1.6fr 1fr 0.8fr 0.8fr;
     gap: 48px;
-  }
-
-  .footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .footer-brand p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.4);
-    line-height: 1.6;
-    max-width: 280px;
   }
 
   .footer-col-title {
@@ -450,7 +437,6 @@
       gap: 40px 24px;
       padding: 48px 24px 36px;
     }
-    .footer-brand { grid-column: 1 / -1; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   }
 
@@ -708,33 +694,7 @@
 <footer>
   <div class="footer-nav">
 
-    <!-- Col 1: Brand -->
-    <div class="footer-brand">
-      <div style="display:flex; align-items:center; gap:14px;">
-        <svg width="36" height="36" viewBox="0 0 60 60">
-          <rect width="60" height="60" fill="#F7C600"/>
-          <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
-          <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
-          <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
-          <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
-          <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
-          <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
-          <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
-          <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
-          <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
-          <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
-          <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
-        </svg>
-        <div style="display:flex; flex-direction:column; gap:1px;">
-          <span style="font-family:Orbitron,sans-serif; font-size:7px; font-weight:600; letter-spacing:0.32em; color:rgba(255,255,255,0.28); text-transform:uppercase; line-height:1;">The</span>
-          <span style="font-family:Orbitron,sans-serif; font-size:13px; font-weight:800; color:#F7C600; letter-spacing:0.06em; text-transform:uppercase; line-height:1;">Blueprint</span>
-          <span style="font-family:Orbitron,sans-serif; font-size:6.5px; font-weight:600; letter-spacing:0.36em; color:rgba(255,255,255,0.22); text-transform:uppercase; line-height:1; margin-top:1px;">Training</span>
-        </div>
-      </div>
-      <p>The operating system for the one-person agency. AI agents, video training, and live coaching.</p>
-    </div>
-
-    <!-- Col 2: Agents -->
+    <!-- Col 1: Agents -->
     <div>
       <div class="footer-col-title">Agents</div>
       <ul class="footer-links">
@@ -750,7 +710,25 @@
       </ul>
     </div>
 
-    <!-- Col 3: Company + Social -->
+    <!-- Col 2: Features -->
+    <div>
+      <div class="footer-col-title">Features</div>
+      <ul class="footer-links">
+        <li><a href="https://ai.theblueprint.training/feature-coaching-light.html">Coaching</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-training-light.html">Video Training</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-bootcamps-light.html">Live Bootcamps</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-community-light.html">Community</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:32px;">Follow Us</div>
+      <ul class="footer-links">
+        <li><a href="https://www.instagram.com/theblueprint.training/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/theblueprinttraining/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.youtube.com/@theblueprinttraining" target="_blank">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Company -->
     <div>
       <div class="footer-col-title">Company</div>
       <ul class="footer-links">
@@ -758,13 +736,6 @@
         <li><a href="https://ai.theblueprint.training/blueprint-results-light.html">Results</a></li>
         <li><a href="https://ai.theblueprint.training/blueprint-program-light.html">Program</a></li>
         <li><a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html">Knowledge</a></li>
-      </ul>
-      <div class="footer-col-title" style="margin-top:32px;">Follow Us</div>
-      <ul class="footer-links">
-        <li><a href="https://www.instagram.com/theblueprinttraining/" target="_blank">Instagram</a></li>
-        <li><a href="https://www.facebook.com/TheBlueprintTraining/" target="_blank">Facebook</a></li>
-        <li><a href="https://www.youtube.com/@blueprinttraining" target="_blank">YouTube</a></li>
-        <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
 

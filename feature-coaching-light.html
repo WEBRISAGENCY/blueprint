@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Program - Blueprint</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --yellow: #F7C600;
+            --yellow-dark: #D9AE00;
+            --black: #0B0E1A;
+            --dark: #111421;
+            --border: #252D3D;
+            --white: #FFFFFF;
+            --gray: #A0A8B8;
+            --gray-light: #E8EAEF;
+            --bg-light: #F5F5F7;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--dark);
+            border-bottom: 3px solid var(--yellow);
+            padding: 1rem 2rem;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: var(--yellow);
+        }
+
+        .navbar-login {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-right: 1.5rem;
+        }
+
+        .navbar-cta {
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .navbar-cta:hover {
+            background-color: var(--yellow-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--gray-light);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .hero-cta:hover {
+            background-color: var(--yellow-dark);
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, #1a1f2e 0%, #2a3141 100%);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            color: var(--gray);
+            font-size: 5rem;
+        }
+
+        /* Main Content Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+        }
+
+        .content {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            letter-spacing: 1px;
+        }
+
+        .section h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--black);
+        }
+
+        .section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* How It Works Section */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .flow-item {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .flow-item::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 60px;
+            width: 2px;
+            height: 80px;
+            background-color: var(--yellow);
+        }
+
+        .flow-item:last-child::after {
+            display: none;
+        }
+
+        .flow-number {
+            background-color: var(--yellow);
+            color: var(--black);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .flow-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* What You Get Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Who It's For Section */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bullet-list li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .bullet-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--yellow);
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .sidebar-box {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-box h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+            letter-spacing: 1px;
+        }
+
+        .sidebar-nav-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-nav-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sidebar-nav-list a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .sidebar-nav-list a:hover {
+            color: var(--yellow);
+        }
+
+        .sidebar-cta {
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .sidebar-cta h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-cta p {
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .sidebar-cta-button {
+            display: block;
+            background-color: var(--black);
+            color: var(--yellow);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar-cta-button:hover {
+            background-color: #1a1f2e;
+        }
+
+        /* Bottom CTA Section */
+        .bottom-cta {
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .bottom-cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .bottom-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bottom-cta-button {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--yellow);
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .bottom-cta-button:hover {
+            background-color: #1a1f2e;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-column a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 960px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .navbar-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .navbar-logo {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.8rem;
+            }
+
+            .navbar-links {
+                display: none;
+            }
+
+            .navbar-logo {
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                padding: 1.5rem 1rem;
+                margin-top: 100px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .main-container {
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-item {
+                gap: 1rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .bottom-cta {
+                padding: 2rem 1rem;
+            }
+
+            .bottom-cta h2 {
+                font-size: 1.6rem;
+            }
+        }
+      /* ─── FOOTER ─── */
+  footer {
+    background: #111421;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 0;
+  }
+
+  .footer-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 24px 48px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 0.8fr 0.8fr;
+    gap: 48px;
+  }
+
+  .footer-col-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-col-title::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: var(--yellow);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links li a {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links li a:hover {
+    color: var(--yellow);
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-legal a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 12px;
+    transition: color 0.2s;
+  }
+
+  .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+  .footer-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow);
+    color: #0B0E1A;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .footer-cta-btn:hover { filter: brightness(1.05); }
+
+  @media (max-width: 768px) {
+    .footer-nav {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 24px;
+      padding: 48px 24px 36px;
+    }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-nav { grid-template-columns: 1fr; gap: 36px; }
+  }
+  </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-logo">BLUEPRINT</div>
+        <div class="navbar-links">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#company">Company</a>
+            <a href="#docs">Docs</a>
+            <a href="#" class="navbar-login">Log In</a>
+            <a href="#" class="navbar-cta">Start Free</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">PROGRAM FEATURE</div>
+                <h1>Scale faster with dedicated coaching.</h1>
+                <p class="hero-subtitle">Get personalized guidance from industry experts. Our coaching program accelerates your growth with structured support, accountability, and proven frameworks tailored to your unique goals.</p>
+                <a href="blueprint-coaching-light.html" class="hero-cta">Apply for Coaching →</a>
+            </div>
+            <div class="hero-image">
+                📊
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="content">
+            <!-- How It Works Section -->
+            <section class="section">
+                <h2>How It Works</h2>
+                <div class="flow-container">
+                    <div class="flow-item">
+                        <div class="flow-number">1</div>
+                        <div class="flow-content">
+                            <h3>Apply & Get Matched</h3>
+                            <p>Submit your application and goals. We'll match you with a coach whose expertise aligns with your needs and vision for growth.</p>
+                        </div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-number">2</div>
+                        <div class="flow-content">
+                            <h3>Custom Growth Track</h3>
+                            <p>Your coach designs a personalized development plan based on your challenges, strengths, and ambitions for the next 6-12 months.</p>
+                        </div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-number">3</div>
+                        <div class="flow-content">
+                            <h3>Weekly 1:1 Sessions</h3>
+                            <p>Engage in focused, strategic coaching sessions each week. Work through challenges, build skills, and make tangible progress toward your goals.</p>
+                        </div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-number">4</div>
+                        <div class="flow-content">
+                            <h3>Accountability & Results</h3>
+                            <p>Track your progress, maintain accountability, and achieve measurable results. Your coach provides ongoing feedback and celebration of wins.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What You Get Section -->
+            <section class="section">
+                <h2>What You Get</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-image">📋</div>
+                        <h3>Personalized Development Plan</h3>
+                        <p>A detailed, customized roadmap created specifically for your goals, challenges, and timeline. Updated regularly as you progress.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-image">📞</div>
+                        <h3>Expert 1:1 Coaching Sessions</h3>
+                        <p>Weekly strategic coaching calls with a seasoned expert. Focus on your biggest challenges and fastest path to breakthrough results.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-image">📚</div>
+                        <h3>Proprietary Frameworks & Tools</h3>
+                        <p>Access our battle-tested frameworks, worksheets, and resources designed to accelerate learning and implementation of new skills.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-image">🎯</div>
+                        <h3>Progress Tracking & Accountability</h3>
+                        <p>Monthly check-ins on key metrics and milestones. Real accountability keeps you focused and motivated throughout your journey.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Who It's For Section -->
+            <section class="section">
+                <h2>Who It's For</h2>
+                <ul class="bullet-list">
+                    <li>Ambitious professionals ready to accelerate their career growth and impact</li>
+                    <li>Entrepreneurs and founders scaling their businesses to the next level</li>
+                    <li>Leaders looking to develop stronger teams and drive organizational results</li>
+                    <li>Anyone committed to personal transformation and achieving breakthrough goals</li>
+                </ul>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>How long does the coaching program last?</h3>
+                    <p>Our standard program runs 6-12 months depending on your goals. Most clients see significant progress within the first 90 days, with compound benefits building throughout the engagement.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if I'm new to coaching?</h3>
+                    <p>No experience necessary. Our coaches are skilled at working with people at all levels. We'll set expectations, establish psychological safety, and ensure you get maximum value from each session.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I schedule sessions outside business hours?</h3>
+                    <p>Yes. Most of our coaches offer flexible scheduling to accommodate different time zones and work schedules. We'll find a cadence that works for you.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What makes your coaches different?</h3>
+                    <p>Our coaches combine deep industry expertise with advanced coaching certifications. They bring real-world experience, proven results, and a commitment to your success.</p>
+                </div>
+            </section>
+
+            <!-- Bottom CTA -->
+            <div class="bottom-cta">
+                <h2>Ready to accelerate your growth?</h2>
+                <p>Join hundreds of professionals and leaders who've transformed their careers through coaching.</p>
+                <a href="blueprint-coaching-light.html" class="bottom-cta-button">Apply for Coaching →</a>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <h3>All Features</h3>
+                <ul class="sidebar-nav-list">
+                    <li><a href="#coaching">Coaching Program</a></li>
+                    <li><a href="#training">Training Modules</a></li>
+                    <li><a href="#community">Community Access</a></li>
+                    <li><a href="#resources">Resource Library</a></li>
+                    <li><a href="#analytics">Progress Analytics</a></li>
+                    <li><a href="#support">Priority Support</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-cta">
+                <h3>Start Your Coaching Journey</h3>
+                <p>Get matched with an expert coach and accelerate your growth today.</p>
+                <a href="blueprint-coaching-light.html" class="sidebar-cta-button">Apply Now →</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+<footer>
+  <div class="footer-nav">
+
+    <!-- Col 1: Agents -->
+    <div>
+      <div class="footer-col-title">Agents</div>
+      <ul class="footer-links">
+        <li><a href="https://ai.theblueprint.training/agent-sales-light.html">Sales Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-onboarding-light.html">Onboarding Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-project-manager-light.html">Project Manager Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-technical-seo-light.html">Technical SEO Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-content-light.html">Content Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-link-building-light.html">Link Building Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-local-seo-light.html">Local SEO Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-reporting-light.html">Reporting Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-strategy-light.html">Strategy Agent</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 2: Features -->
+    <div>
+      <div class="footer-col-title">Features</div>
+      <ul class="footer-links">
+        <li><a href="https://ai.theblueprint.training/feature-coaching-light.html">Coaching</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-training-light.html">Video Training</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-bootcamps-light.html">Live Bootcamps</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-community-light.html">Community</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:32px;">Follow Us</div>
+      <ul class="footer-links">
+        <li><a href="https://www.instagram.com/theblueprint.training/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/theblueprinttraining/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.youtube.com/@theblueprinttraining" target="_blank">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Company -->
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="https://ai.theblueprint.training/blueprint-about-light.html">About</a></li>
+        <li><a href="https://ai.theblueprint.training/blueprint-results-light.html">Results</a></li>
+        <li><a href="https://ai.theblueprint.training/blueprint-program-light.html">Program</a></li>
+        <li><a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html">Knowledge</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Account -->
+    <div>
+      <div class="footer-col-title">Account</div>
+      <ul class="footer-links" style="margin-bottom:24px;">
+        <li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
+        <li><a href="https://ai.theblueprint.training/blueprint-coaching-light.html">Book a Call</a></li>
+      </ul>
+      <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="footer-cta-btn">Get Started &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
