@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blueprint Training Program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #F7C600;
+    --yellow-dark: #D9AE00;
+    --black: #FFFFFF;
+    --dark: #F7F8FA;
+    --dark2: #EEF0F4;
+    --dark3: #E4E7ED;
+    --border: rgba(0,0,0,0.08);
+    --white: #0B0E1A;
+    --gray: #6B7280;
+    --gray-light: #374151;
+    --green: #22C55E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #FFFFFF; color: #0B0E1A; font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+  /* ── NAV ── */
+  .nav-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #0B0E1A;
+    border-bottom: 2px solid #F7C600;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: stretch; height: 66px; padding: 0 24px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; padding-right: 28px;
+    border-right: 1px solid rgba(255,255,255,0.07); margin-right: 4px; flex-shrink: 0;
+  }
+  .nav-logo-mark { width: 36px; height: 36px; background: #F7C600; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-wm { display: flex; flex-direction: column; gap: 1px; }
+  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.32em; color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 15px; font-weight: 800; color: #F7C600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.36em; color: rgba(255,255,255,0.22); text-transform: uppercase; line-height: 1; margin-top: 1px; }
+  .nav-links { display: flex; align-items: stretch; flex: 1; justify-content: center; }
+  .nav-item { position: relative; display: flex; align-items: stretch; }
+  .nav-item-btn {
+    display: flex; align-items: center; gap: 6px;
+    background: none; border: none; cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
+    color: #C8CEDF; padding: 0 16px; transition: color 0.15s;
+    border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
+  }
+  .nav-item-btn:hover, .nav-item-btn.open { color: #fff; }
+  .nav-item-btn.open { color: #F7C600; border-bottom-color: #F7C600; }
+  .nav-item-btn .nav-arr { font-size: 9px; opacity: 0.5; transition: transform 0.2s; display: inline-block; margin-top: 3px; }
+  .nav-item-btn.open .nav-arr { transform: rotate(180deg); }
+  .nav-item-link {
+    display: flex; align-items: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
+    color: #C8CEDF; padding: 0 16px; text-decoration: none; transition: color 0.15s;
+    border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
+  }
+  .nav-item-link:hover { color: #fff; }
+  .nav-right { display: flex; align-items: center; margin-left: auto; }
+  .nav-login {
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
+    color: #8A90A8; background: none; border: none; cursor: pointer;
+    padding: 0 16px; text-decoration: none; transition: color 0.15s;
+  }
+  .nav-login:hover { color: #fff; }
+  .nav-cta-btn {
+    background: #F7C600; color: #0B0E1A;
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
+    padding: 0 28px; text-decoration: none; transition: background 0.15s;
+    display: flex; align-items: center; height: 100%;
+  }
+  .nav-cta-btn:hover { background: #D9AE00; }
+
+  /* Dropdowns */
+  .nav-dropdown, .nav-mega {
+    display: none; position: absolute; top: calc(100% + 2px); left: 0; z-index: 400;
+    background: #111421;
+    border-top: 2px solid #F7C600;
+    border-left: 1px solid rgba(255,255,255,0.07);
+    border-right: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-dropdown.open, .nav-mega.open { display: block; }
+  .nav-mega.open { display: flex; }
+  .nav-dd-row {
+    display: flex; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    text-decoration: none; transition: background 0.15s;
+  }
+  .nav-dd-row:last-child { border-bottom: none; }
+  .nav-dd-row:hover { background: #181C2E; }
+  .nav-dd-row:hover .nav-dd-acc { background: #F7C600; }
+  .nav-dd-acc { width: 3px; align-self: stretch; flex-shrink: 0; background: transparent; transition: background 0.15s; }
+  .nav-dd-body { padding: 12px 16px; flex: 1; min-width: 200px; }
+  .nav-dd-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin-bottom: 2px; white-space: nowrap; }
+  .nav-dd-desc { font-size: 12px; color: #8A90A8; line-height: 1.3; white-space: nowrap; }
+  .nav-mega-col { min-width: 210px; border-right: 1px solid rgba(255,255,255,0.07); }
+  .nav-mega-col:last-of-type { border-right: none; }
+  .nav-mega-head { padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.07); font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.06em; color: #F7C600; }
+  .nav-mega-row {
+    display: flex; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    text-decoration: none; transition: background 0.15s;
+  }
+  .nav-mega-row:last-child { border-bottom: none; }
+  .nav-mega-row:hover { background: #181C2E; }
+  .nav-mega-row:hover .nav-mega-acc { background: #F7C600; }
+  .nav-mega-acc { width: 3px; align-self: stretch; flex-shrink: 0; background: transparent; transition: background 0.15s; }
+  .nav-mega-body { padding: 10px 15px; flex: 1; }
+  .nav-mega-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin-bottom: 1px; white-space: nowrap; }
+  .nav-mega-desc { font-size: 11px; color: #8A90A8; line-height: 1.3; white-space: nowrap; }
+  .nav-mega-featured {
+    width: 210px; background: rgba(247,198,0,0.05);
+    border-left: 1px solid rgba(247,198,0,0.18);
+    display: flex; flex-direction: column;
+  }
+  .nav-mf-top { padding: 20px 18px; flex: 1; }
+  .nav-mf-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #F7C600; margin-bottom: 8px; }
+  .nav-mf-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.02em; text-transform: uppercase; color: #fff; line-height: 1.0; margin-bottom: 8px; }
+  .nav-mf-desc { font-size: 12px; color: #8A90A8; line-height: 1.5; }
+  .nav-mf-cta {
+    display: block; text-align: center; background: #F7C600; color: #0B0E1A;
+    font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 0.06em;
+    padding: 12px 16px; text-decoration: none; transition: background 0.15s;
+  }
+  .nav-mf-cta:hover { background: #D9AE00; }
+
+  /* ── SHARED ── */
+  .container { max-width: 1200px; margin: 0 auto; }
+  section { padding: 96px 24px; }
+  hr.divider { border: none; border-top: 1px solid rgba(0,0,0,0.06); }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--yellow);
+    margin-bottom: 14px; display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content:''; display:block; width:28px; height:2px; background:var(--yellow); }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 6vw, 72px); line-height: 0.95; letter-spacing: 0.02em;
+    margin-bottom: 20px; text-transform: uppercase; color: #0B0E1A;
+  }
+  .section-title span { color: var(--yellow); }
+  .section-sub {
+    font-size: 17px; color: var(--gray); line-height: 1.7; max-width: 640px; margin-bottom: 48px;
+  }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+
+  /* ── HERO (DARK) ── */
+  .hero {
+    padding: 160px 24px 100px;
+    text-align: center;
+    position: relative; overflow: hidden;
+    background: #0B0E1A;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(247,198,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(247,198,0,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-glow {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 400px;
+    background: radial-gradient(ellipse, rgba(247,198,0,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(247,198,0,0.3); padding: 8px 20px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: #F7C600;
+    margin-bottom: 28px; position: relative; animation: fadeUp 0.5s ease both;
+  }
+  .hero-badge::before { content:''; width:8px; height:8px; background:#F7C600; border-radius:50%; animation:pulse 2s ease infinite; }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 9vw, 110px);
+    line-height: 0.92; letter-spacing: 0.01em; text-transform: uppercase;
+    position: relative; animation: fadeUp 0.5s 0.1s ease both; margin-bottom: 20px;
+    color: #FFFFFF;
+  }
+  .hero h1 span { color: #F7C600; }
+  .hero-sub {
+    font-size: 18px; color: #C8CEDF; line-height: 1.7;
+    max-width: 620px; margin: 0 auto 40px;
+    position: relative; animation: fadeUp 0.5s 0.2s ease both;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #F7C600; color: #0B0E1A;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 18px 48px; text-decoration: none; transition: all 0.2s;
+    position: relative; animation: fadeUp 0.5s 0.3s ease both;
+  }
+  .hero-cta:hover { background: #D9AE00; transform: translateY(-2px); }
+
+  /* ── VIDEO TOUR ── */
+  .video-tour {
+    background: #F7F8FA; padding: 96px 24px; text-align: center;
+  }
+  .video-tour h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 56px); line-height: 0.95; letter-spacing: 0.02em;
+    text-transform: uppercase; color: #0B0E1A; margin-bottom: 40px;
+  }
+  .video-tour h2 span { color: var(--yellow); }
+  .video-wrap {
+    max-width: 960px; margin: 0 auto; position: relative;
+    background: #0B0E1A; border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12); aspect-ratio: 16/9;
+    overflow: hidden; cursor: pointer;
+  }
+  .video-wrap::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(11,14,26,0.7) 0%, rgba(11,14,26,0.4) 100%);
+    z-index: 1; transition: opacity 0.3s;
+  }
+  .video-wrap:hover::before { opacity: 0.8; }
+  .video-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 2; width: 80px; height: 80px;
+    background: #F7C600; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(247,198,0,0.3);
+  }
+  .video-wrap:hover .video-play { transform: translate(-50%, -50%) scale(1.08); box-shadow: 0 6px 32px rgba(247,198,0,0.4); }
+  .video-play svg { margin-left: 4px; }
+  .video-grid-bg {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(247,198,0,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(247,198,0,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* ── HOW IT WORKS CARDS ── */
+  .how-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 48px;
+    position: relative;
+  }
+  .how-card {
+    background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
+    padding: 0; position: relative; transition: all 0.3s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04); overflow: hidden;
+  }
+  .how-card:hover { border-color: rgba(247,198,0,0.25); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .how-img {
+    width: 100%; height: 180px; object-fit: cover; display: block;
+    background: linear-gradient(135deg, #EEF0F4 0%, #E4E7ED 100%);
+    position: relative;
+  }
+  .how-img-placeholder {
+    width: 100%; height: 180px; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #EEF0F4 0%, #E4E7ED 100%);
+    position: relative; overflow: hidden;
+  }
+  .how-img-placeholder::before {
+    content:''; position:absolute; inset:0;
+    background-image: linear-gradient(rgba(247,198,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(247,198,0,0.04) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  .how-img-icon {
+    width: 56px; height: 56px; background: rgba(247,198,0,0.12);
+    border: 1px solid rgba(247,198,0,0.2); display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .how-body { padding: 28px 24px 32px; }
+  .how-step-badge {
+    display: inline-flex; align-items: center; gap: 6px; margin-bottom: 14px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--yellow); background: rgba(247,198,0,0.08);
+    border: 1px solid rgba(247,198,0,0.2); padding: 3px 10px;
+  }
+  .how-card h3 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 20px; letter-spacing: 0.03em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 10px;
+  }
+  .how-card p {
+    font-size: 14px; color: var(--gray); line-height: 1.7;
+  }
+  /* connector arrows between cards */
+  .how-connector {
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 90px; z-index: 5; width: 28px; height: 28px;
+    background: #F7C600; border-radius: 50%;
+  }
+  .how-connector svg { width: 12px; height: 12px; }
+  .how-connector-1 { left: calc(25% - 14px); }
+  .how-connector-2 { left: calc(50% - 14px); }
+  .how-connector-3 { left: calc(75% - 14px); }
+
+  /* ── AGENT GRID ── */
+  .agent-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px;
+  }
+  .agent-card {
+    background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
+    padding: 36px 28px; position: relative; transition: all 0.3s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    display: flex; flex-direction: column;
+  }
+  .agent-card:hover { border-color: rgba(247,198,0,0.3); box-shadow: 0 4px 16px rgba(247,198,0,0.06); }
+  .agent-icon {
+    width: 44px; height: 44px; background: rgba(11,14,26,0.06);
+    border: 1px solid rgba(11,14,26,0.1); display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+  }
+  .agent-icon svg { width: 22px; height: 22px; stroke: #0B0E1A; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .agent-tag {
+    display: inline-block; margin-bottom: 12px; align-self: flex-start;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--yellow); background: rgba(247,198,0,0.08);
+    border: 1px solid rgba(247,198,0,0.2); padding: 3px 10px;
+  }
+  .agent-card h3 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 18px; letter-spacing: 0.03em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 8px;
+  }
+  .agent-card p {
+    font-size: 14px; color: var(--gray); line-height: 1.6; flex: 1;
+  }
+  .agent-learn {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: #2563EB; text-decoration: none; transition: gap 0.2s;
+  }
+  .agent-learn:hover { gap: 10px; color: #1D4ED8; }
+  .agent-learn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  /* ── MODULE GRID ── */
+  .module-grid {
+    display: flex; flex-direction: column; gap: 2px; margin-top: 48px;
+  }
+  .module-row {
+    display: grid; grid-template-columns: 80px 1fr auto; gap: 0;
+    background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
+    transition: all 0.3s; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .module-row:hover { border-color: rgba(247,198,0,0.25); }
+  .module-num {
+    background: rgba(247,198,0,0.06); display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--yellow);
+    border-right: 1px solid rgba(0,0,0,0.06); padding: 24px 0;
+  }
+  .module-body { padding: 24px 28px; }
+  .module-body h3 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 18px; letter-spacing: 0.03em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 6px;
+  }
+  .module-body p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+  .module-meta {
+    display: flex; align-items: center; padding: 24px 28px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray); white-space: nowrap;
+  }
+  .module-tag-live {
+    display: inline-block; background: rgba(34,197,94,0.1); color: #22C55E;
+    border: 1px solid rgba(34,197,94,0.2); padding: 3px 10px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .module-tag-soon {
+    display: inline-block; background: rgba(247,198,0,0.08); color: var(--yellow);
+    border: 1px solid rgba(247,198,0,0.2); padding: 3px 10px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .module-tag-planned {
+    display: inline-block; background: rgba(107,114,128,0.08); color: var(--gray);
+    border: 1px solid rgba(107,114,128,0.2); padding: 3px 10px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* ── EXPECT CHECKLIST ── */
+  .expect-list {
+    display: flex; flex-direction: column; gap: 0; margin-top: 48px;
+    max-width: 800px;
+  }
+  .expect-item {
+    display: flex; gap: 20px; padding: 32px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .expect-item:first-child { padding-top: 0; }
+  .expect-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .expect-check {
+    width: 32px; height: 32px; flex-shrink: 0; margin-top: 2px;
+    background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .expect-check svg { width: 16px; height: 16px; stroke: #22C55E; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .expect-body {}
+  .expect-body h3 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 22px; letter-spacing: 0.03em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 8px;
+  }
+  .expect-body h3 span { color: var(--yellow); }
+  .expect-body p {
+    font-size: 15px; color: var(--gray); line-height: 1.7;
+  }
+
+  /* ── YELLOW CTA ── */
+  .final-cta {
+    background: #F7C600; padding: 100px 24px;
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .final-cta::before {
+    content:''; position:absolute; inset:0;
+    background-image: linear-gradient(rgba(11,14,26,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11,14,26,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .final-cta-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .final-cta-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.45);
+    margin-bottom: 16px;
+  }
+  .final-cta h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 7vw, 80px); line-height: 0.95;
+    text-transform: uppercase; color: #0B0E1A; margin-bottom: 20px;
+  }
+  .final-cta p { font-size: 17px; color: rgba(0,0,0,0.65); line-height: 1.8; margin-bottom: 40px; }
+  .btn-final-dark {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #0B0E1A; color: #F7C600;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 20px 48px; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-final-dark:hover { background: #111; transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer { background: #111421 !important; border-top: 1px solid rgba(247,198,0,0.15) !important; padding: 40px 24px; }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-copy { color: #8A90A8; font-size: 13px; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: #8A90A8; text-decoration: none; }
+  .footer-links a:hover { color: #FFFFFF; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .how-grid { grid-template-columns: 1fr 1fr; }
+    .how-connector { display: none; }
+    .agent-grid { grid-template-columns: 1fr 1fr; }
+    .module-row { grid-template-columns: 60px 1fr; }
+    .module-meta { display: none; }
+  }
+  @media (max-width: 640px) {
+    .how-grid { grid-template-columns: 1fr; }
+    .agent-grid { grid-template-columns: 1fr; }
+    .module-row { grid-template-columns: 1fr; }
+    .module-num { display: none; }
+  }
+</style>
+</head>
+<body>
+<!-- NAV -->
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a href="https://ai.theblueprint.training/index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="36" height="36" viewBox="0 0 60 60">
+          <rect width="60" height="60" fill="#F7C600"/>
+          <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+          <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+          <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
+        </svg>
+      </div>
+      <div class="nav-logo-wm">
+        <span>The</span><span>Blueprint</span><span>Training</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+
+      <a href="https://ai.theblueprint.training/blueprint-about.html" class="nav-item-link">About</a>
+
+      <a href="https://ai.theblueprint.training/blueprint-results.html" class="nav-item-link">Results</a>
+
+      <!-- Program dropdown -->
+      <div class="nav-item" id="nni-programs">
+        <button class="nav-item-btn" onclick="navTog('programs',this)">Program <span class="nav-arr">&#9660;</span></button>
+        <div class="nav-mega" id="ndd-programs">
+          <div class="nav-mega-col">
+            <div class="nav-mega-head">Core Programs</div>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Video Training</div><div class="nav-mega-desc">300+ AI-powered agency lessons</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">AI Agent Library</div><div class="nav-mega-desc">Deploy-ready Claude agents</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Templates + SOPs</div><div class="nav-mega-desc">21+ done-for-you templates</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Live Bootcamps</div><div class="nav-mega-desc">Monthly expert workshops</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Community</div><div class="nav-mega-desc">Private community of agency owners</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Weekly Live Coaching</div><div class="nav-mega-desc">Direct access to Ryan &amp; David</div></div></a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-mega-head">Specialty Courses</div>
+            <a href="https://ai.theblueprint.training/index.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">One-Person Agency</div><div class="nav-mega-desc">Build a 7-figure solo operation</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Local SEO Blueprint</div><div class="nav-mega-desc">Rank in the Maps Pack</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Link Building</div><div class="nav-mega-desc">Outreach &amp; acquisition at scale</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Content Production</div><div class="nav-mega-desc">AI-powered content workflows</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Client Reporting</div><div class="nav-mega-desc">Automated monthly reporting</div></div></a>
+            <a href="https://ai.theblueprint.training/blueprint-training.html" class="nav-mega-row"><div class="nav-mega-acc"></div><div class="nav-mega-body"><div class="nav-mega-name">Facebook Ads Blueprint</div><div class="nav-mega-desc">Paid social for agencies</div></div></a>
+          </div>
+          <div class="nav-mega-featured">
+            <div class="nav-mf-top">
+              <div class="nav-mf-label">New Program</div>
+              <div class="nav-mf-title">The One-Person Agency</div>
+              <div class="nav-mf-desc">Build a 7-figure SEO agency solo &mdash; using Claude agents to automate every workflow.</div>
+            </div>
+            <a href="https://ai.theblueprint.training/index.html" class="nav-mf-cta">Learn More &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://ai.theblueprint.training/blueprint-knowledge.html" class="nav-item-link">Knowledge</a>
+
+    </div>
+
+    <div class="nav-right">
+      <a href="https://app.theblueprint.training" class="nav-login">Login</a>
+      <a href="https://ai.theblueprint.training/blueprint-signup.html" class="nav-cta-btn">Get Started</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-badge">Built on 10+ Years of Agency Experience</div>
+
+  <h1>The <span>Program.</span></h1>
+
+  <p class="hero-sub">
+    Pre-built AI agents trained on 10 years of agency expertise. Video training from beginner to advanced. Live coaching. A community that actually helps. Everything you need to run a modern agency.
+  </p>
+
+  <a href="https://ai.theblueprint.training/blueprint-signup.html" class="hero-cta">Get Started &rarr;</a>
+</section>
+
+<!-- VIDEO TOUR -->
+<section class="video-tour">
+  <div class="container">
+    <h2>Take a two-minute <span>tour.</span></h2>
+    <div class="video-wrap">
+      <div class="video-grid-bg"></div>
+      <div class="video-play">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#0B0E1A" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- HOW IT WORKS -->
+<section style="background: #FFFFFF; padding: 96px 24px;">
+  <div class="container">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Four pillars. <span>One system.</span></h2>
+    <p class="section-sub">Blueprint isn't a course you watch and forget. It's a system built on four pillars that work together to get you delivering client results faster, with less manual work.</p>
+
+    <div class="how-grid">
+
+      <div class="how-card">
+        <div class="how-img-placeholder">
+          <div class="how-img-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/><circle cx="18" cy="6" r="3" fill="rgba(247,198,0,0.2)"/></svg>
+          </div>
+        </div>
+        <div class="how-body">
+          <div class="how-step-badge">Step 01</div>
+          <h3>Pre-Built AI Agents</h3>
+          <p>Deploy-ready agents built on 10 years of subject matter expertise delivering marketing services. Trained on the Blueprint SOP Suite and built by our team at Webris doing this work for real clients.</p>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-img-placeholder">
+          <div class="how-img-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+        </div>
+        <div class="how-body">
+          <div class="how-step-badge">Step 02</div>
+          <h3>Video Training</h3>
+          <p>300+ lessons teaching you exactly how to use every agent. From learning Claude Cowork and Claude Code from the ground up to customizing and deploying agents for your specific clients.</p>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-img-placeholder">
+          <div class="how-img-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+        </div>
+        <div class="how-body">
+          <div class="how-step-badge">Step 03</div>
+          <h3>Live Events</h3>
+          <p>Weekly live work sessions where you ask Blueprint coaches questions on a live call. Real-time help on implementation, agent troubleshooting, and working through client challenges.</p>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-img-placeholder">
+          <div class="how-img-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg>
+          </div>
+        </div>
+        <div class="how-body">
+          <div class="how-step-badge">Step 04</div>
+          <h3>Slack Community</h3>
+          <p>Share your progress, team up with other Blueprint members, and get help from Blueprint consultants via Slack. Hundreds of agency owners rowing in the same direction.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- AGENTS -->
+<section style="background: #F7F8FA; padding: 96px 24px;">
+  <div class="container">
+    <p class="section-label">Agent Library</p>
+    <h2 class="section-title">9 agents. <span>Ready to deploy.</span></h2>
+    <p class="section-sub">Each agent is delivered as an MCP file you install on your machine and run through Claude Code or Claude Cowork. Every agent is customizable for your niche, your clients, and your workflows.</p>
+
+    <div class="agent-grid">
+
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <span class="agent-tag">Sales Module</span>
+        <h3>Proposal Agent</h3>
+        <p>Takes discovery call notes and prospect data, generates a customized SEO analysis and proposal deck. Pulls competitive data, builds a WQA preview, outputs a branded proposal ready for client presentation.</p>
+        <a href="#" class="agent-learn">Learn more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
+        <span class="agent-tag">SEO Sprints</span>
+        <h3>Onboarding Agent</h3>
+        <p>Triggers onboarding from a signed proposal. Generates client intake questionnaires, access provisioning checklists, reporting cadence setup, and feeds client data into the Project Plan Agent.</p>
+        <a href="#" class="agent-learn">Learn more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <span class="agent-tag">SEO Sprints</span>
+        <h3>Project Plan Agent</h3>
+        <p>Generates custom project plans from signed proposals. Builds sprint timelines with milestones, deliverables, and dependencies. Updates dynamically as work progresses through each module.</p>
+        <a href="#" class="agent-learn">Learn more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+        <span class="agent-tag">SEO Sprints</span>
+        <h3>Website Quality Audit Agent</h3>
+        <p>The most robust agent in the program. Crawls a site, runs a comprehensive technical audit, evaluates content quality and EEAT signals, analyzes link profiles, and generates prioritized findings.</p>
+        <a href="#" class="agent-learn">Learn more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <span class="agent-tag">SEO Sprints</span>
+        <h3>Local SEO Agent</h3>
+        <p>Google Business Profile management, automated citation audits, NAP consistency checking, review request automation, response drafting, and sentiment tracking across major directories.</p>
+        <a href="#" class="agent-learn">Learn more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <span class="agent-tag">SEO Sprints</span>
+        <h3>Content Agent</h3>
+        <p>End-to-end content workflow: audit and gap analysis, content roadmap generation, and content production with outlines, drafts, and on-page optimization. Maps every piece to funnel stage and target keywords.</p>
+        <a href="#" class="agent-learn">Learn more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+        <span class="agent-tag">SEO Sprints</span>
+        <h3>Link Building Agent</h3>
+        <p>Full outreach pipeline with prospecting engine, contact finder, personalized outreach writer, and tracking database. Pipeline view from prospected through secured and live link placement.</p>
+        <a href="#" class="agent-learn">Learn more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <span class="agent-tag">SEO Sprints</span>
+        <h3>Reporting Agent</h3>
+        <p>Connects to GA4, Search Console, GBP, call tracking, and SEO tools. Generates branded client reports with narrative insights. Scheduled delivery on your cadence, customizable per client.</p>
+        <a href="#" class="agent-learn">Learn more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <span class="agent-tag">Full Library</span>
+        <h3>All Agents</h3>
+        <p>Google Ads agent, Meta Ads agent, and Acquisition agent are on the roadmap. Every agent follows the same pattern: video training + deploy-ready agent + live coaching support.</p>
+        <a href="#" class="agent-learn">Learn more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT'S INCLUDED (MODULES) -->
+<section style="background: #FFFFFF; padding: 96px 24px;">
+  <div class="container">
+    <p class="section-label">What's Included</p>
+    <h2 class="section-title">The full <span>curriculum.</span></h2>
+    <p class="section-sub">Modules release bi-weekly starting April 9, 2026. Every module includes video training, a working agent, and live coaching support. Paid media and acquisition modules targeting Q3/Q4.</p>
+
+    <div class="module-grid">
+
+      <div class="module-row">
+        <div class="module-num">01</div>
+        <div class="module-body">
+          <h3>AI Foundations + Agency Building</h3>
+          <p>The Claude ecosystem (Chat, Cowork, Code), core terminology (MCP, Skills, Tools, Agents), hands-on agent building, agent design principles, positioning, offer design, and productization for AI-first operations.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-live">Live</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">02</div>
+        <div class="module-body">
+          <h3>Sales</h3>
+          <p>The 4-stage sales framework (Discovery, Analysis/Proposal, Close, Contract), 11 qualifying questions, value-based pricing, objection handling scripts, and the Proposal Agent for automated proposals.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-soon">Apr 23</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">3a</div>
+        <div class="module-body">
+          <h3>Onboarding + Project Management</h3>
+          <p>Automated onboarding sequences, client intake questionnaires, access provisioning, sprint-based delivery model, task tracking, and the Onboarding + Project Plan Agents.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-soon">May 7</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">3b</div>
+        <div class="module-body">
+          <h3>Website Quality Audit</h3>
+          <p>The 6-component WQA framework (Page Categories, Technical, Content/EEAT, On-Page, Architecture, Links), EEAT assessment, technical audit checklist, and the WQA Agent &mdash; the most robust agent in the program.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-soon">May 21</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">3c</div>
+        <div class="module-body">
+          <h3>Local SEO</h3>
+          <p>8-step local SEO process, GBP optimization, citation building strategy, review generation and management, local keyword targeting, and the Local SEO Agent for automated GBP and citation management.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-soon">Jun 4</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">3d</div>
+        <div class="module-body">
+          <h3>Content</h3>
+          <p>Content funnel strategy, cluster methodology, the full content lifecycle from audit to published piece. The Content Agent handles audit, gap analysis, roadmap creation, and production.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-soon">Jun 18</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">3e</div>
+        <div class="module-body">
+          <h3>Link Building</h3>
+          <p>3-tier link system, link audit and disavow, link economics, and the Link Building Agent with prospecting engine, contact finder, personalized outreach writer, and tracking database.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-soon">Jul 2</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">3f</div>
+        <div class="module-body">
+          <h3>Reporting</h3>
+          <p>3-Bucket SEO Model, 3-Report Model (Kickoff, Sprint, Wrap-up), key metrics by category, and the Reporting Agent with multi-source data, branded reports, and scheduled delivery.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-soon">Jul 16</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">09</div>
+        <div class="module-body">
+          <h3>Google Ads</h3>
+          <p>Agent-assisted campaign setup, management, and optimization. Full curriculum and agent details coming Q3 2026.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-planned">Q3 2026</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">10</div>
+        <div class="module-body">
+          <h3>Meta Ads</h3>
+          <p>Builds on existing offer development, VSL, funnel creation, and KPI Waterfall content. Adding an agent layer for campaign management and optimization.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-planned">Q3 2026</span></div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-num">11</div>
+        <div class="module-body">
+          <h3>Acquisition</h3>
+          <p>Content creation, YouTube, social media, and VSL production for your agency's own marketing. Updated for AI-assisted content workflows.</p>
+        </div>
+        <div class="module-meta"><span class="module-tag-planned">Q4 2026</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT TO EXPECT -->
+<section style="background: #F7F8FA; padding: 96px 24px;">
+  <div class="container">
+    <p class="section-label">What to Expect</p>
+    <h2 class="section-title">What you'll <span>walk away with.</span></h2>
+    <p class="section-sub">This isn't about replacing you with AI. It's about making you better, faster, and more valuable.</p>
+
+    <div class="expect-list">
+
+      <div class="expect-item">
+        <div class="expect-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="expect-body">
+          <h3>Build <span>using</span> AI, not <span>with</span> AI</h3>
+          <p>There's a difference between automating everything and using AI to make your work better. We teach you how to speed up delivery and improve quality of outcomes &mdash; not hand your brain to a machine. You'll learn how to work with AI, not just press buttons and hope for the best.</p>
+        </div>
+      </div>
+
+      <div class="expect-item">
+        <div class="expect-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="expect-body">
+          <h3>Future-proof <span>your agency</span></h3>
+          <p>Delivering services with AI is going to be the norm. It's not a nice-to-have &mdash; it's critically important if you want to have an agency business in the future. Learning how to do it and mastering it now is a skill worth developing while most of your competitors are still guessing.</p>
+        </div>
+      </div>
+
+      <div class="expect-item">
+        <div class="expect-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="expect-body">
+          <h3>A real <span>community</span></h3>
+          <p>You'll be around hundreds of other agency owners doing the exact same thing. Through communication, sharing, and networking, you're going to be surrounded by people rowing in the same direction. That matters more than any course material.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- YELLOW CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="final-cta-label">5,000+ agency owners and counting</div>
+    <h2>Ready to see<br>the program?</h2>
+    <p>Two plans. Full access to every agent, every module, and the entire community. Pick the one that fits how you want to move.</p>
+    <a href="https://ai.theblueprint.training/blueprint-signup.html" class="btn-final-dark">View Pricing &rarr;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <svg width="36" height="36" viewBox="0 0 60 60">
+        <rect width="60" height="60" fill="#F7C600"/>
+        <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+        <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+        <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+        <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+        <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+        <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+        <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
+        <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
+      </svg>
+      <div style="display:flex; flex-direction:column; gap:1px;">
+        <span style="font-family:Orbitron,sans-serif; font-size:7px; font-weight:600; letter-spacing:0.32em; color:rgba(255,255,255,0.28); text-transform:uppercase; line-height:1;">The</span>
+        <span style="font-family:Orbitron,sans-serif; font-size:13px; font-weight:800; color:#F7C600; letter-spacing:0.06em; text-transform:uppercase; line-height:1;">Blueprint</span>
+        <span style="font-family:Orbitron,sans-serif; font-size:6.5px; font-weight:600; letter-spacing:0.36em; color:rgba(255,255,255,0.22); text-transform:uppercase; line-height:1; margin-top:1px;">Training</span>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2024 The Blueprint Training LLC + WEBRIS LLC. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://ai.theblueprint.training/blueprint-about.html">About</a>
+      <a href="https://ai.theblueprint.training/blueprint-knowledge.html">Knowledge</a>
+      <a href="https://ai.theblueprint.training/blueprint-signup.html">Pricing</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function navTog(id,btn){
+  var dd=document.getElementById('ndd-'+id);
+  var isOpen=dd.classList.contains('open');
+  document.querySelectorAll('.nav-dropdown,.nav-mega').forEach(function(d){d.classList.remove('open');});
+  document.querySelectorAll('.nav-item-btn').forEach(function(b){b.classList.remove('open');});
+  if(!isOpen){dd.classList.add('open');btn.classList.add('open');}
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.nav-item')){
+    document.querySelectorAll('.nav-dropdown,.nav-mega').forEach(function(d){d.classList.remove('open');});
+    document.querySelectorAll('.nav-item-btn').forEach(function(b){b.classList.remove('open');});
+  }
+});
+</script>
+</body>
+</html>
