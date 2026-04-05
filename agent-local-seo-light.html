@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Video Training for Agencies | The Blueprint Training</title>
+<title>Automate Local SEO | The Blueprint Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -65,9 +65,9 @@
   }
   .nav-cta-btn:hover { background: #D9AE00; }
 
-  /* ── HERO (dark, left-aligned) ── */
+  /* ── HERO (dark, 50/50 split) ── */
   .page-hero {
-    padding: 140px 24px 64px;
+    padding: 130px 24px 0;
     position: relative; overflow: hidden;
     background: #0B0E1A;
   }
@@ -77,7 +77,12 @@
       linear-gradient(90deg, rgba(247,198,0,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
-  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto; position: relative;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    padding-bottom: 64px;
+  }
+  .hero-text { }
 
   .page-cat-badge {
     display: inline-block; background: rgba(247,198,0,0.1); border: 1px solid rgba(247,198,0,0.25);
@@ -88,7 +93,7 @@
 
   .page-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 8vw, 96px); line-height: 0.92;
+    font-size: clamp(44px, 6vw, 80px); line-height: 0.92;
     letter-spacing: 0.01em; text-transform: uppercase;
     color: #FFFFFF; margin-bottom: 24px;
   }
@@ -96,8 +101,37 @@
 
   .page-intro {
     font-size: 18px; color: #C8CEDF; line-height: 1.75;
-    max-width: 680px; margin-bottom: 0;
+    max-width: 520px; margin-bottom: 32px;
   }
+
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--yellow); color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 18px 44px; text-decoration: none; transition: all 0.2s;
+  }
+  .hero-cta:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  .hero-media {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    aspect-ratio: 16/10;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .hero-media-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+  }
+  .hero-media-play {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(247,198,0,0.15); border: 2px solid rgba(247,198,0,0.3);
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .hero-media-play svg { width: 24px; height: 24px; fill: var(--yellow); margin-left: 3px; }
 
   /* ── MAIN LAYOUT (light) ── */
   .page-layout {
@@ -150,24 +184,58 @@
   }
   .callout p { font-size: 16px; color: var(--gray-light); line-height: 1.7; margin-bottom: 0; }
 
-  /* Pillar blocks (light) */
-  .pillar-header { display: flex; align-items: baseline; gap: 16px; margin: 40px 0 14px; }
-  .pillar-num {
-    font-family: 'Bebas Neue', sans-serif; font-size: 52px;
-    color: rgba(247,198,0,0.25); line-height: 1; flex-shrink: 0;
+  /* Image placeholder */
+  .img-placeholder {
+    background: var(--bg-light); border: 1px dashed rgba(0,0,0,0.12);
+    aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
+    margin: 32px 0;
   }
-  .pillar-title {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-    font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; color: #0B0E1A;
+  .img-placeholder span {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(0,0,0,0.18);
   }
 
-  .module-row {
+  /* ── HOW IT WORKS — visual linear flow ── */
+  .flow-container { margin: 32px 0; }
+
+  .flow-step {
+    display: grid; grid-template-columns: 56px 1fr; gap: 0; position: relative;
+  }
+  .flow-step:last-child .flow-line { display: none; }
+
+  .flow-indicator {
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; z-index: 2;
+  }
+  .flow-num {
+    width: 48px; height: 48px; background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--black);
+    flex-shrink: 0;
+  }
+  .flow-line {
+    width: 2px; flex: 1; background: rgba(247,198,0,0.25); min-height: 20px;
+  }
+
+  .flow-content {
+    padding: 8px 0 36px 24px;
+  }
+  .flow-content h4 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+    font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 8px;
+  }
+  .flow-content p { font-size: 16px; color: var(--gray-light); line-height: 1.7; margin-bottom: 0; }
+
+  /* Output rows */
+  .output-row {
     display: flex; align-items: center; justify-content: space-between;
     padding: 11px 16px; background: var(--bg-light);
     border-left: 2px solid rgba(247,198,0,0.35); margin-bottom: 2px; gap: 16px;
   }
-  .module-row-name { font-size: 15px; color: #0B0E1A; }
-  .module-row-tag {
+  .output-row-name { font-size: 15px; color: #0B0E1A; }
+  .output-row-tag {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--gray); white-space: nowrap; flex-shrink: 0;
@@ -176,35 +244,26 @@
   /* Sidebar (light) */
   .sidebar { position: sticky; top: 90px; }
 
-  .sidebar-stats {
-    background: var(--white); border: 1px solid var(--border); padding: 24px; margin-bottom: 24px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  }
   .s-label {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
     color: #0B0E1A; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
   }
   .s-label::before { content:''; display:block; width:20px; height:2px; background:var(--yellow); }
-  .sidebar-stat {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 11px 0; border-bottom: 1px solid var(--border);
-  }
-  .sidebar-stat:last-child { border-bottom: none; }
-  .sidebar-stat-label { font-size: 13px; color: var(--gray); }
-  .sidebar-stat-val { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: #0B0E1A; line-height: 1; }
 
-  .toc-box {
-    background: var(--white); border: 1px solid var(--border); padding: 28px 24px; margin-bottom: 24px;
+  /* Agent nav (all agents) */
+  .agent-nav-box {
+    background: var(--white); border: 1px solid var(--border); padding: 24px; margin-bottom: 24px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
-  .toc-list { list-style: none; display: flex; flex-direction: column; }
-  .toc-list li a {
+  .agent-nav-list { list-style: none; display: flex; flex-direction: column; }
+  .agent-nav-list li a {
     display: block; padding: 9px 0; font-size: 14px; color: var(--gray);
     text-decoration: none; border-bottom: 1px solid var(--border); transition: color 0.2s; line-height: 1.4;
   }
-  .toc-list li:last-child a { border-bottom: none; }
-  .toc-list li a:hover, .toc-list li a.active { color: #0B0E1A; }
+  .agent-nav-list li:last-child a { border-bottom: none; }
+  .agent-nav-list li a:hover { color: #0B0E1A; }
+  .agent-nav-list li a.current { color: #0B0E1A; font-weight: 600; }
 
   .sidebar-cta { background: var(--yellow); padding: 28px 24px; }
   .sidebar-cta .sc-label {
@@ -264,6 +323,8 @@
   .footer-links a:hover { color: #fff; }
 
   @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-media { max-width: 480px; }
     .page-layout { grid-template-columns: 1fr; gap: 48px; }
     .sidebar { position: static; }
   }
@@ -310,13 +371,22 @@
   </div>
 </div>
 
-<!-- HERO (dark, left-aligned) -->
+<!-- HERO (dark, 50/50 split) -->
 <section class="page-hero">
   <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="page-cat-badge">Core Program · Updated Monthly</div>
-    <h1 class="page-title">AI video training<br><span>for agencies.</span></h1>
-    <p class="page-intro">300+ step-by-step videos teaching agency owners how to build, run, and scale an AI-powered SEO agency. Every module covers a real workflow — from deploying Claude agents to delivering technical audits — with an SOP and done-for-you template included.</p>
+    <div class="hero-text">
+      <div class="page-cat-badge">AI Agent · SEO Sprints</div>
+      <h1 class="page-title">Automate local<br><span>SEO.</span></h1>
+      <p class="page-intro">Manage Google Business Profiles, citations, and reviews at scale — without the manual busywork. The Local SEO Agent handles everything from GBP optimization to citation audits to review response drafting, so your clients dominate the Maps Pack.</p>
+      <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="hero-cta">Get Started &rarr;</a>
+    </div>
+    <div class="hero-media">
+      <div class="hero-media-play">
+        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <span class="hero-media-label" style="position:absolute; bottom:16px; left:0; right:0; text-align:center;">Video / Image</span>
+    </div>
   </div>
 </section>
 
@@ -325,160 +395,167 @@
 
   <div class="page-body">
 
-    <h2 id="what-is-this">What Is the Blueprint Video Training?</h2>
+    <h2 id="what-it-does">What It Does</h2>
 
-    <p>Most agency training teaches you what to do. The Blueprint teaches you how to do it — with process-focused video walkthroughs for every deliverable your agency needs to produce.</p>
+    <p>The Local SEO Agent automates the complete local search workflow: Google Business Profile management, citation audits, NAP consistency checking, review monitoring, and response drafting across all major directories. Everything a local SEO campaign needs, packaged into one agent that scales with your client base.</p>
 
-    <p>Over the past nine years, we've built a training platform that covers the complete lifecycle of running an SEO agency: finding your niche, productizing your service, delivering results at scale, acquiring clients, and closing deals. Every module is built around a real workflow, not a theory.</p>
+    <p>You feed it your client's business data and current GBP profile. It analyzes completeness and optimization opportunities, crawls directories for existing citations, identifies inconsistencies and duplicates, monitors new reviews, and drafts personalized responses in the client's voice. Then it generates monthly local SEO reports tracking performance, rankings, and health metrics.</p>
 
-    <p>In 2024, we rebuilt the entire training library around AI. Every pillar now includes dedicated modules on how to use Claude AI agents to automate, accelerate, and improve each workflow — so you can do more with a smaller team, get results faster, and deliver a service your competitors can't replicate.</p>
+    <p>Blueprint members managing local SEO clients are now handling 3-5x more clients at higher margins because the agent eliminates the manual busywork of GBP management, citation cleanup, and review response drafting. What used to take 8 hours per month per client now takes 30 minutes of oversight.</p>
+
+    <!-- Image placeholder: What It Does -->
+    <div class="img-placeholder">
+      <span>Image — Local SEO Agent Interface / Dashboard</span>
+    </div>
 
     <div class="callout">
-      <div class="callout-label">Who this is for</div>
-      <p>SEO agencies, consultants, and freelancers who want to learn how to integrate AI into their service delivery, build systems that run without them, and position their agency to charge premium prices in a market that's rapidly changing.</p>
+      <div class="callout-label">Why this matters</div>
+      <p>Local SEO is high-value but tedious. Clients expect GBP management, citation cleanup, and review responses — but the manual work doesn't scale. This agent makes local SEO profitable at any client volume.</p>
     </div>
 
-    <h2 id="why-ai-training">Why AI Training for Agencies — and Why Now</h2>
+    <h2 id="how-it-works">How It Works</h2>
 
-    <p>The SEO agency model is being rebuilt. Workflows that once required a team of five — keyword research, content briefs, technical audits, link prospecting, monthly reporting — can now be handled by a single operator using AI agents trained on your exact SOPs.</p>
+    <p>The Local SEO Agent follows a complete 5-stage local search workflow that covers every deliverable from GBP optimization through monthly reporting:</p>
 
-    <p>The agencies winning right now aren't the ones with the biggest teams. They're the ones who've figured out how to layer AI on top of proven processes. That's exactly what this training covers.</p>
+    <div class="flow-container">
+      <div class="flow-step">
+        <div class="flow-indicator">
+          <div class="flow-num">1</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h4>GBP Audit & Optimization</h4>
+          <p>Analyzes the client's Google Business Profile for completeness, accuracy, and optimization opportunities. Generates recommendations for categories, attributes, descriptions, and photo strategy to improve visibility and rankings.</p>
+        </div>
+      </div>
 
-    <p>We don't teach you to use generic ChatGPT prompts. We teach you to <strong>build purpose-built Claude agents</strong> that know your service, your clients, and your delivery standards — and run your workflows without you having to supervise every step.</p>
+      <div class="flow-step">
+        <div class="flow-indicator">
+          <div class="flow-num">2</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h4>Citation Audit & Cleanup</h4>
+          <p>Crawls major directories and data aggregators to find existing citations. Identifies NAP inconsistencies, duplicate listings, and missing directories — then generates correction instructions for each platform and aggregator.</p>
+        </div>
+      </div>
 
-    <h2 id="what-you-learn">What You'll Learn</h2>
+      <div class="flow-step">
+        <div class="flow-indicator">
+          <div class="flow-num">3</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h4>Review Monitoring & Response</h4>
+          <p>Monitors new reviews across Google, Yelp, and industry-specific directories. Drafts personalized responses for each review — maintaining the client's brand voice while addressing specific feedback, whether positive, neutral, or negative.</p>
+        </div>
+      </div>
 
-    <p>The training is organized into five pillars. Each one covers a distinct area of agency mastery, with dedicated AI modules showing you how to automate and accelerate every workflow using Claude.</p>
+      <div class="flow-step">
+        <div class="flow-indicator">
+          <div class="flow-num">4</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h4>Review Generation Strategy</h4>
+          <p>Builds a review request workflow: identifies happy customers, generates request templates, and suggests optimal timing for outreach. Tracks review velocity and sentiment over time to show client impact and identify service improvements.</p>
+        </div>
+      </div>
 
-    <!-- Pillar 1 -->
-    <div class="pillar-header" id="pillar-1">
-      <div class="pillar-num">01</div>
-      <div class="pillar-title">Niche &amp; Offer Development</div>
+      <div class="flow-step">
+        <div class="flow-indicator">
+          <div class="flow-num">5</div>
+        </div>
+        <div class="flow-content">
+          <h4>Monthly Local Reporting</h4>
+          <p>Generates a local SEO performance report covering GBP insights, ranking positions for local keywords, review metrics, and citation health — formatted and ready for client delivery with actionable recommendations.</p>
+        </div>
+      </div>
     </div>
-    <p>How to define who you serve, what you deliver, and why your offer commands premium pricing. Includes AI modules on using Claude to research markets, validate niches, and write high-converting offer positioning.</p>
-    <div class="module-row"><span class="module-row-name">Market Positioning</span><span class="module-row-tag">6 videos · 2 examples · 1 template</span></div>
-    <div class="module-row"><span class="module-row-name">Offer Creation</span><span class="module-row-tag">6 videos · 1 template</span></div>
 
-    <!-- Pillar 2 -->
-    <div class="pillar-header" id="pillar-2">
-      <div class="pillar-num">02</div>
-      <div class="pillar-title">Productizing Your Agency</div>
+    <!-- Image placeholder: How It Works -->
+    <div class="img-placeholder">
+      <span>Image — Local SEO Workflow / Report Preview</span>
     </div>
-    <p>How to turn your custom service into a repeatable, scalable product your team can deliver without you. AI modules cover building Claude agents for project management, client onboarding automation, and SOP generation.</p>
-    <div class="module-row"><span class="module-row-name">Productization</span><span class="module-row-tag">5 videos · 1 template</span></div>
-    <div class="module-row"><span class="module-row-name">Service Mapping</span><span class="module-row-tag">4 videos · 1 template</span></div>
-    <div class="module-row"><span class="module-row-name">Process Design</span><span class="module-row-tag">3 videos · 1 exercise</span></div>
-    <div class="module-row"><span class="module-row-name">Project Plan Design</span><span class="module-row-tag">2 videos · 1 template</span></div>
-    <div class="module-row"><span class="module-row-name">Creating SOPs with AI</span><span class="module-row-tag">2 videos · 2 templates</span></div>
 
-    <!-- Pillar 3 -->
-    <div class="pillar-header" id="pillar-3">
-      <div class="pillar-num">03</div>
-      <div class="pillar-title">Service Mastery: AI-Powered SEO Sprints</div>
+    <h2 id="what-it-outputs">What It Outputs</h2>
+
+    <p>Every time you run the Local SEO Agent, you get a complete local search package ready to implement and report on:</p>
+
+    <div class="output-row"><span class="output-row-name">GBP Optimization Plan</span><span class="output-row-tag">Actionable checklist</span></div>
+    <div class="output-row"><span class="output-row-name">Citation Audit Report</span><span class="output-row-tag">With corrections</span></div>
+    <div class="output-row"><span class="output-row-name">Review Responses</span><span class="output-row-tag">Drafted per review</span></div>
+    <div class="output-row"><span class="output-row-name">Review Request Templates</span><span class="output-row-tag">Customized</span></div>
+    <div class="output-row"><span class="output-row-name">Local Ranking Tracker</span><span class="output-row-tag">Maps Pack positions</span></div>
+    <div class="output-row"><span class="output-row-name">Monthly Local SEO Report</span><span class="output-row-tag">Client-facing</span></div>
+
+    <!-- Image placeholder: What It Outputs -->
+    <div class="img-placeholder">
+      <span>Image — Output Examples / Reports</span>
     </div>
-    <p>The most comprehensive pillar — and the most thoroughly rebuilt for AI. This covers every deliverable in your SEO service, with dedicated training on how to deploy Claude agents for each one. From technical audits to content production to link building outreach, every workflow has an AI module showing you exactly how to automate it.</p>
-    <div class="module-row"><span class="module-row-name">Client Onboarding Agent</span><span class="module-row-tag">5 videos · 2 templates</span></div>
-    <div class="module-row"><span class="module-row-name">AI Project Management</span><span class="module-row-tag">15 videos · 7 templates</span></div>
-    <div class="module-row"><span class="module-row-name">Technical SEO Audit Agent</span><span class="module-row-tag">20 videos · 5 templates</span></div>
-    <div class="module-row"><span class="module-row-name">Keyword &amp; Content Gap Agent</span><span class="module-row-tag">12 videos · 3 templates</span></div>
-    <div class="module-row"><span class="module-row-name">AI SEO Strategy Builder</span><span class="module-row-tag">13 videos · 9 templates</span></div>
-    <div class="module-row"><span class="module-row-name">Content Production Agent</span><span class="module-row-tag">20 videos · 9 templates</span></div>
-    <div class="module-row"><span class="module-row-name">Link Building &amp; Outreach Agent</span><span class="module-row-tag">19 videos · 5 templates</span></div>
-    <div class="module-row"><span class="module-row-name">Automated Client Reporting</span><span class="module-row-tag">6 videos · 2 templates</span></div>
-    <div class="module-row"><span class="module-row-name">Local SEO &amp; GBP Automation</span><span class="module-row-tag">4 videos · 4 templates</span></div>
-    <div class="module-row"><span class="module-row-name">PPC + LSA Add-On</span><span class="module-row-tag">4 videos · 5 templates</span></div>
 
-    <!-- Pillar 4 -->
-    <div class="pillar-header" id="pillar-4">
-      <div class="pillar-num">04</div>
-      <div class="pillar-title">Client Acquisition</div>
-    </div>
-    <p>How to build a pipeline that generates qualified leads consistently — without cold outreach or paid ads. Includes AI modules on using Claude to create content at scale, build lead magnets, and write video scripts that convert.</p>
-    <div class="module-row"><span class="module-row-name">Lead Generation Framework</span><span class="module-row-tag">3 SOPs · 2 templates</span></div>
-    <div class="module-row"><span class="module-row-name">AI Content Ideation &amp; Thesis</span><span class="module-row-tag"></span></div>
-    <div class="module-row"><span class="module-row-name">Content Outlines &amp; Creation at Scale</span><span class="module-row-tag"></span></div>
-    <div class="module-row"><span class="module-row-name">VSL Deep Dive</span><span class="module-row-tag"></span></div>
-    <div class="module-row"><span class="module-row-name">Promotion Strategy</span><span class="module-row-tag"></span></div>
-    <div class="module-row"><span class="module-row-name">YouTube Optimization with AI</span><span class="module-row-tag"></span></div>
+    <h2 id="who-its-for">Who It's For</h2>
 
-    <!-- Pillar 5 -->
-    <div class="pillar-header" id="pillar-5">
-      <div class="pillar-num">05</div>
-      <div class="pillar-title">Sales</div>
-    </div>
-    <p>How to close more deals at higher prices. The complete sales process from first call to signed contract — built specifically for the Sprint model and the AI agency positioning.</p>
-    <div class="module-row"><span class="module-row-name">Discovery</span><span class="module-row-tag">2 videos</span></div>
-    <div class="module-row"><span class="module-row-name">Proposals</span><span class="module-row-tag">2 videos</span></div>
-    <div class="module-row"><span class="module-row-name">Analysis</span><span class="module-row-tag">2 videos</span></div>
-    <div class="module-row"><span class="module-row-name">Following Up &amp; Closing</span><span class="module-row-tag">2 videos</span></div>
-
-    <h2 id="also-included">Also Included With Your Membership</h2>
-
-    <p>The video training is the core of your Blueprint membership — but it's not the only thing you get access to.</p>
+    <p>This agent is built for agencies and operators managing local clients who need scalable local SEO delivery without hiring additional staff or spending hours on manual GBP and citation management.</p>
 
     <ul>
-      <li><strong>Claude AI Agent Library</strong> — deploy-ready agents for every workflow in the curriculum, pre-trained on Blueprint SOPs</li>
-      <li><strong>21+ Done-For-You Templates</strong> — battle-tested for sales, delivery, client management, and reporting</li>
-      <li><strong>Training Workbooks</strong> — fill-in-the-blank workbooks accompanying every module so you implement as you learn</li>
-      <li><strong>Pruvae Community</strong> — private community of 5,000+ agency owners building AI-powered agencies alongside you</li>
-      <li><strong>Weekly Live Coaching</strong> — sessions with Ryan Stewart and David Krevitt on what's working right now</li>
-      <li><strong>Monthly Bootcamps</strong> — deep-dive workshops from industry experts on AI, sales, link building, and more</li>
+      <li><strong>Agencies serving local businesses</strong> (lawyers, dentists, contractors, restaurants) who need scalable local SEO delivery</li>
+      <li><strong>Solo operators</strong> managing 10+ local clients who can't manually manage every GBP and citation</li>
+      <li><strong>Teams adding local SEO</strong> as a service line who need a systematized delivery process</li>
     </ul>
+
+    <h2 id="training-included">Training Included</h2>
+
+    <p>The Local SEO Agent comes with complete local search training covering GBP optimization, citation strategy, review workflows, and multi-location management. You'll learn the full system, then deploy the agent to execute it at scale.</p>
+
+    <div class="output-row"><span class="output-row-name">Local SEO Fundamentals</span><span class="output-row-tag">4 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Local SEO Agent Setup</span><span class="output-row-tag">2 videos · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">GBP Optimization Deep Dive</span><span class="output-row-tag">3 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Citation & Review Workflows</span><span class="output-row-tag">3 videos · 2 templates</span></div>
+
+    <!-- Image placeholder: Training Included -->
+    <div class="img-placeholder">
+      <span>Image — Training Interface / Module Preview</span>
+    </div>
 
     <h2 id="faq">Frequently Asked Questions</h2>
 
-    <h3>Do I need to know how to code to use the AI training?</h3>
-    <p>No. Every AI module is built for operators, not developers. We use Claude's Cowork and Desktop interfaces — no coding required. If you can follow a recipe, you can deploy these agents.</p>
+    <h3>Does it manage GBP directly?</h3>
+    <p>It generates all the optimization recommendations and content, but you apply the changes through the GBP dashboard. This keeps you in control of the client's listing.</p>
 
-    <h3>Do I need a Claude subscription separately?</h3>
-    <p>Yes. You'll need a Claude Pro or Team plan (~$20–$25/month) in addition to your Blueprint membership. We walk you through exactly which plan to get and how to set it up in the first module.</p>
+    <h3>How many local clients can I manage?</h3>
+    <p>Members typically manage 15-25 local clients with this agent. The bottleneck shifts from manual work to strategic oversight.</p>
 
-    <h3>Is SEO Sprints included?</h3>
-    <p>Yes. The complete SEO Sprints training is included under Pillar 3 — rebuilt with AI automation modules for every deliverable. It's the most comprehensive module in the library.</p>
+    <h3>Does it work for multi-location businesses?</h3>
+    <p>Yes. The agent handles multi-location audits and generates location-specific recommendations. The training covers the multi-location workflow in detail.</p>
 
-    <h3>How is the AI content different from generic ChatGPT training?</h3>
-    <p>We don't teach you to use AI as a writing assistant. We teach you to build agents trained on your specific SOPs, client context, and delivery standards — so they produce agency-quality output, not generic AI text.</p>
-
-    <h3>How much does it cost?</h3>
-    <p>$249/month or $2,499/year (two months free). Everything on this page is included — all 300+ videos, the AI agent library, templates, community, and live coaching.</p>
-
-    <h3>Can I speak to someone before joining?</h3>
-    <p>Yes. Email ryan@theblueprint.training or book a free call through the Get Started page.</p>
+    <h3>Can it draft responses in the client's voice?</h3>
+    <p>Yes. You train the agent on the client's brand voice and response style during setup. It adapts tone based on whether the review is positive, neutral, or negative.</p>
 
   </div>
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
 
-    <div class="sidebar-stats">
-      <div class="s-label">At a glance</div>
-      <div class="sidebar-stat"><span class="sidebar-stat-label">Videos</span><span class="sidebar-stat-val">300+</span></div>
-      <div class="sidebar-stat"><span class="sidebar-stat-label">Pillars</span><span class="sidebar-stat-val">5</span></div>
-      <div class="sidebar-stat"><span class="sidebar-stat-label">Templates</span><span class="sidebar-stat-val">21+</span></div>
-      <div class="sidebar-stat"><span class="sidebar-stat-label">AI Agents</span><span class="sidebar-stat-val">8+</span></div>
-      <div class="sidebar-stat"><span class="sidebar-stat-label">Price</span><span class="sidebar-stat-val">$249/mo</span></div>
-    </div>
-
-    <div class="toc-box">
-      <div class="s-label">On this page</div>
-      <ul class="toc-list">
-        <li><a href="#what-is-this">What is this?</a></li>
-        <li><a href="#why-ai-training">Why AI training</a></li>
-        <li><a href="#what-you-learn">What you'll learn</a></li>
-        <li><a href="#pillar-1">01 — Niche &amp; Offer</a></li>
-        <li><a href="#pillar-2">02 — Productizing</a></li>
-        <li><a href="#pillar-3">03 — AI SEO Sprints</a></li>
-        <li><a href="#pillar-4">04 — Acquisition</a></li>
-        <li><a href="#pillar-5">05 — Sales</a></li>
-        <li><a href="#also-included">Also included</a></li>
-        <li><a href="#faq">FAQ</a></li>
+    <div class="agent-nav-box">
+      <div class="s-label">All Agents</div>
+      <ul class="agent-nav-list">
+        <li><a href="https://ai.theblueprint.training/agent-sales-light.html">Sales Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-onboarding-light.html">Onboarding Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-project-manager-light.html">Project Manager Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-technical-seo-light.html">Technical SEO Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-content-light.html">Content Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-link-building-light.html">Link Building Agent</a></li>
+        <li><a href="#" class="current">Local SEO Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-reporting-light.html">Reporting Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-strategy-light.html">Strategy Agent</a></li>
       </ul>
     </div>
 
     <div class="sidebar-cta">
-      <div class="sc-label">Ready to start?</div>
-      <h4>300+ videos. All the AI agents. One membership.</h4>
-      <p>Everything you need to build an AI-powered agency that outdelivers and outscales the competition.</p>
+      <div class="sc-label">Ready to scale local?</div>
+      <h4>Get the Local SEO Agent today.</h4>
+      <p>Manage more local clients without more manual work.</p>
       <a href="https://ai.theblueprint.training/blueprint-signup-light.html">Get Instant Access &rarr;</a>
     </div>
 
@@ -487,8 +564,8 @@
 
 <!-- BOTTOM CTA (yellow) -->
 <div class="bottom-cta">
-  <h2>The training that keeps<br>your agency ahead.</h2>
-  <p>5,000+ agencies. 300+ videos. One mission: build the AI-powered agency that dominates your market for the next decade.</p>
+  <h2>Stop managing local<br>SEO manually.</h2>
+  <p>The Local SEO Agent handles GBP, citations, and reviews at scale — so you deliver results for every local client without drowning in busywork.</p>
   <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="btn-yellow">Get Instant Access &rarr;</a>
 </div>
 
@@ -526,14 +603,5 @@
   </div>
 </footer>
 
-<script>
-const sections = document.querySelectorAll('[id]');
-const tocLinks = document.querySelectorAll('.toc-list a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-  tocLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
-});
-</script>
 </body>
 </html>
