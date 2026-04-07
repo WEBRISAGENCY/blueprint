@@ -158,10 +158,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
           <td style="text-align:right">1</td>
           <td style="text-align:right">$1,250</td>
         </tr>
+        <tr>
+          <td class="product-name">Local SEO Masterclass</td>
+          <td>$199</td>
+          <td><span class="tag tag-onetime">One-Time</span></td>
+          <td style="text-align:right">16</td>
+          <td style="text-align:right">$3,184</td>
+        </tr>
         <tr style="font-weight:700;border-top:2px solid var(--border)">
           <td>Total</td><td></td><td></td>
-          <td style="text-align:right">263</td>
-          <td style="text-align:right">$76,738</td>
+          <td style="text-align:right">279</td>
+          <td style="text-align:right">$79,922</td>
         </tr>
       </tbody>
     </table>
@@ -318,7 +325,9 @@ const bptLimitedCounts = [38, 42, 55, 62, 64, 51, 33, 22, 46, 22, 18, 30];
 const bptMonthlyCounts = [32, 25, 31, 24, 30, 25, 29, 20, 10, 10, 8, 15];
 const opaCounts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 20, 28];
 const growCounts = [1, 1, 3, 1, 2, 0, 1, 0, 0, 0, 0, 0];
-const totalProductCounts = [72, 71, 89, 88, 96, 78, 63, 42, 56, 57, 46, 73];
+const localSeoCounts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 7];
+const localSeoSales = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1194, 597, 1393];
+const totalProductCounts = [72, 71, 89, 88, 96, 78, 63, 42, 56, 63, 49, 80];
 
 // Chart defaults
 Chart.defaults.font.family = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif";
@@ -455,6 +464,7 @@ new Chart(document.getElementById('productSalesChart'), {
       {label:'BPT Limited ($199)',data:bptLimitedSales,backgroundColor:'#F59E0B',borderRadius:4,stack:'products'},
       {label:'BPT Monthly ($199/mo)',data:bptMonthlySales,backgroundColor:'#4F46E5',borderRadius:4,stack:'products'},
       {label:'One-Person Agency ($249/mo)',data:opaSales,backgroundColor:'#10B981',borderRadius:4,stack:'products'},
+      {label:'Local SEO Masterclass ($199)',data:localSeoSales,backgroundColor:'#EC4899',borderRadius:4,stack:'products'},
       {label:'Blueprint Grow ($1,250)',data:growSales,backgroundColor:'#7C3AED',borderRadius:4,stack:'products'}
     ]
   },
