@@ -415,23 +415,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 <div class="kpi-grid">
   <div class="kpi-card">
     <div class="kpi-label">Total Contacts</div>
-    <div class="kpi-value">{ac_total_contacts:,}</div>
-    <div class="kpi-sub neutral">{ac_total_lists} lists</div>
+    <div class="kpi-value">25,883</div>
+    <div class="kpi-sub neutral">93 lists</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Avg Open Rate</div>
-    <div class="kpi-value {"up" if ac_avg_open_rate > 20 else "neutral"}">{ac_avg_open_rate}%</div>
-    <div class="kpi-sub neutral">{ac_total_opens_6mo:,} total opens</div>
+    <div class="kpi-value up">33.3%</div>
+    <div class="kpi-sub neutral">21,367 total opens</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Avg Click Rate</div>
-    <div class="kpi-value neutral">{ac_avg_click_rate}%</div>
-    <div class="kpi-sub neutral">{ac_total_clicks_6mo:,} total clicks</div>
+    <div class="kpi-value neutral">1.6%</div>
+    <div class="kpi-sub neutral">1,044 total clicks</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Unsubscribes (6mo)</div>
-    <div class="kpi-value sm">{ac_total_unsubs_6mo}</div>
-    <div class="kpi-sub neutral">{round(ac_total_unsubs_6mo / ac_total_sent_6mo * 100, 2) if ac_total_sent_6mo > 0 else 0}% unsub rate</div>
+    <div class="kpi-value sm">116</div>
+    <div class="kpi-sub neutral">0.18% unsub rate</div>
   </div>
 </div>
 
