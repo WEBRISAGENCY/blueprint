@@ -60,7 +60,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   <h1><span>Blueprint Training</span> — Performance Dashboard</h1>
   <div class="header-meta">
     Week of April 6, 2026 · Month to Date<br>
-    <span style="font-size:10px;color:#9ca3af">QuickBooks · Stripe · Facebook Ads · Spiffy</span>
+    <span style="font-size:10px;color:#9ca3af">Stripe · Facebook Ads · Instagram · YouTube · Spiffy · ActiveCampaign</span>
   </div>
 </div>
 
@@ -227,28 +227,211 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   </div>
 </div>
 
+<!-- ========== INSTAGRAM (@theblueprint.training) ========== -->
+<div class="section-title">Instagram — @theblueprint.training (Organic)</div>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Followers</div>
+    <div class="kpi-value">1,841</div>
+    <div class="kpi-sub neutral">Current total</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Reach (Apr MTD)</div>
+    <div class="kpi-value">16,705</div>
+    <div class="kpi-sub up">+144.9% vs Mar MTD (6,821)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Engagement Rate (Apr MTD)</div>
+    <div class="kpi-value">0.62%</div>
+    <div class="kpi-sub up">+0.09pp vs Mar MTD (0.53%)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">March Totals</div>
+    <div class="kpi-value sm">104,511 reach</div>
+    <div class="kpi-sub neutral">612 engagements · 0.59% rate</div>
+  </div>
+</div>
+
+<div class="chart-row">
+  <div class="chart-card">
+    <h3>Monthly Reach (12 Months)</h3>
+    <canvas id="igReachChart" height="130"></canvas>
+  </div>
+  <div class="chart-card">
+    <h3>Monthly Engagement — Likes, Comments, Shares, Saves</h3>
+    <canvas id="igEngagementChart" height="130"></canvas>
+  </div>
+</div>
+
+<!-- ========== YOUTUBE ========== -->
+<div class="section-title">YouTube — The Blueprint Training (Organic)</div>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Views (12mo)</div>
+    <div class="kpi-value">101,451</div>
+    <div class="kpi-sub neutral">118 Apr MTD</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Watch Hours (12mo)</div>
+    <div class="kpi-value">972.3</div>
+    <div class="kpi-sub neutral">68.6h in March</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Net Subscribers (12mo)</div>
+    <div class="kpi-value">+260</div>
+    <div class="kpi-sub up">+18 in March</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Feb Views (Peak)</div>
+    <div class="kpi-value">27,205</div>
+    <div class="kpi-sub up">Highest month in 12mo</div>
+  </div>
+</div>
+
+<div class="chart-row">
+  <div class="chart-card">
+    <h3>Monthly Views & Watch Hours (12 Months)</h3>
+    <canvas id="ytViewsChart" height="130"></canvas>
+  </div>
+  <div class="chart-card">
+    <h3>Monthly Likes, Comments & Net Subscribers</h3>
+    <canvas id="ytEngagementChart" height="130"></canvas>
+  </div>
+</div>
+
+<div class="chart-row full">
+  <div class="chart-card">
+    <h3>Top 10 Videos — Jan–Apr 2026</h3>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Video</th>
+          <th>Type</th>
+          <th>Published</th>
+          <th style="text-align:right">Views</th>
+          <th style="text-align:right">Watch Hrs</th>
+          <th style="text-align:right">Likes</th>
+          <th style="text-align:right">Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="That's what relying on cold outreach will make you sound like">That's what relying on cold outreach will make you sound like</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Feb 14, 2026</td>
+          <td style="text-align:right">12,795</td>
+          <td style="text-align:right">14.3</td>
+          <td style="text-align:right">24</td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Price Objections Are a Positioning Problem">Price Objections Are a Positioning Problem</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Jan 28, 2026</td>
+          <td style="text-align:right">2,392</td>
+          <td style="text-align:right">2.8</td>
+          <td style="text-align:right">20</td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="How to FORCE Maps to treat you like the obvious choice">How to FORCE Maps to treat you like the obvious choice</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Jan 2, 2026</td>
+          <td style="text-align:right">1,709</td>
+          <td style="text-align:right">1.5</td>
+          <td style="text-align:right">6</td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="This is exactly what happens when there's no real process.">This is exactly what happens when there's no real process.</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Feb 11, 2026</td>
+          <td style="text-align:right">1,542</td>
+          <td style="text-align:right">1.3</td>
+          <td style="text-align:right">4</td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Don't make that mistake">Don't make that mistake</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Feb 9, 2026</td>
+          <td style="text-align:right">1,443</td>
+          <td style="text-align:right">1.3</td>
+          <td style="text-align:right">8</td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Like being addicted to rankings is a bad thing.">Like being addicted to rankings is a bad thing.</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Feb 13, 2026</td>
+          <td style="text-align:right">1,418</td>
+          <td style="text-align:right">1.2</td>
+          <td style="text-align:right">12</td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Fortunately, We Know What Moves Maps">Fortunately, We Know What Moves Maps</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Jan 27, 2026</td>
+          <td style="text-align:right">1,360</td>
+          <td style="text-align:right">1.5</td>
+          <td style="text-align:right">3</td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Local SEO doesn't fail from bad ideas...">Local SEO doesn't fail from bad ideas...</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Feb 18, 2026</td>
+          <td style="text-align:right">1,347</td>
+          <td style="text-align:right">1.6</td>
+          <td style="text-align:right">8</td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="You earn Google's confidence over time.">You earn Google's confidence over time.</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Jan 1, 2026</td>
+          <td style="text-align:right">1,338</td>
+          <td style="text-align:right">1.5</td>
+          <td style="text-align:right">7</td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="What a Real Agency P&L Actually Looks Like">What a Real Agency P&L Actually Looks Like</td>
+          <td><span class="tag tag-sub">Short</span></td>
+          <td style="color:var(--muted);font-size:11px">Mar 10, 2026</td>
+          <td style="text-align:right">1,240</td>
+          <td style="text-align:right">1.5</td>
+          <td style="text-align:right">5</td>
+          <td style="text-align:right">0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <!-- ========== EMAIL MARKETING (ActiveCampaign) ========== -->
 <div class="section-title">Email Marketing — ActiveCampaign</div>
 <div class="kpi-grid">
   <div class="kpi-card">
     <div class="kpi-label">Total Contacts</div>
-    <div class="kpi-value">25,883</div>
-    <div class="kpi-sub neutral">93 lists</div>
+    <div class="kpi-value">{ac_total_contacts:,}</div>
+    <div class="kpi-sub neutral">{ac_total_lists} lists</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Avg Open Rate</div>
-    <div class="kpi-value up">33.3%</div>
-    <div class="kpi-sub neutral">21,367 total opens</div>
+    <div class="kpi-value {"up" if ac_avg_open_rate > 20 else "neutral"}">{ac_avg_open_rate}%</div>
+    <div class="kpi-sub neutral">{ac_total_opens_6mo:,} total opens</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Avg Click Rate</div>
-    <div class="kpi-value neutral">1.6%</div>
-    <div class="kpi-sub neutral">1,044 total clicks</div>
+    <div class="kpi-value neutral">{ac_avg_click_rate}%</div>
+    <div class="kpi-sub neutral">{ac_total_clicks_6mo:,} total clicks</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Unsubscribes (6mo)</div>
-    <div class="kpi-value sm">116</div>
-    <div class="kpi-sub neutral">0.18% unsub rate</div>
+    <div class="kpi-value sm">{ac_total_unsubs_6mo}</div>
+    <div class="kpi-sub neutral">{round(ac_total_unsubs_6mo / ac_total_sent_6mo * 100, 2) if ac_total_sent_6mo > 0 else 0}% unsub rate</div>
   </div>
 </div>
 
@@ -428,7 +611,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 
 <div class="footer">
   <strong>The Blueprint Training LLC</strong> · Performance Dashboard · Generated April 6, 2026<br>
-  Data: Stripe (revenue & subscriptions) · Facebook Ads via Windsor.ai (pixel conversions) · Spiffy (checkout sales) · ActiveCampaign (email marketing)
+  Data: Stripe (revenue & subscriptions) · Facebook Ads via Windsor.ai (pixel conversions) · Spiffy (checkout sales) · Instagram via Windsor.ai (organic) · YouTube via Windsor.ai (organic) · ActiveCampaign (email marketing)
 </div>
 
 </div>
@@ -459,6 +642,22 @@ const growCounts = [1, 1, 3, 1, 2, 0, 1, 0, 0, 0, 0, 0];
 const localSeoCounts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 7];
 const localSeoSales = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1194, 597, 1393];
 const totalProductCounts = [72, 71, 89, 88, 96, 78, 63, 42, 56, 63, 49, 80];
+
+// Instagram data
+const igReach = [53618, 44750, 106548, 85577, 118463, 82857, 80458, 43574, 29932, 32749, 104511, 16705];
+const igLikes = [0, 0, 0, 41, 171, 212, 181, 102, 113, 206, 271, 42];
+const igComments = [0, 0, 0, 3, 6, 10, 3, 6, 6, 5, 5, 0];
+const igShares = [0, 0, 0, 7, 62, 121, 97, 22, 25, 70, 105, 15];
+const igSaves = [0, 0, 0, 26, 92, 132, 100, 56, 54, 36, 231, 47];
+const igEngagement = [0, 0, 0, 77, 331, 475, 381, 186, 198, 317, 612, 104];
+
+// YouTube data
+const ytViews = [3811, 2712, 2028, 4214, 11393, 12648, 10697, 10649, 11201, 27205, 4775, 118];
+const ytHours = [110.5, 98.1, 105.8, 85.8, 84.4, 76.0, 70.6, 60.5, 88.6, 117.3, 68.6, 6.1];
+const ytLikes = [22, 39, 42, 45, 75, 108, 80, 30, 73, 94, 31, 3];
+const ytComments = [3, 4, 4, 3, 3, 5, 5, 4, 6, 5, 7, 0];
+const ytShares = [33, 25, 39, 15, 8, 20, 29, 21, 28, 39, 41, 4];
+const ytNetSubs = [31, 26, 27, 28, 27, 15, 25, 20, 16, 24, 18, 3];
 
 // Chart defaults
 Chart.defaults.font.family = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif";
@@ -604,6 +803,93 @@ new Chart(document.getElementById('purchasesChart'), {
       yCPP:{position:'right',title:{display:true,text:'Cost per Purchase'},grid:{display:false},
         ticks:{callback:v=>'$'+v}},
       x:{grid:{display:false}}
+    }
+  }
+});
+
+// Instagram Reach
+new Chart(document.getElementById('igReachChart'), {
+  type:'bar',
+  data:{
+    labels:monthLabels,
+    datasets:[
+      {label:'Reach',data:igReach,backgroundColor:'#E1306C',borderRadius:4}
+    ]
+  },
+  options:{
+    responsive:true,
+    plugins:{tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.raw.toLocaleString()}}},
+    scales:{
+      y:{grid:{color:grid},ticks:{callback:v=>(v/1000)+'K'}},
+      x:{grid:{display:false}}
+    }
+  }
+});
+
+// Instagram Engagement (stacked)
+new Chart(document.getElementById('igEngagementChart'), {
+  type:'bar',
+  data:{
+    labels:monthLabels,
+    datasets:[
+      {label:'Likes',data:igLikes,backgroundColor:'#E1306C',borderRadius:4,stack:'eng'},
+      {label:'Comments',data:igComments,backgroundColor:'#833AB4',borderRadius:4,stack:'eng'},
+      {label:'Shares',data:igShares,backgroundColor:'#F77737',borderRadius:4,stack:'eng'},
+      {label:'Saves',data:igSaves,backgroundColor:'#FCAF45',borderRadius:4,stack:'eng'}
+    ]
+  },
+  options:{
+    responsive:true,interaction:{mode:'index',intersect:false},
+    scales:{
+      y:{stacked:true,grid:{color:grid}},
+      x:{stacked:true,grid:{display:false}}
+    }
+  }
+});
+
+// YouTube Views & Watch Hours
+new Chart(document.getElementById('ytViewsChart'), {
+  type:'bar',
+  data:{
+    labels:monthLabels,
+    datasets:[
+      {label:'Views',data:ytViews,backgroundColor:'#FF0000',borderRadius:4,yAxisID:'yViews',order:2},
+      {label:'Watch Hours',data:ytHours,type:'line',borderColor:'#282828',
+        pointBackgroundColor:'#282828',pointRadius:5,borderWidth:2.5,tension:.3,yAxisID:'yHours',order:1}
+    ]
+  },
+  options:{
+    responsive:true,interaction:{mode:'index',intersect:false},
+    plugins:{tooltip:{callbacks:{label:ctx=>{
+      if(ctx.dataset.label==='Watch Hours') return ctx.dataset.label+': '+ctx.raw+'h';
+      return ctx.dataset.label+': '+ctx.raw.toLocaleString();
+    }}}},
+    scales:{
+      yViews:{position:'left',title:{display:true,text:'Views'},grid:{color:grid},ticks:{callback:v=>(v/1000)+'K'}},
+      yHours:{position:'right',title:{display:true,text:'Watch Hours'},grid:{display:false}},
+      x:{grid:{display:false}}
+    }
+  }
+});
+
+// YouTube Engagement
+new Chart(document.getElementById('ytEngagementChart'), {
+  type:'bar',
+  data:{
+    labels:monthLabels,
+    datasets:[
+      {label:'Likes',data:ytLikes,backgroundColor:'#FF0000',borderRadius:4,stack:'eng'},
+      {label:'Comments',data:ytComments,backgroundColor:'#065FD4',borderRadius:4,stack:'eng'},
+      {label:'Net Subscribers',data:ytNetSubs,type:'line',borderColor:'#282828',
+        pointBackgroundColor:'#282828',pointRadius:5,borderWidth:2.5,tension:.3,yAxisID:'ySubs'}
+    ]
+  },
+  options:{
+    responsive:true,interaction:{mode:'index',intersect:false},
+    scales:{
+      y:{stacked:true,position:'left',title:{display:true,text:'Likes + Comments'},grid:{color:grid}},
+      ySubs:{position:'right',title:{display:true,text:'Net Subscribers'},grid:{display:false},suggestedMin:0},
+      x:{stacked:true,grid:{display:false}}
     }
   }
 });
