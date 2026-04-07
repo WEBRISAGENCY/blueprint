@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blueprint Training - Performance Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg:#f0f2f5;--card:#fff;--text:#1a1a2e;--muted:#6b7280;
+  --accent:#4F46E5;--green:#10B981;--red:#EF4444;--orange:#F59E0B;
+  --border:#e5e7eb;--shadow:0 1px 3px rgba(0,0,0,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.5}
+.container{max-width:1360px;margin:0 auto;padding:20px 24px}
+
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+.header h1{font-size:22px;font-weight:700}.header h1 span{color:var(--accent)}
+.header-meta{font-size:12px;color:var(--muted);text-align:right}
+
+.section-title{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.5px;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--accent);display:inline-block}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:6px}
+.kpi-card{background:var(--card);border-radius:10px;padding:16px 18px;box-shadow:var(--shadow);border:1px solid var(--border)}
+.kpi-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
+.kpi-value{font-size:26px;font-weight:700}.kpi-value.sm{font-size:22px}
+.kpi-sub{font-size:11px;margin-top:2px}
+.up{color:var(--green)}.down{color:var(--red)}.neutral{color:var(--muted)}
+
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.chart-row.full{grid-template-columns:1fr}
+.chart-card{background:var(--card);border-radius:10px;padding:18px;box-shadow:var(--shadow);border:1px solid var(--border)}
+.chart-card h3{font-size:13px;font-weight:600;margin-bottom:14px}
+.chart-card canvas{max-height:300px}
+
+.product-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+.product-table th{text-align:left;font-weight:700;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.3px;font-size:10px;padding:8px 12px;border-bottom:2px solid var(--border)}
+.product-table td{padding:8px 12px;border-bottom:1px solid var(--border)}
+.product-table tr:last-child td{border-bottom:none}
+.product-table .product-name{font-weight:600;color:var(--text)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600}
+.tag-sub{background:#EEF2FF;color:#4F46E5}
+.tag-onetime{background:#FEF3C7;color:#D97706}
+.tag-premium{background:#ECFDF5;color:#059669}
+
+.footer{margin-top:40px;padding:20px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:11px}
+
+@media(max-width:900px){.chart-row{grid-template-columns:1fr}.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.kpi-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1><span>Blueprint Training</span> — Performance Dashboard</h1>
+  <div class="header-meta">
+    Week of April 6, 2026 · Month to Date<br>
+    <span style="font-size:10px;color:#9ca3af">QuickBooks · Stripe · Facebook Ads · Spiffy</span>
+  </div>
+</div>
+
+<!-- ========== SUBSCRIPTIONS ========== -->
+<div class="section-title">Subscriptions — April 2026 MTD</div>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Active Subscribers</div>
+    <div class="kpi-value">493</div>
+    <div class="kpi-sub up">+0.6% vs end of Mar (490)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">New Subscriptions</div>
+    <div class="kpi-value">12</div>
+    <div class="kpi-sub neutral">MTD · 102 all of March</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Cancellations</div>
+    <div class="kpi-value">9</div>
+    <div class="kpi-sub neutral">MTD · 68 all of March</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Churn Rate (12mo Avg)</div>
+    <div class="kpi-value">15.71%</div>
+    <div class="kpi-sub down">High — target &lt;10%</div>
+  </div>
+</div>
+
+<div class="chart-row full">
+  <div class="chart-card">
+    <h3>Monthly Active Subscribers · New vs Lost (12 Months)</h3>
+    <canvas id="subTrendChart" height="100"></canvas>
+  </div>
+</div>
+
+<!-- ========== PRODUCT SALES ========== -->
+<div class="section-title">Product Sales — Spiffy Checkout</div>
+<div class="chart-row">
+  <div class="chart-card">
+    <h3>Monthly Product Sales by Type (12 Months)</h3>
+    <canvas id="productSalesChart" height="130"></canvas>
+  </div>
+  <div class="chart-card">
+    <h3>Product Performance — Last 90 Days</h3>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Type</th>
+          <th style="text-align:right">Orders (90d)</th>
+          <th style="text-align:right">Est. Revenue (90d)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="product-name">Blueprint Training Monthly</td>
+          <td>$199/mo</td>
+          <td><span class="tag tag-sub">Subscription</span></td>
+          <td style="text-align:right">112</td>
+          <td style="text-align:right">$22,288</td>
+        </tr>
+        <tr>
+          <td class="product-name">One-Person Agency Monthly</td>
+          <td>$249/mo</td>
+          <td><span class="tag tag-sub">Subscription</span></td>
+          <td style="text-align:right">73</td>
+          <td style="text-align:right">$18,177</td>
+        </tr>
+        <tr>
+          <td class="product-name">Blueprint Training Limited</td>
+          <td>$199</td>
+          <td><span class="tag tag-onetime">One-Time</span></td>
+          <td style="text-align:right">68</td>
+          <td style="text-align:right">$13,532</td>
+        </tr>
+        <tr>
+          <td class="product-name">One-Person Agency Yearly</td>
+          <td>$2,499/yr</td>
+          <td><span class="tag tag-sub">Subscription</span></td>
+          <td style="text-align:right">7</td>
+          <td style="text-align:right">$17,493</td>
+        </tr>
+        <tr>
+          <td class="product-name">Blueprint Training Yearly</td>
+          <td>$1,999/yr</td>
+          <td><span class="tag tag-sub">Subscription</span></td>
+          <td style="text-align:right">2</td>
+          <td style="text-align:right">$3,998</td>
+        </tr>
+        <tr>
+          <td class="product-name">Blueprint Grow</td>
+          <td>$1,250/mo</td>
+          <td><span class="tag tag-premium">Premium</span></td>
+          <td style="text-align:right">1</td>
+          <td style="text-align:right">$1,250</td>
+        </tr>
+        <tr style="font-weight:700;border-top:2px solid var(--border)">
+          <td>Total</td><td></td><td></td>
+          <td style="text-align:right">263</td>
+          <td style="text-align:right">$76,738</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ========== AD PERFORMANCE ========== -->
+<div class="section-title">Facebook Ad Performance — April 2026 MTD</div>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Ad Spend</div>
+    <div class="kpi-value">$4,973</div>
+    <div class="kpi-sub up">-26.3% vs Mar MTD ($6,744)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Purchases (Pixel)</div>
+    <div class="kpi-value">16</div>
+    <div class="kpi-sub down">-27.3% vs Mar MTD (22)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Purchase Revenue (Pixel)</div>
+    <div class="kpi-value">$3,186</div>
+    <div class="kpi-sub neutral">$4,348 Mar MTD</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">ROAS (Pixel)</div>
+    <div class="kpi-value">0.64x</div>
+    <div class="kpi-sub down">0.69x last month</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Cost per Purchase</div>
+    <div class="kpi-value">$311</div>
+    <div class="kpi-sub neutral">Spend ÷ pixel purchases</div>
+  </div>
+</div>
+
+<div class="chart-row">
+  <div class="chart-card">
+    <h3>Monthly ROAS — Pixel Purchase Value ÷ Ad Spend (12 Months)</h3>
+    <canvas id="roasChart" height="130"></canvas>
+  </div>
+  <div class="chart-card">
+    <h3>Monthly Ad Spend vs Pixel Purchase Value (12 Months)</h3>
+    <canvas id="adVsPurchaseChart" height="130"></canvas>
+  </div>
+</div>
+
+<div class="chart-row">
+  <div class="chart-card">
+    <h3>Daily Ad Spend & Purchases — April MTD</h3>
+    <canvas id="dailyAdsChart" height="130"></canvas>
+  </div>
+  <div class="chart-card">
+    <h3>Monthly Purchases from Ads (12 Months)</h3>
+    <canvas id="purchasesChart" height="130"></canvas>
+  </div>
+</div>
+
+<!-- ========== EMAIL MARKETING (ActiveCampaign) ========== -->
+<div class="section-title">Email Marketing — ActiveCampaign</div>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Total Contacts</div>
+    <div class="kpi-value">25,883</div>
+    <div class="kpi-sub neutral">93 lists</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Emails Sent (6mo)</div>
+    <div class="kpi-value sm">64,169</div>
+    <div class="kpi-sub neutral">19 campaigns</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Avg Open Rate</div>
+    <div class="kpi-value up">33.3%</div>
+    <div class="kpi-sub neutral">21,367 total opens</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Avg Click Rate</div>
+    <div class="kpi-value neutral">1.6%</div>
+    <div class="kpi-sub neutral">1,044 total clicks</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Unsubscribes (6mo)</div>
+    <div class="kpi-value sm">116</div>
+    <div class="kpi-sub neutral">0.18% unsub rate</div>
+  </div>
+</div>
+
+<div class="chart-row">
+  <div class="chart-card">
+    <h3>Subscribers by List (Top 11)</h3>
+    <canvas id="emailListChart" height="140"></canvas>
+  </div>
+  <div class="chart-card">
+    <h3>Campaign Performance — Last 6 Months</h3>
+    <div style="max-height:320px;overflow-y:auto">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Campaign</th>
+          <th style="text-align:right">Delivered</th>
+          <th style="text-align:right">Opens</th>
+          <th style="text-align:right">Clicked</th>
+          <th style="text-align:right">Unsubs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Q&A call reminder">Q&A call reminder</td>
+          <td style="text-align:right">456</td>
+          <td style="text-align:right">40.6%<br><span style="color:var(--muted);font-size:10px">185</span></td>
+          <td style="text-align:right">1.3%<br><span style="color:var(--muted);font-size:10px">6</span></td>
+          <td style="text-align:right">2</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Q&A call (Copy) (Copy) (Copy)">Q&A call (Copy) (Copy) (Copy)</td>
+          <td style="text-align:right">2,600</td>
+          <td style="text-align:right">53.7%<br><span style="color:var(--muted);font-size:10px">1,396</span></td>
+          <td style="text-align:right">3.3%<br><span style="color:var(--muted);font-size:10px">87</span></td>
+          <td style="text-align:right">10</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Q&A call (Copy) (Copy)">Q&A call (Copy) (Copy)</td>
+          <td style="text-align:right">2,824</td>
+          <td style="text-align:right">50.2%<br><span style="color:var(--muted);font-size:10px">1,418</span></td>
+          <td style="text-align:right">2.8%<br><span style="color:var(--muted);font-size:10px">80</span></td>
+          <td style="text-align:right">12</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Q&A call (Copy)">Q&A call (Copy)</td>
+          <td style="text-align:right">2,895</td>
+          <td style="text-align:right">60.4%<br><span style="color:var(--muted);font-size:10px">1,749</span></td>
+          <td style="text-align:right">3.1%<br><span style="color:var(--muted);font-size:10px">91</span></td>
+          <td style="text-align:right">17</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Q&A call">Q&A call</td>
+          <td style="text-align:right">410</td>
+          <td style="text-align:right">50.0%<br><span style="color:var(--muted);font-size:10px">205</span></td>
+          <td style="text-align:right">1.2%<br><span style="color:var(--muted);font-size:10px">5</span></td>
+          <td style="text-align:right">1</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="final reminder">final reminder</td>
+          <td style="text-align:right">398</td>
+          <td style="text-align:right">28.4%<br><span style="color:var(--muted);font-size:10px">113</span></td>
+          <td style="text-align:right">2.3%<br><span style="color:var(--muted);font-size:10px">9</span></td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Ryan Q&A (Copy)">Ryan Q&A (Copy)</td>
+          <td style="text-align:right">396</td>
+          <td style="text-align:right">28.0%<br><span style="color:var(--muted);font-size:10px">111</span></td>
+          <td style="text-align:right">1.0%<br><span style="color:var(--muted);font-size:10px">4</span></td>
+          <td style="text-align:right">2</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Ryan Q&A">Ryan Q&A</td>
+          <td style="text-align:right">389</td>
+          <td style="text-align:right">29.3%<br><span style="color:var(--muted);font-size:10px">114</span></td>
+          <td style="text-align:right">0.5%<br><span style="color:var(--muted);font-size:10px">2</span></td>
+          <td style="text-align:right">0</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="inner-circle promo">inner-circle promo</td>
+          <td style="text-align:right">25,743</td>
+          <td style="text-align:right">13.5%<br><span style="color:var(--muted);font-size:10px">3,469</span></td>
+          <td style="text-align:right">0.5%<br><span style="color:var(--muted);font-size:10px">128</span></td>
+          <td style="text-align:right">1</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="ai content">ai content</td>
+          <td style="text-align:right">3,127</td>
+          <td style="text-align:right">42.9%<br><span style="color:var(--muted);font-size:10px">1,340</span></td>
+          <td style="text-align:right">1.4%<br><span style="color:var(--muted);font-size:10px">45</span></td>
+          <td style="text-align:right">1</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="LSA Bootcamp">LSA Bootcamp</td>
+          <td style="text-align:right">3,068</td>
+          <td style="text-align:right">42.1%<br><span style="color:var(--muted);font-size:10px">1,292</span></td>
+          <td style="text-align:right">2.1%<br><span style="color:var(--muted);font-size:10px">64</span></td>
+          <td style="text-align:right">7</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="get organized">get organized</td>
+          <td style="text-align:right">3,059</td>
+          <td style="text-align:right">45.7%<br><span style="color:var(--muted);font-size:10px">1,399</span></td>
+          <td style="text-align:right">1.3%<br><span style="color:var(--muted);font-size:10px">39</span></td>
+          <td style="text-align:right">8</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="12 month promo">12 month promo</td>
+          <td style="text-align:right">449</td>
+          <td style="text-align:right">40.1%<br><span style="color:var(--muted);font-size:10px">180</span></td>
+          <td style="text-align:right">3.6%<br><span style="color:var(--muted);font-size:10px">16</span></td>
+          <td style="text-align:right">1</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Grow Promo">Grow Promo</td>
+          <td style="text-align:right">2,916</td>
+          <td style="text-align:right">47.9%<br><span style="color:var(--muted);font-size:10px">1,396</span></td>
+          <td style="text-align:right">1.9%<br><span style="color:var(--muted);font-size:10px">55</span></td>
+          <td style="text-align:right">9</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="Black Friday">Black Friday</td>
+          <td style="text-align:right">3,133</td>
+          <td style="text-align:right">44.9%<br><span style="color:var(--muted);font-size:10px">1,408</span></td>
+          <td style="text-align:right">5.0%<br><span style="color:var(--muted);font-size:10px">157</span></td>
+          <td style="text-align:right">9</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="BF Promo (Copy)">BF Promo (Copy)</td>
+          <td style="text-align:right">3,093</td>
+          <td style="text-align:right">43.9%<br><span style="color:var(--muted);font-size:10px">1,359</span></td>
+          <td style="text-align:right">2.7%<br><span style="color:var(--muted);font-size:10px">84</span></td>
+          <td style="text-align:right">7</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="BF Promo">BF Promo</td>
+          <td style="text-align:right">3,127</td>
+          <td style="text-align:right">44.0%<br><span style="color:var(--muted);font-size:10px">1,377</span></td>
+          <td style="text-align:right">2.3%<br><span style="color:var(--muted);font-size:10px">72</span></td>
+          <td style="text-align:right">7</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="inner circle (Copy) (Copy) (Copy)">inner circle (Copy) (Copy) (Copy)</td>
+          <td style="text-align:right">3,043</td>
+          <td style="text-align:right">46.9%<br><span style="color:var(--muted);font-size:10px">1,428</span></td>
+          <td style="text-align:right">1.3%<br><span style="color:var(--muted);font-size:10px">39</span></td>
+          <td style="text-align:right">9</td>
+        </tr>
+        <tr>
+          <td class="product-name" style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="inner circle (Copy) (Copy)">inner circle (Copy) (Copy)</td>
+          <td style="text-align:right">3,043</td>
+          <td style="text-align:right">46.9%<br><span style="color:var(--muted);font-size:10px">1,428</span></td>
+          <td style="text-align:right">2.0%<br><span style="color:var(--muted);font-size:10px">61</span></td>
+          <td style="text-align:right">13</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>The Blueprint Training LLC</strong> · Performance Dashboard · Generated April 6, 2026<br>
+  Data: Stripe (revenue & subscriptions) · Facebook Ads via Windsor.ai (pixel conversions) · Spiffy (checkout sales) · ActiveCampaign (email marketing)
+</div>
+
+</div>
+
+<script>
+const monthLabels = ["Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026"];
+const activeSubs = [484, 484, 512, 514, 531, 524, 515, 476, 453, 456, 456, 490];
+const newSubs = [90, 68, 86, 85, 98, 77, 62, 40, 58, 90, 78, 102];
+const cancellations = [91, 68, 58, 83, 81, 84, 71, 79, 81, 87, 78, 68];
+const churnRates = [18.8, 14.0, 12.0, 16.2, 15.8, 15.8, 13.5, 15.3, 17.0, 19.2, 17.1, 14.9];
+const dailyAds = [{"date": "Apr 1", "spend": 1103.8, "impressions": 27287, "clicks": 379, "purchases": 12, "purchase_value": 2389.6}, {"date": "Apr 2", "spend": 848.47, "impressions": 22933, "clicks": 234, "purchases": 1, "purchase_value": 199.2}, {"date": "Apr 3", "spend": 793.4, "impressions": 18325, "clicks": 210, "purchases": 2, "purchase_value": 398.2}, {"date": "Apr 4", "spend": 790.27, "impressions": 23632, "clicks": 278, "purchases": 0, "purchase_value": 0}, {"date": "Apr 5", "spend": 945.4, "impressions": 28311, "clicks": 381, "purchases": 0, "purchase_value": 0}, {"date": "Apr 6", "spend": 491.74, "impressions": 19679, "clicks": 231, "purchases": 1, "purchase_value": 199.0}];
+
+// Facebook Ads data
+const adSpend = [23054, 24038, 16444, 31794, 27341, 30437, 25285, 20107, 21509, 17623, 25303, 41945];
+const adPurchaseVal = [17482, 15900, 20805, 24422, 22740, 18666, 15527, 9552, 16517, 20675, 21064, 28847];
+const adPurchases = [88, 72, 105, 119, 170, 98, 74, 48, 83, 105, 106, 127];
+const pixelRoas = [0.76, 0.66, 1.27, 0.77, 0.83, 0.61, 0.61, 0.48, 0.77, 1.17, 0.83, 0.69];
+
+// Product data
+const bptLimitedSales = [7562, 8358, 10945, 12338, 12736, 10149, 6567, 4378, 9154, 4378, 3582, 5970];
+const bptMonthlySales = [5771, 4378, 5771, 3781, 5372, 4935, 5174, 3582, 1990, 1990, 1592, 2985];
+const opaSales = [0, 0, 0, 0, 0, 0, 0, 0, 0, 6225, 4980, 6972];
+const growSales = [1250, 1250, 3225, 1250, 16250, 0, 1250, 0, 0, 0, 0, 0];
+const bptLimitedCounts = [38, 42, 55, 62, 64, 51, 33, 22, 46, 22, 18, 30];
+const bptMonthlyCounts = [32, 25, 31, 24, 30, 25, 29, 20, 10, 10, 8, 15];
+const opaCounts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 20, 28];
+const growCounts = [1, 1, 3, 1, 2, 0, 1, 0, 0, 0, 0, 0];
+const totalProductCounts = [72, 71, 89, 88, 96, 78, 63, 42, 56, 57, 46, 73];
+
+// ActiveCampaign data
+const acListNames = ["Agency Sales Suite / Traffic Tool", "Newsletter List", "Is SEO Worth It?", "Agency Template Suite", "Agency Blueprint Book", "Slack Sign Ups (Free)", "PRO Slack Members", "Local SEO Masterclass", "Local Review SOP", "Book Goodies", "One Person Agency Webinar"];
+const acListCounts = [8207, 6798, 4369, 2904, 2020, 1562, 1500, 1423, 878, 828, 724];
+
+// Chart defaults
+Chart.defaults.font.family = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = '#6b7280';
+Chart.defaults.plugins.legend.labels.usePointStyle = true;
+Chart.defaults.plugins.legend.labels.padding = 14;
+const grid = 'rgba(0,0,0,0.05)';
+const currency = v => '$' + v.toLocaleString();
+
+// Subscriber Trend
+new Chart(document.getElementById('subTrendChart'), {
+  type:'bar',
+  data:{
+    labels:monthLabels,
+    datasets:[
+      {label:'New Subscribers',data:newSubs,backgroundColor:'#10B981',borderRadius:4,order:2,yAxisID:'yBar'},
+      {label:'Cancellations',data:cancellations.map(v=>-v),backgroundColor:'#EF4444',borderRadius:4,order:2,yAxisID:'yBar'},
+      {label:'Active Subscribers',data:activeSubs,type:'line',borderColor:'#4F46E5',
+        backgroundColor:'rgba(79,70,229,.06)',fill:true,tension:.3,pointRadius:5,
+        pointBackgroundColor:'#4F46E5',borderWidth:2.5,order:1,yAxisID:'yLine'}
+    ]
+  },
+  options:{
+    responsive:true,interaction:{mode:'index',intersect:false},
+    plugins:{tooltip:{callbacks:{label:ctx=>{
+      let v=ctx.raw; if(ctx.dataset.label==='Cancellations') v=Math.abs(v);
+      return ctx.dataset.label+': '+v;
+    }}}},
+    scales:{
+      yBar:{position:'right',title:{display:true,text:'New / Lost'},grid:{display:false},ticks:{callback:v=>Math.abs(v)}},
+      yLine:{position:'left',title:{display:true,text:'Active Subscribers'},grid:{color:grid},min:350,suggestedMax:600},
+      x:{grid:{display:false}}
+    }
+  }
+});
+
+// Product Sales (stacked)
+new Chart(document.getElementById('productSalesChart'), {
+  type:'bar',
+  data:{
+    labels:monthLabels,
+    datasets:[
+      {label:'BPT Limited ($199)',data:bptLimitedSales,backgroundColor:'#F59E0B',borderRadius:4,stack:'products'},
+      {label:'BPT Monthly ($199/mo)',data:bptMonthlySales,backgroundColor:'#4F46E5',borderRadius:4,stack:'products'},
+      {label:'One-Person Agency ($249/mo)',data:opaSales,backgroundColor:'#10B981',borderRadius:4,stack:'products'},
+      {label:'Blueprint Grow ($1,250)',data:growSales,backgroundColor:'#7C3AED',borderRadius:4,stack:'products'}
+    ]
+  },
+  options:{
+    responsive:true,interaction:{mode:'index',intersect:false},
+    plugins:{tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+currency(ctx.raw)}}},
+    scales:{
+      y:{stacked:true,grid:{color:grid},ticks:{callback:v=>'$'+(v/1000)+'K'}},
+      x:{stacked:true,grid:{display:false}}
+    }
+  }
+});
+
+// Email Subscribers by List (horizontal bar)
+new Chart(document.getElementById('emailListChart'), {
+  type:'bar',
+  data:{
+    labels:acListNames,
+    datasets:[{
+      label:'Active Subscribers',
+      data:acListCounts,
+      backgroundColor:'#4F46E5',
+      borderRadius:4
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>ctx.raw.toLocaleString()+' subscribers'}}},
+    scales:{
+      x:{grid:{color:grid},ticks:{callback:v=>v>=1000?(v/1000)+'K':v}},
+      y:{grid:{display:false},ticks:{font:{size:10}}}
+    }
+  }
+});
+
+// ROAS
+new Chart(document.getElementById('roasChart'), {
+  type:'line',
+  data:{
+    labels:monthLabels,
+    datasets:[{
+      label:'ROAS (Pixel)',data:pixelRoas,borderColor:'#7C3AED',
+      backgroundColor:'rgba(124,58,237,.06)',fill:true,tension:.3,
+      pointRadius:5,pointBackgroundColor:'#7C3AED',borderWidth:2.5
+    }]
+  },
+  options:{
+    responsive:true,
+    plugins:{tooltip:{callbacks:{label:ctx=>'ROAS: '+ctx.raw+'x'}}},
+    scales:{
+      y:{grid:{color:grid},ticks:{callback:v=>v+'x'},suggestedMin:0,suggestedMax:1.5},
+      x:{grid:{display:false}}
+    }
+  }
+});
+
+// Ad Spend vs Purchase Value
+new Chart(document.getElementById('adVsPurchaseChart'), {
+  type:'bar',
+  data:{
+    labels:monthLabels,
+    datasets:[
+      {label:'Ad Spend',data:adSpend,backgroundColor:'#EF4444',borderRadius:4},
+      {label:'Purchase Value (Pixel)',data:adPurchaseVal,backgroundColor:'#10B981',borderRadius:4}
+    ]
+  },
+  options:{
+    responsive:true,interaction:{mode:'index',intersect:false},
+    plugins:{tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+currency(ctx.raw)}}},
+    scales:{
+      y:{grid:{color:grid},ticks:{callback:v=>'$'+(v/1000)+'K'}},
+      x:{grid:{display:false}}
+    }
+  }
+});
+
+// Daily Ads
+new Chart(document.getElementById('dailyAdsChart'), {
+  type:'bar',
+  data:{
+    labels:dailyAds.map(d=>d.date),
+    datasets:[
+      {label:'Spend ($)',data:dailyAds.map(d=>d.spend),backgroundColor:'#4F46E5',borderRadius:4,yAxisID:'ySpend',order:2},
+      {label:'Purchases',data:dailyAds.map(d=>d.purchases),type:'line',borderColor:'#10B981',
+        pointBackgroundColor:'#10B981',pointRadius:6,borderWidth:2.5,tension:.3,yAxisID:'yPurch',order:1}
+    ]
+  },
+  options:{
+    responsive:true,interaction:{mode:'index',intersect:false},
+    scales:{
+      ySpend:{position:'left',title:{display:true,text:'Spend ($)'},grid:{color:grid},ticks:{callback:v=>'$'+v}},
+      yPurch:{position:'right',title:{display:true,text:'Purchases'},grid:{display:false},suggestedMin:0},
+      x:{grid:{display:false}}
+    }
+  }
+});
+
+// Monthly Purchases
+new Chart(document.getElementById('purchasesChart'), {
+  type:'bar',
+  data:{
+    labels:monthLabels,
+    datasets:[
+      {label:'Purchases (Pixel)',data:adPurchases,backgroundColor:'#4F46E5',borderRadius:4},
+      {label:'Cost per Purchase',data:adSpend.map((s,i)=>adPurchases[i]>0?Math.round(s/adPurchases[i]):0),
+        type:'line',borderColor:'#EF4444',pointBackgroundColor:'#EF4444',pointRadius:5,borderWidth:2.5,
+        tension:.3,yAxisID:'yCPP'}
+    ]
+  },
+  options:{
+    responsive:true,interaction:{mode:'index',intersect:false},
+    plugins:{tooltip:{callbacks:{label:ctx=>{
+      if(ctx.dataset.label.includes('Cost')) return 'CPP: $'+ctx.raw;
+      return ctx.dataset.label+': '+ctx.raw;
+    }}}},
+    scales:{
+      y:{position:'left',title:{display:true,text:'Purchases'},grid:{color:grid}},
+      yCPP:{position:'right',title:{display:true,text:'Cost per Purchase'},grid:{display:false},
+        ticks:{callback:v=>'$'+v}},
+      x:{grid:{display:false}}
+    }
+  }
+});
+</script>
+</body>
+</html>
