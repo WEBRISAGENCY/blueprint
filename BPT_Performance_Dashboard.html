@@ -246,20 +246,113 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
     <div class="kpi-sub up">+0.09pp vs Mar MTD (0.53%)</div>
   </div>
   <div class="kpi-card">
-    <div class="kpi-label">March Totals</div>
-    <div class="kpi-value sm">104,511 reach</div>
-    <div class="kpi-sub neutral">612 engagements · 0.59% rate</div>
+    <div class="kpi-label">Video Views (Apr MTD)</div>
+    <div class="kpi-value">21,328</div>
+    <div class="kpi-sub up">+93.1% vs Mar MTD (11,043)</div>
   </div>
 </div>
 
 <div class="chart-row">
   <div class="chart-card">
-    <h3>Monthly Reach (12 Months)</h3>
+    <h3>Monthly Reach & Video Views (12 Months)</h3>
     <canvas id="igReachChart" height="130"></canvas>
   </div>
   <div class="chart-card">
-    <h3>Monthly Engagement — Likes, Comments, Shares, Saves</h3>
-    <canvas id="igEngagementChart" height="130"></canvas>
+    <h3>Top Performing Days — By Views (Last 90 Days)</h3>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Type</th>
+          <th style="text-align:right">Views</th>
+          <th style="text-align:right">Reach</th>
+          <th style="text-align:right">Eng.</th>
+          <th style="text-align:right">Eng. Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Mar 18, 2026</td>
+          <td><span class="tag tag-sub">Reel</span></td>
+          <td style="text-align:right">11,996</td>
+          <td style="text-align:right">6,991</td>
+          <td style="text-align:right">30</td>
+          <td style="text-align:right">0.4%</td>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Mar 30, 2026</td>
+          <td><span class="tag tag-sub">Reel</span></td>
+          <td style="text-align:right">9,532</td>
+          <td style="text-align:right">11,636</td>
+          <td style="text-align:right">113</td>
+          <td style="text-align:right">1.0%</td>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Mar 31, 2026</td>
+          <td><span class="tag tag-sub">Reel</span></td>
+          <td style="text-align:right">8,418</td>
+          <td style="text-align:right">9,797</td>
+          <td style="text-align:right">86</td>
+          <td style="text-align:right">0.9%</td>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Mar 15, 2026</td>
+          <td><span class="tag tag-sub">Reel</span></td>
+          <td style="text-align:right">7,146</td>
+          <td style="text-align:right">4,291</td>
+          <td style="text-align:right">13</td>
+          <td style="text-align:right">0.3%</td>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Mar 16, 2026</td>
+          <td><span class="tag tag-sub">Reel</span></td>
+          <td style="text-align:right">5,991</td>
+          <td style="text-align:right">3,834</td>
+          <td style="text-align:right">18</td>
+          <td style="text-align:right">0.5%</td>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Apr 1, 2026</td>
+          <td><span class="tag tag-onetime">Image</span></td>
+          <td style="text-align:right">5,898</td>
+          <td style="text-align:right">5,332</td>
+          <td style="text-align:right">39</td>
+          <td style="text-align:right">0.7%</td>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Mar 17, 2026</td>
+          <td><span class="tag tag-sub">Reel</span></td>
+          <td style="text-align:right">5,813</td>
+          <td style="text-align:right">3,566</td>
+          <td style="text-align:right">15</td>
+          <td style="text-align:right">0.4%</td>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Mar 8, 2026</td>
+          <td><span class="tag tag-premium">Carousel</span></td>
+          <td style="text-align:right">5,748</td>
+          <td style="text-align:right">2,937</td>
+          <td style="text-align:right">23</td>
+          <td style="text-align:right">0.8%</td>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Mar 14, 2026</td>
+          <td><span class="tag tag-sub">Reel</span></td>
+          <td style="text-align:right">5,414</td>
+          <td style="text-align:right">3,294</td>
+          <td style="text-align:right">15</td>
+          <td style="text-align:right">0.5%</td>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:11px">Mar 24, 2026</td>
+          <td><span class="tag tag-sub">Reel</span></td>
+          <td style="text-align:right">4,983</td>
+          <td style="text-align:right">3,543</td>
+          <td style="text-align:right">30</td>
+          <td style="text-align:right">0.8%</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
@@ -645,11 +738,7 @@ const totalProductCounts = [72, 71, 89, 88, 96, 78, 63, 42, 56, 63, 49, 80];
 
 // Instagram data
 const igReach = [53618, 44750, 106548, 85577, 118463, 82857, 80458, 43574, 29932, 32749, 104511, 16705];
-const igLikes = [0, 0, 0, 41, 171, 212, 181, 102, 113, 206, 271, 42];
-const igComments = [0, 0, 0, 3, 6, 10, 3, 6, 6, 5, 5, 0];
-const igShares = [0, 0, 0, 7, 62, 121, 97, 22, 25, 70, 105, 15];
-const igSaves = [0, 0, 0, 26, 92, 132, 100, 56, 54, 36, 231, 47];
-const igEngagement = [0, 0, 0, 77, 331, 475, 381, 186, 198, 317, 612, 104];
+const igViews = [0, 0, 0, 40660, 135968, 142702, 120071, 65601, 46291, 45187, 137738, 21328];
 
 // YouTube data
 const ytViews = [3811, 2712, 2028, 4214, 11393, 12648, 10697, 10649, 11201, 27205, 4775, 118];
@@ -807,42 +896,24 @@ new Chart(document.getElementById('purchasesChart'), {
   }
 });
 
-// Instagram Reach
+// Instagram Reach & Views
 new Chart(document.getElementById('igReachChart'), {
   type:'bar',
   data:{
     labels:monthLabels,
     datasets:[
-      {label:'Reach',data:igReach,backgroundColor:'#E1306C',borderRadius:4}
-    ]
-  },
-  options:{
-    responsive:true,
-    plugins:{tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.raw.toLocaleString()}}},
-    scales:{
-      y:{grid:{color:grid},ticks:{callback:v=>(v/1000)+'K'}},
-      x:{grid:{display:false}}
-    }
-  }
-});
-
-// Instagram Engagement (stacked)
-new Chart(document.getElementById('igEngagementChart'), {
-  type:'bar',
-  data:{
-    labels:monthLabels,
-    datasets:[
-      {label:'Likes',data:igLikes,backgroundColor:'#E1306C',borderRadius:4,stack:'eng'},
-      {label:'Comments',data:igComments,backgroundColor:'#833AB4',borderRadius:4,stack:'eng'},
-      {label:'Shares',data:igShares,backgroundColor:'#F77737',borderRadius:4,stack:'eng'},
-      {label:'Saves',data:igSaves,backgroundColor:'#FCAF45',borderRadius:4,stack:'eng'}
+      {label:'Reach',data:igReach,backgroundColor:'#E1306C',borderRadius:4,yAxisID:'yReach',order:2},
+      {label:'Video Views',data:igViews,type:'line',borderColor:'#833AB4',
+        pointBackgroundColor:'#833AB4',pointRadius:5,borderWidth:2.5,tension:.3,yAxisID:'yViews',order:1}
     ]
   },
   options:{
     responsive:true,interaction:{mode:'index',intersect:false},
+    plugins:{tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.raw.toLocaleString()}}},
     scales:{
-      y:{stacked:true,grid:{color:grid}},
-      x:{stacked:true,grid:{display:false}}
+      yReach:{position:'left',title:{display:true,text:'Reach'},grid:{color:grid},ticks:{callback:v=>(v/1000)+'K'}},
+      yViews:{position:'right',title:{display:true,text:'Video Views'},grid:{display:false},ticks:{callback:v=>(v/1000)+'K'}},
+      x:{grid:{display:false}}
     }
   }
 });
