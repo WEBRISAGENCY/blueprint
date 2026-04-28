@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build Better SEO Proposals, Faster, Using AI | The Blueprint Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #F7C600;
+    --yellow-dark: #D9AE00;
+    --black: #0B0E1A;
+    --dark: #111421;
+    --border: rgba(0,0,0,0.08);
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --gray-light: #4B5563;
+    --bg-light: #F7F8FA;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Figtree', sans-serif; overflow-x: hidden; }
+
+  /* ── NAV (light header) ── */
+  .nav-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 66px; padding: 0 24px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; flex-shrink: 0;
+  }
+  .nav-logo-mark { width: 36px; height: 36px; background: var(--yellow); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-wm { display: flex; flex-direction: column; gap: 1px; }
+  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.32em; color: rgba(0,0,0,0.28); text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 15px; font-weight: 800; color: var(--black); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.36em; color: rgba(0,0,0,0.22); text-transform: uppercase; line-height: 1; margin-top: 1px; }
+  .nav-cta {
+    background: var(--black); color: var(--yellow);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 10px 24px; text-decoration: none; transition: background 0.2s;
+    cursor: pointer; border: none;
+  }
+  .nav-cta:hover { background: #1a1f33; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 120px 24px 44px;
+    position: relative; overflow: hidden;
+    background: var(--black);
+  }
+  .hero-grid { display: none; }
+  .hero-glow { display: none; }
+  .hero-bg-svg {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .hero-bg-svg svg {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 140%; height: 140%; min-width: 1400px; opacity: 0.35;
+  }
+  /* Soft glow overlay */
+  .hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 40%, rgba(30,100,200,0.15) 0%, transparent 60%),
+      radial-gradient(circle at 20% 70%, rgba(56,189,248,0.06) 0%, transparent 35%),
+      radial-gradient(circle at 80% 30%, rgba(56,189,248,0.05) 0%, transparent 35%);
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(56,160,240,0.3) 30%, rgba(56,160,240,0.2) 70%, transparent);
+  }
+  @keyframes pulse1 { 0%,100%{opacity:0.4} 50%{opacity:1} }
+  @keyframes pulse2 { 0%,100%{opacity:0.3} 50%{opacity:0.8} }
+  @keyframes pulse3 { 0%,100%{opacity:0.5} 50%{opacity:0.9} }
+  .hero-inner {
+    max-width: 800px; margin: 0 auto; position: relative; text-align: center;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 7vw, 82px);
+    line-height: 0.94; letter-spacing: 0.01em; text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+  .hero h1 span { color: var(--yellow); }
+  .hero-sub {
+    font-size: 19px; color: #C8CEDF; line-height: 1.7;
+    max-width: 620px; margin: 24px auto 32px; text-align: center;
+  }
+  .hero-sub strong { color: var(--white); font-weight: 600; }
+
+  /* ── VIDEO THUMBNAIL ── */
+  .video-section {
+    max-width: 800px; margin: 0 auto; position: relative;
+    padding: 0 24px 96px;
+  }
+  .video-thumb {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid rgba(247,198,0,0.15);
+  }
+  .video-thumb img {
+    width: 100%; height: auto; display: block;
+    transition: transform 0.3s, filter 0.3s;
+  }
+  .video-thumb:hover img {
+    transform: scale(1.02);
+    filter: brightness(0.85);
+  }
+  .video-thumb::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(11,14,26,0.5) 100%);
+    pointer-events: none;
+  }
+  .play-btn {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 88px; height: 88px;
+    background: var(--yellow);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 40px rgba(247,198,0,0.35);
+  }
+  .video-thumb:hover .play-btn {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 60px rgba(247,198,0,0.5);
+  }
+  .play-btn svg { width: 32px; height: 32px; margin-left: 4px; }
+
+  .video-cta-row {
+    text-align: center; margin-top: 24px;
+  }
+  .watch-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--yellow); color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 18px 48px; text-decoration: none; transition: all 0.2s;
+    border: none; cursor: pointer;
+  }
+  .watch-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 48px 40px;
+    max-width: 460px; width: 100%;
+    position: relative;
+    text-align: center;
+    animation: modalIn 0.25s ease;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  @keyframes modalIn { from { opacity: 0; transform: translateY(20px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  .modal-close {
+    position: absolute; top: 16px; right: 16px;
+    background: none; border: none; cursor: pointer;
+    color: #9CA3AF; font-size: 24px; line-height: 1;
+    transition: color 0.2s; padding: 4px;
+  }
+  .modal-close:hover { color: var(--black); }
+  .modal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px; line-height: 1.0;
+    text-transform: uppercase; color: var(--black);
+    margin-bottom: 8px;
+  }
+  .modal-sub {
+    font-size: 14px; color: var(--gray); margin-bottom: 28px; line-height: 1.5;
+  }
+  .modal-form { display: flex; flex-direction: column; gap: 12px; }
+  .modal-input {
+    width: 100%; padding: 16px 20px;
+    background: var(--bg-light);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--black);
+    font-family: 'Figtree', sans-serif; font-size: 15px;
+    outline: none; transition: border-color 0.2s;
+  }
+  .modal-input::placeholder { color: #9CA3AF; }
+  .modal-input:focus { border-color: rgba(247,198,0,0.6); }
+  .modal-btn {
+    width: 100%; padding: 18px 32px;
+    background: var(--yellow); color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase;
+    border: none; cursor: pointer; transition: all 0.2s;
+  }
+  .modal-btn:hover { background: var(--yellow-dark); }
+  .modal-privacy {
+    font-size: 12px; color: #6B7280; margin-top: 8px; line-height: 1.5;
+  }
+
+  /* ── OLD WAY vs BLUEPRINT WAY ── */
+  .compare-section {
+    padding: 96px 24px;
+    background: var(--bg-light);
+    color: var(--black);
+  }
+  .compare-inner { max-width: 800px; margin: 0 auto; }
+  .compare-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--yellow);
+    margin-bottom: 14px; display: flex; align-items: center; gap: 12px;
+  }
+  .compare-label::before { content:''; display:block; width:28px; height:2px; background:var(--yellow); }
+  .compare-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 56px); line-height: 0.95;
+    text-transform: uppercase; margin-bottom: 48px;
+  }
+  .compare-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  }
+  .compare-col {
+    padding: 40px 32px;
+    border: 1px solid var(--border);
+  }
+  .compare-col.old { background: var(--white); }
+  .compare-col.new { background: var(--white); border-color: rgba(34,197,94,0.3); }
+  .compare-col-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 24px; padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+  }
+  .compare-col.old .compare-col-label { color: var(--gray); }
+  .compare-col.new .compare-col-label { color: #22C55E; border-bottom-color: #22C55E; }
+  .compare-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 15px; line-height: 1.6; margin-bottom: 16px;
+    color: var(--gray-light);
+  }
+  .compare-item::before {
+    flex-shrink: 0; font-size: 14px; margin-top: 3px;
+  }
+  .compare-col.old .compare-item::before { content: '\2715'; color: #E24B4A; font-weight: 700; }
+  .compare-col.new .compare-item::before { content: '\2713'; color: #22C55E; font-weight: 700; }
+
+  /* ── WHO THIS IS FOR ── */
+  .who-section {
+    padding: 96px 24px;
+    background: var(--white);
+    color: var(--black);
+  }
+  .who-inner { max-width: 800px; margin: 0 auto; }
+  .who-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--black);
+    margin-bottom: 14px; display: flex; align-items: center; gap: 12px;
+  }
+  .who-label::before { content:''; display:block; width:28px; height:2px; background:var(--black); }
+  .who-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 56px); line-height: 0.95;
+    text-transform: uppercase; margin-bottom: 40px;
+  }
+  .who-list {
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .who-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    font-size: 16px; color: var(--gray-light); line-height: 1.6;
+  }
+  .who-check {
+    width: 28px; height: 28px; flex-shrink: 0;
+    background: rgba(11,14,26,0.06);
+    border: 1px solid rgba(11,14,26,0.15);
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+  .who-check svg { width: 14px; height: 14px; stroke: var(--black); fill: none; stroke-width: 2.5; }
+
+  /* ── BOTTOM CTA ── */
+  .bottom-cta {
+    padding: 96px 24px;
+    background: var(--yellow);
+    position: relative; overflow: hidden;
+    text-align: center;
+  }
+  .bottom-cta::before {
+    content:''; position:absolute; inset:0;
+    background-image: linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .bottom-cta-inner { position: relative; max-width: 600px; margin: 0 auto; }
+  .bottom-cta h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 6vw, 64px); line-height: 0.95;
+    text-transform: uppercase; color: var(--black); margin-bottom: 20px;
+  }
+  .bottom-cta p {
+    font-size: 17px; color: rgba(0,0,0,0.6); line-height: 1.7; margin-bottom: 36px;
+  }
+  .bottom-cta-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--black); color: var(--yellow);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 20px 48px; text-decoration: none; transition: all 0.2s;
+    border: none; cursor: pointer;
+  }
+  .bottom-cta-btn:hover { background: #111; transform: translateY(-2px); }
+
+  @media (max-width: 768px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .modal-box { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a href="https://ai.theblueprint.training/index-light-v2.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="36" height="36" viewBox="0 0 60 60">
+          <rect width="60" height="60" fill="#F7C600"/>
+          <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+          <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+          <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
+        </svg>
+      </div>
+      <div class="nav-logo-wm">
+        <span>The</span><span>Blueprint</span><span>Training</span>
+      </div>
+    </a>
+    <button class="nav-cta" onclick="openModal()">Watch Free Video</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-svg">
+    <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#38a0f0" stop-opacity="0.8"/><stop offset="100%" stop-color="#38a0f0" stop-opacity="0"/></radialGradient>
+        <radialGradient id="glowSm" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#5bb8f8" stop-opacity="0.6"/><stop offset="100%" stop-color="#5bb8f8" stop-opacity="0"/></radialGradient>
+        <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+        <filter id="blur4"><feGaussianBlur stdDeviation="4"/></filter>
+        <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+      </defs>
+      <!-- Network lines -->
+      <g stroke="rgba(56,160,240,0.12)" stroke-width="1" fill="none">
+        <line x1="100" y1="200" x2="300" y2="350"/><line x1="300" y1="350" x2="550" y2="280"/>
+        <line x1="550" y1="280" x2="700" y2="450"/><line x1="700" y1="450" x2="900" y2="320"/>
+        <line x1="900" y1="320" x2="1100" y2="400"/><line x1="1100" y1="400" x2="1300" y2="250"/>
+        <line x1="200" y1="600" x2="400" y2="500"/><line x1="400" y1="500" x2="550" y2="280"/>
+        <line x1="400" y1="500" x2="700" y2="450"/><line x1="700" y1="450" x2="850" y2="600"/>
+        <line x1="850" y1="600" x2="1100" y2="400"/><line x1="1100" y1="400" x2="1200" y2="650"/>
+        <line x1="100" y1="200" x2="200" y2="600"/><line x1="300" y1="350" x2="400" y2="500"/>
+        <line x1="900" y1="320" x2="850" y2="600"/><line x1="1300" y1="250" x2="1200" y2="650"/>
+        <line x1="50" y1="450" x2="200" y2="600"/><line x1="200" y1="600" x2="400" y2="700"/>
+        <line x1="850" y1="600" x2="1050" y2="750"/><line x1="1200" y1="650" x2="1350" y2="500"/>
+        <line x1="550" y1="280" x2="500" y2="100"/><line x1="900" y1="320" x2="950" y2="120"/>
+        <line x1="700" y1="450" x2="700" y2="200"/><line x1="400" y1="700" x2="700" y2="750"/>
+        <line x1="700" y1="750" x2="1050" y2="750"/>
+      </g>
+      <!-- Secondary thinner lines -->
+      <g stroke="rgba(56,160,240,0.06)" stroke-width="0.5" fill="none">
+        <line x1="50" y1="100" x2="100" y2="200"/><line x1="500" y1="100" x2="550" y2="280"/>
+        <line x1="950" y1="120" x2="1300" y2="250"/><line x1="50" y1="450" x2="100" y2="200"/>
+        <line x1="1350" y1="500" x2="1300" y2="250"/><line x1="700" y1="200" x2="500" y2="100"/>
+        <line x1="700" y1="200" x2="950" y2="120"/>
+      </g>
+      <!-- HUD circles -->
+      <circle cx="700" cy="450" r="80" stroke="rgba(56,160,240,0.08)" stroke-width="1" fill="none"/>
+      <circle cx="700" cy="450" r="120" stroke="rgba(56,160,240,0.04)" stroke-width="0.5" fill="none"/>
+      <circle cx="300" cy="350" r="40" stroke="rgba(56,160,240,0.06)" stroke-width="0.5" fill="none"/>
+      <circle cx="1100" cy="400" r="50" stroke="rgba(56,160,240,0.06)" stroke-width="0.5" fill="none"/>
+      <!-- Glow nodes (large) -->
+      <circle cx="700" cy="450" r="16" fill="url(#glow)" filter="url(#blur4)" style="animation:pulse1 3s ease-in-out infinite"/>
+      <circle cx="550" cy="280" r="12" fill="url(#glow)" filter="url(#blur4)" style="animation:pulse2 4s ease-in-out infinite"/>
+      <circle cx="900" cy="320" r="10" fill="url(#glow)" filter="url(#blur4)" style="animation:pulse3 3.5s ease-in-out infinite"/>
+      <!-- Glow nodes (medium) -->
+      <circle cx="300" cy="350" r="8" fill="url(#glowSm)" filter="url(#blur2)" style="animation:pulse2 5s ease-in-out infinite"/>
+      <circle cx="1100" cy="400" r="8" fill="url(#glowSm)" filter="url(#blur2)" style="animation:pulse1 4.5s ease-in-out infinite"/>
+      <circle cx="400" cy="500" r="6" fill="url(#glowSm)" filter="url(#blur2)" style="animation:pulse3 4s ease-in-out infinite"/>
+      <circle cx="850" cy="600" r="6" fill="url(#glowSm)" filter="url(#blur2)" style="animation:pulse2 3.5s ease-in-out infinite"/>
+      <circle cx="200" cy="600" r="6" fill="url(#glowSm)" filter="url(#blur2)" style="animation:pulse1 5s ease-in-out infinite"/>
+      <circle cx="1200" cy="650" r="6" fill="url(#glowSm)" filter="url(#blur2)" style="animation:pulse3 4.5s ease-in-out infinite"/>
+      <!-- Small dot nodes -->
+      <g fill="rgba(56,180,248,0.5)">
+        <circle cx="100" cy="200" r="2.5"/><circle cx="1300" cy="250" r="2.5"/>
+        <circle cx="50" cy="450" r="2"/><circle cx="1350" cy="500" r="2"/>
+        <circle cx="400" cy="700" r="2"/><circle cx="700" cy="750" r="2"/>
+        <circle cx="1050" cy="750" r="2"/><circle cx="500" cy="100" r="2"/>
+        <circle cx="950" cy="120" r="2"/><circle cx="700" cy="200" r="2.5"/>
+        <circle cx="50" cy="100" r="1.5"/>
+      </g>
+      <!-- Central bright flare -->
+      <circle cx="700" cy="450" r="40" fill="url(#glow)" filter="url(#blur8)" opacity="0.5" style="animation:pulse1 3s ease-in-out infinite"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <h1>Watch me build <span>a better SEO proposal, faster,</span><br>using AI.</h1>
+  </div>
+  <div class="video-section">
+    <div class="video-thumb" onclick="openModal()">
+      <img src="lp-proposal-thumb.png.png" alt="Ryan Stewart — How to Build SEO Proposals Using AI">
+      <div class="play-btn">
+        <svg viewBox="0 0 24 24" fill="#0B0E1A"><polygon points="6,3 20,12 6,21"/></svg>
+      </div>
+    </div>
+    <p class="hero-sub">Watch how we use Claude AI to build custom, analysis-driven SEO proposals that <strong>actually win deals</strong> — with the same depth that used to take an entire afternoon.</p>
+    <div class="video-cta-row">
+      <button class="watch-btn" onclick="openModal()">Watch the Free Video &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- OLD WAY vs BLUEPRINT WAY -->
+<section class="compare-section">
+  <div class="compare-inner">
+    <div class="compare-label">The Shift</div>
+    <h2 class="compare-title">Stop losing deals to generic proposals</h2>
+    <div class="compare-grid">
+      <div class="compare-col old">
+        <div class="compare-col-label">The Old Way</div>
+        <div class="compare-item">4-6 hours per proposal, most of it manual research</div>
+        <div class="compare-item">Generic templates that every agency sends</div>
+        <div class="compare-item">Surface-level audits that don't impress prospects</div>
+        <div class="compare-item">Pricing without a custom strategy to back it up</div>
+        <div class="compare-item">Losing deals to agencies with better presentations</div>
+      </div>
+      <div class="compare-col new">
+        <div class="compare-col-label">With The Blueprint Proposal Agent</div>
+        <div class="compare-item">30 minutes from start to finished, branded proposal</div>
+        <div class="compare-item">Custom analysis section unique to every prospect</div>
+        <div class="compare-item">Deep competitive gaps and technical findings that build trust</div>
+        <div class="compare-item">Strategy-backed scoping that justifies premium pricing</div>
+        <div class="compare-item">Proposals that make prospects say "this is exactly what we needed"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="who-section">
+  <div class="who-inner">
+    <div class="who-label">Is This For You?</div>
+    <h2 class="who-title">This video is for you if...</h2>
+    <div class="who-list">
+      <div class="who-item">
+        <div class="who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div>You run an SEO agency or freelance practice and spend too long on proposals that don't close</div>
+      </div>
+      <div class="who-item">
+        <div class="who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div>You know your analysis section is the difference between winning and losing deals, but can't afford to spend 4 hours on every one</div>
+      </div>
+      <div class="who-item">
+        <div class="who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div>You're already using (or curious about) AI tools but haven't figured out how to apply them to your sales process</div>
+      </div>
+      <div class="who-item">
+        <div class="who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div>You want to send more proposals, faster, without sacrificing quality — and actually close at a higher rate</div>
+      </div>
+      <div class="who-item">
+        <div class="who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div>You want to charge premium prices but need the deliverables to justify them in the sales conversation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="bottom-cta-inner">
+    <h2>Ready to see the process?</h2>
+    <p>10 minutes. One video. The exact workflow we use to build proposals that win deals at premium prices.</p>
+    <button class="bottom-cta-btn" onclick="openModal()">Watch the Free Video &rarr;</button>
+  </div>
+</section>
+
+<!-- OPT-IN MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-title">Watch the Free Video</div>
+    <div class="modal-sub">Enter your details below for instant access to the full walkthrough.</div>
+    <form class="modal-form" id="optinForm">
+      <input type="text" class="modal-input" placeholder="First name" required>
+      <input type="email" class="modal-input" placeholder="Email address" required>
+      <button type="submit" class="modal-btn">Get Instant Access &rarr;</button>
+    </form>
+    <div class="modal-privacy">No spam. Unsubscribe anytime. We respect your privacy.</div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close modal on overlay click (not box)
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+// Form submit (placeholder — wire up to your ESP)
+document.getElementById('optinForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // TODO: Connect to ActiveCampaign / your email service
+  document.querySelector('.modal-title').textContent = "You're in!";
+  document.querySelector('.modal-sub').textContent = 'Check your email for the video link.';
+  document.querySelector('.modal-btn').textContent = 'Access Granted';
+  document.querySelector('.modal-btn').disabled = true;
+  document.querySelector('.modal-btn').style.opacity = '0.6';
+  document.querySelector('.modal-btn').style.cursor = 'default';
+});
+</script>
+
+</body>
+</html>

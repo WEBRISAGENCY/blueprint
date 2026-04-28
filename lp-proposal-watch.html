@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch: Build Better SEO Proposals Using AI | The Blueprint Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #F7C600;
+    --yellow-dark: #D9AE00;
+    --black: #0B0E1A;
+    --dark: #111421;
+    --border: rgba(0,0,0,0.08);
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --gray-light: #4B5563;
+    --bg-light: #F7F8FA;
+    --green: #22C55E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); color: var(--black); font-family: 'Figtree', sans-serif; overflow-x: hidden; }
+
+  /* ── NAV (light) ── */
+  .nav-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    height: 66px; padding: 0 24px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; flex-shrink: 0;
+  }
+  .nav-logo-mark { width: 36px; height: 36px; background: var(--yellow); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-wm { display: flex; flex-direction: column; gap: 1px; }
+  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.32em; color: rgba(0,0,0,0.28); text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 15px; font-weight: 800; color: var(--black); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.36em; color: rgba(0,0,0,0.22); text-transform: uppercase; line-height: 1; margin-top: 1px; }
+
+  /* ── VIDEO SECTION ── */
+  .video-hero {
+    padding: 100px 24px 64px;
+    background: var(--white);
+  }
+  .video-hero-inner {
+    max-width: 900px; margin: 0 auto;
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0; overflow: hidden;
+    background: var(--black);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  }
+  .video-wrapper iframe {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; border: none;
+  }
+  .video-placeholder {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.4); font-size: 18px;
+    font-family: 'Figtree', sans-serif;
+  }
+
+  /* ── OFFER SECTION ── */
+  .offer-section {
+    padding: 80px 24px 96px;
+    background: var(--bg-light);
+  }
+  .offer-inner {
+    max-width: 680px; margin: 0 auto; text-align: center;
+  }
+  .offer-badge {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--yellow-dark); background: rgba(247,198,0,0.1);
+    border: 1px solid rgba(247,198,0,0.2);
+    padding: 6px 16px; margin-bottom: 20px;
+  }
+  .offer-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 6vw, 64px); line-height: 0.95;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .offer-title span { color: var(--yellow); }
+  .offer-subtitle {
+    font-size: 17px; color: var(--gray); line-height: 1.7;
+    max-width: 540px; margin: 0 auto 48px;
+  }
+
+  /* ── SALES BOX ── */
+  .sales-box {
+    background: var(--white);
+    border: 2px solid var(--black);
+    max-width: 560px; margin: 0 auto;
+    text-align: left;
+    overflow: hidden;
+  }
+  .sales-box-header {
+    background: var(--black);
+    padding: 20px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .sales-box-header-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--yellow);
+  }
+  .sales-box-header-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px; color: var(--white); line-height: 1;
+  }
+  .sales-box-body {
+    padding: 32px;
+  }
+  .sales-box-list {
+    display: flex; flex-direction: column; gap: 20px;
+    margin-bottom: 32px;
+  }
+  .sales-box-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    font-size: 15px; color: var(--gray-light); line-height: 1.6;
+  }
+  .sales-box-check {
+    width: 24px; height: 24px; flex-shrink: 0;
+    background: rgba(34,197,94,0.08);
+    border: 1px solid rgba(34,197,94,0.2);
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+  .sales-box-check svg { width: 13px; height: 13px; stroke: var(--green); fill: none; stroke-width: 2.5; }
+  .sales-box-item strong { color: var(--black); font-weight: 600; }
+
+  .buy-btn {
+    display: block; width: 100%; padding: 20px 32px;
+    background: var(--yellow); color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase;
+    text-align: center; text-decoration: none;
+    border: none; cursor: pointer; transition: all 0.2s;
+  }
+  .buy-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  .sales-box-guarantee {
+    text-align: center; margin-top: 16px;
+    font-size: 13px; color: var(--gray); line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .sales-box-header { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .sales-box-body { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a href="https://ai.theblueprint.training/index-light-v2.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="36" height="36" viewBox="0 0 60 60">
+          <rect width="60" height="60" fill="#F7C600"/>
+          <line x1="12" y1="12" x2="30" y2="12" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="12" x2="12" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="30" x2="30" y2="30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <line x1="12" y1="48" x2="30" y2="48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15"/>
+          <polyline points="30,12 39,21 30,30" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+          <polyline points="30,30 39,39 30,48" stroke="#0B0E1A" stroke-width="1.5" stroke-opacity="0.15" fill="none"/>
+          <circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/>
+          <circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/>
+        </svg>
+      </div>
+      <div class="nav-logo-wm">
+        <span>The</span><span>Blueprint</span><span>Training</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<section class="video-hero">
+  <div class="video-hero-inner">
+    <div class="video-wrapper">
+      <!-- Replace src with your Vimeo/Wistia/YouTube embed URL -->
+      <div class="video-placeholder">Replace with video embed</div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer-section">
+  <div class="offer-inner">
+    <div class="offer-badge">Limited Time Offer</div>
+    <h2 class="offer-title">Wait! Get <span>The Proposal Agent</span></h2>
+    <p class="offer-subtitle">Everything you need to build custom, analysis-driven SEO proposals in 30 minutes — installed and ready to go.</p>
+
+    <div class="sales-box">
+      <div class="sales-box-header">
+        <div class="sales-box-header-label">The Proposal Agent Package</div>
+        <div class="sales-box-header-price">$199</div>
+      </div>
+      <div class="sales-box-body">
+        <div class="sales-box-list">
+          <div class="sales-box-item">
+            <div class="sales-box-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Blueprint Claude MCP file</strong> with pre-built SEO proposal agent — ready to use out of the box</div>
+          </div>
+          <div class="sales-box-item">
+            <div class="sales-box-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Blueprint skills package</strong> — the exact prompts, workflows, and templates we use internally</div>
+          </div>
+          <div class="sales-box-item">
+            <div class="sales-box-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Training videos</strong> on how to install and customize the agent for your agency</div>
+          </div>
+          <div class="sales-box-item">
+            <div class="sales-box-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Support</strong> for help and troubleshooting — so you're never stuck</div>
+          </div>
+        </div>
+        <!-- Replace # with your Stripe/checkout URL -->
+        <a href="#" class="buy-btn">Get Instant Access — $199 &rarr;</a>
+        <div class="sales-box-guarantee">One-time payment. Lifetime access. No subscription.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
