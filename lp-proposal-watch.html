@@ -91,7 +91,7 @@
   }
   .offer-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(40px, 6vw, 64px); line-height: 0.95;
+    font-size: clamp(32px, 6vw, 64px); line-height: 0.95; white-space: nowrap;
     text-transform: uppercase; margin-bottom: 12px;
   }
   .offer-title span { color: var(--black); }
@@ -168,15 +168,21 @@
     color: var(--gray); margin-bottom: 12px;
   }
   .timestamps-list {
-    display: flex; flex-wrap: wrap; gap: 8px 24px;
+    display: flex; flex-direction: column; gap: 0;
+    border-left: 2px solid rgba(0,0,0,0.06);
+    padding-left: 16px;
   }
   .ts-item {
-    font-size: 14px; color: var(--gray-light); line-height: 1.8;
-    display: flex; gap: 8px;
+    font-size: 14px; color: var(--gray-light); line-height: 1;
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
   }
+  .ts-item:last-child { border-bottom: none; }
   .ts-item .ts-time {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    color: var(--black); min-width: 42px;
+    font-size: 13px; color: var(--black); min-width: 46px;
+    letter-spacing: 0.02em;
   }
 
   @media (max-width: 768px) {
@@ -268,8 +274,7 @@
             <div><strong>Support</strong> for help and troubleshooting — so you're never stuck</div>
           </div>
         </div>
-        <!-- Replace # with your Stripe/checkout URL -->
-        <a href="#" class="buy-btn">Get Instant Access — $199 &rarr;</a>
+        <a href="https://blueprint.spiffy.co/checkout/proposal-agent" class="buy-btn">Get Instant Access — $199 &rarr;</a>
         <div class="sales-box-guarantee">One-time payment. Lifetime access. No subscription.</div>
       </div>
     </div>
