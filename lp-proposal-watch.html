@@ -94,7 +94,7 @@
     font-size: clamp(40px, 6vw, 64px); line-height: 0.95;
     text-transform: uppercase; margin-bottom: 12px;
   }
-  .offer-title span { color: var(--yellow); }
+  .offer-title span { color: var(--black); }
   .offer-subtitle {
     font-size: 17px; color: var(--gray); line-height: 1.7;
     max-width: 540px; margin: 0 auto 48px;
@@ -158,9 +158,31 @@
     font-size: 13px; color: var(--gray); line-height: 1.5;
   }
 
+  /* ── TIMESTAMPS ── */
+  .timestamps {
+    max-width: 900px; margin: 24px auto 0; padding: 0 24px;
+  }
+  .timestamps-title {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray); margin-bottom: 12px;
+  }
+  .timestamps-list {
+    display: flex; flex-wrap: wrap; gap: 8px 24px;
+  }
+  .ts-item {
+    font-size: 14px; color: var(--gray-light); line-height: 1.8;
+    display: flex; gap: 8px;
+  }
+  .ts-item .ts-time {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    color: var(--black); min-width: 42px;
+  }
+
   @media (max-width: 768px) {
     .sales-box-header { flex-direction: column; gap: 8px; align-items: flex-start; }
     .sales-box-body { padding: 24px; }
+    .timestamps-list { flex-direction: column; gap: 4px; }
   }
 </style>
 </head>
@@ -197,8 +219,20 @@
 <section class="video-hero">
   <div class="video-hero-inner">
     <div class="video-wrapper">
-      <!-- Replace src with your Vimeo/Wistia/YouTube embed URL -->
-      <div class="video-placeholder">Replace with video embed</div>
+      <iframe src="https://www.youtube.com/embed/2rdXfwsppZ0" title="How to Build Better SEO Proposals Using AI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="timestamps">
+    <div class="timestamps-title">Chapters</div>
+    <div class="timestamps-list">
+      <div class="ts-item"><span class="ts-time">0:00</span> The agency proposal dilemma</div>
+      <div class="ts-item"><span class="ts-time">3:25</span> The Blueprint Agency SEO Proposal: what you get and how to install it</div>
+      <div class="ts-item"><span class="ts-time">4:22</span> Running the proposal MCP Agent in Claude</div>
+      <div class="ts-item"><span class="ts-time">5:11</span> What data you need to build the proposal</div>
+      <div class="ts-item"><span class="ts-time">7:33</span> Automated sales angles</div>
+      <div class="ts-item"><span class="ts-time">9:04</span> Slide by slide walkthrough begins</div>
+      <div class="ts-item"><span class="ts-time">9:53</span> Live walkthrough of completed proposal</div>
+      <div class="ts-item"><span class="ts-time">18:37</span> How to get access and what is included</div>
     </div>
   </div>
 </section>
