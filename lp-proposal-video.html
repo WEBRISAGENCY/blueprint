@@ -4,6 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to Build Better SEO Proposals, Faster, Using AI | The Blueprint Training</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '702253184199010');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=702253184199010&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -512,12 +531,21 @@
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">&times;</button>
-    <div class="modal-title">Watch the Free Video</div>
-    <div class="modal-sub">Enter your details below for instant access to the full walkthrough.</div>
-    <form class="modal-form" id="optinForm">
-      <input type="text" class="modal-input" placeholder="First name" required>
-      <input type="email" class="modal-input" placeholder="Email address" required>
-      <button type="submit" class="modal-btn">Get Instant Access &rarr;</button>
+    <div class="modal-title">Get Instant Access To The Video</div>
+    <div class="modal-sub">Drop your name and email below</div>
+    <form class="modal-form" id="optinForm" method="POST" action="https://theblueprint29100.activehosted.com/proc.php" novalidate>
+      <!-- ActiveCampaign hidden fields (form ID 11) -->
+      <input type="hidden" name="u" value="11" />
+      <input type="hidden" name="f" value="11" />
+      <input type="hidden" name="s" />
+      <input type="hidden" name="c" value="0" />
+      <input type="hidden" name="m" value="0" />
+      <input type="hidden" name="act" value="sub" />
+      <input type="hidden" name="v" value="2" />
+      <input type="hidden" name="or" value="c6203d80-09cd-496a-bb27-d0922bab93e5" />
+      <input type="text" name="fullname" class="modal-input" placeholder="Full name" required>
+      <input type="email" name="email" class="modal-input" placeholder="Email address" required>
+      <button type="submit" class="modal-btn" id="optinSubmit">Get Instant Access &rarr;</button>
     </form>
     <div class="modal-privacy">No spam. Unsubscribe anytime. We respect your privacy.</div>
   </div>
@@ -543,16 +571,58 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
 
-// Form submit (placeholder — wire up to your ESP)
-document.getElementById('optinForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  // TODO: Connect to ActiveCampaign / your email service
+// Helpers AC's JSONP response will call back into
+window._show_thank_you = function(id, message, trackcmp_url, email) {
   document.querySelector('.modal-title').textContent = "You're in!";
   document.querySelector('.modal-sub').textContent = 'Check your email for the video link.';
-  document.querySelector('.modal-btn').textContent = 'Access Granted';
-  document.querySelector('.modal-btn').disabled = true;
-  document.querySelector('.modal-btn').style.opacity = '0.6';
-  document.querySelector('.modal-btn').style.cursor = 'default';
+  var btn = document.getElementById('optinSubmit');
+  btn.textContent = 'Access Granted';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+  btn.style.cursor = 'default';
+  // Fire Meta Pixel Lead event
+  if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+  // AC site tracking (if configured)
+  if (typeof trackcmp_url !== 'undefined' && trackcmp_url) {
+    var s = document.createElement('script');
+    s.src = trackcmp_url; s.async = true;
+    document.head.appendChild(s);
+  }
+};
+window._show_error = function(id, message) {
+  var btn = document.getElementById('optinSubmit');
+  btn.disabled = false;
+  btn.textContent = 'Get Instant Access →';
+  alert(message || 'Sorry, your submission failed. Please try again.');
+};
+
+// Serialize form fields for AC's JSONP endpoint
+function _serializeForm(form) {
+  var parts = [];
+  for (var i = 0; i < form.elements.length; i++) {
+    var el = form.elements[i];
+    if (!el.name) continue;
+    if (el.type === 'submit' || el.type === 'button') continue;
+    parts.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value || ''));
+  }
+  return parts.join('&');
+}
+
+// Submit to ActiveCampaign via JSONP (same method AC's own embed uses)
+document.getElementById('optinForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var btn = document.getElementById('optinSubmit');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  var qs = _serializeForm(form);
+  var script = document.createElement('script');
+  script.src = 'https://theblueprint29100.activehosted.com/proc.php?' + qs + '&jsonp=true';
+  script.onerror = function() {
+    window._show_error('11', 'Sorry, your submission failed. Please try again.');
+  };
+  document.head.appendChild(script);
 });
 </script>
 
