@@ -1892,50 +1892,51 @@
   /* ── NAV ── */
   .nav-bar {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: #1E3A5F;
-    border-bottom: 2px solid #F7C600;
+    background: #FFFFFF;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08), 0 2px 24px rgba(0,0,0,0.04);
   }
   .nav-inner {
+    position: relative; z-index: 1;
     max-width: 1200px; margin: 0 auto;
     display: flex; align-items: stretch; height: 86px; padding: 0 32px;
   }
   .nav-logo {
     display: flex; align-items: center; gap: 14px;
     text-decoration: none; padding-right: 28px;
-    border-right: 1px solid rgba(0,0,0,0.08); margin-right: 4px; flex-shrink: 0;
+    border-right: none; margin-right: 4px; flex-shrink: 0;
   }
-  .nav-logo-mark { width: 42px; height: 42px; background: #F7C600; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-mark { width: 42px; height: 42px; background: #1E3A5F; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
   .nav-logo-wm { display: flex; flex-direction: column; gap: 1px; }
-  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.32em; color: rgba(255,255,255,0.35); text-transform: uppercase; line-height: 1; }
-  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 18px; font-weight: 800; color: #F7C600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
-  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.36em; color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1; margin-top: 1px; }
+  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.32em; color: rgba(30,58,95,0.45); text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 18px; font-weight: 800; color: #1E3A5F; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.36em; color: rgba(30,58,95,0.35); text-transform: uppercase; line-height: 1; margin-top: 1px; }
   .nav-links { display: flex; align-items: stretch; flex: 1; justify-content: center; }
   .nav-item { position: relative; display: flex; align-items: stretch; }
   .nav-item-btn {
     display: flex; align-items: center; gap: 6px;
     background: none; border: none; cursor: pointer;
     font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.06em;
-    color: #C8CEDF; padding: 0 20px; transition: color 0.15s;
+    color: #1E3A5F; padding: 0 20px; transition: color 0.15s;
     border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
   }
-  .nav-item-btn:hover, .nav-item-btn.open { color: #fff; }
-  .nav-item-btn.open { color: #F7C600; border-bottom-color: #F7C600; }
+  .nav-item-btn:hover, .nav-item-btn.open { color: #132c54; }
+  .nav-item-btn.open { color: #1E3A5F; border-bottom-color: #1E3A5F; }
   .nav-item-btn .nav-arr { font-size: 9px; opacity: 0.5; transition: transform 0.2s; display: inline-block; margin-top: 3px; }
   .nav-item-btn.open .nav-arr { transform: rotate(180deg); }
   .nav-item-link {
     display: flex; align-items: center;
     font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.06em;
-    color: #C8CEDF; padding: 0 20px; text-decoration: none; transition: color 0.15s;
+    color: #1E3A5F; padding: 0 20px; text-decoration: none; transition: color 0.15s;
     border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
   }
-  .nav-item-link:hover { color: #fff; }
+  .nav-item-link:hover { color: #132c54; }
   .nav-right { display: flex; align-items: center; margin-left: auto; }
   .nav-login {
     font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.06em;
-    color: #8A90A8; background: none; border: none; cursor: pointer;
+    color: #1E3A5F; background: none; border: none; cursor: pointer;
     padding: 0 20px; text-decoration: none; transition: color 0.15s;
   }
-  .nav-login:hover { color: #fff; }
+  .nav-login:hover { color: #132c54; }
   .nav-cta-btn {
     background: #F7C600; color: #0B0E1A;
     font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.06em;
@@ -1947,11 +1948,12 @@
   /* Dropdowns */
   .nav-dropdown, .nav-mega {
     display: none; position: absolute; top: calc(100% + 2px); left: 0; z-index: 400;
-    background: #111421;
-    border-top: 2px solid #F7C600;
+    background: #FFFFFF;
+    border-top: 2px solid #1E3A5F;
     border-left: 1px solid rgba(0,0,0,0.08);
     border-right: 1px solid rgba(0,0,0,0.08);
     border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   }
   .nav-dropdown.open, .nav-mega.open { display: block; }
   .nav-mega.open { display: flex; }
@@ -1961,38 +1963,38 @@
     text-decoration: none; transition: background 0.15s;
   }
   .nav-dd-row:last-child { border-bottom: none; }
-  .nav-dd-row:hover { background: #181C2E; }
-  .nav-dd-row:hover .nav-dd-acc { background: #F7C600; }
+  .nav-dd-row:hover { background: #F5F7FA; }
+  .nav-dd-row:hover .nav-dd-acc { background: #1E3A5F; }
   .nav-dd-acc { width: 3px; align-self: stretch; flex-shrink: 0; background: transparent; transition: background 0.15s; }
   .nav-dd-body { padding: 12px 16px; flex: 1; min-width: 200px; }
-  .nav-dd-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin-bottom: 2px; white-space: nowrap; }
-  .nav-dd-desc { font-size: 12px; color: #8A90A8; line-height: 1.3; white-space: nowrap; }
+  .nav-dd-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3A5F; margin-bottom: 2px; white-space: nowrap; }
+  .nav-dd-desc { font-size: 12px; color: #6B7280; line-height: 1.3; white-space: nowrap; }
 
   /* Mega */
   .nav-mega-col { min-width: 210px; border-right: 1px solid rgba(0,0,0,0.08); }
   .nav-mega-col:last-of-type { border-right: none; }
-  .nav-mega-head { padding: 14px 18px; border-bottom: 1px solid rgba(0,0,0,0.08); font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.06em; color: #F7C600; }
+  .nav-mega-head { padding: 14px 18px; border-bottom: 1px solid rgba(0,0,0,0.08); font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.06em; color: #1E3A5F; }
   .nav-mega-row {
     display: flex; align-items: center;
     border-bottom: 1px solid rgba(0,0,0,0.08);
     text-decoration: none; transition: background 0.15s;
   }
   .nav-mega-row:last-child { border-bottom: none; }
-  .nav-mega-row:hover { background: #F7F8FA; }
-  .nav-mega-row:hover .nav-mega-acc { background: #F7C600; }
+  .nav-mega-row:hover { background: #F5F7FA; }
+  .nav-mega-row:hover .nav-mega-acc { background: #1E3A5F; }
   .nav-mega-acc { width: 3px; align-self: stretch; flex-shrink: 0; background: transparent; transition: background 0.15s; }
   .nav-mega-body { padding: 10px 15px; flex: 1; }
-  .nav-mega-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin-bottom: 1px; white-space: nowrap; }
-  .nav-mega-desc { font-size: 11px; color: #8A90A8; line-height: 1.3; white-space: nowrap; }
+  .nav-mega-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3A5F; margin-bottom: 1px; white-space: nowrap; }
+  .nav-mega-desc { font-size: 11px; color: #6B7280; line-height: 1.3; white-space: nowrap; }
   .nav-mega-featured {
-    width: 210px; background: rgba(247,198,0,0.05);
-    border-left: 1px solid rgba(247,198,0,0.18);
+    width: 210px; background: rgba(30,58,95,0.04);
+    border-left: 1px solid rgba(30,58,95,0.12);
     display: flex; flex-direction: column;
   }
   .nav-mf-top { padding: 20px 18px; flex: 1; }
-  .nav-mf-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #F7C600; margin-bottom: 8px; }
-  .nav-mf-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.02em; text-transform: uppercase; color: #fff; line-height: 1.0; margin-bottom: 8px; }
-  .nav-mf-desc { font-size: 12px; color: #8A90A8; line-height: 1.5; }
+  .nav-mf-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #1E3A5F; margin-bottom: 8px; }
+  .nav-mf-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.02em; text-transform: uppercase; color: #1E3A5F; line-height: 1.0; margin-bottom: 8px; }
+  .nav-mf-desc { font-size: 12px; color: #6B7280; line-height: 1.5; }
   .nav-mf-cta {
     display: block; text-align: center; background: #F7C600; color: #0B0E1A;
     font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 0.06em;
@@ -2178,16 +2180,7 @@
     .org-trunk { height: 18px; }
   }
 
-  /* Dark nav */
-  nav { background: rgba(30,58,95,0.97) !important; border-bottom-color: rgba(247,198,0,0.15) !important; }
-  .nav-item-btn { color: #C8CEDF !important; }
-  .nav-item-btn:hover { color: #FFFFFF !important; }
-  .nav-cta { background: #F7C600 !important; color: #0B0E1A !important; }
-  .nav-mega { background: #111421 !important; border-color: rgba(247,198,0,0.15) !important; }
-  .nav-mega-name { color: #FFFFFF !important; }
-  .nav-mega-desc { color: #8A90A8 !important; }
-  .nav-mega-head { color: #F7C600 !important; }
-  .nav-mega-row:hover { background: rgba(247,198,0,0.05) !important; }
+  /* Nav overrides removed — white nav is now the default */
 
   /* Dark hero */
   .hero { background: #132c54 !important; }
@@ -2503,7 +2496,7 @@
 <div class="nav-bar">
   <div class="nav-inner">
     <a href="https://ai.theblueprint.training/index-light-v2.html" class="nav-logo">
-      <img src="assets/blueprint logo svg.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+      <img src="assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
     </a>
 
     <div class="nav-links">
