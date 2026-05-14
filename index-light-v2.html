@@ -1344,30 +1344,38 @@
   }
 
   /* ─── FAQ ─── */
-  .faq { background: var(--black); }
+  .faq { background: #F5F6F8; }
 
   .faq-accordion {
-    max-width: 800px;
     margin: 60px auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 48px;
   }
 
   .faq-item {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    transition: border-color 0.3s, background 0.3s;
   }
 
-  .faq-item:first-child {
-    border-top: 1px solid rgba(255,255,255,0.1);
+  .faq-item:hover {
+    border-color: rgba(0,0,0,0.15);
+  }
+
+  .faq-item.open {
+    border-color: rgba(247,198,0,0.4);
+    background: rgba(247,198,0,0.03);
   }
 
   .faq-question {
-    font-family: 'Figtree', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--white);
-    padding: 24px 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+    color: #0B0E1A;
+    padding: 20px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1377,36 +1385,52 @@
   }
 
   .faq-question:hover {
-    color: var(--yellow);
+    color: #1E3A5F;
   }
 
   .faq-question::after {
-    content: '+';
-    font-size: 24px;
+    content: '';
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(247,198,0,0.1);
+    border: 1.5px solid rgba(247,198,0,0.3);
+    flex-shrink: 0;
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
     font-weight: 300;
     color: var(--yellow);
-    flex-shrink: 0;
-    margin-left: 20px;
-    transition: transform 0.3s;
+    font-family: 'Figtree', sans-serif;
+    content: '+';
+    line-height: 28px;
+    text-align: center;
+    transition: all 0.3s;
   }
 
   .faq-item.open .faq-question::after {
     content: '−';
+    background: var(--yellow);
+    color: var(--black);
+    border-color: var(--yellow);
   }
 
   .faq-answer {
-    font-size: 16px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 15px;
     line-height: 1.7;
-    color: var(--gray);
+    color: #555;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
-    padding: 0 0 0 0;
+    padding: 0 24px;
   }
 
   .faq-item.open .faq-answer {
     max-height: 300px;
-    padding: 0 0 24px 0;
+    padding: 0 24px 20px;
   }
 
   /* ─── VIDEO EMBED ─── */
@@ -2262,7 +2286,7 @@
     .pricing-inner { grid-template-columns: 1fr !important; }
 
     /* FAQ */
-    .faq-accordion { margin-top: 40px; }
+    .faq-accordion { margin-top: 40px; grid-template-columns: 1fr; }
   }
 
   @media (max-width: 600px) {
@@ -2829,10 +2853,6 @@
         <ul class="pricing-features">
           <li>9 deploy-ready AI agents (Proposal, Onboarding, Project Plan, WQA, Local SEO, Content, Link Building, Reporting)</li>
           <li>300+ video lessons — from Claude basics to advanced agent customization</li>
-          <li>Module 1: AI Foundations + Agency Building</li>
-          <li>Module 2: Sales + Proposal Agent</li>
-          <li>Module 3: Full SEO Sprints (Onboarding, WQA, Local SEO, Content, Link Building, Reporting)</li>
-          <li>Google Ads, Meta Ads, and Acquisition modules coming Q3/Q4</li>
           <li>Weekly live coaching with Blueprint coaches</li>
           <li>Private Slack community — 1,000+ agency owners</li>
           <li>All Blueprint SOPs updated for AI-first operations</li>
@@ -2902,7 +2922,7 @@
 <!-- FAQ -->
 <section class="faq">
   <div class="container">
-    <h2 class="section-title" style="text-align:center;"><span>Questions?</span></h2>
+    <h2 class="section-title" style="text-align:center; color:#0B0E1A;">Questions?</h2>
 
     <div class="faq-accordion">
 
@@ -2918,7 +2938,7 @@
 
       <div class="faq-item">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is this different from the main Blueprint program?</div>
-        <div class="faq-answer">Yes. The Blueprint is a comprehensive agency growth system. The One-Person Agency specifically focuses on AI automation — taking all the Blueprint SOPs and rebuilding them as Claude agents. It complements The Blueprint and includes the Local SEO Blueprint.</div>
+        <div class="faq-answer">No — this is the same Blueprint Training you know, just updated. We've always kept the program current, and all previous material is still included in your purchase. The AI agent modules are the latest addition, built on top of the same proven SOPs and frameworks.</div>
       </div>
 
       <div class="faq-item">
