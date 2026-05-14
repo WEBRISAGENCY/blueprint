@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   // Error sink persists across replaceWith since it's on window, not the DOM.
   window.addEventListener('error', function(e) {
+    // Ignore resource load failures (img/script/link tags that 404).
+    // Those have a real DOM element as e.target; real JS errors target window.
+    if (e.target && e.target !== window && e.target.tagName) return;
     var p = document.body || document.documentElement;
     var d = document.getElementById('__bundler_err') || p.appendChild(document.createElement('div'));
     d.id = '__bundler_err';
