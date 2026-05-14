@@ -44,9 +44,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 18px 48px;
-    background: rgba(255,255,255,0.95);
+    background: #132c54;
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(245,200,0,0.15);
+    border-bottom: none;
   }
 
   .nav-logo {
@@ -58,7 +58,7 @@
     font-size: 15px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--white);
+    color: #FFFFFF;
     text-decoration: none;
   }
 
@@ -96,14 +96,15 @@
     padding: 120px 24px 80px;
     position: relative;
     overflow: hidden;
+    background: #132c54;
   }
 
   .hero-grid {
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
@@ -166,6 +167,7 @@
     animation: fadeUp 0.6s 0.2s ease both;
     margin-bottom: 0;
     white-space: nowrap;
+    color: #FFFFFF;
   }
 
   .hero-headline span {
@@ -177,7 +179,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(14px, 1.4vw, 20px);
     letter-spacing: 0.04em;
-    color: var(--gray-light);
+    color: rgba(255,255,255,0.7);
     position: relative;
     animation: fadeUp 0.6s 0.3s ease both;
     margin-bottom: 8px;
@@ -188,7 +190,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(28px, 4vw, 52px);
     letter-spacing: 0.06em;
-    color: var(--gray-light);
+    color: rgba(255,255,255,0.7);
     position: relative;
     animation: fadeUp 0.6s 0.3s ease both;
     margin-bottom: 32px;
@@ -198,13 +200,13 @@
     max-width: 640px;
     font-size: 18px;
     line-height: 1.7;
-    color: var(--gray-light);
+    color: rgba(255,255,255,0.65);
     position: relative;
     animation: fadeUp 0.6s 0.4s ease both;
     margin-bottom: 32px;
   }
 
-  .hero-desc strong { color: var(--white); }
+  .hero-desc strong { color: #FFFFFF; }
 
   .hero-cta-group {
     display: flex;
@@ -246,7 +248,7 @@
   .hero-price {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 14px;
-    color: var(--gray);
+    color: rgba(255,255,255,0.5);
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
@@ -268,7 +270,7 @@
     font-size: 12px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--gray);
+    color: rgba(255,255,255,0.4);
   }
 
   .media-logo {
@@ -302,7 +304,7 @@
 
   .hero-ticker {
     overflow: hidden;
-    background: var(--dark);
+    background: rgba(0,0,0,0.2);
     border: 1px solid rgba(247,198,0,0.15);
     padding: 14px 0;
     position: relative;
@@ -320,12 +322,12 @@
 
   .hero-ticker::before {
     left: 0;
-    background: linear-gradient(90deg, var(--dark), transparent);
+    background: linear-gradient(90deg, rgba(0,0,0,0.2), transparent);
   }
 
   .hero-ticker::after {
     right: 0;
-    background: linear-gradient(-90deg, var(--dark), transparent);
+    background: linear-gradient(-90deg, rgba(0,0,0,0.2), transparent);
   }
 
   .hero-ticker-inner {
@@ -1084,10 +1086,10 @@
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.03em;
-    color: var(--gray-light);
+    color: rgba(255,255,255,0.6);
     padding: 0 40px;
     white-space: nowrap;
-    border-right: 1px solid rgba(0,0,0,0.08);
+    border-right: 1px solid rgba(255,255,255,0.1);
   }
 
   .ticker-item:hover { color: var(--yellow); }
@@ -1155,6 +1157,7 @@
     line-height: 1;
     color: var(--white);
     margin-bottom: 8px;
+    text-align: left;
   }
 
   .pricing-amount span {
@@ -1166,6 +1169,7 @@
     font-size: 14px;
     color: var(--gray);
     margin-bottom: 36px;
+    text-align: left;
   }
 
   .pricing-features {
@@ -1799,30 +1803,30 @@
   /* ── NAV ── */
   .nav-bar {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: #0B0E1A;
+    background: #1E3A5F;
     border-bottom: 2px solid #F7C600;
   }
   .nav-inner {
     max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: stretch; height: 66px; padding: 0 24px;
+    display: flex; align-items: stretch; height: 86px; padding: 0 32px;
   }
   .nav-logo {
     display: flex; align-items: center; gap: 14px;
     text-decoration: none; padding-right: 28px;
     border-right: 1px solid rgba(0,0,0,0.08); margin-right: 4px; flex-shrink: 0;
   }
-  .nav-logo-mark { width: 36px; height: 36px; background: #F7C600; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-mark { width: 42px; height: 42px; background: #F7C600; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
   .nav-logo-wm { display: flex; flex-direction: column; gap: 1px; }
-  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.32em; color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1; }
-  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 15px; font-weight: 800; color: #F7C600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
-  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.36em; color: rgba(255,255,255,0.22); text-transform: uppercase; line-height: 1; margin-top: 1px; }
+  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.32em; color: rgba(255,255,255,0.35); text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 18px; font-weight: 800; color: #F7C600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.36em; color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1; margin-top: 1px; }
   .nav-links { display: flex; align-items: stretch; flex: 1; justify-content: center; }
   .nav-item { position: relative; display: flex; align-items: stretch; }
   .nav-item-btn {
     display: flex; align-items: center; gap: 6px;
     background: none; border: none; cursor: pointer;
-    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
-    color: #C8CEDF; padding: 0 16px; transition: color 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.06em;
+    color: #C8CEDF; padding: 0 20px; transition: color 0.15s;
     border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
   }
   .nav-item-btn:hover, .nav-item-btn.open { color: #fff; }
@@ -1831,22 +1835,22 @@
   .nav-item-btn.open .nav-arr { transform: rotate(180deg); }
   .nav-item-link {
     display: flex; align-items: center;
-    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
-    color: #C8CEDF; padding: 0 16px; text-decoration: none; transition: color 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.06em;
+    color: #C8CEDF; padding: 0 20px; text-decoration: none; transition: color 0.15s;
     border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
   }
   .nav-item-link:hover { color: #fff; }
   .nav-right { display: flex; align-items: center; margin-left: auto; }
   .nav-login {
-    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.06em;
     color: #8A90A8; background: none; border: none; cursor: pointer;
-    padding: 0 16px; text-decoration: none; transition: color 0.15s;
+    padding: 0 20px; text-decoration: none; transition: color 0.15s;
   }
   .nav-login:hover { color: #fff; }
   .nav-cta-btn {
     background: #F7C600; color: #0B0E1A;
-    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
-    padding: 0 28px; text-decoration: none; transition: background 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.06em;
+    padding: 0 36px; text-decoration: none; transition: background 0.15s;
     display: flex; align-items: center; height: 100%;
   }
   .nav-cta-btn:hover { background: #D9AE00; }
@@ -1934,17 +1938,37 @@
   .hero-price strong { color: #F7C600; }
   .hero-ticker-label { color: #F7C600; }
 
-  .comparison-table { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .comparison-col { padding: 40px 36px; background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); }
-  .comparison-col.new-model { border-color: rgba(247,198,0,0.2); }
-  .comparison-header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
-  .comparison-icon { font-size: 24px; }
-  .comparison-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.04em; text-transform: uppercase; color: #0B0E1A; }
-  .comparison-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-  .comparison-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--gray); line-height: 1.6; }
-  .old-model .comparison-list li::before { content: '—'; color: var(--gray); flex-shrink: 0; }
-  .new-model .comparison-list li::before { content: '✓'; color: #F7C600; font-weight: 700; flex-shrink: 0; }
-  @media (max-width: 900px) { .comparison-table { grid-template-columns: 1fr; } }
+  .cmp-table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; }
+  .cmp-table thead th {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 16px;
+    letter-spacing: 0.12em; text-transform: uppercase; padding: 18px 28px; text-align: left;
+  }
+  .cmp-table thead th:first-child { background: transparent; color: transparent; width: 14%; }
+  .cmp-table thead th.cmp-old { background: #E8E9EC; color: #6B7280; width: 43%; }
+  .cmp-table thead th.cmp-new { background: #132c54; color: #F7C600; width: 43%; }
+  .cmp-table tbody td {
+    padding: 16px 28px; font-size: 15px; line-height: 1.5; vertical-align: top;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .cmp-table tbody tr:last-child td { border-bottom: none; }
+  .cmp-table tbody td:first-child {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: #0B0E1A; background: #F7F8FA;
+    border-right: 1px solid rgba(0,0,0,0.06);
+  }
+  .cmp-table tbody td.cmp-old-cell { color: #6B7280; background: #FAFAFA; }
+  .cmp-table tbody td.cmp-new-cell { color: #0B0E1A; background: rgba(247,198,0,0.06); font-weight: 500; }
+  .cmp-table tbody td.cmp-new-cell strong { color: #132c54; }
+  .cmp-x { color: #DC2626; font-weight: 700; margin-right: 6px; }
+  .cmp-check { color: #F7C600; font-weight: 700; margin-right: 6px; }
+  @media (max-width: 900px) {
+    .cmp-table, .cmp-table thead, .cmp-table tbody, .cmp-table tr, .cmp-table td, .cmp-table th { display: block; width: 100%; }
+    .cmp-table thead th:first-child { display: none; }
+    .cmp-table thead th { text-align: center; }
+    .cmp-table tbody tr { display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 16px; background: #fff; border: 1px solid rgba(0,0,0,0.08); }
+    .cmp-table tbody td:first-child { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06); text-align: center; padding: 12px 16px; }
+    .cmp-table tbody td { padding: 12px 16px; }
+  }
 
   .wi-photo-placeholder { background: var(--dark2); display: flex; align-items: center; justify-content: center; min-height: 200px; border-right: 1px solid var(--dark-border); }
   .wi-photo-inner { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; }
@@ -2066,7 +2090,7 @@
   }
 
   /* Dark nav */
-  nav { background: rgba(11,14,26,0.97) !important; border-bottom-color: rgba(247,198,0,0.15) !important; }
+  nav { background: rgba(30,58,95,0.97) !important; border-bottom-color: rgba(247,198,0,0.15) !important; }
   .nav-item-btn { color: #C8CEDF !important; }
   .nav-item-btn:hover { color: #FFFFFF !important; }
   .nav-cta { background: #F7C600 !important; color: #0B0E1A !important; }
@@ -2077,7 +2101,7 @@
   .nav-mega-row:hover { background: rgba(247,198,0,0.05) !important; }
 
   /* Dark hero */
-  .hero { background: #0B0E1A !important; }
+  .hero { background: #132c54 !important; }
   .hero-grid { background-image: linear-gradient(rgba(245,200,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245,200,0,0.04) 1px, transparent 1px) !important; }
   .hero-glow { background: radial-gradient(ellipse, rgba(245,200,0,0.12) 0%, transparent 70%) !important; }
   .hero-eyebrow { color: #F7C600 !important; }
@@ -2112,14 +2136,15 @@
   .video-quote { color: #C8CEDF !important; }
 
   /* Dark pricing/enrollment section */
-  .pricing { background: #0B0E1A !important; }
+  .pricing { background: #1E3A5F !important; position: relative; }
+  .pricing::before { content:''; position:absolute; inset:0; background-image: linear-gradient(rgba(245,200,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245,200,0,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events:none; }
   .pricing .section-label { color: #F7C600 !important; }
   .pricing .section-label::before { background: #F7C600 !important; }
   .pricing .section-title { color: #FFFFFF !important; }
   .pricing .section-title span { color: #F7C600 !important; }
   .pricing p { color: #8A90A8 !important; }
-  .pricing-card { background: #111421 !important; border-color: rgba(247,198,0,0.2) !important; }
-  .pricing-card:hover { border-color: rgba(247,198,0,0.4) !important; background: #1A1F35 !important; }
+  .pricing-card { background: #2A4F7A !important; border-color: rgba(247,198,0,0.3) !important; }
+  .pricing-card:hover { border-color: rgba(247,198,0,0.5) !important; background: #345D8C !important; }
   .pricing-card-badge { background: #F7C600 !important; color: #0B0E1A !important; }
   .pricing-plan { color: #F7C600 !important; }
   .pricing-amount { color: #FFFFFF !important; }
@@ -2158,7 +2183,7 @@
     .btn-primary { font-size: 16px; padding: 16px 32px; }
 
     /* Comparison table */
-    .comparison-table { grid-template-columns: 1fr !important; }
+    /* comparison table handled by cmp-table responsive styles */
 
     /* What's Inside cards — switch grid to single column */
     .wi-card { grid-template-columns: 1fr !important; }
@@ -2248,7 +2273,6 @@
 
       <a href="https://ai.theblueprint.training/blueprint-program-light.html" class="nav-item-link">Program</a>
 
-      <a href="https://ai.theblueprint.training/blog-light.html" class="nav-item-link">Blog</a>
       <a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html" class="nav-item-link">Knowledge</a>
 
     </div>
@@ -2282,7 +2306,7 @@
 
   <div class="hero-cta-group">
     <a href="https://blueprint.spiffy.co/checkout/one-person-agency" class="btn-primary">Get Instant Access</a>
-    <p class="hero-price">Founding Member Price: <strong>$199</strong> — Limited Time</p>
+    <p class="hero-price"><span style="text-decoration:line-through;opacity:0.6;">$299/mo</span> &nbsp;<strong>$199/mo</strong> — Limited Time Sale</p>
   </div>
   <div class="hero-ticker-wrap">
     <div class="hero-ticker-label">Wins from the community →</div>
@@ -2322,38 +2346,52 @@
     <h2 class="section-title">The agency model is being<br>rebuilt from scratch.</h2>
     <p class="section-body" style="margin-bottom: 48px;">Jobs that once required a team of 5 will roll up to a single operator who understands how to build, deploy, and manage AI agents.</p>
 
-    <div class="comparison-table">
-      <div class="comparison-col old-model">
-        <div class="comparison-header">
-          <span class="comparison-icon">❌</span>
-          <span class="comparison-title">The Old Agency</span>
-        </div>
-        <ul class="comparison-list">
-          <li>Hire a project manager, content writer, link builder, VA</li>
-          <li>Hope they do their job — manage up, manage down</li>
-          <li>Watch margins disappear as headcount grows</li>
-          <li>Scramble to train new hires every quarter</li>
-          <li>Pitch "our team of 15 experts" to win deals</li>
-          <li>Spend more time managing people than doing the work</li>
-          <li>Revenue capped by how many people you can hire</li>
-        </ul>
-      </div>
-      <div class="comparison-col new-model">
-        <div class="comparison-header">
-          <span class="comparison-icon">⚡</span>
-          <span class="comparison-title">The One-Person Agency</span>
-        </div>
-        <ul class="comparison-list">
-          <li>You + AI agents running the entire operation</li>
-          <li>Every workflow automated, repeatable, and consistent</li>
-          <li>Near-zero overhead — keep 90%+ of what you earn</li>
-          <li>Agents trained once on your SOPs, available 24/7</li>
-          <li>Pitch "I built the system" — clients want results, not headcount</li>
-          <li>Spend your time on strategy, sales, and client relationships</li>
-          <li>Revenue scales with your stack, not your payroll</li>
-        </ul>
-      </div>
-    </div>
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="cmp-old">The Old Agency</th>
+          <th class="cmp-new">The One-Person Agency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Team</td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Hire a PM, writer, link builder, VA</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> <strong>You + AI agents</strong> running the entire operation</td>
+        </tr>
+        <tr>
+          <td>Execution</td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Hope they do their job — manage up, manage down</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Every workflow <strong>automated, repeatable, consistent</strong></td>
+        </tr>
+        <tr>
+          <td>Margins</td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Watch margins disappear as headcount grows</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Near-zero overhead — <strong>keep 90%+</strong> of what you earn</td>
+        </tr>
+        <tr>
+          <td>Training</td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Scramble to train new hires every quarter</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Agents trained once on your SOPs, <strong>available 24/7</strong></td>
+        </tr>
+        <tr>
+          <td>Sales Pitch</td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Pitch "our team of 15 experts" to win deals</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Pitch <strong>"I built the system"</strong> — clients want results</td>
+        </tr>
+        <tr>
+          <td>Your Time</td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Spend more time managing people than doing work</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Focus on <strong>strategy, sales, and client relationships</strong></td>
+        </tr>
+        <tr>
+          <td>Scale</td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Revenue capped by how many people you can hire</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Revenue scales with <strong>your stack, not your payroll</strong></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section><hr class="divider">
 
@@ -2751,28 +2789,16 @@
 
     <div class="pricing-inner">
       <div class="pricing-card">
-        <div class="pricing-card-badge">Founding Member Price</div>
+        <div class="pricing-card-badge" style="background:#E53E3E;color:#fff;">🔥 Limited Time Sale</div>
         <div class="pricing-plan">The One-Person Agency</div>
-
-        <!-- Toggle -->
-        <div class="pricing-toggle-wrap">
-          <button class="pricing-toggle-btn active" id="btnMonthly" onclick="switchPlan('monthly')">Monthly</button>
-          <button class="pricing-toggle-btn" id="btnAnnual" onclick="switchPlan('annual')">
-            Annual
-            <span class="toggle-save-badge">Save $489</span>
-          </button>
-        </div>
 
         <!-- Monthly pricing -->
         <div id="planMonthly">
-          <div class="pricing-amount"><span>$</span>249<small>/mo</small></div>
-          <div class="pricing-period">Billed monthly — cancel any time</div>
-        </div>
-
-        <!-- Annual pricing -->
-        <div id="planAnnual" style="display:none;">
-          <div class="pricing-amount"><span>$</span>2,499<small>/yr</small></div>
-          <div class="pricing-period">Billed annually — <strong style="color:var(--yellow);">2 months free</strong></div>
+          <div style="display:flex;align-items:baseline;gap:16px;">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(255,255,255,0.35);text-decoration:line-through;text-decoration-color:#E53E3E;text-decoration-thickness:3px;">$299</span>
+            <div class="pricing-amount"><span>$</span>199<small>/mo</small></div>
+          </div>
+          <div class="pricing-period">No contracts. Cancel anytime.</div>
         </div>
 
         <ul class="pricing-features">
@@ -2787,7 +2813,7 @@
           <li>All Blueprint SOPs updated for AI-first operations</li>
         </ul>
 
-        <a href="https://blueprint.spiffy.co/checkout/one-person-agency" class="btn-pricing" id="btnEnroll">Get Instant Access — $249/mo</a>
+        <a href="https://blueprint.spiffy.co/checkout/one-person-agency" class="btn-pricing" id="btnEnroll">Get Instant Access — $199/mo</a>
         <div class="pricing-note">🔒 Secure checkout. 30-day money-back guarantee.</div>
       </div>
 
@@ -2988,16 +3014,7 @@
 </footer>
 
 <script>
-function switchPlan(plan) {
-  const isMonthly = plan === 'monthly';
-  document.getElementById('planMonthly').style.display = isMonthly ? 'block' : 'none';
-  document.getElementById('planAnnual').style.display = isMonthly ? 'none' : 'block';
-  document.getElementById('btnMonthly').classList.toggle('active', isMonthly);
-  document.getElementById('btnAnnual').classList.toggle('active', !isMonthly);
-  document.getElementById('btnEnroll').textContent = isMonthly
-    ? 'Get Instant Access — $249/mo'
-    : 'Get Instant Access — $2,499/yr';
-}
+// No toggle needed — single plan pricing
 </script>
 </body>
 </html>
