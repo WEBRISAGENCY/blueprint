@@ -141,6 +141,21 @@
   .hero h1 span { color: #FFFFFF !important; }
   .hero h1 .flip-word { color: #FFFFFF !important; }
   .hero-sub { color: #C8CEDF !important; }
+
+  /* ── PRIMARY BUTTON ── */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #F7C600; color: #0B0E1A;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 20px 48px; text-decoration: none;
+    transition: all 0.2s; position: relative;
+  }
+  .btn-primary::after { content: '\2192'; font-size: 22px; }
+  .btn-primary:hover {
+    background: #D4A81D; transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(212,168,0,0.3);
+  }
   .hero-badge { color: #F7C600 !important; border-color: rgba(247,198,0,0.3) !important; }
   /* hero-split cards (light bg) - no dark overrides needed */
 
@@ -1025,7 +1040,7 @@
     The Blueprint Training gives agency owners the systems, processes, and proven methodology to deliver outstanding client results, reclaim your time, and run a business that works without you.
   </p>
 
-  <a href="https://ai.theblueprint.training/blueprint-signup-light" class="hero-cta-btn" style="display:inline-block; background:#F7C600; color:#0B0E1A; font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:0.06em; padding:16px 48px; text-decoration:none; position:relative; animation:fadeUp 0.5s 0.3s ease both; transition:background 0.2s;">Get Started</a>
+  <a href="https://ai.theblueprint.training/blueprint-signup-light" class="btn-primary" style="animation:fadeUp 0.5s 0.3s ease both;">Join The Movement</a>
 
 </section>
 
