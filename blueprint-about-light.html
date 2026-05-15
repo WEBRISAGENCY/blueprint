@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | The Blueprint Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&family=Orbitron:wght@600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <style>
   :root {
     --yellow: #F7C600;
@@ -25,15 +24,7 @@
   html { scroll-behavior: smooth; }
   body { background: #FFFFFF; color: #0B0E1A; font-family: 'Figtree', sans-serif; overflow-x: hidden; }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 48px;
-    background: rgba(11,14,26,0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(247,198,0,0.12);
-  }
+  /* ── OLD NAV (unused, overridden by .nav-bar) ── */
   .nav-cta {
     background: #F7C600; color: #0B0E1A;
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
@@ -100,6 +91,16 @@
     position: relative; animation: fadeUp 0.5s 0.1s ease both; margin-bottom: 24px;
   }
   .hero h1 span { color: var(--yellow); display: block; }
+  .hero h1 .flip-word {
+    display: inline-block; color: #FFFFFF;
+    animation: flipWord 0.8s 0.6s ease both;
+  }
+  @keyframes flipWord {
+    0% { transform: rotateX(90deg); opacity: 0; }
+    60% { transform: rotateX(-10deg); opacity: 1; }
+    80% { transform: rotateX(5deg); }
+    100% { transform: rotateX(0deg); opacity: 1; }
+  }
   .hero-sub {
     font-size: 18px; color: var(--gray-light); line-height: 1.7;
     max-width: 600px; margin: 0 auto 52px;
@@ -128,14 +129,15 @@
 
 
   /* ── DARK HERO OVERRIDES ── */
-  .hero { background: #0B0E1A !important; }
+  .hero { background: #132c54 !important; }
   .hero-grid { background-image: linear-gradient(rgba(247,198,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(247,198,0,0.04) 1px, transparent 1px) !important; }
   .hero-glow { background: radial-gradient(ellipse, rgba(247,198,0,0.09) 0%, transparent 70%) !important; }
   .hero h1 { color: #FFFFFF !important; }
-  .hero h1 span { color: #F7C600 !important; }
+  .hero h1 span { color: #FFFFFF !important; }
+  .hero h1 .flip-word { color: #FFFFFF !important; }
   .hero-sub { color: #C8CEDF !important; }
   .hero-badge { color: #F7C600 !important; border-color: rgba(247,198,0,0.3) !important; }
-  .hero-split-card { background: #111421 !important; border-color: rgba(255,255,255,0.07) !important; }
+  .hero-split-card { background: rgba(19,44,84,0.6) !important; border-color: rgba(255,255,255,0.07) !important; }
   .hero-split-card[style] { background: rgba(247,198,0,0.03) !important; border-color: rgba(247,198,0,0.2) !important; }
   .hero-split-card-label { color: #8A90A8 !important; }
   .hero-split-card-label.good { color: #8A90A8 !important; }
@@ -260,6 +262,62 @@
   }
   .fit-card-body { font-size: 15px; color: var(--gray); line-height: 1.7; }
 
+  /* ARE YOU A FIT */
+  .ayf { background: #F5F6F8; }
+  .ayf-inner { max-width: 800px; margin: 0 auto; }
+  .ayf-intro { font-size: 17px; color: var(--gray); line-height: 1.7; margin-bottom: 36px; }
+  .ayf-list { list-style: none; padding: 0; margin: 0 0 40px 0; }
+  .ayf-list li {
+    font-size: 16px; color: #374151; line-height: 1.8;
+    padding: 12px 0 12px 36px; position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .ayf-list li::before {
+    content: '👊'; position: absolute; left: 0; top: 12px;
+  }
+
+  /* SEO SPRINTS EVOLUTION */
+  .sprints-evo { background: var(--section-alt); }
+  .sprints-timeline {
+    display: flex; gap: 0; margin-top: 48px; position: relative;
+  }
+  .sprints-timeline::before {
+    content: ''; position: absolute; top: 48px; left: 0; right: 0;
+    height: 3px; background: linear-gradient(90deg, #1E3A5F 0%, #F7C600 100%);
+  }
+  .sprint-era {
+    flex: 1; position: relative; padding: 0 20px;
+    text-align: center;
+  }
+  .sprint-era-dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #1E3A5F; border: 3px solid #FFFFFF;
+    box-shadow: 0 0 0 2px #1E3A5F;
+    margin: 40px auto 24px; position: relative; z-index: 1;
+  }
+  .sprint-era:last-child .sprint-era-dot { background: #F7C600; box-shadow: 0 0 0 2px #F7C600; }
+  .sprint-era-year {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #1E3A5F; margin-bottom: 8px;
+  }
+  .sprint-era-title {
+    font-family: 'Bebas Neue', sans-serif; font-size: 26px;
+    color: var(--navy); letter-spacing: 0.02em; margin-bottom: 12px;
+  }
+  .sprint-era-desc {
+    font-size: 15px; color: var(--gray); line-height: 1.7;
+  }
+  @media (max-width: 768px) {
+    .sprints-timeline { flex-direction: column; gap: 0; }
+    .sprints-timeline::before {
+      top: 0; bottom: 0; left: 24px; right: auto;
+      width: 3px; height: auto;
+    }
+    .sprint-era { text-align: left; padding: 0 0 32px 56px; }
+    .sprint-era-dot { position: absolute; left: 16px; top: 0; margin: 0; }
+  }
+
   /* ── ETHOS (Pillar Timeline) ── */
   .ethos { background: #F7F8FA; }
   .ethos-pillars {
@@ -359,24 +417,52 @@
   .team-bio { font-size: 14px; color: var(--gray); line-height: 1.6; }
 
   /* ── FAQ ── */
-  .faq { background: #F7F8FA; }
-  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 48px; }
+  .faq { background: #F5F6F8; }
+  .faq-accordion {
+    margin: 60px auto 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px;
+  }
   .faq-item {
-    background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
-    padding: 32px 28px; transition: all 0.3s;
+    background: #fff; border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 4px; margin-bottom: 8px;
+    transition: border-color 0.3s, background 0.3s;
   }
-  .faq-item:hover { background: #F7F8FA; border-color: rgba(247,198,0,0.3); }
-  .faq-q {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 17px; letter-spacing: 0.03em; text-transform: uppercase;
-    color: var(--white); margin-bottom: 14px; display: flex; align-items: flex-start; gap: 12px;
+  .faq-item:hover { border-color: rgba(0,0,0,0.15); }
+  .faq-item.open {
+    border-color: rgba(247,198,0,0.4);
+    background: rgba(247,198,0,0.03);
   }
-  .faq-q::before {
-    content: 'Q'; background: #F7C600; color: #0B0E1A;
-    font-size: 11px; font-weight: 900; padding: 2px 7px;
-    flex-shrink: 0; margin-top: 2px;
+  .faq-question {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px; letter-spacing: 0.03em;
+    color: #0B0E1A; padding: 20px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none; transition: color 0.2s;
   }
-  .faq-a { font-size: 15px; color: var(--gray); line-height: 1.7; padding-left: 30px; }
+  .faq-question:hover { color: #1E3A5F; }
+  .faq-question::after {
+    content: '+'; width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(247,198,0,0.1); border: 1.5px solid rgba(247,198,0,0.3);
+    flex-shrink: 0; margin-left: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 300; color: var(--yellow);
+    font-family: 'Figtree', sans-serif;
+    line-height: 28px; text-align: center; transition: all 0.3s;
+  }
+  .faq-item.open .faq-question::after {
+    content: '\2212'; background: var(--yellow);
+    color: #0B0E1A; border-color: var(--yellow);
+  }
+  .faq-answer {
+    font-family: 'Figtree', sans-serif; font-size: 15px;
+    line-height: 1.7; color: #555;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 24px;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 300px; padding: 0 24px 20px;
+  }
 
   /* ── FINAL CTA ── */
   .final-cta {
@@ -608,61 +694,62 @@
   @media (max-width: 700px) {
     nav { padding: 14px 20px; }
     .comparison-grid { grid-template-columns: 1fr; }
-    .fit-grid, .faq-grid { grid-template-columns: 1fr; }
+    .fit-grid, .faq-grid, .faq-accordion { grid-template-columns: 1fr; }
     .team-grid { grid-template-columns: 1fr 1fr; }
   }
 
   /* ── NAV ── */
   .nav-bar {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: #0B0E1A;
-    border-bottom: 2px solid #F7C600;
+    background: #FFFFFF;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08), 0 2px 24px rgba(0,0,0,0.04);
   }
   .nav-inner {
+    position: relative; z-index: 1;
     max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: stretch; height: 66px; padding: 0 24px;
+    display: flex; align-items: stretch; height: 86px; padding: 0 32px;
   }
   .nav-logo {
     display: flex; align-items: center; gap: 14px;
     text-decoration: none; padding-right: 28px;
-    border-right: 1px solid rgba(255,255,255,0.07); margin-right: 4px; flex-shrink: 0;
+    border-right: none; margin-right: 4px; flex-shrink: 0;
   }
-  .nav-logo-mark { width: 36px; height: 36px; background: #F7C600; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-mark { width: 42px; height: 42px; background: #1E3A5F; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
   .nav-logo-wm { display: flex; flex-direction: column; gap: 1px; }
-  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.32em; color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1; }
-  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 15px; font-weight: 800; color: #F7C600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
-  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.36em; color: rgba(255,255,255,0.22); text-transform: uppercase; line-height: 1; margin-top: 1px; }
+  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.32em; color: rgba(30,58,95,0.45); text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 18px; font-weight: 800; color: #1E3A5F; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.36em; color: rgba(30,58,95,0.35); text-transform: uppercase; line-height: 1; margin-top: 1px; }
   .nav-links { display: flex; align-items: stretch; flex: 1; justify-content: center; }
   .nav-item { position: relative; display: flex; align-items: stretch; }
   .nav-item-btn {
     display: flex; align-items: center; gap: 6px;
     background: none; border: none; cursor: pointer;
-    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
-    color: #C8CEDF; padding: 0 16px; transition: color 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.06em;
+    color: #1E3A5F; padding: 0 20px; transition: color 0.15s;
     border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
   }
-  .nav-item-btn:hover, .nav-item-btn.open { color: #fff; }
-  .nav-item-btn.open { color: #F7C600; border-bottom-color: #F7C600; }
+  .nav-item-btn:hover, .nav-item-btn.open { color: #132c54; }
+  .nav-item-btn.open { color: #1E3A5F; border-bottom-color: #1E3A5F; }
   .nav-item-btn .nav-arr { font-size: 9px; opacity: 0.5; transition: transform 0.2s; display: inline-block; margin-top: 3px; }
   .nav-item-btn.open .nav-arr { transform: rotate(180deg); }
   .nav-item-link {
     display: flex; align-items: center;
-    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
-    color: #C8CEDF; padding: 0 16px; text-decoration: none; transition: color 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.06em;
+    color: #1E3A5F; padding: 0 20px; text-decoration: none; transition: color 0.15s;
     border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
   }
-  .nav-item-link:hover { color: #fff; }
+  .nav-item-link:hover { color: #132c54; }
   .nav-right { display: flex; align-items: center; margin-left: auto; }
   .nav-login {
-    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
-    color: #8A90A8; background: none; border: none; cursor: pointer;
-    padding: 0 16px; text-decoration: none; transition: color 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.06em;
+    color: #1E3A5F; background: none; border: none; cursor: pointer;
+    padding: 0 20px; text-decoration: none; transition: color 0.15s;
   }
-  .nav-login:hover { color: #fff; }
+  .nav-login:hover { color: #132c54; }
   .nav-cta-btn {
     background: #F7C600; color: #0B0E1A;
-    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
-    padding: 0 28px; text-decoration: none; transition: background 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.06em;
+    padding: 0 36px; text-decoration: none; transition: background 0.15s;
     display: flex; align-items: center; height: 100%;
   }
   .nav-cta-btn:hover { background: #D9AE00; }
@@ -670,52 +757,53 @@
   /* Dropdowns */
   .nav-dropdown, .nav-mega {
     display: none; position: absolute; top: calc(100% + 2px); left: 0; z-index: 400;
-    background: #111421;
-    border-top: 2px solid #F7C600;
-    border-left: 1px solid rgba(255,255,255,0.07);
-    border-right: 1px solid rgba(255,255,255,0.07);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: #FFFFFF;
+    border-top: 2px solid #1E3A5F;
+    border-left: 1px solid rgba(0,0,0,0.08);
+    border-right: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   }
   .nav-dropdown.open, .nav-mega.open { display: block; }
   .nav-mega.open { display: flex; }
   .nav-dd-row {
     display: flex; align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
     text-decoration: none; transition: background 0.15s;
   }
   .nav-dd-row:last-child { border-bottom: none; }
-  .nav-dd-row:hover { background: #181C2E; }
-  .nav-dd-row:hover .nav-dd-acc { background: #F7C600; }
+  .nav-dd-row:hover { background: #F5F7FA; }
+  .nav-dd-row:hover .nav-dd-acc { background: #1E3A5F; }
   .nav-dd-acc { width: 3px; align-self: stretch; flex-shrink: 0; background: transparent; transition: background 0.15s; }
   .nav-dd-body { padding: 12px 16px; flex: 1; min-width: 200px; }
-  .nav-dd-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin-bottom: 2px; white-space: nowrap; }
-  .nav-dd-desc { font-size: 12px; color: #8A90A8; line-height: 1.3; white-space: nowrap; }
+  .nav-dd-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3A5F; margin-bottom: 2px; white-space: nowrap; }
+  .nav-dd-desc { font-size: 12px; color: #6B7280; line-height: 1.3; white-space: nowrap; }
 
   /* Mega */
-  .nav-mega-col { min-width: 210px; border-right: 1px solid rgba(255,255,255,0.07); }
+  .nav-mega-col { min-width: 210px; border-right: 1px solid rgba(0,0,0,0.08); }
   .nav-mega-col:last-of-type { border-right: none; }
-  .nav-mega-head { padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.07); font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.06em; color: #F7C600; }
+  .nav-mega-head { padding: 14px 18px; border-bottom: 1px solid rgba(0,0,0,0.08); font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.06em; color: #1E3A5F; }
   .nav-mega-row {
     display: flex; align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
     text-decoration: none; transition: background 0.15s;
   }
   .nav-mega-row:last-child { border-bottom: none; }
-  .nav-mega-row:hover { background: #181C2E; }
-  .nav-mega-row:hover .nav-mega-acc { background: #F7C600; }
+  .nav-mega-row:hover { background: #F5F7FA; }
+  .nav-mega-row:hover .nav-mega-acc { background: #1E3A5F; }
   .nav-mega-acc { width: 3px; align-self: stretch; flex-shrink: 0; background: transparent; transition: background 0.15s; }
   .nav-mega-body { padding: 10px 15px; flex: 1; }
-  .nav-mega-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin-bottom: 1px; white-space: nowrap; }
-  .nav-mega-desc { font-size: 11px; color: #8A90A8; line-height: 1.3; white-space: nowrap; }
+  .nav-mega-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3A5F; margin-bottom: 1px; white-space: nowrap; }
+  .nav-mega-desc { font-size: 11px; color: #6B7280; line-height: 1.3; white-space: nowrap; }
   .nav-mega-featured {
-    width: 210px; background: rgba(247,198,0,0.05);
-    border-left: 1px solid rgba(247,198,0,0.18);
+    width: 210px; background: rgba(30,58,95,0.04);
+    border-left: 1px solid rgba(30,58,95,0.12);
     display: flex; flex-direction: column;
   }
   .nav-mf-top { padding: 20px 18px; flex: 1; }
-  .nav-mf-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #F7C600; margin-bottom: 8px; }
-  .nav-mf-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.02em; text-transform: uppercase; color: #fff; line-height: 1.0; margin-bottom: 8px; }
-  .nav-mf-desc { font-size: 12px; color: #8A90A8; line-height: 1.5; }
+  .nav-mf-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #1E3A5F; margin-bottom: 8px; }
+  .nav-mf-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.02em; text-transform: uppercase; color: #1E3A5F; line-height: 1.0; margin-bottom: 8px; }
+  .nav-mf-desc { font-size: 12px; color: #6B7280; line-height: 1.5; }
   .nav-mf-cta {
     display: block; text-align: center; background: #F7C600; color: #0B0E1A;
     font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 0.06em;
@@ -729,24 +817,24 @@
 <!-- NAV -->
 <div class="nav-bar">
   <div class="nav-inner">
-    <a href="https://ai.theblueprint.training/index-light-v2.html" class="nav-logo">
-      <img src="assets/blueprint logo svg.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+    <a class="nav-logo" href="https://ai.theblueprint.training/index-light-v2">
+      <img src="assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
     </a>
 
     <div class="nav-links">
 
-      <a href="https://ai.theblueprint.training/blueprint-about-light.html" class="nav-item-link">About</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/blueprint-about-light">About</a>
 
-      <a href="https://ai.theblueprint.training/blueprint-results-light.html" class="nav-item-link">Results</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/blueprint-results-light">Results</a>
 
-      <a href="https://ai.theblueprint.training/blueprint-program-light.html" class="nav-item-link">Program</a>
-      <a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html" class="nav-item-link">Knowledge</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/blueprint-program-light">Program</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/blueprint-knowledge-light-v2">Knowledge</a>
 
     </div>
 
     <div class="nav-right">
       <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
-      <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="nav-cta-btn">Get Started</a>
+      <a class="nav-cta-btn" href="https://ai.theblueprint.training/blueprint-signup-light">Get Started</a>
     </div>
 
   </div>
@@ -760,32 +848,32 @@
   <div class="hero-badge">9+ Years · 5,000+ Agencies · Built From The Trenches</div>
 
   <h1>
-    We flipped the
+    We <span class="flip-word">flipped</span> the
     <span>agency model.</span>
   </h1>
 
   <p class="hero-sub">
-    The Blueprint Training exists for one reason — to help SEO agency owners build AI-powered businesses that outperform, outdeliver, and outscale every traditional agency in their market.
+    The Blueprint Training gives agency owners the systems, processes, and proven methodology to deliver outstanding client results, reclaim your time, and run a business that works without you.
   </p>
 
 
   <div class="hero-split">
     <div class="hero-split-card">
-      <div class="hero-split-card-label bad">The Old Model</div>
+      <div class="hero-split-card-label bad">The Traditional Model</div>
       <ul class="hero-split-list bad">
-        <li>Manual workflows that eat your time — keyword research, content briefs, audits, reporting all done by hand</li>
-        <li>Generalist teams with no deep expertise, slow output, and inconsistent results</li>
-        <li>Competing on price because your process looks the same as everyone else's</li>
-        <li>Hiring headcount to scale instead of building systems that do the work</li>
+        <li>Working nonstop but never getting ahead. Stuck doing client work and putting out fires across the business</li>
+        <li>No repeatable systems, so every client engagement is reinvented from scratch</li>
+        <li>Razor-thin margins because you're competing on price with no differentiated process</li>
+        <li>Hiring headcount to scale instead of building systems that do the heavy lifting</li>
       </ul>
     </div>
     <div class="hero-split-card" style="border-color: rgba(247,198,0,0.2); background: rgba(247,198,0,0.03);">
       <div class="hero-split-card-label good">The Blueprint Model</div>
       <ul class="hero-split-list good">
-        <li>Purpose-built Claude agents that automate every workflow — from onboarding to link building to monthly reporting</li>
-        <li>Deep subject matter expertise baked into your agents so every deliverable reflects elite-level strategy</li>
-        <li>A fully differentiated service that's impossible to replicate without the same AI infrastructure</li>
-        <li>Scale by adding agents, not headcount — more clients, higher margins, same team</li>
+        <li>A fully productized service built on proven systems that runs without your constant input and always gets case-study-worthy results</li>
+        <li>Deep subject matter expertise baked into every process, so every deliverable reflects elite-level strategy</li>
+        <li>AI agents layered on top to automate workflows, speed up delivery, and improve margins</li>
+        <li>A smaller, leaner team that handles more clients at higher quality, with real financial freedom for the owner</li>
       </ul>
     </div>
   </div>
@@ -803,8 +891,8 @@
       </div>
       <div class="origin-text">
         <p class="section-label">The Origin</p>
-        <h2 class="section-title" style="font-size:clamp(36px, 5vw, 56px);">Built from <span>real agencies.</span><br>Not courses.</h2>
-        <p>Ryan Stewart built and sold two agencies for seven-figure sums. He runs WEBRIS, a 7-figure SEO agency where the Sprint methodology was developed in the real world — under real client pressure, with real revenue on the line.</p>
+        <h2 class="section-title">Built from <span>real agencies.</span> Not courses.</h2>
+        <p>Ryan Stewart built and sold two agencies for seven-figure sums. He runs WEBRIS, a 7-figure SEO agency where the Sprint methodology was developed in the real world, under real client pressure, with real revenue on the line.</p>
         <p>When he started, he felt completely alone. There was no playbook. No community of people who'd stood where he stood. So he built the thing he wished had existed: <strong>a closed-door community of high-calibre agency owners</strong> sharing what actually works.</p>
         <p>That was nine years ago. Today The Blueprint Training has helped more than 5,000 agencies transform how they operate, deliver, and grow.</p>
         <div class="origin-stats">
@@ -818,7 +906,7 @@
           </div>
           <div class="origin-stat">
             <div class="origin-stat-num">2</div>
-            <div class="origin-stat-label">Agencies built & sold</div>
+            <div class="origin-stat-label">Agencies built &amp; sold</div>
           </div>
           <div class="origin-stat">
             <div class="origin-stat-num">$100K</div>
@@ -832,28 +920,31 @@
 
 <hr class="divider">
 
-<!-- WHO IT'S FOR -->
-<section class="fit" id="fit">
+<!-- SEO SPRINTS EVOLUTION -->
+<section class="sprints-evo">
   <div class="container">
-    <p class="section-label">Who We Serve</p>
-    <h2 class="section-title" style="white-space:nowrap;">Built for the ones <span>who refuse to fall behind.</span></h2>
-    <p style="font-size:17px; color:#6B7280; line-height:1.7; margin-bottom:0;">The future of marketing is being rewritten right now. AI is changing how work gets done, how clients evaluate partners, and who survives. We built this community for the people who intend to be on the right side of that shift — protecting their businesses, their families, and their careers by staying permanently ahead of the curve.</p>
+    <p class="section-label">Our Methodology</p>
+    <h2 class="section-title">The evolution of <span>SEO Sprints.</span></h2>
+    <p style="font-size:17px; color:#6B7280; line-height:1.7; max-width:680px; margin-bottom:0;">SEO Sprints has always been the backbone of The Blueprint Training. It's a proven, systemized approach to delivering SEO services that gets real results for clients. Born inside a real agency under real client pressure, it's become the standard for SEO agencies around the world. Now we're layering AI on top to make it even more powerful.</p>
 
-    <div class="fit-grid">
-      <div class="fit-card">
-        <div class="fit-card-icon">🏢</div>
-        <div class="fit-card-title">Agency Owners</div>
-        <p class="fit-card-body">You've built something real. Now you need to future-proof it. AI is going to separate the agencies that thrive from the ones that disappear — and you're choosing to lead.</p>
+    <div class="sprints-timeline">
+      <div class="sprint-era">
+        <div class="sprint-era-dot"></div>
+        <div class="sprint-era-year">Est. 2019</div>
+        <div class="sprint-era-title">SEO Sprints</div>
+        <p class="sprint-era-desc">The original methodology. A systemized, repeatable process for delivering SEO services. Built inside WEBRIS, tested on real clients, refined over years. It replaced the chaos of custom engagements with a proven playbook that consistently delivers results. Adopted by thousands of agencies worldwide as the standard for how SEO should be done.</p>
       </div>
-      <div class="fit-card">
-        <div class="fit-card-icon">💼</div>
-        <div class="fit-card-title">Freelancers & Consultants</div>
-        <p class="fit-card-body">You're a one-person operation competing against teams. With AI systems doing the heavy lifting, you can deliver at the level of a full agency — without the overhead.</p>
+      <div class="sprint-era">
+        <div class="sprint-era-dot"></div>
+        <div class="sprint-era-year">The Evolution</div>
+        <div class="sprint-era-title">Agentic SEO Sprints</div>
+        <p class="sprint-era-desc">The same proven methodology, now supercharged with AI agents. Every Sprint workflow, from audits to content briefs to link prospecting to reporting, has an AI layer that automates the tedious work, speeds up delivery, and improves quality. The systems stay the same. The execution gets dramatically faster and more consistent.</p>
       </div>
-      <div class="fit-card">
-        <div class="fit-card-icon">📊</div>
-        <div class="fit-card-title">In-House Marketers</div>
-        <p class="fit-card-body">You see what's coming. The marketers who understand AI-powered workflows will be the ones companies can't afford to lose. This is how you become indispensable.</p>
+      <div class="sprint-era">
+        <div class="sprint-era-dot"></div>
+        <div class="sprint-era-year">New for 2026</div>
+        <div class="sprint-era-title">The One Person Agency</div>
+        <p class="sprint-era-desc">The ultimate expression of what happens when proven systems meet AI. One person, armed with the Sprint methodology and an AI-powered operating system, delivering the output of a full agency team. It's not about replacing people. It's about giving a single operator the leverage to provide an exceptional service to clients while building real financial freedom.</p>
       </div>
     </div>
   </div>
@@ -866,7 +957,7 @@
   <div class="container">
     <p class="section-label">Our Values</p>
     <h2 class="section-title">The Blueprint <span>ethos.</span></h2>
-    <p style="font-size:17px; color:#6B7280; line-height:1.7; max-width:560px; margin-bottom:0;">Everything we do operationally is built toward one objective — help each member smash their goals. Here's how we do it.</p>
+    <p style="font-size:17px; color:#6B7280; line-height:1.7; max-width:560px; margin-bottom:0;">Everything we do operationally is built toward one objective: help each member smash their goals. Here's how we do it.</p>
 
     <div class="ethos-pillars">
       <div class="ethos-pillar">
@@ -876,7 +967,7 @@
         </div>
         <div class="ethos-pillar-right">
           <div class="ethos-pillar-title">Speed</div>
-          <p class="ethos-pillar-body">When you run an agency there aren't enough hours in the day. Our programs are designed to get you the information you need in the least amount of time possible — no fluff, no filler.</p>
+          <p class="ethos-pillar-body">When you run an agency there aren't enough hours in the day. Our programs are designed to get you the information you need in the least amount of time possible. No fluff, no filler.</p>
         </div>
       </div>
       <div class="ethos-pillar">
@@ -886,7 +977,7 @@
         </div>
         <div class="ethos-pillar-right">
           <div class="ethos-pillar-title">Communication</div>
-          <p class="ethos-pillar-body">Clients have direct access to a private community and weekly live coaching. Every Blueprint coach is a DM away — not hidden behind a support ticket system.</p>
+          <p class="ethos-pillar-body">Clients have direct access to a private community and weekly live coaching. Every Blueprint coach is a DM away, not hidden behind a support ticket system.</p>
         </div>
       </div>
       <div class="ethos-pillar">
@@ -896,7 +987,7 @@
         </div>
         <div class="ethos-pillar-right">
           <div class="ethos-pillar-title">Relevance</div>
-          <p class="ethos-pillar-body">Every month we bring new bootcamps and training about what's working right now. Stop chasing headlines — we feed you exactly what you need to stay current and ahead.</p>
+          <p class="ethos-pillar-body">Every month we bring new bootcamps and training about what's working right now. Stop chasing headlines. We feed you exactly what you need to stay current and ahead.</p>
         </div>
       </div>
       <div class="ethos-pillar">
@@ -906,7 +997,7 @@
         </div>
         <div class="ethos-pillar-right">
           <div class="ethos-pillar-title">Accountability</div>
-          <p class="ethos-pillar-body">You paid to grow. We take that seriously. Significant resources go into holding members accountable to their investment — because results don't happen without it.</p>
+          <p class="ethos-pillar-body">You paid to grow. We take that seriously. Significant resources go into holding members accountable to their investment because results don't happen without it.</p>
         </div>
       </div>
       <div class="ethos-pillar">
@@ -933,8 +1024,6 @@
   </div>
 </section>
 
-<hr class="divider">
-
 <!-- TEAM -->
 <section class="team">
   <div class="container">
@@ -947,14 +1036,14 @@
           <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198.png" alt="Ryan Stewart" loading="lazy">
         </div>
         <div class="team-name">Ryan Stewart</div>
-        <div class="team-role">Founder & CEO</div>
+        <div class="team-role">Founder &amp; CEO</div>
         <p class="team-bio">Built and sold 2 agencies for 7-figure sums. Currently runs WEBRIS, a 7-figure SEO agency where the Sprint methodology was born.</p>
       </div>
       <div class="team-card">
         <div class="team-avatar">RS</div>
         <div class="team-name">David Krevitt</div>
         <div class="team-role">Lead Coach</div>
-        <p class="team-bio">Leads weekly live coaching sessions alongside Ryan. Helps members implement AI systems and automation into their agency operations.</p>
+        <p class="team-bio">Leads weekly live coaching sessions alongside Ryan. Helps members implement systems, processes, and automation into their agency operations.</p>
       </div>
       <div class="team-card">
         <div class="team-avatar">
@@ -986,7 +1075,7 @@
         </div>
         <div class="team-name">Jan Shroeder</div>
         <div class="team-role">Acquisition</div>
-        <p class="team-bio">10+ years managing ads and crafting copy. Makes sure every ad reaches the right person at the right time — value over noise.</p>
+        <p class="team-bio">10+ years managing ads and crafting copy. Makes sure every ad reaches the right person at the right time. Value over noise.</p>
       </div>
       <div class="team-card">
         <div class="team-avatar">
@@ -1010,36 +1099,72 @@
 
 <hr class="divider">
 
+<!-- ARE YOU A FIT -->
+<section class="ayf">
+  <div class="container">
+    <div class="ayf-inner">
+      <p class="section-label">The Right Fit</p>
+      <h2 class="section-title">Are you <span>a fit?</span></h2>
+      <p class="ayf-intro">The Blueprint Training is not for everyone. We are extremely protective of this community by only allowing like-minded, high performers inside. You're a great fit for this program if ...</p>
+      <ul class="ayf-list">
+        <li>You're a freelancer, consultant, or agency who currently knows how to do SEO, but struggles to turn it into a scalable, repeatable, profitable business.</li>
+        <li>You work with anyone who will pay your retainer. You've struggled to find a niche and a home-run offer that gets big results for your clients.</li>
+        <li>You're stuck working "in" the business, doing deliverables, sales, dealing with clients. Your title is CEO, but your day-to-day is more like an employee of your own business.</li>
+        <li>You've got a handful of employees or contractors who help, but you're struggling to build a superstar team and replace yourself.</li>
+        <li>You're good at your service offering, but there's room to improve. You're not viewed as the "go to" agency and you really struggle to get consistent results for your clients.</li>
+        <li>You struggle to find the time to do any real marketing for your business, so your pipeline is usually dry. You're not exactly sure where or when your next client is coming from.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq">
   <div class="container">
-    <p class="section-label">FAQ</p>
-    <h2 class="section-title">Common <span>questions.</span></h2>
-    <div class="faq-grid">
+    <h2 class="section-title" style="text-align:center; color:#0B0E1A;">Questions?</h2>
+
+    <div class="faq-accordion">
+
       <div class="faq-item">
-        <div class="faq-q">What is The Blueprint Methodology?</div>
-        <p class="faq-a">A system to deliver agency services that gets better results with less effort. It helps agencies simplify their business model by focusing on client impact, then building systems to productize that service.</p>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do I need to be technical to use this?</div>
+        <div class="faq-answer">Not at all. If you can follow a recipe, you can follow these modules. Every agent is pre-built and we walk you through deployment step-by-step. No coding required.</div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q">How much does the program cost?</div>
-        <p class="faq-a">$249/month or $2,499/year. Based on average member results, this is one of the highest-ROI investments an agency owner can make. We help agencies scale to $100K+ per month.</p>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do I need a Claude subscription?</div>
+        <div class="faq-answer">Yes, you'll need a Claude Pro or Team plan ($20-$25/month). This is separate from enrollment. We walk you through exactly which plan and tools to set up in Module 1.</div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q">What's included in the program?</div>
-        <p class="faq-a">Video training, done-for-you templates, Claude AI agents, weekly live coaching with Ryan and David, private Pruvae community, monthly bootcamps, and direct Slack access to every coach.</p>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is this different from the main Blueprint program?</div>
+        <div class="faq-answer">No, this is the same Blueprint Training you know, just updated. We've always kept the program current, and all previous material is still included in your purchase. The AI agent modules are the latest addition, built on top of the same proven SOPs and frameworks.</div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q">Do I need to know SEO already?</div>
-        <p class="faq-a">You'll get more from the program with basic SEO knowledge, but you don't need to be an expert — we'll make you one. The program is built for those who want to offer SEO as a service and build proper systems around it.</p>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How quickly can I deploy my first agent?</div>
+        <div class="faq-answer">Most members have their first agent running within the first hour of Module 1. The onboarding agent is the easiest to start with, and the payoff is immediately visible.</div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q">Won't this create more competition for me?</div>
-        <p class="faq-a">We don't think so. We're creating a new category of agency. Our own agency gets dozens of leads from companies specifically looking for someone running the Sprint model — because it's so different from what everyone else does.</p>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What if AI changes everything in 6 months?</div>
+        <div class="faq-answer">That's exactly why we built lifetime updates into this program. As Claude evolves, the agents and training evolve with it. You pay once and stay current forever. We've been doing this for 9 years and we update constantly.</div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q">Can I speak to someone before joining?</div>
-        <p class="faq-a">Yes. Email our Head of Operations at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="31545d545f5071455954535d44544143585f451f454350585f585f56">[email&#160;protected]</a> with any questions, or book a call through the Get Started page and we'll help you figure out if it's the right fit.</p>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is there a money-back guarantee?</div>
+        <div class="faq-answer">Yes. 30 days, no questions asked. If you go through the first three modules and don't believe this is going to change how you run your agency, email us and we'll refund you in full.</div>
       </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can this work for a brand new agency?</div>
+        <div class="faq-answer">Absolutely. Many Blueprint members have used our SOPs to launch their agencies from scratch. The AI layer makes it even more accessible, so you can deliver like a team of five on day one.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Does this work for niches outside SEO?</div>
+        <div class="faq-answer">The agent architecture works for any digital agency. The specific training focuses on SEO and local SEO delivery, the verticals where Blueprint has the deepest proven track record.</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1053,8 +1178,8 @@
     <div class="final-cta-text">
       <div class="final-cta-label">Still here?</div>
       <h2>We built this for the agency owner who felt alone.</h2>
-      <p>I've been in the SEO business for 15 years. When I first got started the hardest part was feeling completely alone. I knew what was working for me, but I knew I needed people who'd stood where I stood. Now I can help — and that's exactly what I've chosen to do. I hope to see you inside.</p>
-      <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="btn-cta">Get Started Today →</a>
+      <p>I've been in the SEO business for 15 years. When I first got started the hardest part was feeling completely alone. I knew what was working for me, but I knew I needed people who'd stood where I stood. Now I can help, and that's exactly what I've chosen to do. I hope to see you inside.</p>
+      <a class="btn-cta" href="https://ai.theblueprint.training/blueprint-signup-light">Get Started Today →</a>
     </div>
   </div>
 </section>
@@ -1067,15 +1192,15 @@
     <div>
       <div class="footer-col-title">Agents</div>
       <ul class="footer-links">
-        <li><a href="https://ai.theblueprint.training/agent-sales-light.html">Sales Agent</a></li>
-        <li><a href="https://ai.theblueprint.training/agent-onboarding-light.html">Onboarding Agent</a></li>
-        <li><a href="https://ai.theblueprint.training/agent-project-manager-light.html">Project Manager Agent</a></li>
-        <li><a href="https://ai.theblueprint.training/agent-technical-seo-light.html">Technical SEO Agent</a></li>
-        <li><a href="https://ai.theblueprint.training/agent-content-light.html">Content Agent</a></li>
-        <li><a href="https://ai.theblueprint.training/agent-link-building-light.html">Link Building Agent</a></li>
-        <li><a href="https://ai.theblueprint.training/agent-local-seo-light.html">Local SEO Agent</a></li>
-        <li><a href="https://ai.theblueprint.training/agent-reporting-light.html">Reporting Agent</a></li>
-        <li><a href="https://ai.theblueprint.training/agent-strategy-light.html">Strategy Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-sales-light">Sales Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-onboarding-light">Onboarding Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-project-manager-light">Project Manager Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-technical-seo-light">Technical SEO Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-content-light">Content Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-link-building-light">Link Building Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-local-seo-light">Local SEO Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-reporting-light">Reporting Agent</a></li>
+        <li><a href="https://ai.theblueprint.training/agent-strategy-light">Strategy Agent</a></li>
       </ul>
     </div>
 
@@ -1083,10 +1208,10 @@
     <div>
       <div class="footer-col-title">Features</div>
       <ul class="footer-links">
-        <li><a href="https://ai.theblueprint.training/feature-coaching-light.html">Coaching</a></li>
-        <li><a href="https://ai.theblueprint.training/feature-training-light.html">Video Training</a></li>
-        <li><a href="https://ai.theblueprint.training/feature-bootcamps-light.html">Live Bootcamps</a></li>
-        <li><a href="https://ai.theblueprint.training/feature-community-light.html">Community</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-coaching-light">Coaching</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-training-light">Video Training</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-bootcamps-light">Live Bootcamps</a></li>
+        <li><a href="https://ai.theblueprint.training/feature-community-light">Community</a></li>
       </ul>
       <div class="footer-col-title" style="margin-top:32px;">Follow Us</div>
       <ul class="footer-links">
@@ -1101,10 +1226,10 @@
     <div>
       <div class="footer-col-title">Company</div>
       <ul class="footer-links">
-        <li><a href="https://ai.theblueprint.training/blueprint-about-light.html">About</a></li>
-        <li><a href="https://ai.theblueprint.training/blueprint-results-light.html">Results</a></li>
-        <li><a href="https://ai.theblueprint.training/blueprint-program-light.html">Program</a></li>
-        <li><a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html">Knowledge</a></li>
+        <li><a href="https://ai.theblueprint.training/blueprint-about-light">About</a></li>
+        <li><a href="https://ai.theblueprint.training/blueprint-results-light">Results</a></li>
+        <li><a href="https://ai.theblueprint.training/blueprint-program-light">Program</a></li>
+        <li><a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2">Knowledge</a></li>
       </ul>
     </div>
 
@@ -1113,16 +1238,16 @@
       <div class="footer-col-title">Account</div>
       <ul class="footer-links" style="margin-bottom:24px;">
         <li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
-        <li><a href="https://ai.theblueprint.training/blueprint-coaching-light.html">Book a Call</a></li>
+        <li><a href="https://ai.theblueprint.training/blueprint-coaching-light">Book a Call</a></li>
       </ul>
-      <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="footer-cta-btn">Get Started &rarr;</a>
+      <a class="footer-cta-btn" href="https://ai.theblueprint.training/blueprint-signup-light">Get Started →</a>
     </div>
 
   </div>
 
   <!-- Bottom bar -->
   <div class="footer-bottom">
-    <div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
+    <div class="footer-copy">© The Blueprint Training | The One-Person Agency. All rights reserved.</div>
     <div class="footer-legal">
       <a href="#">Terms</a>
       <a href="#">Privacy</a>
