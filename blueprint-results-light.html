@@ -111,7 +111,16 @@
   /* ── HERO (navy, matching homepage) ── */
   .hero { background: #132c54; }
   .hero h1 { color: #FFFFFF; }
-  .hero h1 span { color: #F7C600; }
+  .hero h1 span { color: #FFFFFF; }
+
+  /* Animated "wins" celebration */
+  .wins-animate {
+    position: relative; display: inline-block;
+  }
+  .wins-particles {
+    position: absolute; top: -60px; left: -40%; width: 180%; height: 250%;
+    pointer-events: none; z-index: 1;
+  }
   .hero-sub { color: #C8CEDF; }
   .hero-badge { color: #F7C600; }
   .hero-stat { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
@@ -714,7 +723,7 @@
   <div class="hero-badge">500+ Results From Real Agency Owners</div>
 
   <h1>
-    The proof is<br><span>in the wins.</span>
+    The proof is<br><span>in the <span class="wins-animate">wins<canvas class="wins-particles" id="winsCanvas"></canvas></span>.</span>
   </h1>
 
   <p class="hero-sub">
@@ -1180,6 +1189,84 @@ function loadWistiaThumbs() {
   });
 }
 document.addEventListener('DOMContentLoaded', loadWistiaThumbs);
+
+// Money celebration animation for "wins"
+(function() {
+  var canvas = document.getElementById('winsCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var running = false;
+  var emojis = ['💰','💵','💲','🤑','💸','🏆','⭐','🎉'];
+
+  function resize() {
+    canvas.width = canvas.offsetWidth * 2;
+    canvas.height = canvas.offsetHeight * 2;
+    ctx.scale(2, 2);
+  }
+
+  function Particle() {
+    this.x = canvas.offsetWidth * 0.5 + (Math.random() - 0.5) * canvas.offsetWidth * 0.4;
+    this.y = canvas.offsetHeight * 0.4;
+    this.vx = (Math.random() - 0.5) * 5;
+    this.vy = -Math.random() * 3.5 - 1.5;
+    this.gravity = 0.06 + Math.random() * 0.03;
+    this.life = 1;
+    this.decay = 0.004 + Math.random() * 0.006;
+    this.emoji = emojis[Math.floor(Math.random() * emojis.length)];
+    this.size = 14 + Math.random() * 14;
+    this.angle = (Math.random() - 0.5) * 0.3;
+    this.spin = (Math.random() - 0.5) * 0.04;
+  }
+
+  function spawnBurst() {
+    for (var i = 0; i < 20; i++) {
+      particles.push(new Particle());
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+    for (var i = particles.length - 1; i >= 0; i--) {
+      var p = particles[i];
+      p.vy += p.gravity;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.angle += p.spin;
+      p.life -= p.decay;
+      if (p.life <= 0) { particles.splice(i, 1); continue; }
+      ctx.save();
+      ctx.globalAlpha = Math.min(p.life * 1.5, 1);
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.angle);
+      ctx.font = p.size + 'px serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(p.emoji, 0, 0);
+      ctx.restore();
+    }
+    if (particles.length > 0 || running) requestAnimationFrame(animate);
+  }
+
+  function start() {
+    resize();
+    running = true;
+    spawnBurst();
+    animate();
+    setInterval(function() { if (running) spawnBurst(); }, 2500);
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !running) start();
+    });
+  }, { threshold: 0.3 });
+  observer.observe(canvas.closest('.hero') || canvas);
+
+  window.addEventListener('resize', function() {
+    if (running) { ctx.setTransform(1,0,0,1,0,0); resize(); }
+  });
+})();
 </script>
 
 <div class="calendly-frame-tag" manager_id="a12ff52d-9d27-4f55-9ab2-e30092e7ebc3" id="a12ff52d-9d27-4f55-9ab2-e30092e7ebc3" style="height: 0px; width: 0px; visibility: hidden;"></div><div class="calendly-lifecycle-optibutton_singleton"></div></body></html>
