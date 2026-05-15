@@ -320,101 +320,92 @@
 
   /* ── ETHOS (Pillar Timeline) ── */
   .ethos { background: #F7F8FA; }
-  .ethos-pillars {
-    max-width: 800px;
-    margin: 56px 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
+  .ethos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 60px;
+    margin-top: 48px;
   }
-  .ethos-pillar {
-    display: flex;
-    gap: 32px;
-    padding: 36px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    position: relative;
+  .ethos-card {
+    padding: 32px 0;
+    border-top: 3px solid #F7C600;
   }
-  .ethos-pillar:last-child { border-bottom: none; }
-  .ethos-pillar-left {
-    flex-shrink: 0;
-    width: 72px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-  .ethos-pillar-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 48px;
-    color: #F7C600;
+  .ethos-card-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
     line-height: 1;
-    position: relative;
-    z-index: 2;
-    background: #F7F8FA;
-    padding: 4px 0;
   }
-  .ethos-pillar-line {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background: linear-gradient(180deg, rgba(247,198,0,0.08), rgba(247,198,0,0.25), rgba(247,198,0,0.08));
-    z-index: 1;
-  }
-  .ethos-pillar:first-child .ethos-pillar-line { top: 50%; }
-  .ethos-pillar:last-child .ethos-pillar-line { bottom: 50%; }
-  .ethos-pillar-right { flex: 1; padding-top: 6px; }
-  .ethos-pillar-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+  .ethos-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
     color: #0B0E1A;
-    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    line-height: 1;
   }
-  .ethos-pillar-body {
+  .ethos-card-body {
     font-size: 15px;
     color: #6B7280;
-    line-height: 1.7;
+    line-height: 1.75;
   }
-  .ethos-pillar:hover .ethos-pillar-title { color: #F7C600; }
-  .ethos-pillar:hover .ethos-pillar-num { color: #D9AE00; }
-  @media (max-width: 600px) {
-    .ethos-pillar { gap: 20px; }
-    .ethos-pillar-left { width: 48px; }
-    .ethos-pillar-num { font-size: 36px; }
+  @media (max-width: 768px) {
+    .ethos-grid { grid-template-columns: 1fr; gap: 32px; }
   }
 
   /* ── TEAM ── */
-  .team { background: #FFFFFF; }
-  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 48px; }
-  .team-card {
-    background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
-    padding: 32px 24px; text-align: center; transition: all 0.3s;
+  .team { background: #FFFFFF; overflow: hidden; }
+  .team-slider-wrap { position: relative; margin-top: 48px; }
+  .team-slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    scrollbar-width: none;
   }
-  .team-card:hover { background: #F7F8FA; border-color: rgba(247,198,0,0.3); transform: translateY(-4px); }
+  .team-slider::-webkit-scrollbar { display: none; }
+  .team-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background: #FFFFFF;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .team-card:hover { border-color: rgba(247,198,0,0.3); }
   .team-avatar {
-    width: 72px; height: 72px; border-radius: 50%;
+    width: 80px; height: 80px; border-radius: 50%;
     background: #EEF0F4; border: 2px solid rgba(247,198,0,0.4);
     display: flex; align-items: center; justify-content: center;
     font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 22px;
-    color: var(--yellow); margin: 0 auto 20px; overflow: hidden;
+    color: #F7C600; margin: 0 auto 20px; overflow: hidden;
   }
   .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
   .team-name {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase;
-    color: var(--white); margin-bottom: 4px;
+    color: #0B0E1A; margin-bottom: 4px;
   }
   .team-role {
     font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow);
+    letter-spacing: 0.1em; text-transform: uppercase; color: #F7C600;
     margin-bottom: 14px;
   }
-  .team-bio { font-size: 14px; color: var(--gray); line-height: 1.6; }
+  .team-bio { font-size: 14px; color: #6B7280; line-height: 1.6; }
+  .team-nav {
+    display: flex; gap: 12px; margin-top: 32px; justify-content: center;
+  }
+  .team-nav-btn {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 2px solid #0B0E1A; background: transparent;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; font-size: 20px; color: #0B0E1A;
+  }
+  .team-nav-btn:hover { background: #0B0E1A; color: #FFFFFF; }
 
   /* ── FAQ ── */
   .faq { background: #F5F6F8; }
@@ -687,7 +678,6 @@
     .origin-inner { grid-template-columns: 1fr; gap: 48px; }
     .hero-split { grid-template-columns: 1fr; }
     .ethos-grid { grid-template-columns: 1fr 1fr; }
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
     .final-cta-inner { flex-direction: column; align-items: center; text-align: center; }
     .final-cta-photo { width: 240px; }
   }
@@ -890,29 +880,10 @@
         <div class="origin-photo-caption">Ryan Stewart, Founder of The Blueprint Training.</div>
       </div>
       <div class="origin-text">
-        <p class="section-label">The Origin</p>
         <h2 class="section-title">Built from <span>real agencies.</span> Not courses.</h2>
-        <p>Ryan Stewart built and sold two agencies for seven-figure sums. He runs WEBRIS, a 7-figure SEO agency where the Sprint methodology was developed in the real world, under real client pressure, with real revenue on the line.</p>
-        <p>When he started, he felt completely alone. There was no playbook. No community of people who'd stood where he stood. So he built the thing he wished had existed: <strong>a closed-door community of high-calibre agency owners</strong> sharing what actually works.</p>
-        <p>That was nine years ago. Today The Blueprint Training has helped more than 5,000 agencies transform how they operate, deliver, and grow.</p>
-        <div class="origin-stats">
-          <div class="origin-stat">
-            <div class="origin-stat-num">9+</div>
-            <div class="origin-stat-label">Years running</div>
-          </div>
-          <div class="origin-stat">
-            <div class="origin-stat-num">5K+</div>
-            <div class="origin-stat-label">Agencies trained</div>
-          </div>
-          <div class="origin-stat">
-            <div class="origin-stat-num">2</div>
-            <div class="origin-stat-label">Agencies built &amp; sold</div>
-          </div>
-          <div class="origin-stat">
-            <div class="origin-stat-num">$100K</div>
-            <div class="origin-stat-label">Avg member MRR target</div>
-          </div>
-        </div>
+        <p>I've been building agencies for 15 years. I've had 2 successful exits and I currently run WEBRIS, a multi-7-figure SEO agency where the Sprint methodology was born. Every system inside The Blueprint Training was built, tested, and refined on real clients with real revenue on the line.</p>
+        <p>When I first started out, there was no playbook. No community. Nobody to tell me what was working and what wasn't. So I built the thing I wished had existed: <strong>a closed-door community of high-calibre agency owners</strong> who share what actually works and hold each other accountable.</p>
+        <p>That was nine years and 5,000+ agencies ago. The Blueprint Training has become the go-to program for agency owners who want to build real systems, deliver outstanding results for their clients, and create a business that gives them their time back.</p>
       </div>
     </div>
   </div>
@@ -923,28 +894,27 @@
 <!-- SEO SPRINTS EVOLUTION -->
 <section class="sprints-evo">
   <div class="container">
-    <p class="section-label">Our Methodology</p>
-    <h2 class="section-title">The evolution of <span>SEO Sprints.</span></h2>
-    <p style="font-size:17px; color:#6B7280; line-height:1.7; max-width:680px; margin-bottom:0;">SEO Sprints has always been the backbone of The Blueprint Training. It's a proven, systemized approach to delivering SEO services that gets real results for clients. Born inside a real agency under real client pressure, it's become the standard for SEO agencies around the world. Now we're layering AI on top to make it even more powerful.</p>
+    <h2 class="section-title">We evolve so you stay ahead.</h2>
+    <p style="font-size:17px; color:#6B7280; line-height:1.7; max-width:680px; margin-bottom:0;">The agency landscape changes fast. We rebuild our methodology every few years so you're always running what works right now, not what worked three years ago. When you're inside The Blueprint Training, you're always on the cutting edge.</p>
 
     <div class="sprints-timeline">
       <div class="sprint-era">
         <div class="sprint-era-dot"></div>
-        <div class="sprint-era-year">Est. 2019</div>
+        <div class="sprint-era-year">2017 - 2019</div>
+        <div class="sprint-era-title">The 5 Phases of SEO</div>
+        <p class="sprint-era-desc">Our original framework broke SEO delivery into five clear phases: technical, local, content, links, and reporting. It gave agencies a structured approach to client work for the first time, replacing guesswork with a repeatable process. Thousands of agencies adopted this as their foundation.</p>
+      </div>
+      <div class="sprint-era">
+        <div class="sprint-era-dot"></div>
+        <div class="sprint-era-year">2020 - 2025</div>
         <div class="sprint-era-title">SEO Sprints</div>
-        <p class="sprint-era-desc">The original methodology. A systemized, repeatable process for delivering SEO services. Built inside WEBRIS, tested on real clients, refined over years. It replaced the chaos of custom engagements with a proven playbook that consistently delivers results. Adopted by thousands of agencies worldwide as the standard for how SEO should be done.</p>
+        <p class="sprint-era-desc">We took the 5 Phases and rebuilt them into a leaner, faster model designed for profitability. SEO Sprints turned delivery into a productized service with fixed timelines, standardized deliverables, and predictable margins. It became the industry standard for how modern SEO agencies operate.</p>
       </div>
       <div class="sprint-era">
         <div class="sprint-era-dot"></div>
-        <div class="sprint-era-year">The Evolution</div>
-        <div class="sprint-era-title">Agentic SEO Sprints</div>
-        <p class="sprint-era-desc">The same proven methodology, now supercharged with AI agents. Every Sprint workflow, from audits to content briefs to link prospecting to reporting, has an AI layer that automates the tedious work, speeds up delivery, and improves quality. The systems stay the same. The execution gets dramatically faster and more consistent.</p>
-      </div>
-      <div class="sprint-era">
-        <div class="sprint-era-dot"></div>
-        <div class="sprint-era-year">New for 2026</div>
+        <div class="sprint-era-year">2026</div>
         <div class="sprint-era-title">The One Person Agency</div>
-        <p class="sprint-era-desc">The ultimate expression of what happens when proven systems meet AI. One person, armed with the Sprint methodology and an AI-powered operating system, delivering the output of a full agency team. It's not about replacing people. It's about giving a single operator the leverage to provide an exceptional service to clients while building real financial freedom.</p>
+        <p class="sprint-era-desc">The same proven Sprint methodology, now powered by AI agents. Every workflow from audits to content briefs to reporting has an AI layer that automates the heavy lifting. One person, armed with these systems, can deliver the output of a full agency team while building real financial freedom.</p>
       </div>
     </div>
   </div>
@@ -955,70 +925,39 @@
 <!-- ETHOS -->
 <section class="ethos">
   <div class="container">
-    <p class="section-label">Our Values</p>
-    <h2 class="section-title">The Blueprint <span>ethos.</span></h2>
+    <h2 class="section-title" style="color:#0B0E1A;">The Blueprint <span>ethos.</span></h2>
     <p style="font-size:17px; color:#6B7280; line-height:1.7; max-width:560px; margin-bottom:0;">Everything we do operationally is built toward one objective: help each member smash their goals. Here's how we do it.</p>
 
-    <div class="ethos-pillars">
-      <div class="ethos-pillar">
-        <div class="ethos-pillar-left">
-          <div class="ethos-pillar-line"></div>
-          <div class="ethos-pillar-num">01</div>
-        </div>
-        <div class="ethos-pillar-right">
-          <div class="ethos-pillar-title">Speed</div>
-          <p class="ethos-pillar-body">When you run an agency there aren't enough hours in the day. Our programs are designed to get you the information you need in the least amount of time possible. No fluff, no filler.</p>
-        </div>
+    <div class="ethos-grid">
+      <div class="ethos-card">
+        <div class="ethos-card-icon">⚡</div>
+        <div class="ethos-card-title">Speed</div>
+        <p class="ethos-card-body">When you run an agency there aren't enough hours in the day. Our programs are designed to get you the information you need in the least amount of time possible. No fluff, no filler.</p>
       </div>
-      <div class="ethos-pillar">
-        <div class="ethos-pillar-left">
-          <div class="ethos-pillar-line"></div>
-          <div class="ethos-pillar-num">02</div>
-        </div>
-        <div class="ethos-pillar-right">
-          <div class="ethos-pillar-title">Communication</div>
-          <p class="ethos-pillar-body">Clients have direct access to a private community and weekly live coaching. Every Blueprint coach is a DM away, not hidden behind a support ticket system.</p>
-        </div>
+      <div class="ethos-card">
+        <div class="ethos-card-icon">💬</div>
+        <div class="ethos-card-title">Communication</div>
+        <p class="ethos-card-body">Members have direct access to a private community and weekly live coaching. Every Blueprint coach is a DM away, not hidden behind a support ticket system.</p>
       </div>
-      <div class="ethos-pillar">
-        <div class="ethos-pillar-left">
-          <div class="ethos-pillar-line"></div>
-          <div class="ethos-pillar-num">03</div>
-        </div>
-        <div class="ethos-pillar-right">
-          <div class="ethos-pillar-title">Relevance</div>
-          <p class="ethos-pillar-body">Every month we bring new bootcamps and training about what's working right now. Stop chasing headlines. We feed you exactly what you need to stay current and ahead.</p>
-        </div>
+      <div class="ethos-card">
+        <div class="ethos-card-icon">🎯</div>
+        <div class="ethos-card-title">Relevance</div>
+        <p class="ethos-card-body">Every month we bring new bootcamps and training about what's working right now. Stop chasing headlines. We feed you exactly what you need to stay current and ahead.</p>
       </div>
-      <div class="ethos-pillar">
-        <div class="ethos-pillar-left">
-          <div class="ethos-pillar-line"></div>
-          <div class="ethos-pillar-num">04</div>
-        </div>
-        <div class="ethos-pillar-right">
-          <div class="ethos-pillar-title">Accountability</div>
-          <p class="ethos-pillar-body">You paid to grow. We take that seriously. Significant resources go into holding members accountable to their investment because results don't happen without it.</p>
-        </div>
+      <div class="ethos-card">
+        <div class="ethos-card-icon">🔒</div>
+        <div class="ethos-card-title">Accountability</div>
+        <p class="ethos-card-body">You paid to grow. We take that seriously. Significant resources go into holding members accountable to their investment because results don't happen without it.</p>
       </div>
-      <div class="ethos-pillar">
-        <div class="ethos-pillar-left">
-          <div class="ethos-pillar-line"></div>
-          <div class="ethos-pillar-num">05</div>
-        </div>
-        <div class="ethos-pillar-right">
-          <div class="ethos-pillar-title">Lifestyle</div>
-          <p class="ethos-pillar-body">Whether you want more time with your family or freedom from the 9–5, lifestyle is at the core of what we build. Our systems are designed to pull you out of the business.</p>
-        </div>
+      <div class="ethos-card">
+        <div class="ethos-card-icon">🌴</div>
+        <div class="ethos-card-title">Lifestyle</div>
+        <p class="ethos-card-body">Whether you want more time with your family or freedom from the 9-5, lifestyle is at the core of what we build. Our systems are designed to pull you out of the business.</p>
       </div>
-      <div class="ethos-pillar">
-        <div class="ethos-pillar-left">
-          <div class="ethos-pillar-line"></div>
-          <div class="ethos-pillar-num">06</div>
-        </div>
-        <div class="ethos-pillar-right">
-          <div class="ethos-pillar-title">Profit</div>
-          <p class="ethos-pillar-body">Money is a tool. It creates time, leverage, and opportunity. Our programs break you free from the time-for-money trap and move you to an impact-based model.</p>
-        </div>
+      <div class="ethos-card">
+        <div class="ethos-card-icon">💰</div>
+        <div class="ethos-card-title">Profit</div>
+        <p class="ethos-card-body">Money is a tool. It creates time, leverage, and opportunity. Our programs break you free from the time-for-money trap and move you to an impact-based model.</p>
       </div>
     </div>
   </div>
@@ -1027,71 +966,76 @@
 <!-- TEAM -->
 <section class="team">
   <div class="container">
-    <p class="section-label">The Team</p>
-    <h2 class="section-title">The people <span>behind the program.</span></h2>
+    <h2 class="section-title" style="color:#0B0E1A;">The people behind the program.</h2>
 
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198.png" alt="Ryan Stewart" loading="lazy">
+    <div class="team-slider-wrap">
+      <div class="team-slider" id="teamSlider">
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198.png" alt="Ryan Stewart" loading="lazy">
+          </div>
+          <div class="team-name">Ryan Stewart</div>
+          <div class="team-role">Founder &amp; CEO</div>
+          <p class="team-bio">Built and sold 2 agencies for 7-figure sums. Currently runs WEBRIS, a 7-figure SEO agency where the Sprint methodology was born.</p>
         </div>
-        <div class="team-name">Ryan Stewart</div>
-        <div class="team-role">Founder &amp; CEO</div>
-        <p class="team-bio">Built and sold 2 agencies for 7-figure sums. Currently runs WEBRIS, a 7-figure SEO agency where the Sprint methodology was born.</p>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">RS</div>
-        <div class="team-name">David Krevitt</div>
-        <div class="team-role">Lead Coach</div>
-        <p class="team-bio">Leads weekly live coaching sessions alongside Ryan. Helps members implement systems, processes, and automation into their agency operations.</p>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198-5.png" alt="Elena Dimova" loading="lazy">
+        <div class="team-card">
+          <div class="team-avatar">RS</div>
+          <div class="team-name">David Krevitt</div>
+          <div class="team-role">Lead Coach</div>
+          <p class="team-bio">Leads weekly live coaching sessions alongside Ryan. Helps members implement systems, processes, and automation into their agency operations.</p>
         </div>
-        <div class="team-name">Elena Dimova</div>
-        <div class="team-role">Head of Operations</div>
-        <p class="team-bio">Juggles day-to-day operations, client onboarding, and community support to make sure everything runs seamlessly behind the scenes.</p>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/06/Ellipse-198.png" alt="Dragana Dimovska" loading="lazy">
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198-5.png" alt="Elena Dimova" loading="lazy">
+          </div>
+          <div class="team-name">Elena Dimova</div>
+          <div class="team-role">Head of Operations</div>
+          <p class="team-bio">Juggles day-to-day operations, client onboarding, and community support to make sure everything runs seamlessly behind the scenes.</p>
         </div>
-        <div class="team-name">Dragana Dimovska</div>
-        <div class="team-role">Customer Success</div>
-        <p class="team-bio">The creative force behind Blueprint content that inspires and educates, and dedicated to ensuring every member gets the support they need.</p>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/06/Ellipse-198-1.png" alt="Ben McAdam" loading="lazy">
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="https://theblueprint.training/wp-content/uploads/2024/06/Ellipse-198.png" alt="Dragana Dimovska" loading="lazy">
+          </div>
+          <div class="team-name">Dragana Dimovska</div>
+          <div class="team-role">Customer Success</div>
+          <p class="team-bio">The creative force behind Blueprint content that inspires and educates, and dedicated to ensuring every member gets the support they need.</p>
         </div>
-        <div class="team-name">Ben McAdam</div>
-        <div class="team-role">Agency Coach</div>
-        <p class="team-bio">Helped 2,000+ business owners achieve more growth and more clarity around their numbers without jargon or judgement.</p>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198-2-1.png" alt="Jan Shroeder" loading="lazy">
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="https://theblueprint.training/wp-content/uploads/2024/06/Ellipse-198-1.png" alt="Ben McAdam" loading="lazy">
+          </div>
+          <div class="team-name">Ben McAdam</div>
+          <div class="team-role">Agency Coach</div>
+          <p class="team-bio">Helped 2,000+ business owners achieve more growth and more clarity around their numbers without jargon or judgement.</p>
         </div>
-        <div class="team-name">Jan Shroeder</div>
-        <div class="team-role">Acquisition</div>
-        <p class="team-bio">10+ years managing ads and crafting copy. Makes sure every ad reaches the right person at the right time. Value over noise.</p>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198-3-1.png" alt="Andres Viana" loading="lazy">
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198-2-1.png" alt="Jan Shroeder" loading="lazy">
+          </div>
+          <div class="team-name">Jan Shroeder</div>
+          <div class="team-role">Acquisition</div>
+          <p class="team-bio">10+ years managing ads and crafting copy. Makes sure every ad reaches the right person at the right time. Value over noise.</p>
         </div>
-        <div class="team-name">Andres Viana</div>
-        <div class="team-role">Support Lead</div>
-        <p class="team-bio">Numbers and automation enthusiast. Manages all technical support operations and ensures seamless experiences for the team and all members.</p>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198-4-1.png" alt="Russ Rigaud" loading="lazy">
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198-3-1.png" alt="Andres Viana" loading="lazy">
+          </div>
+          <div class="team-name">Andres Viana</div>
+          <div class="team-role">Support Lead</div>
+          <p class="team-bio">Numbers and automation enthusiast. Manages all technical support operations and ensures seamless experiences for the team and all members.</p>
         </div>
-        <div class="team-name">Russ Rigaud</div>
-        <div class="team-role">Technical Support</div>
-        <p class="team-bio">Here to help with all information and technology needs. On a mission to address and solve member questions efficiently.</p>
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="https://theblueprint.training/wp-content/uploads/2022/02/Ellipse-198-4-1.png" alt="Russ Rigaud" loading="lazy">
+          </div>
+          <div class="team-name">Russ Rigaud</div>
+          <div class="team-role">Technical Support</div>
+          <p class="team-bio">Here to help with all information and technology needs. On a mission to address and solve member questions efficiently.</p>
+        </div>
+      </div>
+      <div class="team-nav">
+        <button class="team-nav-btn" onclick="document.getElementById('teamSlider').scrollBy({left:-304,behavior:'smooth'})">&larr;</button>
+        <button class="team-nav-btn" onclick="document.getElementById('teamSlider').scrollBy({left:304,behavior:'smooth'})">&rarr;</button>
       </div>
     </div>
   </div>
