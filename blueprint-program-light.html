@@ -299,64 +299,136 @@
     background-size: 40px 40px;
   }
 
-  /* ── HOW IT WORKS CARDS ── */
-  .how-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 48px;
-    position: relative;
+  /* ── HOW IT WORKS FLOWCHART ── */
+  .how-section .section-label { color: var(--yellow); justify-content: center; }
+  .how-section .section-title { color: #FFFFFF; text-align: center; }
+  .how-section .section-sub { color: rgba(255,255,255,0.7); text-align: center; margin-left: auto; margin-right: auto; }
+
+  .how-flow {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 64px;
+    position: relative; max-width: 960px; margin-left: auto; margin-right: auto;
   }
-  .how-card {
-    background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
-    padding: 0; position: relative; transition: all 0.3s;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04); overflow: hidden;
+  /* vertical center line */
+  .how-flow::before {
+    content: ''; position: absolute; left: 50%; top: 24px; bottom: 24px;
+    width: 2px; background: rgba(247,198,0,0.25); transform: translateX(-50%);
   }
-  .how-card:hover { border-color: rgba(247,198,0,0.25); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-  .how-img {
-    width: 100%; height: 180px; object-fit: cover; display: block;
-    background: linear-gradient(135deg, #EEF0F4 0%, #E4E7ED 100%);
-    position: relative;
+
+  .flow-step {
+    display: contents;
   }
-  .how-img-placeholder {
-    width: 100%; height: 180px; display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, #EEF0F4 0%, #E4E7ED 100%);
-    position: relative; overflow: hidden;
+
+  /* each step has a node (circle) and a content card */
+  .flow-node {
+    display: flex; align-items: flex-start; justify-content: flex-end;
+    padding: 0 0 64px 0; position: relative;
   }
-  .how-img-placeholder::before {
-    content:''; position:absolute; inset:0;
-    background-image: linear-gradient(rgba(247,198,0,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(247,198,0,0.04) 1px, transparent 1px);
-    background-size: 30px 30px;
+  .flow-content {
+    display: flex; align-items: flex-start; justify-content: flex-start;
+    padding: 0 0 64px 0; position: relative;
   }
-  .how-img-icon {
-    width: 56px; height: 56px; background: rgba(247,198,0,0.12);
-    border: 1px solid rgba(247,198,0,0.2); display: flex; align-items: center; justify-content: center;
-    position: relative; z-index: 1;
+
+  /* odd steps: content on the right */
+  .flow-step:nth-child(odd) .flow-node { grid-column: 1; padding-right: 48px; }
+  .flow-step:nth-child(odd) .flow-content { grid-column: 2; padding-left: 48px; }
+
+  /* even steps: content on the left */
+  .flow-step:nth-child(even) .flow-node { grid-column: 2; padding-left: 48px; justify-content: flex-start; }
+  .flow-step:nth-child(even) .flow-content { grid-column: 1; padding-right: 48px; text-align: right; justify-content: flex-end; }
+
+  /* the numbered circle */
+  .flow-circle {
+    width: 80px; height: 80px; min-width: 80px; border-radius: 50%;
+    background: var(--yellow); display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: #132c54;
+    position: relative; z-index: 2; box-shadow: 0 0 0 8px #132c54, 0 0 0 10px rgba(247,198,0,0.3);
   }
-  .how-body { padding: 28px 24px 32px; }
-  .how-step-badge {
-    display: inline-flex; align-items: center; gap: 6px; margin-bottom: 14px;
+
+  /* connector dot on the center line */
+  .flow-node::after {
+    content: ''; position: absolute; top: 34px; width: 14px; height: 14px;
+    background: var(--yellow); border-radius: 50%; z-index: 3;
+  }
+  .flow-step:nth-child(odd) .flow-node::after { right: -7px; }
+  .flow-step:nth-child(even) .flow-node::after { left: -7px; }
+
+  /* horizontal connector line from circle to center */
+  .flow-node::before {
+    content: ''; position: absolute; top: 39px; height: 2px;
+    background: rgba(247,198,0,0.25); z-index: 1;
+  }
+  .flow-step:nth-child(odd) .flow-node::before { right: 0; width: 48px; }
+  .flow-step:nth-child(even) .flow-node::before { left: 0; width: 48px; }
+
+  .flow-card {
+    max-width: 480px;
+  }
+  .flow-card h3 {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--yellow); background: rgba(247,198,0,0.08);
-    border: 1px solid rgba(247,198,0,0.2); padding: 3px 10px;
+    font-size: 28px; letter-spacing: 0.03em; text-transform: uppercase;
+    color: #FFFFFF; margin-bottom: 10px;
   }
-  .how-card h3 {
+  .flow-card p {
+    font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.7;
+  }
+  .flow-step-label {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 20px; letter-spacing: 0.03em; text-transform: uppercase;
-    color: #0B0E1A; margin-bottom: 10px;
+    font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--yellow); margin-bottom: 10px;
   }
-  .how-card p {
-    font-size: 14px; color: var(--gray); line-height: 1.7;
+
+  /* icon inside circle */
+  .flow-circle svg, .flow-circle img {
+    width: 36px; height: 36px;
   }
-  /* connector arrows between cards */
-  .how-connector {
-    display: flex; align-items: center; justify-content: center;
-    position: absolute; top: 90px; z-index: 5; width: 28px; height: 28px;
-    background: #F7C600; border-radius: 50%;
+  .flow-circle.flow-circle-icon {
+    background: var(--yellow); padding: 0;
   }
-  .how-connector svg { width: 12px; height: 12px; }
-  .how-connector-1 { left: calc(25% - 14px); }
-  .how-connector-2 { left: calc(50% - 14px); }
-  .how-connector-3 { left: calc(75% - 14px); }
+  /* money bag finale circle */
+  .flow-finale {
+    width: 120px; height: 120px; min-width: 120px; border-radius: 50%;
+    background: var(--yellow); display: flex; align-items: center; justify-content: center;
+    font-size: 56px; position: relative; z-index: 2;
+    box-shadow: 0 0 0 8px #132c54, 0 0 0 10px rgba(247,198,0,0.3), 0 0 40px rgba(247,198,0,0.2);
+    margin: 24px auto 0;
+  }
+  .flow-finale-wrap {
+    grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center;
+    padding-top: 16px; position: relative;
+  }
+  .flow-finale-label {
+    font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: #FFFFFF;
+    text-transform: uppercase; letter-spacing: 0.03em; margin-top: 20px;
+  }
+  .flow-finale-sub {
+    font-size: 16px; color: rgba(255,255,255,0.6); text-align: center; max-width: 400px; margin-top: 8px; line-height: 1.6;
+  }
+
+  /* last step: no bottom padding */
+  .flow-step:last-child .flow-node,
+  .flow-step:last-child .flow-content { padding-bottom: 0; }
+
+  /* ── FLOWCHART RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .how-flow {
+      grid-template-columns: 48px 1fr; gap: 0;
+    }
+    .how-flow::before {
+      left: 24px;
+    }
+    /* all steps: node on left col, content on right col */
+    .flow-step:nth-child(odd) .flow-node,
+    .flow-step:nth-child(even) .flow-node {
+      grid-column: 1; padding: 0 0 64px 0; justify-content: center;
+    }
+    .flow-step:nth-child(odd) .flow-content,
+    .flow-step:nth-child(even) .flow-content {
+      grid-column: 2; padding: 0 0 64px 24px; text-align: left; justify-content: flex-start;
+    }
+    .flow-circle { width: 44px; height: 44px; min-width: 44px; font-size: 20px; box-shadow: 0 0 0 4px #132c54, 0 0 0 6px rgba(247,198,0,0.3); }
+    /* hide the connector dots and lines on mobile */
+    .flow-node::after, .flow-node::before { display: none; }
+  }
 
   /* ── AGENT GRID ── */
   .agent-grid {
@@ -624,14 +696,12 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 960px) {
-    .how-grid { grid-template-columns: 1fr 1fr; }
-    .how-connector { display: none; }
     .agent-grid { grid-template-columns: 1fr 1fr; }
     .module-row { grid-template-columns: 60px 1fr; }
     .module-meta { display: none; }
   }
   @media (max-width: 640px) {
-    .how-grid { grid-template-columns: 1fr; }
+    .desktop-break { display: none; }
     .agent-grid { grid-template-columns: 1fr; }
     .module-row { grid-template-columns: 1fr; }
     .module-num { display: none; }
@@ -725,67 +795,70 @@
   </div>
 </section>
 
-<hr class="divider">
-
 <!-- HOW IT WORKS -->
-<section style="background: #FFFFFF; padding: 96px 24px;">
+<section class="how-section" style="background: #132c54; padding: 96px 24px;">
   <div class="container">
     <p class="section-label">How It Works</p>
-    <h2 class="section-title">Four pillars. <span>One system.</span></h2>
-    <p class="section-sub">Blueprint isn't a course you watch and forget. It's a system built on four pillars that work together to get you delivering client results faster, with less manual work.</p>
+    <h2 class="section-title">A 6 Step Process<br class="desktop-break"> <span>Proven To Grow Agencies</span></h2>
+    <p class="section-sub">Learn from agency owners who have had real success building their businesses. Take back your time, finances and sanity - you're in a safe place. The Blueprint Training is a Million Dollar Agency in a box.</p>
 
-    <div class="how-grid">
+    <div class="how-flow">
 
-      <div class="how-card">
-        <div class="how-img-placeholder">
-          <div class="how-img-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 9h6M9 12h6M9 15h4"></path><circle cx="18" cy="6" r="3" fill="rgba(247,198,0,0.2)"></circle></svg>
-          </div>
-        </div>
-        <div class="how-body">
-          <div class="how-step-badge">Step 01</div>
-          <h3>Pre-Built AI Agents</h3>
-          <p>Deploy-ready agents built on 10 years of subject matter expertise delivering marketing services. Trained on the Blueprint SOP Suite and built by our team at Webris doing this work for real clients.</p>
-        </div>
+      <!-- Step 1: Foundational Training -->
+      <div class="flow-step">
+        <div class="flow-node"><div class="flow-circle">1</div></div>
+        <div class="flow-content"><div class="flow-card">
+          <div class="flow-step-label">Step 01</div>
+          <h3>Foundational Training</h3>
+          <p>Learn the foundations of building an agency like this. Claude training, agency positioning, offer design, sales process, and the core methodology that makes everything else work.</p>
+        </div></div>
       </div>
 
-      <div class="how-card">
-        <div class="how-img-placeholder">
-          <div class="how-img-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg>
-          </div>
-        </div>
-        <div class="how-body">
-          <div class="how-step-badge">Step 02</div>
-          <h3>Video Training</h3>
-          <p>300+ lessons teaching you exactly how to use every agent. From learning Claude Cowork and Claude Code from the ground up to customizing and deploying agents for your specific clients.</p>
-        </div>
+      <!-- Step 2: Install Blueprint OS -->
+      <div class="flow-step">
+        <div class="flow-content"><div class="flow-card">
+          <div class="flow-step-label">Step 02</div>
+          <h3>Install Blueprint OS</h3>
+          <p>Install the Blueprint Operating System MCP file and skills package to your Claude account. This is the agent stack that powers your entire agency workflow.</p>
+        </div></div>
+        <div class="flow-node"><div class="flow-circle">2</div></div>
       </div>
 
-      <div class="how-card">
-        <div class="how-img-placeholder">
-          <div class="how-img-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          </div>
-        </div>
-        <div class="how-body">
-          <div class="how-step-badge">Step 03</div>
-          <h3>Live Events</h3>
-          <p>Weekly live work sessions where you ask Blueprint coaches questions on a live call. Real-time help on implementation, agent troubleshooting, and working through client challenges.</p>
-        </div>
+      <!-- Step 3: Agent Training -->
+      <div class="flow-step">
+        <div class="flow-node"><div class="flow-circle">3</div></div>
+        <div class="flow-content"><div class="flow-card">
+          <div class="flow-step-label">Step 03</div>
+          <h3>Agent Training</h3>
+          <p>Learn how to install and customize your new agent stack. From running your first audit to deploying agents for real client work, you'll get hands-on training for every tool.</p>
+        </div></div>
       </div>
 
-      <div class="how-card">
-        <div class="how-img-placeholder">
-          <div class="how-img-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M8 9h8M8 13h5"></path></svg>
-          </div>
-        </div>
-        <div class="how-body">
-          <div class="how-step-badge">Step 04</div>
-          <h3>Slack Community</h3>
-          <p>Share your progress, team up with other Blueprint members, and get help from Blueprint consultants via Slack. Hundreds of agency owners rowing in the same direction.</p>
-        </div>
+      <!-- Step 4: Live Working Sessions -->
+      <div class="flow-step">
+        <div class="flow-content"><div class="flow-card">
+          <div class="flow-step-label">Step 04</div>
+          <h3>Live Working Sessions</h3>
+          <p>Join weekly live working sessions where you get real-time help from Blueprint coaches. Implementation support, agent troubleshooting, and working through client challenges together.</p>
+        </div></div>
+        <div class="flow-node"><div class="flow-circle">4</div></div>
+      </div>
+
+      <!-- Step 5: Get Feedback on Slack -->
+      <div class="flow-step">
+        <div class="flow-node"><div class="flow-circle">5</div></div>
+        <div class="flow-content"><div class="flow-card">
+          <div class="flow-step-label">Step 05</div>
+          <h3>Get Feedback on Slack</h3>
+          <p>Ask questions, share wins, and help other members in the Blueprint Slack community. Hundreds of agency owners all building in the same direction.</p>
+        </div></div>
+      </div>
+
+      <!-- Step 6: Money Bag finale -->
+      <div class="flow-finale-wrap">
+        <div class="flow-finale">💰</div>
+        <div class="flow-finale-label">Grow</div>
+        <p class="flow-finale-sub">Land better clients, deliver better results, and scale your agency with the systems, agents, and community behind you.</p>
       </div>
 
     </div>
