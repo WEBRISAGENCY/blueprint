@@ -241,6 +241,10 @@
   .plan-price sup { font-size: 36px; vertical-align: super; color: var(--gray); }
   .plan-price sub { font-size: 24px; vertical-align: baseline; color: var(--gray); }
   .plan-period { font-size: 13px; color: var(--gray); margin-bottom: 36px; letter-spacing: 0.05em; }
+  .plan-price-custom {
+    font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 1;
+    color: var(--white); margin-bottom: 6px;
+  }
   .plan-features {
     list-style: none; display: flex; flex-direction: column;
     gap: 13px; margin-bottom: 40px;
@@ -280,8 +284,7 @@
     border-bottom: 2px solid var(--border);
   }
   .compare-table th:first-child { color: var(--gray); font-size: 14px; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.15em; }
-  .compare-table th:nth-child(2) { color: var(--white); text-align: center; }
-  .compare-table th:nth-child(3) { color: var(--yellow); text-align: center; }
+  .compare-table th:nth-child(2) { color: var(--yellow); text-align: center; }
   .compare-table tr { border-bottom: 1px solid var(--border); transition: background 0.2s; }
   .compare-table tr:hover { background: rgba(247,198,0,0.02); }
   .compare-table tr.section-row { background: #EEF0F4; }
@@ -291,7 +294,7 @@
     color: var(--yellow); padding: 12px 28px;
   }
   .compare-table td { padding: 18px 28px; font-size: 15px; color: var(--gray-light); vertical-align: middle; }
-  .compare-table td:nth-child(2), .compare-table td:nth-child(3) { text-align: center; }
+  .compare-table td:nth-child(2) { text-align: center; }
   .compare-table td .feat-title {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 16px; letter-spacing: 0.03em; text-transform: uppercase;
@@ -559,73 +562,54 @@
   <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="mobile-menu-cta">Get Started - $199/mo</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-
-  <div class="hero-badge">Trusted by 5,000+ Agency Owners</div>
-
-  <h1>Your agency. <span>Automated.</span></h1>
-
-  <p class="hero-sub">
-    Two plans. One mission: help you build an agency that runs on systems, not stress.
-  </p>
-</section>
-
 <!-- PRICING -->
-<section class="pricing">
+<section class="pricing" style="padding-top: 130px;">
   <div class="container">
     <div class="pricing-grid">
 
-      <!-- GROW -->
+      <!-- THE BLUEPRINT TRAINING -->
       <div class="plan-card featured">
         <div class="plan-badge">Most Popular</div>
         <div class="plan-eyebrow">Plan 01</div>
-        <div class="plan-name featured-name">Grow</div>
-        <p class="plan-desc">For agency owners who want to go at their own pace inside a world-class group program. Full access to everything Blueprint.</p>
-        <div class="plan-price"><sup>$</sup>249<sub>/mo</sub></div>
-        <div class="plan-period">or $2,499/year — 2 months free</div>
+        <div class="plan-name featured-name">The Blueprint Training</div>
+        <p class="plan-desc">Full access to training, AI agents, SOPs, templates, live coaching, and the private community. Everything you need to run your agency on AI.</p>
+        <div style="display:flex; align-items:baseline; gap:16px;">
+          <span style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:rgba(0,0,0,0.25); text-decoration:line-through; text-decoration-color:#E53E3E; text-decoration-thickness:3px;">$249</span>
+          <div class="plan-price"><sup>$</sup>199<sub>/mo</sub></div>
+        </div>
+        <div class="plan-period">No contracts. Cancel anytime.</div>
         <ul class="plan-features">
-          <li>9 deploy-ready AI agents (Proposal, WQA, Content, Link Building, Reporting + more)</li>
-          <li>300+ video lessons — Claude basics to advanced agent customization</li>
-          <li>Module 1: AI Foundations + Agency Building</li>
-          <li>Module 2: Sales + Proposal Agent</li>
-          <li>Module 3: Full SEO Sprints (6 sub-modules, each with its own agent)</li>
-          <li>Google Ads, Meta Ads, Acquisition modules (coming Q3/Q4)</li>
-          <li>Weekly live coaching with Blueprint coaches</li>
-          <li>Private Slack community access</li>
-          <li>All Blueprint SOPs updated for AI-first operations</li>
-          <li class="na">Inner Circle coaching channel</li>
-          <li class="na">1:1 onboarding session</li>
-          <li class="na">Custom growth track</li>
-          <li class="na">1:1 coaching calls</li>
+          <li>Training suite with modules covering sales, fulfillment, leveraging AI and more</li>
+          <li>SOPs and template suite used by Ryan Stewart's 8 figure agency</li>
+          <li>AI Agent suite automating the full range of service delivery for SEO agencies</li>
+          <li>Private community of agency owners with 24/7 access</li>
+          <li>2x weekly live coaching calls with Ryan Stewart and David Krevitt</li>
+          <li>On-demand Q&A support from the Blueprint team</li>
+          <li>All future updates, new agents, and releases included</li>
         </ul>
-        <a href="https://blueprint.spiffy.co/checkout/bpt-program" class="btn-plan btn-plan-primary">Join Grow →</a>
-        <p class="plan-note">🔒 Cancel any time. 30-day money-back guarantee.</p>
+        <a href="https://blueprint.spiffy.co/checkout/one-person-agency" class="btn-plan btn-plan-primary">Get Instant Access - $199/mo</a>
+        <p class="plan-note">Secure checkout. 30-day money-back guarantee.</p>
       </div>
 
-      <!-- SCALE -->
+      <!-- 1 ON 1 COACHING -->
       <div class="plan-card">
         <div class="plan-eyebrow">Plan 02</div>
-        <div class="plan-name">Scale</div>
-        <p class="plan-desc">For agency owners who want to move faster with dedicated Blueprint coaches in their corner every step of the way.</p>
-        <div class="plan-price"><sup>$</sup>1,250<sub>/mo</sub></div>
-        <div class="plan-period">Billed monthly — apply to join</div>
+        <div class="plan-name">1 on 1 Coaching</div>
+        <p class="plan-desc">For agency owners who want dedicated, hands-on coaching from Blueprint coaches. Get a custom growth track, 1:1 calls, and direct access to the Inner Circle.</p>
+        <div class="plan-price-custom">Custom Pricing</div>
+        <div class="plan-period">Tailored to your agency's needs</div>
         <ul class="plan-features">
-          <li>Everything in Grow, plus:</li>
-          <li>All 9 AI agents + priority access to new agents</li>
+          <li>Everything in The Blueprint Training, plus:</li>
           <li>Ryan Stewart's Inner Circle channel</li>
           <li>1:1 onboarding session (90 min deep dive)</li>
           <li>Custom growth track built for your agency</li>
           <li>Regular 1:1 coaching calls with Blueprint coaches</li>
-          <li>1:1 video requests — custom Loom answers</li>
+          <li>1:1 video requests - custom Loom answers</li>
           <li>Monthly + quarterly accountability check-ins</li>
           <li>Free additional team member seats</li>
-          <li>Slack badge — vetted expert status</li>
         </ul>
-        <a href="https://ai.theblueprint.training/blueprint-coaching-light.html" class="btn-plan btn-plan-secondary">Apply to Join →</a>
-        <p class="plan-note">🎯 Limited spots available. Application required.</p>
+        <a href="mailto:ryan@webris.org?subject=1 on 1 Coaching Inquiry" class="btn-plan btn-plan-secondary">Inquire for Details</a>
+        <p class="plan-note">Limited spots available. Application required.</p>
       </div>
 
     </div>
@@ -634,7 +618,7 @@
 
 <hr class="divider">
 
-<!-- COMPARISON TABLE -->
+<!-- WHAT'S INCLUDED -->
 <section class="compare">
   <div class="container">
     <p class="section-label">Full Breakdown</p>
@@ -644,13 +628,12 @@
       <thead>
         <tr>
           <th>Feature</th>
-          <th>Grow</th>
-          <th>Scale</th>
+          <th>The Blueprint Training</th>
         </tr>
       </thead>
       <tbody>
 
-        <tr class="section-row"><td colspan="3">Training & Content</td></tr>
+        <tr class="section-row"><td colspan="2">Training & Content</td></tr>
 
         <tr>
           <td>
@@ -658,14 +641,12 @@
             <div class="feat-desc">300+ step-by-step lessons on delivering SEO as a service</div>
           </td>
           <td><span class="chk">✓</span></td>
-          <td><span class="chk">✓</span></td>
         </tr>
         <tr>
           <td>
             <div class="feat-title">Claude AI Agent Library</div>
-            <div class="feat-desc">Deploy-ready agents for every agency workflow — trained on Blueprint SOPs</div>
+            <div class="feat-desc">Deploy-ready agents for every agency workflow, trained on Blueprint SOPs</div>
           </td>
-          <td><span class="chk">✓</span></td>
           <td><span class="chk">✓</span></td>
         </tr>
         <tr>
@@ -674,14 +655,12 @@
             <div class="feat-desc">21 done-for-you templates battle tested on real client campaigns</div>
           </td>
           <td><span class="chk">✓</span></td>
-          <td><span class="chk">✓</span></td>
         </tr>
         <tr>
           <td>
             <div class="feat-title">Monthly Bootcamps</div>
             <div class="feat-desc">2-day workshops covering core concepts of running a modern agency</div>
           </td>
-          <td><span class="chk">✓</span></td>
           <td><span class="chk">✓</span></td>
         </tr>
         <tr>
@@ -690,7 +669,6 @@
             <div class="feat-desc">Sessions with Ryan & David Krevitt keeping you ahead of what's working now</div>
           </td>
           <td><span class="chk">✓</span></td>
-          <td><span class="chk">✓</span></td>
         </tr>
         <tr>
           <td>
@@ -698,110 +676,98 @@
             <div class="feat-desc">Live workshops on client acquisition, finance, team building and more</div>
           </td>
           <td><span class="chk">✓</span></td>
-          <td><span class="chk">✓</span></td>
         </tr>
 
-        <tr class="section-row"><td colspan="3">Community & Access</td></tr>
-
-        <tr>
-          <td>
-            <div class="feat-title">Pruvae Community</div>
-            <div class="feat-desc">Private community to ask questions and network with peers and experts</div>
-          </td>
-          <td><span class="chk">✓</span></td>
-          <td><span class="chk">✓</span></td>
-        </tr>
-        <tr>
-          <td>
-            <div class="feat-title">Inner Circle Channel</div>
-            <div class="feat-desc">Ryan Stewart's exclusive coaching channel — Scale members only</div>
-          </td>
-          <td><span class="cross">✕</span></td>
-          <td><span class="chk">✓</span></td>
-        </tr>
-        <tr>
-          <td>
-            <div class="feat-title">Additional Team Seats</div>
-            <div class="feat-desc">Extra licenses for team members</div>
-          </td>
-          <td><span class="tag-val">$59/mo each</span></td>
-          <td><span class="tag-val">Free</span></td>
-        </tr>
-        <tr>
-          <td>
-            <div class="feat-title">Expert Badge</div>
-            <div class="feat-desc">Community badge marking you as a vetted subject matter expert</div>
-          </td>
-          <td><span class="cross">✕</span></td>
-          <td><span class="chk">✓</span></td>
-        </tr>
-
-        <tr class="section-row"><td colspan="3">1:1 Coaching</td></tr>
+        <tr class="section-row"><td colspan="2">AI Agents & Tools</td></tr>
 
         <tr>
           <td>
-            <div class="feat-title">Onboarding Session</div>
-            <div class="feat-desc">Deep dive into your agency and build a real action plan</div>
+            <div class="feat-title">AI-Powered Proposal Generator</div>
+            <div class="feat-desc">Generate professional SEO proposals from a website URL in minutes</div>
           </td>
-          <td><span class="tag-val">Group</span></td>
-          <td><span class="tag-val">1:1 · 90 min</span></td>
-        </tr>
-        <tr>
-          <td>
-            <div class="feat-title">Custom Growth Track</div>
-            <div class="feat-desc">Personalized learning plan built around your agency's current position and goals</div>
-          </td>
-          <td><span class="cross">✕</span></td>
           <td><span class="chk">✓</span></td>
         </tr>
         <tr>
           <td>
-            <div class="feat-title">1:1 Coaching Calls</div>
-            <div class="feat-desc">Working sessions with a Blueprint coach to tackle your specific challenges</div>
+            <div class="feat-title">Website Quality Audit Agent</div>
+            <div class="feat-desc">Full technical and content audit with prioritized action plans</div>
           </td>
-          <td><span class="cross">✕</span></td>
           <td><span class="chk">✓</span></td>
         </tr>
         <tr>
           <td>
-            <div class="feat-title">1:1 Video Requests</div>
-            <div class="feat-desc">Submit a question and get a custom Loom video back from Ryan</div>
+            <div class="feat-title">Content, Link Building & Reporting Agents</div>
+            <div class="feat-desc">Automate service delivery across the full SEO workflow</div>
           </td>
-          <td><span class="cross">✕</span></td>
           <td><span class="chk">✓</span></td>
         </tr>
         <tr>
           <td>
-            <div class="feat-title">Accountability Check-ins</div>
-            <div class="feat-desc">Monthly and quarterly reviews to keep you on track with your growth goals</div>
+            <div class="feat-title">All Future Agents & Updates</div>
+            <div class="feat-desc">New agents and improvements shipped continuously, included at no extra cost</div>
           </td>
-          <td><span class="cross">✕</span></td>
           <td><span class="chk">✓</span></td>
         </tr>
 
-        <tr class="section-row"><td colspan="3">Pricing</td></tr>
+        <tr class="section-row"><td colspan="2">Community & Support</td></tr>
 
         <tr>
-          <td><div class="feat-title">Monthly</div></td>
-          <td style="text-align:center; font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--white);">$249<span style="font-size:14px; color:var(--gray);">/mo</span></td>
-          <td style="text-align:center; font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--yellow);">$1,250<span style="font-size:14px; color:var(--gray);">/mo</span></td>
+          <td>
+            <div class="feat-title">Private Slack Community</div>
+            <div class="feat-desc">Network with 3,000+ agency owners, ask questions, share wins</div>
+          </td>
+          <td><span class="chk">✓</span></td>
         </tr>
         <tr>
-          <td></td>
-          <td style="text-align:center; padding-bottom:32px;">
-            <a href="https://blueprint.spiffy.co/checkout/bpt-program" style="display:inline-block; background:transparent; border:1px solid rgba(0,0,0,0.2); color:#0B0E1A; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:12px 28px; text-decoration:none; transition:all 0.2s;">Join Grow →</a>
+          <td>
+            <div class="feat-title">2x Weekly Live Coaching</div>
+            <div class="feat-desc">Live calls with Ryan Stewart and David Krevitt every week</div>
           </td>
-          <td style="text-align:center; padding-bottom:32px;">
-            <a href="https://ai.theblueprint.training/blueprint-coaching-light.html" style="display:inline-block; background:#F7C600; color:#0B0E1A; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:12px 28px; text-decoration:none; transition:all 0.2s;">Apply for Scale →</a>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feat-title">On-Demand Q&A Support</div>
+            <div class="feat-desc">Get answers from the Blueprint team whenever you're stuck</div>
           </td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feat-title">All Sessions Recorded</div>
+            <div class="feat-desc">Every coaching call archived and searchable for replay</div>
+          </td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="2">SOPs & Templates</td></tr>
+
+        <tr>
+          <td>
+            <div class="feat-title">Full SOP Library</div>
+            <div class="feat-desc">Standard operating procedures for every agency function</div>
+          </td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feat-title">Client-Facing Templates</div>
+            <div class="feat-desc">Proposals, onboarding docs, reporting templates ready to use</div>
+          </td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="feat-title">Continuously Updated</div>
+            <div class="feat-desc">SOPs and templates evolve as best practices change</div>
+          </td>
+          <td><span class="chk">✓</span></td>
         </tr>
 
       </tbody>
     </table>
   </div>
 </section>
-
-<hr class="divider">
 
 <!-- FAQ -->
 <section class="faq">
