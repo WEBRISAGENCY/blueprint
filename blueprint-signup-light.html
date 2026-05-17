@@ -200,19 +200,26 @@
   .hero-badge { color: #F7C600 !important; border-color: rgba(247,198,0,0.3) !important; }
 
   /* ── PRICING CARDS ── */
-  .pricing { background: #F7F8FA; padding-top: 64px; margin-top: 0; }
+  .pricing {
+    background: #1E3A5F; padding-top: 64px; margin-top: 0; position: relative;
+  }
+  .pricing::before {
+    content:''; position:absolute; inset:0;
+    background-image: linear-gradient(rgba(245,200,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245,200,0,0.04) 1px, transparent 1px);
+    background-size: 60px 60px; pointer-events:none;
+  }
   .pricing-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 64px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 64px; position: relative; z-index: 1;
   }
   .plan-card {
-    background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
+    background: #FFFFFF; border: 1px solid rgba(255,255,255,0.1);
     padding: 48px 40px; position: relative; transition: all 0.3s;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); z-index: 1;
   }
   .plan-card.featured {
     background: #FFFFFF;
     border: 2px solid rgba(247,198,0,0.5);
-    box-shadow: 0 4px 20px rgba(247,198,0,0.08);
+    box-shadow: 0 4px 20px rgba(247,198,0,0.15);
   }
   .plan-badge {
     position: absolute; top: -14px; left: 40px;
@@ -569,9 +576,7 @@
 
       <!-- THE BLUEPRINT TRAINING -->
       <div class="plan-card featured">
-        <div class="plan-badge">Most Popular</div>
-        <div class="plan-eyebrow">Plan 01</div>
-        <div class="plan-name featured-name">The Blueprint Training</div>
+        <div class="plan-name">The Blueprint Training</div>
         <p class="plan-desc">Full access to training, AI agents, SOPs, templates, live coaching, and the private community. Everything you need to run your agency on AI.</p>
         <div style="display:flex; align-items:baseline; gap:16px;">
           <span style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:rgba(0,0,0,0.25); text-decoration:line-through; text-decoration-color:#E53E3E; text-decoration-thickness:3px;">$249</span>
@@ -593,7 +598,6 @@
 
       <!-- 1 ON 1 COACHING -->
       <div class="plan-card">
-        <div class="plan-eyebrow">Plan 02</div>
         <div class="plan-name">1 on 1 Coaching</div>
         <p class="plan-desc">For agency owners who want dedicated, hands-on coaching from Blueprint coaches. Get a custom growth track, 1:1 calls, and direct access to the Inner Circle.</p>
         <div class="plan-price-custom">Custom Pricing</div>
@@ -608,7 +612,7 @@
           <li>Monthly + quarterly accountability check-ins</li>
           <li>Free additional team member seats</li>
         </ul>
-        <a href="mailto:ryan@webris.org?subject=1 on 1 Coaching Inquiry" class="btn-plan btn-plan-secondary">Inquire for Details</a>
+        <a href="https://ai.theblueprint.training/blueprint-coaching-light.html" class="btn-plan btn-plan-secondary">Inquire for Details</a>
         <p class="plan-note">Limited spots available. Application required.</p>
       </div>
 
@@ -777,28 +781,44 @@
 
     <div class="faq-grid">
       <div class="faq-item">
-        <div class="faq-q">Who is this for specifically?</div>
-        <p class="faq-a">If you know the basics of SEO and want to offer it as a service to clients, you're in the right place. We help agencies, consultants, and freelancers build better systems, get better results for clients, and do it with less manual work.</p>
+        <div class="faq-q">When was this program last updated?</div>
+        <p class="faq-a">Today. This is a living, breathing program. We are constantly updating trainings, SOPs, templates, and AI agents based on what's working right now. Nothing here is stagnant or out of date. When the industry shifts, we shift with it.</p>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Why should I listen to you?</div>
-        <p class="faq-a">Ryan Stewart has 15+ years building and selling SEO agencies. He currently operates a portfolio of marketing companies generating over $10M/year in revenue. Everything taught here is built from real experience — not theory.</p>
+        <div class="faq-q">I'm a beginner. Is this too advanced?</div>
+        <p class="faq-a">Not at all. Many Blueprint members started from zero. The program walks you through positioning, offer design, how to land your first clients, and how to deliver results. You'll skip years of trial and error by following a system that's already been proven by thousands of agencies.</p>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Do I need SEO experience?</div>
-        <p class="faq-a">You'll get more from the program with basic SEO knowledge, but you don't need to be an expert. We'll make you one. The program is built for people who want to offer SEO as a service and build proper systems around it.</p>
+        <div class="faq-q">I have an agency, will this still help?</div>
+        <p class="faq-a">This is where it gets really powerful. If you're already doing the work, Blueprint gives you the systems to stop doing it all yourself. SOPs to delegate, templates to standardize, a hiring framework to build your team, and AI agents to automate the repetitive stuff. Most established members say they wish they had this years ago.</p>
       </div>
       <div class="faq-item">
-        <div class="faq-q">What's the difference between Grow and Scale?</div>
-        <p class="faq-a">Grow gives you everything you need to build and run a high-performing agency at your own pace. Scale adds direct 1:1 coaching, a custom growth track, accountability check-ins, and Ryan's Inner Circle for agency owners who want to move faster with expert support.</p>
+        <div class="faq-q">How is this different from other agency programs?</div>
+        <p class="faq-a">Most programs teach theory. Blueprint gives you the actual tools. You get the same SOPs, templates, and processes Ryan uses to run his own 8-figure agency. On top of that, the AI agents automate real work, not just concepts. 9 years and 3,000+ agencies later, the results speak for themselves.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I get clients?</div>
+        <p class="faq-a">The program covers both inbound and outbound in detail. You'll learn how to generate leads through content and low-spend paid ads on social, how to run a sales process that converts, and how to build proposals that close. Members regularly share wins from landing their first (or biggest) client using these exact methods.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does the community look like?</div>
+        <p class="faq-a">It's a private group of agency owners who are in the trenches doing the same work you are. People share wins, ask questions, give feedback on proposals, and help each other solve real problems. It's not a hype group. It's a working group. You also get 2x weekly live coaching calls where you can get direct answers from the team.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to be technical to use the AI agents?</div>
+        <p class="faq-a">No. Every agent is pre-built and ready to go. We walk you through setup step-by-step. If you can follow instructions and click a few buttons, you can deploy your first agent. No coding required.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a Claude subscription?</div>
+        <p class="faq-a">Yes, you'll need a Claude Pro or Team plan ($20-$25/month). This is separate from your Blueprint membership. We walk you through exactly which plan to choose and how to set it up in Module 1.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I want to do more than SEO?</div>
+        <p class="faq-a">The core systems (positioning, sales, hiring, operations) apply to any service-based agency. The fulfillment training and AI agents are built specifically around SEO and local SEO, which is where Blueprint has the deepest track record. If that's your primary service, this is built for you.</p>
       </div>
       <div class="faq-item">
         <div class="faq-q">Is there a money-back guarantee?</div>
-        <p class="faq-a">Yes — 30 days, no questions asked for Grow. Go through the first modules and if you don't believe this will change how you run your agency, email <a href="/cdn-cgi/l/email-protection#63060f060d0223170b06010f160613110a0d174d1711020a0d0a0d04"><span class="__cf_email__" data-cfemail="6c090009020d2c1804090e0019091c1e05021842181e0d050205020b">[email&#160;protected]</span></a> for a full refund.</p>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I speak to someone before joining?</div>
-        <p class="faq-a">Yes. Email <a href="/cdn-cgi/l/email-protection#f6939a939897b6829e93949a839386849f9882d88284979f989f9891"><span class="__cf_email__" data-cfemail="c9aca5aca7a889bda1acaba5bcacb9bba0a7bde7bdbba8a0a7a0a7ae">[email&#160;protected]</span></a> with any questions, or book a call on the Get Started page. If you're a past Blueprint member, email Elena and we'll find your record and set up a discounted rate.</p>
+        <p class="faq-a">Yes. 30 days, no questions asked. If you go through the material and don't believe this is going to change how you run your agency, email us and we'll refund you in full.</p>
       </div>
     </div>
   </div>
