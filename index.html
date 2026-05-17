@@ -127,6 +127,8 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
     animation: fadeUp 0.6s 0.1s ease both;
   }
 
+  .hero-headline-mobile { display: none; }
+
   .hero-headline {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(52px, 8vw, 110px);
@@ -2677,7 +2679,9 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
     .trusted-badge { margin-top: 50px !important; margin-bottom: 12px !important; }
     /* Hero */
     .hero { padding: 125px 20px 50px !important; min-height: auto !important; }
-    .hero-headline { font-size: clamp(47px, 11vw, 67px) !important; white-space: normal !important; line-height: 1.05 !important; margin-top: 12px !important; margin-bottom: 10px !important; }
+    .hero-headline-desktop { display: none !important; }
+    .hero-headline-mobile { display: block !important; }
+    .hero-headline { font-size: clamp(51px, 12vw, 71px) !important; white-space: normal !important; line-height: 1.05 !important; margin-top: 12px !important; margin-bottom: 10px !important; }
     .hero-sub-headline { font-size: clamp(21px, 5vw, 31px) !important; white-space: normal !important; }
     .hero-desc { font-size: 19px !important; max-width: 100% !important; }
     .btn-primary { font-size: 19px !important; padding: 16px 32px !important; }
@@ -2749,7 +2753,7 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   @media (max-width: 600px) {
     /* Hero tighter */
     .hero { padding: 72px 16px 40px !important; }
-    .hero-headline { font-size: clamp(38px, 10vw, 50px) !important; }
+    .hero-headline { font-size: clamp(42px, 11vw, 54px) !important; }
     .hero-sub-headline { font-size: clamp(19px, 4.5vw, 25px) !important; }
     .hero-desc { font-size: 18px !important; margin-bottom: 20px !important; }
     .btn-primary { width: 100% !important; justify-content: center !important; font-size: 18px !important; padding: 16px 24px !important; }
@@ -2876,8 +2880,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="trusted-badge">3,000+ Agencies Trained Over 9 Years</div>
 
-  <h1 class="hero-headline">
+  <h1 class="hero-headline hero-headline-desktop">
     Get <span class="blueprint-text">"The Blueprint"</span> For Building<br>A 7 Figure Agency In 2026.
+  </h1>
+  <h1 class="hero-headline hero-headline-mobile">
+    Get <span class="blueprint-text">"The Blueprint"</span><br>For Building A<br>7 Figure Agency In 2026.
   </h1>
 
   <p class="hero-desc">
