@@ -2037,7 +2037,9 @@
   @media (max-width: 900px) {
     .dash-sidebar { display: none; }
     .dash-mobile-tabs { display: flex; }
-    .dash-window { border-radius: 12px; min-height: 400px; }
+    .dash-window { border-radius: 12px; min-height: auto; flex-direction: column; }
+    .dash-main { overflow-y: auto; }
+    .dash-panel { padding: 20px 16px; }
     .dash-video-grid { grid-template-columns: 1fr; }
     .dash-agent-grid { grid-template-columns: repeat(2, 1fr); }
   }
