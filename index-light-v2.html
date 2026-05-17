@@ -2685,11 +2685,13 @@
     .nav-inner { height: 54px !important; justify-content: flex-start !important; padding: 0 16px !important; }
     .nav-logo { border-right: none !important; margin-right: 0 !important; padding-right: 0 !important; }
     .nav-logo img { height: 27px !important; width: auto !important; }
+    .mobile-cta-btn .mobile-cta-full { display: none !important; }
+    .mobile-cta-btn .mobile-cta-short { display: inline !important; }
 
     /* Trusted badge — visible gap between badge and headline */
     .trusted-badge { margin-top: 3px !important; margin-bottom: 12px !important; }
     /* Hero */
-    .hero { padding: 80px 20px 50px !important; min-height: auto !important; }
+    .hero { padding: 110px 20px 50px !important; min-height: auto !important; }
     .hero-headline { font-size: clamp(40px, 11vw, 60px) !important; white-space: normal !important; line-height: 1.05 !important; margin-top: 12px !important; }
     .hero-sub-headline { font-size: clamp(18px, 5vw, 28px) !important; white-space: normal !important; }
     .hero-desc { font-size: 16px !important; max-width: 100% !important; }
@@ -2846,7 +2848,7 @@
       <button class="mobile-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-      <a href="#pricing" class="mobile-cta-btn">Get Started</a>
+      <a href="#pricing" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
     </div>
 
   </div>
