@@ -2071,35 +2071,55 @@
   .hero-price strong { color: #F7C600; }
   .hero-ticker-label { color: #F7C600; }
 
-  .cmp-table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; }
-  .cmp-table thead th {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 16px;
-    letter-spacing: 0.12em; text-transform: uppercase; padding: 18px 28px; text-align: center;
+  /* ── Comparison: connected row layout ── */
+  .cmp-header-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 0;
   }
-  .cmp-table thead th.cmp-old { background: #E8E9EC; color: #6B7280; width: 50%; }
-  .cmp-table thead th.cmp-new { background: #132c54; color: #F7C600; width: 50%; }
-  .cmp-table tbody td {
-    padding: 16px 28px; font-size: 15px; line-height: 1.5; vertical-align: top;
+  .cmp-header-old, .cmp-header-new {
+    font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 18px;
+    padding: 20px 28px; text-align: center;
+  }
+  .cmp-header-old { background: #E8E9EC; color: #6B7280; border-radius: 16px 0 0 0; }
+  .cmp-header-new { background: rgba(34,139,34,0.12); color: #132c54; border-radius: 0 16px 0 0; }
+  .cmp-rows { display: flex; flex-direction: column; gap: 0; }
+  .cmp-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
     border-bottom: 1px solid rgba(0,0,0,0.06);
   }
-  .cmp-table tbody tr:last-child td { border-bottom: none; }
-  .cmp-table tbody td:first-child {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px;
-    letter-spacing: 0.1em; text-transform: uppercase; color: #0B0E1A; background: #F7F8FA;
-    border-right: 1px solid rgba(0,0,0,0.06);
+  .cmp-row:last-child { border-bottom: none; }
+  .cmp-row:last-child .cmp-pain { border-radius: 0 0 0 16px; }
+  .cmp-row:last-child .cmp-fix { border-radius: 0 0 16px 0; }
+  .cmp-pain, .cmp-fix {
+    padding: 20px 24px; font-family: 'Figtree', sans-serif; font-size: 15px; line-height: 1.55;
+    display: flex; align-items: flex-start; gap: 12px;
   }
-  .cmp-table tbody td.cmp-old-cell { color: #6B7280; background: #FAFAFA; font-family: 'Figtree', sans-serif; }
-  .cmp-table tbody td.cmp-new-cell { color: #0B0E1A; background: rgba(247,198,0,0.06); font-weight: 500; }
-  .cmp-table tbody td.cmp-new-cell strong { color: #132c54; }
-  .cmp-x { color: #DC2626; font-weight: 700; margin-right: 6px; }
-  .cmp-check { color: #F7C600; font-weight: 700; margin-right: 6px; }
+  .cmp-pain {
+    background: #F3F4F6; color: #6B7280; border-right: 1px solid #E5E7EB;
+  }
+  .cmp-fix {
+    background: rgba(34,139,34,0.06); color: #2d2d2d;
+  }
+  .cmp-fix strong { color: #132c54; font-weight: 600; }
+  .cmp-arrow {
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .cmp-icon {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; margin-top: 0;
+  }
+  .cmp-icon-x { background: rgba(220,38,38,0.1); color: #DC2626; }
+  .cmp-icon-check { background: rgba(34,139,34,0.15); color: #1a7a1a; }
   @media (max-width: 900px) {
-    .cmp-table, .cmp-table thead, .cmp-table tbody, .cmp-table tr, .cmp-table td, .cmp-table th { display: block; width: 100%; }
-    .cmp-table thead th:first-child { display: none; }
-    .cmp-table thead th { text-align: center; }
-    .cmp-table tbody tr { display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 16px; background: #fff; border: 1px solid rgba(0,0,0,0.08); }
-    .cmp-table tbody td:first-child { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06); text-align: center; padding: 12px 16px; }
-    .cmp-table tbody td { padding: 12px 16px; }
+    .cmp-header-row { grid-template-columns: 1fr; }
+    .cmp-header-old { border-radius: 16px 16px 0 0; }
+    .cmp-header-new { display: none; }
+    .cmp-row { grid-template-columns: 1fr; }
+    .cmp-pain { border-right: none; border-radius: 0; }
+    .cmp-fix { border-radius: 0; }
+    .cmp-row:last-child .cmp-pain { border-radius: 0; }
+    .cmp-row:last-child .cmp-fix { border-radius: 0 0 16px 16px; }
   }
 
   .wi-photo-placeholder { background: var(--dark2); display: flex; align-items: center; justify-content: center; min-height: 200px; border-right: 1px solid var(--dark-border); }
@@ -2651,95 +2671,38 @@
     <h2 class="section-title" style="text-align:center;">Most agencies are stuck using<br>an outdated operating system.</h2>
     <p class="section-body" style="margin-bottom: 48px; text-align:center; max-width:700px; margin-left:auto; margin-right:auto;">Running an agency doesn't have to be like herding cats. There's a way to deliver a great service for your clients, while building a business you love. The Blueprint is a proven system to regain your time, profits and sanity.</p>
 
-    <table class="cmp-table">
-      <thead>
-        <tr>
-          <th class="cmp-old">Traditional Agencies</th>
-          <th class="cmp-new">Blueprint Operating System</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Constantly churning through new hires just to fulfill client work</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> <strong>Lean team + proven systems</strong> running the operation</td>
-        </tr>
-        <tr>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Crossed fingers and Slack messages instead of actual process</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Every workflow <strong>documented, repeatable, consistent</strong></td>
-        </tr>
-        <tr>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Revenue goes up but profit somehow stays the same</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Low overhead, <strong>keep more</strong> of what you earn</td>
-        </tr>
-        <tr>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Client results depend entirely on which employee is working that day</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> SOPs and templates ensure <strong>consistent results every time</strong></td>
-        </tr>
-        <tr>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Every proposal feels like starting from scratch and hoping it lands</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Pitch <strong>a proven system</strong> backed by real case studies</td>
-        </tr>
-        <tr>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Buried in Slack, meetings, and fires instead of growing the business</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Focus on <strong>strategy, sales, and client relationships</strong></td>
-        </tr>
-        <tr>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Can't take on more clients without hiring more people you have to manage</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Revenue scales with <strong>better systems, not more headcount</strong></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Mobile accordion version of comparison -->
-    <div class="shift-accordion">
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Team</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Hire a PM, writer, link builder, VA</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> <strong>Lean team + proven systems</strong> running the operation</div>
-        </div>
+    <div class="cmp-header-row">
+      <div class="cmp-header-old">Traditional Agencies</div>
+      <div class="cmp-header-new">Blueprint Operating System</div>
+    </div>
+    <div class="cmp-rows">
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are working non-stop, yet you never get ahead</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>SOPs, templates, and workflows</strong> that let your business run without you in every seat</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Execution</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Hope they do their job, manage up, manage down</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Every workflow <strong>documented, repeatable, consistent</strong></div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are not taking home enough money for your effort</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span>A <strong>lean operating model</strong> built to protect your margins as you grow</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Margins</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Watch margins disappear as headcount grows</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Low overhead, <strong>keep more</strong> of what you earn</div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are stuck doing client work, not CEO work</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>Step-by-step training</strong> to build a team and systems that deliver without you</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Quality</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Inconsistent delivery depending on who's working</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> SOPs and templates ensure <strong>consistent results every time</strong></div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are struggling to find leads and close more deals</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span>A <strong>proven sales system</strong> with proposals, funnels, and case studies that close</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Sales</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Pitch credentials and hope the proposal lands</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Pitch <strong>a proven system</strong> backed by real case studies</div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are constantly hiring and churning through people</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>Documented processes</strong> so your team delivers consistent results from day one</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Your Time</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Spend more time managing people than doing work</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Focus on <strong>strategy, sales, and client relationships</strong></div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You can't grow past a certain revenue ceiling</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>AI-powered tools and systems</strong> that scale without adding headcount</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Scale</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Revenue capped by how many people you can manage</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Revenue scales with <strong>better systems, not more headcount</strong></div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You feel alone, overwhelmed, and burnt out on the business</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>Live coaching and a community</strong> of 3,000+ agency owners who get it</span></div>
       </div>
     </div>
   </div>
