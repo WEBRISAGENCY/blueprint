@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Training Library | The Blueprint Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #F7C600;
+    --yellow-dark: #D9AE00;
+    --black: #0B0E1A;
+    --dark: #111421;
+    --border: rgba(0,0,0,0.08);
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --gray-light: #4B5563;
+    --bg-light: #F7F8FA;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); color: #0B0E1A; font-family: 'Figtree', sans-serif; overflow-x: hidden; }
+
+  /* ── NAV (dark) ── */
+  .nav-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #0B0E1A;
+    border-bottom: 2px solid #F7C600;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: stretch; height: 66px; padding: 0 24px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; padding-right: 28px;
+    border-right: 1px solid rgba(255,255,255,0.07); margin-right: 4px; flex-shrink: 0;
+  }
+  .nav-logo-mark { width: 36px; height: 36px; background: #F7C600; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-wm { display: flex; flex-direction: column; gap: 1px; }
+  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.32em; color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 15px; font-weight: 800; color: #F7C600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.36em; color: rgba(255,255,255,0.22); text-transform: uppercase; line-height: 1; margin-top: 1px; }
+  .nav-links { display: flex; align-items: stretch; flex: 1; justify-content: center; }
+  .nav-item-link {
+    display: flex; align-items: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
+    color: #C8CEDF; padding: 0 16px; text-decoration: none; transition: color 0.15s;
+    border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
+  }
+  .nav-item-link:hover { color: #fff; }
+  .nav-right { display: flex; align-items: center; margin-left: auto; }
+  .nav-login {
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
+    color: #8A90A8; background: none; border: none; cursor: pointer;
+    padding: 0 16px; text-decoration: none; transition: color 0.15s;
+  }
+  .nav-login:hover { color: #fff; }
+  .nav-cta-btn {
+    background: #F7C600; color: #0B0E1A;
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
+    padding: 0 28px; text-decoration: none; transition: background 0.15s;
+    display: flex; align-items: center; height: 100%;
+  }
+  .nav-cta-btn:hover { background: #D9AE00; }
+
+  /* ── HERO (dark, 50/50 split) ── */
+  .page-hero {
+    padding: 130px 24px 0;
+    position: relative; overflow: hidden;
+    background: #0B0E1A;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(247,198,0,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(247,198,0,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto; position: relative;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    padding-bottom: 64px;
+  }
+  .hero-text { }
+
+  .page-cat-badge {
+    display: inline-block; background: rgba(247,198,0,0.1); border: 1px solid rgba(247,198,0,0.25);
+    color: var(--yellow); font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 4px 14px; margin-bottom: 20px;
+  }
+
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 6vw, 80px); line-height: 0.92;
+    letter-spacing: 0.01em; text-transform: uppercase;
+    color: #FFFFFF; margin-bottom: 24px;
+  }
+  .page-title span { color: var(--yellow); }
+
+  .page-intro {
+    font-size: 18px; color: #C8CEDF; line-height: 1.75;
+    max-width: 520px; margin-bottom: 32px;
+  }
+
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--yellow); color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 18px 44px; text-decoration: none; transition: all 0.2s;
+  }
+  .hero-cta:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  .hero-media {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    aspect-ratio: 16/10;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .hero-media-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+  }
+  .hero-media-play {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(247,198,0,0.15); border: 2px solid rgba(247,198,0,0.3);
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .hero-media-play svg { width: 24px; height: 24px; fill: var(--yellow); margin-left: 3px; }
+
+  /* ── MAIN LAYOUT (light) ── */
+  .page-layout {
+    max-width: 1200px; margin: 0 auto;
+    padding: 56px 24px 96px;
+    display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start;
+    background: var(--white);
+  }
+
+  /* Body prose (light theme) */
+  .page-body { min-width: 0; }
+  .page-body p { font-size: 17px; line-height: 1.85; color: var(--gray-light); margin-bottom: 24px; }
+  .page-body p strong { color: #0B0E1A; }
+  .page-body a { color: #2563EB; }
+
+  .page-body h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 3.5vw, 44px); line-height: 1.0;
+    letter-spacing: 0.02em; text-transform: uppercase; color: #0B0E1A;
+    margin: 52px 0 18px; padding-top: 52px; border-top: 1px solid var(--border);
+  }
+  .page-body h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .page-body h3 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+    font-size: 20px; letter-spacing: 0.05em; text-transform: uppercase;
+    color: #0B0E1A; margin: 32px 0 12px;
+  }
+
+  .page-body ul {
+    list-style: none; margin-bottom: 24px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .page-body ul li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 16px; color: var(--gray-light); line-height: 1.6;
+    padding: 10px 16px; background: var(--bg-light); border-left: 2px solid rgba(247,198,0,0.4);
+  }
+  .page-body ul li::before { content: '\2192'; color: var(--yellow); flex-shrink: 0; font-size: 13px; margin-top: 2px; }
+  .page-body ul li strong { color: #0B0E1A; }
+
+  .callout {
+    background: rgba(247,198,0,0.05); border: 1px solid rgba(247,198,0,0.2);
+    border-left: 4px solid var(--yellow); padding: 24px 28px; margin: 32px 0;
+  }
+  .callout-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 10px;
+  }
+  .callout p { font-size: 16px; color: var(--gray-light); line-height: 1.7; margin-bottom: 0; }
+
+  /* Image placeholder */
+  .img-placeholder {
+    background: var(--bg-light); border: 1px dashed rgba(0,0,0,0.12);
+    aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
+    margin: 32px 0;
+  }
+  .img-placeholder span {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(0,0,0,0.18);
+  }
+
+  /* ── HOW IT WORKS — visual linear flow ── */
+  .flow-container { margin: 32px 0; }
+  .flow-step {
+    display: grid; grid-template-columns: 56px 1fr; gap: 0; position: relative;
+  }
+  .flow-step:last-child .flow-line { display: none; }
+
+  .flow-indicator {
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; z-index: 2;
+  }
+  .flow-num {
+    width: 48px; height: 48px; background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--black);
+    flex-shrink: 0;
+  }
+  .flow-line {
+    width: 2px; flex: 1; background: rgba(247,198,0,0.25); min-height: 20px;
+  }
+
+  .flow-content {
+    padding: 8px 0 36px 24px;
+  }
+  .flow-content h4 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+    font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 8px;
+  }
+  .flow-content p { font-size: 16px; color: var(--gray-light); line-height: 1.7; margin-bottom: 0; }
+
+  /* Output rows */
+  .output-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 11px 16px; background: var(--bg-light);
+    border-left: 2px solid rgba(247,198,0,0.35); margin-bottom: 2px; gap: 16px;
+  }
+  .output-row-name { font-size: 15px; color: #0B0E1A; }
+  .output-row-tag {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gray); white-space: nowrap; flex-shrink: 0;
+  }
+
+  /* Sidebar (light) */
+  .sidebar { position: sticky; top: 90px; }
+
+  .s-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .s-label::before { content:''; display:block; width:20px; height:2px; background:var(--yellow); }
+
+  /* Agent nav (all agents) */
+  .agent-nav-box {
+    background: var(--white); border: 1px solid var(--border); padding: 24px; margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .agent-nav-list { list-style: none; display: flex; flex-direction: column; }
+  .agent-nav-list li a {
+    display: block; padding: 9px 0; font-size: 14px; color: var(--gray);
+    text-decoration: none; border-bottom: 1px solid var(--border); transition: color 0.2s; line-height: 1.4;
+  }
+  .agent-nav-list li:last-child a { border-bottom: none; }
+  .agent-nav-list li a:hover { color: #0B0E1A; }
+  .agent-nav-list li a.current { color: #0B0E1A; font-weight: 600; }
+
+  .sidebar-cta { background: var(--yellow); padding: 28px 24px; }
+  .sidebar-cta .sc-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase; color: rgba(11,14,26,0.5); margin-bottom: 10px;
+  }
+  .sidebar-cta h4 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1.0;
+    text-transform: uppercase; color: var(--black); margin-bottom: 12px;
+  }
+  .sidebar-cta p { font-size: 14px; color: rgba(11,14,26,0.65); line-height: 1.6; margin-bottom: 20px; }
+  .sidebar-cta a {
+    display: block; text-align: center; background: var(--black); color: var(--yellow);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 20px; text-decoration: none;
+  }
+  .sidebar-cta a:hover { background: #111; }
+
+  /* ── BOTTOM CTA (yellow) ── */
+  .bottom-cta {
+    background: var(--yellow); padding: 80px 24px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .bottom-cta::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(11,14,26,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11,14,26,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .bottom-cta h2 {
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 0.95;
+    text-transform: uppercase; color: #0B0E1A; margin-bottom: 14px; position: relative;
+  }
+  .bottom-cta p { font-size: 16px; color: rgba(11,14,26,0.65); max-width: 520px; margin: 0 auto 32px; line-height: 1.7; position: relative; }
+  .btn-yellow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #0B0E1A; color: var(--yellow);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 18px 44px; text-decoration: none; transition: all 0.2s;
+    position: relative;
+  }
+  .btn-yellow:hover { background: #1a1e30; transform: translateY(-2px); }
+
+  /* ── FOOTER (dark) ── */
+  footer {
+    background: #111421 !important; border-top: 1px solid rgba(247,198,0,0.15) !important;
+    padding: 40px 24px;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-copy { font-size: 13px; color: #8A90A8; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: #8A90A8; text-decoration: none; }
+  .footer-links a:hover { color: #fff; }
+
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-media { max-width: 480px; }
+    .page-layout { grid-template-columns: 1fr; gap: 48px; }
+    .sidebar { position: static; }
+  }
+
+    /* ─── FOOTER ─── */
+  footer {
+    background: #111421;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 0;
+  }
+
+  .footer-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 24px 48px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 0.8fr 0.8fr;
+    gap: 48px;
+  }
+
+  .footer-col-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-col-title::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: var(--yellow);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links li a {
+    font-family: 'Figtree', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links li a:hover {
+    color: var(--yellow);
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-legal a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 12px;
+    transition: color 0.2s;
+  }
+
+  .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+  .footer-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow);
+    color: #0B0E1A;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .footer-cta-btn:hover { filter: brightness(1.05); }
+
+  @media (max-width: 768px) {
+    .footer-nav {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 24px;
+      padding: 48px 24px 36px;
+    }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-nav { grid-template-columns: 1fr; gap: 36px; }
+  }
+
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="assets/blueprint logo svg.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+    </a>
+
+    <div class="nav-links">
+      <a href="/about" class="nav-item-link">About</a>
+      <a href="/reviews" class="nav-item-link">Results</a>
+      <a href="/program" class="nav-item-link">Program</a>
+      <a href="/" class="nav-item-link">Knowledge</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
+      <a href="/sign-up" class="nav-cta-btn">Get Started</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- HERO (dark, 50/50 split) -->
+<section class="page-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="page-cat-badge">Program Feature</div>
+      <h1 class="page-title">300+ videos.<br>Every module you<br><span>need.</span></h1>
+      <p class="page-intro">A complete video training library built for agency operators running AI-powered service businesses. Five core pillars covering everything from AI foundations to advanced agent customization — updated monthly as the landscape evolves.</p>
+      <a href="/sign-up" class="hero-cta">Get Instant Access &rarr;</a>
+    </div>
+    <div class="hero-media">
+      <div class="hero-media-play">
+        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <span class="hero-media-label" style="position:absolute; bottom:16px; left:0; right:0; text-align:center;">Video / Image</span>
+    </div>
+  </div>
+</section>
+
+<!-- LAYOUT (light) -->
+<div class="page-layout">
+
+  <div class="page-body">
+
+    <h2 id="how-it-works">How It Works</h2>
+
+    <p>The video training library is built around five core pillars, each designed to take you from zero to operational. Watch the videos in order, or jump to what you need right now. Everything is on-demand, bite-sized, and designed for agency operators who learn by doing.</p>
+
+    <div class="flow-container">
+      <div class="flow-step">
+        <div class="flow-indicator">
+          <div class="flow-num">1</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h4>Start with AI Foundations</h4>
+          <p>Module 1 covers Claude fundamentals, prompt engineering, and how to build your first AI workflows. No coding required — just follow the system.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-indicator">
+          <div class="flow-num">2</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h4>Build Your Sales Engine</h4>
+          <p>Module 2 walks you through the Proposal Agent, discovery call frameworks, and closing systems built for one-person agencies.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-indicator">
+          <div class="flow-num">3</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h4>Master SEO Delivery</h4>
+          <p>Module 3 is the largest pillar — six sub-modules covering technical audits, content production, link building, local SEO, reporting, and project management. Each with its own deploy-ready agent.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-indicator">
+          <div class="flow-num">4</div>
+        </div>
+        <div class="flow-content">
+          <h4>Stay Current</h4>
+          <p>New videos drop monthly. Google Ads, Meta Ads, and acquisition modules are on the roadmap. Your training library grows with the industry.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-placeholder">
+      <span>Image — Training Interface / Module Preview</span>
+    </div>
+
+    <h2 id="whats-inside">What's Inside</h2>
+
+    <p>Every module is broken down into bite-sized videos, templates, and deploy-ready agents. Here's what Blueprint members get access to:</p>
+
+    <div class="output-row"><span class="output-row-name">Module 1: AI Foundations</span><span class="output-row-tag">9 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Claude basics, prompt engineering, building AI workflows, and setting up your agency operating system. The starting point for every Blueprint member.</span><span class="output-row-tag">Core pillar</span></div>
+
+    <div class="output-row"><span class="output-row-name">Module 2: Sales & Proposals</span><span class="output-row-tag">12 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Discovery call scripts, proposal automation, pricing strategy, and the Proposal Agent. Turn prospects into signed clients in under 24 hours.</span><span class="output-row-tag">Core pillar</span></div>
+
+    <div class="output-row"><span class="output-row-name">Module 3: SEO Sprint System</span><span class="output-row-tag">87 videos</span></div>
+    <div class="output-row"><span class="output-row-name">The full delivery engine — technical audits, content strategy, link building, local SEO, reporting, and project management. Six sub-modules, each with a dedicated AI agent.</span><span class="output-row-tag">Core pillar</span></div>
+
+    <div class="output-row"><span class="output-row-name">Bonus Modules</span><span class="output-row-tag">40+ videos</span></div>
+    <div class="output-row"><span class="output-row-name">Agency positioning, offer design, productization, team building, and client retention. Everything outside of delivery that makes your agency profitable.</span><span class="output-row-tag">Supplemental</span></div>
+
+    <div class="img-placeholder">
+      <span>Image — Module Library / Video Grid</span>
+    </div>
+
+    <h2 id="built-for-agency-operators">Built for Agency Operators</h2>
+
+    <p>This isn't academic training. Every lesson is designed around real agency workflows and client delivery. Here's what you get:</p>
+
+    <ul>
+      <li><strong>Watch at your own pace</strong> — every lesson is on-demand and bite-sized</li>
+      <li><strong>Built for operators, not academics</strong> — every lesson ties back to client delivery</li>
+      <li><strong>Pass training to your team</strong> for hands-free onboarding</li>
+      <li><strong>Updated monthly</strong> so your skills never go stale</li>
+    </ul>
+
+    <div class="img-placeholder">
+      <span>Image — Learning Dashboard / Progress Tracking</span>
+    </div>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <h3>How many videos are in the library?</h3>
+    <p>Over 300 and growing. New content drops monthly covering the latest in AI-powered agency operations, SEO tactics, and business strategy.</p>
+
+    <h3>Do I need technical skills?</h3>
+    <p>No. Module 1 starts from zero and walks you through everything step by step. If you can follow instructions, you can build AI agents.</p>
+
+    <h3>Can my team access the training?</h3>
+    <p>Yes. Your membership includes access for your team to go through the training library independently.</p>
+
+    <h3>How is this different from YouTube tutorials?</h3>
+    <p>These aren't theory videos. Every lesson is built around the Blueprint's proven systems — the same ones used to run a real agency. You get the exact workflows, prompts, and agents. Not just ideas.</p>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="agent-nav-box">
+      <div class="s-label">All Features</div>
+      <ul class="agent-nav-list">
+        <li><a href="/coaching">Coaching</a></li>
+        <li><a href="#" class="current">Video Training</a></li>
+        <li><a href="/">Live Bootcamps</a></li>
+        <li><a href="/">Community</a></li>
+      </ul>
+      <div style="height:1px; background:var(--border); margin:20px 0;"></div>
+      <div class="s-label" style="margin-bottom:16px;">All 9 Agents</div>
+      <ul class="agent-nav-list">
+        <li><a href="/agent-sales-light.html">Sales Agent</a></li>
+        <li><a href="/agent-onboarding-light.html">Onboarding Agent</a></li>
+        <li><a href="/agent-project-manager-light.html">Project Manager Agent</a></li>
+        <li><a href="/agent-technical-seo-light.html">Technical SEO Agent</a></li>
+        <li><a href="/agent-content-light.html">Content Agent</a></li>
+        <li><a href="/agent-link-building-light.html">Link Building Agent</a></li>
+        <li><a href="/agent-local-seo-light.html">Local SEO Agent</a></li>
+        <li><a href="/agent-reporting-light.html">Reporting Agent</a></li>
+        <li><a href="/agent-strategy-light.html">Strategy Agent</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-cta">
+      <div class="sc-label">Ready to learn?</div>
+      <h4>Get the full training library.</h4>
+      <p>300+ videos, 5 core pillars, updated monthly. Included with every Blueprint membership.</p>
+      <a href="/sign-up">Get Instant Access &rarr;</a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- BOTTOM CTA (yellow) -->
+<div class="bottom-cta">
+  <h2>Everything you need<br>to run an AI-powered<br>agency.</h2>
+  <p>Five core pillars, 300+ videos, real workflows, and monthly updates. Learn at your own pace and deploy the agents to actually run your business.</p>
+  <a href="/sign-up" class="btn-yellow">Get Instant Access &rarr;</a>
+</div>
+
+<!-- FOOTER (dark) -->
+<!-- FOOTER -->
+<footer>
+  <div class="footer-nav">
+
+    <!-- Col 1: Agents -->
+    <div>
+      <div class="footer-col-title">Agents</div>
+      <ul class="footer-links">
+        <li><a href="/agent-sales-light.html">Sales Agent</a></li>
+        <li><a href="/agent-onboarding-light.html">Onboarding Agent</a></li>
+        <li><a href="/agent-project-manager-light.html">Project Manager Agent</a></li>
+        <li><a href="/agent-technical-seo-light.html">Technical SEO Agent</a></li>
+        <li><a href="/agent-content-light.html">Content Agent</a></li>
+        <li><a href="/agent-link-building-light.html">Link Building Agent</a></li>
+        <li><a href="/agent-local-seo-light.html">Local SEO Agent</a></li>
+        <li><a href="/agent-reporting-light.html">Reporting Agent</a></li>
+        <li><a href="/agent-strategy-light.html">Strategy Agent</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 2: Features -->
+    <div>
+      <div class="footer-col-title">Features</div>
+      <ul class="footer-links">
+        <li><a href="/coaching">Coaching</a></li>
+        <li><a href="/agency-training">Video Training</a></li>
+        <li><a href="/">Live Bootcamps</a></li>
+        <li><a href="/">Community</a></li>
+      </ul>
+      <div class="footer-col-title" style="margin-top:32px;">Follow Us</div>
+      <ul class="footer-links">
+        <li><a href="https://www.instagram.com/theblueprint.training/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/theblueprinttraining/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.youtube.com/@theblueprinttraining" target="_blank">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Company -->
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/reviews">Results</a></li>
+        <li><a href="/program">Program</a></li>
+        <li><a href="/">Knowledge</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Account -->
+    <div>
+      <div class="footer-col-title">Account</div>
+      <ul class="footer-links" style="margin-bottom:24px;">
+        <li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
+        <li><a href="/get-started">Book a Call</a></li>
+      </ul>
+      <a href="/sign-up" class="footer-cta-btn">Get Started &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
