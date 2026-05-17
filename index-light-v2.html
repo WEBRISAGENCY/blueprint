@@ -1865,6 +1865,51 @@
     letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35);
     padding: 20px 20px 10px;
   }
+  /* Interactive hint CTA */
+  .dash-hint {
+    position: absolute; top: 14px; right: 16px; z-index: 5;
+    display: flex; align-items: center; gap: 6px;
+    background: var(--yellow); color: #0B0E1A; padding: 8px 16px 8px 12px;
+    border-radius: 20px; font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    animation: hintBounce 2s ease-in-out infinite;
+    pointer-events: none; transition: opacity 0.4s;
+    box-shadow: 0 4px 16px rgba(247,198,0,0.3);
+  }
+  .dash-hint.hidden { opacity: 0; pointer-events: none; }
+  .dash-hint svg { width: 16px; height: 16px; }
+  @keyframes hintBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  /* Pulsing glow on inactive nav items */
+  .dash-nav-item:not(.active) {
+    animation: navPulse 3s ease-in-out infinite;
+  }
+  .dash-nav-item:nth-child(3):not(.active) { animation-delay: 0.3s; }
+  .dash-nav-item:nth-child(4):not(.active) { animation-delay: 0.6s; }
+  .dash-nav-item:nth-child(5):not(.active) { animation-delay: 0.9s; }
+  .dash-nav-item:nth-child(6):not(.active) { animation-delay: 1.2s; }
+  .dash-nav-item:nth-child(7):not(.active) { animation-delay: 1.5s; }
+  @keyframes navPulse {
+    0%, 100% { color: rgba(255,255,255,0.55); }
+    50% { color: rgba(255,255,255,0.75); }
+  }
+  .dash-nav-item.active { animation: none; }
+  /* Mobile swipe hint */
+  .dash-mobile-hint {
+    display: none; align-items: center; justify-content: center; gap: 6px;
+    padding: 10px 16px; background: rgba(247,198,0,0.12);
+    font-family: 'Figtree', sans-serif; font-size: 12px; color: var(--yellow);
+    border-bottom: 1px solid rgba(247,198,0,0.15);
+    transition: opacity 0.4s;
+  }
+  .dash-mobile-hint.hidden { opacity: 0; height: 0; padding: 0; overflow: hidden; }
+  .dash-mobile-hint svg { width: 14px; height: 14px; animation: swipeArrow 1.5s ease-in-out infinite; }
+  @keyframes swipeArrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+  }
   .dash-nav-item {
     display: flex; align-items: center; gap: 10px; padding: 12px 20px;
     color: rgba(255,255,255,0.55); font-family: 'Figtree', sans-serif; font-size: 14px;
@@ -2037,6 +2082,8 @@
   @media (max-width: 900px) {
     .dash-sidebar { display: none; }
     .dash-mobile-tabs { display: flex; }
+    .dash-mobile-hint { display: flex; }
+    .dash-hint { display: none; }
     .dash-window { border-radius: 12px; min-height: auto; flex-direction: column; }
     .dash-main { overflow-y: auto; }
     .dash-panel { padding: 20px 16px; }
@@ -2907,7 +2954,12 @@
     <h2 class="section-title" style="color: #0B0E1A;">An entire ecosystem to help<br>grow your agency.</h2>
     <p class="section-body">One membership gives you the full stack: training, tools, live coaching, and a community of agency owners doing exactly what you're doing.</p>
 
-    <div class="dash-window">
+    <div class="dash-window" style="position:relative;">
+      <!-- Interactive hint -->
+      <div class="dash-hint" id="dashHint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6-6 6 6"/><path d="M12 3v14"/></svg>
+        Click to explore what's inside
+      </div>
       <!-- Sidebar -->
       <div class="dash-sidebar">
         <div class="dash-sidebar-header">
@@ -2954,6 +3006,10 @@
         <div class="dash-mobile-tab" onclick="switchDashPanel('community', this)">Community</div>
         <div class="dash-mobile-tab" onclick="switchDashPanel('calls', this)">Live Calls</div>
         <div class="dash-mobile-tab" onclick="switchDashPanel('support', this)">Support</div>
+      </div>
+      <div class="dash-mobile-hint" id="dashMobileHint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        Tap the tabs above to explore what's included
       </div>
 
       <!-- Main content panels -->
