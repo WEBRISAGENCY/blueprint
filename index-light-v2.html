@@ -608,7 +608,64 @@
   }
 
   /* ─── AGENTS SHOWCASE ─── */
-  .agents { background: var(--dark); }
+  .electric-text {
+    position: relative;
+    display: inline-block;
+    color: var(--yellow);
+    text-shadow: 0 0 10px rgba(247,198,0,0.4), 0 0 20px rgba(247,198,0,0.2);
+    animation: electricPulse 2s ease-in-out infinite;
+  }
+  .electric-text::before,
+  .electric-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 28px;
+    height: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F7C600' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'%3E%3C/polygon%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    animation: boltFlicker 1.5s ease-in-out infinite;
+  }
+  .electric-text::before { left: -36px; animation-delay: 0s; }
+  .electric-text::after { right: -36px; animation-delay: 0.3s; transform: translateY(-50%) scaleX(-1); }
+
+  @keyframes electricPulse {
+    0%, 100% { text-shadow: 0 0 10px rgba(247,198,0,0.3), 0 0 20px rgba(247,198,0,0.15); }
+    25% { text-shadow: 0 0 15px rgba(247,198,0,0.6), 0 0 30px rgba(247,198,0,0.3), 0 0 40px rgba(247,198,0,0.1); }
+    50% { text-shadow: 0 0 8px rgba(247,198,0,0.2), 0 0 16px rgba(247,198,0,0.1); }
+    75% { text-shadow: 0 0 18px rgba(247,198,0,0.7), 0 0 35px rgba(247,198,0,0.35), 0 0 50px rgba(247,198,0,0.15); }
+  }
+  @keyframes boltFlicker {
+    0%, 100% { opacity: 0.3; transform: translateY(-50%) scale(0.9); }
+    20% { opacity: 1; transform: translateY(-50%) scale(1.1); }
+    40% { opacity: 0.2; transform: translateY(-50%) scale(0.95); }
+    60% { opacity: 0.9; transform: translateY(-50%) scale(1.05); }
+    80% { opacity: 0.4; transform: translateY(-50%) scale(1); }
+  }
+
+  .agents {
+    background: #0B0E1A;
+    position: relative;
+    overflow: hidden;
+  }
+  .agents::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(247,198,0,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(74,159,213,0.05) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(247,198,0,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .agents .container { position: relative; z-index: 1; }
+  /* Circuit grid pattern */
+  .agents-circuit {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; overflow: hidden;
+  }
+  .agents-circuit svg { position: absolute; width: 100%; height: 100%; opacity: 0.08; }
 
   .agents-split {
     display: flex;
@@ -1964,8 +2021,22 @@
   .dash-qa-reply strong { font-family: 'Figtree', sans-serif; font-size: 12px; color: var(--yellow); display: block; margin-bottom: 4px; }
   .dash-qa-reply p { font-size: 13px; color: rgba(255,255,255,0.6); }
 
+  /* Mobile tabs for dashboard */
+  .dash-mobile-tabs {
+    display: none; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    background: #3D3A37; padding: 0; gap: 0; scrollbar-width: none;
+  }
+  .dash-mobile-tabs::-webkit-scrollbar { display: none; }
+  .dash-mobile-tab {
+    flex-shrink: 0; padding: 12px 16px; font-family: 'Figtree', sans-serif;
+    font-size: 12px; color: rgba(255,255,255,0.5); cursor: pointer;
+    border-bottom: 2px solid transparent; white-space: nowrap; text-align: center;
+    transition: all 0.2s;
+  }
+  .dash-mobile-tab.active { color: #FFFFFF; border-bottom-color: var(--yellow); }
   @media (max-width: 900px) {
     .dash-sidebar { display: none; }
+    .dash-mobile-tabs { display: flex; }
     .dash-window { border-radius: 12px; min-height: 400px; }
     .dash-video-grid { grid-template-columns: 1fr; }
     .dash-agent-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2038,7 +2109,6 @@
   @media (max-width: 900px) {
     nav { padding: 14px 20px; }
     .shift-inner, .agents-intro, .pricing-inner { grid-template-columns: 1fr; gap: 40px; }
-    .whats-inside-grid { grid-template-columns: 1fr 1fr !important; }
     .agents-split { flex-direction: column; gap: 40px; }
     .agents-split-text { text-align: center; }
     .agents-split-text .section-title { text-align: center !important; }
@@ -2557,10 +2627,7 @@
     .cmp-table { display: none !important; }
     .shift-accordion { display: block !important; margin-top: 32px !important; }
 
-    /* What's Inside cards — stack */
-    .whats-inside-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
-    .wi-card { padding: 24px 20px !important; }
-    .wi-icon-img { height: 120px !important; }
+    /* Dashboard responsive handled in main CSS */
 
     /* Agents network graph */
     .network-graph { margin-top: 32px !important; }
@@ -2629,11 +2696,6 @@
     .trusted-badge { font-size: 11px !important; padding: 6px 14px !important; }
 
     /* What's Inside cards — compact on small screens */
-    .wi-card { padding: 20px 16px !important; }
-    .wi-title { font-size: 20px !important; }
-    .wi-desc { font-size: 14px !important; }
-    .wi-bullets li { font-size: 13px !important; }
-
     /* Section padding */
     .container { padding: 0 16px !important; }
     section { padding: 48px 0 !important; }
@@ -2843,81 +2905,283 @@
     <h2 class="section-title" style="color: #0B0E1A;">An entire ecosystem to help<br>grow your agency.</h2>
     <p class="section-body">One membership gives you the full stack: training, tools, live coaching, and a community of agency owners doing exactly what you're doing.</p>
 
-    <div class="whats-inside-grid">
-
-      <div class="wi-card">
-        <img src="assets/card-training.svg" alt="Training Videos" class="wi-icon-img">
-        <div class="wi-num">01</div>
-        <div class="wi-title">Training Videos</div>
-        <p class="wi-desc">Step-by-step video walkthroughs for every workflow and every part of the system. Follow along and have your agency running on proven processes within days, not months.</p>
-        <ul class="wi-bullets">
-          <li>Full modules covering every agency function</li>
-          <li>Screen-recorded walkthroughs you can copy exactly</li>
-          <li>Updated regularly as the system evolves</li>
-        </ul>
+    <div class="dash-window">
+      <!-- Sidebar -->
+      <div class="dash-sidebar">
+        <div class="dash-sidebar-header">
+          <div class="dash-sidebar-logo">B</div>
+          <div class="dash-sidebar-brand">Blueprint Training<small>Member Dashboard</small></div>
+        </div>
+        <div class="dash-sidebar-label">Platform</div>
+        <div class="dash-nav-item active" onclick="switchDashPanel('training', this)">
+          <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+          Training Videos
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('sops', this)">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          SOPs + Templates
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('agents', this)">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+          AI Agents
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('community', this)">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Community
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('calls', this)">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          Live Calls
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('support', this)">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Support
+        </div>
+        <div class="dash-sidebar-spacer"></div>
+        <div class="dash-sidebar-footer">
+          <div class="dash-sidebar-avatar">Y</div>
+          <span class="dash-sidebar-user">Your Agency</span>
+        </div>
       </div>
 
-      <div class="wi-card">
-        <img src="assets/card-sops.svg" alt="SOPs + Templates" class="wi-icon-img">
-        <div class="wi-num">02</div>
-        <div class="wi-title">SOPs + Templates</div>
-        <p class="wi-desc">Ready-to-use standard operating procedures and templates for every agency function. Built from 9 years of real agency work and refined by 1,000+ Blueprint members.</p>
-        <ul class="wi-bullets">
-          <li>Proposal, onboarding, and reporting templates</li>
-          <li>Client-facing deliverable frameworks</li>
-          <li>Continuously updated as best practices evolve</li>
-        </ul>
+      <!-- Mobile tab bar (visible < 900px) -->
+      <div class="dash-mobile-tabs">
+        <div class="dash-mobile-tab active" onclick="switchDashPanel('training', this)">Training Videos</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('sops', this)">SOPs + Templates</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('agents', this)">AI Agents</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('community', this)">Community</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('calls', this)">Live Calls</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('support', this)">Support</div>
       </div>
 
-      <div class="wi-card">
-        <img src="assets/card-ai-tools.svg" alt="AI Agent Suite" class="wi-icon-img">
-        <div class="wi-num">03</div>
-        <div class="wi-title">AI Agent Suite</div>
-        <p class="wi-desc">Pre-built tools trained on Blueprint SOPs that speed up real agency work: proposals, audits, onboarding, reporting, and more.</p>
-        <ul class="wi-bullets">
-          <li>Tools covering every core agency function</li>
-          <li>Built on 9 years of proven SOPs</li>
-          <li>Updated automatically as the platform evolves</li>
-        </ul>
-      </div>
+      <!-- Main content panels -->
+      <div class="dash-main">
+        <div class="dash-titlebar">
+          <div class="dash-dots"><span></span><span></span><span></span></div>
+          <span class="dash-titlebar-text" id="dashTitleText">Training Videos</span>
+        </div>
 
-      <div class="wi-card">
-        <img src="assets/card-coaching.svg" alt="2x Weekly Live Calls" class="wi-icon-img">
-        <div class="wi-num">04</div>
-        <div class="wi-title">2x Weekly Live Calls</div>
-        <p class="wi-desc">Get direct access to Ryan Stewart and David Krevitt every week. Bring your real questions, get real answers live on screen.</p>
-        <ul class="wi-bullets">
-          <li>Weekly sessions with Ryan Stewart & David Krevitt</li>
-          <li>Bring your agency's live challenges to the call</li>
-          <li>All sessions recorded and archived for replay</li>
-        </ul>
-      </div>
+        <!-- TRAINING VIDEOS -->
+        <div class="dash-panel active" id="panel-training">
+          <h3>Training Library</h3>
+          <p class="dash-sub">42 videos across 8 modules. Pick up where you left off.</p>
+          <div class="dash-video-grid">
+            <div class="dash-video">
+              <div class="dash-video-thumb"><div class="dash-video-play"></div></div>
+              <div class="dash-video-bar"><span style="width:70%"></span></div>
+              <div class="dash-video-info"><strong>Module 1: Agency Positioning</strong><small>12 lessons &bull; 2h 14m</small></div>
+            </div>
+            <div class="dash-video">
+              <div class="dash-video-thumb"><div class="dash-video-play"></div></div>
+              <div class="dash-video-bar"><span style="width:45%"></span></div>
+              <div class="dash-video-info"><strong>Module 2: Offer Design & Pricing</strong><small>9 lessons &bull; 1h 48m</small></div>
+            </div>
+            <div class="dash-video">
+              <div class="dash-video-thumb"><div class="dash-video-play"></div></div>
+              <div class="dash-video-bar"><span style="width:0%"></span></div>
+              <div class="dash-video-info"><strong>Module 3: Sales System</strong><small>11 lessons &bull; 2h 32m</small></div>
+            </div>
+            <div class="dash-video">
+              <div class="dash-video-thumb"><div class="dash-video-play"></div></div>
+              <div class="dash-video-bar"><span style="width:0%"></span></div>
+              <div class="dash-video-info"><strong>Module 4: Client Onboarding</strong><small>8 lessons &bull; 1h 20m</small></div>
+            </div>
+          </div>
+        </div>
 
-      <div class="wi-card">
-        <img src="assets/card-support.svg" alt="On Demand Q&A" class="wi-icon-img">
-        <div class="wi-num">05</div>
-        <div class="wi-title">On Demand Q&A</div>
-        <p class="wi-desc">Never get stuck. Get help from the Blueprint team and community any time, on any question.</p>
-        <ul class="wi-bullets">
-          <li>Direct access to the Blueprint team</li>
-          <li>Community-powered troubleshooting</li>
-          <li>Fast response times on all questions</li>
-        </ul>
-      </div>
+        <!-- SOPs + TEMPLATES -->
+        <div class="dash-panel" id="panel-sops">
+          <h3>SOPs & Templates</h3>
+          <p class="dash-sub">128 documents ready to use. Built from 9 years of agency work.</p>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon tmpl">T</div>
+            <div class="dash-sop-text"><strong>Client Proposal Template</strong><small>Google Docs &bull; Updated 3 days ago</small></div>
+            <span class="dash-sop-badge pop">Popular</span>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon doc">S</div>
+            <div class="dash-sop-text"><strong>SEO Audit SOP</strong><small>PDF &bull; Updated 1 week ago</small></div>
+            <span class="dash-sop-badge new">New</span>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon sheet">R</div>
+            <div class="dash-sop-text"><strong>Monthly Reporting Template</strong><small>Google Sheets &bull; Updated 2 weeks ago</small></div>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon tmpl">O</div>
+            <div class="dash-sop-text"><strong>Client Onboarding Checklist</strong><small>Notion &bull; Updated 5 days ago</small></div>
+            <span class="dash-sop-badge pop">Popular</span>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon doc">L</div>
+            <div class="dash-sop-text"><strong>Link Building Outreach SOP</strong><small>Google Docs &bull; Updated 1 week ago</small></div>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon sheet">P</div>
+            <div class="dash-sop-text"><strong>Project Plan Template</strong><small>Google Sheets &bull; Updated 4 days ago</small></div>
+            <span class="dash-sop-badge new">New</span>
+          </div>
+        </div>
 
-      <div class="wi-card">
-        <img src="assets/card-community.svg" alt="Private Community" class="wi-icon-img">
-        <div class="wi-num">06</div>
-        <div class="wi-title">Private Community</div>
-        <p class="wi-desc">Join a private community of agency owners building alongside you. Share wins, get feedback, and stay ahead of the curve.</p>
-        <ul class="wi-bullets">
-          <li>Private community of agency owners</li>
-          <li>Peer support from 3,000+ members</li>
-          <li>First access to new tools and updates</li>
-        </ul>
-      </div>
+        <!-- AI AGENTS -->
+        <div class="dash-panel" id="panel-agents">
+          <h3>AI Agent Suite</h3>
+          <p class="dash-sub">Pre-built agents trained on Blueprint SOPs. Deploy in minutes.</p>
+          <div class="dash-agent-grid">
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+              <h4>Proposal Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><path d="M20 8v6M23 11h-6"></path></svg></div>
+              <h4>Onboarding Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+              <h4>SEO Audit Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
+              <h4>Project Plan Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
+              <h4>Reporting Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></div>
+              <h4>Content Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+          </div>
+        </div>
 
+        <!-- COMMUNITY -->
+        <div class="dash-panel" id="panel-community">
+          <h3>Community Feed</h3>
+          <p class="dash-sub">3,000+ agency owners. 128 online now.</p>
+          <div class="dash-post">
+            <div class="dash-post-avatar" style="background:#F7C600;">S</div>
+            <div class="dash-post-body">
+              <div class="dash-post-header"><strong>Sarah M.</strong><span>2 hours ago</span></div>
+              <p>Just closed a $4k/mo retainer using the Blueprint proposal template. Third one this month. This system works.</p>
+              <div class="dash-post-reactions"><span>12</span><span>4 replies</span></div>
+            </div>
+          </div>
+          <div class="dash-post">
+            <div class="dash-post-avatar" style="background:#60A5FA;">T</div>
+            <div class="dash-post-body">
+              <div class="dash-post-header"><strong>Tom K.</strong><span>4 hours ago</span></div>
+              <p>Ran the SEO audit agent on a prospect's site before the call. Walked in with a full breakdown. They signed on the spot.</p>
+              <div class="dash-post-reactions"><span>8</span><span>6 replies</span></div>
+            </div>
+          </div>
+          <div class="dash-post">
+            <div class="dash-post-avatar" style="background:#4ADE80;">A</div>
+            <div class="dash-post-body">
+              <div class="dash-post-header"><strong>Alex R.</strong><span>6 hours ago</span></div>
+              <p>Finally hit $30k MRR. Started at $8k when I joined 6 months ago. The positioning module changed everything for me.</p>
+              <div class="dash-post-reactions"><span>24</span><span>11 replies</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIVE CALLS -->
+        <div class="dash-panel" id="panel-calls">
+          <h3>Live Calls</h3>
+          <p class="dash-sub">2x per week with Ryan Stewart & David Krevitt.</p>
+          <div class="dash-call">
+            <h4>Wednesday Strategy Call <span class="dash-live">LIVE</span></h4>
+            <p>May 14, 2026 at 12:00 PM EST</p>
+            <p>Topic: Pricing your services for maximum margin</p>
+            <div class="dash-call-attendees">
+              <span style="background:#F7C600;">R</span>
+              <span style="background:#60A5FA;">D</span>
+              <span style="background:#4ADE80;">M</span>
+              <span style="background:#C084FC;">J</span>
+              <small>+38 attending</small>
+            </div>
+          </div>
+          <div class="dash-call">
+            <h4>Friday Implementation Call</h4>
+            <p>May 16, 2026 at 1:00 PM EST</p>
+            <p>Topic: Setting up your first AI agent workflow</p>
+            <div class="dash-call-attendees">
+              <span style="background:#F7C600;">R</span>
+              <span style="background:#60A5FA;">D</span>
+              <small>+22 registered</small>
+            </div>
+          </div>
+          <div class="dash-call" style="opacity: 0.5;">
+            <h4>Wednesday Strategy Call</h4>
+            <p>May 21, 2026 at 12:00 PM EST</p>
+            <p>Topic: TBD</p>
+          </div>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="dash-panel" id="panel-support">
+          <h3>Q&A Support</h3>
+          <p class="dash-sub">Ask anything. Get answers from Ryan and the team.</p>
+          <div class="dash-qa">
+            <div class="dash-qa-header">
+              <div class="dash-qa-avatar" style="background:#60A5FA;">M</div>
+              <strong>Mike D.</strong>
+              <span class="dash-qa-badge answered">Answered</span>
+            </div>
+            <p>How do you handle scope creep with retainer clients? We keep getting asked for stuff outside the SOW.</p>
+            <div class="dash-qa-reply">
+              <strong>Ryan Stewart</strong>
+              <p>Great question. The key is setting boundaries in the onboarding process. Check out the Client Onboarding SOP, specifically the "scope lock" section. We walk through exactly how to frame this in the kickoff call so it never becomes an issue.</p>
+            </div>
+          </div>
+          <div class="dash-qa">
+            <div class="dash-qa-header">
+              <div class="dash-qa-avatar" style="background:#4ADE80;">J</div>
+              <strong>Jessica T.</strong>
+              <span class="dash-qa-badge pending">Pending</span>
+            </div>
+            <p>What's the best way to transition from hourly billing to retainer packages without losing current clients?</p>
+          </div>
+          <div class="dash-qa">
+            <div class="dash-qa-header">
+              <div class="dash-qa-avatar" style="background:#C084FC;">K</div>
+              <strong>Kevin L.</strong>
+              <span class="dash-qa-badge answered">Answered</span>
+            </div>
+            <p>Do you recommend niching down to one industry or staying broad?</p>
+          </div>
+        </div>
+
+      </div><!-- /dash-main -->
     </div>
+
+    <script>
+    function switchDashPanel(panel, el) {
+      document.querySelectorAll('.dash-nav-item').forEach(n => n.classList.remove('active'));
+      document.querySelectorAll('.dash-mobile-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('active'));
+      if (el.classList.contains('dash-mobile-tab')) {
+        el.classList.add('active');
+        var panels = ['training','sops','agents','community','calls','support'];
+        var idx = panels.indexOf(panel);
+        if (idx >= 0) document.querySelectorAll('.dash-nav-item')[idx].classList.add('active');
+      } else {
+        el.classList.add('active');
+        var panels = ['training','sops','agents','community','calls','support'];
+        var idx = panels.indexOf(panel);
+        if (idx >= 0) document.querySelectorAll('.dash-mobile-tab')[idx].classList.add('active');
+      }
+      document.getElementById('panel-' + panel).classList.add('active');
+      var titles = { training:'Training Videos', sops:'SOPs + Templates', agents:'AI Agents', community:'Community', calls:'Live Calls', support:'Support' };
+      document.getElementById('dashTitleText').textContent = titles[panel] || '';
+    }
+    </script>
   </div>
 </section>
 
@@ -2925,9 +3189,69 @@
 
 <!-- AGENTS SHOWCASE -->
 <section class="agents">
+  <div class="agents-circuit">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- Horizontal lines -->
+      <line x1="0" y1="100" x2="400" y2="100" stroke="#F7C600" stroke-width="1"/>
+      <line x1="500" y1="100" x2="1200" y2="100" stroke="#F7C600" stroke-width="1"/>
+      <line x1="0" y1="300" x2="300" y2="300" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="380" y1="300" x2="820" y2="300" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="900" y1="300" x2="1200" y2="300" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="0" y1="500" x2="550" y2="500" stroke="#F7C600" stroke-width="1"/>
+      <line x1="650" y1="500" x2="1200" y2="500" stroke="#F7C600" stroke-width="1"/>
+      <line x1="0" y1="700" x2="350" y2="700" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="450" y1="700" x2="1200" y2="700" stroke="#4A9FD5" stroke-width="1"/>
+      <!-- Vertical lines -->
+      <line x1="200" y1="0" x2="200" y2="300" stroke="#F7C600" stroke-width="1"/>
+      <line x1="200" y1="380" x2="200" y2="800" stroke="#F7C600" stroke-width="1"/>
+      <line x1="600" y1="0" x2="600" y2="200" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="600" y1="280" x2="600" y2="500" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="600" y1="580" x2="600" y2="800" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="1000" y1="0" x2="1000" y2="400" stroke="#F7C600" stroke-width="1"/>
+      <line x1="1000" y1="480" x2="1000" y2="800" stroke="#F7C600" stroke-width="1"/>
+      <!-- Junction nodes -->
+      <circle cx="200" cy="100" r="4" fill="#F7C600" opacity="0.6"/>
+      <circle cx="600" cy="300" r="4" fill="#4A9FD5" opacity="0.6"/>
+      <circle cx="1000" cy="100" r="4" fill="#F7C600" opacity="0.6"/>
+      <circle cx="200" cy="500" r="4" fill="#F7C600" opacity="0.6"/>
+      <circle cx="600" cy="500" r="4" fill="#4A9FD5" opacity="0.6"/>
+      <circle cx="1000" cy="500" r="4" fill="#F7C600" opacity="0.6"/>
+      <circle cx="200" cy="700" r="4" fill="#4A9FD5" opacity="0.6"/>
+      <circle cx="600" cy="700" r="4" fill="#4A9FD5" opacity="0.6"/>
+      <circle cx="1000" cy="700" r="4" fill="#F7C600" opacity="0.6"/>
+      <!-- Smaller accent nodes -->
+      <circle cx="400" cy="100" r="3" fill="#F7C600" opacity="0.4"/>
+      <circle cx="500" cy="100" r="3" fill="#F7C600" opacity="0.4"/>
+      <circle cx="300" cy="300" r="3" fill="#4A9FD5" opacity="0.4"/>
+      <circle cx="820" cy="300" r="3" fill="#4A9FD5" opacity="0.4"/>
+      <circle cx="550" cy="500" r="3" fill="#F7C600" opacity="0.4"/>
+      <circle cx="650" cy="500" r="3" fill="#F7C600" opacity="0.4"/>
+      <circle cx="350" cy="700" r="3" fill="#4A9FD5" opacity="0.4"/>
+      <circle cx="450" cy="700" r="3" fill="#4A9FD5" opacity="0.4"/>
+      <!-- Diagonal accent lines -->
+      <line x1="400" y1="100" x2="600" y2="300" stroke="#F7C600" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <line x1="600" y1="300" x2="1000" y2="100" stroke="#4A9FD5" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <line x1="200" y1="500" x2="600" y2="300" stroke="#F7C600" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <line x1="600" y1="500" x2="1000" y2="700" stroke="#4A9FD5" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <line x1="200" y1="700" x2="600" y2="500" stroke="#F7C600" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <!-- Pulsing node animations -->
+      <circle cx="600" cy="300" r="8" fill="none" stroke="#4A9FD5" stroke-width="1" opacity="0.3">
+        <animate attributeName="r" values="8;16;8" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="200" cy="500" r="8" fill="none" stroke="#F7C600" stroke-width="1" opacity="0.3">
+        <animate attributeName="r" values="8;16;8" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1000" cy="500" r="8" fill="none" stroke="#F7C600" stroke-width="1" opacity="0.3">
+        <animate attributeName="r" values="8;16;8" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
   <div class="container">
-    <h2 class="section-title" style="text-align:center;">A Proven System.<br><span>Now With AI Built In.</span></h2>
-    <p style="text-align:center; font-size:17px; color:var(--gray); max-width:640px; margin:0 auto 48px; line-height:1.7;">9 years of battle-tested agency SOPs, now enhanced with AI agents that handle the repetitive work so you can focus on strategy and clients.</p>
+    <h2 class="section-title" style="text-align:center; color:#FFFFFF;">A Proven System.<br><span class="electric-text">Now Supercharged With AI.</span></h2>
+    <p style="text-align:center; font-size:17px; color:rgba(255,255,255,0.75); max-width:640px; margin:0 auto 48px; line-height:1.7;">Your membership comes with access to a full suite of AI Agents built specifically to execute The Blueprint framework. Simply download and install into Claude and customize to your agency branding and guidelines.</p>
 
     <div class="network-graph">
         <svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:0 auto;display:block;">
