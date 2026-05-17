@@ -173,6 +173,48 @@
     color: var(--yellow);
   }
 
+  /* Blueprint text styling */
+  .blueprint-text {
+    display: inline-block;
+    position: relative;
+    color: transparent;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        rgba(120,190,240,0.25) 0px, rgba(120,190,240,0.25) 1px,
+        transparent 1px, transparent 14px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(120,190,240,0.25) 0px, rgba(120,190,240,0.25) 1px,
+        transparent 1px, transparent 14px
+      ),
+      #2a6496;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(74,159,213,0.4));
+    -webkit-text-stroke: 0.3px rgba(100,190,240,0.4);
+    paint-order: stroke fill;
+  }
+
+  /* Money emoji animation */
+  .money-animated {
+    display: inline-block;
+    position: relative;
+  }
+  .money-emoji {
+    display: inline-block;
+    font-style: normal;
+    animation: moneyBounce 2s ease-in-out infinite;
+  }
+  .money-emoji:nth-child(2) { animation-delay: 0.3s; }
+  @keyframes moneyBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    15% { transform: translateY(-8px) scale(1.2); }
+    30% { transform: translateY(0) scale(1); }
+  }
+
   .hero-sub-headline {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(14px, 1.4vw, 20px);
@@ -2032,11 +2074,10 @@
   .cmp-table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; }
   .cmp-table thead th {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 16px;
-    letter-spacing: 0.12em; text-transform: uppercase; padding: 18px 28px; text-align: left;
+    letter-spacing: 0.12em; text-transform: uppercase; padding: 18px 28px; text-align: center;
   }
-  .cmp-table thead th:first-child { background: transparent; color: transparent; width: 14%; }
-  .cmp-table thead th.cmp-old { background: #E8E9EC; color: #6B7280; width: 43%; }
-  .cmp-table thead th.cmp-new { background: #132c54; color: #F7C600; width: 43%; }
+  .cmp-table thead th.cmp-old { background: #E8E9EC; color: #6B7280; width: 50%; }
+  .cmp-table thead th.cmp-new { background: #132c54; color: #F7C600; width: 50%; }
   .cmp-table tbody td {
     padding: 16px 28px; font-size: 15px; line-height: 1.5; vertical-align: top;
     border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -2047,7 +2088,7 @@
     letter-spacing: 0.1em; text-transform: uppercase; color: #0B0E1A; background: #F7F8FA;
     border-right: 1px solid rgba(0,0,0,0.06);
   }
-  .cmp-table tbody td.cmp-old-cell { color: #6B7280; background: #FAFAFA; }
+  .cmp-table tbody td.cmp-old-cell { color: #6B7280; background: #FAFAFA; font-family: 'Figtree', sans-serif; }
   .cmp-table tbody td.cmp-new-cell { color: #0B0E1A; background: rgba(247,198,0,0.06); font-weight: 500; }
   .cmp-table tbody td.cmp-new-cell strong { color: #132c54; }
   .cmp-x { color: #DC2626; font-weight: 700; margin-right: 6px; }
@@ -2559,16 +2600,14 @@
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
 
-  <div class="trusted-badge">Trusted by 1,000+ Agency Owners — 9 Years Running</div>
+  <div class="trusted-badge">3,000+ Agencies Trained Over 9 Years</div>
 
   <h1 class="hero-headline">
-    The One-Person Agency.
+    Get <span class="blueprint-text">"The Blueprint"</span> For Building<br>A 7 Figure Agency In 2026.
   </h1>
 
-  <p class="hero-sub-headline">Build a 7-figure agency with no employees.</p>
-
   <p class="hero-desc">
-    Learn how to build a high-profit marketing agency using proven AI workflows.
+    Join the 3k agencies dedicated to getting better results for their clients, without sacrificing profits or personal freedom.
   </p>
 
   <div class="hero-cta-group">
@@ -2609,52 +2648,44 @@
 <!-- THE SHIFT -->
 <section class="shift">
   <div class="container">
-    <h2 class="section-title" style="text-align:center;">The agency model is being <br>rebuilt from scratch.</h2>
-    <p class="section-body" style="margin-bottom: 48px; text-align:center; max-width:700px; margin-left:auto; margin-right:auto;">Jobs that once required a team of 5 will roll up to a single operator who understands how to build, deploy, and manage AI agents.</p>
+    <h2 class="section-title" style="text-align:center;">Most agencies are stuck using<br>an outdated operating system.</h2>
+    <p class="section-body" style="margin-bottom: 48px; text-align:center; max-width:700px; margin-left:auto; margin-right:auto;">Running an agency doesn't have to be like herding cats. There's a way to deliver a great service for your clients, while building a business you love. The Blueprint is a proven system to regain your time, profits and sanity.</p>
 
     <table class="cmp-table">
       <thead>
         <tr>
-          <th></th>
-          <th class="cmp-old">The Old Agency</th>
-          <th class="cmp-new">The One-Person Agency</th>
+          <th class="cmp-old">Traditional Agencies</th>
+          <th class="cmp-new">Blueprint Operating System</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Team</td>
           <td class="cmp-old-cell"><span class="cmp-x">✕</span> Hire a PM, writer, link builder, VA</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> <strong>You + AI agents</strong> running the entire operation</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> <strong>Lean team + proven systems</strong> running the operation</td>
         </tr>
         <tr>
-          <td>Execution</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Hope they do their job — manage up, manage down</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Every workflow <strong>automated, repeatable, consistent</strong></td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Hope they do their job, manage up, manage down</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Every workflow <strong>documented, repeatable, consistent</strong></td>
         </tr>
         <tr>
-          <td>Margins</td>
           <td class="cmp-old-cell"><span class="cmp-x">✕</span> Watch margins disappear as headcount grows</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Near-zero overhead — <strong>keep 90%+</strong> of what you earn</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Low overhead, <strong>keep more</strong> of what you earn</td>
         </tr>
         <tr>
-          <td>Training</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Scramble to train new hires every quarter</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Agents trained once on your SOPs, <strong>available 24/7</strong></td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Inconsistent delivery depending on who's working</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> SOPs and templates ensure <strong>consistent results every time</strong></td>
         </tr>
         <tr>
-          <td>Sales Pitch</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Pitch "our team of 15 experts" to win deals</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Pitch <strong>"I built the system"</strong> — clients want results</td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Pitch credentials and hope the proposal lands</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Pitch <strong>a proven system</strong> backed by real case studies</td>
         </tr>
         <tr>
-          <td>Your Time</td>
           <td class="cmp-old-cell"><span class="cmp-x">✕</span> Spend more time managing people than doing work</td>
           <td class="cmp-new-cell"><span class="cmp-check">✓</span> Focus on <strong>strategy, sales, and client relationships</strong></td>
         </tr>
         <tr>
-          <td>Scale</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Revenue capped by how many people you can hire</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Revenue scales with <strong>your stack, not your payroll</strong></td>
+          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Revenue capped by how many people you can manage</td>
+          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Revenue scales with <strong>better systems, not more headcount</strong></td>
         </tr>
       </tbody>
     </table>
@@ -2665,35 +2696,35 @@
         <div class="shift-acc-head"><span>Team</span><span class="shift-acc-arrow">+</span></div>
         <div class="shift-acc-body">
           <div class="shift-acc-old"><span class="cmp-x">✕</span> Hire a PM, writer, link builder, VA</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> <strong>You + AI agents</strong> running the entire operation</div>
+          <div class="shift-acc-new"><span class="cmp-check">✓</span> <strong>Lean team + proven systems</strong> running the operation</div>
         </div>
       </div>
       <div class="shift-acc-item" onclick="this.classList.toggle('open')">
         <div class="shift-acc-head"><span>Execution</span><span class="shift-acc-arrow">+</span></div>
         <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Hope they do their job — manage up, manage down</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Every workflow <strong>automated, repeatable, consistent</strong></div>
+          <div class="shift-acc-old"><span class="cmp-x">✕</span> Hope they do their job, manage up, manage down</div>
+          <div class="shift-acc-new"><span class="cmp-check">✓</span> Every workflow <strong>documented, repeatable, consistent</strong></div>
         </div>
       </div>
       <div class="shift-acc-item" onclick="this.classList.toggle('open')">
         <div class="shift-acc-head"><span>Margins</span><span class="shift-acc-arrow">+</span></div>
         <div class="shift-acc-body">
           <div class="shift-acc-old"><span class="cmp-x">✕</span> Watch margins disappear as headcount grows</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Near-zero overhead — <strong>keep 90%+</strong> of what you earn</div>
+          <div class="shift-acc-new"><span class="cmp-check">✓</span> Low overhead, <strong>keep more</strong> of what you earn</div>
         </div>
       </div>
       <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Training</span><span class="shift-acc-arrow">+</span></div>
+        <div class="shift-acc-head"><span>Quality</span><span class="shift-acc-arrow">+</span></div>
         <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Scramble to train new hires every quarter</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Agents trained once on your SOPs, <strong>available 24/7</strong></div>
+          <div class="shift-acc-old"><span class="cmp-x">✕</span> Inconsistent delivery depending on who's working</div>
+          <div class="shift-acc-new"><span class="cmp-check">✓</span> SOPs and templates ensure <strong>consistent results every time</strong></div>
         </div>
       </div>
       <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Sales Pitch</span><span class="shift-acc-arrow">+</span></div>
+        <div class="shift-acc-head"><span>Sales</span><span class="shift-acc-arrow">+</span></div>
         <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Pitch "our team of 15 experts" to win deals</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Pitch <strong>"I built the system"</strong> — clients want results</div>
+          <div class="shift-acc-old"><span class="cmp-x">✕</span> Pitch credentials and hope the proposal lands</div>
+          <div class="shift-acc-new"><span class="cmp-check">✓</span> Pitch <strong>a proven system</strong> backed by real case studies</div>
         </div>
       </div>
       <div class="shift-acc-item" onclick="this.classList.toggle('open')">
@@ -2706,8 +2737,8 @@
       <div class="shift-acc-item" onclick="this.classList.toggle('open')">
         <div class="shift-acc-head"><span>Scale</span><span class="shift-acc-arrow">+</span></div>
         <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Revenue capped by how many people you can hire</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Revenue scales with <strong>your stack, not your payroll</strong></div>
+          <div class="shift-acc-old"><span class="cmp-x">✕</span> Revenue capped by how many people you can manage</div>
+          <div class="shift-acc-new"><span class="cmp-check">✓</span> Revenue scales with <strong>better systems, not more headcount</strong></div>
         </div>
       </div>
     </div>
@@ -2718,8 +2749,8 @@
 <section class="modules" id="curriculum">
   <div class="container">
     <p class="section-label">What's Inside</p>
-    <h2 class="section-title">Everything you need to <br><span>automate your agency.</span></h2>
-    <p class="section-body">One membership gives you the full stack — training, agents, live coaching, and a community of agency owners doing exactly what you're doing.</p>
+    <h2 class="section-title">Everything you need to <br><span>grow your agency.</span></h2>
+    <p class="section-body">One membership gives you the full stack: training, tools, live coaching, and a community of agency owners doing exactly what you're doing.</p>
 
     <div class="whats-inside-grid">
 
@@ -2730,11 +2761,11 @@
         <div class="wi-content">
           <div class="wi-num">01</div>
           <div class="wi-title">Training Videos</div>
-          <p class="wi-desc">Step-by-step video walkthroughs for every agent, every workflow, and every part of the automation stack. Follow along and have your agency running on AI within days — not months.</p>
+          <p class="wi-desc">Step-by-step video walkthroughs for every workflow and every part of the system. Follow along and have your agency running on proven processes within days, not months.</p>
           <ul class="wi-bullets">
             <li>Full modules covering every agency function</li>
-            <li>Screen-recorded agent build-outs you can copy exactly</li>
-            <li>Updated as Claude and the toolset evolves</li>
+            <li>Screen-recorded walkthroughs you can copy exactly</li>
+            <li>Updated regularly as the system evolves</li>
           </ul>
         </div>
       </div>
@@ -2778,11 +2809,11 @@
         <div class="wi-content">
           <div class="wi-num">04</div>
           <div class="wi-title">Private Community</div>
-          <p class="wi-desc">Join a private community of agency owners building the one-person agency alongside you. Share wins, troubleshoot agents, and stay ahead of every new development in AI-powered SEO.</p>
+          <p class="wi-desc">Join a private community of agency owners building alongside you. Share wins, get feedback, and stay ahead of every new development in the industry.</p>
           <ul class="wi-bullets">
             <li>Private community</li>
-            <li>Peer support from 1,000+ active agency owners</li>
-            <li>First access to new agents and Blueprint updates</li>
+            <li>Peer support from 3,000+ agency owners</li>
+            <li>First access to new tools and Blueprint updates</li>
           </ul>
         </div>
       </div>
@@ -2793,12 +2824,12 @@
         </div>
         <div class="wi-content">
           <div class="wi-num">05</div>
-          <div class="wi-title">Plug & Play AI Agents</div>
-          <p class="wi-desc">Pre-built AI agents trained on Blueprint SOPs that handle real agency work — proposals, audits, onboarding, reporting, and more. Deploy them in minutes, not weeks.</p>
+          <div class="wi-title">AI-Powered Tools</div>
+          <p class="wi-desc">Pre-built tools trained on Blueprint SOPs that speed up real agency work: proposals, audits, onboarding, reporting, and more. Deploy them in minutes, not weeks.</p>
           <ul class="wi-bullets">
-            <li>Full suite of AI agents covering every agency function</li>
-            <li>Built on Claude with 9 years of proven SOPs</li>
-            <li>Updated automatically as AI capabilities evolve</li>
+            <li>Tools covering every core agency function</li>
+            <li>Built on 9 years of proven SOPs</li>
+            <li>Updated automatically as the platform evolves</li>
           </ul>
         </div>
       </div>
@@ -2828,8 +2859,8 @@
 <!-- AGENTS SHOWCASE -->
 <section class="agents">
   <div class="container">
-    <h2 class="section-title" style="text-align:center;">A Full Agent Stack Trained On <br><span>A Proven Framework.</span></h2>
-    <p style="text-align:center; font-size:17px; color:var(--gray); max-width:640px; margin:0 auto 48px; line-height:1.7;">These aren't generic ChatGPT prompts. Every agent is built on 9 years of proven Blueprint operating procedures.</p>
+    <h2 class="section-title" style="text-align:center;">A Proven System.<br><span>Now With AI Built In.</span></h2>
+    <p style="text-align:center; font-size:17px; color:var(--gray); max-width:640px; margin:0 auto 48px; line-height:1.7;">9 years of battle-tested agency SOPs, now enhanced with AI agents that handle the repetitive work so you can focus on strategy and clients.</p>
 
     <div class="network-graph">
         <svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:0 auto;display:block;">
