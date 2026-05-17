@@ -165,58 +165,13 @@
   /* ── CALENDLY SECTION ── */
   .calendly-section {
     background: #FFFFFF;
-    padding: 80px 24px 96px;
+    padding: 0 24px 0;
   }
-  .calendly-layout {
-    max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: 340px 1fr; gap: 48px; align-items: start;
+  .calendly-wrapper {
+    max-width: 1000px; margin: 0 auto;
   }
-  .calendly-info {
-    padding-top: 16px;
-  }
-  .calendly-info-label {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--yellow-dark); margin-bottom: 16px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .calendly-info-label::before {
-    content: ''; width: 16px; height: 2px; background: var(--yellow);
-  }
-  .calendly-info h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 4vw, 48px); line-height: 1.0;
-    letter-spacing: 0.02em; text-transform: uppercase;
-    color: #0B0E1A; margin-bottom: 20px;
-  }
-  .calendly-info h2 span { color: var(--yellow-dark); }
-  .calendly-info p {
-    font-size: 16px; color: var(--gray); line-height: 1.75; margin-bottom: 28px;
-  }
-  .calendly-checklist {
-    list-style: none; display: flex; flex-direction: column; gap: 14px;
-  }
-  .calendly-checklist li {
-    display: flex; align-items: flex-start; gap: 12px;
-    font-size: 15px; color: #374151; line-height: 1.5;
-  }
-  .calendly-checklist li::before {
-    content: '✓'; color: var(--yellow); font-weight: 700; flex-shrink: 0; margin-top: 1px;
-  }
-  .calendly-embed-card {
-    background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 12px; overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-  }
-  .calendly-embed-card .calendly-inline-widget {
+  .calendly-wrapper .calendly-inline-widget {
     min-width: 320px;
-  }
-  @media (max-width: 900px) {
-    .calendly-layout { grid-template-columns: 1fr; gap: 32px; }
-    .calendly-info { text-align: center; }
-    .calendly-info-label { justify-content: center; }
-    .calendly-checklist { align-items: center; }
-    .calendly-checklist li { text-align: left; }
   }
 
   /* ── FAQ SECTION (light gray bg) ── */
@@ -282,7 +237,7 @@
   .footer-links a:hover { color: #fff; }
 
   @media (max-width: 768px) {
-    .calendly-embed-card { border-radius: 8px; margin: 0 -8px; }
+    .calendly-wrapper { margin: 0 -8px; }
   }
 
     /* ─── FOOTER ─── */
@@ -418,7 +373,7 @@
 
     <div class="nav-right">
       <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
-      <a class="nav-cta-btn" href="https://ai.theblueprint.training/get-started">Become A Member</a>
+      <a class="nav-cta-btn" href="https://ai.theblueprint.training/sign-up">Become A Member</a>
     </div>
 
     <!-- Mobile nav controls -->
@@ -426,7 +381,7 @@
       <button class="mobile-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-      <a href="https://ai.theblueprint.training/get-started" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
+      <a href="https://ai.theblueprint.training/sign-up" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
     </div>
 
   </div>
@@ -453,7 +408,7 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg>
     </a>
   </div>
-  <a href="https://ai.theblueprint.training/get-started.html" class="mobile-menu-cta">Get Started - $199/mo</a>
+  <a href="https://ai.theblueprint.training/sign-up.html" class="mobile-menu-cta">Get Started - $199/mo</a>
 </div>
 
 <!-- HERO -->
@@ -468,26 +423,9 @@
 
 <!-- CALENDLY EMBED -->
 <section class="calendly-section">
-  <div class="calendly-layout">
-
-    <div class="calendly-info">
-      <div class="calendly-info-label">Book Your Call</div>
-      <h2>30 Minutes With <span>Ryan Stewart</span></h2>
-      <p>This is a diagnostic call to understand where your agency is today and whether the Inner Circle coaching program is the right fit. No pressure, no pitch - just a real conversation.</p>
-      <ul class="calendly-checklist">
-        <li>Review your current agency setup and goals</li>
-        <li>Identify your biggest growth bottlenecks</li>
-        <li>Map out what a coaching engagement looks like</li>
-        <li>Determine if Inner Circle is the right fit</li>
-        <li>Leave with clarity and a plan either way</li>
-      </ul>
-    </div>
-
-    <div class="calendly-embed-card">
-      <div class="calendly-inline-widget" data-url="https://calendly.com/ryanwashere/diagnostic-call?hide_gdpr_banner=1&background_color=ffffff&text_color=0B0E1A&primary_color=F7C600" style="min-width:320px;height:750px;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    </div>
-
+  <div class="calendly-wrapper">
+    <div class="calendly-inline-widget" data-url="https://calendly.com/ryanwashere/diagnostic-call?hide_gdpr_banner=1&background_color=ffffff&text_color=0B0E1A&primary_color=F7C600" style="min-width:320px;height:950px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   </div>
 </section>
 
@@ -596,7 +534,7 @@
         <li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
         <li><a href="https://ai.theblueprint.training/blueprint-coaching-light.html">Book a Call</a></li>
       </ul>
-      <a href="https://ai.theblueprint.training/get-started.html" class="footer-cta-btn">Get Started &rarr;</a>
+      <a href="https://ai.theblueprint.training/sign-up.html" class="footer-cta-btn">Get Started &rarr;</a>
     </div>
 
   </div>
