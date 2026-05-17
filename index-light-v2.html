@@ -1687,6 +1687,20 @@
     margin-bottom: 21px;
   }
 
+  .futuristic-text {
+    background: linear-gradient(135deg, #00D4FF 0%, #7B2FFF 35%, #FF2FAA 65%, #00D4FF 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   .final-cta-desc {
     font-size: 18px;
     color: rgba(0,0,0,0.85);
@@ -3744,7 +3758,7 @@
     </div>
     <div class="final-cta-text">
       <div class="final-cta-eyebrow" style="order:1;">From Ryan Stewart, Founder</div>
-      <h2 class="final-cta-headline" style="order:2;">The Future Is Now.</h2>
+      <h2 class="final-cta-headline futuristic-text" style="order:2;">The Future Is Now.</h2>
       <div class="final-cta-photo-mobile" style="order:3;"></div>
       <p class="final-cta-desc" style="order:4;">The agency model has already changed. AI can now handle the audits, the content, the outreach, the reporting — everything that used to require a team. The operators building this infrastructure today will be impossible to compete with in two years. Don't wait for the market to force your hand.</p>
       <a href="https://blueprint.spiffy.co/checkout/one-person-agency" class="btn-final" style="order:5;">Enroll Now — $199/mo</a>
