@@ -33,55 +33,7 @@
     overflow-x: hidden;
   }
 
-  /* ─── NAV ─── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 48px;
-    background: #132c54;
-    backdrop-filter: blur(12px);
-    border-bottom: none;
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-
-  .nav-logo-box {
-    width: 32px; height: 32px;
-    background: var(--yellow);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; font-weight: 800;
-    color: var(--black);
-  }
-
-  .nav-cta {
-    background: var(--yellow);
-    color: var(--black);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 10px 24px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--yellow-dark); }
+  /* ─── OLD NAV (removed – all nav styling via .nav-bar) ─── */
 
   /* ─── HERO ─── */
   .hero {
@@ -2356,6 +2308,7 @@
   }
   .cmp-header-old { background: #E8E9EC; color: #6B7280; border-radius: 16px 0 0 0; }
   .cmp-header-new { background: rgba(34,139,34,0.12); color: #132c54; border-radius: 0 16px 0 0; }
+  .cmp-header-combined { display: none; }
   .cmp-rows { display: flex; flex-direction: column; gap: 0; }
   .cmp-row {
     display: grid; grid-template-columns: 1fr 1fr; gap: 0;
@@ -2388,8 +2341,21 @@
   .cmp-icon-check { background: rgba(34,139,34,0.15); color: #1a7a1a; }
   @media (max-width: 900px) {
     .cmp-header-row { grid-template-columns: 1fr; }
-    .cmp-header-old { border-radius: 16px 16px 0 0; }
+    .cmp-header-old { display: none; }
     .cmp-header-new { display: none; }
+    .cmp-header-combined {
+      display: block;
+      background: linear-gradient(135deg, #E8E9EC 0%, rgba(34,139,34,0.12) 100%);
+      color: #132c54;
+      border-radius: 16px 16px 0 0;
+      padding: 18px 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
     .cmp-row { grid-template-columns: 1fr; }
     .cmp-pain { border-right: none; border-radius: 0; }
     .cmp-fix { border-radius: 0; }
@@ -2689,13 +2655,13 @@
     .mobile-cta-btn .mobile-cta-short { display: inline !important; }
 
     /* Trusted badge — visible gap between badge and headline */
-    .trusted-badge { margin-top: 3px !important; margin-bottom: 12px !important; }
+    .trusted-badge { margin-top: 50px !important; margin-bottom: 12px !important; }
     /* Hero */
-    .hero { padding: 110px 20px 50px !important; min-height: auto !important; }
-    .hero-headline { font-size: clamp(40px, 11vw, 60px) !important; white-space: normal !important; line-height: 1.05 !important; margin-top: 12px !important; }
-    .hero-sub-headline { font-size: clamp(18px, 5vw, 28px) !important; white-space: normal !important; }
-    .hero-desc { font-size: 16px !important; max-width: 100% !important; }
-    .btn-primary { font-size: 16px !important; padding: 16px 32px !important; }
+    .hero { padding: 125px 20px 50px !important; min-height: auto !important; }
+    .hero-headline { font-size: clamp(43px, 11vw, 63px) !important; white-space: normal !important; line-height: 1.05 !important; margin-top: 12px !important; margin-bottom: 10px !important; }
+    .hero-sub-headline { font-size: clamp(21px, 5vw, 31px) !important; white-space: normal !important; }
+    .hero-desc { font-size: 19px !important; max-width: 100% !important; }
+    .btn-primary { font-size: 19px !important; padding: 16px 32px !important; }
     .hero-cta-group { align-items: center !important; }
     .hero-ticker-wrap { max-width: 100% !important; }
     .hero-ticker-label { font-size: 11px !important; }
@@ -2765,9 +2731,9 @@
     /* Hero tighter */
     .hero { padding: 72px 16px 40px !important; }
     .hero-headline { font-size: clamp(34px, 10vw, 46px) !important; }
-    .hero-sub-headline { font-size: clamp(16px, 4.5vw, 22px) !important; }
-    .hero-desc { font-size: 15px !important; margin-bottom: 20px !important; }
-    .btn-primary { width: 100% !important; justify-content: center !important; font-size: 15px !important; padding: 16px 24px !important; }
+    .hero-sub-headline { font-size: clamp(19px, 4.5vw, 25px) !important; }
+    .hero-desc { font-size: 18px !important; margin-bottom: 20px !important; }
+    .btn-primary { width: 100% !important; justify-content: center !important; font-size: 18px !important; padding: 16px 24px !important; }
     .hero-price { font-size: 12px !important; }
     .media-logos { display: none !important; }
     .trusted-badge { font-size: 11px !important; padding: 6px 14px !important; }
@@ -2878,7 +2844,7 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg>
     </a>
   </div>
-  <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="mobile-menu-cta">Get Started — $199/mo</a>
+  <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="mobile-menu-cta">Get Started - $199/mo</a>
 </div>
 
 
@@ -2942,6 +2908,7 @@
     <div class="cmp-header-row">
       <div class="cmp-header-old">Traditional Agencies</div>
       <div class="cmp-header-new">Blueprint Operating System</div>
+      <div class="cmp-header-combined">Traditional Agencies vs Blueprint Agencies</div>
     </div>
     <div class="cmp-rows">
       <div class="cmp-row">
