@@ -437,23 +437,86 @@
   /* ── FLOWCHART RESPONSIVE ── */
   @media (max-width: 768px) {
     .how-flow {
-      grid-template-columns: 48px 1fr; gap: 0;
+      display: block !important; /* kill the 2-col grid */
+      position: relative;
     }
     .how-flow::before {
-      left: 24px;
+      left: 22px;
     }
-    /* all steps: node on left col, content on right col */
+    /* each step becomes its own flex row */
+    .flow-step {
+      display: flex !important; align-items: flex-start; padding-bottom: 48px;
+    }
+    .flow-step:last-child { padding-bottom: 0; }
+    /* node always on left, regardless of HTML order */
     .flow-step:nth-child(odd) .flow-node,
     .flow-step:nth-child(even) .flow-node {
-      grid-column: 1; padding: 0 0 64px 0; justify-content: center;
+      flex-shrink: 0; width: 48px; padding: 0 !important;
+      justify-content: center; order: -1;
+      grid-column: unset;
     }
+    /* content fills remaining space */
     .flow-step:nth-child(odd) .flow-content,
     .flow-step:nth-child(even) .flow-content {
-      grid-column: 2; padding: 0 0 64px 24px; text-align: left; justify-content: flex-start;
+      flex: 1; padding: 0 0 0 24px !important; text-align: left !important;
+      justify-content: flex-start !important; order: 0;
+      grid-column: unset;
+    }
+    /* finale */
+    .flow-finale-wrap {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
     }
     .flow-circle { width: 44px; height: 44px; min-width: 44px; font-size: 20px; box-shadow: 0 0 0 4px #132c54, 0 0 0 6px rgba(247,198,0,0.3); }
-    /* hide the connector dots and lines on mobile */
+    /* hide connector dots and lines on mobile */
     .flow-node::after, .flow-node::before { display: none; }
+  }
+
+  /* ── WHAT'S INCLUDED CARDS ── */
+  .included-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px;
+  }
+  .included-card {
+    background: #F7F8FA; border-radius: 16px; padding: 36px 32px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .included-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-4px);
+  }
+  .included-icon {
+    width: 56px; height: 56px; border-radius: 12px; background: #132c54;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+  }
+  .included-icon svg { width: 28px; height: 28px; }
+  .included-num {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--yellow-dark); margin-bottom: 8px;
+  }
+  .included-card h3 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 24px; letter-spacing: 0.03em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 12px;
+  }
+  .included-card p {
+    font-size: 15px; color: #6B7280; line-height: 1.7; margin-bottom: 16px;
+  }
+  .included-card ul {
+    list-style: none; padding: 0;
+  }
+  .included-card ul li {
+    font-size: 14px; color: #374151; line-height: 1.6; padding: 5px 0 5px 20px; position: relative;
+  }
+  .included-card ul li::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 8px; height: 8px; border-radius: 50%; background: var(--yellow);
+  }
+  @media (max-width: 900px) {
+    .included-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  }
+  @media (max-width: 600px) {
+    .included-grid { grid-template-columns: 1fr; gap: 16px; }
+    .included-card { padding: 28px 24px; }
   }
 
   /* ── BLUEPRINT OS VISUAL (Claude-style) ── */
@@ -1034,7 +1097,7 @@
         <div class="flow-node"><div class="flow-circle">3</div></div>
         <div class="flow-content"><div class="flow-card">
           <div class="flow-step-label">Step 03</div>
-          <h3>Agent Training</h3>
+          <h3>Test and Customize</h3>
           <p>Learn how to install and customize your new agent stack. From running your first audit to deploying agents for real client work, you'll get hands-on training for every tool.</p>
         </div></div>
       </div>
@@ -1066,6 +1129,107 @@
         <p class="flow-finale-sub">Land better clients, deliver better results, and scale your agency with the systems, agents, and community behind you.</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section style="background: #FFFFFF; padding: 96px 24px;">
+  <div class="container">
+    <p class="section-label" style="color: var(--yellow-dark);">Everything You Get</p>
+    <h2 class="section-title" style="color: #0B0E1A;">What's Included</h2>
+    <p class="section-sub" style="color: #6B7280;">Training, tools, coaching, community, and ongoing support - everything you need to run your agency on AI.</p>
+
+    <div class="included-grid">
+      <!-- Card 1: Training Videos -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="included-num">01</div>
+        <h3>Training Videos</h3>
+        <p>Step-by-step video walkthroughs for every workflow and every part of the system. Follow along and have your agency running on proven processes within days, not months.</p>
+        <ul>
+          <li>Full modules covering every agency function</li>
+          <li>Screen-recorded walkthroughs you can copy exactly</li>
+          <li>Updated regularly as the system evolves</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: SOPs + Templates -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="included-num">02</div>
+        <h3>SOPs + Templates</h3>
+        <p>Ready-to-use standard operating procedures and templates for every agency function. Built from 9 years of real agency work and refined by 1,000+ Blueprint members.</p>
+        <ul>
+          <li>Proposal, onboarding, and reporting templates</li>
+          <li>Client-facing deliverable frameworks</li>
+          <li>Continuously updated as best practices evolve</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Live Coaching -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="included-num">03</div>
+        <h3>Live Coaching</h3>
+        <p>Get direct access to Ryan Stewart and David Krevitt every week. Bring your real questions, get real answers live on screen.</p>
+        <ul>
+          <li>Weekly sessions with Ryan Stewart & David Krevitt</li>
+          <li>Bring your agency's live challenges to the call</li>
+          <li>All sessions recorded and archived for replay</li>
+        </ul>
+      </div>
+
+      <!-- Card 4: Private Community -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="included-num">04</div>
+        <h3>Private Community</h3>
+        <p>Join a private community of agency owners building alongside you. Share wins, get feedback, and stay ahead of the curve.</p>
+        <ul>
+          <li>Private community of agency owners</li>
+          <li>Peer support from 3,000+ members</li>
+          <li>First access to new tools and updates</li>
+        </ul>
+      </div>
+
+      <!-- Card 5: AI-Powered Tools -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+        </div>
+        <div class="included-num">05</div>
+        <h3>AI-Powered Tools</h3>
+        <p>Pre-built tools trained on Blueprint SOPs that speed up real agency work: proposals, audits, onboarding, reporting, and more.</p>
+        <ul>
+          <li>Tools covering every core agency function</li>
+          <li>Built on 9 years of proven SOPs</li>
+          <li>Updated automatically as the platform evolves</li>
+        </ul>
+      </div>
+
+      <!-- Card 6: 24/7 Support -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="included-num">06</div>
+        <h3>24/7 Support</h3>
+        <p>Never get stuck. Get help from the Blueprint team and community any time, on any question.</p>
+        <ul>
+          <li>Direct access to the Blueprint team</li>
+          <li>Community-powered troubleshooting</li>
+          <li>Fast response times on all questions</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
