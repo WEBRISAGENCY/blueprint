@@ -25,23 +25,6 @@
   html { scroll-behavior: smooth; }
   body { background: #FFFFFF; color: #0B0E1A; font-family: 'Figtree', sans-serif; overflow-x: hidden; }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 48px;
-    background: rgba(11,14,26,0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(247,198,0,0.12);
-  }
-  .nav-cta {
-    background: #F7C600; color: #0B0E1A;
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 10px 24px; text-decoration: none; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--yellow-dark); }
-
   /* ── SHARED ── */
   .container { max-width: 1200px; margin: 0 auto; }
   hr.divider { border: none; border-top: 1px solid var(--border); }
@@ -110,7 +93,7 @@
   /* ── FILTER BAR ── */
   .filter-bar {
     background: #FFFFFF; border-top: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08);
-    padding: 0 24px; position: sticky; top: 73px; z-index: 90;
+    padding: 0 24px; position: sticky; top: 86px; z-index: 90;
   }
   .filter-inner {
     max-width: 1200px; margin: 0 auto;
@@ -412,54 +395,40 @@
   /* ── NAV ── */
   .nav-bar {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: #0B0E1A;
-    border-bottom: 2px solid #F7C600;
+    background: #FFFFFF;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08), 0 2px 24px rgba(0,0,0,0.04);
   }
   .nav-inner {
+    position: relative; z-index: 1;
     max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: stretch; height: 66px; padding: 0 24px;
+    display: flex; align-items: stretch; height: 86px; padding: 0 32px;
   }
   .nav-logo {
     display: flex; align-items: center; gap: 14px;
     text-decoration: none; padding-right: 28px;
-    border-right: 1px solid rgba(255,255,255,0.07); margin-right: 4px; flex-shrink: 0;
+    border-right: none; margin-right: 4px; flex-shrink: 0;
   }
-  .nav-logo-mark { width: 36px; height: 36px; background: #F7C600; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-  .nav-logo-wm { display: flex; flex-direction: column; gap: 1px; }
-  .nav-logo-wm span:nth-child(1) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.32em; color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1; }
-  .nav-logo-wm span:nth-child(2) { font-family: Orbitron,sans-serif; font-size: 15px; font-weight: 800; color: #F7C600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
-  .nav-logo-wm span:nth-child(3) { font-family: Orbitron,sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.36em; color: rgba(255,255,255,0.22); text-transform: uppercase; line-height: 1; margin-top: 1px; }
   .nav-links { display: flex; align-items: stretch; flex: 1; justify-content: center; }
   .nav-item { position: relative; display: flex; align-items: stretch; }
-  .nav-item-btn {
-    display: flex; align-items: center; gap: 6px;
-    background: none; border: none; cursor: pointer;
-    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
-    color: #C8CEDF; padding: 0 16px; transition: color 0.15s;
-    border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
-  }
-  .nav-item-btn:hover, .nav-item-btn.open { color: #fff; }
-  .nav-item-btn.open { color: #F7C600; border-bottom-color: #F7C600; }
-  .nav-item-btn .nav-arr { font-size: 9px; opacity: 0.5; transition: transform 0.2s; display: inline-block; margin-top: 3px; }
-  .nav-item-btn.open .nav-arr { transform: rotate(180deg); }
   .nav-item-link {
     display: flex; align-items: center;
-    font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em;
-    color: #C8CEDF; padding: 0 16px; text-decoration: none; transition: color 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.06em;
+    color: #1E3A5F; padding: 0 20px; text-decoration: none; transition: color 0.15s;
     border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
   }
-  .nav-item-link:hover { color: #fff; }
+  .nav-item-link:hover { color: #132c54; }
+  .nav-item-link.active { color: #1E3A5F; border-bottom-color: #F7C600; }
   .nav-right { display: flex; align-items: center; margin-left: auto; }
   .nav-login {
-    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
-    color: #8A90A8; background: none; border: none; cursor: pointer;
-    padding: 0 16px; text-decoration: none; transition: color 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.06em;
+    color: #1E3A5F; background: none; border: none; cursor: pointer;
+    padding: 0 20px; text-decoration: none; transition: color 0.15s;
   }
-  .nav-login:hover { color: #fff; }
+  .nav-login:hover { color: #132c54; }
   .nav-cta-btn {
     background: #F7C600; color: #0B0E1A;
-    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.06em;
-    padding: 0 28px; text-decoration: none; transition: background 0.15s;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.06em;
+    padding: 0 36px; text-decoration: none; transition: background 0.15s;
     display: flex; align-items: center; height: 100%;
   }
   .nav-cta-btn:hover { background: #D9AE00; }
@@ -523,10 +492,10 @@
   /* ── MOBILE NAV ── */
   .mobile-nav-controls { display: none; align-items: center; gap: 12px; margin-left: auto; }
   .mobile-hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; width: 28px; }
-  .mobile-hamburger span { display: block; height: 2px; width: 100%; background: #C8CEDF; border-radius: 2px; transition: all 0.3s; }
+  .mobile-hamburger span { display: block; height: 2px; width: 100%; background: #1E3A5F; border-radius: 2px; transition: all 0.3s; }
   .mobile-cta-btn { background: #F7C600; color: #0B0E1A; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 0.06em; padding: 8px 20px; text-decoration: none; white-space: nowrap; }
   .mobile-cta-btn:hover { background: #D9AE00; }
-  .mobile-menu-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999; background: #0B0E1A; flex-direction: column; padding: 80px 32px 40px; overflow-y: auto; }
+  .mobile-menu-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999; background: #132c54; flex-direction: column; padding: 80px 32px 40px; overflow-y: auto; }
   .mobile-menu-overlay.open { display: flex; }
   .mobile-menu-close { position: absolute; top: 14px; right: 16px; z-index: 10000; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); color: #fff; font-size: 28px; cursor: pointer; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-family: sans-serif; font-weight: 300; }
   .mobile-menu-nav { display: flex; flex-direction: column; gap: 0; }
@@ -545,7 +514,10 @@
     .nav-inner { height: 54px !important; justify-content: flex-start !important; padding: 0 16px !important; }
     .nav-logo { border-right: none !important; margin-right: 0 !important; padding-right: 0 !important; }
     .nav-logo img { height: 27px !important; width: auto !important; }
-    .filter-bar { top: 55px; }
+    .mobile-cta-btn .mobile-cta-full { display: none !important; }
+    .mobile-cta-btn .mobile-cta-short { display: inline !important; }
+    .filter-bar { top: 54px; }
+    .hero { padding-top: 110px !important; }
   }
 
 </style>
@@ -554,20 +526,20 @@
 <!-- NAV -->
 <div class="nav-bar">
   <div class="nav-inner">
-    <a href="https://ai.theblueprint.training/index.html" class="nav-logo">
-      <img src="assets/blueprint logo svg.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+    <a class="nav-logo" href="https://ai.theblueprint.training/index">
+      <img src="../assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
     </a>
 
     <div class="nav-links">
-      <a href="https://ai.theblueprint.training/about.html" class="nav-item-link">About</a>
-      <a href="https://ai.theblueprint.training/reviews.html" class="nav-item-link">Results</a>
-      <a href="https://ai.theblueprint.training/program.html" class="nav-item-link">Program</a>
-      <a href="https://ai.theblueprint.training/blog/" class="nav-item-link" style="color:#F7C600;border-bottom-color:#F7C600;">Knowledge</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/about">About</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/reviews">Results</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/program">Program</a>
+      <a class="nav-item-link active" href="https://ai.theblueprint.training/blog/">Knowledge</a>
     </div>
 
     <div class="nav-right">
       <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
-      <a href="https://ai.theblueprint.training/sign-up.html" class="nav-cta-btn">Get Started</a>
+      <a class="nav-cta-btn" href="https://ai.theblueprint.training/sign-up">Become A Member</a>
     </div>
 
     <!-- Mobile nav controls -->
@@ -575,7 +547,7 @@
       <button class="mobile-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-      <a href="https://ai.theblueprint.training/sign-up.html" class="mobile-cta-btn">Get Started</a>
+      <a href="https://ai.theblueprint.training/sign-up" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
     </div>
 
   </div>
@@ -603,7 +575,7 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg>
     </a>
   </div>
-  <a href="https://ai.theblueprint.training/sign-up.html" class="mobile-menu-cta">Get Started</a>
+  <a href="https://ai.theblueprint.training/sign-up.html" class="mobile-menu-cta">Get Started - $199/mo</a>
 </div>
 
 <!-- HERO -->
