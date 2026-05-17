@@ -33,55 +33,7 @@
     overflow-x: hidden;
   }
 
-  /* ─── NAV ─── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 48px;
-    background: #132c54;
-    backdrop-filter: blur(12px);
-    border-bottom: none;
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-
-  .nav-logo-box {
-    width: 32px; height: 32px;
-    background: var(--yellow);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; font-weight: 800;
-    color: var(--black);
-  }
-
-  .nav-cta {
-    background: var(--yellow);
-    color: var(--black);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 10px 24px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--yellow-dark); }
+  /* ─── OLD NAV (removed – all nav styling via .nav-bar) ─── */
 
   /* ─── HERO ─── */
   .hero {
@@ -173,6 +125,48 @@
     color: var(--yellow);
   }
 
+  /* Blueprint text styling */
+  .blueprint-text {
+    display: inline-block;
+    position: relative;
+    color: transparent;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        rgba(120,190,240,0.25) 0px, rgba(120,190,240,0.25) 1px,
+        transparent 1px, transparent 14px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(120,190,240,0.25) 0px, rgba(120,190,240,0.25) 1px,
+        transparent 1px, transparent 14px
+      ),
+      #2a6496;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(74,159,213,0.4));
+    -webkit-text-stroke: 0.3px rgba(100,190,240,0.4);
+    paint-order: stroke fill;
+  }
+
+  /* Money emoji animation */
+  .money-animated {
+    display: inline-block;
+    position: relative;
+  }
+  .money-emoji {
+    display: inline-block;
+    font-style: normal;
+    animation: moneyBounce 2s ease-in-out infinite;
+  }
+  .money-emoji:nth-child(2) { animation-delay: 0.3s; }
+  @keyframes moneyBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    15% { transform: translateY(-8px) scale(1.2); }
+    30% { transform: translateY(0) scale(1); }
+  }
+
   .hero-sub-headline {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(14px, 1.4vw, 20px);
@@ -198,7 +192,7 @@
     max-width: 640px;
     font-size: 18px;
     line-height: 1.7;
-    color: rgba(255,255,255,0.65);
+    color: #FFFFFF;
     position: relative;
     animation: fadeUp 0.6s 0.4s ease both;
     margin-bottom: 32px;
@@ -566,7 +560,64 @@
   }
 
   /* ─── AGENTS SHOWCASE ─── */
-  .agents { background: var(--dark); }
+  .electric-text {
+    position: relative;
+    display: inline-block;
+    color: var(--yellow);
+    text-shadow: 0 0 10px rgba(247,198,0,0.4), 0 0 20px rgba(247,198,0,0.2);
+    animation: electricPulse 2s ease-in-out infinite;
+  }
+  .electric-text::before,
+  .electric-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 28px;
+    height: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F7C600' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'%3E%3C/polygon%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    animation: boltFlicker 1.5s ease-in-out infinite;
+  }
+  .electric-text::before { left: -36px; animation-delay: 0s; }
+  .electric-text::after { right: -36px; animation-delay: 0.3s; transform: translateY(-50%) scaleX(-1); }
+
+  @keyframes electricPulse {
+    0%, 100% { text-shadow: 0 0 10px rgba(247,198,0,0.3), 0 0 20px rgba(247,198,0,0.15); }
+    25% { text-shadow: 0 0 15px rgba(247,198,0,0.6), 0 0 30px rgba(247,198,0,0.3), 0 0 40px rgba(247,198,0,0.1); }
+    50% { text-shadow: 0 0 8px rgba(247,198,0,0.2), 0 0 16px rgba(247,198,0,0.1); }
+    75% { text-shadow: 0 0 18px rgba(247,198,0,0.7), 0 0 35px rgba(247,198,0,0.35), 0 0 50px rgba(247,198,0,0.15); }
+  }
+  @keyframes boltFlicker {
+    0%, 100% { opacity: 0.3; transform: translateY(-50%) scale(0.9); }
+    20% { opacity: 1; transform: translateY(-50%) scale(1.1); }
+    40% { opacity: 0.2; transform: translateY(-50%) scale(0.95); }
+    60% { opacity: 0.9; transform: translateY(-50%) scale(1.05); }
+    80% { opacity: 0.4; transform: translateY(-50%) scale(1); }
+  }
+
+  .agents {
+    background: #0B0E1A;
+    position: relative;
+    overflow: hidden;
+  }
+  .agents::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(247,198,0,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(74,159,213,0.05) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(247,198,0,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .agents .container { position: relative; z-index: 1; }
+  /* Circuit grid pattern */
+  .agents-circuit {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; overflow: hidden;
+  }
+  .agents-circuit svg { position: absolute; width: 100%; height: 100%; opacity: 0.08; }
 
   .agents-split {
     display: flex;
@@ -1588,6 +1639,20 @@
     margin-bottom: 21px;
   }
 
+  .futuristic-text {
+    background: linear-gradient(135deg, #00D4FF 0%, #7B2FFF 35%, #FF2FAA 65%, #00D4FF 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   .final-cta-desc {
     font-size: 18px;
     color: rgba(0,0,0,0.85);
@@ -1734,73 +1799,277 @@
   }
 
   /* ─── WHAT'S INSIDE CARDS ─── */
-  .whats-inside-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin-top: 60px;
+  /* ── Interactive Dashboard ── */
+  .dash-window {
+    background: #2D2B28; border-radius: 16px; overflow: hidden; margin-top: 48px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.25); display: flex; min-height: 520px;
   }
-
-    .wi-card { display: grid; grid-template-columns: 280px 1fr; gap: 0; padding: 0; background: var(--dark); border: 1px solid var(--dark-border); transition: all 0.3s; position: relative; overflow: hidden; }
-  .wi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--yellow); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-  .wi-card:hover::before { transform: scaleX(1); }
-  .wi-card:hover { border-color: rgba(247,198,0,0.2); background: var(--dark2); }
-
-  .wi-icon {
-    font-size: 36px;
-    flex-shrink: 0;
-    margin-top: 4px;
+  .dash-sidebar {
+    width: 240px; background: #3D3A37; padding: 20px 0; flex-shrink: 0;
+    display: flex; flex-direction: column;
   }
-
-  .wi-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    color: var(--yellow);
-    margin-bottom: 8px;
+  .dash-sidebar-header {
+    display: flex; align-items: center; gap: 10px; padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-
-  .wi-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 14px;
-    line-height: 1.2;
+  .dash-sidebar-logo {
+    width: 32px; height: 32px; border-radius: 8px; background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 13px; color: #0B0E1A;
   }
-
-  .wi-desc {
-    font-size: 15px;
-    color: var(--gray);
-    line-height: 1.7;
-    margin-bottom: 20px;
+  .dash-sidebar-brand {
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #FFFFFF;
+    letter-spacing: 0.03em; line-height: 1;
   }
-
-  .wi-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  .dash-sidebar-brand small {
+    display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
+    color: rgba(255,255,255,0.4); font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-top: 2px;
   }
-
-  .wi-bullets li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 14px;
-    color: var(--gray-light);
-    line-height: 1.5;
+  .dash-sidebar-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35);
+    padding: 20px 20px 10px;
   }
+  /* Interactive hint CTA */
+  .dash-hint-wrap {
+    display: flex; justify-content: flex-start; margin-bottom: -20px;
+    position: relative; z-index: 5;
+  }
+  .dash-hint {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--yellow); color: #0B0E1A; padding: 8px 16px 8px 12px;
+    border-radius: 20px; font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    animation: hintBounce 2s ease-in-out infinite;
+    pointer-events: none; transition: opacity 0.4s;
+    box-shadow: 0 4px 16px rgba(247,198,0,0.3);
+    white-space: nowrap;
+    margin-left: 4px;
+  }
+  .dash-hint svg { width: 16px; height: 16px; }
+  .dash-hint-arrow {
+    position: absolute; bottom: -14px; left: 100px;
+    width: 0; height: 0;
+    border-left: 8px solid transparent; border-right: 8px solid transparent;
+    border-top: 10px solid var(--yellow);
+  }
+  .dash-hint.hidden { opacity: 0; pointer-events: none; }
+  .dash-hint svg { width: 16px; height: 16px; }
+  @keyframes hintBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  /* Pulsing glow on inactive nav items */
+  .dash-nav-item:not(.active) {
+    animation: navPulse 3s ease-in-out infinite;
+  }
+  .dash-nav-item:nth-child(3):not(.active) { animation-delay: 0.3s; }
+  .dash-nav-item:nth-child(4):not(.active) { animation-delay: 0.6s; }
+  .dash-nav-item:nth-child(5):not(.active) { animation-delay: 0.9s; }
+  .dash-nav-item:nth-child(6):not(.active) { animation-delay: 1.2s; }
+  .dash-nav-item:nth-child(7):not(.active) { animation-delay: 1.5s; }
+  @keyframes navPulse {
+    0%, 100% { color: rgba(255,255,255,0.55); }
+    50% { color: rgba(255,255,255,0.75); }
+  }
+  .dash-nav-item.active { animation: none; }
+  /* Mobile swipe hint */
+  .dash-mobile-hint {
+    display: none; align-items: center; justify-content: center; gap: 6px;
+    padding: 10px 16px; background: rgba(247,198,0,0.12);
+    font-family: 'Figtree', sans-serif; font-size: 12px; color: var(--yellow);
+    border-bottom: 1px solid rgba(247,198,0,0.15);
+    transition: opacity 0.4s;
+  }
+  .dash-mobile-hint.hidden { opacity: 0; height: 0; padding: 0; overflow: hidden; }
+  .dash-mobile-hint svg { width: 14px; height: 14px; animation: swipeArrow 1.5s ease-in-out infinite; }
+  @keyframes swipeArrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+  }
+  .dash-nav-item {
+    display: flex; align-items: center; gap: 10px; padding: 12px 20px;
+    color: rgba(255,255,255,0.55); font-family: 'Figtree', sans-serif; font-size: 14px;
+    cursor: pointer; border-left: 3px solid transparent; transition: all 0.2s;
+  }
+  .dash-nav-item:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.03); }
+  .dash-nav-item.active {
+    background: rgba(255,255,255,0.06); color: #FFFFFF;
+    border-left-color: var(--yellow);
+  }
+  .dash-nav-item svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .dash-sidebar-spacer { flex: 1; }
+  .dash-sidebar-footer {
+    padding: 16px 20px 0; border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center; gap: 10px; margin-top: auto;
+  }
+  .dash-sidebar-avatar {
+    width: 28px; height: 28px; border-radius: 50%; background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; color: #0B0E1A;
+  }
+  .dash-sidebar-user {
+    font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(255,255,255,0.55);
+  }
+  /* Main content */
+  .dash-main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .dash-titlebar {
+    display: flex; align-items: center; gap: 8px; padding: 14px 24px;
+    background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .dash-dots { display: flex; gap: 6px; }
+  .dash-dots span { width: 10px; height: 10px; border-radius: 50%; }
+  .dash-dots span:nth-child(1) { background: #FF5F57; }
+  .dash-dots span:nth-child(2) { background: #FEBC2E; }
+  .dash-dots span:nth-child(3) { background: #28C840; }
+  .dash-titlebar-text {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45); margin-left: 8px;
+  }
+  .dash-panel { display: none; padding: 32px; flex: 1; overflow-y: auto; }
+  .dash-panel.active { display: block; }
+  .dash-panel h3 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: #FFFFFF;
+    letter-spacing: 0.03em; margin-bottom: 6px;
+  }
+  .dash-panel .dash-sub {
+    font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(255,255,255,0.45);
+    margin-bottom: 24px;
+  }
+  /* Panel content styles */
+  .dash-video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .dash-video {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; overflow: hidden; cursor: default; transition: all 0.3s;
+  }
+  .dash-video:hover { border-color: rgba(247,198,0,0.2); transform: translateY(-2px); }
+  .dash-video-thumb {
+    background: #1E3A5F; height: 100px; display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .dash-video-play {
+    width: 36px; height: 36px; border-radius: 50%; background: rgba(247,198,0,0.2);
+    border: 2px solid var(--yellow); display: flex; align-items: center; justify-content: center;
+  }
+  .dash-video-play::after { content: ''; border-left: 10px solid var(--yellow); border-top: 6px solid transparent; border-bottom: 6px solid transparent; margin-left: 2px; }
+  .dash-video-bar { height: 3px; background: rgba(255,255,255,0.1); }
+  .dash-video-bar span { display: block; height: 100%; background: var(--yellow); }
+  .dash-video-info { padding: 12px 14px; }
+  .dash-video-info strong { font-family: 'Figtree', sans-serif; font-size: 13px; color: #FFFFFF; display: block; margin-bottom: 4px; }
+  .dash-video-info small { font-size: 12px; color: rgba(255,255,255,0.4); }
+  /* SOP list */
+  .dash-sop-item {
+    display: flex; align-items: center; gap: 14px; padding: 14px 16px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; margin-bottom: 8px; transition: all 0.2s;
+  }
+  .dash-sop-item:hover { background: rgba(255,255,255,0.06); border-color: rgba(247,198,0,0.2); }
+  .dash-sop-icon {
+    width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px;
+  }
+  .dash-sop-icon.doc { background: rgba(59,130,246,0.15); color: #60A5FA; }
+  .dash-sop-icon.sheet { background: rgba(34,197,94,0.15); color: #4ADE80; }
+  .dash-sop-icon.tmpl { background: rgba(247,198,0,0.15); color: #F7C600; }
+  .dash-sop-text { flex: 1; }
+  .dash-sop-text strong { font-family: 'Figtree', sans-serif; font-size: 14px; color: #FFFFFF; display: block; }
+  .dash-sop-text small { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .dash-sop-badge {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px;
+    border-radius: 20px; flex-shrink: 0;
+  }
+  .dash-sop-badge.new { background: rgba(34,197,94,0.12); color: #4ADE80; }
+  .dash-sop-badge.pop { background: rgba(247,198,0,0.12); color: #F7C600; }
+  /* Agent grid */
+  .dash-agent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .dash-agent {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 20px 16px; text-align: center; transition: all 0.3s;
+  }
+  .dash-agent:hover { background: rgba(247,198,0,0.06); border-color: rgba(247,198,0,0.2); transform: translateY(-2px); }
+  .dash-agent-icon {
+    width: 44px; height: 44px; border-radius: 10px; margin: 0 auto 12px;
+    background: rgba(247,198,0,0.1); border: 1px solid rgba(247,198,0,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .dash-agent-icon svg { width: 22px; height: 22px; stroke: var(--yellow); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .dash-agent h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em; color: #FFFFFF; margin-bottom: 6px; }
+  .dash-agent-status { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #28C840; display: flex; align-items: center; justify-content: center; gap: 4px; }
+  .dash-agent-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #28C840; }
+  /* Community feed */
+  .dash-post {
+    display: flex; gap: 12px; padding: 16px; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; margin-bottom: 10px;
+  }
+  .dash-post-avatar {
+    width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; color: #0B0E1A;
+  }
+  .dash-post-body { flex: 1; }
+  .dash-post-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .dash-post-header strong { font-family: 'Figtree', sans-serif; font-size: 13px; color: #FFFFFF; }
+  .dash-post-header span { font-size: 12px; color: rgba(255,255,255,0.35); }
+  .dash-post-body p { font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5; margin: 0; }
+  .dash-post-reactions { display: flex; gap: 8px; margin-top: 8px; }
+  .dash-post-reactions span { font-size: 12px; color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.06); padding: 2px 10px; border-radius: 12px; }
+  /* Call card */
+  .dash-call {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 20px; margin-bottom: 12px; border-left: 3px solid var(--yellow);
+  }
+  .dash-call h4 { font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; }
+  .dash-call p { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0 0 4px; }
+  .dash-call .dash-live { display: inline-block; background: #DC2626; color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 10px; border-radius: 10px; margin-left: 8px; }
+  .dash-call-attendees { display: flex; align-items: center; gap: -4px; margin-top: 10px; }
+  .dash-call-attendees span { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #0B0E1A; margin-right: -6px; border: 2px solid #2D2B28; }
+  .dash-call-attendees small { margin-left: 12px; font-size: 12px; color: rgba(255,255,255,0.4); }
+  /* Q&A thread */
+  .dash-qa {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 16px; margin-bottom: 10px;
+  }
+  .dash-qa-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .dash-qa-avatar { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #0B0E1A; }
+  .dash-qa-header strong { font-family: 'Figtree', sans-serif; font-size: 13px; color: #FFFFFF; }
+  .dash-qa-header .dash-qa-badge { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 10px; border-radius: 12px; margin-left: auto; }
+  .dash-qa-badge.answered { background: rgba(34,197,94,0.12); color: #4ADE80; }
+  .dash-qa-badge.pending { background: rgba(247,198,0,0.12); color: #F7C600; }
+  .dash-qa p { font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; margin: 0; }
+  .dash-qa-reply { margin-top: 12px; padding: 12px; background: rgba(247,198,0,0.05); border: 1px solid rgba(247,198,0,0.15); border-radius: 8px; }
+  .dash-qa-reply strong { font-family: 'Figtree', sans-serif; font-size: 12px; color: var(--yellow); display: block; margin-bottom: 4px; }
+  .dash-qa-reply p { font-size: 13px; color: rgba(255,255,255,0.6); }
 
-  .wi-bullets li::before {
-    content: '✓';
-    color: var(--yellow);
-    font-weight: 700;
-    flex-shrink: 0;
-    font-size: 13px;
-    margin-top: 1px;
+  /* Mobile tabs for dashboard */
+  .dash-mobile-tabs {
+    display: none; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    background: #3D3A37; padding: 0; gap: 0; scrollbar-width: none;
+  }
+  .dash-mobile-tabs::-webkit-scrollbar { display: none; }
+  .dash-mobile-tab {
+    flex-shrink: 0; padding: 12px 16px; font-family: 'Figtree', sans-serif;
+    font-size: 12px; color: rgba(255,255,255,0.5); cursor: pointer;
+    border-bottom: 2px solid transparent; white-space: nowrap; text-align: center;
+    transition: all 0.2s;
+  }
+  .dash-mobile-tab.active { color: #FFFFFF; border-bottom-color: var(--yellow); }
+  @media (max-width: 900px) {
+    .dash-sidebar { display: none; }
+    .dash-mobile-tabs { display: flex; }
+    .dash-mobile-hint { display: flex; }
+    .dash-hint-wrap { display: none; }
+    .dash-window { border-radius: 12px; min-height: auto; flex-direction: column; }
+    .dash-main { overflow-y: auto; }
+    .dash-panel { padding: 20px 16px; }
+    .dash-video-grid { grid-template-columns: 1fr; }
+    .dash-agent-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .dash-agent-grid { grid-template-columns: 1fr; }
   }
 
   /* ─── TIMELINE ─── */
@@ -1866,7 +2135,7 @@
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     nav { padding: 14px 20px; }
-    .shift-inner, .agents-intro, .pricing-inner, .whats-inside-grid { grid-template-columns: 1fr; gap: 40px; }
+    .shift-inner, .agents-intro, .pricing-inner { grid-template-columns: 1fr; gap: 40px; }
     .agents-split { flex-direction: column; gap: 40px; }
     .agents-split-text { text-align: center; }
     .agents-split-text .section-title { text-align: center !important; }
@@ -2029,36 +2298,69 @@
   .hero-price strong { color: #F7C600; }
   .hero-ticker-label { color: #F7C600; }
 
-  .cmp-table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; }
-  .cmp-table thead th {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 16px;
-    letter-spacing: 0.12em; text-transform: uppercase; padding: 18px 28px; text-align: left;
+  /* ── Comparison: connected row layout ── */
+  .cmp-header-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 0;
   }
-  .cmp-table thead th:first-child { background: transparent; color: transparent; width: 14%; }
-  .cmp-table thead th.cmp-old { background: #E8E9EC; color: #6B7280; width: 43%; }
-  .cmp-table thead th.cmp-new { background: #132c54; color: #F7C600; width: 43%; }
-  .cmp-table tbody td {
-    padding: 16px 28px; font-size: 15px; line-height: 1.5; vertical-align: top;
+  .cmp-header-old, .cmp-header-new {
+    font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 18px;
+    padding: 20px 28px; text-align: center;
+  }
+  .cmp-header-old { background: #E8E9EC; color: #6B7280; border-radius: 16px 0 0 0; }
+  .cmp-header-new { background: rgba(34,139,34,0.12); color: #132c54; border-radius: 0 16px 0 0; }
+  .cmp-header-combined { display: none; }
+  .cmp-rows { display: flex; flex-direction: column; gap: 0; }
+  .cmp-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
     border-bottom: 1px solid rgba(0,0,0,0.06);
   }
-  .cmp-table tbody tr:last-child td { border-bottom: none; }
-  .cmp-table tbody td:first-child {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px;
-    letter-spacing: 0.1em; text-transform: uppercase; color: #0B0E1A; background: #F7F8FA;
-    border-right: 1px solid rgba(0,0,0,0.06);
+  .cmp-row:last-child { border-bottom: none; }
+  .cmp-row:last-child .cmp-pain { border-radius: 0 0 0 16px; }
+  .cmp-row:last-child .cmp-fix { border-radius: 0 0 16px 0; }
+  .cmp-pain, .cmp-fix {
+    padding: 20px 24px; font-family: 'Figtree', sans-serif; font-size: 15px; line-height: 1.55;
+    display: flex; align-items: flex-start; gap: 12px;
   }
-  .cmp-table tbody td.cmp-old-cell { color: #6B7280; background: #FAFAFA; }
-  .cmp-table tbody td.cmp-new-cell { color: #0B0E1A; background: rgba(247,198,0,0.06); font-weight: 500; }
-  .cmp-table tbody td.cmp-new-cell strong { color: #132c54; }
-  .cmp-x { color: #DC2626; font-weight: 700; margin-right: 6px; }
-  .cmp-check { color: #F7C600; font-weight: 700; margin-right: 6px; }
+  .cmp-pain {
+    background: #F3F4F6; color: #6B7280; border-right: 1px solid #E5E7EB;
+  }
+  .cmp-fix {
+    background: rgba(34,139,34,0.06); color: #2d2d2d;
+  }
+  .cmp-fix strong { color: #132c54; font-weight: 600; }
+  .cmp-arrow {
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .cmp-icon {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; margin-top: 0;
+  }
+  .cmp-icon-x { background: rgba(220,38,38,0.1); color: #DC2626; }
+  .cmp-icon-check { background: rgba(34,139,34,0.15); color: #1a7a1a; }
   @media (max-width: 900px) {
-    .cmp-table, .cmp-table thead, .cmp-table tbody, .cmp-table tr, .cmp-table td, .cmp-table th { display: block; width: 100%; }
-    .cmp-table thead th:first-child { display: none; }
-    .cmp-table thead th { text-align: center; }
-    .cmp-table tbody tr { display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 16px; background: #fff; border: 1px solid rgba(0,0,0,0.08); }
-    .cmp-table tbody td:first-child { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06); text-align: center; padding: 12px 16px; }
-    .cmp-table tbody td { padding: 12px 16px; }
+    .cmp-header-row { grid-template-columns: 1fr; }
+    .cmp-header-old { display: none; }
+    .cmp-header-new { display: none; }
+    .cmp-header-combined {
+      display: block;
+      background: linear-gradient(135deg, #E8E9EC 0%, rgba(34,139,34,0.12) 100%);
+      color: #132c54;
+      border-radius: 16px 16px 0 0;
+      padding: 18px 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .cmp-row { grid-template-columns: 1fr; }
+    .cmp-pain { border-right: none; border-radius: 0; }
+    .cmp-fix { border-radius: 0; }
+    .cmp-row:last-child .cmp-pain { border-radius: 0; }
+    .cmp-row:last-child .cmp-fix { border-radius: 0 0 16px 16px; }
   }
 
   .wi-photo-placeholder { background: var(--dark2); display: flex; align-items: center; justify-content: center; min-height: 200px; border-right: 1px solid var(--dark-border); }
@@ -2190,7 +2492,7 @@
   .hero-headline { color: #FFFFFF !important; }
   .hero-headline span { color: #F7C600 !important; }
   .hero-sub-headline { color: #8A90A8 !important; }
-  .hero-desc { color: #8A90A8 !important; }
+  .hero-desc { color: #FFFFFF !important; }
   .hero-desc strong { color: #FFFFFF !important; }
   .btn-primary { background: #F7C600 !important; color: #0B0E1A !important; }
   .hero-price { color: #8A90A8 !important; }
@@ -2349,15 +2651,17 @@
     .nav-inner { height: 54px !important; justify-content: flex-start !important; padding: 0 16px !important; }
     .nav-logo { border-right: none !important; margin-right: 0 !important; padding-right: 0 !important; }
     .nav-logo img { height: 27px !important; width: auto !important; }
+    .mobile-cta-btn .mobile-cta-full { display: none !important; }
+    .mobile-cta-btn .mobile-cta-short { display: inline !important; }
 
     /* Trusted badge — visible gap between badge and headline */
-    .trusted-badge { margin-top: 3px !important; margin-bottom: 12px !important; }
+    .trusted-badge { margin-top: 50px !important; margin-bottom: 12px !important; }
     /* Hero */
-    .hero { padding: 80px 20px 50px !important; min-height: auto !important; }
-    .hero-headline { font-size: clamp(40px, 11vw, 60px) !important; white-space: normal !important; line-height: 1.05 !important; margin-top: 12px !important; }
-    .hero-sub-headline { font-size: clamp(18px, 5vw, 28px) !important; white-space: normal !important; }
-    .hero-desc { font-size: 16px !important; max-width: 100% !important; }
-    .btn-primary { font-size: 16px !important; padding: 16px 32px !important; }
+    .hero { padding: 125px 20px 50px !important; min-height: auto !important; }
+    .hero-headline { font-size: clamp(43px, 11vw, 63px) !important; white-space: normal !important; line-height: 1.05 !important; margin-top: 12px !important; margin-bottom: 10px !important; }
+    .hero-sub-headline { font-size: clamp(21px, 5vw, 31px) !important; white-space: normal !important; }
+    .hero-desc { font-size: 19px !important; max-width: 100% !important; }
+    .btn-primary { font-size: 19px !important; padding: 16px 32px !important; }
     .hero-cta-group { align-items: center !important; }
     .hero-ticker-wrap { max-width: 100% !important; }
     .hero-ticker-label { font-size: 11px !important; }
@@ -2366,11 +2670,7 @@
     .cmp-table { display: none !important; }
     .shift-accordion { display: block !important; margin-top: 32px !important; }
 
-    /* What's Inside cards — stack, hide images */
-    .whats-inside-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
-    .wi-card { grid-template-columns: 1fr !important; }
-    .wi-photo-placeholder { display: none !important; }
-    .wi-content { padding: 24px 20px !important; }
+    /* Dashboard responsive handled in main CSS */
 
     /* Agents network graph */
     .network-graph { margin-top: 32px !important; }
@@ -2431,19 +2731,14 @@
     /* Hero tighter */
     .hero { padding: 72px 16px 40px !important; }
     .hero-headline { font-size: clamp(34px, 10vw, 46px) !important; }
-    .hero-sub-headline { font-size: clamp(16px, 4.5vw, 22px) !important; }
-    .hero-desc { font-size: 15px !important; margin-bottom: 20px !important; }
-    .btn-primary { width: 100% !important; justify-content: center !important; font-size: 15px !important; padding: 16px 24px !important; }
+    .hero-sub-headline { font-size: clamp(19px, 4.5vw, 25px) !important; }
+    .hero-desc { font-size: 18px !important; margin-bottom: 20px !important; }
+    .btn-primary { width: 100% !important; justify-content: center !important; font-size: 18px !important; padding: 16px 24px !important; }
     .hero-price { font-size: 12px !important; }
     .media-logos { display: none !important; }
     .trusted-badge { font-size: 11px !important; padding: 6px 14px !important; }
 
-    /* What's Inside cards — images already hidden at 900px */
-    .wi-content { padding: 20px 16px !important; }
-    .wi-title { font-size: 18px !important; }
-    .wi-desc { font-size: 14px !important; }
-    .wi-bullets li { font-size: 13px !important; }
-
+    /* What's Inside cards — compact on small screens */
     /* Section padding */
     .container { padding: 0 16px !important; }
     section { padding: 48px 0 !important; }
@@ -2495,25 +2790,23 @@
 <!-- NAV -->
 <div class="nav-bar">
   <div class="nav-inner">
-    <a href="https://ai.theblueprint.training/index-light-v2.html" class="nav-logo">
+    <a href="https://ai.theblueprint.training/index.html" class="nav-logo">
       <img src="assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
     </a>
 
     <div class="nav-links">
 
-      <a href="https://ai.theblueprint.training/blueprint-about-light.html" class="nav-item-link">About</a>
+      <a href="https://ai.theblueprint.training/about.html" class="nav-item-link">About</a>
 
-      <a href="https://ai.theblueprint.training/blueprint-results-light.html" class="nav-item-link">Results</a>
+      <a href="https://ai.theblueprint.training/reviews.html" class="nav-item-link">Results</a>
 
-      <a href="https://ai.theblueprint.training/blueprint-program-light.html" class="nav-item-link">Program</a>
-
-      <a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html" class="nav-item-link">Knowledge</a>
+      <a href="https://ai.theblueprint.training/program.html" class="nav-item-link">Program</a>
 
     </div>
 
     <div class="nav-right">
       <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
-      <a href="#pricing" class="nav-cta-btn">Get Started</a>
+      <a class="nav-cta-btn" href="https://ai.theblueprint.training/get-started">Become A Member</a>
     </div>
 
     <!-- Mobile nav controls -->
@@ -2521,7 +2814,7 @@
       <button class="mobile-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-      <a href="#pricing" class="mobile-cta-btn">Get Started</a>
+      <a href="https://ai.theblueprint.training/get-started" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
     </div>
 
   </div>
@@ -2531,28 +2824,24 @@
 <div id="mobileMenu" class="mobile-menu-overlay">
   <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
   <nav class="mobile-menu-nav">
-    <a href="https://ai.theblueprint.training/index-light-v2.html">Home</a>
-    <a href="https://ai.theblueprint.training/blueprint-about-light.html">About</a>
-    <a href="https://ai.theblueprint.training/blueprint-results-light.html">Results</a>
-    <a href="https://ai.theblueprint.training/blueprint-program-light.html">Program</a>
-    <a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html">Knowledge</a>
+    <a href="https://ai.theblueprint.training/index.html">Home</a>
+    <a href="https://ai.theblueprint.training/about.html">About</a>
+    <a href="https://ai.theblueprint.training/reviews.html">Results</a>
+    <a href="https://ai.theblueprint.training/program.html">Program</a>
     <a href="https://www.skool.com/the-blueprint-training">Login</a>
   </nav>
   <div class="mobile-menu-socials">
-    <a href="https://www.youtube.com/@RyanStewartMarketing" target="_blank" aria-label="YouTube">
+    <a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg>
     </a>
     <a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg>
     </a>
-    <a href="https://x.com/raboratory" target="_blank" aria-label="X / Twitter">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="#fff"/></svg>
-    </a>
     <a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg>
     </a>
   </div>
-  <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="mobile-menu-cta">Get Started — $199/mo</a>
+  <a href="https://ai.theblueprint.training/get-started.html" class="mobile-menu-cta">Get Started - $199/mo</a>
 </div>
 
 
@@ -2562,20 +2851,18 @@
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
 
-  <div class="trusted-badge">Trusted by 1,000+ Agency Owners — 9 Years Running</div>
+  <div class="trusted-badge">3,000+ Agencies Trained Over 9 Years</div>
 
   <h1 class="hero-headline">
-    The One-Person Agency.
+    Get <span class="blueprint-text">"The Blueprint"</span> For Building<br>A 7 Figure Agency In 2026.
   </h1>
 
-  <p class="hero-sub-headline">Build a 7-figure agency with no employees.</p>
-
   <p class="hero-desc">
-    Learn how to build a high-profit marketing agency using proven AI workflows.
+    Join the movement of agencies dedicated to getting better results for their clients, without sacrificing profits or personal freedom.
   </p>
 
   <div class="hero-cta-group">
-    <a href="https://blueprint.spiffy.co/checkout/one-person-agency" class="btn-primary">Get Instant Access</a>
+    <a href="https://blueprint.spiffy.co/checkout/one-person-agency" class="btn-primary">Become A Member</a>
     <p class="hero-price"><span style="text-decoration:line-through;opacity:0.6;">$299/mo</span> &nbsp;<strong>$199/mo</strong> — Limited Time Sale</p>
   </div>
   <div class="hero-ticker-wrap">
@@ -2612,106 +2899,42 @@
 <!-- THE SHIFT -->
 <section class="shift">
   <div class="container">
-    <h2 class="section-title" style="text-align:center;">The agency model is being <br>rebuilt from scratch.</h2>
-    <p class="section-body" style="margin-bottom: 48px; text-align:center; max-width:700px; margin-left:auto; margin-right:auto;">Jobs that once required a team of 5 will roll up to a single operator who understands how to build, deploy, and manage AI agents.</p>
+    <h2 class="section-title" style="text-align:center;">Most agencies are stuck using<br>an outdated operating system.</h2>
+    <p class="section-body" style="margin-bottom: 48px; text-align:center; max-width:700px; margin-left:auto; margin-right:auto;">Running an agency doesn't have to be like herding cats. There's a way to deliver a great service for your clients, while building a business you love. The Blueprint is a proven system to regain your time, profits and sanity.</p>
 
-    <table class="cmp-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th class="cmp-old">The Old Agency</th>
-          <th class="cmp-new">The One-Person Agency</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Team</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Hire a PM, writer, link builder, VA</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> <strong>You + AI agents</strong> running the entire operation</td>
-        </tr>
-        <tr>
-          <td>Execution</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Hope they do their job — manage up, manage down</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Every workflow <strong>automated, repeatable, consistent</strong></td>
-        </tr>
-        <tr>
-          <td>Margins</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Watch margins disappear as headcount grows</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Near-zero overhead — <strong>keep 90%+</strong> of what you earn</td>
-        </tr>
-        <tr>
-          <td>Training</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Scramble to train new hires every quarter</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Agents trained once on your SOPs, <strong>available 24/7</strong></td>
-        </tr>
-        <tr>
-          <td>Sales Pitch</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Pitch "our team of 15 experts" to win deals</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Pitch <strong>"I built the system"</strong> — clients want results</td>
-        </tr>
-        <tr>
-          <td>Your Time</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Spend more time managing people than doing work</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Focus on <strong>strategy, sales, and client relationships</strong></td>
-        </tr>
-        <tr>
-          <td>Scale</td>
-          <td class="cmp-old-cell"><span class="cmp-x">✕</span> Revenue capped by how many people you can hire</td>
-          <td class="cmp-new-cell"><span class="cmp-check">✓</span> Revenue scales with <strong>your stack, not your payroll</strong></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Mobile accordion version of comparison -->
-    <div class="shift-accordion">
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Team</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Hire a PM, writer, link builder, VA</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> <strong>You + AI agents</strong> running the entire operation</div>
-        </div>
+    <div class="cmp-header-row">
+      <div class="cmp-header-old">Traditional Agencies</div>
+      <div class="cmp-header-new">Blueprint Operating System</div>
+      <div class="cmp-header-combined">Traditional Agencies vs Blueprint Agencies</div>
+    </div>
+    <div class="cmp-rows">
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are working non-stop, yet you never get ahead</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>SOPs, templates, and workflows</strong> that let your business run without you in every seat</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Execution</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Hope they do their job — manage up, manage down</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Every workflow <strong>automated, repeatable, consistent</strong></div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are not taking home enough money for your effort</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span>A <strong>lean operating model</strong> built to protect your margins as you grow</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Margins</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Watch margins disappear as headcount grows</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Near-zero overhead — <strong>keep 90%+</strong> of what you earn</div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are stuck doing client work, not CEO work</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>Step-by-step training</strong> to build a team and systems that deliver without you</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Training</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Scramble to train new hires every quarter</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Agents trained once on your SOPs, <strong>available 24/7</strong></div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are struggling to find leads and close more deals</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span>A <strong>proven sales system</strong> with proposals, funnels, and case studies that close</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Sales Pitch</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Pitch "our team of 15 experts" to win deals</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Pitch <strong>"I built the system"</strong> — clients want results</div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You are constantly hiring and churning through people</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>Documented processes</strong> so your team delivers consistent results from day one</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Your Time</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Spend more time managing people than doing work</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Focus on <strong>strategy, sales, and client relationships</strong></div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You can't grow past a certain revenue ceiling</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>AI-powered tools and systems</strong> that scale without adding headcount</span></div>
       </div>
-      <div class="shift-acc-item" onclick="this.classList.toggle('open')">
-        <div class="shift-acc-head"><span>Scale</span><span class="shift-acc-arrow">+</span></div>
-        <div class="shift-acc-body">
-          <div class="shift-acc-old"><span class="cmp-x">✕</span> Revenue capped by how many people you can hire</div>
-          <div class="shift-acc-new"><span class="cmp-check">✓</span> Revenue scales with <strong>your stack, not your payroll</strong></div>
-        </div>
+      <div class="cmp-row">
+        <div class="cmp-pain"><span class="cmp-icon cmp-icon-x">✕</span><span>You feel alone, overwhelmed, and burnt out on the business</span></div>
+        <div class="cmp-fix"><span class="cmp-icon cmp-icon-check">✓</span><span><strong>Live coaching and a community</strong> of 3,000+ agency owners who get it</span></div>
       </div>
     </div>
   </div>
@@ -2720,109 +2943,300 @@
 <!-- WHAT'S INSIDE -->
 <section class="modules" id="curriculum">
   <div class="container">
-    <p class="section-label">What's Inside</p>
-    <h2 class="section-title">Everything you need to <br><span>automate your agency.</span></h2>
-    <p class="section-body">One membership gives you the full stack — training, agents, live coaching, and a community of agency owners doing exactly what you're doing.</p>
+    <h2 class="section-title" style="color: #0B0E1A;">An entire ecosystem proven to grow your agency.</h2>
+    <p class="section-body">Blueprint membership gives you access to all trainings, AI agents, templates and community. Plus, it gives you access to updates and future releases.</p>
 
-    <div class="whats-inside-grid">
-
-      <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/video training.svg" alt="Training Videos" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">01</div>
-          <div class="wi-title">Training Videos</div>
-          <p class="wi-desc">Step-by-step video walkthroughs for every agent, every workflow, and every part of the automation stack. Follow along and have your agency running on AI within days — not months.</p>
-          <ul class="wi-bullets">
-            <li>Full modules covering every agency function</li>
-            <li>Screen-recorded agent build-outs you can copy exactly</li>
-            <li>Updated as Claude and the toolset evolves</li>
-          </ul>
-        </div>
+    <div class="dash-hint-wrap" style="position:relative;">
+      <div class="dash-hint" id="dashHint" style="position:relative;">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 1.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v8.5h1V6.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V12h1V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V14h1v-2.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V17c0 3.87-3.13 7-7 7h-1c-2.5 0-4.72-1.3-6-3.27L4.45 14.4a1.5 1.5 0 0 1 2.1-2.1L8 14V1.5z"/></svg>
+        Click to explore what's inside
+        <div class="dash-hint-arrow"></div>
       </div>
-
-      <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/SOPs.svg" alt="SOPs + Templates" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">02</div>
-          <div class="wi-title">SOPs + Templates</div>
-          <p class="wi-desc">Ready-to-use standard operating procedures and templates for every agency function. Built from 9 years of real agency work and refined by 1,000+ Blueprint members.</p>
-          <ul class="wi-bullets">
-            <li>Proposal, onboarding, and reporting templates</li>
-            <li>Client-facing deliverable frameworks</li>
-            <li>Continuously updated as best practices evolve</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/Live Training Sessions.svg" alt="Live Training Sessions" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">03</div>
-          <div class="wi-title">Live Training Sessions</div>
-          <p class="wi-desc">Get direct access to Ryan Stewart and David Krevitt every week. Bring your real questions, get real answers — live on screen with the people who built and run this system.</p>
-          <ul class="wi-bullets">
-            <li>Weekly sessions with Ryan Stewart & David Krevitt</li>
-            <li>Bring your agency's live challenges to the call</li>
-            <li>All sessions recorded and archived for replay</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/private community.svg" alt="Private Community" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">04</div>
-          <div class="wi-title">Private Community</div>
-          <p class="wi-desc">Join a private community of agency owners building the one-person agency alongside you. Share wins, troubleshoot agents, and stay ahead of every new development in AI-powered SEO.</p>
-          <ul class="wi-bullets">
-            <li>Private community</li>
-            <li>Peer support from 1,000+ active agency owners</li>
-            <li>First access to new agents and Blueprint updates</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/ai agents.svg" alt="Plug & Play AI Agents" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">05</div>
-          <div class="wi-title">Plug & Play AI Agents</div>
-          <p class="wi-desc">Pre-built AI agents trained on Blueprint SOPs that handle real agency work — proposals, audits, onboarding, reporting, and more. Deploy them in minutes, not weeks.</p>
-          <ul class="wi-bullets">
-            <li>Full suite of AI agents covering every agency function</li>
-            <li>Built on Claude with 9 years of proven SOPs</li>
-            <li>Updated automatically as AI capabilities evolve</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/support.svg" alt="24/7 Support" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">06</div>
-          <div class="wi-title">24/7 Support</div>
-          <p class="wi-desc">Never get stuck. Get help from the Blueprint team and community around the clock — whether it's a technical question, agent troubleshooting, or strategy advice.</p>
-          <ul class="wi-bullets">
-            <li>Direct access to the Blueprint team</li>
-            <li>Community-powered troubleshooting</li>
-            <li>Fast response times on all questions</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
+    <div class="dash-window">
+      <!-- Sidebar -->
+      <div class="dash-sidebar">
+        <div class="dash-sidebar-header">
+          <div class="dash-sidebar-logo">B</div>
+          <div class="dash-sidebar-brand">Blueprint Training<small>Member Dashboard</small></div>
+        </div>
+        <div class="dash-sidebar-label">Platform</div>
+        <div class="dash-nav-item active" onclick="switchDashPanel('training', this)">
+          <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+          Training Videos
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('sops', this)">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          SOPs + Templates
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('agents', this)">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+          AI Agents
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('community', this)">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Community
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('calls', this)">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          Live Calls
+        </div>
+        <div class="dash-nav-item" onclick="switchDashPanel('support', this)">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Support
+        </div>
+        <div class="dash-sidebar-spacer"></div>
+        <div class="dash-sidebar-footer">
+          <div class="dash-sidebar-avatar">Y</div>
+          <span class="dash-sidebar-user">Your Agency</span>
+        </div>
+      </div>
+
+      <!-- Mobile tab bar (visible < 900px) -->
+      <div class="dash-mobile-tabs">
+        <div class="dash-mobile-tab active" onclick="switchDashPanel('training', this)">Training Videos</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('sops', this)">SOPs + Templates</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('agents', this)">AI Agents</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('community', this)">Community</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('calls', this)">Live Calls</div>
+        <div class="dash-mobile-tab" onclick="switchDashPanel('support', this)">Support</div>
+      </div>
+      <div class="dash-mobile-hint" id="dashMobileHint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        Tap the tabs above to explore what's included
+      </div>
+
+      <!-- Main content panels -->
+      <div class="dash-main">
+        <div class="dash-titlebar">
+          <div class="dash-dots"><span></span><span></span><span></span></div>
+          <span class="dash-titlebar-text" id="dashTitleText">Training Videos</span>
+        </div>
+
+        <!-- TRAINING VIDEOS -->
+        <div class="dash-panel active" id="panel-training">
+          <h3>Training Library</h3>
+          <p class="dash-sub">42 videos across 8 modules. Pick up where you left off.</p>
+          <div class="dash-video-grid">
+            <div class="dash-video">
+              <div class="dash-video-thumb"><div class="dash-video-play"></div></div>
+              <div class="dash-video-bar"><span style="width:70%"></span></div>
+              <div class="dash-video-info"><strong>Module 1: Agency Positioning</strong><small>12 lessons &bull; 2h 14m</small></div>
+            </div>
+            <div class="dash-video">
+              <div class="dash-video-thumb"><div class="dash-video-play"></div></div>
+              <div class="dash-video-bar"><span style="width:45%"></span></div>
+              <div class="dash-video-info"><strong>Module 2: Offer Design & Pricing</strong><small>9 lessons &bull; 1h 48m</small></div>
+            </div>
+            <div class="dash-video">
+              <div class="dash-video-thumb"><div class="dash-video-play"></div></div>
+              <div class="dash-video-bar"><span style="width:0%"></span></div>
+              <div class="dash-video-info"><strong>Module 3: Sales System</strong><small>11 lessons &bull; 2h 32m</small></div>
+            </div>
+            <div class="dash-video">
+              <div class="dash-video-thumb"><div class="dash-video-play"></div></div>
+              <div class="dash-video-bar"><span style="width:0%"></span></div>
+              <div class="dash-video-info"><strong>Module 4: Client Onboarding</strong><small>8 lessons &bull; 1h 20m</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOPs + TEMPLATES -->
+        <div class="dash-panel" id="panel-sops">
+          <h3>SOPs & Templates</h3>
+          <p class="dash-sub">128 documents ready to use. Built from 9 years of agency work.</p>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon tmpl">T</div>
+            <div class="dash-sop-text"><strong>Client Proposal Template</strong><small>Google Docs &bull; Updated 3 days ago</small></div>
+            <span class="dash-sop-badge pop">Popular</span>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon doc">S</div>
+            <div class="dash-sop-text"><strong>SEO Audit SOP</strong><small>PDF &bull; Updated 1 week ago</small></div>
+            <span class="dash-sop-badge new">New</span>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon sheet">R</div>
+            <div class="dash-sop-text"><strong>Monthly Reporting Template</strong><small>Google Sheets &bull; Updated 2 weeks ago</small></div>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon tmpl">O</div>
+            <div class="dash-sop-text"><strong>Client Onboarding Checklist</strong><small>Notion &bull; Updated 5 days ago</small></div>
+            <span class="dash-sop-badge pop">Popular</span>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon doc">L</div>
+            <div class="dash-sop-text"><strong>Link Building Outreach SOP</strong><small>Google Docs &bull; Updated 1 week ago</small></div>
+          </div>
+          <div class="dash-sop-item">
+            <div class="dash-sop-icon sheet">P</div>
+            <div class="dash-sop-text"><strong>Project Plan Template</strong><small>Google Sheets &bull; Updated 4 days ago</small></div>
+            <span class="dash-sop-badge new">New</span>
+          </div>
+        </div>
+
+        <!-- AI AGENTS -->
+        <div class="dash-panel" id="panel-agents">
+          <h3>AI Agent Suite</h3>
+          <p class="dash-sub">Pre-built agents trained on Blueprint SOPs. Deploy in minutes.</p>
+          <div class="dash-agent-grid">
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+              <h4>Proposal Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><path d="M20 8v6M23 11h-6"></path></svg></div>
+              <h4>Onboarding Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+              <h4>SEO Audit Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
+              <h4>Project Plan Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
+              <h4>Reporting Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+            <div class="dash-agent">
+              <div class="dash-agent-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></div>
+              <h4>Content Agent</h4>
+              <span class="dash-agent-status">Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMMUNITY -->
+        <div class="dash-panel" id="panel-community">
+          <h3>Community Feed</h3>
+          <p class="dash-sub">3,000+ agency owners. 128 online now.</p>
+          <div class="dash-post">
+            <div class="dash-post-avatar" style="background:#F7C600;">S</div>
+            <div class="dash-post-body">
+              <div class="dash-post-header"><strong>Sarah M.</strong><span>2 hours ago</span></div>
+              <p>Just closed a $4k/mo retainer using the Blueprint proposal template. Third one this month. This system works.</p>
+              <div class="dash-post-reactions"><span>12</span><span>4 replies</span></div>
+            </div>
+          </div>
+          <div class="dash-post">
+            <div class="dash-post-avatar" style="background:#60A5FA;">T</div>
+            <div class="dash-post-body">
+              <div class="dash-post-header"><strong>Tom K.</strong><span>4 hours ago</span></div>
+              <p>Ran the SEO audit agent on a prospect's site before the call. Walked in with a full breakdown. They signed on the spot.</p>
+              <div class="dash-post-reactions"><span>8</span><span>6 replies</span></div>
+            </div>
+          </div>
+          <div class="dash-post">
+            <div class="dash-post-avatar" style="background:#4ADE80;">A</div>
+            <div class="dash-post-body">
+              <div class="dash-post-header"><strong>Alex R.</strong><span>6 hours ago</span></div>
+              <p>Finally hit $30k MRR. Started at $8k when I joined 6 months ago. The positioning module changed everything for me.</p>
+              <div class="dash-post-reactions"><span>24</span><span>11 replies</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIVE CALLS -->
+        <div class="dash-panel" id="panel-calls">
+          <h3>Live Calls</h3>
+          <p class="dash-sub">2x per week with Ryan Stewart & David Krevitt.</p>
+          <div class="dash-call">
+            <h4>Wednesday Strategy Call <span class="dash-live">LIVE</span></h4>
+            <p>May 14, 2026 at 12:00 PM EST</p>
+            <p>Topic: Pricing your services for maximum margin</p>
+            <div class="dash-call-attendees">
+              <span style="background:#F7C600;">R</span>
+              <span style="background:#60A5FA;">D</span>
+              <span style="background:#4ADE80;">M</span>
+              <span style="background:#C084FC;">J</span>
+              <small>+38 attending</small>
+            </div>
+          </div>
+          <div class="dash-call">
+            <h4>Friday Implementation Call</h4>
+            <p>May 16, 2026 at 1:00 PM EST</p>
+            <p>Topic: Setting up your first AI agent workflow</p>
+            <div class="dash-call-attendees">
+              <span style="background:#F7C600;">R</span>
+              <span style="background:#60A5FA;">D</span>
+              <small>+22 registered</small>
+            </div>
+          </div>
+          <div class="dash-call" style="opacity: 0.5;">
+            <h4>Wednesday Strategy Call</h4>
+            <p>May 21, 2026 at 12:00 PM EST</p>
+            <p>Topic: TBD</p>
+          </div>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="dash-panel" id="panel-support">
+          <h3>Q&A Support</h3>
+          <p class="dash-sub">Ask anything. Get answers from Ryan and the team.</p>
+          <div class="dash-qa">
+            <div class="dash-qa-header">
+              <div class="dash-qa-avatar" style="background:#60A5FA;">M</div>
+              <strong>Mike D.</strong>
+              <span class="dash-qa-badge answered">Answered</span>
+            </div>
+            <p>How do you handle scope creep with retainer clients? We keep getting asked for stuff outside the SOW.</p>
+            <div class="dash-qa-reply">
+              <strong>Ryan Stewart</strong>
+              <p>Great question. The key is setting boundaries in the onboarding process. Check out the Client Onboarding SOP, specifically the "scope lock" section. We walk through exactly how to frame this in the kickoff call so it never becomes an issue.</p>
+            </div>
+          </div>
+          <div class="dash-qa">
+            <div class="dash-qa-header">
+              <div class="dash-qa-avatar" style="background:#4ADE80;">J</div>
+              <strong>Jessica T.</strong>
+              <span class="dash-qa-badge pending">Pending</span>
+            </div>
+            <p>What's the best way to transition from hourly billing to retainer packages without losing current clients?</p>
+          </div>
+          <div class="dash-qa">
+            <div class="dash-qa-header">
+              <div class="dash-qa-avatar" style="background:#C084FC;">K</div>
+              <strong>Kevin L.</strong>
+              <span class="dash-qa-badge answered">Answered</span>
+            </div>
+            <p>Do you recommend niching down to one industry or staying broad?</p>
+          </div>
+        </div>
+
+      </div><!-- /dash-main -->
+    </div>
+
+    <script>
+    function switchDashPanel(panel, el) {
+      document.querySelectorAll('.dash-nav-item').forEach(n => n.classList.remove('active'));
+      document.querySelectorAll('.dash-mobile-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('active'));
+      var panels = ['training','sops','agents','community','calls','support'];
+      var idx = panels.indexOf(panel);
+      if (el.classList.contains('dash-mobile-tab')) {
+        el.classList.add('active');
+        if (idx >= 0) document.querySelectorAll('.dash-nav-item')[idx].classList.add('active');
+      } else {
+        el.classList.add('active');
+        if (idx >= 0) document.querySelectorAll('.dash-mobile-tab')[idx].classList.add('active');
+      }
+      document.getElementById('panel-' + panel).classList.add('active');
+      var titles = { training:'Training Videos', sops:'SOPs + Templates', agents:'AI Agents', community:'Community', calls:'Live Calls', support:'Support' };
+      document.getElementById('dashTitleText').textContent = titles[panel] || '';
+      // Hide interactive hints after first click
+      var hint = document.getElementById('dashHint');
+      if (hint) hint.classList.add('hidden');
+      var mHint = document.getElementById('dashMobileHint');
+      if (mHint) mHint.classList.add('hidden');
+    }
+    </script>
   </div>
 </section>
 
@@ -2830,9 +3244,69 @@
 
 <!-- AGENTS SHOWCASE -->
 <section class="agents">
+  <div class="agents-circuit">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- Horizontal lines -->
+      <line x1="0" y1="100" x2="400" y2="100" stroke="#F7C600" stroke-width="1"/>
+      <line x1="500" y1="100" x2="1200" y2="100" stroke="#F7C600" stroke-width="1"/>
+      <line x1="0" y1="300" x2="300" y2="300" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="380" y1="300" x2="820" y2="300" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="900" y1="300" x2="1200" y2="300" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="0" y1="500" x2="550" y2="500" stroke="#F7C600" stroke-width="1"/>
+      <line x1="650" y1="500" x2="1200" y2="500" stroke="#F7C600" stroke-width="1"/>
+      <line x1="0" y1="700" x2="350" y2="700" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="450" y1="700" x2="1200" y2="700" stroke="#4A9FD5" stroke-width="1"/>
+      <!-- Vertical lines -->
+      <line x1="200" y1="0" x2="200" y2="300" stroke="#F7C600" stroke-width="1"/>
+      <line x1="200" y1="380" x2="200" y2="800" stroke="#F7C600" stroke-width="1"/>
+      <line x1="600" y1="0" x2="600" y2="200" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="600" y1="280" x2="600" y2="500" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="600" y1="580" x2="600" y2="800" stroke="#4A9FD5" stroke-width="1"/>
+      <line x1="1000" y1="0" x2="1000" y2="400" stroke="#F7C600" stroke-width="1"/>
+      <line x1="1000" y1="480" x2="1000" y2="800" stroke="#F7C600" stroke-width="1"/>
+      <!-- Junction nodes -->
+      <circle cx="200" cy="100" r="4" fill="#F7C600" opacity="0.6"/>
+      <circle cx="600" cy="300" r="4" fill="#4A9FD5" opacity="0.6"/>
+      <circle cx="1000" cy="100" r="4" fill="#F7C600" opacity="0.6"/>
+      <circle cx="200" cy="500" r="4" fill="#F7C600" opacity="0.6"/>
+      <circle cx="600" cy="500" r="4" fill="#4A9FD5" opacity="0.6"/>
+      <circle cx="1000" cy="500" r="4" fill="#F7C600" opacity="0.6"/>
+      <circle cx="200" cy="700" r="4" fill="#4A9FD5" opacity="0.6"/>
+      <circle cx="600" cy="700" r="4" fill="#4A9FD5" opacity="0.6"/>
+      <circle cx="1000" cy="700" r="4" fill="#F7C600" opacity="0.6"/>
+      <!-- Smaller accent nodes -->
+      <circle cx="400" cy="100" r="3" fill="#F7C600" opacity="0.4"/>
+      <circle cx="500" cy="100" r="3" fill="#F7C600" opacity="0.4"/>
+      <circle cx="300" cy="300" r="3" fill="#4A9FD5" opacity="0.4"/>
+      <circle cx="820" cy="300" r="3" fill="#4A9FD5" opacity="0.4"/>
+      <circle cx="550" cy="500" r="3" fill="#F7C600" opacity="0.4"/>
+      <circle cx="650" cy="500" r="3" fill="#F7C600" opacity="0.4"/>
+      <circle cx="350" cy="700" r="3" fill="#4A9FD5" opacity="0.4"/>
+      <circle cx="450" cy="700" r="3" fill="#4A9FD5" opacity="0.4"/>
+      <!-- Diagonal accent lines -->
+      <line x1="400" y1="100" x2="600" y2="300" stroke="#F7C600" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <line x1="600" y1="300" x2="1000" y2="100" stroke="#4A9FD5" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <line x1="200" y1="500" x2="600" y2="300" stroke="#F7C600" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <line x1="600" y1="500" x2="1000" y2="700" stroke="#4A9FD5" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <line x1="200" y1="700" x2="600" y2="500" stroke="#F7C600" stroke-width="0.8" stroke-dasharray="4,6"/>
+      <!-- Pulsing node animations -->
+      <circle cx="600" cy="300" r="8" fill="none" stroke="#4A9FD5" stroke-width="1" opacity="0.3">
+        <animate attributeName="r" values="8;16;8" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="200" cy="500" r="8" fill="none" stroke="#F7C600" stroke-width="1" opacity="0.3">
+        <animate attributeName="r" values="8;16;8" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1000" cy="500" r="8" fill="none" stroke="#F7C600" stroke-width="1" opacity="0.3">
+        <animate attributeName="r" values="8;16;8" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
   <div class="container">
-    <h2 class="section-title" style="text-align:center;">A Full Agent Stack Trained On <br><span>A Proven Framework.</span></h2>
-    <p style="text-align:center; font-size:17px; color:var(--gray); max-width:640px; margin:0 auto 48px; line-height:1.7;">These aren't generic ChatGPT prompts. Every agent is built on 9 years of proven Blueprint operating procedures.</p>
+    <h2 class="section-title" style="text-align:center; color:#FFFFFF;">The SEO Sprints System.<br><span class="electric-text">Now Supercharged With AI.</span></h2>
+    <p style="text-align:center; font-size:17px; color:rgba(255,255,255,0.75); max-width:640px; margin:0 auto 48px; line-height:1.7;">Your membership comes with access to a full suite of AI Agents built specifically to execute The Blueprint framework. Simply download and install into Claude and customize to your agency branding and guidelines.</p>
 
     <div class="network-graph">
         <svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:0 auto;display:block;">
@@ -2877,57 +3351,64 @@
 
           <!-- YOU — center -->
           <g class="center-node" style="transform-origin:350px 250px;">
-            <circle cx="350" cy="250" r="52" fill="#F7C600"/>
-            <text x="350" y="257" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="28" fill="#0B0E1A" font-weight="700">YOU</text>
+            <circle cx="350" cy="250" r="62" fill="#F7C600"/>
+            <text x="350" y="259" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="34" fill="#0B0E1A" font-weight="700">YOU</text>
           </g>
 
           <!-- Onboarding — upper left -->
           <g class="agent-node-1" style="transform-origin:185px 68px;">
-            <circle cx="185" cy="68" r="42" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
-            <text x="185" y="62" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="16" fill="#F7C600" font-weight="700">🤝</text>
-            <text x="185" y="82" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#fff" font-weight="600">ONBOARDING</text>
+            <circle cx="185" cy="68" r="54" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
+            <text x="185" y="60" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="20" fill="#F7C600" font-weight="700">🤝</text>
+            <text x="185" y="76" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">ONBOARDING</text>
+            <text x="185" y="89" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">AGENT</text>
           </g>
 
           <!-- Project Mgr — upper right -->
           <g class="agent-node-2" style="transform-origin:540px 55px;">
-            <circle cx="540" cy="55" r="42" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
-            <text x="540" y="49" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="16" fill="#F7C600" font-weight="700">📋</text>
-            <text x="540" y="69" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">PROJECT MGR</text>
+            <circle cx="540" cy="55" r="54" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
+            <text x="540" y="43" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="20" fill="#F7C600" font-weight="700">📋</text>
+            <text x="540" y="60" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">PROJECT MGR</text>
+            <text x="540" y="73" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">AGENT</text>
           </g>
 
           <!-- Reporting — far right -->
           <g class="agent-node-3" style="transform-origin:640px 210px;">
-            <circle cx="640" cy="210" r="40" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
-            <text x="640" y="204" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="16" fill="#F7C600" font-weight="700">📊</text>
-            <text x="640" y="224" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#fff" font-weight="600">REPORTING</text>
+            <circle cx="640" cy="210" r="54" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
+            <text x="640" y="198" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="20" fill="#F7C600" font-weight="700">📊</text>
+            <text x="640" y="215" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">REPORTING</text>
+            <text x="640" y="228" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">AGENT</text>
           </g>
 
           <!-- Link Builder — lower right -->
           <g class="agent-node-4" style="transform-origin:590px 410px;">
-            <circle cx="590" cy="410" r="44" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
-            <text x="590" y="404" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="16" fill="#F7C600" font-weight="700">🔗</text>
-            <text x="590" y="424" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">LINK BUILDER</text>
+            <circle cx="590" cy="410" r="54" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
+            <text x="590" y="398" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="20" fill="#F7C600" font-weight="700">🔗</text>
+            <text x="590" y="415" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">LINK BUILDING</text>
+            <text x="590" y="428" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">AGENT</text>
           </g>
 
           <!-- Content — bottom center -->
           <g class="agent-node-5" style="transform-origin:310px 440px;">
-            <circle cx="310" cy="440" r="42" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
-            <text x="310" y="434" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="16" fill="#F7C600" font-weight="700">✍️</text>
-            <text x="310" y="454" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#fff" font-weight="600">CONTENT</text>
+            <circle cx="310" cy="440" r="54" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
+            <text x="310" y="428" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="20" fill="#F7C600" font-weight="700">✍️</text>
+            <text x="310" y="445" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">CONTENT</text>
+            <text x="310" y="458" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">AGENT</text>
           </g>
 
           <!-- Local SEO — lower left -->
           <g class="agent-node-6" style="transform-origin:95px 380px;">
-            <circle cx="95" cy="380" r="40" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
-            <text x="95" y="374" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="16" fill="#F7C600" font-weight="700">📍</text>
-            <text x="95" y="394" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#fff" font-weight="600">LOCAL SEO</text>
+            <circle cx="95" cy="380" r="54" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
+            <text x="95" y="368" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="20" fill="#F7C600" font-weight="700">📍</text>
+            <text x="95" y="385" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">LOCAL SEO</text>
+            <text x="95" y="398" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">AGENT</text>
           </g>
 
           <!-- Tech SEO — far left -->
           <g class="agent-node-7" style="transform-origin:60px 195px;">
-            <circle cx="60" cy="195" r="42" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
-            <text x="60" y="189" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="16" fill="#F7C600" font-weight="700">🔬</text>
-            <text x="60" y="209" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#fff" font-weight="600">TECH SEO</text>
+            <circle cx="60" cy="195" r="54" fill="#1E3A5F" stroke="#F7C600" stroke-width="2.5"/>
+            <text x="60" y="183" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="20" fill="#F7C600" font-weight="700">🔬</text>
+            <text x="60" y="200" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">TECH SEO</text>
+            <text x="60" y="213" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fff" font-weight="600">AGENT</text>
           </g>
         </svg>
     </div>
@@ -2939,31 +3420,9 @@
   <div class="container">
 
     <!-- Header -->
-    <div class="proof-header">
-      <div>
-        <h2 class="section-title">Real agencies. <br><span>Real results.</span></h2>
-        <p class="section-body" style="margin-top:16px;">Since 2015, Blueprint members have used these exact systems to land clients, scale revenue, and build agencies they're proud of. These are just a few of the hundreds of wins shared every week in our community.</p>
-      </div>
-      <div class="proof-header-right">
-        <div class="proof-stats-grid">
-          <div class="proof-stat-box">
-            <div class="proof-stat-num">9+</div>
-            <div class="proof-stat-label">Years in business</div>
-          </div>
-          <div class="proof-stat-box">
-            <div class="proof-stat-num">5,000+</div>
-            <div class="proof-stat-label">Agencies trained</div>
-          </div>
-          <div class="proof-stat-box">
-            <div class="proof-stat-num">1,000+</div>
-            <div class="proof-stat-label">Client reviews</div>
-          </div>
-          <div class="proof-stat-box">
-            <div class="proof-stat-num">$50M+</div>
-            <div class="proof-stat-label">Revenue generated</div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <h2 class="section-title" style="color: #0B0E1A;">Real agencies. Real results.</h2>
+      <p class="section-body" style="margin-top:16px; max-width:700px;">Since 2015, Blueprint members have used these exact systems to land clients, scale revenue, and build agencies they're proud of.<br>These are just a few of the hundreds of wins shared every week in our community.</p>
     </div>
 
     <!-- Slack-style win wall -->
@@ -3101,7 +3560,7 @@
 <section class="pricing" id="pricing">
   <div class="container">
     <p class="section-label">GET STARTED</p>
-    <h2 class="section-title">One investment. <span>Unlimited scale.</span></h2>
+    <h2 class="section-title">One investment. <span>Unlimited access.</span></h2>
 
     <div class="pricing-inner">
       <div class="pricing-card">
@@ -3118,11 +3577,13 @@
         </div>
 
         <ul class="pricing-features">
-          <li>Full suite of deploy-ready AI agents (Proposal, Onboarding, Project Plan, WQA, Local SEO, Content, Link Building, Reporting)</li>
-          <li>300+ video lessons — from Claude basics to advanced agent customization</li>
-          <li>Weekly live coaching with Blueprint coaches</li>
-          <li>Private Slack community — 1,000+ agency owners</li>
-          <li>All Blueprint SOPs updated for AI-first operations</li>
+          <li>Training suite with modules covering sales, fulfillment, leveraging AI and more</li>
+          <li>SOPs and template suite used by Ryan Stewart's 8 figure agency</li>
+          <li>AI Agent suite automating the full range of service delivery for SEO agencies</li>
+          <li>Private community of agency owners with 24/7 access</li>
+          <li>2x weekly live coaching calls with Ryan Stewart and David Krevitt</li>
+          <li>On-demand Q&amp;A support from the Blueprint team</li>
+          <li>All future updates, new agents, and releases included</li>
         </ul>
 
         <a href="https://blueprint.spiffy.co/checkout/one-person-agency" class="btn-pricing" id="btnEnroll">Get Instant Access — $199/mo</a>
@@ -3130,53 +3591,61 @@
       </div>
 
       <div class="pricing-breakdown">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gray); margin-bottom:8px;">What you're actually getting</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gray); margin-bottom:8px;">What you'll be able to do</div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">📈</div>
+          <div>
+            <div class="breakdown-title">Deliver better results for your clients</div>
+            <div class="breakdown-desc">Follow a proven fulfillment system that consistently drives measurable outcomes</div>
+          </div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">⚡</div>
+          <div>
+            <div class="breakdown-title">Streamline your entire service delivery</div>
+            <div class="breakdown-desc">SOPs and templates for every stage of the client lifecycle, from onboarding to reporting</div>
+          </div>
+        </div>
 
         <div class="breakdown-item">
           <div class="breakdown-icon">🤖</div>
           <div>
-            <div class="breakdown-title">9 Pre-Built AI Agents</div>
-            <div class="breakdown-desc">Proposal, Onboarding, Project Plan, WQA, Local SEO, Content, Link Building, and Reporting — trained on 10 years of Blueprint SOPs</div>
-          </div>
-        </div>
-
-        <div class="breakdown-item">
-          <div class="breakdown-icon">🎥</div>
-          <div>
-            <div class="breakdown-title">300+ Video Lessons</div>
-            <div class="breakdown-desc">From Claude basics (Chat, Cowork, Code) to building and customizing agents for your specific clients</div>
-          </div>
-        </div>
-
-        <div class="breakdown-item">
-          <div class="breakdown-icon">📋</div>
-          <div>
-            <div class="breakdown-title">Full SEO Sprint System</div>
-            <div class="breakdown-desc">6 sub-modules covering onboarding, WQA, local SEO, content, link building, and reporting — each with its own agent</div>
+            <div class="breakdown-title">Automate tedious tasks with done-for-you AI agents</div>
+            <div class="breakdown-desc">Deploy pre-built agents that handle proposals, audits, content, link building, and reporting</div>
           </div>
         </div>
 
         <div class="breakdown-item">
           <div class="breakdown-icon">💰</div>
           <div>
-            <div class="breakdown-title">Sales + Proposal Agent</div>
-            <div class="breakdown-desc">4-stage sales framework, 11 qualifying questions, and an agent that generates branded proposals from discovery call notes</div>
+            <div class="breakdown-title">Scope and price deals that prospects can't say no to</div>
+            <div class="breakdown-desc">Build proposals that sell using a proven framework and an AI agent that does the heavy lifting</div>
           </div>
         </div>
 
         <div class="breakdown-item">
-          <div class="breakdown-icon">🎓</div>
+          <div class="breakdown-icon">🎯</div>
           <div>
-            <div class="breakdown-title">Weekly Live Coaching + Slack Community</div>
-            <div class="breakdown-desc">Live Q&A with Blueprint coaches every week, plus a private Slack community of 1,000+ agency owners</div>
+            <div class="breakdown-title">Generate inbound leads and close with paid ads</div>
+            <div class="breakdown-desc">Run low-spend social ad campaigns that bring qualified prospects straight to you</div>
           </div>
         </div>
 
         <div class="breakdown-item">
-          <div class="breakdown-icon">📈</div>
+          <div class="breakdown-icon">👥</div>
           <div>
-            <div class="breakdown-title">Google Ads, Meta Ads, Acquisition (Coming Q3/Q4)</div>
-            <div class="breakdown-desc">Paid media and agency acquisition modules on the roadmap — included in your membership at no extra cost</div>
+            <div class="breakdown-title">Know exactly who to hire, where to find them, and how to pay them</div>
+            <div class="breakdown-desc">Build a lean team so you can pull yourself out of client services for good</div>
+          </div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">🏢</div>
+          <div>
+            <div class="breakdown-title">Become a true CEO</div>
+            <div class="breakdown-desc">Work on the business, not in it. The system, agents, and team do the rest.</div>
           </div>
         </div>
       </div>
@@ -3194,43 +3663,53 @@
     <div class="faq-accordion">
 
       <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do I need to be technical to use this?</div>
-        <div class="faq-answer">Not at all. If you can follow a recipe, you can follow these modules. Every agent is pre-built and we walk you through deployment step-by-step. No coding required.</div>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">When was this program last updated?</div>
+        <div class="faq-answer">Today. This is a living, breathing program. We are constantly updating trainings, SOPs, templates, and AI agents based on what's working right now. Nothing here is stagnant or out of date. When the industry shifts, we shift with it.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">I'm a beginner. Is this too advanced?</div>
+        <div class="faq-answer">Not at all. Many Blueprint members started from zero. The program walks you through positioning, offer design, how to land your first clients, and how to deliver results. You'll skip years of trial and error by following a system that's already been proven by thousands of agencies.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">I have an agency, will this still help?</div>
+        <div class="faq-answer">This is where it gets really powerful. If you're already doing the work, Blueprint gives you the systems to stop doing it all yourself. SOPs to delegate, templates to standardize, a hiring framework to build your team, and AI agents to automate the repetitive stuff. Most established members say they wish they had this years ago.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How is this different from other agency programs?</div>
+        <div class="faq-answer">Most programs teach theory. Blueprint gives you the actual tools. You get the same SOPs, templates, and processes Ryan uses to run his own 8-figure agency. On top of that, the AI agents automate real work, not just concepts. 9 years and 3,000+ agencies later, the results speak for themselves.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How do I get clients?</div>
+        <div class="faq-answer">The program covers both inbound and outbound in detail. You'll learn how to generate leads through content and low-spend paid ads on social, how to run a sales process that converts, and how to build proposals that close. Members regularly share wins from landing their first (or biggest) client using these exact methods.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What does the community look like?</div>
+        <div class="faq-answer">It's a private group of agency owners who are in the trenches doing the same work you are. People share wins, ask questions, give feedback on proposals, and help each other solve real problems. It's not a hype group. It's a working group. You also get 2x weekly live coaching calls where you can get direct answers from the team.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do I need to be technical to use the AI agents?</div>
+        <div class="faq-answer">No. Every agent is pre-built and ready to go. We walk you through setup step-by-step. If you can follow instructions and click a few buttons, you can deploy your first agent. No coding required.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do I need a Claude subscription?</div>
-        <div class="faq-answer">Yes — you'll need a Claude Pro or Team plan ($20–$25/month). This is separate from enrollment. We walk you through exactly which plan and tools to set up in Module 1.</div>
+        <div class="faq-answer">Yes, you'll need a Claude Pro or Team plan ($20-$25/month). This is separate from your Blueprint membership. We walk you through exactly which plan to choose and how to set it up in Module 1.</div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is this different from the main Blueprint program?</div>
-        <div class="faq-answer">No — this is the same Blueprint Training you know, just updated. We've always kept the program current, and all previous material is still included in your purchase. The AI agent modules are the latest addition, built on top of the same proven SOPs and frameworks.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How quickly can I deploy my first agent?</div>
-        <div class="faq-answer">Most members have their first agent running within the first hour of Module 1. The onboarding agent is the easiest to start with — and the payoff is immediately visible.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What if AI changes everything in 6 months?</div>
-        <div class="faq-answer">That's exactly why we built lifetime updates into this program. As Claude evolves, the agents and training evolve with it. You pay once and stay current forever. We've been doing this for 9 years — we update constantly.</div>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What if I want to do more than SEO?</div>
+        <div class="faq-answer">The core systems (positioning, sales, hiring, operations) apply to any service-based agency. The fulfillment training and AI agents are built specifically around SEO and local SEO, which is where Blueprint has the deepest track record. If that's your primary service, this is built for you.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is there a money-back guarantee?</div>
-        <div class="faq-answer">Yes. 30 days, no questions asked. If you go through the first three modules and don't believe this is going to change how you run your agency, email us and we'll refund you in full.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can this work for a brand new agency?</div>
-        <div class="faq-answer">Absolutely. Many Blueprint members have used our SOPs to launch their agencies from scratch. The AI layer makes it even more accessible — you can deliver like a team of five on day one.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Does this work for niches outside SEO?</div>
-        <div class="faq-answer">The agent architecture works for any digital agency. The specific training focuses on SEO and local SEO delivery — the verticals where Blueprint has the deepest proven track record.</div>
+        <div class="faq-answer">Yes. 30 days, no questions asked. If you go through the material and don't believe this is going to change how you run your agency, email us and we'll refund you in full.</div>
       </div>
 
     </div>
@@ -3245,7 +3724,7 @@
     </div>
     <div class="final-cta-text">
       <div class="final-cta-eyebrow" style="order:1;">From Ryan Stewart, Founder</div>
-      <h2 class="final-cta-headline" style="order:2;">The Future Is Now.</h2>
+      <h2 class="final-cta-headline futuristic-text" style="order:2;">The Future Is Now.</h2>
       <div class="final-cta-photo-mobile" style="order:3;"></div>
       <p class="final-cta-desc" style="order:4;">The agency model has already changed. AI can now handle the audits, the content, the outreach, the reporting — everything that used to require a team. The operators building this infrastructure today will be impossible to compete with in two years. Don't wait for the market to force your hand.</p>
       <a href="https://blueprint.spiffy.co/checkout/one-person-agency" class="btn-final" style="order:5;">Enroll Now — $199/mo</a>
@@ -3295,9 +3774,9 @@
     <div>
       <div class="footer-col-title">Company</div>
       <ul class="footer-links">
-        <li><a href="https://ai.theblueprint.training/blueprint-about-light.html">About</a></li>
-        <li><a href="https://ai.theblueprint.training/blueprint-results-light.html">Results</a></li>
-        <li><a href="https://ai.theblueprint.training/blueprint-program-light.html">Program</a></li>
+        <li><a href="https://ai.theblueprint.training/about.html">About</a></li>
+        <li><a href="https://ai.theblueprint.training/reviews.html">Results</a></li>
+        <li><a href="https://ai.theblueprint.training/program.html">Program</a></li>
         <li><a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html">Knowledge</a></li>
       </ul>
     </div>
@@ -3309,7 +3788,7 @@
         <li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
         <li><a href="https://ai.theblueprint.training/blueprint-coaching-light.html">Book a Call</a></li>
       </ul>
-      <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="footer-cta-btn">Get Started &rarr;</a>
+      <a href="https://ai.theblueprint.training/get-started.html" class="footer-cta-btn">Get Started &rarr;</a>
     </div>
 
   </div>

@@ -162,16 +162,61 @@
     max-width: 560px; margin: 0 auto;
   }
 
-  /* ── CALENDLY SECTION (white) ── */
+  /* ── CALENDLY SECTION ── */
   .calendly-section {
     background: #FFFFFF;
-    padding: 64px 24px 80px;
+    padding: 80px 24px 96px;
   }
-  .calendly-wrapper {
-    max-width: 900px; margin: 0 auto;
+  .calendly-layout {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 340px 1fr; gap: 48px; align-items: start;
   }
-  .calendly-wrapper .calendly-inline-widget {
+  .calendly-info {
+    padding-top: 16px;
+  }
+  .calendly-info-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--yellow-dark); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .calendly-info-label::before {
+    content: ''; width: 16px; height: 2px; background: var(--yellow);
+  }
+  .calendly-info h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 4vw, 48px); line-height: 1.0;
+    letter-spacing: 0.02em; text-transform: uppercase;
+    color: #0B0E1A; margin-bottom: 20px;
+  }
+  .calendly-info h2 span { color: var(--yellow-dark); }
+  .calendly-info p {
+    font-size: 16px; color: var(--gray); line-height: 1.75; margin-bottom: 28px;
+  }
+  .calendly-checklist {
+    list-style: none; display: flex; flex-direction: column; gap: 14px;
+  }
+  .calendly-checklist li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 15px; color: #374151; line-height: 1.5;
+  }
+  .calendly-checklist li::before {
+    content: '✓'; color: var(--yellow); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+  }
+  .calendly-embed-card {
+    background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .calendly-embed-card .calendly-inline-widget {
     min-width: 320px;
+  }
+  @media (max-width: 900px) {
+    .calendly-layout { grid-template-columns: 1fr; gap: 32px; }
+    .calendly-info { text-align: center; }
+    .calendly-info-label { justify-content: center; }
+    .calendly-checklist { align-items: center; }
+    .calendly-checklist li { text-align: left; }
   }
 
   /* ── FAQ SECTION (light gray bg) ── */
@@ -197,8 +242,9 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 20px 24px;
     cursor: pointer;
-    font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 17px;
-    color: #0B0E1A; line-height: 1.4;
+    font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 22px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: #0B0E1A; line-height: 1.2;
     transition: background 0.15s;
     -webkit-user-select: none; user-select: none;
   }
@@ -236,7 +282,7 @@
   .footer-links a:hover { color: #fff; }
 
   @media (max-width: 768px) {
-    .calendly-wrapper { margin: 0 -8px; }
+    .calendly-embed-card { border-radius: 8px; margin: 0 -8px; }
   }
 
     /* ─── FOOTER ─── */
@@ -360,23 +406,54 @@
 <!-- NAV -->
 <div class="nav-bar">
   <div class="nav-inner">
-    <a href="https://ai.theblueprint.training/index-light-v2.html" class="nav-logo">
-      <img src="assets/blueprint logo svg.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+    <a class="nav-logo" href="https://ai.theblueprint.training/index">
+      <img src="assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
     </a>
 
     <div class="nav-links">
-      <a href="https://ai.theblueprint.training/blueprint-about-light.html" class="nav-item-link">About</a>
-      <a href="https://ai.theblueprint.training/blueprint-results-light.html" class="nav-item-link">Results</a>
-      <a href="https://ai.theblueprint.training/blueprint-program-light.html" class="nav-item-link">Program</a>
-      <a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html" class="nav-item-link">Knowledge</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/about">About</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/reviews">Results</a>
+      <a class="nav-item-link" href="https://ai.theblueprint.training/program">Program</a>
     </div>
 
     <div class="nav-right">
       <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
-      <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="nav-cta-btn">Get Started</a>
+      <a class="nav-cta-btn" href="https://ai.theblueprint.training/get-started">Become A Member</a>
+    </div>
+
+    <!-- Mobile nav controls -->
+    <div class="mobile-nav-controls">
+      <button class="mobile-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="https://ai.theblueprint.training/get-started" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
     </div>
 
   </div>
+</div>
+
+<!-- Mobile menu overlay -->
+<div id="mobileMenu" class="mobile-menu-overlay">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
+  <nav class="mobile-menu-nav">
+    <a href="https://ai.theblueprint.training/index.html">Home</a>
+    <a href="https://ai.theblueprint.training/about.html">About</a>
+    <a href="https://ai.theblueprint.training/reviews.html">Results</a>
+    <a href="https://ai.theblueprint.training/program.html">Program</a>
+    <a href="https://www.skool.com/the-blueprint-training">Login</a>
+  </nav>
+  <div class="mobile-menu-socials">
+    <a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg>
+    </a>
+  </div>
+  <a href="https://ai.theblueprint.training/get-started.html" class="mobile-menu-cta">Get Started - $199/mo</a>
 </div>
 
 <!-- HERO -->
@@ -391,9 +468,26 @@
 
 <!-- CALENDLY EMBED -->
 <section class="calendly-section">
-  <div class="calendly-wrapper">
-    <div class="calendly-inline-widget" data-url="https://calendly.com/ryanwashere/diagnostic-call?hide_gdpr_banner=1&background_color=ffffff&text_color=0B0E1A&primary_color=F7C600" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <div class="calendly-layout">
+
+    <div class="calendly-info">
+      <div class="calendly-info-label">Book Your Call</div>
+      <h2>30 Minutes With <span>Ryan Stewart</span></h2>
+      <p>This is a diagnostic call to understand where your agency is today and whether the Inner Circle coaching program is the right fit. No pressure, no pitch - just a real conversation.</p>
+      <ul class="calendly-checklist">
+        <li>Review your current agency setup and goals</li>
+        <li>Identify your biggest growth bottlenecks</li>
+        <li>Map out what a coaching engagement looks like</li>
+        <li>Determine if Inner Circle is the right fit</li>
+        <li>Leave with clarity and a plan either way</li>
+      </ul>
+    </div>
+
+    <div class="calendly-embed-card">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/ryanwashere/diagnostic-call?hide_gdpr_banner=1&background_color=ffffff&text_color=0B0E1A&primary_color=F7C600" style="min-width:320px;height:750px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+
   </div>
 </section>
 
@@ -408,7 +502,7 @@
         <span class="faq-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Coaching is included as part of our Scale plan at $499/month, or available as a standalone add-on for Grow members. The Inner Circle tier includes 1:1 onboarding, a custom growth track, and regular coaching calls with Blueprint coaches. Pricing details are covered during your application call.</div>
+        <div class="faq-answer-inner">The Inner Circle coaching program is $999/month. This includes everything in The Blueprint Training plus 1:1 onboarding, a custom growth track, regular coaching calls with Blueprint coaches, and direct access to Ryan's Inner Circle channel.</div>
       </div>
     </div>
 
@@ -429,16 +523,6 @@
       </div>
       <div class="faq-answer">
         <div class="faq-answer-inner">Once accepted, you'll get a 90-minute deep dive onboarding session where we build a custom growth track for your agency. From there, you'll have regular 1:1 coaching calls, access to Ryan's Inner Circle Slack channel, and priority support on everything from positioning and pricing to delivery workflows and AI agent deployment.</div>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        How much does the agency coaching cost?
-        <span class="faq-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">The Inner Circle coaching program starts at $499/month as part of the Scale membership. This includes everything in the Grow plan plus 1:1 onboarding, a custom growth track, regular coaching calls, and direct access to Ryan's Inner Circle channel. Exact pricing and terms are discussed during your application call.</div>
       </div>
     </div>
 
@@ -498,9 +582,9 @@
     <div>
       <div class="footer-col-title">Company</div>
       <ul class="footer-links">
-        <li><a href="https://ai.theblueprint.training/blueprint-about-light.html">About</a></li>
-        <li><a href="https://ai.theblueprint.training/blueprint-results-light.html">Results</a></li>
-        <li><a href="https://ai.theblueprint.training/blueprint-program-light.html">Program</a></li>
+        <li><a href="https://ai.theblueprint.training/about.html">About</a></li>
+        <li><a href="https://ai.theblueprint.training/reviews.html">Results</a></li>
+        <li><a href="https://ai.theblueprint.training/program.html">Program</a></li>
         <li><a href="https://ai.theblueprint.training/blueprint-knowledge-light-v2.html">Knowledge</a></li>
       </ul>
     </div>
@@ -512,7 +596,7 @@
         <li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
         <li><a href="https://ai.theblueprint.training/blueprint-coaching-light.html">Book a Call</a></li>
       </ul>
-      <a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="footer-cta-btn">Get Started &rarr;</a>
+      <a href="https://ai.theblueprint.training/get-started.html" class="footer-cta-btn">Get Started &rarr;</a>
     </div>
 
   </div>
