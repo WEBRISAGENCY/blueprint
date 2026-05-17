@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Briefs: A Marketing Agency&#x27;s Best Friend | The Blueprint Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--yellow:#F7C600;--yellow-dark:#D9AE00;--border:rgba(0,0,0,0.08);--white:#0B0E1A;--gray:#6B7280;--gray-light:#374151;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#FFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-x:hidden;}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#0B0E1A;border-bottom:2px solid #F7C600;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:stretch;height:66px;padding:0 24px;}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;padding-right:28px;border-right:1px solid rgba(255,255,255,0.07);margin-right:4px;flex-shrink:0;}
+.nav-logo-mark{width:36px;height:36px;background:#F7C600;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.nav-logo-wm{display:flex;flex-direction:column;gap:1px;}
+.nav-logo-wm span:nth-child(1){font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:0.32em;color:rgba(255,255,255,0.28);text-transform:uppercase;line-height:1;}
+.nav-logo-wm span:nth-child(2){font-family:Orbitron,sans-serif;font-size:15px;font-weight:800;color:#F7C600;letter-spacing:0.06em;text-transform:uppercase;line-height:1;}
+.nav-logo-wm span:nth-child(3){font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:0.36em;color:rgba(255,255,255,0.22);text-transform:uppercase;line-height:1;margin-top:1px;}
+.nav-links{display:flex;align-items:stretch;flex:1;justify-content:center;}
+.nav-item-link{display:flex;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.06em;color:#C8CEDF;padding:0 16px;text-decoration:none;transition:color 0.15s;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;}
+.nav-item-link:hover{color:#fff;}
+.nav-right{display:flex;align-items:center;margin-left:auto;}
+.nav-login{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.06em;color:#8A90A8;padding:0 16px;text-decoration:none;transition:color 0.15s;}
+.nav-login:hover{color:#fff;}
+.nav-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.06em;padding:0 28px;text-decoration:none;transition:background 0.15s;display:flex;align-items:center;height:100%;}
+.nav-cta-btn:hover{background:#D9AE00;}
+.article-hero{padding:90px 24px 0;position:relative;overflow:hidden;}
+.article-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.03) 1px,transparent 1px);background-size:60px 60px;}
+.article-hero-inner{max-width:860px;margin:0 auto;padding:28px 0 0;position:relative;}
+.article-breadcrumb{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;}
+.article-breadcrumb a{color:var(--gray);text-decoration:none;}
+.article-breadcrumb a:hover{color:var(--yellow);}
+.article-breadcrumb span{color:rgba(0,0,0,0.25);}
+.article-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5.5vw,72px);line-height:0.95;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin-bottom:28px;}
+.article-meta-row{display:flex;align-items:center;gap:24px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.article-author-block{display:flex;align-items:center;gap:10px;}
+.author-avatar{width:40px;height:40px;border-radius:50%;background:#EEF0F4;border:2px solid rgba(247,198,0,0.4);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--yellow);}
+.author-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);}
+.author-title{font-size:12px;color:var(--gray);}
+.article-meta-divider{width:1px;height:32px;background:var(--border);}
+.article-meta-item{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px;}
+.article-meta-item strong{color:var(--gray-light);font-weight:600;}
+.article-hero-image{max-width:860px;margin:0 auto;padding:0 24px;}
+.article-hero-image img{display:block;width:100%;height:420px;object-fit:cover;border:1px solid rgba(0,0,0,0.08);}
+.article-content{max-width:860px;margin:0 auto;padding:56px 24px 96px;}
+.article-body p{font-size:17px;line-height:1.85;color:var(--gray-light);margin-bottom:24px;}
+.article-body p strong{color:var(--white);}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.5vw,44px);line-height:1.0;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin:48px 0 20px;padding-top:48px;border-top:1px solid var(--border);}
+.article-body h2:first-child{margin-top:0;padding-top:0;border-top:none;}
+.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:0.04em;text-transform:uppercase;color:var(--yellow);margin:36px 0 14px;}
+.article-body ul,.article-body ol{padding-left:0;margin-bottom:24px;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.article-body ul li,.article-body ol li{font-size:16px;color:var(--gray-light);line-height:1.7;display:flex;align-items:flex-start;gap:12px;padding:10px 16px;background:#F7F8FA;border-left:2px solid rgba(247,198,0,0.4);}
+.article-body ul li::before{content:'\2192';color:var(--yellow);flex-shrink:0;font-size:14px;margin-top:1px;}
+.article-body img{max-width:100%;height:auto;margin:24px 0;border:1px solid rgba(0,0,0,0.08);}
+.article-body a{color:var(--yellow);}
+.author-bio{max-width:860px;margin:0 auto;padding:0 24px 64px;}
+.author-bio-card{background:#F7F8FA;border:1px solid rgba(0,0,0,0.08);padding:32px 28px;display:flex;gap:24px;align-items:flex-start;}
+.author-bio-avatar{width:64px;height:64px;border-radius:50%;flex-shrink:0;background:#EEF0F4;border:2px solid rgba(247,198,0,0.4);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--yellow);}
+.author-bio-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);margin-bottom:2px;}
+.author-bio-role{font-size:13px;color:var(--yellow);margin-bottom:12px;letter-spacing:0.06em;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;}
+.author-bio-text{font-size:15px;color:var(--gray);line-height:1.7;}
+.bottom-cta{background:#F7C600;padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+.bottom-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(11,14,26,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,14,26,0.06) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.bottom-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,64px);line-height:0.95;text-transform:uppercase;color:#0B0E1A;margin-bottom:14px;position:relative;}
+.bottom-cta p{font-size:16px;color:rgba(11,14,26,0.7);max-width:520px;margin:0 auto 32px;line-height:1.7;position:relative;}
+.btn-cta-yellow{display:inline-flex;align-items:center;gap:10px;background:#0B0E1A;color:#F7C600;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;padding:18px 44px;text-decoration:none;transition:all 0.2s;position:relative;}
+.btn-cta-yellow:hover{background:#1F2438;transform:translateY(-2px);}
+footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;}
+.footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.6fr 1fr 0.8fr 0.8fr;gap:48px;}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.footer-col-title::before{content:'';display:block;width:16px;height:2px;background:var(--yellow);}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-links li a{font-family:'Figtree',sans-serif;font-size:14px;color:#8A90A8;text-decoration:none;transition:color 0.2s;}
+.footer-links li a:hover{color:#FFF;}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.3);}
+.footer-legal a{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;margin:0 12px;transition:color 0.2s;}
+.footer-legal a:hover{color:rgba(255,255,255,0.6);}
+.footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s;}
+.footer-cta-btn:hover{filter:brightness(1.05);}
+@media(max-width:768px){.article-hero-image img{height:240px;}.author-bio-card{flex-direction:column;gap:16px;}.footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}}
+@media(max-width:480px){.footer-nav{grid-template-columns:1fr;gap:36px;}}
+</style>
+</head>
+<body>
+<div class="nav-bar"><div class="nav-inner">
+<a href="https://ai.theblueprint.training/index-light-v2.html" class="nav-logo">
+<div class="nav-logo-mark"><svg width="36" height="36" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg></div>
+<div class="nav-logo-wm"><span>The</span><span>Blueprint</span><span>Training</span></div>
+</a>
+<div class="nav-links">
+<a href="https://ai.theblueprint.training/blueprint-about-light.html" class="nav-item-link">About</a>
+<a href="https://ai.theblueprint.training/blueprint-results-light.html" class="nav-item-link">Results</a>
+<a href="https://ai.theblueprint.training/blueprint-program-light.html" class="nav-item-link">Program</a>
+<a href="https://ai.theblueprint.training/blog-light.html" class="nav-item-link">Blog</a>
+<a href="https://ai.theblueprint.training/blog/" class="nav-item-link">Knowledge</a>
+</div>
+<div class="nav-right">
+<a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
+<a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="nav-cta-btn">Get Started</a>
+</div>
+</div></div>
+
+<section class="article-hero">
+<div class="article-hero-grid"></div>
+<div class="article-hero-inner">
+<div class="article-breadcrumb">
+<a href="https://ai.theblueprint.training/index-light-v2.html">Home</a><span>/</span>
+<a href="https://ai.theblueprint.training/blog-light.html">Blog</a><span>/</span>
+<span style="color:var(--gray-light);">Article</span>
+</div>
+<h1 class="article-title">Content Briefs: A Marketing Agency&#x27;s Best Friend</h1>
+<div class="article-meta-row">
+<div class="article-author-block">
+<div class="author-avatar">RS</div>
+<div><div class="author-name">Ryan Stewart</div><div class="author-title">Founder, The Blueprint Training</div></div>
+</div>
+<div class="article-meta-divider"></div>
+<div class="article-meta-item"><strong>Author:</strong> Ryan Stewart</div>
+</div>
+</div>
+</section>
+
+<div class="article-hero-image">
+<img src="https://theblueprint.training/wp-content/uploads/2022/06/Blueprint-blog-post-2-1.png" alt="Content Briefs: A Marketing Agency&#x27;s Best Friend" loading="lazy">
+</div>
+
+<div class="article-content">
+<article class="article-body">
+<p>Writing content for clients can be a nightmare.</p>
+<p>Managing writers, back and forth edits, trying to match a client's voice...It's a ton of work.</p>
+<p>When our agency started putting more emphasis on content briefs, the process improved dramatically. Not only did we have less headaches, but our impact on client's traffic skyrocketed.</p>
+<p><img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2021/03/Screen-Shot-2021-03-10-at-7.14.49-AM.png" alt="" /></p>
+<p>and this...</p>
+<p><img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2021/03/Screen-Shot-2021-03-10-at-7.14.38-AM.png" alt="" /></p>
+<p>Instead of writing out the entire piece of content for clients, we started creating detailed content briefs and coaching a writer on how to create.</p>
+<p><img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2021/05/page-brief-templat-example.png" alt="page brief template example" /></p>
+<p>This has allowed our client’s to develop a true brand voice, with real authority and expertise. In this article, I’m going to cover:</p>
+<ul>
+<li>The what/why/how of using content briefs over writing content for clients</li>
+<li>Exactly what to include inside of a content brief </li>
+<li>Access to our content brief templates</li>
+</ul>
+<p>Let’s get into it!</p>
+
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/0UYQN8WUfls" height="409.5" frameborder="0" allowfullscreen="allowfullscreen"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></iframe></p>
+
+<div id="buzzsprout-player-10747461"></div><script src="https://www.buzzsprout.com/1433407/10747461-content-briefs-a-marketing-agency-s-best-friend.js?container_id=buzzsprout-player-10747461&player=small" type="text/javascript" charset="utf-8"></script>
+
+
+<h2><strong>What is a content brief?</strong></h2>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>A content brief is a document that tells a writer exactly what they need to do to create authoritative and highly optimized content.</p>
+<p>It takes all of the guess-work away from the writer so they can create an <strong>engaging, relevant and structured</strong> piece of content that’s both optimized for SEO, matches required deliverables and adds value to the reading experience.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>A content brief can be as detailed or as refined as you like, but the idea is that any writer can come along and create <strong>high-quality content</strong> without you investing in trying to turn them into the next Shakespeare.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Sounds like something you need to implement immediately, right?</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image13.png" /></figure>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Hang fire for a bit since, above-all, content brief templates need to be:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:list --></p>
+<ul>
+<li>Duplicatable</li>
+<li>Hand-holding</li>
+<li>Easy to read</li>
+<li>Informative</li>
+<li>Adaptable to different content types</li>
+<li>Structured</li>
+</ul>
+<p><!-- /wp:list -->
+
+<!-- wp:paragraph --></p>
+<p>If you nail the above points, nobody needs to get bogged down in multiple revisions and editing content to nail the final product.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>The days of unaddressed issues, undoing your edits and making the content even worse are long-gone with a high-quality content brief.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>In turn, it’ll allow you/management to <strong>focus on strategy,</strong> expanding the business and driving results for the customer, massively <strong>improving profitability.</strong></p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>They’re also great for passing on to the client to then outsource writers, without any chance of liability coming back to you/the agency saying you haven’t done your job. Or, you can simply develop your own in-house writing team with them.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h2><strong>The</strong> benefits<strong> of a <em>duplicatable</em> creative brief</strong></h2>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>One you’ve nailed your content brief template (don’t worry, I’ll give you an idea of what to include soon!), the idea is that you can pick them up and apply them each time you need to brief a new piece of content—<em>without issue.</em></p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>They’re <strong>duplicatable in an instant,</strong> as long as they’re set up to mold/adapt to any niche or customer.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>This is why the <em>detail</em> is so important! You’re <strong>hand-holding</strong> the recipient so as few questions are asked as possible. This adds <strong>massive efficiency</strong> both for you <em>and</em> the client.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>While you may need to work with the writers/client at the beginning, once you’ve nailed that final version (a bit like the directors not getting Rocky “right” until Rocky IV!), the efficiencies really kick in.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>Make the brief easy-to-read, PLEASE!</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>We all know that creating visual explanations is <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5256450/">much better than a verbal one</a>, but you can still goof up a content brief.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>The key here is to keep it simple with clearly defined sections, using the following aspects:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:list --></p>
+<ul>
+<li><strong>Headers</strong></li>
+<li><strong>Natural structure workflow</strong></li>
+<li><strong>Color contrast (but with simple colors)</strong></li>
+<li><strong>Not small but not large</strong></li>
+<li><strong>Short and to-the-point</strong></li>
+</ul>
+<p><!-- /wp:list -->
+
+<!-- wp:paragraph --><!-- /wp:image -->
+
+<!-- wp:paragraph --></p>
+<p>We’re proud of it looking really clean with no imposing and garish colors while making the messaging clear through headers and an obvious structure.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>The background fill is awesome at making the different sections under each header really <strong>pop out.</strong></p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>Make your content marketing brief as informative as possible</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>But… don’t overdo it so it takes so long!</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>If you’re an agency briefing a client so they can create the content, you don’t want the SEO content template to be so big and detailed that it takes you hours to populate it each time.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>By keeping it simple, you both <strong>maximize your profitability</strong> and make it <strong>easier for your client</strong> to follow the brief and get the work done.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>The above blends in well with links to tools such as Clearscope, Surfer, and Topic, which you can send to the client to ensure their writer nails the content from an SEO point of view.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Also, <strong>point the client/writer to the resource</strong> rather than having to type long-winded guidance sections. This will save you time so you can generate more content briefs but also means they learn for themselves to be independent and use the resources on offer.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>See how we’ve linked to resources in our brief template so they can read up on the brand, brand voice tone and the type of post we want:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image10.png" /></figure>
+<p><!-- /wp:image -->
+
+<!-- wp:paragraph --></p>
+<p>This saves us HUGE amounts of time by not having to fill those sections in each time. Instead, we can point them to a central resource that they can reference.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>Train your SEO team to write via the templates</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>As long as you have a high-quality website content brief template in place, it will break down the barriers of needing to invest in a freelance writer.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Instead, an SEO specialist, for better use of a term, should be able to generate the content since it’s primarily written for SEO.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>It’s the <strong>SEO that has the biggest barrier to entry</strong> rather than training someone as a writer. This, ultimately, creates a monetary saving in the time training an SEO in content creation vs. time training a writer in SEO.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>I should know! (You’ve read this far, right?)</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Don’t forget; you’d still need to make sure it’s <strong>readable</strong> in terms of SPAG (spelling, punctuation and grammar. NOT spaghetti… mmm, food!)</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --></p>
+<h2>What to include in a content brief</h2>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>You’re now officially a master of how you can use a content brief to go big.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>With this in mind, I recommend you include the following in a content brief:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:list --></p>
+<ul>
+<li>Video guide on how to use the brief</li>
+<li>Due date</li>
+<li>Word count</li>
+<li>Target audience/who the client is</li>
+<li>Persona/voice</li>
+<li>Content type</li>
+<li>Post title</li>
+<li>Meta description</li>
+<li>Post slug</li>
+<li>Focus/framing keywords</li>
+<li>Links to relevant reports</li>
+<li>Internal links to include</li>
+<li>Sources</li>
+<li>Effective content structure outline</li>
+</ul>
+<p><!-- /wp:list -->
+
+<!-- wp:paragraph --></p>
+<p>While each of these are really important, we cluster them into different sub-headings in our article brief template to ensure relevance and flow.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --></p>
+<h2>SEO content brief example</h2>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>Use the below sections as a guide on what to include in your content brief template.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Think about what else you may want to include and consult your team as you go through to brainstorm.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>1. Video guide on how to use the brief</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>Rather than having to hold dedicated training to onboard your staff, create a one-off video guide to ensure your team knows how to use the brief and include the link at the beginning:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image9.png" /></figure>
+<p>&nbsp;</p>
+<p><!-- /wp:image -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>2. Due date</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image7.png" /></figure>
+<p><!-- /wp:image -->
+
+<!-- wp:paragraph --></p>
+<p>MANAGE EXPECTATIONS!</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>You don’t have a leg to stand on when you go chasing content when you haven’t even given a due date.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Give the writer the <em>exact</em> date you want them to return the work to you by.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Make sure it’s in-line with your overall content strategy and when other content is going to go live, too.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3>3. Word count</h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>Similar to word count, don’t give a writer carte blanche.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>They’ll go up and down like a yo-yo on speed, either giving you too much or too little.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Try and be flexible here and give them a range if you can, but at least give them <em>something</em> to go on.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>If you’re unsure, <a href="https://www.clearscope.io/" target="_blank" rel="noopener">Clearscope</a> gives you a target based on the top 10 competitors’ average:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image5.jpg" /></figure>
+<p>&nbsp;</p>
+<p><!-- /wp:image -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>4. Target audience/who the client is</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image1.png" /></figure>
+<p><!-- /wp:image -->
+
+<!-- wp:paragraph --></p>
+<p>All decent writers will do some research on the target audience and what their business is about.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Hold their hand with this and point them to resources such as an “About Us” page or the site’s blog.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Doing this will give them enough ammo to curate the content in-line with that company’s ethos and include CTAs for their products/services.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>5. Persona/voice </strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>This is an excellent place to point them to different personas (writer as well as <a href="https://webris.org/buyer-personas/" target="_blank" rel="noopener">buyer persona</a>), a writing style guide, voice and demographics.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>If you don’t do this as a marketer, you’re either stuck with the writer’s own style, or they may just create a wild and wacky persona of their own.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>You ensure you’re delivering to the client’s needs by holding the reigns here.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>6. Content type</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>Check this out for an article brief example:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image4.png" /></figure>
+<p><!-- /wp:image -->
+
+<!-- wp:paragraph --></p>
+<p>We’re more into the SEO side of the article now, so it’s good if you can give them enough SEO information at the start, if possible.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>For the content type, consider a style that fits in with your content strategy. Examples include:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:list --></p>
+<ul>
+<li>Informational blog post</li>
+<li>Product reviews</li>
+<li>Skyscraper</li>
+<li>Listicle</li>
+<li>Pillar post</li>
+<li>Infographic</li>
+<li>Whitepaper</li>
+</ul>
+<p><!-- /wp:list -->
+
+<!-- wp:paragraph --></p>
+<p>You may wish to link to a resource that identifies how each type should be written and what style to go for.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>7. Post title</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>You can either give the content creator the post title or provide them with the keywords to create their own.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Whatever you do, make sure it’s <strong>engaging and relevant! </strong>Traffic will click-off the content if the article doesn’t attract them.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Here’s a hint: aim for a maximum of <a href="https://moz.com/learn/seo/title-tag#:~:text=Optimal%20title%20length,your%20titles%20to%20display%20properly.">60 characters</a>.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>8. Meta description</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>As with the post title, create it yourself or include keywords to use.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Keep in mind that, along with the post title, the meta description is the first thing that organic traffic will see in the search engine results.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>With this, use wording that <strong>encourages the traffic to open the article.</strong></p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p><strong>Tip:</strong> Aim for 150 characters!</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>9. Post slug</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>The slug (or, preferred URL) is the extended URL after the domain name. Keep this as short as possible and use keywords.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>So, in this example, the slug is “<strong>/content-brief-template/</strong>”:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>https://theblueprint.training<strong>/content-brief-template/</strong></p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>10. Focus/framing keywords</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image3.png" /></figure>
+<p><!-- /wp:image -->
+
+<!-- wp:paragraph --></p>
+<p>Framing keywords are words that drive the content’s structure, framing the final version.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>For example, in a product review article, it’s natural to have “Pros” and “Cons,” or “Benefits” and “Drawbacks.”</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Remember, you’re guiding the client/writer here, so you’re giving them an idea of what to use to ensure they get the <strong>desired results.</strong></p>
+<p><strong>Tip:</strong> If in your research you see the ranking articles have a “top 10”, ask for a top X that’s more than the 10. This means the client is creating more value and gives them a chance to cut any out that aren’t relevant.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Comparison tables are also massive here, especially if the content reviews different types of products or services.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>“Vs” articles are huge on this, such as “WordPress vs Squarespace,” priming the content for a table on price, features, support, etc.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>11. Links to relevant reports</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image6.png" /></figure>
+<p><!-- /wp:image -->
+
+<!-- wp:paragraph --></p>
+<p>This is where you include links to the necessary tools the client or writer needs, such as Clearscope, Surfer, Topic, or anything else needed for content optimization.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>12. Internal links to include</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image8.png" /></figure>
+<p><!-- /wp:image -->
+
+<!-- wp:paragraph --></p>
+<p>List the exact internal links so the writer can copy and paste them in. If you simply ask the writer to “link to 3 relevant articles,” you may not get the desired results.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Remember; <strong>hold their hand!</strong></p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>You can also include a mention of which articles are going to link to this content being curated once it’s live.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>13. Sources/social media links</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image12.png" /></figure>
+<p><!-- /wp:image -->
+
+<!-- wp:paragraph --></p>
+<p>Provide a simple list of where the client or content writer can get information to create their content.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Also include links to social media profiles here, if relevant.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<h3><strong>14. Effective content structure outline</strong></h3>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>Want to go one further? Create a rough content strategy brief template for the client or writer so they simply need to fill in the gaps.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Keep in mind that this roadmap should change depending on the <strong>type of post and client,</strong> so it will take more time rather than duplicating the content brief each time and filling in the above sections.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Here’s an insight of the type of thing you could do:</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:image --></p>
+<figure class="wp-block-image is-style-default"><img loading="lazy" src="https://theblueprint.training/wp-content/uploads/2021/03/image2.png" /></figure>
+<p>&nbsp;</p>
+<p><!-- /wp:image -->
+
+<!-- wp:heading {"level":2} --></p>
+<h2>Content Brief template</h2>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>Congrats on making it this far!</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p><strong>As a reward, you can <a href="https://theblueprint.training/slack-channel/" target="_blank" rel="noopener">grab the template inside our Slack Group.</a></strong></p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --></p>
+<h2>Key takeaways</h2>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>If you didn’t see the importance of a content brief template before, I really hope you do now.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>While it needs a time investment at the beginning, it <strong>saves huge amounts of time, stress, and your sanity</strong> (most importantly) in the long run!</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:paragraph --></p>
+<p>Above all else, make sure the template is duplicatable, detailed enough, clear and structured to bring the best results and improve metrics.</p>
+<p>&nbsp;</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} --></p>
+<h2><strong>FAQs</strong></h2>
+<p><!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} --><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p>The best content brief format is in a shareable document, such as Google Docs. Used a combination of headings and subheadings to break the document out, with enough room to add enough detail. Mirror the detail you want in the content to the detail of the brief.</p>
+<p>Start the brief with the basic admin details, such as content subject matter, due date, word count, and any other internal information needed. You can then branch out into the target audience, brand-related information and details of persona and tone of voice. These both set expectations and help to frame the content.</p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<p>Whoever has the most interaction and knowledge regarding the client and content—typically a marketer or executive—should write a creative brief. This allows them to best angle the brief’s content to fully deliver to needs and wants.</p>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --></p>
+<p><!-- /wp:heading -->
+
+<!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+<!-- /wp:paragraph -->
+</article>
+</div>
+
+<div class="author-bio">
+<div class="author-bio-card">
+<div class="author-bio-avatar">RS</div>
+<div>
+<div class="author-bio-name">Ryan Stewart</div>
+<div class="author-bio-role">Founder, The Blueprint Training</div>
+<p class="author-bio-text">Ryan Stewart is the founder of The Blueprint Training and WEBRIS. He helps agency owners productize their services, implement AI automation, and scale past the one-person ceiling.</p>
+</div>
+</div>
+</div>
+
+<div class="bottom-cta">
+<h2>The knowledge is free.<br><span>The system is inside.</span></h2>
+<p>This article is a taste of what Blueprint members get every week. Join 5,000+ agency owners building AI-powered businesses.</p>
+<a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="btn-cta-yellow">Join The Blueprint</a>
+</div>
+
+<footer>
+<div class="footer-nav">
+<div><div class="footer-col-title">Agents</div><ul class="footer-links">
+<li><a href="https://ai.theblueprint.training/agent-sales-light.html">Sales Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-onboarding-light.html">Onboarding Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-project-manager-light.html">Project Manager Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-technical-seo-light.html">Technical SEO Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-content-light.html">Content Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-link-building-light.html">Link Building Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-local-seo-light.html">Local SEO Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-reporting-light.html">Reporting Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-strategy-light.html">Strategy Agent</a></li>
+</ul></div>
+<div><div class="footer-col-title">Features</div><ul class="footer-links">
+<li><a href="https://ai.theblueprint.training/feature-coaching-light.html">Coaching</a></li>
+<li><a href="https://ai.theblueprint.training/feature-training-light.html">Video Training</a></li>
+<li><a href="https://ai.theblueprint.training/feature-bootcamps-light.html">Live Bootcamps</a></li>
+<li><a href="https://ai.theblueprint.training/feature-community-light.html">Community</a></li>
+</ul></div>
+<div><div class="footer-col-title">Company</div><ul class="footer-links">
+<li><a href="https://ai.theblueprint.training/blueprint-about-light.html">About</a></li>
+<li><a href="https://ai.theblueprint.training/blueprint-results-light.html">Results</a></li>
+<li><a href="https://ai.theblueprint.training/blog-light.html">Blog</a></li>
+</ul></div>
+<div><div class="footer-col-title">Account</div><ul class="footer-links" style="margin-bottom:24px;">
+<li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
+<li><a href="https://ai.theblueprint.training/blueprint-coaching-light.html">Book a Call</a></li>
+</ul>
+<a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="footer-cta-btn">Get Started &rarr;</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
+<div class="footer-legal"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Contact</a></div>
+</div>
+</footer>
+</body>
+</html>

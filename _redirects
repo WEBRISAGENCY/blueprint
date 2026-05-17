@@ -75,6 +75,10 @@
 /trainings/project-management/                          /                                                                           301
 /trainings/website-quality-audit/                       /                                                                           301
 
+# --- Blog slug change ---
+/blueprint-knowledge-light-v2              /blog/                                                                      301
+/blueprint-knowledge-light-v2.html         /blog/                                                                      301
+
 # --- Pages being retired → homepage ---
 /white-label-ppc/                                       /                                                                           301
 /community-rankings/                                    /                                                                           301

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahrefs vs SEMrush vs Moz Comparison - Which Is Better? | The Blueprint Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--yellow:#F7C600;--yellow-dark:#D9AE00;--border:rgba(0,0,0,0.08);--white:#0B0E1A;--gray:#6B7280;--gray-light:#374151;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#FFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-x:hidden;}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#0B0E1A;border-bottom:2px solid #F7C600;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:stretch;height:66px;padding:0 24px;}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;padding-right:28px;border-right:1px solid rgba(255,255,255,0.07);margin-right:4px;flex-shrink:0;}
+.nav-logo-mark{width:36px;height:36px;background:#F7C600;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.nav-logo-wm{display:flex;flex-direction:column;gap:1px;}
+.nav-logo-wm span:nth-child(1){font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:0.32em;color:rgba(255,255,255,0.28);text-transform:uppercase;line-height:1;}
+.nav-logo-wm span:nth-child(2){font-family:Orbitron,sans-serif;font-size:15px;font-weight:800;color:#F7C600;letter-spacing:0.06em;text-transform:uppercase;line-height:1;}
+.nav-logo-wm span:nth-child(3){font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:0.36em;color:rgba(255,255,255,0.22);text-transform:uppercase;line-height:1;margin-top:1px;}
+.nav-links{display:flex;align-items:stretch;flex:1;justify-content:center;}
+.nav-item-link{display:flex;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.06em;color:#C8CEDF;padding:0 16px;text-decoration:none;transition:color 0.15s;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;}
+.nav-item-link:hover{color:#fff;}
+.nav-right{display:flex;align-items:center;margin-left:auto;}
+.nav-login{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.06em;color:#8A90A8;padding:0 16px;text-decoration:none;transition:color 0.15s;}
+.nav-login:hover{color:#fff;}
+.nav-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.06em;padding:0 28px;text-decoration:none;transition:background 0.15s;display:flex;align-items:center;height:100%;}
+.nav-cta-btn:hover{background:#D9AE00;}
+.article-hero{padding:90px 24px 0;position:relative;overflow:hidden;}
+.article-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.03) 1px,transparent 1px);background-size:60px 60px;}
+.article-hero-inner{max-width:860px;margin:0 auto;padding:28px 0 0;position:relative;}
+.article-breadcrumb{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;}
+.article-breadcrumb a{color:var(--gray);text-decoration:none;}
+.article-breadcrumb a:hover{color:var(--yellow);}
+.article-breadcrumb span{color:rgba(0,0,0,0.25);}
+.article-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5.5vw,72px);line-height:0.95;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin-bottom:28px;}
+.article-meta-row{display:flex;align-items:center;gap:24px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.article-author-block{display:flex;align-items:center;gap:10px;}
+.author-avatar{width:40px;height:40px;border-radius:50%;background:#EEF0F4;border:2px solid rgba(247,198,0,0.4);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--yellow);}
+.author-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);}
+.author-title{font-size:12px;color:var(--gray);}
+.article-meta-divider{width:1px;height:32px;background:var(--border);}
+.article-meta-item{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px;}
+.article-meta-item strong{color:var(--gray-light);font-weight:600;}
+.article-hero-image{max-width:860px;margin:0 auto;padding:0 24px;}
+.article-hero-image img{display:block;width:100%;height:420px;object-fit:cover;border:1px solid rgba(0,0,0,0.08);}
+.article-content{max-width:860px;margin:0 auto;padding:56px 24px 96px;}
+.article-body p{font-size:17px;line-height:1.85;color:var(--gray-light);margin-bottom:24px;}
+.article-body p strong{color:var(--white);}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.5vw,44px);line-height:1.0;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin:48px 0 20px;padding-top:48px;border-top:1px solid var(--border);}
+.article-body h2:first-child{margin-top:0;padding-top:0;border-top:none;}
+.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:0.04em;text-transform:uppercase;color:var(--yellow);margin:36px 0 14px;}
+.article-body ul,.article-body ol{padding-left:0;margin-bottom:24px;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.article-body ul li,.article-body ol li{font-size:16px;color:var(--gray-light);line-height:1.7;display:flex;align-items:flex-start;gap:12px;padding:10px 16px;background:#F7F8FA;border-left:2px solid rgba(247,198,0,0.4);}
+.article-body ul li::before{content:'\2192';color:var(--yellow);flex-shrink:0;font-size:14px;margin-top:1px;}
+.article-body img{max-width:100%;height:auto;margin:24px 0;border:1px solid rgba(0,0,0,0.08);}
+.article-body a{color:var(--yellow);}
+.author-bio{max-width:860px;margin:0 auto;padding:0 24px 64px;}
+.author-bio-card{background:#F7F8FA;border:1px solid rgba(0,0,0,0.08);padding:32px 28px;display:flex;gap:24px;align-items:flex-start;}
+.author-bio-avatar{width:64px;height:64px;border-radius:50%;flex-shrink:0;background:#EEF0F4;border:2px solid rgba(247,198,0,0.4);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--yellow);}
+.author-bio-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);margin-bottom:2px;}
+.author-bio-role{font-size:13px;color:var(--yellow);margin-bottom:12px;letter-spacing:0.06em;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;}
+.author-bio-text{font-size:15px;color:var(--gray);line-height:1.7;}
+.bottom-cta{background:#F7C600;padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+.bottom-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(11,14,26,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,14,26,0.06) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.bottom-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,64px);line-height:0.95;text-transform:uppercase;color:#0B0E1A;margin-bottom:14px;position:relative;}
+.bottom-cta p{font-size:16px;color:rgba(11,14,26,0.7);max-width:520px;margin:0 auto 32px;line-height:1.7;position:relative;}
+.btn-cta-yellow{display:inline-flex;align-items:center;gap:10px;background:#0B0E1A;color:#F7C600;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;padding:18px 44px;text-decoration:none;transition:all 0.2s;position:relative;}
+.btn-cta-yellow:hover{background:#1F2438;transform:translateY(-2px);}
+footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;}
+.footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.6fr 1fr 0.8fr 0.8fr;gap:48px;}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.footer-col-title::before{content:'';display:block;width:16px;height:2px;background:var(--yellow);}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-links li a{font-family:'Figtree',sans-serif;font-size:14px;color:#8A90A8;text-decoration:none;transition:color 0.2s;}
+.footer-links li a:hover{color:#FFF;}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.3);}
+.footer-legal a{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;margin:0 12px;transition:color 0.2s;}
+.footer-legal a:hover{color:rgba(255,255,255,0.6);}
+.footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s;}
+.footer-cta-btn:hover{filter:brightness(1.05);}
+@media(max-width:768px){.article-hero-image img{height:240px;}.author-bio-card{flex-direction:column;gap:16px;}.footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}}
+@media(max-width:480px){.footer-nav{grid-template-columns:1fr;gap:36px;}}
+</style>
+</head>
+<body>
+<div class="nav-bar"><div class="nav-inner">
+<a href="https://ai.theblueprint.training/index-light-v2.html" class="nav-logo">
+<div class="nav-logo-mark"><svg width="36" height="36" viewBox="0 0 60 60"><rect width="60" height="60" fill="#F7C600"/><circle cx="12" cy="12" r="4" fill="#0B0E1A"/><circle cx="21" cy="12" r="4" fill="#0B0E1A"/><circle cx="30" cy="12" r="4" fill="#0B0E1A"/><circle cx="12" cy="21" r="4" fill="#0B0E1A"/><circle cx="39" cy="21" r="4" fill="#0B0E1A"/><circle cx="12" cy="30" r="4" fill="#0B0E1A"/><circle cx="21" cy="30" r="4" fill="#0B0E1A"/><circle cx="30" cy="30" r="4" fill="#0B0E1A"/><circle cx="12" cy="39" r="4" fill="#0B0E1A"/><circle cx="39" cy="39" r="4" fill="#0B0E1A"/><circle cx="12" cy="48" r="4" fill="#0B0E1A"/><circle cx="21" cy="48" r="4" fill="#0B0E1A"/><circle cx="30" cy="48" r="4" fill="#0B0E1A"/></svg></div>
+<div class="nav-logo-wm"><span>The</span><span>Blueprint</span><span>Training</span></div>
+</a>
+<div class="nav-links">
+<a href="https://ai.theblueprint.training/blueprint-about-light.html" class="nav-item-link">About</a>
+<a href="https://ai.theblueprint.training/blueprint-results-light.html" class="nav-item-link">Results</a>
+<a href="https://ai.theblueprint.training/blueprint-program-light.html" class="nav-item-link">Program</a>
+<a href="https://ai.theblueprint.training/blog-light.html" class="nav-item-link">Blog</a>
+<a href="https://ai.theblueprint.training/blog/" class="nav-item-link">Knowledge</a>
+</div>
+<div class="nav-right">
+<a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
+<a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="nav-cta-btn">Get Started</a>
+</div>
+</div></div>
+
+<section class="article-hero">
+<div class="article-hero-grid"></div>
+<div class="article-hero-inner">
+<div class="article-breadcrumb">
+<a href="https://ai.theblueprint.training/index-light-v2.html">Home</a><span>/</span>
+<a href="https://ai.theblueprint.training/blog-light.html">Blog</a><span>/</span>
+<span style="color:var(--gray-light);">Article</span>
+</div>
+<h1 class="article-title">Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?</h1>
+<div class="article-meta-row">
+<div class="article-author-block">
+<div class="author-avatar">RS</div>
+<div><div class="author-name">Ryan Stewart</div><div class="author-title">Founder, The Blueprint Training</div></div>
+</div>
+<div class="article-meta-divider"></div>
+<div class="article-meta-item"><strong>Author:</strong> Ryan Stewart</div>
+</div>
+</div>
+</section>
+
+<div class="article-hero-image">
+<img src="https://theblueprint.training/wp-content/uploads/2019/05/18.png" alt="Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?" loading="lazy">
+</div>
+
+<div class="article-content">
+<article class="article-body">
+<p>When it comes to <a href="https://theblueprint.training/tools/">SEO tools</a>, there are 3 clear leaders and we’re about to put them head to head. Here they are:
+<h2>Ahrefs vs SEMrush vs Moz</h2>
+Why did I do an Ahrefs vs SEMrush vs Moz comparison? While I prefer Ahrefs overall, SEMrush or Moz also enable you to dig into your website, competitors, and search engines for valuable data and I wanted to reevaluate to know if I was STILL making the right choice.</p>
+
+<p>As you already know, each of the three has its own unique value proposition, but there are large overlaps between them as well so I'll be breaking down each tool in detail to help us both understand which one is necessary for our agencies.</p>
+
+<p>&nbsp;
+<h2>Why only Ahrefs, Moz or SEMrush for the comparison?</h2>
+I've been working in SEO for over 10 years at this point - there's a tool for everything.</p>
+
+<p>Having a tool for everything isn't a good thing - <strong>I want a tool that does everything.</strong></p>
+
+<p>These 3 tools present the best "all in one SEO tool" in the market.</p>
+
+<p><strong>Link analysis</strong>. Solid ways to inspect your backlinks and competitors.</p>
+
+<p><strong>Competitive analysis</strong>. Awesome at investigating what your competitors are doing.</p>
+
+<p><strong>Keyword research</strong>. Industry leaders to help you find valuable keywords.</p>
+
+<p><strong>Rank tracking</strong>. Easy methods to track progress of keyword rankings.</p>
+
+<a href="https://theblueprint.training/trainings/technical-seo/"><strong>Technical audits</strong></a>. I wouldn't use these tools for deep, forensic technical SEO. While they each have their own version of a site audit, I prefer to use a tool like DeepCrawl or ScreamingFrog for more advanced auditing.
+
+<p>Let's break them down individually.</p>
+
+<p>&nbsp;
+<h2>SEMrush Review</h2>
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-8.44.05-AM.png" alt="semrush dashboard" /></p>
+
+<p>SEMrush was the first SEO tool I fell in love with - I like to call it the "swiss army knife" of SEO tools.</p>
+
+<p>There's a free version of the tool that gives you 10 requests per day. The free version can be more than enough if you’re doing some light work. As your business grows and your demands increase, you’ll need more than that.</p>
+
+<p>There's a TON of features in SEMrush, but I like to use it for 4 main things.
+<h3>Content improvements</h3>
+By simply entering your URL the "organic research" report will spit back the exact keywords your site is currently ranking for.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-8.42.41-AM.png" alt="keyword research" />
+
+<p>I love this because it has allowed me to double down and optimize specific content. Using this data you can easily go back into your content and make additional optimizations to improve the current rankings.</p>
+
+<p>There is a downside - I’ve found their data to be slightly inaccurate at times.</p>
+
+<p>For example, keyword search volume and traffic estimates rarely match up with actuals. In all fairness, this data is constantly changing and very difficult to estimate - as long as you're looking at this data in a silo (i.e. not comparing data from SEMrush to Google Analytics), then it works out.
+<h3>Topical / keyword research</h3>
+You can use this same function for competitive keyword analysis. Plug in another website’s URL and you can see which keywords they rank for and how they’re SEO is performing.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-12.03.51-PM.png" alt="semrush competitive analysis" />
+
+<p>I like to use this data to understand the "keyword gaps" on my client's websites. We will then build a content strategy and topics matrix to build out new content to attack these keywords.</p>
+
+<p>I break this process down in detail through the video below.</p>
+
+<iframe src="https://www.youtube.com/embed/CdJlwruWFv8" frameborder="0" allowfullscreen="allowfullscreen"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></iframe>
+
+<p>Some of you may be aware SEMRush rolled out a Competitive Research Bundle in April 2020. It boasts powerful tools for analyzing competitor traffic.</p>
+
+<p>Honestly, I think it's overkill for most clients, and it's held back by accuracy issues.</p>
+
+<p>The Organic report gives us everything we need.
+<h3>Keyword movements</h3>
+While SEMrush has a rank tracker, I don't use it - I find it too expensive.</p>
+
+<p>Instead, I like to use their "Position Changes" report. It does the same thing, you just have to dig for it manually.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-12.07.02-PM.png" alt="semrush keyword movement report" />
+
+<p>This report tells me the keyword movements on my site over the last few days.</p>
+
+<p>I like to use this data to understand how my pages are progressing in the SERPs and to decide if I need to put in additional effort to maintain / improve rankings.</p>
+
+<p>For example, look at the screenshot below. You can see one of my blog posts lost the following rankings:
+<ul>
+<li><strong>kpi</strong> - slid from position 50 to 85</li>
+ 	<li><strong>digital marketing kpis</strong> - slide from position 11 to 13</li>
+</ul>
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-12.07.09-PM.png" alt="semrush keyword movement report" /></p>
+
+<p>This tells me to take another look at this blog post and make improvements:
+<ul>
+<li><a href="https://webris.org/seo-page-titles/" target="_blank" rel="noopener noreferrer">Update page title and meta description</a></li>
+ 	<li>Update the body text to better utilize the keywords ranking</li>
+ 	<li>Go out and acquire links to that page</li>
+</ul>
+There's a number of angles you can take, but this report gives you the quick pulse you need to make fast decisions.</p>
+
+<p>&nbsp;
+<h3>API access</h3>
+While all 3 of these tools have an API, SEMrush's is BY FAR the most robust. I'll run you through a more detailed comparison at the end of this article, but you <a href="https://www.semrush.com/api-analytics/?ref=7860056045" target="_blank" rel="noopener noreferrer">can check out their documentation here</a>.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-12.19.54-PM.png" alt="semrush api" />
+
+<p>If you're a beginner, let me break it down for you a little more simply.</p>
+
+<p>An API gives you access to the tool's functionality without having to access the tool.</p>
+
+<p>We like to use their API to build our own tools - in fact, a lot of the tools here in The Blueprint run on SEMrush's API.</p>
+
+<p>&nbsp;</p>
+
+<ul>
+<li>Content analyzer</li>
+ 	<li>Bulk social media posting</li>
+ 	<li>Domain versus domain comparison</li>
+ 	<li>On page SEO checker</li>
+ 	<li>PPC keyword research</li>
+ 	<li>Display advertising data</li>
+ 	<li><a href="https://www.semrush.com/features/?ref=7860056045" target="_blank" rel="noopener noreferrer">Read all features here</a></li>
+</ul>
+[/item]
+
+<ul>
+<li><strong>NEW: </strong>Yoast's Wordpress Plugin</li>
+ 	<li>SEOquake</li>
+ 	<li>Databox</li>
+ 	<li>TapClicks</li>
+ 	<li>Klipfolio</li>
+ 	<li><a href="https://www.semrush.com/news/category/integrations-news-all/?ref=7860056045" target="_blank" rel="noopener noreferrer">Read all integrations here</a></li>
+</ul>
+[/item]
+
+<ul>
+<li>SEO and or content marketing agencies</li>
+ 	<li>Bloggers and content creators</li>
+ 	<li>SEO consultants</li>
+ 	<li>I would NOT recommend SEMrush for advertising agencies. While there are advertising features, it's a far better solution for organic search marketing.</li>
+</ul>
+[/item]
+
+<p>[/accordian]</p>
+
+<p>&nbsp;</p>
+
+<ul>
+<li>Starting price: Free</li>
+ 	<li>Pro: $99.95/month</li>
+ 	<li>Guru: $199.95/month</li>
+ 	<li>Business: $399.95/month</li>
+ 	<li>Custom plans: Available</li>
+ 	<li>Enterprise solution: Available</li>
+</ul>
+
+<ul>
+<li>Free version available.</li>
+ 	<li>Great for competitive research, keyword research and content marketing.</li>
+ 	<li>Easy to navigate and use.</li>
+ 	<li>Arguably the best SEO API in the market.</li>
+</ul>
+
+<ul>
+<li>Pricing can be a bit high for some, especially their API access. It's out of control.</li>
+ 	<li>Data can be slightly inaccurate at times.</li>
+ 	<li>Their technical analysis module is solid, and getting better, but you still need a technical audit tool.</li>
+ 	<li>The backlink analysis isn't great. Their link database is improving - but I would NOT recommend it for link building analysis.</li>
+</ul>
+
+<p>&nbsp;
+<h2>Moz Review</h2>
+If there is one thing that stands out about Moz, it’s their blog. I can’t think of a single better resource for learning SEO. If you ever need to sharpen your skills, give it a read.</p>
+
+<p>I've written there a number of times, including filming a Whiteboard Friday at their headquarters in Seattle.</p>
+
+<iframe src="https://www.youtube.com/embed/wKsc8dOjcV4" frameborder="0" allowfullscreen="allowfullscreen"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></iframe>
+
+<p>What about tools?</p>
+
+<p>Well, they have a lot of those as well:
+<ul>
+<li>Keyword explorer</li>
+ 	<li>Site explorer</li>
+ 	<li>Chrome extension to analyze any web page</li>
+ 	<li>Business listing analysis</li>
+</ul>
+&nbsp;
+<h3>Link Explorer (<a href="https://moz.com/community/q/the-new-link-explorer-which-will-replace-open-site-explorer-is-now-in-beta" target="_blank" rel="noopener noreferrer">formerly Open Site Explorer</a>)</h3>
+As of December 4th, 2020, Moz's Link Explorer includes over 7 trillion URLs, 718 million root domains, 40.7 trillion backlinks.</p>
+
+<p>When we checked this on February 5th, 2018, the Moz OSE had 145 billion URLs, 258 million root domains and 1 trillion links.</p>
+
+<p>Needless to say, you’ll have a lot of data at your fingertips. Just type in any domain and you’ll see a complete SEO profile on them.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-12.57.38-PM.png" alt="ose and link explorer" />
+
+<p>One of the key metrics here is DA and PA.
+<ul>
+<li><strong>DA = Domain Authority.</strong> Domain Authority (DA) is a search engine ranking score developed by Moz that predicts how well a website will rank on search engine result pages (SERPs). A Domain Authority score ranges from one to 100, with higher scores corresponding to a greater ability to rank.</li>
+ 	<li><strong>PA = Page Authority.</strong> Page Authority (PA) is a score developed by Moz that predicts how well a specific page will rank on search engine result pages (SERP). Page Authority scores range from one to 100, with higher scores corresponding to a greater ability to rank.</li>
+</ul>
+These metrics were developed by Moz almost two decades ago. They became industry standard when referring to the "ranking power" of a website, but eroded as a trusted metric over time.</p>
+
+<p>DA and PA underwent <a href="https://moz.com/blog/new-domain-authority" target="_blank" rel="noopener noreferrer">a massive update in 2019,</a> which has gone a long way to reinstate the metric as industry leading.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-12.57.31-PM.png" alt="da and pa" />
+
+<p>A clear list of backlinks, anchor text and PA/DA is displayed. Compared to SEMrush, Moz's link index is far larger and more reliable.
+<blockquote>Moz definitely has the advantage over SEMrush when it comes to link analysis.</blockquote>
+Moz shows you more backlinks than SEMrush which is a huge plus. I’ve found it very useful to scouting out where my competitors are getting their links from.</p>
+
+<p>&nbsp;
+<h3>Keyword Explorer</h3>
+SEMRush and Moz have both updated their free plans since the original publication of this article, so now you have pretty good free keyword research options with both tools.</p>
+
+<p>But when it comes to keywords, Moz still reigns supreme. Their Keyword Explorer is great for gaining a deeper insight on your website and competitors.</p>
+
+<p>It's been seperated into the Keyword Overview Tool, the Keyword Suggestions tool, and a SERP analysis tool.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-1.19.44-PM.png" alt="moz keyword explorer" />
+
+<p>The Keyword Overview tool is undoubtedly the most useful. It shows top ranking keywords, a distribution chart and the ability to see all of their keyword rankings. <strong>For a free tool, it doesn’t get much better than this.</strong></p>
+
+<p>First we can see that a monthly search volume is displayed. You want to typically rank for keywords for higher searches so you can get more traffic.</p>
+
+<p>Next, the difficulty level will let you know how hard it is to rank for that specific search term. Moz has a reputation for great accuracy when it comes to Keyword Difficulty.</p>
+
+<p>Organic CTR determines how likely users are to click on results with that keyword.</p>
+
+<p>Finally, priority is a unique metric developed by Moz to inform you if a keyword should be a focus of yours.</p>
+
+<p><strong>Keyword Suggestions </strong>is the second part for you to to check out. It's pretty straightforward. The Monthly Volume column and has both volume ranges and more precise selections.</p>
+
+<p>One thing that's great about Moz's free plan is you get 10 queries per day with every tool, not 10 queries total.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/moz-keyword-suggestions.png" alt="moz keyword research tool" />
+
+<p>Overall, the keyword explorer is an awesome tool that's perfect for beginner's looking for a low cost keyword research solution.
+<h3>Moz Local</h3>
+For a while, Moz's local tools were the best in their arsenal. Their other tools have caught up now, but their local ones still hold their weight.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-1.14.55-PM.png" alt="moz local" />
+
+<p>This is a great tool for small, local businesses who need help managing their local presence.</p>
+
+<p>For example:
+<ul>
+<li>Check in on your online listings (Yelp, GMB, etc)</li>
+ 	<li>Manage your reviews across platforms</li>
+ 	<li>Find and cleanup duplicate citations</li>
+</ul>
+This product is well worth the price (starting at $129/year).</p>
+
+<p>It's important to note, though, that this is <a href="https://moz.com/blog/new-moz-local-here">now a seperate product from Moz Pro.</a> Moz Pro includes a majority of their other SEO tools and requires a seperate subscription.
+<h3>Moz Bar</h3>
+A free Chrome plugin that lets you analyze a website's SEO from your browser. Or, my personal favorite, let's you do in SERP analysis of a keyword and results.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-1.22.53-PM.png" alt="mpz bar plugin" />
+
+<p>This is a great little add on that you can use 100% free, or supercharge it when you sign up for a Moz Pro membership.</p>
+
+<p>&nbsp;</p>
+
+<ul>
+<li>Open site explorer</li>
+ 	<li>Keyword explorer</li>
+ 	<li>SERP analysis</li>
+ 	<li>Keyword suggestions</li>
+ 	<li>SEO audit</li>
+ 	<li>Moz integrations</li>
+ 	<li>Klipfolio</li>
+ 	<li>Bitium</li>
+ 	<li>Cyfe</li>
+ 	<li>LinkTrust</li>
+ 	<li><a href="https://moz.com/products" target="_blank" rel="noopener noreferrer">Read all features here</a></li>
+</ul>
+[/item]
+
+<ul>
+<li>SEOquake</li>
+ 	<li>Databox</li>
+ 	<li>TapClicks</li>
+ 	<li>Klipfolio</li>
+ 	<li><a href="https://moz.com/products/api/app-gallery" target="_blank" rel="noopener noreferrer">Read all integrations here</a></li>
+</ul>
+[/item]
+
+<ul>
+<li>SEO and or content marketing agencies</li>
+ 	<li>Bloggers and content creators</li>
+ 	<li>SEO consultants</li>
+</ul>
+[/item]
+
+<p>[/accordian]</p>
+
+<p>&nbsp;</p>
+
+<strong>Moz Pro</strong>
+<ul>
+<li>Starting price: Free</li>
+ 	<li>Standard: $99/month</li>
+ 	<li>Medium: $149/month</li>
+ 	<li>Large: $249/month</li>
+ 	<li>Premium: $599/month</li>
+</ul>
+<strong>Moz Local</strong>
+<ul>
+<li>Local Performance Audit: Free</li>
+ 	<li>Lite: $129/month</li>
+ 	<li>Preferred: $179/month</li>
+ 	<li>Elite: $299/month</li>
+</ul>
+
+<ul>
+<li>Great value from their free tools.</li>
+ 	<li>Excellent community and support.</li>
+ 	<li>A new CEO is pushing a better product than in previous years.</li>
+</ul>
+
+<ul>
+<li>Their paid tools are pricy for the value</li>
+ 	<li>Moz Local is priced by location, which makes it difficult for agencies to use</li>
+ 	<li>They're still playing catch up in regards to functionality and efficiency</li>
+</ul>
+
+<p>&nbsp;
+<h2>Ahrefs Review</h2>
+Last but not least, Ahrefs. One immediate downside compared to SEMrush and Moz is that nothing is free besides their toolbar. That’s great and all, but you’ll be spending $7 for a 7 day trial of anything else.</p>
+
+<p>Just like the others though, they do offer a site explorer, keyword explorer, rank tracker and very similar tools. Is it worth the money? Let's find out.</p>
+
+<p>&nbsp;
+<h3>Site explorer</h3>
+Okay, lots going on here. Ahrefs takes all of the important information and puts it on one screen. You don’t need to be wondering all over the platform to find the main data.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-1.29.17-PM.png" alt="ahrefs dashboard" />
+
+<p>We can see backlinks, keywords, traffic level and more right off the bat. On the side bar, everything else you need from checking anchor text to competing domains is accessible.</p>
+
+<p><strong>Ahrefs boasts the world’s largest backlink index too - with a total of over 170 trillion</strong>. This makes their site explorer tool stand out from the crowd, in a major way.</p>
+
+<p>You can also check exactly which keywords and pages are bringing in the most traffic, for yourself or competitors. It’s very detailed and has almost identical functionality to SEMrush now.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-1.31.19-PM.png" alt="top organic pages report" />
+
+<p>&nbsp;
+<h3>Link explorer</h3>
+Ahrefs started as a backlink analysis tool, but recently expanded into SEMrush's territory of keyword and competitor analysis.</p>
+
+<p>Ahrefs link tool is by far and away the best in the market - there's nothing that comes close.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-1.33.38-PM.png" alt="backlink explorer" />
+
+<p>We can not only monitor our own links, but competitors as well.</p>
+
+<p>Everything from when the link when live, to if they are do-follow or no-follow, anchor text and more. This is incredibly powerful when building your SEO strategy, as links are a huge ranking factor.</p>
+
+<p>&nbsp;
+<h3>Keyword explorer</h3>
+This tool has come a long way in a short time. In my opinion, Ahrefs keyword tools has leap frogged both Moz and SEMrush.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-1.36.09-PM.png" alt="ahrefs keywords" />
+
+<p>A very impressive tool for:
+<ul>
+<li>Rounding up endless keyword suggestions</li>
+ 	<li>Finding accurate search volume for keywords</li>
+ 	<li>Determine how difficult a keyword is to rank for</li>
+</ul>
+The charts and graphs are very organized. It has everything you need for doing your traditional keyword research and competitive analysis.</p>
+
+<p>&nbsp;</p>
+
+<ul>
+<li>Open site explorer</li>
+ 	<li>Keyword explorer</li>
+ 	<li>Backlink checker</li>
+ 	<li>SEO toolbar</li>
+ 	<li>Batch analysis</li>
+ 	<li>Content explorer</li>
+ 	<li><a href="https://ahrefs.com/blog/unique-features-ahrefs/" target="_blank" rel="noopener noreferrer">Read all features here</a></li>
+</ul>
+[/item]
+
+<ul>
+<li><a href="https://ahrefs.com/api/integrations" target="_blank" rel="noopener noreferrer">Read all integrations here</a></li>
+</ul>
+[/item]
+
+<ul>
+<li>SEO professionals, agencies and consultants</li>
+ 	<li>Link builders</li>
+</ul>
+[/item]
+
+<p>[/accordian]</p>
+
+<p>&nbsp;</p>
+
+<ul>
+<li>Trial: $7 for 7 days(Standard/Advanced only)</li>
+ 	<li>Lite: $99/month</li>
+ 	<li>Standard: $179/month</li>
+ 	<li>Advanced: $399/month</li>
+ 	<li>Agency: $999/month</li>
+</ul>
+
+<ul>
+<li>Best link index, by far.</li>
+ 	<li>Vastly improved keyword and competitive research functionality.</li>
+ 	<li>Growing community and support.</li>
+ 	<li>A free Chrome extension toolbar.</li>
+</ul>
+
+<ul>
+<li>Expensive.</li>
+ 	<li>Weak API.</li>
+</ul>
+
+<p>&nbsp;
+<h2>SEMrush vs Ahrefs vs Moz, which is better?</h2>
+Looking at all three of these tools, it’s clear they all have their pros and cons, I've broken them down as best as I could.
+<h3>Moz vs SEMrush vs Ahrefs comparison chart</h3></p>
+
+<table>
+<tbody>
+<tr>
+<td><strong>Feature</strong></td>
+<td><strong>SEMrush</strong></td>
+<td><strong>Moz</strong></td>
+<td><strong>Ahrefs</strong></td>
+</tr>
+<tr>
+<td><em>Technical audit</em></td>
+<td>7.0</td>
+<td>8.0</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td><em>Link analysis</em></td>
+<td>6.0</td>
+<td>8.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td><em>KW research</em></td>
+<td>9.0</td>
+<td>8.0</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td><em>Competitive audit</em></td>
+<td>9.0</td>
+<td>5.0</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>API</td>
+<td>10.0</td>
+<td>7.0</td>
+<td>4.0</td>
+</tr>
+</tbody>
+</table>
+
+<p>If I was only allowed to pick one option between Moz, Ahrefs or SEMrush, personally I’d go with Ahrefs. I spend most of my time analyzing backlinks and competitors, Ahrefs has both of those on lock.</p>
+
+<p>That said, Moz or SEMrush are also worthy contenders, you can’t go wrong with any of the three – <span style="text-decoration: underline;"><strong>and you need one of them</strong></span>. They all have their nuances, it’s all about finding the one you’re comfortable with.</p>
+
+<p><strong><em>This article has been updated: 2nd March 2021</em></strong></p>
+</article>
+</div>
+
+<div class="author-bio">
+<div class="author-bio-card">
+<div class="author-bio-avatar">RS</div>
+<div>
+<div class="author-bio-name">Ryan Stewart</div>
+<div class="author-bio-role">Founder, The Blueprint Training</div>
+<p class="author-bio-text">Ryan Stewart is the founder of The Blueprint Training and WEBRIS. He helps agency owners productize their services, implement AI automation, and scale past the one-person ceiling.</p>
+</div>
+</div>
+</div>
+
+<div class="bottom-cta">
+<h2>The knowledge is free.<br><span>The system is inside.</span></h2>
+<p>This article is a taste of what Blueprint members get every week. Join 5,000+ agency owners building AI-powered businesses.</p>
+<a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="btn-cta-yellow">Join The Blueprint</a>
+</div>
+
+<footer>
+<div class="footer-nav">
+<div><div class="footer-col-title">Agents</div><ul class="footer-links">
+<li><a href="https://ai.theblueprint.training/agent-sales-light.html">Sales Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-onboarding-light.html">Onboarding Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-project-manager-light.html">Project Manager Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-technical-seo-light.html">Technical SEO Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-content-light.html">Content Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-link-building-light.html">Link Building Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-local-seo-light.html">Local SEO Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-reporting-light.html">Reporting Agent</a></li>
+<li><a href="https://ai.theblueprint.training/agent-strategy-light.html">Strategy Agent</a></li>
+</ul></div>
+<div><div class="footer-col-title">Features</div><ul class="footer-links">
+<li><a href="https://ai.theblueprint.training/feature-coaching-light.html">Coaching</a></li>
+<li><a href="https://ai.theblueprint.training/feature-training-light.html">Video Training</a></li>
+<li><a href="https://ai.theblueprint.training/feature-bootcamps-light.html">Live Bootcamps</a></li>
+<li><a href="https://ai.theblueprint.training/feature-community-light.html">Community</a></li>
+</ul></div>
+<div><div class="footer-col-title">Company</div><ul class="footer-links">
+<li><a href="https://ai.theblueprint.training/blueprint-about-light.html">About</a></li>
+<li><a href="https://ai.theblueprint.training/blueprint-results-light.html">Results</a></li>
+<li><a href="https://ai.theblueprint.training/blog-light.html">Blog</a></li>
+</ul></div>
+<div><div class="footer-col-title">Account</div><ul class="footer-links" style="margin-bottom:24px;">
+<li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
+<li><a href="https://ai.theblueprint.training/blueprint-coaching-light.html">Book a Call</a></li>
+</ul>
+<a href="https://ai.theblueprint.training/blueprint-signup-light.html" class="footer-cta-btn">Get Started &rarr;</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
+<div class="footer-legal"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Contact</a></div>
+</div>
+</footer>
+</body>
+</html>
