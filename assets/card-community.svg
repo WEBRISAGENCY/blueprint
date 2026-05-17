@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" fill="none">
+  <!-- Window chrome -->
+  <rect x="10" y="8" width="380" height="204" rx="8" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="10" y="8" width="380" height="28" rx="8" fill="#132c54"/>
+  <rect x="10" y="28" width="380" height="8" fill="#132c54"/>
+  <circle cx="28" cy="22" r="4" fill="#EF4444"/>
+  <circle cx="42" cy="22" r="4" fill="#F7C600"/>
+  <circle cx="56" cy="22" r="4" fill="#22C55E"/>
+  <text x="200" y="25" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Blueprint Training</text>
+  <!-- Sidebar -->
+  <rect x="10" y="36" width="90" height="176" fill="#F3F4F6"/>
+  <line x1="100" y1="36" x2="100" y2="212" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="20" y="46" width="70" height="8" rx="4" fill="#132c54"/>
+  <rect x="20" y="62" width="60" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="20" y="74" width="55" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="20" y="86" width="65" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="20" y="98" width="48" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="20" y="110" width="55" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="16" y="122" width="78" height="22" rx="4" fill="rgba(247,198,0,0.15)"/>
+  <rect x="24" y="129" width="50" height="6" rx="3" fill="#F7C600"/>
+  <!-- Main: Community feed -->
+  <text x="116" y="54" font-family="sans-serif" font-size="11" font-weight="700" fill="#132c54">Community</text>
+  <!-- Online indicator -->
+  <circle cx="345" cy="50" r="4" fill="#22C55E"/>
+  <text x="356" y="53" font-family="sans-serif" font-size="8" fill="#6B7280">128 online</text>
+  <!-- Post 1 -->
+  <rect x="110" y="62" width="254" height="56" rx="6" fill="white" stroke="#E5E7EB" stroke-width="0.5"/>
+  <circle cx="126" cy="78" r="10" fill="#132c54"/>
+  <text x="126" y="82" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="700">S</text>
+  <text x="142" y="76" font-family="sans-serif" font-size="9" font-weight="700" fill="#132c54">Sarah M.</text>
+  <text x="190" y="76" font-family="sans-serif" font-size="8" fill="#9CA3AF">2h ago</text>
+  <rect x="142" y="82" width="200" height="4" rx="2" fill="#D1D5DB"/>
+  <rect x="142" y="92" width="160" height="4" rx="2" fill="#D1D5DB"/>
+  <!-- Reactions -->
+  <rect x="142" y="102" width="32" height="12" rx="6" fill="rgba(247,198,0,0.1)"/>
+  <text x="158" y="111" font-family="sans-serif" font-size="8" fill="#F7C600" text-anchor="middle">12</text>
+  <rect x="180" y="102" width="26" height="12" rx="6" fill="rgba(19,44,84,0.06)"/>
+  <text x="193" y="111" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">4</text>
+  <!-- Post 2 -->
+  <rect x="110" y="124" width="254" height="56" rx="6" fill="white" stroke="#E5E7EB" stroke-width="0.5"/>
+  <circle cx="126" cy="140" r="10" fill="#1E3A5F"/>
+  <text x="126" y="144" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="700">T</text>
+  <text x="142" y="138" font-family="sans-serif" font-size="9" font-weight="700" fill="#132c54">Tom K.</text>
+  <text x="178" y="138" font-family="sans-serif" font-size="8" fill="#9CA3AF">4h ago</text>
+  <rect x="142" y="144" width="180" height="4" rx="2" fill="#D1D5DB"/>
+  <rect x="142" y="154" width="140" height="4" rx="2" fill="#D1D5DB"/>
+  <rect x="142" y="164" width="32" height="12" rx="6" fill="rgba(247,198,0,0.1)"/>
+  <text x="158" y="173" font-family="sans-serif" font-size="8" fill="#F7C600" text-anchor="middle">8</text>
+  <rect x="180" y="164" width="26" height="12" rx="6" fill="rgba(19,44,84,0.06)"/>
+  <text x="193" y="173" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">6</text>
+  <!-- Post 3 (partial) -->
+  <rect x="110" y="186" width="254" height="26" rx="6" fill="white" stroke="#E5E7EB" stroke-width="0.5"/>
+  <circle cx="126" cy="199" r="10" fill="#2D4A6F"/>
+  <text x="126" y="203" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="700">A</text>
+  <text x="142" y="200" font-family="sans-serif" font-size="9" font-weight="700" fill="#132c54">Alex R.</text>
+  <text x="182" y="200" font-family="sans-serif" font-size="8" fill="#9CA3AF">6h ago</text>
+</svg>

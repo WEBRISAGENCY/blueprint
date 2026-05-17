@@ -1776,73 +1776,202 @@
   }
 
   /* ─── WHAT'S INSIDE CARDS ─── */
-  .whats-inside-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin-top: 60px;
+  /* ── Interactive Dashboard ── */
+  .dash-window {
+    background: #2D2B28; border-radius: 16px; overflow: hidden; margin-top: 48px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.25); display: flex; min-height: 520px;
   }
-
-    .wi-card { display: grid; grid-template-columns: 280px 1fr; gap: 0; padding: 0; background: var(--dark); border: 1px solid var(--dark-border); transition: all 0.3s; position: relative; overflow: hidden; }
-  .wi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--yellow); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-  .wi-card:hover::before { transform: scaleX(1); }
-  .wi-card:hover { border-color: rgba(247,198,0,0.2); background: var(--dark2); }
-
-  .wi-icon {
-    font-size: 36px;
-    flex-shrink: 0;
-    margin-top: 4px;
+  .dash-sidebar {
+    width: 240px; background: #3D3A37; padding: 20px 0; flex-shrink: 0;
+    display: flex; flex-direction: column;
   }
-
-  .wi-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    color: var(--yellow);
-    margin-bottom: 8px;
+  .dash-sidebar-header {
+    display: flex; align-items: center; gap: 10px; padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-
-  .wi-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 14px;
-    line-height: 1.2;
+  .dash-sidebar-logo {
+    width: 32px; height: 32px; border-radius: 8px; background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 13px; color: #0B0E1A;
   }
-
-  .wi-desc {
-    font-size: 15px;
-    color: var(--gray);
-    line-height: 1.7;
-    margin-bottom: 20px;
+  .dash-sidebar-brand {
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #FFFFFF;
+    letter-spacing: 0.03em; line-height: 1;
   }
-
-  .wi-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  .dash-sidebar-brand small {
+    display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
+    color: rgba(255,255,255,0.4); font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-top: 2px;
   }
-
-  .wi-bullets li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 14px;
-    color: var(--gray-light);
-    line-height: 1.5;
+  .dash-sidebar-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35);
+    padding: 20px 20px 10px;
   }
+  .dash-nav-item {
+    display: flex; align-items: center; gap: 10px; padding: 12px 20px;
+    color: rgba(255,255,255,0.55); font-family: 'Figtree', sans-serif; font-size: 14px;
+    cursor: pointer; border-left: 3px solid transparent; transition: all 0.2s;
+  }
+  .dash-nav-item:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.03); }
+  .dash-nav-item.active {
+    background: rgba(255,255,255,0.06); color: #FFFFFF;
+    border-left-color: var(--yellow);
+  }
+  .dash-nav-item svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .dash-sidebar-spacer { flex: 1; }
+  .dash-sidebar-footer {
+    padding: 16px 20px 0; border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center; gap: 10px; margin-top: auto;
+  }
+  .dash-sidebar-avatar {
+    width: 28px; height: 28px; border-radius: 50%; background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; color: #0B0E1A;
+  }
+  .dash-sidebar-user {
+    font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(255,255,255,0.55);
+  }
+  /* Main content */
+  .dash-main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .dash-titlebar {
+    display: flex; align-items: center; gap: 8px; padding: 14px 24px;
+    background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .dash-dots { display: flex; gap: 6px; }
+  .dash-dots span { width: 10px; height: 10px; border-radius: 50%; }
+  .dash-dots span:nth-child(1) { background: #FF5F57; }
+  .dash-dots span:nth-child(2) { background: #FEBC2E; }
+  .dash-dots span:nth-child(3) { background: #28C840; }
+  .dash-titlebar-text {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45); margin-left: 8px;
+  }
+  .dash-panel { display: none; padding: 32px; flex: 1; overflow-y: auto; }
+  .dash-panel.active { display: block; }
+  .dash-panel h3 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: #FFFFFF;
+    letter-spacing: 0.03em; margin-bottom: 6px;
+  }
+  .dash-panel .dash-sub {
+    font-family: 'Figtree', sans-serif; font-size: 14px; color: rgba(255,255,255,0.45);
+    margin-bottom: 24px;
+  }
+  /* Panel content styles */
+  .dash-video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .dash-video {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; overflow: hidden; cursor: default; transition: all 0.3s;
+  }
+  .dash-video:hover { border-color: rgba(247,198,0,0.2); transform: translateY(-2px); }
+  .dash-video-thumb {
+    background: #1E3A5F; height: 100px; display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .dash-video-play {
+    width: 36px; height: 36px; border-radius: 50%; background: rgba(247,198,0,0.2);
+    border: 2px solid var(--yellow); display: flex; align-items: center; justify-content: center;
+  }
+  .dash-video-play::after { content: ''; border-left: 10px solid var(--yellow); border-top: 6px solid transparent; border-bottom: 6px solid transparent; margin-left: 2px; }
+  .dash-video-bar { height: 3px; background: rgba(255,255,255,0.1); }
+  .dash-video-bar span { display: block; height: 100%; background: var(--yellow); }
+  .dash-video-info { padding: 12px 14px; }
+  .dash-video-info strong { font-family: 'Figtree', sans-serif; font-size: 13px; color: #FFFFFF; display: block; margin-bottom: 4px; }
+  .dash-video-info small { font-size: 12px; color: rgba(255,255,255,0.4); }
+  /* SOP list */
+  .dash-sop-item {
+    display: flex; align-items: center; gap: 14px; padding: 14px 16px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; margin-bottom: 8px; transition: all 0.2s;
+  }
+  .dash-sop-item:hover { background: rgba(255,255,255,0.06); border-color: rgba(247,198,0,0.2); }
+  .dash-sop-icon {
+    width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px;
+  }
+  .dash-sop-icon.doc { background: rgba(59,130,246,0.15); color: #60A5FA; }
+  .dash-sop-icon.sheet { background: rgba(34,197,94,0.15); color: #4ADE80; }
+  .dash-sop-icon.tmpl { background: rgba(247,198,0,0.15); color: #F7C600; }
+  .dash-sop-text { flex: 1; }
+  .dash-sop-text strong { font-family: 'Figtree', sans-serif; font-size: 14px; color: #FFFFFF; display: block; }
+  .dash-sop-text small { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .dash-sop-badge {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px;
+    border-radius: 20px; flex-shrink: 0;
+  }
+  .dash-sop-badge.new { background: rgba(34,197,94,0.12); color: #4ADE80; }
+  .dash-sop-badge.pop { background: rgba(247,198,0,0.12); color: #F7C600; }
+  /* Agent grid */
+  .dash-agent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .dash-agent {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 20px 16px; text-align: center; transition: all 0.3s;
+  }
+  .dash-agent:hover { background: rgba(247,198,0,0.06); border-color: rgba(247,198,0,0.2); transform: translateY(-2px); }
+  .dash-agent-icon {
+    width: 44px; height: 44px; border-radius: 10px; margin: 0 auto 12px;
+    background: rgba(247,198,0,0.1); border: 1px solid rgba(247,198,0,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .dash-agent-icon svg { width: 22px; height: 22px; stroke: var(--yellow); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .dash-agent h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em; color: #FFFFFF; margin-bottom: 6px; }
+  .dash-agent-status { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #28C840; display: flex; align-items: center; justify-content: center; gap: 4px; }
+  .dash-agent-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #28C840; }
+  /* Community feed */
+  .dash-post {
+    display: flex; gap: 12px; padding: 16px; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; margin-bottom: 10px;
+  }
+  .dash-post-avatar {
+    width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; color: #0B0E1A;
+  }
+  .dash-post-body { flex: 1; }
+  .dash-post-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .dash-post-header strong { font-family: 'Figtree', sans-serif; font-size: 13px; color: #FFFFFF; }
+  .dash-post-header span { font-size: 12px; color: rgba(255,255,255,0.35); }
+  .dash-post-body p { font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5; margin: 0; }
+  .dash-post-reactions { display: flex; gap: 8px; margin-top: 8px; }
+  .dash-post-reactions span { font-size: 12px; color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.06); padding: 2px 10px; border-radius: 12px; }
+  /* Call card */
+  .dash-call {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 20px; margin-bottom: 12px; border-left: 3px solid var(--yellow);
+  }
+  .dash-call h4 { font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; }
+  .dash-call p { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0 0 4px; }
+  .dash-call .dash-live { display: inline-block; background: #DC2626; color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 10px; border-radius: 10px; margin-left: 8px; }
+  .dash-call-attendees { display: flex; align-items: center; gap: -4px; margin-top: 10px; }
+  .dash-call-attendees span { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #0B0E1A; margin-right: -6px; border: 2px solid #2D2B28; }
+  .dash-call-attendees small { margin-left: 12px; font-size: 12px; color: rgba(255,255,255,0.4); }
+  /* Q&A thread */
+  .dash-qa {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 16px; margin-bottom: 10px;
+  }
+  .dash-qa-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .dash-qa-avatar { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #0B0E1A; }
+  .dash-qa-header strong { font-family: 'Figtree', sans-serif; font-size: 13px; color: #FFFFFF; }
+  .dash-qa-header .dash-qa-badge { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 10px; border-radius: 12px; margin-left: auto; }
+  .dash-qa-badge.answered { background: rgba(34,197,94,0.12); color: #4ADE80; }
+  .dash-qa-badge.pending { background: rgba(247,198,0,0.12); color: #F7C600; }
+  .dash-qa p { font-family: 'Figtree', sans-serif; font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; margin: 0; }
+  .dash-qa-reply { margin-top: 12px; padding: 12px; background: rgba(247,198,0,0.05); border: 1px solid rgba(247,198,0,0.15); border-radius: 8px; }
+  .dash-qa-reply strong { font-family: 'Figtree', sans-serif; font-size: 12px; color: var(--yellow); display: block; margin-bottom: 4px; }
+  .dash-qa-reply p { font-size: 13px; color: rgba(255,255,255,0.6); }
 
-  .wi-bullets li::before {
-    content: '✓';
-    color: var(--yellow);
-    font-weight: 700;
-    flex-shrink: 0;
-    font-size: 13px;
-    margin-top: 1px;
+  @media (max-width: 900px) {
+    .dash-sidebar { display: none; }
+    .dash-window { border-radius: 12px; min-height: 400px; }
+    .dash-video-grid { grid-template-columns: 1fr; }
+    .dash-agent-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .dash-agent-grid { grid-template-columns: 1fr; }
   }
 
   /* ─── TIMELINE ─── */
@@ -1908,7 +2037,8 @@
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     nav { padding: 14px 20px; }
-    .shift-inner, .agents-intro, .pricing-inner, .whats-inside-grid { grid-template-columns: 1fr; gap: 40px; }
+    .shift-inner, .agents-intro, .pricing-inner { grid-template-columns: 1fr; gap: 40px; }
+    .whats-inside-grid { grid-template-columns: 1fr 1fr !important; }
     .agents-split { flex-direction: column; gap: 40px; }
     .agents-split-text { text-align: center; }
     .agents-split-text .section-title { text-align: center !important; }
@@ -2427,11 +2557,10 @@
     .cmp-table { display: none !important; }
     .shift-accordion { display: block !important; margin-top: 32px !important; }
 
-    /* What's Inside cards — stack, hide images */
+    /* What's Inside cards — stack */
     .whats-inside-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
-    .wi-card { grid-template-columns: 1fr !important; }
-    .wi-photo-placeholder { display: none !important; }
-    .wi-content { padding: 24px 20px !important; }
+    .wi-card { padding: 24px 20px !important; }
+    .wi-icon-img { height: 120px !important; }
 
     /* Agents network graph */
     .network-graph { margin-top: 32px !important; }
@@ -2499,9 +2628,9 @@
     .media-logos { display: none !important; }
     .trusted-badge { font-size: 11px !important; padding: 6px 14px !important; }
 
-    /* What's Inside cards — images already hidden at 900px */
-    .wi-content { padding: 20px 16px !important; }
-    .wi-title { font-size: 18px !important; }
+    /* What's Inside cards — compact on small screens */
+    .wi-card { padding: 20px 16px !important; }
+    .wi-title { font-size: 20px !important; }
     .wi-desc { font-size: 14px !important; }
     .wi-bullets li { font-size: 13px !important; }
 
@@ -2711,106 +2840,81 @@
 <!-- WHAT'S INSIDE -->
 <section class="modules" id="curriculum">
   <div class="container">
-    <p class="section-label">What's Inside</p>
-    <h2 class="section-title">Everything you need to <br><span>grow your agency.</span></h2>
+    <h2 class="section-title" style="color: #0B0E1A;">An entire ecosystem to help<br>grow your agency.</h2>
     <p class="section-body">One membership gives you the full stack: training, tools, live coaching, and a community of agency owners doing exactly what you're doing.</p>
 
     <div class="whats-inside-grid">
 
       <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/video training.svg" alt="Training Videos" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">01</div>
-          <div class="wi-title">Training Videos</div>
-          <p class="wi-desc">Step-by-step video walkthroughs for every workflow and every part of the system. Follow along and have your agency running on proven processes within days, not months.</p>
-          <ul class="wi-bullets">
-            <li>Full modules covering every agency function</li>
-            <li>Screen-recorded walkthroughs you can copy exactly</li>
-            <li>Updated regularly as the system evolves</li>
-          </ul>
-        </div>
+        <img src="assets/card-training.svg" alt="Training Videos" class="wi-icon-img">
+        <div class="wi-num">01</div>
+        <div class="wi-title">Training Videos</div>
+        <p class="wi-desc">Step-by-step video walkthroughs for every workflow and every part of the system. Follow along and have your agency running on proven processes within days, not months.</p>
+        <ul class="wi-bullets">
+          <li>Full modules covering every agency function</li>
+          <li>Screen-recorded walkthroughs you can copy exactly</li>
+          <li>Updated regularly as the system evolves</li>
+        </ul>
       </div>
 
       <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/SOPs.svg" alt="SOPs + Templates" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">02</div>
-          <div class="wi-title">SOPs + Templates</div>
-          <p class="wi-desc">Ready-to-use standard operating procedures and templates for every agency function. Built from 9 years of real agency work and refined by 1,000+ Blueprint members.</p>
-          <ul class="wi-bullets">
-            <li>Proposal, onboarding, and reporting templates</li>
-            <li>Client-facing deliverable frameworks</li>
-            <li>Continuously updated as best practices evolve</li>
-          </ul>
-        </div>
+        <img src="assets/card-sops.svg" alt="SOPs + Templates" class="wi-icon-img">
+        <div class="wi-num">02</div>
+        <div class="wi-title">SOPs + Templates</div>
+        <p class="wi-desc">Ready-to-use standard operating procedures and templates for every agency function. Built from 9 years of real agency work and refined by 1,000+ Blueprint members.</p>
+        <ul class="wi-bullets">
+          <li>Proposal, onboarding, and reporting templates</li>
+          <li>Client-facing deliverable frameworks</li>
+          <li>Continuously updated as best practices evolve</li>
+        </ul>
       </div>
 
       <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/Live Training Sessions.svg" alt="Live Training Sessions" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">03</div>
-          <div class="wi-title">Live Training Sessions</div>
-          <p class="wi-desc">Get direct access to Ryan Stewart and David Krevitt every week. Bring your real questions, get real answers — live on screen with the people who built and run this system.</p>
-          <ul class="wi-bullets">
-            <li>Weekly sessions with Ryan Stewart & David Krevitt</li>
-            <li>Bring your agency's live challenges to the call</li>
-            <li>All sessions recorded and archived for replay</li>
-          </ul>
-        </div>
+        <img src="assets/card-ai-tools.svg" alt="AI Agent Suite" class="wi-icon-img">
+        <div class="wi-num">03</div>
+        <div class="wi-title">AI Agent Suite</div>
+        <p class="wi-desc">Pre-built tools trained on Blueprint SOPs that speed up real agency work: proposals, audits, onboarding, reporting, and more.</p>
+        <ul class="wi-bullets">
+          <li>Tools covering every core agency function</li>
+          <li>Built on 9 years of proven SOPs</li>
+          <li>Updated automatically as the platform evolves</li>
+        </ul>
       </div>
 
       <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/private community.svg" alt="Private Community" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">04</div>
-          <div class="wi-title">Private Community</div>
-          <p class="wi-desc">Join a private community of agency owners building alongside you. Share wins, get feedback, and stay ahead of every new development in the industry.</p>
-          <ul class="wi-bullets">
-            <li>Private community</li>
-            <li>Peer support from 3,000+ agency owners</li>
-            <li>First access to new tools and Blueprint updates</li>
-          </ul>
-        </div>
+        <img src="assets/card-coaching.svg" alt="2x Weekly Live Calls" class="wi-icon-img">
+        <div class="wi-num">04</div>
+        <div class="wi-title">2x Weekly Live Calls</div>
+        <p class="wi-desc">Get direct access to Ryan Stewart and David Krevitt every week. Bring your real questions, get real answers live on screen.</p>
+        <ul class="wi-bullets">
+          <li>Weekly sessions with Ryan Stewart & David Krevitt</li>
+          <li>Bring your agency's live challenges to the call</li>
+          <li>All sessions recorded and archived for replay</li>
+        </ul>
       </div>
 
       <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/ai agents.svg" alt="Plug & Play AI Agents" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">05</div>
-          <div class="wi-title">AI-Powered Tools</div>
-          <p class="wi-desc">Pre-built tools trained on Blueprint SOPs that speed up real agency work: proposals, audits, onboarding, reporting, and more. Deploy them in minutes, not weeks.</p>
-          <ul class="wi-bullets">
-            <li>Tools covering every core agency function</li>
-            <li>Built on 9 years of proven SOPs</li>
-            <li>Updated automatically as the platform evolves</li>
-          </ul>
-        </div>
+        <img src="assets/card-support.svg" alt="On Demand Q&A" class="wi-icon-img">
+        <div class="wi-num">05</div>
+        <div class="wi-title">On Demand Q&A</div>
+        <p class="wi-desc">Never get stuck. Get help from the Blueprint team and community any time, on any question.</p>
+        <ul class="wi-bullets">
+          <li>Direct access to the Blueprint team</li>
+          <li>Community-powered troubleshooting</li>
+          <li>Fast response times on all questions</li>
+        </ul>
       </div>
 
       <div class="wi-card">
-        <div class="wi-photo-placeholder">
-          <img src="assets/support.svg" alt="24/7 Support" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="wi-content">
-          <div class="wi-num">06</div>
-          <div class="wi-title">24/7 Support</div>
-          <p class="wi-desc">Never get stuck. Get help from the Blueprint team and community around the clock — whether it's a technical question, agent troubleshooting, or strategy advice.</p>
-          <ul class="wi-bullets">
-            <li>Direct access to the Blueprint team</li>
-            <li>Community-powered troubleshooting</li>
-            <li>Fast response times on all questions</li>
-          </ul>
-        </div>
+        <img src="assets/card-community.svg" alt="Private Community" class="wi-icon-img">
+        <div class="wi-num">06</div>
+        <div class="wi-title">Private Community</div>
+        <p class="wi-desc">Join a private community of agency owners building alongside you. Share wins, get feedback, and stay ahead of the curve.</p>
+        <ul class="wi-bullets">
+          <li>Private community of agency owners</li>
+          <li>Peer support from 3,000+ members</li>
+          <li>First access to new tools and updates</li>
+        </ul>
       </div>
 
     </div>

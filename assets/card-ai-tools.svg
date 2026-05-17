@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" fill="none">
+  <!-- Window chrome -->
+  <rect x="10" y="8" width="380" height="204" rx="8" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="10" y="8" width="380" height="28" rx="8" fill="#132c54"/>
+  <rect x="10" y="28" width="380" height="8" fill="#132c54"/>
+  <circle cx="28" cy="22" r="4" fill="#EF4444"/>
+  <circle cx="42" cy="22" r="4" fill="#F7C600"/>
+  <circle cx="56" cy="22" r="4" fill="#22C55E"/>
+  <text x="200" y="25" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Blueprint Training</text>
+  <!-- Sidebar -->
+  <rect x="10" y="36" width="90" height="176" fill="#F3F4F6"/>
+  <line x1="100" y1="36" x2="100" y2="212" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="20" y="46" width="70" height="8" rx="4" fill="#132c54"/>
+  <rect x="20" y="62" width="60" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="20" y="74" width="55" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="16" y="86" width="78" height="22" rx="4" fill="rgba(247,198,0,0.15)"/>
+  <rect x="24" y="93" width="50" height="6" rx="3" fill="#F7C600"/>
+  <rect x="20" y="116" width="65" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="20" y="128" width="48" height="6" rx="3" fill="#D1D5DB"/>
+  <!-- Main content: agent grid -->
+  <text x="116" y="54" font-family="sans-serif" font-size="11" font-weight="700" fill="#132c54">AI Agent Suite</text>
+  <!-- Agent card 1 -->
+  <rect x="110" y="62" width="80" height="84" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+  <circle cx="150" cy="84" r="14" fill="#132c54"/>
+  <polygon points="147,79 147,89 155,84" fill="#F7C600"/>
+  <rect x="122" y="106" width="56" height="5" rx="2" fill="#374151"/>
+  <rect x="126" y="116" width="48" height="4" rx="2" fill="#D1D5DB"/>
+  <rect x="118" y="128" width="64" height="12" rx="6" fill="rgba(34,139,34,0.1)"/>
+  <circle cx="126" cy="134" r="3" fill="#22C55E"/>
+  <text x="147" y="137" font-family="sans-serif" font-size="7" fill="#22C55E" text-anchor="middle">Active</text>
+  <!-- Agent card 2 -->
+  <rect x="198" y="62" width="80" height="84" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+  <circle cx="238" cy="84" r="14" fill="#132c54"/>
+  <rect x="232" y="79" width="12" height="3" rx="1" fill="#F7C600"/>
+  <rect x="232" y="84" width="12" height="3" rx="1" fill="#F7C600"/>
+  <rect x="232" y="89" width="8" height="3" rx="1" fill="#F7C600"/>
+  <rect x="210" y="106" width="56" height="5" rx="2" fill="#374151"/>
+  <rect x="214" y="116" width="48" height="4" rx="2" fill="#D1D5DB"/>
+  <rect x="206" y="128" width="64" height="12" rx="6" fill="rgba(34,139,34,0.1)"/>
+  <circle cx="214" cy="134" r="3" fill="#22C55E"/>
+  <text x="235" y="137" font-family="sans-serif" font-size="7" fill="#22C55E" text-anchor="middle">Active</text>
+  <!-- Agent card 3 -->
+  <rect x="286" y="62" width="80" height="84" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+  <circle cx="326" cy="84" r="14" fill="#132c54"/>
+  <rect x="320" y="78" width="12" height="12" rx="2" fill="none" stroke="#F7C600" stroke-width="1.5"/>
+  <polyline points="322,84 325,87 331,80" stroke="#F7C600" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <rect x="298" y="106" width="56" height="5" rx="2" fill="#374151"/>
+  <rect x="302" y="116" width="48" height="4" rx="2" fill="#D1D5DB"/>
+  <rect x="294" y="128" width="64" height="12" rx="6" fill="rgba(34,139,34,0.1)"/>
+  <circle cx="302" cy="134" r="3" fill="#22C55E"/>
+  <text x="323" y="137" font-family="sans-serif" font-size="7" fill="#22C55E" text-anchor="middle">Active</text>
+  <!-- Bottom stats row -->
+  <rect x="110" y="156" width="80" height="50" rx="6" fill="white" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="150" y="174" font-family="sans-serif" font-size="16" font-weight="700" fill="#132c54" text-anchor="middle">12</text>
+  <text x="150" y="194" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Total Agents</text>
+  <rect x="198" y="156" width="80" height="50" rx="6" fill="white" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="238" y="174" font-family="sans-serif" font-size="16" font-weight="700" fill="#22C55E" text-anchor="middle">9</text>
+  <text x="238" y="194" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Running</text>
+  <rect x="286" y="156" width="80" height="50" rx="6" fill="white" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="326" y="174" font-family="sans-serif" font-size="16" font-weight="700" fill="#F7C600" text-anchor="middle">847</text>
+  <text x="326" y="194" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Tasks Done</text>
+</svg>

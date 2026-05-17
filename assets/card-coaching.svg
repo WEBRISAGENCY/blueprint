@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" fill="none">
+  <!-- Window chrome -->
+  <rect x="10" y="8" width="380" height="204" rx="8" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="10" y="8" width="380" height="28" rx="8" fill="#132c54"/>
+  <rect x="10" y="28" width="380" height="8" fill="#132c54"/>
+  <circle cx="28" cy="22" r="4" fill="#EF4444"/>
+  <circle cx="42" cy="22" r="4" fill="#F7C600"/>
+  <circle cx="56" cy="22" r="4" fill="#22C55E"/>
+  <text x="200" y="25" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Blueprint Training</text>
+  <!-- Sidebar -->
+  <rect x="10" y="36" width="90" height="176" fill="#F3F4F6"/>
+  <line x1="100" y1="36" x2="100" y2="212" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="20" y="46" width="70" height="8" rx="4" fill="#132c54"/>
+  <rect x="20" y="62" width="60" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="20" y="74" width="55" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="20" y="86" width="65" height="6" rx="3" fill="#D1D5DB"/>
+  <rect x="16" y="98" width="78" height="22" rx="4" fill="rgba(247,198,0,0.15)"/>
+  <rect x="24" y="105" width="50" height="6" rx="3" fill="#F7C600"/>
+  <rect x="20" y="128" width="48" height="6" rx="3" fill="#D1D5DB"/>
+  <!-- Main: Calendar view -->
+  <text x="116" y="54" font-family="sans-serif" font-size="11" font-weight="700" fill="#132c54">Live Calls</text>
+  <text x="330" y="54" font-family="sans-serif" font-size="9" fill="#9CA3AF" text-anchor="end">May 2026</text>
+  <!-- Calendar grid -->
+  <text x="124" y="74" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Mon</text>
+  <text x="162" y="74" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Tue</text>
+  <text x="200" y="74" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Wed</text>
+  <text x="238" y="74" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Thu</text>
+  <text x="276" y="74" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Fri</text>
+  <text x="314" y="74" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Sat</text>
+  <text x="352" y="74" font-family="sans-serif" font-size="8" fill="#9CA3AF" text-anchor="middle">Sun</text>
+  <!-- Week 1 -->
+  <text x="124" y="94" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">5</text>
+  <text x="162" y="94" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">6</text>
+  <circle cx="200" cy="90" r="12" fill="#132c54"/>
+  <text x="200" y="94" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="700">7</text>
+  <text x="238" y="94" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">8</text>
+  <text x="276" y="94" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">9</text>
+  <circle cx="314" cy="90" r="12" fill="rgba(247,198,0,0.15)"/>
+  <text x="314" y="94" font-family="sans-serif" font-size="10" fill="#F7C600" text-anchor="middle" font-weight="700">10</text>
+  <text x="352" y="94" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">11</text>
+  <!-- Week 2 -->
+  <text x="124" y="118" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">12</text>
+  <text x="162" y="118" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">13</text>
+  <circle cx="200" cy="114" r="12" fill="#132c54"/>
+  <text x="200" y="118" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="700">14</text>
+  <text x="238" y="118" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">15</text>
+  <text x="276" y="118" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">16</text>
+  <circle cx="314" cy="114" r="12" fill="rgba(247,198,0,0.15)"/>
+  <text x="314" y="118" font-family="sans-serif" font-size="10" fill="#F7C600" text-anchor="middle" font-weight="700">17</text>
+  <text x="352" y="118" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">18</text>
+  <!-- Upcoming call card -->
+  <rect x="110" y="140" width="254" height="62" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="110" y="140" width="5" height="62" rx="2" fill="#F7C600"/>
+  <text x="126" y="158" font-family="sans-serif" font-size="10" font-weight="700" fill="#132c54">Next: Wednesday Live Call</text>
+  <text x="126" y="172" font-family="sans-serif" font-size="9" fill="#6B7280">May 14 at 12:00 PM EST</text>
+  <text x="126" y="190" font-family="sans-serif" font-size="9" fill="#9CA3AF">Ryan Stewart &amp; David Krevitt</text>
+  <!-- Live badge -->
+  <rect x="310" y="148" width="44" height="18" rx="9" fill="#DC2626"/>
+  <text x="332" y="160" font-family="sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="700">LIVE</text>
+  <!-- Attendees -->
+  <circle cx="320" cy="182" r="8" fill="#132c54"/>
+  <circle cx="332" cy="182" r="8" fill="#1E3A5F"/>
+  <circle cx="344" cy="182" r="8" fill="#2D4A6F"/>
+  <text x="356" y="185" font-family="sans-serif" font-size="8" fill="#9CA3AF">+42</text>
+</svg>
