@@ -90,25 +90,6 @@
   .hero h1 { color: #FFFFFF !important; }
   .hero h1 span { color: #F7C600 !important; }
 
-  /* ── FILTER BAR ── */
-  .filter-bar {
-    background: #FFFFFF; border-top: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08);
-    padding: 0 24px; position: sticky; top: 86px; z-index: 90;
-  }
-  .filter-inner {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: center; gap: 0; overflow-x: auto;
-  }
-  .filter-btn {
-    background: transparent; border: none; cursor: pointer;
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: #6B7280; padding: 18px 24px; white-space: nowrap;
-    border-bottom: 2px solid transparent; transition: all 0.2s;
-  }
-  .filter-btn:hover { color: #0B0E1A; }
-  .filter-btn.active { color: #0B0E1A; border-bottom-color: #F7C600; }
-
   /* ── FEATURED ARTICLE ── */
   .featured { padding: 64px 24px 0; }
   .featured-card {
@@ -181,13 +162,6 @@
     transition: transform 0.4s ease;
   }
   .article-card:hover .article-thumb img { transform: scale(1.04); }
-  .article-cat {
-    position: absolute; top: 14px; left: 14px;
-    background: #F7C600; color: #0B0E1A;
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 3px 10px;
-  }
   .article-body { padding: 28px 24px; flex: 1; display: flex; flex-direction: column; }
   .article-title {
     font-family: 'Bebas Neue', sans-serif;
@@ -516,7 +490,6 @@
     .nav-logo img { height: 27px !important; width: auto !important; }
     .mobile-cta-btn .mobile-cta-full { display: none !important; }
     .mobile-cta-btn .mobile-cta-short { display: inline !important; }
-    .filter-bar { top: 54px; }
     .hero { padding-top: 110px !important; }
   }
 
@@ -591,18 +564,6 @@
   </div>
 </section>
 
-<!-- FILTER BAR -->
-<div class="filter-bar">
-  <div class="filter-inner">
-    <button class="filter-btn active" onclick="filterArticles('all', this)">All</button>
-    <button class="filter-btn" onclick="filterArticles('agency', this)">Agency</button>
-    <button class="filter-btn" onclick="filterArticles('ai', this)">AI & Automation</button>
-    <button class="filter-btn" onclick="filterArticles('tactics', this)">Tactics</button>
-    <button class="filter-btn" onclick="filterArticles('bootcamps', this)">Bootcamps</button>
-    <button class="filter-btn" onclick="filterArticles('templates', this)">Templates</button>
-    <button class="filter-btn" onclick="filterArticles('office-hours', this)">Office Hours</button>
-  </div>
-</div>
 
 
 
@@ -611,10 +572,9 @@
   <div class="container">
 
     <div class="articles-grid" id="articlesGrid">
-<a href="https://ai.theblueprint.training/generate-leads-meta-ads/" class="article-card" data-cat="tactics">
+<a href="https://ai.theblueprint.training/generate-leads-meta-ads/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2025/07/Frame-17-1.png" alt="Generate 15 - 20 Qualified Leads With Meta Ads" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">Generate 15 - 20 Qualified Leads With Meta Ads</div>
@@ -628,10 +588,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/ai-seo-process/" class="article-card" data-cat="ai">
+      <a href="https://ai.theblueprint.training/ai-seo-process/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2025/02/177.-1-MAN-SEO-TEAM-copy.jpg" alt="How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow" loading="lazy">
-          <span class="article-cat">AI & Automation</span>
         </div>
         <div class="article-body">
           <div class="article-title">How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow</div>
@@ -645,10 +604,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/joy-hawkins/" class="article-card" data-cat="bootcamps">
+      <a href="https://ai.theblueprint.training/joy-hawkins/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/12/125-.-Guest-Interview-BPT-8-copy.jpg" alt="Joy Hawkins: Live AMA On Local SEO" loading="lazy">
-          <span class="article-cat">Bootcamp</span>
         </div>
         <div class="article-body">
           <div class="article-title">Joy Hawkins: Live AMA On Local SEO</div>
@@ -662,10 +620,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/link-building-for-dentists/" class="article-card" data-cat="tactics">
+      <a href="https://ai.theblueprint.training/link-building-for-dentists/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/12/143.-Link-building-for-dentists-copy.jpg" alt="These 3 Links Will Rank Any Dentist Website In Google" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">These 3 Links Will Rank Any Dentist Website In Google</div>
@@ -679,10 +636,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/agency-lead-generation/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/agency-lead-generation/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/10/Cover.png" alt="How To Generate Predictable Leads For Your Agency" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">How To Generate Predictable Leads For Your Agency</div>
@@ -696,10 +652,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/seo-report/" class="article-card" data-cat="templates">
+      <a href="https://ai.theblueprint.training/seo-report/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/08/Screen-Shot-2019-08-13-at-8.32.35-AM.png" alt="How to Build Your Own SEO Report (FREE Template)" loading="lazy">
-          <span class="article-cat">Templates</span>
         </div>
         <div class="article-body">
           <div class="article-title">How to Build Your Own SEO Report (FREE Template)</div>
@@ -712,10 +667,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/build-authority-links-for-clients/" class="article-card" data-cat="tactics">
+<a href="https://ai.theblueprint.training/build-authority-links-for-clients/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/08/Cover.png" alt="How to Get High Authority Links For Your SEO Clients" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">How to Get High Authority Links For Your SEO Clients</div>
@@ -728,10 +682,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/local-seo/" class="article-card" data-cat="tactics">
+<a href="https://ai.theblueprint.training/local-seo/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/08/maxresdefault.jpg" alt="6 Local SEO Ranking Factors to Dominate the Maps Pack For Your Clients" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">6 Local SEO Ranking Factors to Dominate the Maps Pack For Your Clients</div>
@@ -744,10 +697,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/nobs-links/" class="article-card" data-cat="tactics">
+<a href="https://ai.theblueprint.training/nobs-links/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2020/03/Aaron-Gray-Blog-Image.png" alt="Aaron Gray (NO BS Links) Tells Us What&#x27;s Working in Link Building Right NOW" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">Aaron Gray (NO BS Links) Tells Us What&#x27;s Working in Link Building Right NOW</div>
@@ -760,10 +712,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/jason-hennessey/" class="article-card" data-cat="bootcamps">
+<a href="https://ai.theblueprint.training/jason-hennessey/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/07/104-.-Guest-Interview-BPT-5-copy.jpg" alt="Building a $19M SEO Agency w/ Jason Hennessey" loading="lazy">
-          <span class="article-cat">Bootcamp</span>
         </div>
         <div class="article-body">
           <div class="article-title">Building a $19M SEO Agency w/ Jason Hennessey</div>
@@ -776,10 +727,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/seo-content-training/" class="article-card" data-cat="tactics">
+<a href="https://ai.theblueprint.training/seo-content-training/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/07/Cover-2.png" alt="How To Create SEO Content That Ranks (and Banks)" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">How To Create SEO Content That Ranks (and Banks)</div>
@@ -793,10 +743,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/local-seo-training/" class="article-card" data-cat="tactics">
+      <a href="https://ai.theblueprint.training/local-seo-training/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/06/Cover-3.png" alt="How To Make Easy Money Selling Local SEO To Clients" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">How To Make Easy Money Selling Local SEO To Clients</div>
@@ -810,10 +759,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/agency-pricing-models/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/agency-pricing-models/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2022/04/YouTube-Video-Template-15-4.png" alt="7 SEO Pricing Models for Agencies and Consultants" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">7 SEO Pricing Models for Agencies and Consultants</div>
@@ -827,10 +775,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/client-questionnaire-template/" class="article-card" data-cat="ai">
+      <a href="https://ai.theblueprint.training/client-questionnaire-template/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/06/onboarding-questionnaire-template.png" alt="SEO Client Onboarding Questionnaire [FREE Template]" loading="lazy">
-          <span class="article-cat">AI & Automation</span>
         </div>
         <div class="article-body">
           <div class="article-title">SEO Client Onboarding Questionnaire [FREE Template]</div>
@@ -844,10 +791,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/seo-agency-project-management/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/seo-agency-project-management/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2020/08/31-.png" alt="The Ultimate Guide to SEO Agency Project Management" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">The Ultimate Guide to SEO Agency Project Management</div>
@@ -861,10 +807,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/niches-for-your-agency/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/niches-for-your-agency/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/03/maxresdefault.webp" alt="3 Agency Niches GUARANTEED To Generate Millions In Revenue" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">3 Agency Niches GUARANTEED To Generate Millions In Revenue</div>
@@ -878,10 +823,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/agency-website-template/" class="article-card" data-cat="templates">
+      <a href="https://ai.theblueprint.training/agency-website-template/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2024/02/18.-5-page-website-copy-1.jpg" alt="The 5-Page Agency Website [FREE Template]" loading="lazy">
-          <span class="article-cat">Templates</span>
         </div>
         <div class="article-body">
           <div class="article-title">The 5-Page Agency Website [FREE Template]</div>
@@ -895,10 +839,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/blueprint-affiliate-program/" class="article-card" data-cat="ai">
+      <a href="https://ai.theblueprint.training/blueprint-affiliate-program/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/03/blueprint-training-affiliate-program.png" alt="Earn Recurring Revenue by Friends to The Blueprint Training" loading="lazy">
-          <span class="article-cat">AI & Automation</span>
         </div>
         <div class="article-body">
           <div class="article-title">Earn Recurring Revenue by Friends to The Blueprint Training</div>
@@ -912,10 +855,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/how-to-productize-services/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/how-to-productize-services/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2022/04/YouTube-Video-Template-17-2.jpg" alt="HOW to Productize Your Agency&#x27;s Services" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">HOW to Productize Your Agency&#x27;s Services</div>
@@ -929,10 +871,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/seo-deliverables/" class="article-card" data-cat="ai">
+      <a href="https://ai.theblueprint.training/seo-deliverables/" class="article-card">
         <div class="article-thumb" style="background:#EEF0F4; display:flex; align-items:center; justify-content:center;">
           <span style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:rgba(247,198,0,0.15); letter-spacing:0.04em;">AI </span>
-          <span class="article-cat">AI & Automation</span>
         </div>
         <div class="article-body">
           <div class="article-title">31 SEO Deliverables Ready To Use On Client Campaigns</div>
@@ -946,10 +887,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/project-management-seo/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/project-management-seo/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/02/project-management-for-search-engine-optimization-agencies.png" alt="Steal Our Agency&#x27;s Project Management System for SEO" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">Steal Our Agency&#x27;s Project Management System for SEO</div>
@@ -962,10 +902,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/seo-proposal-template/" class="article-card" data-cat="templates">
+<a href="https://ai.theblueprint.training/seo-proposal-template/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2020/02/perfect_proposal6.jpg" alt="An SEO Proposal Template PROVEN To Close More Clients" loading="lazy">
-          <span class="article-cat">Templates</span>
         </div>
         <div class="article-body">
           <div class="article-title">An SEO Proposal Template PROVEN To Close More Clients</div>
@@ -978,10 +917,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/make-money-seo/" class="article-card" data-cat="tactics">
+<a href="https://ai.theblueprint.training/make-money-seo/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2022/08/how-to-make-money-with-seo.jpg" alt="13 Ways to Make Money Using SEO" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">13 Ways to Make Money Using SEO</div>
@@ -994,10 +932,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/carrie-rose-rise-at-seven/" class="article-card" data-cat="agency">
+<a href="https://ai.theblueprint.training/carrie-rose-rise-at-seven/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2022/06/YouTube-Video-Template-31-1.png" alt="How Carrie Rose Grew Rise at Seven Agency to 100+ Staff" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">How Carrie Rose Grew Rise at Seven Agency to 100+ Staff</div>
@@ -1011,10 +948,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/content-marketing-for-agencies/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/content-marketing-for-agencies/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2022/06/YouTube-Video-Template-35.jpg" alt="5 Pieces of Content That Will Fill Your Agency&#x27;s Pipeline" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">5 Pieces of Content That Will Fill Your Agency&#x27;s Pipeline</div>
@@ -1028,10 +964,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/content-brief-template/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/content-brief-template/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2022/06/Blueprint-blog-post-2-1.png" alt="Content Briefs: A Marketing Agency&#x27;s Best Friend" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">Content Briefs: A Marketing Agency&#x27;s Best Friend</div>
@@ -1045,10 +980,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/ahrefs-search-engine-yep/" class="article-card" data-cat="templates">
+      <a href="https://ai.theblueprint.training/ahrefs-search-engine-yep/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2022/06/YouTube-Video-Template-19-1.jpg" alt="SEO Tool Ahrefs Invests $60M to Launch a Search Engine, Yep" loading="lazy">
-          <span class="article-cat">Templates</span>
         </div>
         <div class="article-body">
           <div class="article-title">SEO Tool Ahrefs Invests $60M to Launch a Search Engine, Yep</div>
@@ -1061,10 +995,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/agency-positioning/" class="article-card" data-cat="agency">
+<a href="https://ai.theblueprint.training/agency-positioning/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2021/02/44.png" alt="The Complete Guide to Agency Positioning" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">The Complete Guide to Agency Positioning</div>
@@ -1078,10 +1011,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/best-seo-tool-stack/" class="article-card" data-cat="templates">
+      <a href="https://ai.theblueprint.training/best-seo-tool-stack/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/08/16.png" alt="The Essential SEO Stack. These Are The Only Tools You Need, Nothing More." loading="lazy">
-          <span class="article-cat">Templates</span>
         </div>
         <div class="article-body">
           <div class="article-title">The Essential SEO Stack. These Are The Only Tools You Need, Nothing More.</div>
@@ -1095,10 +1027,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/seo-templates-every-agency-needs/" class="article-card" data-cat="templates">
+      <a href="https://ai.theblueprint.training/seo-templates-every-agency-needs/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2021/09/Frame-2.png" alt="5 SEO Templates Every Agency Needs" loading="lazy">
-          <span class="article-cat">Templates</span>
         </div>
         <div class="article-body">
           <div class="article-title">5 SEO Templates Every Agency Needs</div>
@@ -1112,10 +1043,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/link-building-strategy/" class="article-card" data-cat="templates">
+      <a href="https://ai.theblueprint.training/link-building-strategy/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2021/09/55.png" alt="Steal Our Agency&#x27;s Link Building Strategy (Free Template)" loading="lazy">
-          <span class="article-cat">Templates</span>
         </div>
         <div class="article-body">
           <div class="article-title">Steal Our Agency&#x27;s Link Building Strategy (Free Template)</div>
@@ -1129,10 +1059,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/bigger-agency-clients/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/bigger-agency-clients/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2022/08/how-to-make-money-with-seo.jpg" alt="How to Land Bigger Clients for Your Agency" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">How to Land Bigger Clients for Your Agency</div>
@@ -1145,10 +1074,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/keyword-research/" class="article-card" data-cat="templates">
+<a href="https://ai.theblueprint.training/keyword-research/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2021/01/21.png" alt="Steal Our Agency&#x27;s Keyword Research Process + Template" loading="lazy">
-          <span class="article-cat">Templates</span>
         </div>
         <div class="article-body">
           <div class="article-title">Steal Our Agency&#x27;s Keyword Research Process + Template</div>
@@ -1161,10 +1089,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/seo-process/" class="article-card" data-cat="tactics">
+<a href="https://ai.theblueprint.training/seo-process/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/02/5-phases-overview.png" alt="A Look Inside Our SEO Process for Clients" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">A Look Inside Our SEO Process for Clients</div>
@@ -1178,10 +1105,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/john-doherty/" class="article-card" data-cat="agency">
+      <a href="https://ai.theblueprint.training/john-doherty/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2020/07/Blog-Image-1-1.png" alt="Agency Sales Strategies with John Doherty of Credo" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">Agency Sales Strategies with John Doherty of Credo</div>
@@ -1195,10 +1121,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/jimmy-daly/" class="article-card" data-cat="bootcamps">
+      <a href="https://ai.theblueprint.training/jimmy-daly/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2020/07/Blog-Image.png" alt="Building a 100% Remote Agency w/ Jimmy Daly" loading="lazy">
-          <span class="article-cat">Bootcamp</span>
         </div>
         <div class="article-body">
           <div class="article-title">Building a 100% Remote Agency w/ Jimmy Daly</div>
@@ -1211,10 +1136,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/ross-hudgens/" class="article-card" data-cat="bootcamps">
+<a href="https://ai.theblueprint.training/ross-hudgens/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2020/06/Blog-Image-1.png" alt="Advanced Content Strategy + Link Acquisition w/ Ross Hudgens" loading="lazy">
-          <span class="article-cat">Bootcamp</span>
         </div>
         <div class="article-body">
           <div class="article-title">Advanced Content Strategy + Link Acquisition w/ Ross Hudgens</div>
@@ -1227,10 +1151,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/michael-king-ipullrank/" class="article-card" data-cat="bootcamps">
+<a href="https://ai.theblueprint.training/michael-king-ipullrank/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2020/05/Michael-King-Blog-Image.png" alt="Hiring Superstars for your Agency w/ Mike King" loading="lazy">
-          <span class="article-cat">Bootcamp</span>
         </div>
         <div class="article-body">
           <div class="article-title">Hiring Superstars for your Agency w/ Mike King</div>
@@ -1243,10 +1166,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/agency-tax-planning/" class="article-card" data-cat="agency">
+<a href="https://ai.theblueprint.training/agency-tax-planning/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2020/01/Bryan-Nguyen-Blog-Image.png" alt="HUGE Tips to Save Your Agency Money at Tax Time" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">HUGE Tips to Save Your Agency Money at Tax Time</div>
@@ -1260,10 +1182,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/seo-competitive-analysis/" class="article-card" data-cat="tactics">
+      <a href="https://ai.theblueprint.training/seo-competitive-analysis/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/03/seo-competitive-analysis-template.png" alt="How to Run An SEO Competitive Audit" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">How to Run An SEO Competitive Audit</div>
@@ -1277,10 +1198,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/rank-amazon-books-dave-chesson/" class="article-card" data-cat="tactics">
+      <a href="https://ai.theblueprint.training/rank-amazon-books-dave-chesson/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/12/David-Chesson-Blog-Image.png" alt="Optimizing Your Books to Rank in Amazon" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">Optimizing Your Books to Rank in Amazon</div>
@@ -1293,10 +1213,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/how-to-speak-at-an-seo-conference/" class="article-card" data-cat="bootcamps">
+<a href="https://ai.theblueprint.training/how-to-speak-at-an-seo-conference/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/11/Jim-Christian-Blog-Image.png" alt="How to Speak at an SEO Conference w/ Jim Christian" loading="lazy">
-          <span class="article-cat">Bootcamp</span>
         </div>
         <div class="article-body">
           <div class="article-title">How to Speak at an SEO Conference w/ Jim Christian</div>
@@ -1310,10 +1229,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/facebook-advertising-algorithm-changes/" class="article-card" data-cat="tactics">
+      <a href="https://ai.theblueprint.training/facebook-advertising-algorithm-changes/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/11/Renaldo-Edmondson-Blog-Image.png" alt="Advertising On Facebook? Pay Close Attention...." loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">Advertising On Facebook? Pay Close Attention....</div>
@@ -1326,10 +1244,9 @@
           </div>
         </div>
       </a>
-<a href="https://ai.theblueprint.training/moz-vs-semrush-vs-ahrefs/" class="article-card" data-cat="agency">
+<a href="https://ai.theblueprint.training/moz-vs-semrush-vs-ahrefs/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/05/18.png" alt="Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?" loading="lazy">
-          <span class="article-cat">Agency</span>
         </div>
         <div class="article-body">
           <div class="article-title">Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?</div>
@@ -1343,10 +1260,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/seo-roi/" class="article-card" data-cat="tactics">
+      <a href="https://ai.theblueprint.training/seo-roi/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/04/roi-of-an-seo-campaign-blog-post.png" alt="How to Calculate the ROI of SEO" loading="lazy">
-          <span class="article-cat">Tactics</span>
         </div>
         <div class="article-body">
           <div class="article-title">How to Calculate the ROI of SEO</div>
@@ -1360,10 +1276,9 @@
         </div>
       </a>
 
-      <a href="https://ai.theblueprint.training/webris/" class="article-card" data-cat="ai">
+      <a href="https://ai.theblueprint.training/webris/" class="article-card">
         <div class="article-thumb">
           <img src="https://theblueprint.training/wp-content/uploads/2019/02/the-blueprint-training-by-ryan-stewart.png" alt="WEBRIS Training is Now The Blueprint Training" loading="lazy">
-          <span class="article-cat">AI & Automation</span>
         </div>
         <div class="article-body">
           <div class="article-title">WEBRIS Training is Now The Blueprint Training</div>
@@ -1463,20 +1378,6 @@
   </div>
 </footer>
 
-<script>
-function filterArticles(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const cards = document.querySelectorAll('.article-card');
-  cards.forEach(card => {
-    if (cat === 'all' || card.dataset.cat === cat) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-</script>
 
 </body>
 </html>

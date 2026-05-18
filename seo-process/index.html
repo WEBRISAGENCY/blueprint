@@ -49,27 +49,29 @@ body{background:#FFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-x:h
 .article-breadcrumb a:hover{color:var(--yellow);}
 .article-breadcrumb span{color:rgba(0,0,0,0.25);}
 .article-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5.5vw,72px);line-height:0.95;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin-bottom:28px;}
-.article-meta-row{display:flex;align-items:center;gap:24px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.article-meta-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;}
 .article-author-block{display:flex;align-items:center;gap:10px;}
-.author-avatar{width:40px;height:40px;border-radius:50%;background:#EEF0F4;border:2px solid rgba(247,198,0,0.4);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--yellow);}
+.author-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;}.author-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
 .author-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);}
 .author-title{font-size:12px;color:var(--gray);}
 .article-meta-divider{width:1px;height:32px;background:var(--border);}
 .article-meta-item{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px;}
 .article-meta-item strong{color:var(--gray-light);font-weight:600;}
-.article-hero-image{max-width:860px;margin:0 auto;padding:0 24px;}
-.article-hero-image img{display:block;width:100%;height:420px;object-fit:cover;border:1px solid rgba(0,0,0,0.08);}
+
+
+.article-body iframe,.article-body .wp-block-embed{display:block;width:100%;margin:28px 0;}.article-body .responsive-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:28px 0;}.article-body .responsive-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+.article-body blockquote{border-left:3px solid var(--yellow);margin:28px 0;padding:16px 24px;background:#F7F8FA;}.article-body blockquote p{margin-bottom:0;font-style:italic;}
 .article-content{max-width:860px;margin:0 auto;padding:56px 24px 96px;}
-.article-body p{font-size:17px;line-height:1.85;color:var(--gray-light);margin-bottom:24px;}
-.article-body p strong{color:var(--white);}
-.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.5vw,44px);line-height:1.0;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin:48px 0 20px;padding-top:48px;border-top:1px solid var(--border);}
+.article-body p{font-size:16.5px;line-height:1.8;color:var(--gray-light);margin-bottom:20px;}
+.article-body p strong{color:var(--white);font-weight:600;}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3vw,40px);line-height:1.0;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin:40px 0 16px;padding-top:40px;border-top:1px solid var(--border);}
 .article-body h2:first-child{margin-top:0;padding-top:0;border-top:none;}
-.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:0.04em;text-transform:uppercase;color:var(--yellow);margin:36px 0 14px;}
-.article-body ul,.article-body ol{padding-left:0;margin-bottom:24px;list-style:none;display:flex;flex-direction:column;gap:10px;}
-.article-body ul li,.article-body ol li{font-size:16px;color:var(--gray-light);line-height:1.7;display:flex;align-items:flex-start;gap:12px;padding:10px 16px;background:#F7F8FA;border-left:2px solid rgba(247,198,0,0.4);}
-.article-body ul li::before{content:'\2192';color:var(--yellow);flex-shrink:0;font-size:14px;margin-top:1px;}
-.article-body img{max-width:100%;height:auto;margin:24px 0;border:1px solid rgba(0,0,0,0.08);}
-.article-body a{color:var(--yellow);}
+.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:0.04em;text-transform:uppercase;color:var(--white);margin:32px 0 12px;}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:20px;list-style:disc;display:block;}
+.article-body ul li,.article-body ol li{font-size:16px;color:var(--gray-light);line-height:1.8;padding:4px 0 4px 0;background:none;border-left:none;display:list-item;}
+.article-body ul li::before{display:none;}
+.article-body img{display:block;width:100%;height:auto;margin:28px 0;border-radius:0;}
+.article-body a{color:#1E3A5F;text-decoration:underline;text-underline-offset:2px;}.article-body a:hover{color:var(--yellow);}
 .author-bio{max-width:860px;margin:0 auto;padding:0 24px 64px;}
 .author-bio-card{background:#F7F8FA;border:1px solid rgba(0,0,0,0.08);padding:32px 28px;display:flex;gap:24px;align-items:flex-start;}
 .author-bio-avatar{width:64px;height:64px;border-radius:50%;flex-shrink:0;background:#EEF0F4;border:2px solid rgba(247,198,0,0.4);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--yellow);}
@@ -95,14 +97,14 @@ footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;
 .footer-legal a:hover{color:rgba(255,255,255,0.6);}
 .footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s;}
 .footer-cta-btn:hover{filter:brightness(1.05);}
-@media(max-width:768px){.article-hero-image img{height:240px;}.author-bio-card{flex-direction:column;gap:16px;}.footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}}
+@media(max-width:768px){.author-bio-card{flex-direction:column;gap:16px;}.footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}}
 @media(max-width:480px){.footer-nav{grid-template-columns:1fr;gap:36px;}}
 </style>
 </head>
 <body>
 <div class="nav-bar"><div class="nav-inner">
 <a class="nav-logo" href="https://ai.theblueprint.training/index">
-<img src="../assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+<img src="./assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
 </a>
 <div class="nav-links">
 <a class="nav-item-link" href="https://ai.theblueprint.training/about">About</a>
@@ -152,22 +154,18 @@ footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;
 <h1 class="article-title">A Look Inside Our SEO Process for Clients</h1>
 <div class="article-meta-row">
 <div class="article-author-block">
-<div class="author-avatar">RS</div>
-<div><div class="author-name">Ryan Stewart</div><div class="author-title">Founder, The Blueprint Training</div></div>
+<div class="author-avatar"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
+<div><div class="author-name"><a href="https://ai.theblueprint.training/about" style="text-decoration:none;color:inherit;">Ryan Stewart</a></div><div class="author-title">Founder, The Blueprint Training</div></div>
 </div>
 <div class="article-meta-divider"></div>
-<div class="article-meta-item"><strong>Author:</strong> Ryan Stewart</div>
+<div class="article-meta-item"><strong>Last updated:</strong> Sep 10, 2024</div>
 </div>
 </div>
 </section>
 
-<div class="article-hero-image">
-<img src="https://theblueprint.training/wp-content/uploads/2019/02/5-phases-overview.png" alt="A Look Inside Our SEO Process for Clients" loading="lazy">
-</div>
-
 <div class="article-content">
 <article class="article-body">
-<p>SEO is unpredictable...<strong>Results are never guaranteed</strong>.</p>
+<p>SEO is unpredictable..<strong>Results are never guaranteed</strong>.</p>
 
 <p>Having a process to execute SEO <strong>mitigates risk</strong> and <strong>puts your website in the best position to succeed.</strong>
 <blockquote>We have that SEO process.</blockquote>
@@ -202,7 +200,7 @@ The fastest turn around in organic traffic comes from small tweaks to existing p
 <strong>Tasks performed during Phase 2:</strong>
 <ul>
 <li><strong><a href="https://theblueprint.training/tools/website-quality-audit/">Website Quality Audit (WQA)</a></strong>. A full site crawl crosswalked with important SEO data. From there, we can classify each URL on a site with an "action". This action will determine how you deal with every page on a website (i.e. 301 redirect, update it, delete it, etc).</li>
- 	<li><a href="https://theblueprint.training/trainings/technical-seo/"><strong>Technical SEO audit</strong></a>. Technical SEO matters...a lot. But in all fairness, it greatly depends on the website. For example, you won't need to do much to a small WordPress site (we use the WQA instead of a tech audit). But an enterprise eCommerce site needs hundreds of hours of tech work. Removing technical roadblocks results in instant traffic gains.</li>
+ 	<li><a href="https://theblueprint.training/trainings/technical-seo/"><strong>Technical SEO audit</strong></a>. Technical SEO matters..a lot. But in all fairness, it greatly depends on the website. For example, you won't need to do much to a small WordPress site (we use the WQA instead of a tech audit). But an enterprise eCommerce site needs hundreds of hours of tech work. Removing technical roadblocks results in instant traffic gains.</li>
  	<li><a href="https://theblueprint.training/trainings/keyword-research/"><strong>Keyword research</strong></a>. Finding the right keywords (and intent) for key pages on a website. I like to look only at existing pages at this stage in the campaign. The goal is to find a better set of keywords that will allow key pages to rank better.</li>
  	<li><a href="https://theblueprint.training/trainings/target-pages/"><strong>Target page selection</strong></a>. Here is where we clearly define the key pages and their current performance. This focuses reporting on the impact of the campaign on the pages that matter most to the business.</li>
  	<li><a href="https://theblueprint.training/trainings/on-page-seo/"><strong>On page improvements</strong></a>. Cleaning up text, <a href="https://webris.org/seo-page-titles/" target="_blank" rel="noopener noreferrer">improving page titles</a>, metas, Schema markups and keyword optimizations. Good ol fashion SEO here, and <a href="https://youtu.be/ZKkuJbsAj0I" target="_blank" rel="noopener noreferrer">it still works</a> really well.</li>
@@ -249,7 +247,7 @@ After an SEO campaign, we go through an evaluation process to benchmark progress
 <strong>Tasks performed during Phase 5:</strong>
 <ul>
 <li><a href="https://theblueprint.training/tools/monthly-seo-report/"><strong>Monthly reporting</strong></a>. Doesn't matter if you're working with clients or it's just you, get in the habit of building ongoing reports. Again, Google Data Studio is by far the best option.</li>
- 	<li><strong>SEO split testing</strong>. Changing page titles, metas, content types, conversion rate optimization...there's a number of things you should be doing to make sure you're delivering the optimal organic experience.</li>
+ 	<li><strong>SEO split testing</strong>. Changing page titles, metas, content types, conversion rate optimization..there's a number of things you should be doing to make sure you're delivering the optimal organic experience.</li>
  	<li><strong>Ad hoc reporting</strong>. Everything from website speed checks to closeout reports, you should have a number of reporting templates in your arsenal for all occasions.</li>
 </ul>
 <strong>Main takeaways</strong>:
