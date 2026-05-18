@@ -348,7 +348,7 @@ function handleSubmit(e){
     body: 'firstname=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email)
   }).finally(function(){
     if(typeof fbq!=='undefined') fbq('track','Lead');
-    window.location.href = 'https://ai.theblueprint.training/thank-you.html';
+    window.location.href = '/thank-you.html';
   });
 }
 </script>
