@@ -99,14 +99,7 @@
     text-decoration: none;
   }
   .featured-card:hover { border-color: rgba(247,198,0,0.3); }
-  .featured-img {
-    position: relative; overflow: hidden; min-height: 420px;
-  }
-  .featured-img img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    transition: transform 0.4s ease;
-  }
-  .featured-card:hover .featured-img img { transform: scale(1.03); }
+  .featured-card:hover
   .featured-content { padding: 52px 48px; display: flex; flex-direction: column; justify-content: space-between; }
   .featured-tag {
     display: inline-flex; align-items: center; gap: 8px;
@@ -145,23 +138,15 @@
   .articles { padding: 48px 24px 96px; background: #F7F8FA; }
   .articles-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    gap: 24px;
   }
-  .article-card {
+  .article-card { border-radius: 4px;
     background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
     overflow: hidden; transition: all 0.3s; text-decoration: none;
     display: flex; flex-direction: column;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
   .article-card:hover { border-color: rgba(247,198,0,0.3); background: #F7F8FA; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-  .article-thumb {
-    position: relative; overflow: hidden; height: 200px;
-  }
-  .article-thumb img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    transition: transform 0.4s ease;
-  }
-  .article-card:hover .article-thumb img { transform: scale(1.04); }
   .article-body { padding: 28px 24px; flex: 1; display: flex; flex-direction: column; }
   .article-title {
     font-family: 'Bebas Neue', sans-serif;
@@ -198,7 +183,7 @@
   }
   .cat-view-all:hover { text-decoration: underline; }
   .cat-row {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
   }
 
   /* ── CTA STRIP ── */
@@ -356,7 +341,6 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 1000px) {
     .featured-card { grid-template-columns: 1fr; }
-    .featured-img { min-height: 280px; }
     .articles-grid { grid-template-columns: 1fr 1fr; }
     .cat-row { grid-template-columns: 1fr 1fr; }
   }
@@ -573,10 +557,7 @@
 
     <div class="articles-grid" id="articlesGrid">
 <a href="https://ai.theblueprint.training/generate-leads-meta-ads/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2025/07/Frame-17-1.png" alt="Generate 15 - 20 Qualified Leads With Meta Ads" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">Generate 15 - 20 Qualified Leads With Meta Ads</div>
           <div class="article-footer">
             <div class="article-author">
@@ -589,14 +570,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/ai-seo-process/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2025/02/177.-1-MAN-SEO-TEAM-copy.jpg" alt="How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -605,14 +583,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/link-building-for-dentists/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/12/143.-Link-building-for-dentists-copy.jpg" alt="These 3 Links Will Rank Any Dentist Website In Google" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">These 3 Links Will Rank Any Dentist Website In Google</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -621,14 +596,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/agency-lead-generation/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/10/Cover.png" alt="How To Generate Predictable Leads For Your Agency" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">How To Generate Predictable Leads For Your Agency</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -637,14 +609,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/seo-report/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2019/08/Screen-Shot-2019-08-13-at-8.32.35-AM.png" alt="How to Build Your Own SEO Report (FREE Template)" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">How to Build Your Own SEO Report (FREE Template)</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -652,10 +621,7 @@
         </div>
       </a>
 <a href="https://ai.theblueprint.training/build-authority-links-for-clients/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/08/Cover.png" alt="How to Get High Authority Links For Your SEO Clients" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">How to Get High Authority Links For Your SEO Clients</div>
           <div class="article-footer">
             <div class="article-author">
@@ -667,14 +633,11 @@
         </div>
       </a>
 <a href="https://ai.theblueprint.training/local-seo/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/08/maxresdefault.jpg" alt="6 Local SEO Ranking Factors to Dominate the Maps Pack For Your Clients" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">6 Local SEO Ranking Factors to Dominate the Maps Pack For Your Clients</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -682,10 +645,7 @@
         </div>
       </a>
 <a href="https://ai.theblueprint.training/seo-content-training/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/07/Cover-2.png" alt="How To Create SEO Content That Ranks (and Banks)" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">How To Create SEO Content That Ranks (and Banks)</div>
           <div class="article-footer">
             <div class="article-author">
@@ -698,14 +658,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/local-seo-training/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/06/Cover-3.png" alt="How To Make Easy Money Selling Local SEO To Clients" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">How To Make Easy Money Selling Local SEO To Clients</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -714,14 +671,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/agency-pricing-models/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/04/YouTube-Video-Template-15-4.png" alt="7 SEO Pricing Models for Agencies and Consultants" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">7 SEO Pricing Models for Agencies and Consultants</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -730,14 +684,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/client-questionnaire-template/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2019/06/onboarding-questionnaire-template.png" alt="SEO Client Onboarding Questionnaire [FREE Template]" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">SEO Client Onboarding Questionnaire [FREE Template]</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -746,14 +697,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/seo-agency-project-management/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2020/08/31-.png" alt="The Ultimate Guide to SEO Agency Project Management" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">The Ultimate Guide to SEO Agency Project Management</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -762,14 +710,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/niches-for-your-agency/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/03/maxresdefault.webp" alt="3 Agency Niches GUARANTEED To Generate Millions In Revenue" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">3 Agency Niches GUARANTEED To Generate Millions In Revenue</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -778,14 +723,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/agency-website-template/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2024/02/18.-5-page-website-copy-1.jpg" alt="The 5-Page Agency Website [FREE Template]" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">The 5-Page Agency Website [FREE Template]</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -794,10 +736,7 @@
       </a>
 
       <a href="https://ai.theblueprint.training/blueprint-affiliate-program/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2019/03/blueprint-training-affiliate-program.png" alt="Earn Recurring Revenue by Friends to The Blueprint Training" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">Earn Recurring Revenue by Friends to The Blueprint Training</div>
           <div class="article-footer">
             <div class="article-author">
@@ -810,14 +749,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/how-to-productize-services/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/04/YouTube-Video-Template-17-2.jpg" alt="HOW to Productize Your Agency&#x27;s Services" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">HOW to Productize Your Agency&#x27;s Services</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -826,14 +762,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/seo-deliverables/" class="article-card">
-        <div class="article-thumb" style="background:#EEF0F4; display:flex; align-items:center; justify-content:center;">
-          <span style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:rgba(247,198,0,0.15); letter-spacing:0.04em;">AI </span>
-        </div>
         <div class="article-body">
           <div class="article-title">31 SEO Deliverables Ready To Use On Client Campaigns</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -842,14 +775,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/project-management-seo/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2019/02/project-management-for-search-engine-optimization-agencies.png" alt="Steal Our Agency&#x27;s Project Management System for SEO" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">Steal Our Agency&#x27;s Project Management System for SEO</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -857,14 +787,11 @@
         </div>
       </a>
 <a href="https://ai.theblueprint.training/seo-proposal-template/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2020/02/perfect_proposal6.jpg" alt="An SEO Proposal Template PROVEN To Close More Clients" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">An SEO Proposal Template PROVEN To Close More Clients</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -872,14 +799,11 @@
         </div>
       </a>
 <a href="https://ai.theblueprint.training/make-money-seo/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/08/how-to-make-money-with-seo.jpg" alt="13 Ways to Make Money Using SEO" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">13 Ways to Make Money Using SEO</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -888,14 +812,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/content-marketing-for-agencies/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/06/YouTube-Video-Template-35.jpg" alt="5 Pieces of Content That Will Fill Your Agency&#x27;s Pipeline" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">5 Pieces of Content That Will Fill Your Agency&#x27;s Pipeline</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -904,14 +825,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/content-brief-template/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/06/Blueprint-blog-post-2-1.png" alt="Content Briefs: A Marketing Agency&#x27;s Best Friend" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">Content Briefs: A Marketing Agency&#x27;s Best Friend</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -919,14 +837,11 @@
         </div>
       </a>
 <a href="https://ai.theblueprint.training/agency-positioning/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2021/02/44.png" alt="The Complete Guide to Agency Positioning" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">The Complete Guide to Agency Positioning</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -935,14 +850,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/best-seo-tool-stack/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2019/08/16.png" alt="The Essential SEO Stack. These Are The Only Tools You Need, Nothing More." loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">The Essential SEO Stack. These Are The Only Tools You Need, Nothing More.</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -951,10 +863,7 @@
       </a>
 
       <a href="https://ai.theblueprint.training/seo-templates-every-agency-needs/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2021/09/Frame-2.png" alt="5 SEO Templates Every Agency Needs" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">5 SEO Templates Every Agency Needs</div>
           <div class="article-footer">
             <div class="article-author">
@@ -967,14 +876,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/link-building-strategy/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2021/09/55.png" alt="Steal Our Agency&#x27;s Link Building Strategy (Free Template)" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">Steal Our Agency&#x27;s Link Building Strategy (Free Template)</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -983,14 +889,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/bigger-agency-clients/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2022/08/how-to-make-money-with-seo.jpg" alt="How to Land Bigger Clients for Your Agency" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">How to Land Bigger Clients for Your Agency</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -998,14 +901,11 @@
         </div>
       </a>
 <a href="https://ai.theblueprint.training/keyword-research/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2021/01/21.png" alt="Steal Our Agency&#x27;s Keyword Research Process + Template" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">Steal Our Agency&#x27;s Keyword Research Process + Template</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -1014,14 +914,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/seo-competitive-analysis/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2019/03/seo-competitive-analysis-template.png" alt="How to Run An SEO Competitive Audit" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">How to Run An SEO Competitive Audit</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -1029,14 +926,11 @@
         </div>
       </a>
 <a href="https://ai.theblueprint.training/moz-vs-semrush-vs-ahrefs/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2019/05/18.png" alt="Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
@@ -1045,14 +939,11 @@
       </a>
 
       <a href="https://ai.theblueprint.training/seo-roi/" class="article-card">
-        <div class="article-thumb">
-          <img src="https://theblueprint.training/wp-content/uploads/2019/04/roi-of-an-seo-campaign-blog-post.png" alt="How to Calculate the ROI of SEO" loading="lazy">
-        </div>
-        <div class="article-body">
+<div class="article-body">
           <div class="article-title">How to Calculate the ROI of SEO</div>
           <div class="article-footer">
             <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;font-size:11px;">RS</div>
+              <div class="meta-avatar" style="width:28px;height:28px;"><img src="assets/ryan about page.webp" alt="Ryan Stewart"></div>
               <span class="article-author-name">Ryan Stewart</span>
             </div>
             <span class="article-arrow">&rarr;</span>
