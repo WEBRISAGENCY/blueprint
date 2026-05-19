@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coaching Program - Blueprint</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<html lang="en"><head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+"https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,"script","dataLayer","GTM-TR3DFMD");</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coaching | The Blueprint Training">
+<meta property="og:description" content="Scale your agency with hands-on coaching from Ryan Stewart. Weekly group calls, private Slack access, accountability partners, and a personalized growth plan.">
+<meta property="og:image" content="https://theblueprint.training/og-image.png">
+<meta property="og:url" content="https://theblueprint.training/coaching/">
+<meta property="og:site_name" content="The Blueprint Training">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coaching | The Blueprint Training">
+<meta name="twitter:description" content="Scale your agency with hands-on coaching from Ryan Stewart. Weekly group calls, private Slack access, accountability partners, and a personalized growth plan.">
+<meta name="twitter:image" content="https://theblueprint.training/og-image.png">
+<title>Coaching | The Blueprint Training</title>
+<meta name="description" content="Scale your agency with hands-on coaching from Ryan Stewart. Weekly group calls, private Slack access, accountability partners, and a personalized growth plan built around where your agency is right now.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&family=Orbitron:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&family=Orbitron:wght@700;800&display=swap"></noscript>
+<style>
+:root{--yellow:#F7C600;--yellow-dark:#D9AE00;--black:#0B0E1A;--dark:#111421;--border:rgba(0,0,0,0.08);--white:#FFFFFF;--gray:#6B7280;--gray-light:#374151;--bg-light:#F7F8FA;--green:#22C55E}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-x:hidden}
 
-        :root {
-            --yellow: #F7C600;
-            --yellow-dark: #D9AE00;
-            --black: #0B0E1A;
-            --dark: #111421;
-            --border: #252D3D;
-            --white: #FFFFFF;
-            --gray: #A0A8B8;
-            --gray-light: #E8EAEF;
-            --bg-light: #F5F5F7;
-        }
-
-        body {
-            font-family: 'Figtree', sans-serif;
-            background-color: var(--bg-light);
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* -- NAV -- */
+/* NAV */
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#FFFFFF;box-shadow:0 1px 8px rgba(0,0,0,0.08),0 2px 24px rgba(0,0,0,0.04)}
 .nav-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:flex;align-items:stretch;height:86px;padding:0 32px}
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;padding-right:28px;border-right:none;margin-right:4px;flex-shrink:0}
@@ -59,633 +60,163 @@
 .mobile-menu-socials a:hover{opacity:1}
 .mobile-menu-cta{display:block;text-align:center;margin-top:32px;background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:16px 32px;text-decoration:none}
 .mobile-menu-cta:hover{background:#D9AE00}
-
-        .navbar-links a:hover {
-            color: var(--yellow);
-        }
-
-        .navbar-cta:hover {
-            background-color: var(--yellow-dark);
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 70px;
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 4rem 2rem;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background-color: var(--yellow);
-            color: var(--black);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: var(--gray-light);
-        }
-
-        .hero-cta {
-            display: inline-block;
-            background-color: var(--yellow);
-            color: var(--black);
-            padding: 0.8rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .hero-cta:hover {
-            background-color: var(--yellow-dark);
-        }
-
-        .hero-image {
-            background: linear-gradient(135deg, #1a1f2e 0%, #2a3141 100%);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            color: var(--gray);
-            font-size: 5rem;
-        }
-
-        /* Main Content Layout */
-        .main-container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-        }
-
-        .content {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-        }
-
-        .section {
-            margin-bottom: 3rem;
-        }
-
-        .section h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--black);
-            letter-spacing: 1px;
-        }
-
-        .section h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-            color: var(--black);
-        }
-
-        .section p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        /* How It Works Section */
-        .flow-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .flow-item {
-            display: flex;
-            gap: 2rem;
-            position: relative;
-        }
-
-        .flow-item::after {
-            content: '';
-            position: absolute;
-            left: 24px;
-            top: 60px;
-            width: 2px;
-            height: 80px;
-            background-color: var(--yellow);
-        }
-
-        .flow-item:last-child::after {
-            display: none;
-        }
-
-        .flow-number {
-            background-color: var(--yellow);
-            color: var(--black);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .flow-content h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        /* What You Get Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .feature-item {
-            background-color: var(--bg-light);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .feature-item h3 {
-            margin-bottom: 0.8rem;
-        }
-
-        .feature-image {
-            width: 100%;
-            height: 150px;
-            background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 0.9rem;
-        }
-
-        /* Who It's For Section */
-        .bullet-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .bullet-list li {
-            padding-left: 2rem;
-            position: relative;
-            margin-bottom: 1rem;
-            color: #666;
-        }
-
-        .bullet-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--yellow);
-            font-weight: bold;
-        }
-
-        /* FAQ Section */
-        .faq-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .faq-item h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: sticky;
-            top: 90px;
-            height: fit-content;
-        }
-
-        .sidebar-box {
-            background-color: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-        }
-
-        .sidebar-box h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--black);
-            letter-spacing: 1px;
-        }
-
-        .sidebar-nav-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar-nav-list li {
-            margin-bottom: 0.8rem;
-        }
-
-        .sidebar-nav-list a {
-            color: #666;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .sidebar-nav-list a:hover {
-            color: var(--yellow);
-        }
-
-        .sidebar-cta {
-            background-color: var(--yellow);
-            color: var(--black);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .sidebar-cta h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-            letter-spacing: 1px;
-        }
-
-        .sidebar-cta p {
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            color: var(--black);
-        }
-
-        .sidebar-cta-button {
-            display: block;
-            background-color: var(--black);
-            color: var(--yellow);
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-
-        .sidebar-cta-button:hover {
-            background-color: #1a1f2e;
-        }
-
-        /* Bottom CTA Section */
-        .bottom-cta {
-            background-color: var(--yellow);
-            color: var(--black);
-            padding: 3rem 2rem;
-            text-align: center;
-            margin: 2rem 0;
-            border-radius: 8px;
-        }
-
-        .bottom-cta h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .bottom-cta p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .bottom-cta-button {
-            display: inline-block;
-            background-color: var(--black);
-            color: var(--yellow);
-            padding: 0.8rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.3s;
-        }
-
-        .bottom-cta-button:hover {
-            background-color: #1a1f2e;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 2rem;
-            margin-top: 3rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h4 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.6rem;
-        }
-
-        .footer-column a {
-            color: var(--gray);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-column a:hover {
-            color: var(--yellow);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding-top: 2rem;
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.85rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 960px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-
-            .main-container {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                position: static;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            .hero {
-                padding: 2rem 1rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 0.95rem;
-            }
-
-            .section h2 {
-                font-size: 1.8rem;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navbar {
-                padding: 0.8rem;
-            }
-
-            .hero {
-                padding: 1.5rem 1rem;
-                margin-top: 100px;
-            }
-
-            .hero-content h1 {
-                font-size: 1.6rem;
-            }
-
-            .main-container {
-                padding: 0 1rem;
-                gap: 1.5rem;
-            }
-
-            .content {
-                padding: 1.5rem;
-            }
-
-            .section h2 {
-                font-size: 1.5rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .flow-item {
-                gap: 1rem;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .bottom-cta {
-                padding: 2rem 1rem;
-            }
-
-            .bottom-cta h2 {
-                font-size: 1.6rem;
-            }
-        }
-      /* ─── FOOTER ─── */
-  footer {
-    background: #111421;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 0;
-  }
-
-  .footer-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 64px 24px 48px;
-    display: grid;
-    grid-template-columns: 1.6fr 1fr 0.8fr 0.8fr;
-    gap: 48px;
-  }
-
-  .footer-col-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .footer-col-title::before {
-    content: '';
-    display: block;
-    width: 16px;
-    height: 2px;
-    background: var(--yellow);
-  }
-
-  .footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .footer-links li a {
-    font-family: 'Figtree', sans-serif;
-    font-size: 14px;
-    color: rgba(255,255,255,0.55);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-links li a:hover {
-    color: var(--yellow);
-  }
-
-  .footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px 24px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .footer-copy {
-    font-size: 13px;
-    color: rgba(255,255,255,0.3);
-  }
-
-  .footer-legal a {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
-    color: rgba(255,255,255,0.3);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin: 0 12px;
-    transition: color 0.2s;
-  }
-
-  .footer-legal a:hover { color: rgba(255,255,255,0.6); }
-
-  .footer-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--yellow);
-    color: #0B0E1A;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 14px 28px;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
-  .footer-cta-btn:hover { filter: brightness(1.05); }
-
-  @media (max-width: 768px) {
-    .footer-nav {
-      grid-template-columns: 1fr 1fr;
-      gap: 40px 24px;
-      padding: 48px 24px 36px;
-    }
-    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-  }
-
-  @media (max-width: 480px) {
-    .footer-nav { grid-template-columns: 1fr; gap: 36px; }
-  }
-  </style>
+@media(max-width:900px){
+.nav-links{display:none !important}.nav-right{display:none !important}.mobile-nav-controls{display:flex !important}
+.nav-inner{height:54px !important;justify-content:flex-start !important;padding:0 16px !important}
+.nav-logo{border-right:none !important;margin-right:0 !important;padding-right:0 !important}
+.nav-logo img{height:27px !important;width:auto !important}
+.mobile-cta-btn .mobile-cta-full{display:none !important}.mobile-cta-btn .mobile-cta-short{display:inline !important}
+}
+
+/* SHARED */
+.container{max-width:1200px;margin:0 auto}
+section{padding:96px 24px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.section-label::before{content:'';display:block;width:28px;height:2px;background:var(--yellow)}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,6vw,72px);line-height:0.95;letter-spacing:0.02em;margin-bottom:20px;text-transform:uppercase;color:#0B0E1A}
+.section-title span{color:var(--yellow)}
+.section-sub{font-size:17px;color:var(--gray);line-height:1.7;max-width:640px;margin-bottom:48px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:#F7C600;color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:0.06em;text-transform:uppercase;padding:20px 48px;text-decoration:none;transition:all 0.2s;position:relative}
+.btn-primary::after{content:'\2192';font-size:22px}
+.btn-primary:hover{background:#D4A81D;transform:translateY(-2px);box-shadow:0 12px 40px rgba(212,168,0,0.3)}
+
+/* HERO */
+.hero{padding:160px 24px 100px;text-align:center;position:relative;overflow:hidden;background:#132c54}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,0.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:400px;background:radial-gradient(ellipse,rgba(247,198,0,0.09) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(247,198,0,0.3);padding:8px 20px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#F7C600;margin-bottom:28px;position:relative;animation:fadeUp 0.5s ease both}
+.hero-badge::before{content:'';width:8px;height:8px;background:#F7C600;border-radius:50%;animation:pulse 2s ease infinite}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,100px);line-height:0.92;letter-spacing:0.01em;text-transform:uppercase;position:relative;animation:fadeUp 0.5s 0.1s ease both;margin-bottom:24px;color:#FFFFFF}
+.hero h1 span{color:#F7C600}
+.hero-sub{font-size:18px;color:#C8CEDF;line-height:1.7;max-width:620px;margin:0 auto 40px;position:relative;animation:fadeUp 0.5s 0.2s ease both}
+.hero-cta-wrap{position:relative;animation:fadeUp 0.5s 0.3s ease both}
+.hero-visual{position:relative;max-width:400px;margin:56px auto 0;animation:fadeUp 0.5s 0.4s ease both}
+@media(max-width:900px){.hero{padding:110px 20px 64px !important}}
+
+/* PROBLEM */
+.problem{background:var(--bg-light)}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.problem-card{background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);padding:36px 28px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.problem-card-icon{width:48px;height:48px;background:rgba(226,75,74,0.08);border:1px solid rgba(226,75,74,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.problem-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:0.03em;text-transform:uppercase;color:#0B0E1A;margin-bottom:10px}
+.problem-card p{font-size:15px;color:var(--gray);line-height:1.7}
+@media(max-width:768px){.problem-grid{grid-template-columns:1fr}}
+
+/* HOW IT WORKS */
+.how-section{background:#132c54;position:relative;overflow:hidden}
+.how-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,0.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.how-section .container{position:relative;z-index:1}
+.how-section .section-label{color:var(--yellow);justify-content:center}
+.how-section .section-title{color:#FFFFFF;text-align:center}
+.how-section .section-sub{color:rgba(255,255,255,0.7);text-align:center;margin-left:auto;margin-right:auto}
+.process-diagram{max-width:960px;margin:0 auto}
+
+/* INCLUDED */
+.included{background:#FFFFFF}
+.included-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.included-card{background:var(--bg-light);border-radius:16px;padding:36px 32px;border:1px solid rgba(0,0,0,0.06);transition:box-shadow 0.25s ease,transform 0.25s ease}
+.included-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.08);transform:translateY(-4px)}
+.included-icon{width:56px;height:56px;border-radius:12px;background:#132c54;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.included-icon svg{width:28px;height:28px}
+.included-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:var(--yellow-dark);margin-bottom:8px}
+.included-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.03em;text-transform:uppercase;color:#0B0E1A;margin-bottom:12px}
+.included-card p{font-size:15px;color:var(--gray);line-height:1.7;margin-bottom:16px}
+.included-card ul{list-style:none;padding:0}
+.included-card ul li{font-size:14px;color:var(--gray-light);line-height:1.6;padding:5px 0 5px 20px;position:relative}
+.included-card ul li::before{content:'';position:absolute;left:0;top:12px;width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+@media(max-width:900px){.included-grid{grid-template-columns:repeat(2,1fr);gap:20px}}
+@media(max-width:600px){.included-grid{grid-template-columns:1fr;gap:16px}.included-card{padding:28px 24px}}
+
+/* JOURNEY */
+.journey{background:var(--bg-light)}
+.journey-timeline{max-width:960px;margin:56px auto 0}
+
+/* FIT */
+.fit{background:#FFFFFF}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;max-width:960px;margin-left:auto;margin-right:auto}
+.fit-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.fit-col-title.good{color:var(--green)}
+.fit-col-title.good::before{content:'';width:10px;height:10px;background:var(--green);border-radius:50%}
+.fit-col-title.bad{color:#E24B4A}
+.fit-col-title.bad::before{content:'';width:10px;height:10px;background:#E24B4A;border-radius:50%}
+.fit-list{list-style:none;display:flex;flex-direction:column;gap:16px}
+.fit-list li{font-size:15px;color:var(--gray-light);line-height:1.7;display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--bg-light);border:1px solid rgba(0,0,0,0.06)}
+.fit-list.good li::before{content:'\2713';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.fit-list.bad li::before{content:'\2717';color:#E24B4A;font-weight:700;flex-shrink:0;margin-top:1px}
+@media(max-width:768px){.fit-grid{grid-template-columns:1fr;gap:36px}}
+
+/* RESULTS */
+.results{background:#132c54;position:relative;overflow:hidden;text-align:center}
+.results::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,0.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.results .container{position:relative;z-index:1}
+.results .section-label{justify-content:center}
+.results .section-title{color:#FFFFFF}
+.results-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border:1px solid rgba(247,198,0,0.2)}
+.results-stat{padding:48px 32px;border-right:1px solid rgba(247,198,0,0.2)}
+.results-stat:last-child{border-right:none}
+.results-stat-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,72px);color:var(--yellow);line-height:1;margin-bottom:12px}
+.results-stat-label{font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6)}
+@media(max-width:768px){.results-stats{grid-template-columns:1fr}.results-stat{border-right:none;border-bottom:1px solid rgba(247,198,0,0.2);padding:36px 24px}.results-stat:last-child{border-bottom:none}}
+
+/* FAQ */
+.faq{background:var(--bg-light)}
+.faq-accordion{max-width:800px;margin:48px auto 0;display:flex;flex-direction:column;gap:8px}
+.faq-item{background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:4px;transition:border-color 0.3s,background 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.faq-item:hover{border-color:rgba(0,0,0,0.15);box-shadow:0 4px 16px rgba(0,0,0,0.08)}
+.faq-item.open{border-color:rgba(247,198,0,0.4);background:rgba(247,198,0,0.03)}
+.faq-question{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.03em;color:#0B0E1A;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;transition:color 0.2s}
+.faq-question:hover{color:#1E3A5F}
+.faq-question::after{content:'+';width:28px;height:28px;border-radius:50%;background:rgba(247,198,0,0.1);border:1.5px solid rgba(247,198,0,0.3);flex-shrink:0;margin-left:16px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:300;color:var(--yellow);font-family:'Figtree',sans-serif;line-height:28px;text-align:center;transition:all 0.3s}
+.faq-item.open .faq-question::after{content:'\2212';background:var(--yellow);color:#0B0E1A;border-color:var(--yellow)}
+.faq-answer{font-family:'Figtree',sans-serif;font-size:15px;line-height:1.7;color:#555;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;padding:0 24px}
+.faq-item.open .faq-answer{max-height:300px;padding:0 24px 20px}
+
+/* FINAL CTA */
+.final-cta{background:#F7C600;padding:100px 24px;position:relative;overflow:hidden;text-align:center}
+.final-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(11,14,26,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,14,26,0.06) 1px,transparent 1px);background-size:40px 40px}
+.final-cta-inner{position:relative;max-width:680px;margin:0 auto}
+.final-cta-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(0,0,0,0.45);margin-bottom:16px}
+.final-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,7vw,80px);line-height:0.95;text-transform:uppercase;color:#0B0E1A;margin-bottom:20px}
+.final-cta p{font-size:17px;color:rgba(0,0,0,0.65);line-height:1.8;margin-bottom:40px}
+.btn-final-dark{display:inline-flex;align-items:center;gap:10px;background:#0B0E1A;color:#F7C600;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.08em;text-transform:uppercase;padding:20px 48px;text-decoration:none;transition:all 0.2s}
+.btn-final-dark:hover{background:#111;transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.25)}
+
+/* FOOTER */
+footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0}
+.footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.footer-col-title::before{content:'';display:block;width:16px;height:2px;background:var(--yellow)}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-links li a{font-family:'Figtree',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+.footer-links li a:hover{color:var(--yellow)}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:24px 24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.3)}
+.footer-legal a{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;margin:0 12px;transition:color 0.2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.6)}
+.footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s}
+.footer-cta-btn:hover{filter:brightness(1.05)}
+@media(max-width:768px){.footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px}.footer-bottom{flex-direction:column;gap:12px;text-align:center}}
+@media(max-width:480px){.footer-nav{grid-template-columns:1fr;gap:36px}}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR3DFMD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <!-- NAV -->
 <div class="nav-bar">
   <div class="nav-inner">
     <a class="nav-logo" href="/index.html">
-      <img src="assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+      <img src="/assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
     </a>
     <div class="nav-links">
       <a class="nav-item-link" href="/about.html">About</a>
       <a class="nav-item-link" href="/reviews.html">Results</a>
       <a class="nav-item-link" href="/program.html">Program</a>
-      <a class="nav-item-link" href="/blog/">Knowledge</a>
     </div>
     <div class="nav-right">
       <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
@@ -699,8 +230,6 @@
     </div>
   </div>
 </div>
-
-<!-- Mobile menu overlay -->
 <div id="mobileMenu" class="mobile-menu-overlay">
   <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
   <nav class="mobile-menu-nav">
@@ -708,176 +237,444 @@
     <a href="/about.html">About</a>
     <a href="/reviews.html">Results</a>
     <a href="/program.html">Program</a>
-    <a href="/blog/">Knowledge</a>
     <a href="https://www.skool.com/the-blueprint-training">Login</a>
   </nav>
   <div class="mobile-menu-socials">
-    <a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg>
-    </a>
-    <a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg>
-    </a>
-    <a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg>
-    </a>
+    <a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg></a>
+    <a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg></a>
+    <a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg></a>
   </div>
   <a href="/sign-up.html" class="mobile-menu-cta">Get Started - $199/mo</a>
 </div>
 
+<!-- SECTION 1: HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-badge">Weekly Live Coaching for Agency Owners</div>
+  <h1>SCALE YOUR AGENCY WITH<br><span>HANDS-ON COACHING</span></h1>
+  <p class="hero-sub">Stop guessing your way to growth. Get personalized guidance, weekly accountability, and a proven roadmap from someone who has built and scaled agencies for over a decade.</p>
+  <div class="hero-cta-wrap"><a class="btn-primary" href="/sign-up.html">Become A Member</a></div>
+  <div class="hero-visual">
+    <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Growth chart -->
+      <path d="M40 180 L100 155 L160 140 L220 110 L280 70 L340 35" stroke="#F7C600" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.9"/>
+      <path d="M40 180 L100 155 L160 140 L220 110 L280 70 L340 35 L340 180 L40 180Z" fill="url(#heroGrad)" opacity="0.15"/>
+      <!-- Data points -->
+      <circle cx="40" cy="180" r="5" fill="#F7C600"/>
+      <circle cx="100" cy="155" r="5" fill="#F7C600"/>
+      <circle cx="160" cy="140" r="5" fill="#F7C600"/>
+      <circle cx="220" cy="110" r="5" fill="#F7C600"/>
+      <circle cx="280" cy="70" r="5" fill="#F7C600"/>
+      <circle cx="340" cy="35" r="7" fill="#F7C600"/>
+      <!-- Person icon at peak -->
+      <circle cx="340" cy="14" r="8" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+      <path d="M330 35 Q340 28 350 35" stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- Grid lines -->
+      <line x1="40" y1="180" x2="360" y2="180" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <line x1="40" y1="140" x2="360" y2="140" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="40" y1="100" x2="360" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="40" y1="60" x2="360" y2="60" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4 4"/>
+      <defs>
+        <linearGradient id="heroGrad" x1="190" y1="35" x2="190" y2="180" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#F7C600"/>
+          <stop offset="1" stop-color="#F7C600" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">PROGRAM FEATURE</div>
-                <h1>Scale faster with dedicated coaching.</h1>
-                <p class="hero-subtitle">Get personalized guidance from industry experts. Our coaching program accelerates your growth with structured support, accountability, and proven frameworks tailored to your unique goals.</p>
-                <a href="blueprint-coaching-light.html" class="hero-cta">Apply for Coaching →</a>
-            </div>
-            <div class="hero-image">
-                📊
-            </div>
+<!-- SECTION 2: THE PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <div class="section-title">MOST AGENCY OWNERS ARE<br>FIGURING IT OUT <span>ALONE</span></div>
+    <p class="section-sub">You started your agency because you are great at the work. But running a business is a completely different skill set, and most owners have nobody to turn to when the hard decisions hit.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E24B4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
         </div>
-    </section>
-
-    <!-- Main Content -->
-    <div class="main-container">
-        <div class="content">
-            <!-- How It Works Section -->
-            <section class="section">
-                <h2>How It Works</h2>
-                <div class="flow-container">
-                    <div class="flow-item">
-                        <div class="flow-number">1</div>
-                        <div class="flow-content">
-                            <h3>Apply & Get Matched</h3>
-                            <p>Submit your application and goals. We'll match you with a coach whose expertise aligns with your needs and vision for growth.</p>
-                        </div>
-                    </div>
-                    <div class="flow-item">
-                        <div class="flow-number">2</div>
-                        <div class="flow-content">
-                            <h3>Custom Growth Track</h3>
-                            <p>Your coach designs a personalized development plan based on your challenges, strengths, and ambitions for the next 6-12 months.</p>
-                        </div>
-                    </div>
-                    <div class="flow-item">
-                        <div class="flow-number">3</div>
-                        <div class="flow-content">
-                            <h3>Weekly 1:1 Sessions</h3>
-                            <p>Engage in focused, strategic coaching sessions each week. Work through challenges, build skills, and make tangible progress toward your goals.</p>
-                        </div>
-                    </div>
-                    <div class="flow-item">
-                        <div class="flow-number">4</div>
-                        <div class="flow-content">
-                            <h3>Accountability & Results</h3>
-                            <p>Track your progress, maintain accountability, and achieve measurable results. Your coach provides ongoing feedback and celebration of wins.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- What You Get Section -->
-            <section class="section">
-                <h2>What You Get</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-image">📋</div>
-                        <h3>Personalized Development Plan</h3>
-                        <p>A detailed, customized roadmap created specifically for your goals, challenges, and timeline. Updated regularly as you progress.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-image">📞</div>
-                        <h3>Expert 1:1 Coaching Sessions</h3>
-                        <p>Weekly strategic coaching calls with a seasoned expert. Focus on your biggest challenges and fastest path to breakthrough results.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-image">📚</div>
-                        <h3>Proprietary Frameworks & Tools</h3>
-                        <p>Access our battle-tested frameworks, worksheets, and resources designed to accelerate learning and implementation of new skills.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-image">🎯</div>
-                        <h3>Progress Tracking & Accountability</h3>
-                        <p>Monthly check-ins on key metrics and milestones. Real accountability keeps you focused and motivated throughout your journey.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Who It's For Section -->
-            <section class="section">
-                <h2>Who It's For</h2>
-                <ul class="bullet-list">
-                    <li>Ambitious professionals ready to accelerate their career growth and impact</li>
-                    <li>Entrepreneurs and founders scaling their businesses to the next level</li>
-                    <li>Leaders looking to develop stronger teams and drive organizational results</li>
-                    <li>Anyone committed to personal transformation and achieving breakthrough goals</li>
-                </ul>
-            </section>
-
-            <!-- FAQ Section -->
-            <section class="section">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-item">
-                    <h3>How long does the coaching program last?</h3>
-                    <p>Our standard program runs 6-12 months depending on your goals. Most clients see significant progress within the first 90 days, with compound benefits building throughout the engagement.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What if I'm new to coaching?</h3>
-                    <p>No experience necessary. Our coaches are skilled at working with people at all levels. We'll set expectations, establish psychological safety, and ensure you get maximum value from each session.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I schedule sessions outside business hours?</h3>
-                    <p>Yes. Most of our coaches offer flexible scheduling to accommodate different time zones and work schedules. We'll find a cadence that works for you.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What makes your coaches different?</h3>
-                    <p>Our coaches combine deep industry expertise with advanced coaching certifications. They bring real-world experience, proven results, and a commitment to your success.</p>
-                </div>
-            </section>
-
-            <!-- Bottom CTA -->
-            <div class="bottom-cta">
-                <h2>Ready to accelerate your growth?</h2>
-                <p>Join hundreds of professionals and leaders who've transformed their careers through coaching.</p>
-                <a href="blueprint-coaching-light.html" class="bottom-cta-button">Apply for Coaching →</a>
-            </div>
+        <h3>No One to Gut-Check With</h3>
+        <p>You make dozens of decisions every week -- pricing, hiring, firing, pivoting -- with no experienced sounding board. Every wrong call costs time and money.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E24B4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
         </div>
-
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-box">
-                <h3>All Features</h3>
-                <ul class="sidebar-nav-list">
-                    <li><a href="#coaching">Coaching Program</a></li>
-                    <li><a href="#training">Training Modules</a></li>
-                    <li><a href="#community">Community Access</a></li>
-                    <li><a href="#resources">Resource Library</a></li>
-                    <li><a href="#analytics">Progress Analytics</a></li>
-                    <li><a href="#support">Priority Support</a></li>
-                </ul>
-            </div>
-            <div class="sidebar-cta">
-                <h3>Start Your Coaching Journey</h3>
-                <p>Get matched with an expert coach and accelerate your growth today.</p>
-                <a href="blueprint-coaching-light.html" class="sidebar-cta-button">Apply Now →</a>
-            </div>
-        </aside>
+        <h3>Zero Accountability</h3>
+        <p>You set goals every quarter, then life gets in the way. Without someone checking in on your progress, it is easy to stay stuck at the same revenue for years.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E24B4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h3>The Plateau is Real</h3>
+        <p>What got you to $10K or $20K a month will not get you to $50K. You need new strategies, new systems, and someone who has already figured out the next stage.</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
+<!-- SECTION 3: HOW COACHING WORKS -->
+<section class="how-section">
+  <div class="container">
+    <div class="section-label">The Process</div>
+    <div class="section-title">HOW <span>COACHING</span> WORKS</div>
+    <p class="section-sub">A simple four-step process to get you from where you are to where you want to be.</p>
+    <div class="process-diagram">
+      <svg viewBox="0 0 960 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <!-- Connecting line -->
+        <line x1="120" y1="70" x2="840" y2="70" stroke="rgba(247,198,0,0.3)" stroke-width="2" stroke-dasharray="8 4"/>
+        <!-- Arrow heads -->
+        <path d="M295 70 L310 63 L310 77Z" fill="rgba(247,198,0,0.4)"/>
+        <path d="M535 70 L550 63 L550 77Z" fill="rgba(247,198,0,0.4)"/>
+        <path d="M775 70 L790 63 L790 77Z" fill="rgba(247,198,0,0.4)"/>
+
+        <!-- Step 1: Apply -->
+        <circle cx="120" cy="70" r="40" fill="rgba(247,198,0,0.1)" stroke="#F7C600" stroke-width="2"/>
+        <svg x="104" y="50" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        <text x="120" y="135" text-anchor="middle" fill="#FFFFFF" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="16" letter-spacing="0.08em">APPLY</text>
+        <text x="120" y="158" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Figtree,sans-serif" font-size="12">Tell us about your agency</text>
+
+        <!-- Step 2: Get Matched -->
+        <circle cx="360" cy="70" r="40" fill="rgba(247,198,0,0.1)" stroke="#F7C600" stroke-width="2"/>
+        <svg x="344" y="50" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <text x="360" y="135" text-anchor="middle" fill="#FFFFFF" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="16" letter-spacing="0.08em">GET MATCHED</text>
+        <text x="360" y="158" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Figtree,sans-serif" font-size="12">Paired with your cohort</text>
+
+        <!-- Step 3: Weekly Sessions -->
+        <circle cx="600" cy="70" r="40" fill="rgba(247,198,0,0.1)" stroke="#F7C600" stroke-width="2"/>
+        <svg x="584" y="50" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+        <text x="600" y="135" text-anchor="middle" fill="#FFFFFF" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="16" letter-spacing="0.08em">WEEKLY SESSIONS</text>
+        <text x="600" y="158" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Figtree,sans-serif" font-size="12">Live coaching and hot seats</text>
+
+        <!-- Step 4: Scale -->
+        <circle cx="840" cy="70" r="40" fill="#F7C600" stroke="#F7C600" stroke-width="2"/>
+        <svg x="824" y="50" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B0E1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+        </svg>
+        <text x="840" y="135" text-anchor="middle" fill="#FFFFFF" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="16" letter-spacing="0.08em">SCALE</text>
+        <text x="840" y="158" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Figtree,sans-serif" font-size="12">Grow with confidence</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: WHAT'S INCLUDED -->
+<section class="included">
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <div class="section-title">EVERYTHING INCLUDED IN <span>COACHING</span></div>
+    <p class="section-sub">Six core pillars designed to keep you focused, accountable, and moving forward every single week.</p>
+    <div class="included-grid">
+
+      <!-- Card 1: Group Coaching Calls -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 28 28" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="22" height="15" rx="2"/>
+            <circle cx="14" cy="12" r="3"/>
+            <line x1="10" y1="23" x2="18" y2="23"/>
+            <line x1="14" y1="20" x2="14" y2="23"/>
+          </svg>
+        </div>
+        <div class="included-num">01</div>
+        <h3>Weekly Group Coaching Calls</h3>
+        <p>Live sessions with Ryan Stewart every week. Bring your biggest challenge, get real-time strategy, and learn from other agency owners in the hot seat.</p>
+        <ul>
+          <li>Live Q&A every week</li>
+          <li>Hot seat strategy sessions</li>
+          <li>Recorded for replay</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Private Slack -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 28 28" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2h-8l-4 4V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+            <line x1="11" y1="10" x2="17" y2="10"/>
+            <line x1="11" y1="14" x2="15" y2="14"/>
+          </svg>
+        </div>
+        <div class="included-num">02</div>
+        <h3>Private Slack Channel</h3>
+        <p>Direct access between calls. Post a question, get feedback from Ryan and the coaching community, and never feel stuck waiting for the next session.</p>
+        <ul>
+          <li>Ask questions any time</li>
+          <li>Peer feedback and support</li>
+          <li>Fast response times</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Growth Playbook -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 28 28" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h6a4 4 0 0 1 4 4v16a3 3 0 0 0-3-3H4z"/>
+            <path d="M24 4h-6a4 4 0 0 0-4 4v16a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div class="included-num">03</div>
+        <h3>Personalized Growth Playbook</h3>
+        <p>A custom plan built around where your agency is right now -- startup, scaling, or optimizing. Clear milestones, specific actions, and measurable targets.</p>
+        <ul>
+          <li>Tailored to your stage</li>
+          <li>Clear 90-day milestones</li>
+          <li>Updated monthly</li>
+        </ul>
+      </div>
+
+      <!-- Card 4: Accountability Partner -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 28 28" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/>
+            <path d="M20 8a4 4 0 1 1 0 6"/>
+            <path d="M2 24v-2a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v2"/>
+          </svg>
+        </div>
+        <div class="included-num">04</div>
+        <h3>Accountability Partner</h3>
+        <p>Paired with another member at a similar stage. Weekly check-ins, shared goals, and someone who actually understands the grind of running an agency.</p>
+        <ul>
+          <li>Matched by revenue stage</li>
+          <li>Weekly partner check-ins</li>
+          <li>Shared goal tracking</li>
+        </ul>
+      </div>
+
+      <!-- Card 5: Monthly Business Review -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 28 28" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+            <line x1="24" y1="20" x2="24" y2="8"/>
+            <line x1="2" y1="22" x2="26" y2="22"/>
+          </svg>
+        </div>
+        <div class="included-num">05</div>
+        <h3>Monthly Business Review</h3>
+        <p>Once a month, you review your numbers with the group. Revenue, margins, pipeline, team utilization. Set goals for next month and adjust your strategy.</p>
+        <ul>
+          <li>Review real financials</li>
+          <li>Set monthly targets</li>
+          <li>Course-correct fast</li>
+        </ul>
+      </div>
+
+      <!-- Card 6: Network Access -->
+      <div class="included-card">
+        <div class="included-icon">
+          <svg viewBox="0 0 28 28" fill="none" stroke="#F7C600" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="8" r="3"/>
+            <circle cx="20" cy="8" r="3"/>
+            <circle cx="14" cy="20" r="3"/>
+            <line x1="10.5" y1="9.5" x2="12" y2="17.5"/>
+            <line x1="17.5" y1="9.5" x2="16" y2="17.5"/>
+            <line x1="11" y1="8" x2="17" y2="8"/>
+          </svg>
+        </div>
+        <div class="included-num">06</div>
+        <h3>Network Access</h3>
+        <p>Tap into Ryan's network of agency owners, vendors, and potential partners. Get warm introductions that would take years to build on your own.</p>
+        <ul>
+          <li>Client introductions</li>
+          <li>Vetted vendor recommendations</li>
+          <li>Partnership opportunities</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: THE COACHING JOURNEY -->
+<section class="journey">
+  <div class="container">
+    <div class="section-label">The Roadmap</div>
+    <div class="section-title">YOUR 90-DAY <span>COACHING JOURNEY</span></div>
+    <p class="section-sub">A structured arc that takes you from scattered to focused in three months. Each phase builds on the last.</p>
+    <div class="journey-timeline">
+      <svg viewBox="0 0 960 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <!-- Timeline bar -->
+        <rect x="40" y="60" width="880" height="6" rx="3" fill="rgba(0,0,0,0.06)"/>
+        <rect x="40" y="60" width="880" height="6" rx="3" fill="url(#timeGrad)"/>
+
+        <!-- Month 1 -->
+        <circle cx="160" cy="63" r="20" fill="#132c54" stroke="#F7C600" stroke-width="2"/>
+        <text x="160" y="68" text-anchor="middle" fill="#F7C600" font-family="Bebas Neue,sans-serif" font-size="16">1</text>
+        <text x="160" y="110" text-anchor="middle" fill="#0B0E1A" font-family="Bebas Neue,sans-serif" font-size="28" letter-spacing="0.02em">FOUNDATION</text>
+        <text x="160" y="132" text-anchor="middle" fill="#6B7280" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" letter-spacing="0.1em">MONTH 1</text>
+        <rect x="60" y="150" width="200" height="1" fill="rgba(0,0,0,0.08)"/>
+        <text x="160" y="176" text-anchor="middle" fill="#374151" font-family="Figtree,sans-serif" font-size="14">
+          <tspan x="160" dy="0">Nail your positioning</tspan>
+          <tspan x="160" dy="22">Define your core offer</tspan>
+          <tspan x="160" dy="22">Set your pricing strategy</tspan>
+          <tspan x="160" dy="22">Identify your ideal client</tspan>
+        </text>
+
+        <!-- Month 2 -->
+        <circle cx="480" cy="63" r="20" fill="#132c54" stroke="#F7C600" stroke-width="2"/>
+        <text x="480" y="68" text-anchor="middle" fill="#F7C600" font-family="Bebas Neue,sans-serif" font-size="16">2</text>
+        <text x="480" y="110" text-anchor="middle" fill="#0B0E1A" font-family="Bebas Neue,sans-serif" font-size="28" letter-spacing="0.02em">SYSTEMS</text>
+        <text x="480" y="132" text-anchor="middle" fill="#6B7280" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" letter-spacing="0.1em">MONTH 2</text>
+        <rect x="380" y="150" width="200" height="1" fill="rgba(0,0,0,0.08)"/>
+        <text x="480" y="176" text-anchor="middle" fill="#374151" font-family="Figtree,sans-serif" font-size="14">
+          <tspan x="480" dy="0">Build your sales process</tspan>
+          <tspan x="480" dy="22">Systematize delivery</tspan>
+          <tspan x="480" dy="22">Hire your first key role</tspan>
+          <tspan x="480" dy="22">Improve client retention</tspan>
+        </text>
+
+        <!-- Month 3 -->
+        <circle cx="800" cy="63" r="22" fill="#F7C600" stroke="#F7C600" stroke-width="2"/>
+        <text x="800" y="69" text-anchor="middle" fill="#0B0E1A" font-family="Bebas Neue,sans-serif" font-size="16">3</text>
+        <text x="800" y="110" text-anchor="middle" fill="#0B0E1A" font-family="Bebas Neue,sans-serif" font-size="28" letter-spacing="0.02em">SCALE</text>
+        <text x="800" y="132" text-anchor="middle" fill="#6B7280" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" letter-spacing="0.1em">MONTH 3</text>
+        <rect x="700" y="150" width="200" height="1" fill="rgba(0,0,0,0.08)"/>
+        <text x="800" y="176" text-anchor="middle" fill="#374151" font-family="Figtree,sans-serif" font-size="14">
+          <tspan x="800" dy="0">Activate growth levers</tspan>
+          <tspan x="800" dy="22">Automate key workflows</tspan>
+          <tspan x="800" dy="22">Delegate and lead</tspan>
+          <tspan x="800" dy="22">Plan your next milestone</tspan>
+        </text>
+
+        <defs>
+          <linearGradient id="timeGrad" x1="40" y1="63" x2="920" y2="63" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#132c54"/>
+            <stop offset="1" stop-color="#F7C600"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: WHO THIS IS FOR -->
+<section class="fit">
+  <div class="container">
+    <div class="section-label">Is This For You?</div>
+    <div class="section-title">WHO COACHING IS <span>FOR</span></div>
+    <p class="section-sub">This program is not for everyone. Here is who gets the most out of it -- and who does not.</p>
+    <div class="fit-grid">
+      <div>
+        <div class="fit-col-title good">Good Fit</div>
+        <ul class="fit-list good">
+          <li>Agency doing $10K+/mo wanting to scale to the next level</li>
+          <li>Willing to be coached, take feedback, and implement fast</li>
+          <li>Open to changing how you price, sell, and deliver</li>
+          <li>Ready to invest time in weekly calls and accountability</li>
+          <li>Wants a community of peers, not just another course</li>
+        </ul>
+      </div>
+      <div>
+        <div class="fit-col-title bad">Not a Fit</div>
+        <ul class="fit-list bad">
+          <li>Looking for done-for-you services or someone to run your agency</li>
+          <li>Not willing to put in the work between calls</li>
+          <li>Expecting overnight results without changing anything</li>
+          <li>Just starting out with zero clients and zero revenue</li>
+          <li>Wants theory and frameworks instead of real implementation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: RESULTS -->
+<section class="results">
+  <div class="container">
+    <div class="section-label">Track Record</div>
+    <div class="section-title">THE NUMBERS <span>SPEAK</span></div>
+    <div class="results-stats">
+      <div class="results-stat">
+        <div class="results-stat-num">500+</div>
+        <div class="results-stat-label">Agencies Coached</div>
+      </div>
+      <div class="results-stat">
+        <div class="results-stat-num">2.3X</div>
+        <div class="results-stat-label">Avg Revenue Growth in 6 Months</div>
+      </div>
+      <div class="results-stat">
+        <div class="results-stat-num">92%</div>
+        <div class="results-stat-label">Member Retention Rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-label">Common Questions</div>
+    <div class="section-title">FREQUENTLY <span>ASKED</span></div>
+    <div class="faq-accordion">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What happens on the weekly coaching calls?</div>
+        <div class="faq-answer">Each call is a mix of live Q&A, hot seats, and strategy sessions. You can bring specific challenges you are facing that week -- pricing a deal, handling a difficult client, deciding whether to hire -- and get real-time feedback from Ryan and the group. Calls are recorded so you can rewatch anything you miss.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How is this different from the video training?</div>
+        <div class="faq-answer">The video training teaches you the system -- positioning, offers, sales, delivery. Coaching is where you apply it to your specific situation with hands-on guidance. Think of training as the playbook and coaching as having a coach on the sideline calling the plays with you in real time.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What if I can not make the live calls?</div>
+        <div class="faq-answer">Every call is recorded and available within 24 hours. You can also submit questions in advance via Slack, and Ryan will answer them on the call even if you are not there. That said, the members who show up live consistently get the best results.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How much does coaching cost?</div>
+        <div class="faq-answer">Coaching is included in your Blueprint Training membership at $199 per month. There are no upsells, no hidden tiers, and no long-term contracts. You get access to coaching, training, community, AI agents, and everything else in the program for one flat price.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What size agency is this best for?</div>
+        <div class="faq-answer">Most coaching members are doing between $10K and $100K per month. Some are solo operators looking to build a small team, others have 5-15 employees looking to scale. The coaching adapts to where you are because the growth plan is personalized to your stage.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can I cancel anytime?</div>
+        <div class="faq-answer">Yes. There are no contracts or commitments. You can cancel your membership at any time directly from your account. Most members stay for 12+ months because the coaching continues to deliver value as their agency grows and faces new challenges at each stage.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="final-cta-label">Ready to Scale?</div>
+    <h2>STOP GUESSING.<br>START GROWING.</h2>
+    <p>Join 500+ agency owners who stopped trying to figure it all out alone. Get the coaching, accountability, and community you need to hit your next revenue milestone.</p>
+    <a href="/sign-up.html" class="btn-final-dark">Become A Member &rarr;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-nav">
-<!-- Col 2: Features -->
     <div>
       <div class="footer-col-title">Features</div>
       <ul class="footer-links">
         <li><a href="/coaching/">Coaching</a></li>
         <li><a href="/agency-training/">Video Training</a></li>
         <li><a href="/bootcamps/">Live Bootcamps</a></li>
-<li><a href="/agents/">AI Agents</a></li>
+        <li><a href="/agents/">AI Agents</a></li>
         <li><a href="/slack-channel/">Community</a></li>
       </ul>
       <div class="footer-col-title" style="margin-top:32px;">Follow Us</div>
@@ -888,8 +685,6 @@
         <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
-
-    <!-- Col 3: Company -->
     <div>
       <div class="footer-col-title">Company</div>
       <ul class="footer-links">
@@ -899,8 +694,6 @@
         <li><a href="/blog/">Knowledge</a></li>
       </ul>
     </div>
-
-    <!-- Col 4: Account -->
     <div>
       <div class="footer-col-title">Account</div>
       <ul class="footer-links" style="margin-bottom:24px;">
@@ -909,10 +702,7 @@
       </ul>
       <a href="/sign-up.html" class="footer-cta-btn">Get Started &rarr;</a>
     </div>
-
   </div>
-
-  <!-- Bottom bar -->
   <div class="footer-bottom">
     <div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
     <div class="footer-legal">
@@ -921,5 +711,6 @@
     </div>
   </div>
 </footer>
+
 </body>
 </html>
