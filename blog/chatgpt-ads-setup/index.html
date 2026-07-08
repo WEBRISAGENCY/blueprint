@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Set Up ChatGPT Ads: Campaigns, Ad Groups, Targeting, Creatives, and Conversion Tracking | The Blueprint Training</title>
+<meta name="description" content="Complete guide to setting up ChatGPT ads for B2B lead generation. Learn campaign structure, context hints, ad creative, landing pages, conversion tracking, and optimization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--yellow:#F7C600;--yellow-dark:#D9AE00;--border:rgba(0,0,0,0.08);--white:#0B0E1A;--gray:#6B7280;--gray-light:#374151;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#FFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-x:hidden;}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#FFFFFF;box-shadow:0 1px 8px rgba(0,0,0,0.08),0 2px 24px rgba(0,0,0,0.04);}
+.nav-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:flex;align-items:stretch;height:86px;padding:0 32px;}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;padding-right:28px;border-right:none;margin-right:4px;flex-shrink:0;}
+.nav-links{display:flex;align-items:stretch;flex:1;justify-content:center;}
+.nav-item-link{display:flex;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.06em;color:#1E3A5F;padding:0 20px;text-decoration:none;transition:color 0.15s;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;}
+.nav-item-link:hover{color:#132c54;}
+.nav-right{display:flex;align-items:center;margin-left:auto;}
+.nav-login{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;color:#1E3A5F;background:none;border:none;cursor:pointer;padding:0 20px;text-decoration:none;transition:color 0.15s;}
+.nav-login:hover{color:#132c54;}
+.nav-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:0 36px;text-decoration:none;transition:background 0.15s;display:flex;align-items:center;height:100%;}
+.nav-cta-btn:hover{background:#D9AE00;}
+
+.mobile-nav-controls{display:none;align-items:center;gap:12px;margin-left:auto;}
+.mobile-hamburger{background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px;width:28px;}
+.mobile-hamburger span{display:block;height:2px;width:100%;background:#1E3A5F;border-radius:2px;transition:all 0.3s;}
+.mobile-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.06em;padding:8px 20px;text-decoration:none;white-space:nowrap;}
+.mobile-cta-btn:hover{background:#D9AE00;}
+.mobile-menu-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#132c54;flex-direction:column;padding:80px 32px 40px;overflow-y:auto;}
+.mobile-menu-overlay.open{display:flex;}
+.mobile-menu-close{position:absolute;top:14px;right:16px;z-index:10000;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);color:#fff;font-size:28px;cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:6px;font-family:sans-serif;font-weight:300;}
+.mobile-menu-nav{display:flex;flex-direction:column;gap:0;}
+.mobile-menu-nav a{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:0.06em;color:#C8CEDF;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);transition:color 0.2s;}
+.mobile-menu-nav a:hover{color:#F7C600;}
+.mobile-menu-socials{display:flex;gap:20px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);}
+.mobile-menu-socials a{opacity:0.6;transition:opacity 0.2s;}
+.mobile-menu-socials a:hover{opacity:1;}
+.mobile-menu-cta{display:block;text-align:center;margin-top:32px;background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:16px 32px;text-decoration:none;}
+.mobile-menu-cta:hover{background:#D9AE00;}
+@media(max-width:900px){.nav-links{display:none !important;}.nav-right{display:none !important;}.mobile-nav-controls{display:flex !important;}.nav-inner{height:54px !important;justify-content:flex-start !important;padding:0 16px !important;}.nav-logo{border-right:none !important;margin-right:0 !important;padding-right:0 !important;}.nav-logo img{height:27px !important;width:auto !important;}.mobile-cta-btn .mobile-cta-full{display:none !important;}.mobile-cta-btn .mobile-cta-short{display:inline !important;}.article-hero{padding-top:78px !important;}}
+.article-hero{padding:110px 24px 0;position:relative;overflow:hidden;}
+.article-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.03) 1px,transparent 1px);background-size:60px 60px;}
+.article-hero-inner{max-width:860px;margin:0 auto;padding:28px 0 0;position:relative;}
+.article-breadcrumb{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;}
+.article-breadcrumb a{color:var(--gray);text-decoration:none;}
+.article-breadcrumb a:hover{color:var(--yellow);}
+.article-breadcrumb span{color:rgba(0,0,0,0.25);}
+.article-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5.5vw,72px);line-height:0.95;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin-bottom:28px;}
+.article-meta-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.article-author-block{display:flex;align-items:center;gap:10px;}
+.author-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;}.author-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.author-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);}
+.author-title{font-size:12px;color:var(--gray);}
+.article-meta-divider{width:1px;height:32px;background:var(--border);}
+.article-meta-item{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px;}
+.article-meta-item strong{color:var(--gray-light);font-weight:600;}
+
+
+.article-body iframe,.article-body .wp-block-embed{display:block;width:100%;margin:28px 0;}.article-body .responsive-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:28px 0;}.article-body .responsive-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+.article-body blockquote{border-left:3px solid var(--yellow);margin:28px 0;padding:16px 24px;background:#F7F8FA;}.article-body blockquote p{margin-bottom:0;font-style:italic;}
+.article-content{max-width:860px;margin:0 auto;padding:56px 24px 96px;}
+.article-body p{font-size:16.5px;line-height:1.8;color:var(--gray-light);margin-bottom:20px;}
+.article-body p strong{color:var(--white);font-weight:600;}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3vw,40px);line-height:1.0;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin:40px 0 16px;padding-top:40px;border-top:1px solid var(--border);}
+.article-body h2:first-child{margin-top:0;padding-top:0;border-top:none;}
+.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:0.04em;text-transform:uppercase;color:var(--white);margin:32px 0 12px;}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:20px;list-style:disc;display:block;}
+.article-body ul li,.article-body ol li{font-size:16px;color:var(--gray-light);line-height:1.8;padding:4px 0 4px 0;background:none;border-left:none;display:list-item;}
+.article-body ul li::before{display:none;}
+.article-body img{display:block;width:100%;height:auto;margin:28px 0;border-radius:0;}
+.article-body a{color:#1E3A5F;text-decoration:underline;text-underline-offset:2px;}.article-body a:hover{color:var(--yellow);}
+.author-bio{max-width:860px;margin:0 auto;padding:0 24px 64px;}
+.author-bio-card{background:#F7F8FA;border:1px solid rgba(0,0,0,0.08);padding:32px 28px;display:flex;gap:24px;align-items:flex-start;}
+.author-bio-avatar{width:64px;height:64px;border-radius:50%;flex-shrink:0;background:#EEF0F4;border:2px solid rgba(247,198,0,0.4);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--yellow);}
+.author-bio-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);margin-bottom:2px;}
+.author-bio-role{font-size:13px;color:var(--yellow);margin-bottom:12px;letter-spacing:0.06em;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;}
+.author-bio-text{font-size:15px;color:var(--gray);line-height:1.7;}
+.bottom-cta{background:#F7C600;padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+.bottom-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(11,14,26,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,14,26,0.06) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.bottom-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,64px);line-height:0.95;text-transform:uppercase;color:#0B0E1A;margin-bottom:14px;position:relative;}
+.bottom-cta p{font-size:16px;color:rgba(11,14,26,0.7);max-width:520px;margin:0 auto 32px;line-height:1.7;position:relative;}
+.btn-cta-yellow{display:inline-flex;align-items:center;gap:10px;background:#0B0E1A;color:#F7C600;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;padding:18px 44px;text-decoration:none;transition:all 0.2s;position:relative;}
+.btn-cta-yellow:hover{background:#1F2438;transform:translateY(-2px);}
+footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;}
+.footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.2fr 0.8fr 0.8fr 1fr;gap:48px;}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.footer-col-title::before{content:'';display:block;width:16px;height:2px;background:var(--yellow);}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-links li a{font-family:'Figtree',sans-serif;font-size:14px;color:#8A90A8;text-decoration:none;transition:color 0.2s;}
+.footer-links li a:hover{color:#FFF;}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.3);}
+.footer-legal a{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;margin:0 12px;transition:color 0.2s;}
+.footer-legal a:hover{color:rgba(255,255,255,0.6);}
+.footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s;}
+.footer-cta-btn:hover{filter:brightness(1.05);}
+@media(max-width:768px){.author-bio-card{flex-direction:column;gap:16px;}.footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}}
+@media(max-width:480px){.footer-nav{grid-template-columns:1fr;gap:36px;}}
+.footer-partner-badge{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;opacity:0.5;transition:opacity 0.2s}.footer-partner-badge:hover{opacity:0.8}.footer-partner-label{font-family:"Barlow Condensed",sans-serif;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em}.footer-partner-logo{height:22px;width:auto;filter:brightness(0) invert(1)}</style>
+</head>
+<body>
+<div class="nav-bar"><div class="nav-inner">
+<a class="nav-logo" href="/index.html">
+<img src="../assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+</a>
+<div class="nav-links">
+<a class="nav-item-link" href="/about.html">About</a>
+<a class="nav-item-link" href="/reviews.html">Results</a>
+<a class="nav-item-link" href="/program.html">Program</a>
+<a class="nav-item-link" href="/blog/">Knowledge</a>
+</div>
+<div class="nav-right">
+<a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
+<a class="nav-cta-btn" href="/sign-up.html">Become A Member</a>
+</div>
+<div class="mobile-nav-controls">
+<button class="mobile-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+<a href="/sign-up.html" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
+</div>
+</div></div>
+
+<!-- Mobile menu overlay -->
+<div id="mobileMenu" class="mobile-menu-overlay">
+<button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
+<nav class="mobile-menu-nav">
+<a href="/index.html">Home</a>
+<a href="/about.html">About</a>
+<a href="/reviews.html">Results</a>
+<a href="/program.html">Program</a>
+<a href="/blog/">Knowledge</a>
+<a href="https://www.skool.com/the-blueprint-training">Login</a>
+</nav>
+<div class="mobile-menu-socials">
+<a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg></a>
+<a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg></a>
+<a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg></a>
+</div>
+<a href="/sign-up.html" class="mobile-menu-cta">Get Started - $199/mo</a>
+</div>
+
+<section class="article-hero">
+<div class="article-hero-grid"></div>
+<div class="article-hero-inner">
+<div class="article-breadcrumb">
+<a href="/">Home</a><span>/</span>
+<a href="/blog/">Knowledge</a><span>/</span>
+<span style="color:var(--gray-light);">Article</span>
+</div>
+<h1 class="article-title">How to Set Up ChatGPT Ads: Campaigns, Ad Groups, Targeting, Creatives, and Conversion Tracking</h1>
+<div class="article-meta-row">
+<div class="article-author-block">
+<div class="author-avatar"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
+<div><div class="author-name"><a href="/about.html" style="text-decoration:none;color:inherit;">Ryan Stewart</a></div><div class="author-title">Founder, The Blueprint Training</div></div>
+</div>
+<div class="article-meta-divider"></div>
+<div class="article-meta-item"><strong>Last updated:</strong> Jun 18, 2026</div>
+</div>
+</div>
+</section>
+
+<div class="article-content">
+<article class="article-body">
+
+<p>ChatGPT ads are not built like Meta Ads, Google Search Ads, or LinkedIn Ads.</p>
+
+<p>The biggest difference is targeting.</p>
+
+<p>Instead of building audiences with interests, demographics, lookalikes, or exact-match keywords, ChatGPT ads are organized around conversational intent. You give OpenAI "context hints" that describe the types of conversations, topics, or problems where your ad may be relevant.</p>
+
+<p><strong>That means your campaign structure matters.</strong></p>
+
+<p>If you mix too many offers into one ad group, you will not know what is working. If you separate your offers properly, you can test which intent areas produce the best leads, booked calls, opportunities, and revenue.</p>
+
+<p>This guide walks through the full setup process:</p>
+
+<ul>
+<li>Account setup</li>
+<li>Campaign setup</li>
+<li>Ad group structure</li>
+<li>Context hints</li>
+<li>Ad creative</li>
+<li>Landing pages</li>
+<li>Conversion tracking</li>
+<li>Testing</li>
+<li>Optimization</li>
+</ul>
+
+<p>The example used throughout is a B2B law firm marketing campaign, but the same structure applies to most high-ticket B2B offers.</p>
+
+<h2>Step 1: Understand How ChatGPT Ad Targeting Works</h2>
+
+<img src="images/campaigns-dashboard.png" alt="ChatGPT Ads Manager — Campaigns dashboard showing active campaigns, status, budget, and performance metrics">
+
+<p>ChatGPT ads are driven by conversational context.</p>
+
+<p>Traditional ad platforms usually ask:</p>
+
+<ul>
+<li>Who do you want to target?</li>
+<li>What keywords do you want to bid on?</li>
+<li>What interests should the audience have?</li>
+<li>What websites did they visit?</li>
+<li>What list are they on?</li>
+</ul>
+
+<p><strong>ChatGPT ads are different.</strong></p>
+
+<p>The better question is: <strong>What kind of conversation would make your offer relevant?</strong></p>
+
+<p>For example, if you sell Facebook Ads management for law firms, you are not only targeting the phrase "Facebook Ads for lawyers."</p>
+
+<p>You also want to be relevant when someone is asking things like:</p>
+
+<ul>
+<li>How do I get more personal injury cases?</li>
+<li>Are Facebook Ads worth it for law firms?</li>
+<li>Why are my Google Ads leads so expensive?</li>
+<li>How can my law firm lower cost per signed case?</li>
+<li>Should my law firm use Meta Ads?</li>
+<li>What is the best marketing channel for personal injury lawyers?</li>
+</ul>
+
+<p>This is why context hints should include services, problems, buyer types, and outcomes.</p>
+
+<h2>Step 2: Set Up the Ad Account</h2>
+
+<img src="images/account-settings.png" alt="ChatGPT Ads Manager — Settings page with account info, billing, and API keys">
+
+<p>Before creating campaigns, set up the account properly.</p>
+
+<h3>Account Setup Checklist</h3>
+
+<ol>
+<li>Create or access your ChatGPT Ads account.</li>
+<li>Add your business information.</li>
+<li>Add billing information.</li>
+<li>Confirm your advertiser identity if required.</li>
+<li>Add your website domain.</li>
+<li>Review restricted categories and ad policies.</li>
+<li>Set up conversion tracking before launching.</li>
+<li>Create dedicated landing pages for each offer.</li>
+<li>Prepare creative assets.</li>
+<li>Decide your initial testing budget.</li>
+</ol>
+
+<p><strong>Do not rush straight into campaign creation.</strong></p>
+
+<p>The account setup is where you make sure tracking, landing pages, and compliance are ready before spending money.</p>
+
+<h2>Step 3: Choose the Campaign Objective</h2>
+
+<img src="images/create-campaign.png" alt="ChatGPT Ads Manager — Create Campaign form showing objective selection, name, and budget fields">
+
+<p>At the campaign level, you are setting the broad goal.</p>
+
+<p>For most B2B advertisers, the likely objective is lead generation or website conversions.</p>
+
+<p>For a law firm marketing agency, the goal is not to get random traffic. The goal is to get qualified law firm owners, managing partners, or marketing directors to request an audit, book a call, or submit a form.</p>
+
+<p><strong>Recommended campaign objective:</strong> Use a conversion-focused or lead-focused campaign if available.</p>
+
+<p><strong>Primary goal:</strong> Generate qualified booked calls or audit requests.</p>
+
+<p><strong>Secondary goals:</strong></p>
+
+<ul>
+<li>Landing page visits</li>
+<li>Form submissions</li>
+<li>Calendly bookings</li>
+<li>Qualified sales opportunities</li>
+<li>Closed deals</li>
+</ul>
+
+<h2>Step 4: Campaign Structure</h2>
+
+<img src="images/campaign-structure.png" alt="ChatGPT Ads Manager — Campaign list view showing campaign hierarchy with ad groups nested inside">
+
+<p>Use one campaign for the business objective.</p>
+
+<p><strong>Example:</strong> Campaign: WEBRIS Lead Generation</p>
+
+<p>Inside that campaign, create separate ad groups by offer or intent area. Do not put every service into one ad group.</p>
+
+<p><strong>Bad structure:</strong> One ad group targeting Facebook Ads, SEO, GEO, Google Ads, and compliance.</p>
+
+<p><strong>Better structure:</strong></p>
+
+<ul>
+<li>Ad Group 1: Facebook Ads for Lawyers</li>
+<li>Ad Group 2: SEO &amp; GEO for Lawyers</li>
+<li>Ad Group 3: Legal Marketing Compliance</li>
+<li>Ad Group 4: Google Ads for Lawyers</li>
+</ul>
+
+<p>The reason is simple: If everything is inside one ad group, you will not know which intent generated the lead.</p>
+
+<p>If each offer has its own ad group, you can measure:</p>
+
+<ul>
+<li>Which context hints are getting impressions</li>
+<li>Which offer gets clicks</li>
+<li>Which ad gets conversions</li>
+<li>Which landing page converts</li>
+<li>Which leads become qualified calls</li>
+<li>Which calls become revenue</li>
+</ul>
+
+<h2>Step 5: Set Up the Campaign</h2>
+
+<img src="images/campaign-setup.png" alt="ChatGPT Ads Manager — Campaign configuration with name, objective, location targeting, and budget settings">
+
+<p>At the campaign level, configure:</p>
+
+<p><strong>Campaign name</strong> - Use a clean naming convention. Example: WEBRIS | Lead Gen | US | Law Firms | ChatGPT Ads</p>
+
+<p><strong>Objective</strong> - Choose lead generation, website conversions, or traffic depending on what is available in your account. If conversion optimization is available, use it.</p>
+
+<p><strong>Location</strong> - Choose the market you serve. For a law firm marketing agency: United States. Optional: specific states if your offer is state-specific.</p>
+
+<p>For example, if your offer is about California SB37 or Colorado SB26-174, you may want separate campaigns or ad groups for those states.</p>
+
+<p><strong>Budget</strong> - Start with a test budget. Do not spread the budget across too many ad groups.</p>
+
+<p>A simple starting structure:</p>
+
+<ul>
+<li>2 to 4 ad groups</li>
+<li>2 to 3 ads per ad group</li>
+<li>1 dedicated landing page per ad group</li>
+</ul>
+
+<p>If budget is limited, start with only two ad groups:</p>
+
+<ol>
+<li>Facebook Ads for Lawyers</li>
+<li>SEO &amp; GEO for Lawyers</li>
+</ol>
+
+<h2>Step 6: Build Ad Groups Around Intent</h2>
+
+<img src="images/ad-groups.png" alt="ChatGPT Ads Manager — Ad Groups tab showing multiple ad groups with performance data">
+
+<p>The ad group is where your targeting strategy really happens.</p>
+
+<p>Each ad group should have:</p>
+
+<ul>
+<li>One clear offer</li>
+<li>One buyer type</li>
+<li>One intent theme</li>
+<li>One landing page</li>
+<li>One group of context hints</li>
+<li>Multiple ad variations</li>
+</ul>
+
+<p><strong>Do not use one ad group for every service you sell.</strong></p>
+
+<img src="images/create-ad-group.png" alt="ChatGPT Ads Manager — Create Ad Group form showing context hints field for conversational targeting">
+
+<h3>Ad Group Example 1: Facebook Ads for Lawyers</h3>
+
+<p><strong>Offer:</strong> Free Facebook Ads Audit for Law Firms</p>
+
+<p><strong>Best-fit audience:</strong></p>
+
+<ul>
+<li>Law firm owners</li>
+<li>Managing partners</li>
+<li>Legal marketing directors</li>
+<li>Business development teams</li>
+<li>Personal injury firms</li>
+<li>Workers' compensation firms</li>
+<li>High-volume consumer law firms</li>
+</ul>
+
+<p><strong>Context hints to paste:</strong> WEBRIS helps law firms generate qualified leads and signed cases through Facebook and Instagram advertising.</p>
+
+<p><strong>Relevant topics:</strong></p>
+
+<ul>
+<li>Law firm Facebook Ads</li>
+<li>Attorney Facebook marketing</li>
+<li>Meta Ads for lawyers</li>
+<li>Personal injury Facebook Ads</li>
+<li>Legal lead generation</li>
+<li>Signed cases from Facebook Ads</li>
+<li>Cost per signed case</li>
+<li>Case acquisition for law firms</li>
+<li>Social media advertising for lawyers</li>
+<li>Law firm growth strategies</li>
+<li>Marketing ROI for law firms</li>
+<li>Personal injury marketing</li>
+<li>Scaling law firm advertising</li>
+</ul>
+
+<p><strong>Ad options:</strong></p>
+
+<p><strong>Ad 1</strong> - Title: Getting Signed PI Cases From Facebook Ads. Description: Request a free Facebook Ads audit and see how your firm can improve lead quality, conversion rates, and signed case volume.</p>
+
+<p><strong>Ad 2</strong> - Title: Free Facebook Ads Audit For Law Firms. Description: We'll review your campaigns, landing pages, intake process, and lead quality to identify what may be costing your firm cases.</p>
+
+<p><strong>Ad 3</strong> - Title: Most Law Firms Run Facebook Ads Wrong. Description: See what separates low-quality legal leads from campaigns that generate signed cases.</p>
+
+<p><strong>Landing page:</strong> Create a dedicated page at /facebook-ads-audit with sections for hero headline, explanation, who it's for, what the audit includes, case study, form/calendar, FAQ, disclaimer.</p>
+
+<h3>Ad Group Example 2: SEO &amp; GEO for Lawyers</h3>
+
+<p><strong>Offer:</strong> Free AI Search Visibility Audit for Law Firms</p>
+
+<p>This offer works well for ChatGPT because it connects directly to how users are thinking about AI search, ChatGPT visibility, and the future of search.</p>
+
+<p><strong>Context hints:</strong> WEBRIS helps law firms increase visibility through SEO, local SEO, AI search optimization, GEO, and AEO.</p>
+
+<p><strong>Relevant topics:</strong></p>
+
+<ul>
+<li>Law firm SEO</li>
+<li>Attorney SEO</li>
+<li>Local SEO for lawyers</li>
+<li>Google rankings for law firms</li>
+<li>AI search optimization</li>
+<li>Generative Engine Optimization (GEO)</li>
+<li>Answer Engine Optimization (AEO)</li>
+<li>ChatGPT visibility</li>
+<li>Perplexity visibility</li>
+</ul>
+
+<p><strong>Ad options:</strong></p>
+
+<p><strong>Ad 1</strong> - Title: Is Your Law Firm Visible in AI Search? Description: Get a free audit showing how your firm appears in ChatGPT, Gemini, Perplexity, and Google search results.</p>
+
+<p><strong>Ad 2</strong> - Title: Free AI Search Audit For Law Firms. Description: See where your law firm appears, where competitors are winning, and what to fix to improve visibility.</p>
+
+<p><strong>Ad 3</strong> - Title: Law Firm SEO Is Changing. Description: Find out how AI search is affecting law firm visibility and what your firm should do next.</p>
+
+<h3>Ad Group Example 3: Legal Marketing Compliance</h3>
+
+<p>This ad group should be handled carefully. You are not offering legal advice. You are offering marketing education, strategy, and compliance-aware marketing planning for law firms.</p>
+
+<p><strong>Offer:</strong> Free Legal Marketing Compliance Impact Assessment</p>
+
+<p><strong>Context hints:</strong> WEBRIS helps law firms adapt their marketing strategies to changing legal advertising regulations, lead generation rules, and compliance requirements.</p>
+
+<p><strong>Relevant topics:</strong></p>
+
+<ul>
+<li>Legal marketing compliance</li>
+<li>Law firm advertising regulations</li>
+<li>Attorney advertising rules</li>
+<li>Lead generation compliance</li>
+<li>Third-party lead generation</li>
+<li>State bar advertising requirements</li>
+<li>Compliant lead generation strategies</li>
+</ul>
+
+<p><strong>Ad options:</strong></p>
+
+<p><strong>Ad 1</strong> - Title: Is Your Law Firm's Lead Gen Strategy at Risk? Description: Get a marketing strategy review focused on third-party lead generation, advertising risk, and alternative acquisition channels.</p>
+
+<p><strong>Ad 2</strong> - Title: Legal Marketing Compliance Is Changing. Description: See how law firms can adapt their marketing strategy as lead generation rules evolve.</p>
+
+<p><strong>Ad 3</strong> - Title: Stop Relying Only on Bought Leads. Description: Build owned marketing channels through SEO, paid ads, content, local visibility, and AI search.</p>
+
+<p><strong>Important disclaimer:</strong> WEBRIS is not a law firm and does not provide legal advice. This review is focused on marketing strategy, channel diversification, and business development planning.</p>
+
+<h2>Step 7: Creative Specs and Image Direction</h2>
+
+<img src="images/ads-tab.png" alt="ChatGPT Ads Manager — Ads tab showing ad creatives with titles, descriptions, and preview thumbnails">
+
+<p>Use the ad image size accepted by the platform. As a practical starting point, create 1200x628 landscape and 1200x1200 square images.</p>
+
+<p><strong>Keep the creative simple.</strong> Do not use cluttered screenshots, tiny text, or overly designed graphics.</p>
+
+<h3>Best-Performing Creative Concepts to Test</h3>
+
+<ol>
+<li>Direct offer creative (e.g., Free Facebook Ads Audit For Law Firms)</li>
+<li>Outcome creative (e.g., Signed PI Cases From Facebook Ads)</li>
+<li>Problem creative (e.g., Are Your Facebook Ads Producing Cases?)</li>
+<li>Benchmark creative (e.g., Paying Too Much Per Signed Case?)</li>
+<li>AI search creative (e.g., Is Your Law Firm Visible in ChatGPT?)</li>
+<li>Compliance creative (e.g., Lead Gen Rules Are Changing)</li>
+</ol>
+
+<p>For B2B law firm marketing, avoid consumer legal imagery (car crashes, injured people, ambulances, courtroom drama, settlement checks, "You may be entitled" language). You are advertising marketing services to law firms, not legal services to consumers.</p>
+
+<h2>Step 8: Ad Copy Framework</h2>
+
+<img src="images/edit-ad.png" alt="ChatGPT Ads Manager — Edit Ad modal showing title, description, destination link, image upload, and ad preview">
+
+<p>Each ad should have one clear message. Do not try to explain every service in one ad.</p>
+
+<p><strong>Use this structure:</strong></p>
+
+<p><strong>Title</strong> - Specific outcome or offer. Examples: Free Facebook Ads Audit For Law Firms, Is Your Law Firm Visible in AI Search?, Getting Signed PI Cases From Facebook Ads</p>
+
+<p><strong>Description</strong> - Explain what they get. Examples: Request a free audit and see how your firm can improve lead quality. See where your law firm appears in ChatGPT, Gemini, Perplexity, and Google.</p>
+
+<p><strong>CTA</strong> - Use simple language: Request My Audit, Get My Free Audit, Book a Strategy Call, Request a Review, See What's Broken</p>
+
+<h2>Step 9: Conversion Tracking</h2>
+
+<img src="images/conversions-data-source.png" alt="ChatGPT Ads Manager — Conversions page showing Data Source tab with tracking pixel setup">
+
+<p><strong>Do not launch without conversion tracking.</strong></p>
+
+<h3>Primary Conversions</h3>
+
+<ul>
+<li>Form submission</li>
+<li>Calendly booking</li>
+<li>Demo request</li>
+<li>Audit request</li>
+<li>Consultation request</li>
+</ul>
+
+<h3>Secondary Conversions</h3>
+
+<ul>
+<li>Landing page view</li>
+<li>Button click</li>
+<li>Scroll depth</li>
+<li>Time on site</li>
+<li>Thank-you page view</li>
+</ul>
+
+<h3>Sales Conversions</h3>
+
+<ul>
+<li>Qualified lead</li>
+<li>Sales accepted lead</li>
+<li>Discovery call completed</li>
+<li>Proposal sent</li>
+<li>Deal won</li>
+<li>Closed revenue</li>
+</ul>
+
+<p>For high-ticket B2B, do not judge the campaign only by form fills. Track the full funnel: Impression &rarr; Click &rarr; Landing page visit &rarr; Form submission &rarr; Booked call &rarr; Qualified opportunity &rarr; Proposal &rarr; Closed deal</p>
+
+<h2>Step 10: How to Set Up Conversions</h2>
+
+<img src="images/conversion-events.png" alt="ChatGPT Ads Manager — Conversion Events tab showing configured events like Form Submit with tracking status">
+
+<p>The exact setup depends on what the account allows.</p>
+
+<p><strong>Option 1: Thank-you page conversion</strong> - Use if your form redirects to a thank-you page.</p>
+
+<p><strong>Option 2: Button click conversion</strong> - Use if the user clicks a CTA but does not always land on a thank-you page.</p>
+
+<p><strong>Option 3: Calendly booking conversion</strong> - Track the Calendly booking confirmation page or event.</p>
+
+<p><strong>Option 4: CRM-stage conversions</strong> - Track stages like new lead, booked call, qualified call, proposal sent, won deal.</p>
+
+<p><strong>Option 5: Offline conversion import</strong> - Upload or sync offline events from your CRM (Qualified Lead, Opportunity Created, Closed Won, Revenue Amount).</p>
+
+<h2>Step 11: UTM Tracking</h2>
+
+<p>Every ad should use UTMs. Use a clean naming system.</p>
+
+<p><strong>Example URL:</strong> /facebook-ads-audit?utm_source=chatgpt&amp;utm_medium=paid&amp;utm_campaign=webris_leadgen&amp;utm_content=facebook_ads_audit_ad1</p>
+
+<p><strong>Recommended UTM structure:</strong> utm_source=chatgpt, utm_medium=paid, utm_campaign=webris_leadgen, utm_term=[ad_group_topic], utm_content=[ad_variant]</p>
+
+<h2>Step 12: Landing Page Structure</h2>
+
+<p>Each ad group should have its own landing page. Do not send all ads to your homepage.</p>
+
+<p><strong>Recommended landing page structure:</strong></p>
+
+<ol>
+<li>Headline</li>
+<li>Subheadline</li>
+<li>CTA button</li>
+<li>Who this is for</li>
+<li>What you get</li>
+<li>Proof or case study</li>
+<li>How it works</li>
+<li>Form or calendar</li>
+<li>FAQ</li>
+<li>Disclaimer</li>
+</ol>
+
+<h2>Step 13: Testing Plan</h2>
+
+<p>Start simple. Do not launch 10 ad groups and 30 ads at once.</p>
+
+<p>Initial test with 2-3 ad groups, 3 ads each. Start with Facebook Ads for Lawyers and SEO &amp; GEO for Lawyers. Optionally add Legal Marketing Compliance.</p>
+
+<h2>Step 14: What to Measure</h2>
+
+<img src="images/tools-menu.png" alt="ChatGPT Ads Manager — Tools dropdown menu showing available measurement and optimization tools">
+
+<p><strong>Do not judge performance only on clicks.</strong></p>
+
+<p>Track ad-level metrics (impressions, CTR, CPC, conversion rate, CPL), landing-page metrics (page conversion rate, form completion rate, bounce rate), and sales metrics (lead quality, show rate, qualified call rate, proposal rate, close rate, cost per qualified opportunity, cost per closed customer, revenue per ad group).</p>
+
+<p>For WEBRIS, the most important metrics are cost per booked call, cost per qualified call, cost per opportunity, and cost per closed client. A cheap form fill is not the goal.</p>
+
+<h2>Step 15: How to Optimize</h2>
+
+<p>After the first test period, optimize in this order:</p>
+
+<ol>
+<li><strong>Kill irrelevant ad groups</strong> - If an ad group gets clicks but no qualified leads, pause it.</li>
+<li><strong>Kill weak ads</strong> - If one ad has low CTR and no conversions, replace it.</li>
+<li><strong>Improve landing page match</strong> - If people click but do not convert, the landing page may not match the ad promise.</li>
+<li><strong>Tighten context hints</strong> - If leads are poor quality, revise the hints. Make them more specific.</li>
+<li><strong>Separate winning intent</strong> - If one ad group performs well, break it into more specific versions.</li>
+</ol>
+
+<h2>Step 16: Common Mistakes</h2>
+
+<p><strong>Mistake 1: Treating context hints like keywords</strong> - Context hints are not exact-match keywords. Write full sentences describing the conversation context.</p>
+
+<p><strong>Mistake 2: Putting every offer in one ad group</strong> - Separate them so you can measure what works.</p>
+
+<p><strong>Mistake 3: Sending traffic to the homepage</strong> - Send each ad group to a dedicated landing page.</p>
+
+<p><strong>Mistake 4: Optimizing for leads instead of qualified calls</strong> - Lead quality matters more than volume.</p>
+
+<p><strong>Mistake 5: Using consumer legal language</strong> - Keep messaging B2B if you're advertising marketing services to law firms.</p>
+
+<h2>Step 17: Recommended First Campaign Build</h2>
+
+<p><strong>Campaign:</strong> WEBRIS | Lead Gen | ChatGPT Ads | US</p>
+<p><strong>Objective:</strong> Website conversions or lead generation</p>
+<p><strong>Location:</strong> United States</p>
+
+<p><strong>Ad Group 1: Facebook Ads for Lawyers</strong> - Free Facebook Ads Audit - Landing page: /facebook-ads-audit</p>
+
+<p><strong>Ad Group 2: SEO &amp; GEO for Lawyers</strong> - Free AI Search Visibility Audit - Landing page: /ai-search-audit</p>
+
+<p><strong>Ad Group 3: Legal Marketing Compliance</strong> - Lead Generation Risk Review - Landing page: /legal-marketing-compliance</p>
+
+<h2>Final Recommendation</h2>
+
+<p>Start with two offers (Facebook Ads for Lawyers and SEO &amp; GEO for Lawyers). Launch a clean campaign with separate ad groups, dedicated landing pages, clear context hints, conversion tracking, and 2-3 ad variations per ad group. Then optimize based on qualified calls and pipeline, not just clicks or leads.</p>
+
+</article>
+</div>
+
+<div class="author-bio">
+<div class="author-bio-card">
+<div class="author-bio-avatar" style="overflow:hidden;border:none;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart" style="width:100%;height:100%;object-fit:cover;"></div>
+<div>
+<div class="author-bio-name"><a href="/author/ryan/" style="color:inherit;text-decoration:none;">Ryan Stewart</a></div>
+<div class="author-bio-role">Founder, The Blueprint Training</div>
+<p class="author-bio-text">Ryan Stewart is the founder of The Blueprint Training and WEBRIS. He helps agency owners productize their services, implement AI automation, and scale past the one-person ceiling.</p>
+</div>
+</div>
+</div>
+
+<div class="bottom-cta">
+<h2>The knowledge is free.<br><span>The system is inside.</span></h2>
+<p>This article is a taste of what Blueprint members get every week. Join 5,000+ agency owners building AI-powered businesses.</p>
+<a href="/sign-up.html" class="btn-cta-yellow">Join The Blueprint</a>
+</div>
+
+<footer>
+<div class="footer-nav">
+<div><div class="footer-col-title">Features</div><ul class="footer-links">
+<li><a href="/coaching/">Coaching</a></li>
+<li><a href="/agency-training/">Video Training</a></li>
+<li><a href="/bootcamps/">Live Bootcamps</a></li>
+<li><a href="/agents/">AI Agents</a></li>
+<li><a href="/slack-channel/">Community</a></li>
+        <li><a href="/seo-sprints-training/">SEO Sprints</a></li>
+        <li><a href="/templates-and-sops/">Templates &amp; SOPs</a></li>
+</ul></div>
+<div><div class="footer-col-title">Company</div><ul class="footer-links">
+<li><a href="/about.html">About</a></li>
+<li><a href="/reviews.html">Results</a></li>
+<li><a href="/program.html">Program</a></li>
+<li><a href="/blog/">Knowledge</a></li>
+</ul></div>
+<div><div class="footer-col-title">Account</div><ul class="footer-links" style="margin-bottom:24px;">
+<li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
+<li><a href="/get-started.html">Book a Call</a></li>
+</ul>
+<a href="/sign-up.html" class="footer-cta-btn">Get Started &rarr;</a>
+</div>
+
+
+    <div>
+      <div class="footer-col-title">Follow Us</div>
+      <ul class="footer-links">
+        <li><a href="https://www.instagram.com/theblueprint.training/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/theblueprinttraining/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.youtube.com/@theblueprinttraining" target="_blank">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+
+  </div>
+<div class="footer-bottom">
+<div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
+<div class="footer-legal"><a href="/privacy-policy/">Privacy</a>
+      <a href="/terms-and-conditions/">Terms</a><a href="mailto:elena@theblueprint.training">Contact</a></div>
+    <a href="https://loganix.com/" target="_blank" class="footer-partner-badge">
+      <span class="footer-partner-label">Platinum Partner</span>
+      <img src="/assets/loganix logo.svg" alt="Loganix" class="footer-partner-logo">
+    </a>
+  </div>
+</footer>
+</body>
+</html>

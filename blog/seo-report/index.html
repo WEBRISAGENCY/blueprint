@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build Your Own SEO Report (FREE Template) | The Blueprint Training</title>
+<meta name="description" content="Build your own SEO report with this free template. Show clients real results and keep them retained with clear reporting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--yellow:#F7C600;--yellow-dark:#D9AE00;--border:rgba(0,0,0,0.08);--white:#0B0E1A;--gray:#6B7280;--gray-light:#374151;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#FFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-x:hidden;}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#FFFFFF;box-shadow:0 1px 8px rgba(0,0,0,0.08),0 2px 24px rgba(0,0,0,0.04);}
+.nav-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:flex;align-items:stretch;height:86px;padding:0 32px;}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;padding-right:28px;border-right:none;margin-right:4px;flex-shrink:0;}
+.nav-links{display:flex;align-items:stretch;flex:1;justify-content:center;}
+.nav-item-link{display:flex;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.06em;color:#1E3A5F;padding:0 20px;text-decoration:none;transition:color 0.15s;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;}
+.nav-item-link:hover{color:#132c54;}
+.nav-right{display:flex;align-items:center;margin-left:auto;}
+.nav-login{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;color:#1E3A5F;background:none;border:none;cursor:pointer;padding:0 20px;text-decoration:none;transition:color 0.15s;}
+.nav-login:hover{color:#132c54;}
+.nav-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:0 36px;text-decoration:none;transition:background 0.15s;display:flex;align-items:center;height:100%;}
+.nav-cta-btn:hover{background:#D9AE00;}
+
+.mobile-nav-controls{display:none;align-items:center;gap:12px;margin-left:auto;}
+.mobile-hamburger{background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px;width:28px;}
+.mobile-hamburger span{display:block;height:2px;width:100%;background:#1E3A5F;border-radius:2px;transition:all 0.3s;}
+.mobile-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.06em;padding:8px 20px;text-decoration:none;white-space:nowrap;}
+.mobile-cta-btn:hover{background:#D9AE00;}
+.mobile-menu-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#132c54;flex-direction:column;padding:80px 32px 40px;overflow-y:auto;}
+.mobile-menu-overlay.open{display:flex;}
+.mobile-menu-close{position:absolute;top:14px;right:16px;z-index:10000;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);color:#fff;font-size:28px;cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:6px;font-family:sans-serif;font-weight:300;}
+.mobile-menu-nav{display:flex;flex-direction:column;gap:0;}
+.mobile-menu-nav a{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:0.06em;color:#C8CEDF;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);transition:color 0.2s;}
+.mobile-menu-nav a:hover{color:#F7C600;}
+.mobile-menu-socials{display:flex;gap:20px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);}
+.mobile-menu-socials a{opacity:0.6;transition:opacity 0.2s;}
+.mobile-menu-socials a:hover{opacity:1;}
+.mobile-menu-cta{display:block;text-align:center;margin-top:32px;background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:16px 32px;text-decoration:none;}
+.mobile-menu-cta:hover{background:#D9AE00;}
+@media(max-width:900px){.nav-links{display:none !important;}.nav-right{display:none !important;}.mobile-nav-controls{display:flex !important;}.nav-inner{height:54px !important;justify-content:flex-start !important;padding:0 16px !important;}.nav-logo{border-right:none !important;margin-right:0 !important;padding-right:0 !important;}.nav-logo img{height:27px !important;width:auto !important;}.mobile-cta-btn .mobile-cta-full{display:none !important;}.mobile-cta-btn .mobile-cta-short{display:inline !important;}.article-hero{padding-top:78px !important;}}
+.article-hero{padding:110px 24px 0;position:relative;overflow:hidden;}
+.article-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.03) 1px,transparent 1px);background-size:60px 60px;}
+.article-hero-inner{max-width:860px;margin:0 auto;padding:28px 0 0;position:relative;}
+.article-breadcrumb{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;}
+.article-breadcrumb a{color:var(--gray);text-decoration:none;}
+.article-breadcrumb a:hover{color:var(--yellow);}
+.article-breadcrumb span{color:rgba(0,0,0,0.25);}
+.article-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5.5vw,72px);line-height:0.95;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin-bottom:28px;}
+.article-meta-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.article-author-block{display:flex;align-items:center;gap:10px;}
+.author-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;}.author-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.author-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);}
+.author-title{font-size:12px;color:var(--gray);}
+.article-meta-divider{width:1px;height:32px;background:var(--border);}
+.article-meta-item{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px;}
+.article-meta-item strong{color:var(--gray-light);font-weight:600;}
+
+
+.article-body iframe,.article-body .wp-block-embed{display:block;width:100%;margin:28px 0;}.article-body .responsive-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:28px 0;}.article-body .responsive-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+.article-body blockquote{border-left:3px solid var(--yellow);margin:28px 0;padding:16px 24px;background:#F7F8FA;}.article-body blockquote p{margin-bottom:0;font-style:italic;}
+.article-content{max-width:860px;margin:0 auto;padding:56px 24px 96px;}
+.article-body p{font-size:16.5px;line-height:1.8;color:var(--gray-light);margin-bottom:20px;}
+.article-body p strong{color:var(--white);font-weight:600;}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3vw,40px);line-height:1.0;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin:40px 0 16px;padding-top:40px;border-top:1px solid var(--border);}
+.article-body h2:first-child{margin-top:0;padding-top:0;border-top:none;}
+.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:0.04em;text-transform:uppercase;color:var(--white);margin:32px 0 12px;}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:20px;list-style:disc;display:block;}
+.article-body ul li,.article-body ol li{font-size:16px;color:var(--gray-light);line-height:1.8;padding:4px 0 4px 0;background:none;border-left:none;display:list-item;}
+.article-body ul li::before{display:none;}
+.article-body img{display:block;width:100%;height:auto;margin:28px 0;border-radius:0;}
+.article-body a{color:#1E3A5F;text-decoration:underline;text-underline-offset:2px;}.article-body a:hover{color:var(--yellow);}
+.author-bio{max-width:860px;margin:0 auto;padding:0 24px 64px;}
+.author-bio-card{background:#F7F8FA;border:1px solid rgba(0,0,0,0.08);padding:32px 28px;display:flex;gap:24px;align-items:flex-start;}
+.author-bio-avatar{width:64px;height:64px;border-radius:50%;flex-shrink:0;background:#EEF0F4;border:2px solid rgba(247,198,0,0.4);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--yellow);}
+.author-bio-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);margin-bottom:2px;}
+.author-bio-role{font-size:13px;color:var(--yellow);margin-bottom:12px;letter-spacing:0.06em;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;}
+.author-bio-text{font-size:15px;color:var(--gray);line-height:1.7;}
+.bottom-cta{background:#F7C600;padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+.bottom-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(11,14,26,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,14,26,0.06) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.bottom-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,64px);line-height:0.95;text-transform:uppercase;color:#0B0E1A;margin-bottom:14px;position:relative;}
+.bottom-cta p{font-size:16px;color:rgba(11,14,26,0.7);max-width:520px;margin:0 auto 32px;line-height:1.7;position:relative;}
+.btn-cta-yellow{display:inline-flex;align-items:center;gap:10px;background:#0B0E1A;color:#F7C600;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;padding:18px 44px;text-decoration:none;transition:all 0.2s;position:relative;}
+.btn-cta-yellow:hover{background:#1F2438;transform:translateY(-2px);}
+footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;}
+.footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.2fr 0.8fr 0.8fr 1fr;gap:48px;}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.footer-col-title::before{content:'';display:block;width:16px;height:2px;background:var(--yellow);}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-links li a{font-family:'Figtree',sans-serif;font-size:14px;color:#8A90A8;text-decoration:none;transition:color 0.2s;}
+.footer-links li a:hover{color:#FFF;}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.3);}
+.footer-legal a{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;margin:0 12px;transition:color 0.2s;}
+.footer-legal a:hover{color:rgba(255,255,255,0.6);}
+.footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s;}
+.footer-cta-btn:hover{filter:brightness(1.05);}
+@media(max-width:768px){.author-bio-card{flex-direction:column;gap:16px;}.footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}}
+@media(max-width:480px){.footer-nav{grid-template-columns:1fr;gap:36px;}}
+.footer-partner-badge{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;opacity:0.5;transition:opacity 0.2s}.footer-partner-badge:hover{opacity:0.8}.footer-partner-label{font-family:"Barlow Condensed",sans-serif;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em}.footer-partner-logo{height:22px;width:auto;filter:brightness(0) invert(1)}</style>
+</head>
+<body>
+<div class="nav-bar"><div class="nav-inner">
+<a class="nav-logo" href="/index.html">
+<img src="../assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+</a>
+<div class="nav-links">
+<a class="nav-item-link" href="/about.html">About</a>
+<a class="nav-item-link" href="/reviews.html">Results</a>
+<a class="nav-item-link" href="/program.html">Program</a>
+<a class="nav-item-link" href="/blog/">Knowledge</a>
+</div>
+<div class="nav-right">
+<a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
+<a class="nav-cta-btn" href="/sign-up.html">Become A Member</a>
+</div>
+<div class="mobile-nav-controls">
+<button class="mobile-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+<a href="/sign-up.html" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
+</div>
+</div></div>
+
+<!-- Mobile menu overlay -->
+<div id="mobileMenu" class="mobile-menu-overlay">
+<button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
+<nav class="mobile-menu-nav">
+<a href="/index.html">Home</a>
+<a href="/about.html">About</a>
+<a href="/reviews.html">Results</a>
+<a href="/program.html">Program</a>
+<a href="/blog/">Knowledge</a>
+<a href="https://www.skool.com/the-blueprint-training">Login</a>
+</nav>
+<div class="mobile-menu-socials">
+<a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg></a>
+<a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg></a>
+<a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg></a>
+</div>
+<a href="/sign-up.html" class="mobile-menu-cta">Get Started - $199/mo</a>
+</div>
+
+<section class="article-hero">
+<div class="article-hero-grid"></div>
+<div class="article-hero-inner">
+<div class="article-breadcrumb">
+<a href="/">Home</a><span>/</span>
+<a href="/blog/">Knowledge</a><span>/</span>
+<span style="color:var(--gray-light);">Article</span>
+</div>
+<h1 class="article-title">How to Build Your Own SEO Report (FREE Template)</h1>
+<div class="article-meta-row">
+<div class="article-author-block">
+<div class="author-avatar"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
+<div><div class="author-name"><a href="/about.html" style="text-decoration:none;color:inherit;">Ryan Stewart</a></div><div class="author-title">Founder, The Blueprint Training</div></div>
+</div>
+<div class="article-meta-divider"></div>
+<div class="article-meta-item"><strong>Last updated:</strong> Jun 30, 2025</div>
+</div>
+</div>
+</section>
+
+<div class="article-content">
+<article class="article-body">
+<p>Reporting is a critical part to any SEO campaign, especially if you're an agency working with clients.</p>
+
+<p>A good SEO report allows you to set a baseline, track performance and progress over the life of the campaign.</p>
+
+<p>We went through <em>dozens</em> of SEP reporting tools before we decided to <strong>build our own</strong> SEO reporting template using <a href="https://lookerstudio.google.com/u/0/" target="_blank" rel="noopener">Google Looker Studio</a>.
+<h3>1. Connection to Google properties</h3>
+Looker has built in connections to pull from all of the data sources you need to build a proper SEO report. Simply build the visual dashboard for how you want it to look and pull through key data with a few clicks.</p>
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2022/05/google-data-studio-seo-template.jpeg" alt="google-data-studio-seo-template" />
+<h3>2. Connection to non-Google properties</h3>
+You can export data from other tools in Google Sheets (i.e. keyword rank tracking, <a href="https://theblueprint.training/seo-agency-project-management/">project management</a> info, CRM data, etc) and push into Looker. In other words, you can pull data from everywhere and format it into a branded, automated SEO reporting template.
+
+<img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/customizable-seo-report.jpg" alt="customizable-seo-report" />
+<h3>3. The reporting is free to use</h3>
+Looker does offer paid packages, but to build the SEO reporting you need for clients, the free version works perfect.
+
+<img loading="lazy"  src="https://theblueprint.training/wp-content/uploads/2024/09/Screenshot-2024-09-20-at-8.12.03 AM.png" alt="seo reporting pricing" />
+
+<p>If you've never used Looker before, <a href="https://youtu.be/Coe_f79Xc2o?si=hthUhtBE-0c3yYar" target="_blank" rel="noopener">watch this video</a> for a beginner's crash course on report building.</p>
+
+<h2>Access The FREE SEO Reporting Template</h2>
+The rest of this post will break down the the SEO reporting template our agency uses for all of our clients. If you want access to it, <a href="https://theblueprint.training/book-goodies/">you can grab it here for free</a>.
+
+<em>Once you sign up, you will be redirected to our learning platform where you will find an entire suite of free templates and trainings for SEO agencies.</em>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:24px 0;"><iframe src="https://www.youtube.com/embed/Lzz_mKDbzjk" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe></div>
+
+<h2>1. Summary page</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Provides a Snapshot</strong>: Quickly offers a high-level overview of key metrics and performance indicators for stakeholders.</li>
+ 	<li><strong>Facilitates Decision-Making</strong>: Enables informed decisions by presenting the most critical data at a glance.</li>
+ 	<li><strong>Enhances Report Usabilit</strong>y: Helps users navigate through detailed reports by summarizing essential information.</li>
+ 	<li><strong>Improves Clarity</strong>: Prevents data overload by condensing complex information into digestible insights.</li>
+ 	<li><strong>Saves Time</strong>: Allows stakeholders to quickly grasp the overall SEO performance without delving into every detail.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/reporting-summary-page.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/reporting-summary-page.png" alt="reporting summary page" /></a>
+
+<strong>What to include on this page?</strong>
+<ul>
+<li>A summary of that reporting period including the main findings / thoughts of the current reporting period.</li>
+ 	<li><a href="https://theblueprint.training/seo-deliverables/">Major SEO deliverables</a> completed that reporting period.</li>
+ 	<li>Open action items that require attention (both the agency and the client).</li>
+ 	<li>Summary of increases (or decreases) in organic traffic and additional thoughts.</li>
+ 	<li>Upcoming meetings, tasks, and deliverables to be completed for the following month.</li>
+</ul>
+This is a great page to add data from your <a href="https://theblueprint.training/project-management-seo/" target="_blank" rel="noopener noreferrer">project management tool</a>. Pull down data into Google Sheets and pull through your updated project plan.
+
+<strong>More resources</strong>
+<ul>
+<li><a href="https://support.google.com/datastudio/answer/6292570?hl=en#style_the_report" target="_blank" rel="noopener noreferrer">How to add text to pages</a></li>
+ 	<li><a href="https://support.google.com/datastudio/answer/6295223?hl=en" target="_blank" rel="noopener noreferrer">Sync a Google Sheets file to your report</a></li>
+</ul>
+
+<h2>2. Organic traffic summary report</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Evaluates SEO Effectiveness</strong>: A high-level traffic summary allows you to see organic traffic trends over time. Measures how well your SEO strategies are driving traffic to your site.</li>
+ 	<li><strong>Identifies Growth Opportunities</strong>: Helps pinpoint which areas or pages are performing well and where improvements are needed.</li>
+ 	<li><strong>Monitors User Behavior</strong>: Analyzes how organic visitors interact with your site, providing insights into user experience and engagement.</li>
+ 	<li><strong>Supports Strategic Planning</strong>: Offers data-driven insights for refining content strategies, keyword targeting, and on-page optimizations.</li>
+ 	<li><strong>Justifies SEO Investment</strong>: Demonstrates the <a href="https://theblueprint.training/seo-roi/">ROI of SEO</a> efforts by showing tangible results in traffic growth and engagement.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/organic-dashboard-trends.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/organic-dashboard-trends.png" alt="organic dashboard trends" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Total Organic Sessions</strong>: Number of visits from organic search, compared to previous periods.</li>
+ 	<li><strong>Traffic Trends</strong>: Monthly or quarterly trends, showing growth or decline in organic traffic.</li>
+ 	<li><strong>Top Traffic-Driving Keywords</strong>: List of keywords bringing in the most visitors and their ranking positions.</li>
+ 	<li><strong>Top Landing Pages</strong>: Pages that receive the highest amount of organic traffic.\</li>
+ 	<li><strong>User Behavior Metrics</strong>: Metrics like bounce rate, average session duration, and pages per session for organic visitors.</li>
+ 	<li><strong>New vs. Returning Visitors</strong>: Breakdown of first-time visitors compared to returning ones.</li>
+ 	<li><strong>Geographic Distribution</strong>: Regions or countries contributing the most organic traffic.</li>
+ 	<li><strong>Device Breakdown</strong>: Traffic segmented by device type (desktop, mobile, tablet).</li>
+ 	<li><strong>Comparative Analysis</strong>: Year-over-year or month-over-month comparisons to highlight growth or declines.</li>
+ 	<li><strong>Actionable Insights</strong>: Key takeaways and recommendations based on organic traffic performance.</li>
+</ul>
+<strong>More resources</strong>
+<ul>
+<li><a href="https://moz.com/blog/do-website-engagement-rates-impact-organic-rankings" target="_blank" rel="noopener noreferrer">Impact of engagement rates on SEO</a></li>
+ 	<li><a href="https://support.google.com/datastudio/answer/6312144?hl=en" target="_blank" rel="noopener noreferrer">How to create filterable dropdown menus</a></li>
+</ul>
+
+<h2>3. Organic traffic breakdown</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Granular Insights</strong>: Offers detailed understanding of how different segments of organic traffic engage with your website, allowing for more precise optimization.</li>
+ 	<li><strong>Device-Specific Analysis</strong>: Highlights differences in behavior and performance between mobile, tablet, and desktop users, enabling targeted improvements in user experience.</li>
+ 	<li><strong>Demographic Understanding</strong>: Provides insights into the demographics of your organic traffic, helping to tailor content and strategies to better meet the needs of your audience.</li>
+ 	<li><strong>Informed Decision-Making</strong>: Supports strategic decisions by revealing which audience segments are most engaged and where there are opportunities for growth.</li>
+ 	<li><strong>Personalized SEO Strategies</strong>: Enables the creation of customized strategies for specific user groups based on their behavior and preferences.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/organic-traffic-engagements.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/organic-traffic-engagements.png" alt="organic traffic engagements" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li><strong>Organic Traffic Trends by Device</strong>: Visual representation of traffic over time, segmented by mobile, desktop, and tablet, to identify patterns and shifts in device usage.</li>
+ 	<li><strong>Traffic by Location and Device Type</strong>: Breakdown of organic traffic volume by geographic location and device, highlighting regional preferences and device-specific performance.</li>
+ 	<li><strong>Demographics (Age, Gender) and Device Type</strong>: Analysis of traffic by age and gender, segmented by device, to understand which demographic groups are engaging with your site on different platforms.</li>
+ 	<li><strong>Engagement Metrics by Device</strong>: Key user behavior metrics like:
+<ul>
+<li><strong>Time on Page</strong>: Average duration users spend on your site, segmented by device type.</li>
+ 	<li><strong>Bounce Rate</strong>: Percentage of single-page sessions, helping to identify if certain devices have higher exit rates.</li>
+ 	<li><strong>Pages per Session</strong>: Average number of pages viewed per visit, offering insights into user journey and engagement levels across different devices.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+This level of detail helps identify areas for optimization, ensuring a more targeted and effective SEO strategy tailored to your audience's needs.
+
+<h2>4. Organic landing pages</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Performance Insight</strong>: Identifies which pages are the most and least successful in attracting and retaining organic traffic, reflecting the effectiveness of your SEO efforts.</li>
+ 	<li><strong>Conversion Analysis</strong>: Shows which landing pages are not only attracting visitors but also converting them into leads or sales, helping to focus on high-impact content.</li>
+ 	<li><strong>Optimization Opportunities</strong>: Highlights pages that may need improvements in content, design, or SEO to better engage users and achieve business goals.</li>
+ 	<li><strong>Content Strategy Guidance</strong>: Informs future content creation and optimization by revealing what types of pages and content formats perform best.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/seo-landing-pages-report.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/seo-landing-pages-report.png" alt="seo landing pages report" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Entry Pages from Organic Search</strong>: Comprehensive list of all landing pages that users enter through from organic search, along with their:
+<ul>
+<li><strong>Engagement Rates</strong>: Metrics like bounce rate, average session duration, and pages per session for each landing page.</li>
+</ul>
+</li>
+ 	<li><strong>Click-Through Rate (CTR) of Top Landing Pages</strong>: Measures how often users click on your page in the search results compared to how often it is shown (impressions), indicating the effectiveness of your titles and meta descriptions.</li>
+ 	<li><strong>Top Sales or Lead-Driving Pages</strong>: A list of landing pages generating the highest number of conversions, such as form submissions, product purchases, or other desired actions.</li>
+</ul>
+This information helps prioritize SEO efforts towards high-performing pages and improve those that are underperforming, aligning content and SEO strategies with business objectives.
+
+<strong>More resources</strong>
+<ul>
+<li>N/A</li>
+</ul>
+
+<h2>5. Channel comparison</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Performance Benchmarking</strong>: Provides a clear, side-by-side view of how organic search compares to other channels like direct, referral, social, email, and paid traffic, enabling a holistic understanding of overall marketing effectiveness.</li>
+ 	<li><strong>Resource Allocation</strong>: Helps determine which channels are delivering the best results, guiding decisions on where to allocate resources and budget for maximum impact.</li>
+ 	<li><strong>Identify Strengths and Weaknesses</strong>: Highlights which channels are driving the most traffic, engagement, and conversions, and where there may be opportunities for improvement.</li>
+ 	<li><strong>Strategic Planning</strong>: Informs cross-channel strategies by showing how different sources contribute to the customer journey and overall business goals.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/channel-comparison-breakdowns.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/channel-comparison-breakdowns.png" alt="channel comparison breakdowns" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Sessions Comparison</strong>: Number of sessions (visits) each channel generates, providing an overview of traffic volume and reach for each source.</li>
+ 	<li><strong>Engagement Metrics</strong>: Comparison of user behavior across channels, including:
+<ul>
+<li><strong>Bounce Rate</strong>: Percentage of single-page sessions, indicating user interest and relevance of content for each channel.</li>
+ 	<li><strong>Pages per Session</strong>: Average number of pages viewed per session, showing user engagement and navigation patterns.</li>
+ 	<li><strong>Average Session Duration</strong>: Time users spend on the site, reflecting the depth of engagement across channels.</li>
+</ul>
+</li>
+ 	<li><strong>Conversion Metrics</strong>: Evaluation of how well each channel drives conversions, such as sales, leads, or sign-ups, highlighting the channels that most effectively contribute to business goals.</li>
+ 	<li><strong>Channel Performance Trends</strong>: Visual representation of how each channel’s performance changes over time, allowing for trend analysis and strategy adjustments.</li>
+</ul>
+<strong>More resources</strong>
+<ul>
+<li>N/A</li>
+</ul>
+
+<h2>6. eCommerce conversion and revenue analysis</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Impact Assessment</strong>: Evaluates how effectively organic traffic contributes to your eCommerce sales, providing insights into the ROI of your SEO efforts.</li>
+ 	<li><strong>Performance Comparison</strong>: Offers a direct comparison between organic and non-organic traffic, showing which source drives more conversions, revenue, and engagement.</li>
+ 	<li><strong>Strategic Insights</strong>: Helps identify high-performing product pages and categories to optimize further, and low-performing areas that may need attention.</li>
+ 	<li><strong>Revenue Optimization</strong>: Provides detailed data on metrics like Average Order Value (AOV) and revenue per session, guiding strategies to increase profitability from organic traffic.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/organic-revenue-reporting.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/organic-revenue-reporting.png" alt="organic revenue reporting" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Overall eCommerce Conversion Rate</strong>:
+<ul>
+<li><strong>Organic vs. Non-Organic Traffic</strong>: Comparison of the percentage of sessions resulting in purchases, segmented by organic and other traffic sources.</li>
+</ul>
+</li>
+ 	<li><strong>Revenue from Organic Search</strong>:
+<ul>
+<li><strong>Monthly &amp; Yearly Comparison</strong>: Revenue generated from organic search for the current month, previous month, and same month last year, allowing for trend analysis.</li>
+</ul>
+</li>
+ 	<li><strong>Transactions from Organic Search</strong>:
+<ul>
+<li><strong>Monthly &amp; Yearly Comparison</strong>: Number of purchases originating from organic search, compared across different time periods to track performance and growth.</li>
+</ul>
+</li>
+ 	<li><strong>Average Order Value (AOV) from Organic Search</strong>:
+<ul>
+<li><strong>Monthly &amp; Yearly Comparison</strong>: The average value of orders placed by users arriving through organic search, indicating the quality and spending power of this audience segment.</li>
+</ul>
+</li>
+ 	<li><strong>Top Organic Landing Pages</strong>:
+<ul>
+<li><strong>Sessions &amp; Conversion Rate</strong>: A list of landing pages with the highest sessions and conversion rates from organic traffic, compared to the previous reporting period, to identify high-performing pages and areas for improvement.</li>
+</ul>
+</li>
+</ul>
+<strong>More resources:</strong>
+<ul>
+<li><a href="https://support.google.com/analytics/answer/1009612?hl=en" target="_blank" rel="noopener noreferrer">Setting up Ecommerce tracking in GA</a></li>
+</ul>
+
+<h2>7. Organic revenue report</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Revenue Impact Visualization</strong>: Provides a clear visual representation of how organic traffic contributes to overall revenue, making it easy to understand trends and patterns.</li>
+ 	<li><strong>Identifies Key Sales Drivers</strong>: Highlights which landing pages and device types (mobile vs. desktop) are most effective in generating revenue, enabling targeted optimization efforts.</li>
+ 	<li><strong>Device-Specific Insights</strong>: Offers a breakdown of revenue by device type, helping to understand user behavior and optimize for different platforms to maximize sales.</li>
+ 	<li><strong>Informed Strategy Development</strong>: Guides eCommerce and SEO strategies by showing which organic channels are most profitable, ensuring focused efforts on high-impact areas.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/revenue-and-purchases-by-devie.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/revenue-and-purchases-by-devie.png" alt="revenue and purchases by devie" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Organic Traffic to Product Revenue Over Time</strong>:
+<ul>
+<li>A trend chart illustrating how organic traffic correlates with product revenue over a specific period (e.g., weekly or monthly), helping to visualize peaks, dips, and growth patterns.</li>
+</ul>
+</li>
+ 	<li><strong>Breakdown of Organic Revenue by Device</strong>:
+<ul>
+<li>Comparison of revenue generated from mobile vs. desktop users, providing insights into device performance and areas for improvement in the mobile shopping experience.</li>
+</ul>
+</li>
+ 	<li><strong>Top Landing Pages Driving Purchases</strong>:
+<ul>
+<li>List of key landing pages that lead to purchases, including:
+<ul>
+<li><strong>Revenue per User</strong>: Average revenue generated per user for each landing page.</li>
+ 	<li><strong>Conversion Rate</strong>: The percentage of sessions on each page that result in purchases, highlighting the effectiveness of different landing pages in driving sales.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<strong>More resources:</strong>
+<ul>
+<li><a href="https://support.google.com/analytics/answer/2853546?hl=en" target="_blank" rel="noopener noreferrer">Setup content grouping in GA</a></li>
+</ul>
+
+<h2>8. Organic revenue by demographic</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Customer Insights</strong>: Provides a detailed understanding of the demographics of your customers, such as age, gender, and location, helping to tailor marketing and SEO strategies to specific audience segments.</li>
+ 	<li><strong>Targeted Optimization</strong>: Identifies which demographic groups are generating the most revenue, enabling targeted content, promotions, and user experience improvements to enhance sales.</li>
+ 	<li><strong>Market Expansion Opportunities</strong>: Highlights geographic regions with high revenue potential, guiding decisions on where to focus marketing efforts and expand reach.</li>
+ 	<li><strong>User Loyalty Analysis</strong>: Shows the contribution of new versus returning users to overall revenue, offering insights into customer loyalty and the effectiveness of retention strategies.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/seo-organic-revenue-reporting.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/seo-organic-revenue-reporting.png" alt="seo organic revenue reporting" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Purchases from Organic Search by Age</strong>:
+<ul>
+<li>Breakdown of the number of purchases made by different age groups, revealing which segments are most actively converting and driving sales.</li>
+</ul>
+</li>
+ 	<li><strong>Revenue by Location (Country)</strong>:
+<ul>
+<li>Analysis of revenue generated from organic traffic segmented by country, showing which regions contribute most to sales and where there may be growth opportunities.</li>
+</ul>
+</li>
+ 	<li><strong>Revenue by Gender</strong>:
+<ul>
+<li>Revenue contribution segmented by gender, helping to understand gender-specific preferences and tailor product offerings or messaging accordingly.</li>
+</ul>
+</li>
+ 	<li><strong>Revenue by New vs. Returning Users</strong>:
+<ul>
+<li>Comparison of revenue generated from new users versus returning users, providing insights into the effectiveness of your SEO strategies in attracting repeat customers and building brand loyalty.</li>
+</ul>
+</li>
+</ul>
+<strong>More resources:</strong>
+<ul>
+<li>N/A</li>
+</ul>
+
+<h2>9. Lead generation and conversion analysis</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Focused Conversion Insights</strong>: Specifically designed for websites where lead generation is the primary objective, this page evaluates how effectively organic search is driving goal completions, such as form submissions, sign-ups, or downloads.</li>
+ 	<li><strong>Channel Performance Comparison</strong>: Provides a clear comparison between organic and non-organic channels, highlighting which source is more effective in converting visitors into leads.</li>
+ 	<li><strong>Conversion Path Optimization</strong>: Helps identify high-converting pages and user paths, offering insights into which content and strategies are most successful in driving goal conversions.</li>
+ 	<li><strong>Long-Term Trend Analysis</strong>: Shows the relationship between organic traffic and conversions over time, helping to assess the effectiveness of long-term SEO strategies and identify seasonal trends or patterns.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/organic-leads-part-Thanks-for-reaching-out-Drop-me-a-subscribe-on-YouTube-and-lets-connect-more-https-www.youtube.comuserhellomarketic.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/organic-leads-part-Thanks-for-reaching-out-Drop-me-a-subscribe-on-YouTube-and-lets-connect-more-https-www.youtube.comuserhellomarketic.png" alt="organic leads dashboard" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Goal Conversion Rate (Organic Traffic vs. Non-Organic Traffic)</strong>:
+<ul>
+<li>Comparison of the percentage of sessions resulting in goal completions (e.g., form fills, sign-ups) from organic search versus other channels, providing insights into the effectiveness of SEO efforts in driving leads.</li>
+</ul>
+</li>
+ 	<li><strong>Total Number of Goal Conversions (Organic Traffic vs. Non-Organic Traffic)</strong>:
+<ul>
+<li>Total count of goal completions from organic traffic compared to non-organic channels, illustrating which source contributes more to overall lead generation.</li>
+</ul>
+</li>
+ 	<li><strong>Organic Traffic vs. Organic Conversions Over a Long Trend Period</strong>:
+<ul>
+<li>A visual trend line showing the correlation between organic traffic volume and goal conversions over an extended period, helping to identify patterns, assess the impact of SEO changes, and measure long-term performance.</li>
+</ul>
+</li>
+</ul>
+
+<h2>10. Lead generation by entry page</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Impact Analysis</strong>: Offers a detailed look at how the most visited entry pages are contributing to your lead generation efforts, helping to identify which pages are most effective in driving conversions.</li>
+ 	<li><strong>Optimization Opportunities</strong>: Highlights pages with high traffic but low conversion rates, indicating areas where content or user experience improvements could lead to better results.</li>
+ 	<li><strong>Strategic Content Planning</strong>: Provides insights into the types of content or page layouts that are resonating with users and generating leads, guiding future content development and optimization efforts.</li>
+ 	<li><strong>Enhanced User Experience</strong>: By understanding user behavior on key landing pages, you can refine the user journey to reduce bounce rates and increase engagement, ultimately improving conversion rates.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/organic-leads-report.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/organic-leads-report.png" alt="organic leads report" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Goal Completions</strong>: The total number of goal completions (e.g., form submissions, sign-ups) for each landing page, showing which pages are driving the most leads.</li>
+ 	<li><strong>Goal Conversion Rate</strong>: The percentage of sessions on each landing page that result in a goal completion, indicating the effectiveness of each page in converting visitors into leads.</li>
+ 	<li><strong>Bounce Rate</strong>: The percentage of single-page sessions on each landing page, helping to identify pages that may not be meeting user expectations or require optimization to reduce exits.</li>
+ 	<li><strong>Pages per Session</strong>: The average number of pages viewed during a session starting from each landing page, reflecting user engagement and navigation patterns.</li>
+ 	<li><strong>Average Time on Page</strong>: The average duration users spend on each landing page, providing insights into how effectively the content captures and retains user interest.</li>
+</ul>
+<strong>More resources:</strong>
+<ul>
+<li>N/A</li>
+</ul>
+
+<h2>11. Organic leads by demographic</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Targeted Marketing Insights</strong>: Breaks down the demographics of your website’s leads from organic traffic, offering valuable information for tailoring marketing strategies and content to specific audience segments.</li>
+ 	<li><strong>Conversion Analysis</strong>: Helps you understand which demographic groups are most likely to convert, enabling focused efforts to optimize user experience and messaging for these segments.</li>
+ 	<li><strong>Market Segmentation</strong>: Provides a clear picture of lead generation performance across different demographic groups, helping to identify high-potential markets and areas for improvement.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/leads-from-seo-dashboard.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/leads-from-seo-dashboard.png" alt="leads from seo dashboard" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Leads from Organic Search by Age</strong>: Number of leads generated from organic traffic segmented by age group, showing which age ranges are most engaged and likely to convert.</li>
+ 	<li><strong>Leads by Location (Country)</strong>: Geographic breakdown of leads, indicating which regions are most responsive to your SEO efforts and where there may be opportunities for localized marketing strategies.</li>
+ 	<li><strong>Leads by Gender</strong>: Analysis of leads segmented by gender, offering insights into gender-specific behaviors and preferences.</li>
+ 	<li><strong>Leads by New vs. Returning Users</strong>: Comparison of leads generated from first-time visitors versus returning users, providing insights into user loyalty and the effectiveness of your lead nurturing strategies.</li>
+</ul>
+<strong>More resources:</strong>
+<ul>
+<li>N/A</li>
+</ul>
+
+<h2>12. Local SEO reporting breakdown</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Local Market Performance</strong>: Offers insights into how well your business is performing in local search, essential for businesses with a physical presence or service area.</li>
+ 	<li><strong>Optimizes Local Strategy</strong>: Helps fine-tune local SEO efforts by tracking performance metrics specific to your local landing pages and Google My Business (GMB) profile.</li>
+ 	<li><strong>Geo-Specific Targeting</strong>: Shows how effectively your website is capturing local traffic and converting it into leads or sales, supporting more focused and effective local marketing strategies.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/local-seo-reporting.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/local-seo-reporting.png" alt="local seo reporting" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Trend of Organic Traffic vs. Goal Completions on Local Landing Pages</strong>: Tracks the relationship between organic visits and goal completions (e.g., form submissions, calls) on your local pages, showing the effectiveness of your local SEO efforts.</li>
+ 	<li><strong>Goal Conversion Rate for Local Pages</strong>: Conversion rate for local pages, highlighting how well these pages turn local traffic into customers or leads.</li>
+ 	<li><strong>List of Local Landing Pages Organic Performance</strong>: A comprehensive view of each local landing page's performance in terms of traffic, conversions, and other key metrics, helping to identify top-performing pages and areas for improvement.</li>
+</ul>
+<strong>More resources:</strong>
+<ul>
+<li><a href="https://support.google.com/business/answer/7107242?hl=en" target="_blank" rel="noopener noreferrer">How to verify your business in Google</a></li>
+ 	<li><a href="https://webris.org/local-seo-for-attorneys/" target="_blank" rel="noopener noreferrer">Local SEO case study</a></li>
+</ul>
+
+<h2>13. Keyword visibility progression</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Track Keyword Success</strong>: Monitors how your keyword rankings in the top 3 positions have changed since the start of your SEO campaign, providing a clear measure of progress.</li>
+ 	<li><strong>Overall Ranking Trends</strong>: Helps visualize your overall keyword performance and search visibility over time, using data from Google Search Console.</li>
+ 	<li><strong>Campaign Effectiveness</strong>: Demonstrates the effectiveness of your SEO efforts by tracking keyword growth and visibility, supporting strategic adjustments and goal setting.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/kw-visibility-report.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/kw-visibility-report.png" alt="kw visibility report" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Number of Keywords in Top 3 Positions</strong>: Tracks the count of <a href="https://theblueprint.training/keyword-research/">keywords</a> ranking in the top 3 positions on Google for the current month, last month, and since the campaign started, showing how visibility has improved over time.</li>
+ 	<li><strong>Average Position Over Time</strong>: Shows the average ranking position of your website’s keywords in Google over a specified period, highlighting overall SEO performance trends.</li>
+ 	<li><strong>Impressions Over Time</strong>: Measures the number of impressions (times your website appears in search results) over time, indicating how often your site is being seen by potential visitors.</li>
+</ul>
+<strong>More resources:</strong>
+<ul>
+<li><a href="https://support.google.com/analytics/answer/1308626?hl=en" target="_blank" rel="noopener noreferrer">More about Query reporting in GSC</a></li>
+</ul>
+
+<h2>14. Keyword performance report</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>Search Query Insights</strong>: Provides detailed data on the exact search queries driving traffic to your website, helping to understand what users are searching for and how they find your site.</li>
+ 	<li><strong>Non-Branded Keyword Trends</strong>: Tracks the performance of non-branded keywords (those without your brand name), which typically indicate commercial intent and are critical for attracting new customers.</li>
+ 	<li><strong>Optimization Guidance</strong>: Informs content and SEO strategy adjustments by showing keyword trends and traffic patterns over time, guiding efforts to improve rankings and traffic.</li>
+</ul>
+<img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/keyword-performance-report.png" alt="keyword performance report" />
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Search Queries Driving Traffic</strong>: Lists the specific keywords and search phrases users are using to find your website, highlighting which terms are most effective in attracting visitors.</li>
+ 	<li><strong>Top Keyword Rankings (Current vs. Previous)</strong>: Tracks the ranking positions of your top keywords, comparing their performance this month versus the previous month and campaign start.</li>
+ 	<li><strong>Traffic from Non-Branded Keywords</strong>: Monitors how traffic from non-branded (commercial intent) queries is trending over the course of your campaign, indicating how well you are capturing new audiences.</li>
+</ul>
+<strong>More resources:</strong>
+<ul>
+<li>N/A</li>
+</ul>
+
+<h2>15. Links and content published</h2>
+<strong>Why include this page?</strong>
+<ul>
+<li><strong>SEO Growth Drivers</strong>: Demonstrates the <a href="https://theblueprint.training/build-authority-links-for-clients/">impact of link building</a> and content creation on your SEO performance, two key elements in driving search visibility and authority.</li>
+ 	<li><strong>Campaign Accountability</strong>: Provides a transparent view of the number of backlinks acquired and content pieces published during the reporting period, allowing for better tracking of SEO activities and efforts.</li>
+ 	<li><strong>Customizable Reporting</strong>: This page can be tailored to fit your specific reporting needs, showcasing the progress and effectiveness of your link-building and <a href="https://theblueprint.training/seo-content-training/">content strategies</a>.</li>
+</ul>
+<a href="https://webris.org/wp-content/uploads/2017/12/links-and-content-report.png" target="_blank" rel="noopener noreferrer"><img loading="lazy"  src="https://webris.org/wp-content/uploads/2017/12/links-and-content-report.png" alt="links and content report" /></a>
+
+<strong>What's measured on this page?</strong>
+<ul>
+<li><strong>Links Landed This Month</strong>: Number of backlinks acquired during the current reporting month, reflecting the success of your link-building efforts.</li>
+ 	<li><strong>Total Links Landed to Date</strong>: Cumulative number of backlinks gained since the start of your campaign, showing long-term progress in link-building.</li>
+ 	<li><strong>Articles Published This Month</strong>: Number of new articles or content pieces published during the reporting month, indicating content creation activity.</li>
+ 	<li><strong>Total Articles Published to Date</strong>: Cumulative count of all content pieces published over the course of the campaign, highlighting overall content output and strategy.</li>
+</ul>
+
+<h2>Wrapping it up</h2>
+Did we miss anything? What else would like to see out of our reporting template?
+</article>
+</div>
+
+<div class="author-bio">
+<div class="author-bio-card">
+<div class="author-bio-avatar"><img src="../assets/ryan about page.webp" alt="Ryan Stewart" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+<div>
+<div class="author-bio-name"><a href="/author/ryan/" style="color:inherit;text-decoration:none;">Ryan Stewart</a></div>
+<div class="author-bio-role">Founder, The Blueprint Training</div>
+<p class="author-bio-text">Ryan Stewart is the founder of The Blueprint Training and WEBRIS. He helps agency owners productize their services, implement AI automation, and scale past the one-person ceiling.</p>
+</div>
+</div>
+</div>
+
+<div class="bottom-cta">
+<h2>The knowledge is free.<br><span>The system is inside.</span></h2>
+<p>This article is a taste of what Blueprint members get every week. Join 5,000+ agency owners building AI-powered businesses.</p>
+<a href="/sign-up.html" class="btn-cta-yellow">Join The Blueprint</a>
+</div>
+
+<footer>
+<div class="footer-nav">
+<div><div class="footer-col-title">Features</div><ul class="footer-links">
+<li><a href="/coaching/">Coaching</a></li>
+<li><a href="/agency-training/">Video Training</a></li>
+<li><a href="/bootcamps/">Live Bootcamps</a></li>
+<li><a href="/agents/">AI Agents</a></li>
+<li><a href="/slack-channel/">Community</a></li>
+        <li><a href="/seo-sprints-training/">SEO Sprints</a></li>
+        <li><a href="/templates-and-sops/">Templates &amp; SOPs</a></li>
+</ul></div>
+<div><div class="footer-col-title">Company</div><ul class="footer-links">
+<li><a href="/about.html">About</a></li>
+<li><a href="/reviews.html">Results</a></li>
+<li><a href="/program.html">Program</a></li>
+<li><a href="/blog/">Knowledge</a></li>
+</ul></div>
+<div><div class="footer-col-title">Account</div><ul class="footer-links" style="margin-bottom:24px;">
+<li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
+<li><a href="/get-started.html">Book a Call</a></li>
+</ul>
+<a href="/sign-up.html" class="footer-cta-btn">Get Started &rarr;</a>
+</div>
+
+
+    <div>
+      <div class="footer-col-title">Follow Us</div>
+      <ul class="footer-links">
+        <li><a href="https://www.instagram.com/theblueprint.training/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/theblueprinttraining/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.youtube.com/@theblueprinttraining" target="_blank">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+
+  </div>
+<div class="footer-bottom">
+<div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
+<div class="footer-legal"><a href="/privacy-policy/">Privacy</a>
+      <a href="/terms-and-conditions/">Terms</a><a href="mailto:elena@theblueprint.training">Contact</a></div>
+    <a href="https://loganix.com/" target="_blank" class="footer-partner-badge">
+      <span class="footer-partner-label">Platinum Partner</span>
+      <img src="/assets/loganix logo.svg" alt="Loganix" class="footer-partner-logo">
+    </a>
+  </div>
+</footer>
+</body>
+</html>

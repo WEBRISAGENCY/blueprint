@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agency Website Template: The 5-Page Formula That Converts | The Blueprint Training</title>
+<meta name="description" content="Use this 5-page agency website template formula that actually converts visitors into leads. Built and tested by real agency owners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--yellow:#F7C600;--yellow-dark:#D9AE00;--border:rgba(0,0,0,0.08);--white:#0B0E1A;--gray:#6B7280;--gray-light:#374151;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#FFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-x:hidden;}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#FFFFFF;box-shadow:0 1px 8px rgba(0,0,0,0.08),0 2px 24px rgba(0,0,0,0.04);}
+.nav-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:flex;align-items:stretch;height:86px;padding:0 32px;}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;padding-right:28px;border-right:none;margin-right:4px;flex-shrink:0;}
+.nav-links{display:flex;align-items:stretch;flex:1;justify-content:center;}
+.nav-item-link{display:flex;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.06em;color:#1E3A5F;padding:0 20px;text-decoration:none;transition:color 0.15s;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;}
+.nav-item-link:hover{color:#132c54;}
+.nav-right{display:flex;align-items:center;margin-left:auto;}
+.nav-login{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;color:#1E3A5F;background:none;border:none;cursor:pointer;padding:0 20px;text-decoration:none;transition:color 0.15s;}
+.nav-login:hover{color:#132c54;}
+.nav-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:0 36px;text-decoration:none;transition:background 0.15s;display:flex;align-items:center;height:100%;}
+.nav-cta-btn:hover{background:#D9AE00;}
+
+.mobile-nav-controls{display:none;align-items:center;gap:12px;margin-left:auto;}
+.mobile-hamburger{background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px;width:28px;}
+.mobile-hamburger span{display:block;height:2px;width:100%;background:#1E3A5F;border-radius:2px;transition:all 0.3s;}
+.mobile-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.06em;padding:8px 20px;text-decoration:none;white-space:nowrap;}
+.mobile-cta-btn:hover{background:#D9AE00;}
+.mobile-menu-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#132c54;flex-direction:column;padding:80px 32px 40px;overflow-y:auto;}
+.mobile-menu-overlay.open{display:flex;}
+.mobile-menu-close{position:absolute;top:14px;right:16px;z-index:10000;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);color:#fff;font-size:28px;cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:6px;font-family:sans-serif;font-weight:300;}
+.mobile-menu-nav{display:flex;flex-direction:column;gap:0;}
+.mobile-menu-nav a{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:0.06em;color:#C8CEDF;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);transition:color 0.2s;}
+.mobile-menu-nav a:hover{color:#F7C600;}
+.mobile-menu-socials{display:flex;gap:20px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);}
+.mobile-menu-socials a{opacity:0.6;transition:opacity 0.2s;}
+.mobile-menu-socials a:hover{opacity:1;}
+.mobile-menu-cta{display:block;text-align:center;margin-top:32px;background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:16px 32px;text-decoration:none;}
+.mobile-menu-cta:hover{background:#D9AE00;}
+@media(max-width:900px){.nav-links{display:none !important;}.nav-right{display:none !important;}.mobile-nav-controls{display:flex !important;}.nav-inner{height:54px !important;justify-content:flex-start !important;padding:0 16px !important;}.nav-logo{border-right:none !important;margin-right:0 !important;padding-right:0 !important;}.nav-logo img{height:27px !important;width:auto !important;}.mobile-cta-btn .mobile-cta-full{display:none !important;}.mobile-cta-btn .mobile-cta-short{display:inline !important;}.article-hero{padding-top:78px !important;}}
+.article-hero{padding:110px 24px 0;position:relative;overflow:hidden;}
+.article-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.03) 1px,transparent 1px);background-size:60px 60px;}
+.article-hero-inner{max-width:860px;margin:0 auto;padding:28px 0 0;position:relative;}
+.article-breadcrumb{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;}
+.article-breadcrumb a{color:var(--gray);text-decoration:none;}
+.article-breadcrumb a:hover{color:var(--yellow);}
+.article-breadcrumb span{color:rgba(0,0,0,0.25);}
+.article-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5.5vw,72px);line-height:0.95;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin-bottom:28px;}
+.article-meta-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.article-author-block{display:flex;align-items:center;gap:10px;}
+.author-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;}.author-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.author-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);}
+.author-title{font-size:12px;color:var(--gray);}
+.article-meta-divider{width:1px;height:32px;background:var(--border);}
+.article-meta-item{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px;}
+.article-meta-item strong{color:var(--gray-light);font-weight:600;}
+
+
+.article-body iframe,.article-body .wp-block-embed{display:block;width:100%;margin:28px 0;}.article-body .responsive-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:28px 0;}.article-body .responsive-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+.article-body blockquote{border-left:3px solid var(--yellow);margin:28px 0;padding:16px 24px;background:#F7F8FA;}.article-body blockquote p{margin-bottom:0;font-style:italic;}
+.article-content{max-width:860px;margin:0 auto;padding:56px 24px 96px;}
+.article-body p{font-size:16.5px;line-height:1.8;color:var(--gray-light);margin-bottom:20px;}
+.article-body p strong{color:var(--white);font-weight:600;}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3vw,40px);line-height:1.0;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin:40px 0 16px;padding-top:40px;border-top:1px solid var(--border);}
+.article-body h2:first-child{margin-top:0;padding-top:0;border-top:none;}
+.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:0.04em;text-transform:uppercase;color:var(--white);margin:32px 0 12px;}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:20px;list-style:disc;display:block;}
+.article-body ul li,.article-body ol li{font-size:16px;color:var(--gray-light);line-height:1.8;padding:4px 0 4px 0;background:none;border-left:none;display:list-item;}
+.article-body ul li::before{display:none;}
+.article-body img{display:block;width:100%;height:auto;margin:28px 0;border-radius:0;}
+.article-body a{color:#1E3A5F;text-decoration:underline;text-underline-offset:2px;}.article-body a:hover{color:var(--yellow);}
+.author-bio{max-width:860px;margin:0 auto;padding:0 24px 64px;}
+.author-bio-card{background:#F7F8FA;border:1px solid rgba(0,0,0,0.08);padding:32px 28px;display:flex;gap:24px;align-items:flex-start;}
+.author-bio-avatar{width:64px;height:64px;border-radius:50%;flex-shrink:0;background:#EEF0F4;border:2px solid rgba(247,198,0,0.4);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--yellow);}
+.author-bio-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);margin-bottom:2px;}
+.author-bio-role{font-size:13px;color:var(--yellow);margin-bottom:12px;letter-spacing:0.06em;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;}
+.author-bio-text{font-size:15px;color:var(--gray);line-height:1.7;}
+.bottom-cta{background:#F7C600;padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+.bottom-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(11,14,26,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,14,26,0.06) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.bottom-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,64px);line-height:0.95;text-transform:uppercase;color:#0B0E1A;margin-bottom:14px;position:relative;}
+.bottom-cta p{font-size:16px;color:rgba(11,14,26,0.7);max-width:520px;margin:0 auto 32px;line-height:1.7;position:relative;}
+.btn-cta-yellow{display:inline-flex;align-items:center;gap:10px;background:#0B0E1A;color:#F7C600;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;padding:18px 44px;text-decoration:none;transition:all 0.2s;position:relative;}
+.btn-cta-yellow:hover{background:#1F2438;transform:translateY(-2px);}
+footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;}
+.footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.2fr 0.8fr 0.8fr 1fr;gap:48px;}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.footer-col-title::before{content:'';display:block;width:16px;height:2px;background:var(--yellow);}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-links li a{font-family:'Figtree',sans-serif;font-size:14px;color:#8A90A8;text-decoration:none;transition:color 0.2s;}
+.footer-links li a:hover{color:#FFF;}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.3);}
+.footer-legal a{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;margin:0 12px;transition:color 0.2s;}
+.footer-legal a:hover{color:rgba(255,255,255,0.6);}
+.footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s;}
+.footer-cta-btn:hover{filter:brightness(1.05);}
+@media(max-width:768px){.author-bio-card{flex-direction:column;gap:16px;}.footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}}
+@media(max-width:480px){.footer-nav{grid-template-columns:1fr;gap:36px;}}
+.footer-partner-badge{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;opacity:0.5;transition:opacity 0.2s}.footer-partner-badge:hover{opacity:0.8}.footer-partner-label{font-family:"Barlow Condensed",sans-serif;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em}.footer-partner-logo{height:22px;width:auto;filter:brightness(0) invert(1)}</style>
+</head>
+<body>
+<div class="nav-bar"><div class="nav-inner">
+<a class="nav-logo" href="/index.html">
+<img src="../assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+</a>
+<div class="nav-links">
+<a class="nav-item-link" href="/about.html">About</a>
+<a class="nav-item-link" href="/reviews.html">Results</a>
+<a class="nav-item-link" href="/program.html">Program</a>
+<a class="nav-item-link" href="/blog/">Knowledge</a>
+</div>
+<div class="nav-right">
+<a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
+<a class="nav-cta-btn" href="/sign-up.html">Become A Member</a>
+</div>
+<div class="mobile-nav-controls">
+<button class="mobile-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+<a href="/sign-up.html" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
+</div>
+</div></div>
+
+<!-- Mobile menu overlay -->
+<div id="mobileMenu" class="mobile-menu-overlay">
+<button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
+<nav class="mobile-menu-nav">
+<a href="/index.html">Home</a>
+<a href="/about.html">About</a>
+<a href="/reviews.html">Results</a>
+<a href="/program.html">Program</a>
+<a href="/blog/">Knowledge</a>
+<a href="https://www.skool.com/the-blueprint-training">Login</a>
+</nav>
+<div class="mobile-menu-socials">
+<a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg></a>
+<a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg></a>
+<a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg></a>
+</div>
+<a href="/sign-up.html" class="mobile-menu-cta">Get Started - $199/mo</a>
+</div>
+
+<section class="article-hero">
+<div class="article-hero-grid"></div>
+<div class="article-hero-inner">
+<div class="article-breadcrumb">
+<a href="/">Home</a><span>/</span>
+<a href="/blog/">Knowledge</a><span>/</span>
+<span style="color:var(--gray-light);">Article</span>
+</div>
+<h1 class="article-title">Agency Website Template: The 5-Page Formula That Converts</h1>
+<div class="article-meta-row">
+<div class="article-author-block">
+<div class="author-avatar"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
+<div><div class="author-name"><a href="/about.html" style="text-decoration:none;color:inherit;">Ryan Stewart</a></div><div class="author-title">Founder, The Blueprint Training</div></div>
+</div>
+<div class="article-meta-divider"></div>
+<div class="article-meta-item"><strong>Last updated:</strong> Jul 19, 2024</div>
+</div>
+</div>
+</section>
+
+<div class="article-content">
+<article class="article-body">
+<p>I get it. You spend your days building and optimizing websites for clients, but your own agency site is either a mess or a ghost town. You're not alone -- most agency owners overthink their website, pack it with pages nobody reads, and wonder why leads aren't coming in.</p>
+
+<p>The fix is simpler than you think. After building and rebuilding my own agency website more times than I'd like to admit, I've landed on a formula that works: <strong>five pages, zero fluff, maximum conversions</strong>.</p>
+
+<p>This guide breaks down exactly which pages your agency website needs, what goes on each one, and how to design the whole thing without wasting months on it.</p>
+
+<h2>Why Most Agency Websites Don't Convert</h2>
+
+<p>The number one mistake agency owners make is building their website like a brochure. They create 15+ pages covering every service, every team member's bio, a mission statement nobody reads, and a "resources" section with three posts from 2021.</p>
+
+<p>Here's what actually happens when a prospect visits your site: they already know roughly what you do (SEO, paid ads, web design, whatever). They found you through a referral, a Google search, or your content. They're not there to learn what SEO is -- they want to know if <strong>you</strong> can solve <strong>their</strong> problem.</p>
+
+<p>That means your website has exactly one job: convince visitors you understand their situation and give them a clear path to start a conversation with you.</p>
+
+<p>Everything else is noise.</p>
+
+<svg viewBox="0 0 780 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:32px 0;font-family:'Figtree',sans-serif;">
+<rect width="780" height="320" fill="#F7F8FA" rx="4"/>
+<text x="390" y="28" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#6B7280" letter-spacing="0.1em">BLOATED SITE VS. LEAN SITE CONVERSION COMPARISON</text>
+<!-- Bloated site -->
+<rect x="60" y="60" width="300" height="220" rx="4" fill="#FFF" stroke="#E5E7EB" stroke-width="1"/>
+<text x="210" y="88" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="16" fill="#374151">TYPICAL AGENCY SITE</text>
+<text x="80" y="118" font-size="13" fill="#6B7280">Home</text><rect x="200" y="106" width="140" height="14" rx="2" fill="#E5E7EB"/>
+<text x="80" y="138" font-size="13" fill="#6B7280">About Us</text><rect x="200" y="126" width="140" height="14" rx="2" fill="#E5E7EB"/>
+<text x="80" y="158" font-size="13" fill="#6B7280">Services (x8)</text><rect x="200" y="146" width="140" height="14" rx="2" fill="#E5E7EB"/>
+<text x="80" y="178" font-size="13" fill="#6B7280">Team Bios</text><rect x="200" y="166" width="140" height="14" rx="2" fill="#E5E7EB"/>
+<text x="80" y="198" font-size="13" fill="#6B7280">Pricing Guide</text><rect x="200" y="186" width="140" height="14" rx="2" fill="#E5E7EB"/>
+<text x="80" y="218" font-size="13" fill="#6B7280">Case Studies</text><rect x="200" y="206" width="140" height="14" rx="2" fill="#E5E7EB"/>
+<text x="80" y="238" font-size="13" fill="#6B7280">Contact</text><rect x="200" y="226" width="140" height="14" rx="2" fill="#E5E7EB"/>
+<text x="80" y="258" font-size="13" fill="#6B7280">FAQ, Blog, +5 more</text><rect x="200" y="246" width="140" height="14" rx="2" fill="#E5E7EB"/>
+<text x="210" y="268" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#DC2626">CONVERSION: 0.5 - 1.5%</text>
+<!-- Lean site -->
+<rect x="420" y="60" width="300" height="220" rx="4" fill="#FFF" stroke="#F7C600" stroke-width="2"/>
+<text x="570" y="88" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="16" fill="#374151">5-PAGE AGENCY SITE</text>
+<text x="440" y="118" font-size="13" fill="#374151" font-weight="600">Home</text><rect x="560" y="106" width="140" height="14" rx="2" fill="#F7C600" opacity="0.3"/>
+<text x="440" y="148" font-size="13" fill="#374151" font-weight="600">Results</text><rect x="560" y="136" width="140" height="14" rx="2" fill="#F7C600" opacity="0.3"/>
+<text x="440" y="178" font-size="13" fill="#374151" font-weight="600">Book a Call</text><rect x="560" y="166" width="140" height="14" rx="2" fill="#F7C600" opacity="0.3"/>
+<text x="440" y="208" font-size="13" fill="#374151" font-weight="600">Lead Magnet</text><rect x="560" y="196" width="140" height="14" rx="2" fill="#F7C600" opacity="0.3"/>
+<text x="440" y="238" font-size="13" fill="#374151" font-weight="600">Blog</text><rect x="560" y="226" width="140" height="14" rx="2" fill="#F7C600" opacity="0.3"/>
+<text x="570" y="268" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#059669">CONVERSION: 3 - 8%</text>
+</svg>
+
+<h2>The 5 Pages Every Agency Website Needs</h2>
+
+<p>After years of testing, these are the only pages that matter. Everything else either gets folded into one of these five or gets cut entirely.</p>
+
+<h3>1. Homepage</h3>
+
+<p>Your homepage has roughly 5 seconds to communicate three things: who you help, what you do for them, and why they should trust you. That's it. No history of your company, no "our values" section, no stock photo carousel.</p>
+
+<p>The structure that works best in 2026:</p>
+
+<ul>
+<li><strong>A pain-point hook</strong> -- lead with the problem your niche faces, not your service name. "Tired of paying for SEO and seeing zero leads?" hits harder than "Full-Service Digital Marketing Agency."</li>
+<li><strong>Your offer statement</strong> -- one sentence. "We help personal injury law firms generate cases through Google." Clear, specific, no jargon.</li>
+<li><strong>Social proof above the fold</strong> -- client logos, a standout metric ("247% average traffic increase"), or a short video testimonial.</li>
+<li><strong>Service overview</strong> -- three to four core service pillars, not a menu of 15 items. Each one gets two sentences max.</li>
+<li><strong>A single CTA that repeats</strong> -- whether it's "Book a Strategy Call" or "Get Your Free Audit," use the same CTA button throughout the page.</li>
+</ul>
+
+<h3>2. Results Page</h3>
+
+<p>This is where you prove you're not all talk. Prospects who make it to this page are seriously considering you -- they just need a push.</p>
+
+<ul>
+<li><strong>Quantified case studies</strong> -- before and after numbers. Traffic, rankings, leads, revenue. Screenshot your dashboards, show the graphs.</li>
+<li><strong>Client testimonials</strong> -- video works best, but written quotes with headshots and company names are solid too.</li>
+<li><strong>Logos and trust badges</strong> -- Google Partner, industry awards, media mentions. Stack them up.</li>
+</ul>
+
+<p>Don't have case studies yet? Use your own site as a case study, or do a free project for a local business in exchange for a testimonial. You need at least one real example to build credibility.</p>
+
+<h3>3. Macro Conversion Page (Book a Call)</h3>
+
+<p>This is the money page. Its entire purpose is removing friction between "I'm interested" and "I'm on your calendar."</p>
+
+<ul>
+<li><strong>Embedded calendar</strong> -- Calendly, Cal.com, or whatever you use. Let them pick a time right there on the page.</li>
+<li><strong>What to expect</strong> -- a quick bullet list of what the call covers. "30 minutes, no pressure, we'll review your current SEO and identify quick wins."</li>
+<li><strong>Qualifying questions</strong> -- optional short form before the calendar. Monthly budget, current traffic, biggest challenge. This filters out tire kickers.</li>
+</ul>
+
+<h3>4. Micro Conversion Page (Lead Magnet)</h3>
+
+<p>Not everyone is ready to book a call on their first visit. This page captures those people by offering something valuable in exchange for their email.</p>
+
+<ul>
+<li><strong>A specific, high-value offer</strong> -- "Free 17-Point SEO Audit of Your Website" beats "Download Our Free Guide" every time. Be concrete about what they get.</li>
+<li><strong>Short form</strong> -- name, email, website URL. That's it. Every extra field drops conversion rate.</li>
+<li><strong>Immediate delivery</strong> -- redirect to a thank you page that delivers the asset instantly and suggests booking a call as the next step.</li>
+</ul>
+
+<h3>5. Blog</h3>
+
+<p>Your blog is your organic growth engine. It attracts search traffic, builds authority, and gives you content to share across channels.</p>
+
+<ul>
+<li><strong>Target keywords your prospects actually search</strong> -- "how to improve local SEO rankings" not "our thoughts on the latest algorithm update."</li>
+<li><strong>Every post ends with a CTA</strong> -- either to your lead magnet or your booking page. No dead ends.</li>
+<li><strong>Publish consistently</strong> -- two to four posts per month is plenty. Quality over quantity.</li>
+</ul>
+
+<svg viewBox="0 0 780 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:32px 0;font-family:'Figtree',sans-serif;">
+<rect width="780" height="380" fill="#F7F8FA" rx="4"/>
+<text x="390" y="28" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#6B7280" letter-spacing="0.1em">VISITOR FLOW THROUGH YOUR 5-PAGE SITE</text>
+<!-- Blog entry -->
+<rect x="60" y="55" width="140" height="50" rx="4" fill="#1E3A5F"/>
+<text x="130" y="76" text-anchor="middle" font-size="12" fill="#FFF" font-weight="600">BLOG POST</text>
+<text x="130" y="92" text-anchor="middle" font-size="10" fill="#C8CEDF">Organic Traffic</text>
+<!-- Homepage entry -->
+<rect x="60" y="125" width="140" height="50" rx="4" fill="#1E3A5F"/>
+<text x="130" y="146" text-anchor="middle" font-size="12" fill="#FFF" font-weight="600">HOMEPAGE</text>
+<text x="130" y="162" text-anchor="middle" font-size="10" fill="#C8CEDF">Referral / Direct</text>
+<!-- Arrow from blog -->
+<line x1="200" y1="80" x2="300" y2="150" stroke="#F7C600" stroke-width="2" marker-end="url(#arrowY)"/>
+<!-- Arrow from homepage -->
+<line x1="200" y1="150" x2="300" y2="150" stroke="#F7C600" stroke-width="2" marker-end="url(#arrowY)"/>
+<!-- Results page -->
+<rect x="310" y="125" width="140" height="50" rx="4" fill="#132c54"/>
+<text x="380" y="146" text-anchor="middle" font-size="12" fill="#FFF" font-weight="600">RESULTS PAGE</text>
+<text x="380" y="162" text-anchor="middle" font-size="10" fill="#C8CEDF">Build Trust</text>
+<!-- Fork arrows -->
+<line x1="450" y1="135" x2="560" y2="90" stroke="#F7C600" stroke-width="2" marker-end="url(#arrowY)"/>
+<line x1="450" y1="165" x2="560" y2="210" stroke="#F7C600" stroke-width="2" marker-end="url(#arrowY)"/>
+<!-- Book a Call -->
+<rect x="570" y="65" width="160" height="50" rx="4" fill="#F7C600"/>
+<text x="650" y="86" text-anchor="middle" font-size="12" fill="#0B0E1A" font-weight="700">BOOK A CALL</text>
+<text x="650" y="102" text-anchor="middle" font-size="10" fill="#374151">Macro Conversion</text>
+<!-- Lead Magnet -->
+<rect x="570" y="185" width="160" height="50" rx="4" fill="#F7C600" opacity="0.6"/>
+<text x="650" y="206" text-anchor="middle" font-size="12" fill="#0B0E1A" font-weight="700">LEAD MAGNET</text>
+<text x="650" y="222" text-anchor="middle" font-size="10" fill="#374151">Micro Conversion</text>
+<!-- Nurture arrow from lead magnet back to book a call -->
+<path d="M 650 185 L 650 140 L 650 115" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowG)"/>
+<text x="665" y="155" font-size="10" fill="#059669" font-weight="600">Email Nurture</text>
+<!-- Bottom stats -->
+<rect x="60" y="270" width="200" height="80" rx="4" fill="#FFF" stroke="#E5E7EB" stroke-width="1"/>
+<text x="160" y="295" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="12" fill="#6B7280" letter-spacing="0.08em">COLD TRAFFIC PATH</text>
+<text x="160" y="318" text-anchor="middle" font-size="11" fill="#374151">Blog -> Results -> Lead Magnet</text>
+<text x="160" y="338" text-anchor="middle" font-size="11" fill="#374151">-> Email Nurture -> Book Call</text>
+<rect x="290" y="270" width="200" height="80" rx="4" fill="#FFF" stroke="#E5E7EB" stroke-width="1"/>
+<text x="390" y="295" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="12" fill="#6B7280" letter-spacing="0.08em">WARM TRAFFIC PATH</text>
+<text x="390" y="318" text-anchor="middle" font-size="11" fill="#374151">Homepage -> Results</text>
+<text x="390" y="338" text-anchor="middle" font-size="11" fill="#374151">-> Book a Call</text>
+<rect x="520" y="270" width="200" height="80" rx="4" fill="#FFF" stroke="#F7C600" stroke-width="2"/>
+<text x="620" y="295" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="12" fill="#6B7280" letter-spacing="0.08em">HOT TRAFFIC PATH</text>
+<text x="620" y="318" text-anchor="middle" font-size="11" fill="#374151">Homepage -> Book a Call</text>
+<text x="620" y="338" text-anchor="middle" font-size="11" fill="#059669" font-weight="600">Highest conversion rate</text>
+<defs>
+<marker id="arrowY" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#F7C600"/></marker>
+<marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#059669"/></marker>
+</defs>
+</svg>
+
+<h2>What to Cut From Your Website</h2>
+
+<p>If a page doesn't directly support one of the five above, it either gets merged or deleted. Here's how to handle the most common extras:</p>
+
+<ul>
+<li><strong>Services pages</strong> -- fold these into your homepage. Three to four service pillars with brief descriptions. If someone needs details, they'll ask on the call.</li>
+<li><strong>About page</strong> -- unless you're a recognized name in your space, this doesn't need its own page. Put a short bio on the homepage or results page.</li>
+<li><strong>Individual team bios</strong> -- skip it. Your prospect is hiring your agency, not stalking your junior account manager's LinkedIn.</li>
+<li><strong>Pricing page</strong> -- if you want to mention pricing, put a range on the homepage ("engagements start at $X/mo"). Don't create a whole page for it.</li>
+<li><strong>Contact page</strong> -- redirect this to your Book a Call page. A generic "send us a message" form is where leads go to die.</li>
+<li><strong>FAQ page</strong> -- put relevant FAQs on your booking page where they'll actually reduce objections at the point of decision.</li>
+</ul>
+
+<p>Every extra page you add creates another place for visitors to wander off without converting. Be ruthless about cutting.</p>
+
+<h2>The Build Process: From Blank Page to Live Site</h2>
+
+<p>You don't need three months and a $20K design budget. Here's the process I recommend for getting your site live fast:</p>
+
+<svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:32px 0;font-family:'Figtree',sans-serif;">
+<rect width="780" height="200" fill="#F7F8FA" rx="4"/>
+<text x="390" y="28" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#6B7280" letter-spacing="0.1em">AGENCY WEBSITE BUILD TIMELINE</text>
+<!-- Timeline line -->
+<line x1="80" y1="100" x2="700" y2="100" stroke="#E5E7EB" stroke-width="3"/>
+<!-- Step 1 -->
+<circle cx="130" cy="100" r="18" fill="#1E3A5F"/>
+<text x="130" y="105" text-anchor="middle" font-size="14" fill="#FFF" font-weight="700">1</text>
+<text x="130" y="72" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" fill="#374151">COPY</text>
+<text x="130" y="138" text-anchor="middle" font-size="11" fill="#6B7280">Write all page</text>
+<text x="130" y="152" text-anchor="middle" font-size="11" fill="#6B7280">copy first</text>
+<text x="130" y="172" text-anchor="middle" font-size="11" fill="#059669" font-weight="600">Days 1-3</text>
+<!-- Step 2 -->
+<circle cx="320" cy="100" r="18" fill="#1E3A5F"/>
+<text x="320" y="105" text-anchor="middle" font-size="14" fill="#FFF" font-weight="700">2</text>
+<text x="320" y="72" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" fill="#374151">WIREFRAME</text>
+<text x="320" y="138" text-anchor="middle" font-size="11" fill="#6B7280">Layout structure</text>
+<text x="320" y="152" text-anchor="middle" font-size="11" fill="#6B7280">in grayscale</text>
+<text x="320" y="172" text-anchor="middle" font-size="11" fill="#059669" font-weight="600">Days 4-5</text>
+<!-- Step 3 -->
+<circle cx="510" cy="100" r="18" fill="#1E3A5F"/>
+<text x="510" y="105" text-anchor="middle" font-size="14" fill="#FFF" font-weight="700">3</text>
+<text x="510" y="72" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" fill="#374151">DESIGN</text>
+<text x="510" y="138" text-anchor="middle" font-size="11" fill="#6B7280">Add brand colors</text>
+<text x="510" y="152" text-anchor="middle" font-size="11" fill="#6B7280">fonts, imagery</text>
+<text x="510" y="172" text-anchor="middle" font-size="11" fill="#059669" font-weight="600">Days 6-8</text>
+<!-- Step 4 -->
+<circle cx="700" cy="100" r="18" fill="#F7C600"/>
+<text x="700" y="105" text-anchor="middle" font-size="14" fill="#0B0E1A" font-weight="700">4</text>
+<text x="700" y="72" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" fill="#374151">BUILD</text>
+<text x="700" y="138" text-anchor="middle" font-size="11" fill="#6B7280">Develop and</text>
+<text x="700" y="152" text-anchor="middle" font-size="11" fill="#6B7280">launch</text>
+<text x="700" y="172" text-anchor="middle" font-size="11" fill="#F7C600" font-weight="600">Days 9-14</text>
+<!-- Arrow segments -->
+<line x1="148" y1="100" x2="302" y2="100" stroke="#F7C600" stroke-width="3" marker-end="url(#arrowY2)"/>
+<line x1="338" y1="100" x2="492" y2="100" stroke="#F7C600" stroke-width="3" marker-end="url(#arrowY2)"/>
+<line x1="528" y1="100" x2="682" y2="100" stroke="#F7C600" stroke-width="3" marker-end="url(#arrowY2)"/>
+<defs><marker id="arrowY2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#F7C600"/></marker></defs>
+</svg>
+
+<h3>Step 1: Write the Copy First</h3>
+
+<p>This is where most people get it backwards. They start picking templates and tweaking colors before they've written a single word of copy. Bad move.</p>
+
+<p>Open a Google Doc and write out the copy for each of your five pages. Start with your homepage hook and offer statement, then work through the results page, booking page, lead magnet page, and a few starter blog post outlines.</p>
+
+<p>The copy drives everything. Design and layout should support the words, not the other way around.</p>
+
+<h3>Step 2: Wireframe the Layout</h3>
+
+<p>With your copy done, sketch out basic page layouts. You can use Figma, Whimsical, or literally a pen and paper. The goal is to establish information hierarchy -- what goes at the top, what goes below the fold, where CTAs sit.</p>
+
+<p>Keep everything in grayscale at this stage. No colors, no fonts, no images. Just blocks and text. This forces you to focus on structure and flow instead of getting distracted by visual design.</p>
+
+<h3>Step 3: Design It</h3>
+
+<p>Now layer on your brand: colors, fonts, images, icons. If you have design skills, great. If not, hire a freelancer on Upwork or Fiverr -- expect to pay $500 to $2,000 for a clean five-page design.</p>
+
+<p>Keep the design clean and minimal. White space is your friend. Your site should feel modern and professional without trying too hard.</p>
+
+<h3>Step 4: Build and Launch</h3>
+
+<p>For the actual build, you have a few options in 2026. Webflow and Framer are solid if you want design flexibility without writing code. WordPress still works fine if you're comfortable with it. Even a clean HTML/CSS site hosted on Netlify or Vercel is an option if you want maximum speed and simplicity.</p>
+
+<p>Whatever you choose, make sure the site loads fast, looks good on mobile, and has proper tracking set up (GA4, conversion events on form submissions and calendar bookings).</p>
+
+<h2>After Launch: Driving Traffic to Your Site</h2>
+
+<p>A beautiful website with no traffic is just an expensive business card. Once you're live, you need a plan to actually get people there.</p>
+
+<p>Focus on three channels:</p>
+
+<ul>
+<li><strong>Content marketing</strong> -- publish two to four blog posts per month targeting keywords your prospects search. This compounds over time and becomes your biggest traffic source within 6 to 12 months.</li>
+<li><strong>Lead magnets and email</strong> -- use your micro conversion page to build an email list. Nurture those contacts with useful content until they're ready to talk.</li>
+<li><strong>Outbound and partnerships</strong> -- don't wait for inbound to kick in. Run cold outreach, network in communities, and partner with complementary service providers (web designers, PPC agencies, etc.) who can send referrals your way.</li>
+</ul>
+
+<p>The key is consistency. Your website is a system, not a one-time project. Keep publishing, keep testing, keep refining your messaging based on what converts.</p>
+
+<h2>Tracking What Works</h2>
+
+<p>Set up proper analytics from day one. At minimum, you need:</p>
+
+<ul>
+<li><strong>GA4</strong> with conversion events for form submissions, calendar bookings, and lead magnet downloads</li>
+<li><strong>Heatmaps</strong> (Microsoft Clarity is free) to see where people click and how far they scroll</li>
+<li><strong>UTM tracking</strong> on every outbound link so you know which channels drive actual leads, not just traffic</li>
+</ul>
+
+<p>Review your numbers weekly. Look at which pages get the most traffic, where people drop off, and what percentage of visitors convert. Small changes -- rewriting a headline, moving a CTA higher on the page, adding a testimonial -- can double your conversion rate over time.</p>
+
+<p>Your agency website shouldn't be complicated. Five pages, clear messaging, proof that you deliver, and a frictionless way to start a conversation. Build it in two weeks, then spend your energy on what actually grows the business: creating content and closing deals.</p>
+
+</article>
+</div>
+
+<div class="author-bio">
+<div class="author-bio-card">
+<div class="author-bio-avatar"><img src="../assets/ryan about page.webp" alt="Ryan Stewart" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+<div>
+<div class="author-bio-name"><a href="/author/ryan/" style="color:inherit;text-decoration:none;">Ryan Stewart</a></div>
+<div class="author-bio-role">Founder, The Blueprint Training</div>
+<p class="author-bio-text">Ryan Stewart is the founder of The Blueprint Training and WEBRIS. He helps agency owners productize their services, implement AI automation, and scale past the one-person ceiling.</p>
+</div>
+</div>
+</div>
+
+<div class="bottom-cta">
+<h2>The knowledge is free.<br><span>The system is inside.</span></h2>
+<p>This article is a taste of what Blueprint members get every week. Join 5,000+ agency owners building AI-powered businesses.</p>
+<a href="/sign-up.html" class="btn-cta-yellow">Join The Blueprint</a>
+</div>
+
+<footer>
+<div class="footer-nav">
+<div><div class="footer-col-title">Features</div><ul class="footer-links">
+<li><a href="/coaching/">Coaching</a></li>
+<li><a href="/agency-training/">Video Training</a></li>
+<li><a href="/bootcamps/">Live Bootcamps</a></li>
+<li><a href="/agents/">AI Agents</a></li>
+<li><a href="/slack-channel/">Community</a></li>
+        <li><a href="/seo-sprints-training/">SEO Sprints</a></li>
+        <li><a href="/templates-and-sops/">Templates &amp; SOPs</a></li>
+</ul></div>
+<div><div class="footer-col-title">Company</div><ul class="footer-links">
+<li><a href="/about.html">About</a></li>
+<li><a href="/reviews.html">Results</a></li>
+<li><a href="/program.html">Program</a></li>
+<li><a href="/blog/">Knowledge</a></li>
+</ul></div>
+<div><div class="footer-col-title">Account</div><ul class="footer-links" style="margin-bottom:24px;">
+<li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
+<li><a href="/get-started.html">Book a Call</a></li>
+</ul>
+<a href="/sign-up.html" class="footer-cta-btn">Get Started &rarr;</a>
+</div>
+
+
+    <div>
+      <div class="footer-col-title">Follow Us</div>
+      <ul class="footer-links">
+        <li><a href="https://www.instagram.com/theblueprint.training/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/theblueprinttraining/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.youtube.com/@theblueprinttraining" target="_blank">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+
+  </div>
+<div class="footer-bottom">
+<div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
+<div class="footer-legal"><a href="/privacy-policy/">Privacy</a>
+      <a href="/terms-and-conditions/">Terms</a><a href="mailto:elena@theblueprint.training">Contact</a></div>
+    <a href="https://loganix.com/" target="_blank" class="footer-partner-badge">
+      <span class="footer-partner-label">Platinum Partner</span>
+      <img src="/assets/loganix logo.svg" alt="Loganix" class="footer-partner-logo">
+    </a>
+  </div>
+</footer>
+</body>
+</html>
