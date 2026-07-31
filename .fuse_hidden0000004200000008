@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automate Project Management | The Blueprint Training</title>
+<title>The One-Person Sales Team | The Blueprint Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -499,9 +499,9 @@
   <div class="hero-grid"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="page-cat-badge">AI Agent · SEO Sprints</div>
-      <h1 class="page-title">Automate project<br><span>management.</span></h1>
-      <p class="page-intro">Never miss a deadline or deliverable again. The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies automatically — so every client gets a structured, on-time delivery without you micromanaging the process.</p>
+      <div class="page-cat-badge">AI Agent · Sales Module</div>
+      <h1 class="page-title">The one-person<br><span>sales team.</span></h1>
+      <p class="page-intro">Close more deals at higher prices without hiring a sales team. The Proposal Agent turns your discovery calls into branded, data-backed proposals that win — so you spend less time writing decks and more time signing contracts.</p>
       <a href="/sign-up.html" class="hero-cta">Get Started &rarr;</a>
     </div>
     <div class="hero-media">
@@ -520,25 +520,25 @@
 
     <h2 id="what-it-does">What It Does</h2>
 
-    <p>The Project Plan Agent generates custom project plans from signed proposals. It builds sprint-based timelines with milestones, deliverables, and dependencies — then updates dynamically as work progresses. No more spreadsheets, no more Gantt charts built from scratch for every client.</p>
+    <p>The Proposal Agent handles the most time-consuming part of your sales process: turning discovery call notes into a polished, branded proposal that's ready to present. No more spending three hours after every sales call building a custom deck from scratch.</p>
 
-    <p>You upload the signed proposal and onboarding data packet. The agent extracts service scope, timeline, and deliverable requirements, then builds a sprint-based project plan with phases, milestones, due dates mapped to contract terms, and all dependencies clearly mapped. Content can't start before the audit is complete. Link building can't start before content is approved. Every deliverable has a clear path to completion.</p>
+    <p>You feed it your discovery notes and prospect data. It pulls competitive intelligence, builds a preliminary website quality audit, drafts a scope of work tailored to the prospect's needs, and packages everything into a branded proposal deck — formatted and ready for the client meeting.</p>
 
-    <p>As work progresses, you update the agent with completed deliverables and it automatically regenerates the timeline, flags anything behind schedule or blocked, and generates client status reports at each milestone. Everything stays in sync without manual tracking.</p>
+    <p>Blueprint members using the Proposal Agent are closing deals faster because they're getting proposals out within hours of the discovery call, not days. When a prospect is still hot, that speed advantage is the difference between winning and losing the deal.</p>
 
     <!-- Image placeholder: What It Does -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Proposal Output / Agent Interface</span>
     </div>
 
     <div class="callout">
       <div class="callout-label">Why this matters</div>
-      <p>When you're running multiple clients, things fall through the cracks. Missed deadlines and forgotten deliverables destroy trust. This agent keeps every project on track automatically.</p>
+      <p>The longer it takes to send a proposal, the more likely the prospect is to go with someone else. Most agencies take 3-5 days. With this agent, you send it the same day — while the conversation is still fresh and the prospect's urgency is highest.</p>
     </div>
 
     <h2 id="how-it-works">How It Works</h2>
 
-    <p>The Project Plan Agent follows a 5-step process that turns signed proposals into managed, tracked projects with zero manual overhead.</p>
+    <p>The Proposal Agent follows the same 4-stage sales framework we've used to close millions in agency revenue. Here's what happens when you trigger it after a discovery call:</p>
 
     <div class="flow-container">
       <div class="flow-step">
@@ -547,8 +547,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Proposal Data Intake</h4>
-          <p>Reads the signed proposal and onboarding data packet (from the Onboarding Agent). Extracts service scope, timeline, and deliverable requirements.</p>
+          <h4>Discovery Notes Intake</h4>
+          <p>You paste in your discovery call notes — prospect name, website, pain points, budget signals, timeline, and the 11 qualifying questions from the Blueprint sales framework. The agent structures everything it needs to build the proposal.</p>
         </div>
       </div>
 
@@ -558,8 +558,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Sprint Timeline Generation</h4>
-          <p>Builds a sprint-based project plan with phases, milestones, and due dates mapped to the contract terms.</p>
+          <h4>Competitive &amp; Site Analysis</h4>
+          <p>The agent pulls competitive data and runs a preliminary website quality assessment on the prospect's site — identifying quick wins, technical issues, and content gaps. This becomes the "proof" section of your proposal.</p>
         </div>
       </div>
 
@@ -569,8 +569,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Deliverable Mapping</h4>
-          <p>Assigns specific deliverables to each sprint with dependencies. Content can't start before the audit is complete, link building can't start before content is approved.</p>
+          <h4>Scope &amp; Pricing Generation</h4>
+          <p>Based on the discovery data and site analysis, the agent drafts a recommended scope of work with value-based pricing — aligned to the prospect's stated goals. It uses Blueprint's pricing framework so you're quoting confidently, not guessing.</p>
         </div>
       </div>
 
@@ -580,8 +580,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Progress Tracking</h4>
-          <p>As you complete deliverables, the agent updates the timeline and flags anything that's behind schedule or blocked.</p>
+          <h4>Branded Proposal Assembly</h4>
+          <p>Everything is packaged into a branded proposal deck: executive summary, site analysis findings, recommended strategy, scope of work, pricing, timeline, and next steps. Ready to send or present on a follow-up call.</p>
         </div>
       </div>
 
@@ -590,50 +590,52 @@
           <div class="flow-num">5</div>
         </div>
         <div class="flow-content">
-          <h4>Client Communication</h4>
-          <p>Generates status updates and progress reports formatted for client delivery at each milestone checkpoint.</p>
+          <h4>Onboarding Agent Handoff</h4>
+          <p>When the prospect signs, the proposal data flows directly into the Onboarding Agent — client info, service scope, and contract terms are already structured. No re-entry, no gaps, no lost context between sale and delivery.</p>
         </div>
       </div>
     </div>
 
     <!-- Image placeholder: How It Works -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Process Flow / Proposal Preview</span>
     </div>
 
     <h2 id="what-it-outputs">What It Outputs</h2>
 
-    <p>Every time you run the Project Plan Agent, you get a complete project management package with zero manual formatting:</p>
+    <p>Every time you run the Proposal Agent, you get a complete sales package ready to present to the prospect:</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Project Plan</span><span class="output-row-tag">Customized per client</span></div>
-    <div class="output-row"><span class="output-row-name">Milestone Timeline</span><span class="output-row-tag">With dependencies</span></div>
-    <div class="output-row"><span class="output-row-name">Deliverable Tracker</span><span class="output-row-tag">Auto-updating</span></div>
-    <div class="output-row"><span class="output-row-name">Client Status Updates</span><span class="output-row-tag">At each checkpoint</span></div>
-    <div class="output-row"><span class="output-row-name">Onboarding Agent Integration</span><span class="output-row-tag">Structured intake</span></div>
+    <div class="output-row"><span class="output-row-name">Branded Proposal Deck</span><span class="output-row-tag">Client-ready</span></div>
+    <div class="output-row"><span class="output-row-name">Preliminary Site Analysis</span><span class="output-row-tag">WQA preview</span></div>
+    <div class="output-row"><span class="output-row-name">Competitive Landscape Summary</span><span class="output-row-tag">Data-backed</span></div>
+    <div class="output-row"><span class="output-row-name">Scope of Work + Pricing</span><span class="output-row-tag">Value-based</span></div>
+    <div class="output-row"><span class="output-row-name">Follow-Up Email Draft</span><span class="output-row-tag">Personalized</span></div>
+    <div class="output-row"><span class="output-row-name">Onboarding Agent Data Packet</span><span class="output-row-tag">Structured handoff</span></div>
 
     <!-- Image placeholder: What It Outputs -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Output Examples / Proposal Deck</span>
     </div>
 
     <h2 id="who-its-for">Who It's For</h2>
 
-    <p>This agent is built for operators who are managing multiple client projects and can't afford to drop the ball on timelines or deliverables.</p>
+    <p>This agent is built for agency owners who are doing their own sales and can't afford to lose deals because proposals take too long. If you've ever lost a prospect because you were too slow getting back to them with a proposal, this fixes that.</p>
 
     <ul>
-      <li><strong>Solo operators managing multiple clients</strong> who need structure without hiring a project manager</li>
-      <li><strong>Agency teams</strong> who want consistent delivery across all accounts without manual tracking</li>
-      <li><strong>Operators scaling past 5 clients</strong> who can't keep everything in their head anymore</li>
+      <li><strong>Solo operators</strong> who handle sales and delivery — and need to get proposals out fast without sacrificing quality</li>
+      <li><strong>Growing agencies</strong> who want a consistent, professional proposal process that doesn't depend on one person's bandwidth</li>
+      <li><strong>Teams moving upmarket</strong> who need data-backed, polished proposals that justify premium pricing to larger clients</li>
     </ul>
 
     <h2 id="training-included">Training Included</h2>
 
-    <p>The Project Plan Agent comes with complete training on sprint-based delivery, dependency management, and client communication templates. Learn the system, then deploy the agent to execute it flawlessly across all clients.</p>
+    <p>The Proposal Agent comes with the complete Module 2 sales training — covering the 4-stage sales framework, the 11 qualifying questions, value-based pricing, and objection handling. You'll learn the full system, then deploy the agent to execute it.</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Delivery Model</span><span class="output-row-tag">3 videos</span></div>
-    <div class="output-row"><span class="output-row-name">Project Plan Agent Setup</span><span class="output-row-tag">2 videos · 1 template</span></div>
-    <div class="output-row"><span class="output-row-name">Dependency Management</span><span class="output-row-tag">1 video</span></div>
-    <div class="output-row"><span class="output-row-name">Client Communication Templates</span><span class="output-row-tag">1 video · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">The 4-Stage Sales Framework</span><span class="output-row-tag">2 videos</span></div>
+    <div class="output-row"><span class="output-row-name">11 Qualifying Questions</span><span class="output-row-tag">1 video · 1 template</span></div>
+    <div class="output-row"><span class="output-row-name">Value-Based Pricing</span><span class="output-row-tag">2 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Objection Handling Scripts</span><span class="output-row-tag">1 video · 1 template</span></div>
+    <div class="output-row"><span class="output-row-name">Proposal Agent Setup &amp; Customization</span><span class="output-row-tag">2 videos</span></div>
 
     <!-- Image placeholder: Training Included -->
     <div class="img-placeholder">
@@ -642,17 +644,20 @@
 
     <h2 id="faq">Frequently Asked Questions</h2>
 
-    <h3>Do I need project management software?</h3>
-    <p>No. The agent runs inside Claude and generates everything as documents you can use however you want — paste into Notion, Asana, or just keep as standalone files.</p>
+    <h3>Do I need to know how to code to use this agent?</h3>
+    <p>No. You paste your discovery notes into Claude's desktop interface, the agent asks a few follow-up questions if needed, and it generates the full proposal. No coding, no APIs, no technical setup.</p>
 
-    <h3>Can I customize sprint lengths?</h3>
-    <p>Yes. Default sprints are 2-week cycles, but you can configure any cadence that matches your delivery model.</p>
+    <h3>Can I customize the proposal template for my brand?</h3>
+    <p>Yes. The agent is trained on a default Blueprint proposal structure, but you can customize the formatting, sections, tone, and branding to match your agency. The training walks you through exactly how to make it yours.</p>
 
-    <h3>How does it connect to other agents?</h3>
-    <p>It receives data from the Onboarding Agent and feeds deliverable requirements to the WQA, Content, and Link Building agents. Everything flows through the project plan.</p>
+    <h3>How accurate is the competitive analysis?</h3>
+    <p>The agent pulls publicly available data to build a preliminary competitive landscape — enough to demonstrate expertise and identify obvious opportunities in the prospect's market. It's not a full audit, but it's more than most agencies include in a proposal.</p>
 
-    <h3>What if my project scope changes mid-engagement?</h3>
-    <p>Update the agent with the new scope and it regenerates the timeline. Dependencies and milestones adjust automatically.</p>
+    <h3>How long does it take to generate a proposal?</h3>
+    <p>Most members go from pasting discovery notes to a finished proposal in under 20 minutes. Compare that to the 3-5 hours most agency owners spend building proposals manually — and the deals you lose in the meantime.</p>
+
+    <h3>Does it work for services other than SEO?</h3>
+    <p>The framework is built around SEO agency sales, but the discovery questions, pricing methodology, and proposal structure work for any digital service. Members have adapted it for PPC, content marketing, and web development proposals.</p>
 
   </div>
 
@@ -662,9 +667,9 @@
     <div class="agent-nav-box">
       <div class="s-label">All Agents</div>
       <ul class="agent-nav-list">
-        <li><a href="/agent-sales-light.html">Sales Agent</a></li>
+        <li><a href="#" class="current">Sales Agent</a></li>
         <li><a href="/agent-onboarding-light.html">Onboarding Agent</a></li>
-        <li><a href="#" class="current">Project Manager Agent</a></li>
+        <li><a href="/agent-project-manager-light.html">Project Manager Agent</a></li>
         <li><a href="/agent-technical-seo-light.html">Technical SEO Agent</a></li>
         <li><a href="/agent-content-light.html">Content Agent</a></li>
         <li><a href="/agent-link-building-light.html">Link Building Agent</a></li>
@@ -675,9 +680,9 @@
     </div>
 
     <div class="sidebar-cta">
-      <div class="sc-label">Ready to deliver on time?</div>
-      <h4>Get the Project Plan Agent today.</h4>
-      <p>Included with every Blueprint membership. Build your first project plan in minutes.</p>
+      <div class="sc-label">Ready to close faster?</div>
+      <h4>Get the Proposal Agent today.</h4>
+      <p>Included with every Blueprint membership. Send your first proposal within the hour.</p>
       <a href="/sign-up.html">Get Instant Access &rarr;</a>
     </div>
 
@@ -686,8 +691,8 @@
 
 <!-- BOTTOM CTA (yellow) -->
 <div class="bottom-cta">
-  <h2>Stop managing projects<br>manually.</h2>
-  <p>The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies — so you deliver on time, every time.</p>
+  <h2>Stop losing deals to<br>slow proposals.</h2>
+  <p>The Proposal Agent turns discovery calls into branded, data-backed proposals in minutes — so you close while the prospect is still excited, not three days later.</p>
   <a href="/sign-up.html" class="btn-yellow">Get Instant Access &rarr;</a>
 </div>
 
@@ -699,7 +704,6 @@
     <div>
       <div class="footer-col-title">Features</div>
       <ul class="footer-links">
-        <li><a href="/blueprint-os-landing.html">Agency OS</a></li>
         <li><a href="/coaching/">Coaching</a></li>
         <li><a href="/agency-training/">Video Training</a></li>
         <li><a href="/bootcamps/">Live Bootcamps</a></li>

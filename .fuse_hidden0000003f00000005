@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automate Project Management | The Blueprint Training</title>
+<title>Automate New Client Onboarding | The Blueprint Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -233,6 +233,12 @@
     color: #0B0E1A; margin-bottom: 8px;
   }
   .flow-content p { font-size: 16px; color: var(--gray-light); line-height: 1.7; margin-bottom: 0; }
+
+  .flow-arrow {
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 0 0 56px; margin: -12px 0 -12px;
+  }
+  .flow-arrow svg { width: 20px; height: 20px; stroke: rgba(247,198,0,0.4); stroke-width: 2; fill: none; }
 
   /* Output rows */
   .output-row {
@@ -500,8 +506,8 @@
   <div class="hero-inner">
     <div class="hero-text">
       <div class="page-cat-badge">AI Agent · SEO Sprints</div>
-      <h1 class="page-title">Automate project<br><span>management.</span></h1>
-      <p class="page-intro">Never miss a deadline or deliverable again. The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies automatically — so every client gets a structured, on-time delivery without you micromanaging the process.</p>
+      <h1 class="page-title">Automate new client<br><span>onboarding.</span></h1>
+      <p class="page-intro">Every new client gets a professional, consistent onboarding experience in minutes — not days. Intake forms, access checklists, reporting schedules, and kickoff docs generated automatically from a single signed proposal.</p>
       <a href="/sign-up.html" class="hero-cta">Get Started &rarr;</a>
     </div>
     <div class="hero-media">
@@ -520,25 +526,25 @@
 
     <h2 id="what-it-does">What It Does</h2>
 
-    <p>The Project Plan Agent generates custom project plans from signed proposals. It builds sprint-based timelines with milestones, deliverables, and dependencies — then updates dynamically as work progresses. No more spreadsheets, no more Gantt charts built from scratch for every client.</p>
+    <p>The Onboarding Agent handles the entire transition from closed deal to active client. Instead of spending hours manually building intake forms, sending access request emails, setting up project folders, and compiling kickoff documents, the agent runs the full sequence in minutes.</p>
 
-    <p>You upload the signed proposal and onboarding data packet. The agent extracts service scope, timeline, and deliverable requirements, then builds a sprint-based project plan with phases, milestones, due dates mapped to contract terms, and all dependencies clearly mapped. Content can't start before the audit is complete. Link building can't start before content is approved. Every deliverable has a clear path to completion.</p>
+    <p>You give it a signed proposal. It gives you back a complete onboarding package: intake questionnaire, access provisioning checklist, reporting cadence document, and a structured data handoff that plugs directly into the Project Plan Agent to kick off delivery.</p>
 
-    <p>As work progresses, you update the agent with completed deliverables and it automatically regenerates the timeline, flags anything behind schedule or blocked, and generates client status reports at each milestone. Everything stays in sync without manual tracking.</p>
+    <p>This is the agent most Blueprint members deploy first — because the payoff is immediately visible. Onboarding is repetitive, high-stakes (first impressions matter), and follows the same pattern every time. That makes it the perfect candidate for automation.</p>
 
     <!-- Image placeholder: What It Does -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Agent Interface / Screenshot</span>
     </div>
 
     <div class="callout">
       <div class="callout-label">Why this matters</div>
-      <p>When you're running multiple clients, things fall through the cracks. Missed deadlines and forgotten deliverables destroy trust. This agent keeps every project on track automatically.</p>
+      <p>Bad onboarding kills retention. When a new client signs and doesn't hear from you for three days while you scramble to set things up, they start second-guessing the purchase. This agent eliminates that gap entirely.</p>
     </div>
 
     <h2 id="how-it-works">How It Works</h2>
 
-    <p>The Project Plan Agent follows a 5-step process that turns signed proposals into managed, tracked projects with zero manual overhead.</p>
+    <p>The Onboarding Agent follows a structured workflow trained on the exact onboarding process we've refined over nine years of running agencies. Here's what happens when you trigger it:</p>
 
     <div class="flow-container">
       <div class="flow-step">
@@ -547,8 +553,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Proposal Data Intake</h4>
-          <p>Reads the signed proposal and onboarding data packet (from the Onboarding Agent). Extracts service scope, timeline, and deliverable requirements.</p>
+          <h4>Proposal Intake</h4>
+          <p>You provide the signed proposal or deal summary. The agent extracts client name, service scope, contract terms, and any special requirements mentioned during the sales process.</p>
         </div>
       </div>
 
@@ -558,8 +564,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Sprint Timeline Generation</h4>
-          <p>Builds a sprint-based project plan with phases, milestones, and due dates mapped to the contract terms.</p>
+          <h4>Intake Questionnaire Generation</h4>
+          <p>Based on the service scope, the agent generates a customized client intake questionnaire — covering logins, brand guidelines, target markets, competitor lists, historical data access, and anything else needed before delivery can begin.</p>
         </div>
       </div>
 
@@ -569,8 +575,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Deliverable Mapping</h4>
-          <p>Assigns specific deliverables to each sprint with dependencies. Content can't start before the audit is complete, link building can't start before content is approved.</p>
+          <h4>Access Provisioning Checklist</h4>
+          <p>The agent builds a complete access checklist: Google Analytics, Search Console, Google Business Profile, CMS, ad accounts, call tracking — customized to the services in the contract. Nothing gets missed.</p>
         </div>
       </div>
 
@@ -580,8 +586,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Progress Tracking</h4>
-          <p>As you complete deliverables, the agent updates the timeline and flags anything that's behind schedule or blocked.</p>
+          <h4>Reporting Cadence Setup</h4>
+          <p>Based on the contract terms, the agent generates a reporting schedule with deliverable milestones, check-in dates, and a communication cadence document the client can review and approve.</p>
         </div>
       </div>
 
@@ -590,50 +596,50 @@
           <div class="flow-num">5</div>
         </div>
         <div class="flow-content">
-          <h4>Client Communication</h4>
-          <p>Generates status updates and progress reports formatted for client delivery at each milestone checkpoint.</p>
+          <h4>Project Plan Agent Handoff</h4>
+          <p>All structured client data is packaged and formatted for the Project Plan Agent, which takes over to build the sprint-based delivery timeline. No manual re-entry required.</p>
         </div>
       </div>
     </div>
 
     <!-- Image placeholder: How It Works -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Process Flow / Diagram</span>
     </div>
 
     <h2 id="what-it-outputs">What It Outputs</h2>
 
-    <p>Every time you run the Project Plan Agent, you get a complete project management package with zero manual formatting:</p>
+    <p>Every time you run the Onboarding Agent, you get a complete set of deliverables ready to send or use internally:</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Project Plan</span><span class="output-row-tag">Customized per client</span></div>
-    <div class="output-row"><span class="output-row-name">Milestone Timeline</span><span class="output-row-tag">With dependencies</span></div>
-    <div class="output-row"><span class="output-row-name">Deliverable Tracker</span><span class="output-row-tag">Auto-updating</span></div>
-    <div class="output-row"><span class="output-row-name">Client Status Updates</span><span class="output-row-tag">At each checkpoint</span></div>
-    <div class="output-row"><span class="output-row-name">Onboarding Agent Integration</span><span class="output-row-tag">Structured intake</span></div>
+    <div class="output-row"><span class="output-row-name">Client Intake Questionnaire</span><span class="output-row-tag">Customized per service</span></div>
+    <div class="output-row"><span class="output-row-name">Access Provisioning Checklist</span><span class="output-row-tag">Platform-specific</span></div>
+    <div class="output-row"><span class="output-row-name">Reporting Cadence Document</span><span class="output-row-tag">Client-facing</span></div>
+    <div class="output-row"><span class="output-row-name">Kickoff Meeting Agenda</span><span class="output-row-tag">Internal + client</span></div>
+    <div class="output-row"><span class="output-row-name">Project Plan Agent Data Packet</span><span class="output-row-tag">Structured handoff</span></div>
 
     <!-- Image placeholder: What It Outputs -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Output Examples / Documents</span>
     </div>
 
     <h2 id="who-its-for">Who It's For</h2>
 
-    <p>This agent is built for operators who are managing multiple client projects and can't afford to drop the ball on timelines or deliverables.</p>
+    <p>This agent is built for agency owners and operators who are tired of manually running the same onboarding process for every new client. If you've ever lost a client in the first 30 days because onboarding was sloppy or slow, this solves that problem.</p>
 
     <ul>
-      <li><strong>Solo operators managing multiple clients</strong> who need structure without hiring a project manager</li>
-      <li><strong>Agency teams</strong> who want consistent delivery across all accounts without manual tracking</li>
-      <li><strong>Operators scaling past 5 clients</strong> who can't keep everything in their head anymore</li>
+      <li><strong>Solo operators</strong> who need to onboard clients without a dedicated account manager</li>
+      <li><strong>Small agency teams</strong> who want a consistent, professional onboarding experience every time</li>
+      <li><strong>Growing agencies</strong> who are signing more clients than their current process can handle</li>
     </ul>
 
     <h2 id="training-included">Training Included</h2>
 
-    <p>The Project Plan Agent comes with complete training on sprint-based delivery, dependency management, and client communication templates. Learn the system, then deploy the agent to execute it flawlessly across all clients.</p>
+    <p>The Onboarding Agent comes with dedicated video training inside Module 3a of the Blueprint curriculum. You'll learn how to deploy it, customize it for your service, and connect it to the rest of your agent workflow.</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Delivery Model</span><span class="output-row-tag">3 videos</span></div>
-    <div class="output-row"><span class="output-row-name">Project Plan Agent Setup</span><span class="output-row-tag">2 videos · 1 template</span></div>
-    <div class="output-row"><span class="output-row-name">Dependency Management</span><span class="output-row-tag">1 video</span></div>
-    <div class="output-row"><span class="output-row-name">Client Communication Templates</span><span class="output-row-tag">1 video · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">Agent Setup &amp; Configuration</span><span class="output-row-tag">2 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Customizing Intake Questions</span><span class="output-row-tag">1 video</span></div>
+    <div class="output-row"><span class="output-row-name">Access Checklist Templates</span><span class="output-row-tag">1 video · 1 template</span></div>
+    <div class="output-row"><span class="output-row-name">Project Plan Agent Integration</span><span class="output-row-tag">1 video</span></div>
 
     <!-- Image placeholder: Training Included -->
     <div class="img-placeholder">
@@ -642,17 +648,17 @@
 
     <h2 id="faq">Frequently Asked Questions</h2>
 
-    <h3>Do I need project management software?</h3>
-    <p>No. The agent runs inside Claude and generates everything as documents you can use however you want — paste into Notion, Asana, or just keep as standalone files.</p>
+    <h3>Do I need to know how to code to use this agent?</h3>
+    <p>No. The Onboarding Agent runs inside Claude's desktop interface. You paste in your proposal, answer a couple of prompts, and the agent generates everything. No coding, no terminal, no technical setup.</p>
 
-    <h3>Can I customize sprint lengths?</h3>
-    <p>Yes. Default sprints are 2-week cycles, but you can configure any cadence that matches your delivery model.</p>
+    <h3>Can I customize the intake questionnaire for my niche?</h3>
+    <p>Yes. The agent is trained on a general SEO agency onboarding flow, but you can customize the intake questions, access checklists, and reporting templates to match your specific service. The training walks you through exactly how.</p>
 
-    <h3>How does it connect to other agents?</h3>
-    <p>It receives data from the Onboarding Agent and feeds deliverable requirements to the WQA, Content, and Link Building agents. Everything flows through the project plan.</p>
+    <h3>How does it connect to the Project Plan Agent?</h3>
+    <p>The Onboarding Agent outputs a structured data packet — client info, service scope, access status, timeline requirements — that the Project Plan Agent reads as its input. You copy the output into the next agent. No integrations or APIs needed.</p>
 
-    <h3>What if my project scope changes mid-engagement?</h3>
-    <p>Update the agent with the new scope and it regenerates the timeline. Dependencies and milestones adjust automatically.</p>
+    <h3>How long does onboarding take with this agent?</h3>
+    <p>Most members go from signed proposal to complete onboarding package in under 15 minutes. Without the agent, this same process typically takes 2-3 hours of manual work.</p>
 
   </div>
 
@@ -663,8 +669,8 @@
       <div class="s-label">All Agents</div>
       <ul class="agent-nav-list">
         <li><a href="/agent-sales-light.html">Sales Agent</a></li>
-        <li><a href="/agent-onboarding-light.html">Onboarding Agent</a></li>
-        <li><a href="#" class="current">Project Manager Agent</a></li>
+        <li><a href="#" class="current">Onboarding Agent</a></li>
+        <li><a href="/agent-project-manager-light.html">Project Manager Agent</a></li>
         <li><a href="/agent-technical-seo-light.html">Technical SEO Agent</a></li>
         <li><a href="/agent-content-light.html">Content Agent</a></li>
         <li><a href="/agent-link-building-light.html">Link Building Agent</a></li>
@@ -675,9 +681,9 @@
     </div>
 
     <div class="sidebar-cta">
-      <div class="sc-label">Ready to deliver on time?</div>
-      <h4>Get the Project Plan Agent today.</h4>
-      <p>Included with every Blueprint membership. Build your first project plan in minutes.</p>
+      <div class="sc-label">Ready to deploy?</div>
+      <h4>Get the Onboarding Agent today.</h4>
+      <p>Included with every Blueprint membership. Deploy it in your first hour.</p>
       <a href="/sign-up.html">Get Instant Access &rarr;</a>
     </div>
 
@@ -686,8 +692,8 @@
 
 <!-- BOTTOM CTA (yellow) -->
 <div class="bottom-cta">
-  <h2>Stop managing projects<br>manually.</h2>
-  <p>The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies — so you deliver on time, every time.</p>
+  <h2>Stop onboarding clients<br>manually.</h2>
+  <p>The Onboarding Agent handles intake, access provisioning, and kickoff documents in minutes — so you can focus on delivering results instead of chasing logins.</p>
   <a href="/sign-up.html" class="btn-yellow">Get Instant Access &rarr;</a>
 </div>
 
@@ -699,7 +705,6 @@
     <div>
       <div class="footer-col-title">Features</div>
       <ul class="footer-links">
-        <li><a href="/blueprint-os-landing.html">Agency OS</a></li>
         <li><a href="/coaching/">Coaching</a></li>
         <li><a href="/agency-training/">Video Training</a></li>
         <li><a href="/bootcamps/">Live Bootcamps</a></li>

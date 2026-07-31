@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automate Project Management | The Blueprint Training</title>
+<title>Automate Local SEO | The Blueprint Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -500,8 +500,8 @@
   <div class="hero-inner">
     <div class="hero-text">
       <div class="page-cat-badge">AI Agent · SEO Sprints</div>
-      <h1 class="page-title">Automate project<br><span>management.</span></h1>
-      <p class="page-intro">Never miss a deadline or deliverable again. The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies automatically — so every client gets a structured, on-time delivery without you micromanaging the process.</p>
+      <h1 class="page-title">Automate local<br><span>SEO.</span></h1>
+      <p class="page-intro">Manage Google Business Profiles, citations, and reviews at scale — without the manual busywork. The Local SEO Agent handles everything from GBP optimization to citation audits to review response drafting, so your clients dominate the Maps Pack.</p>
       <a href="/sign-up.html" class="hero-cta">Get Started &rarr;</a>
     </div>
     <div class="hero-media">
@@ -520,25 +520,25 @@
 
     <h2 id="what-it-does">What It Does</h2>
 
-    <p>The Project Plan Agent generates custom project plans from signed proposals. It builds sprint-based timelines with milestones, deliverables, and dependencies — then updates dynamically as work progresses. No more spreadsheets, no more Gantt charts built from scratch for every client.</p>
+    <p>The Local SEO Agent automates the complete local search workflow: Google Business Profile management, citation audits, NAP consistency checking, review monitoring, and response drafting across all major directories. Everything a local SEO campaign needs, packaged into one agent that scales with your client base.</p>
 
-    <p>You upload the signed proposal and onboarding data packet. The agent extracts service scope, timeline, and deliverable requirements, then builds a sprint-based project plan with phases, milestones, due dates mapped to contract terms, and all dependencies clearly mapped. Content can't start before the audit is complete. Link building can't start before content is approved. Every deliverable has a clear path to completion.</p>
+    <p>You feed it your client's business data and current GBP profile. It analyzes completeness and optimization opportunities, crawls directories for existing citations, identifies inconsistencies and duplicates, monitors new reviews, and drafts personalized responses in the client's voice. Then it generates monthly local SEO reports tracking performance, rankings, and health metrics.</p>
 
-    <p>As work progresses, you update the agent with completed deliverables and it automatically regenerates the timeline, flags anything behind schedule or blocked, and generates client status reports at each milestone. Everything stays in sync without manual tracking.</p>
+    <p>Blueprint members managing local SEO clients are now handling 3-5x more clients at higher margins because the agent eliminates the manual busywork of GBP management, citation cleanup, and review response drafting. What used to take 8 hours per month per client now takes 30 minutes of oversight.</p>
 
     <!-- Image placeholder: What It Does -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Local SEO Agent Interface / Dashboard</span>
     </div>
 
     <div class="callout">
       <div class="callout-label">Why this matters</div>
-      <p>When you're running multiple clients, things fall through the cracks. Missed deadlines and forgotten deliverables destroy trust. This agent keeps every project on track automatically.</p>
+      <p>Local SEO is high-value but tedious. Clients expect GBP management, citation cleanup, and review responses — but the manual work doesn't scale. This agent makes local SEO profitable at any client volume.</p>
     </div>
 
     <h2 id="how-it-works">How It Works</h2>
 
-    <p>The Project Plan Agent follows a 5-step process that turns signed proposals into managed, tracked projects with zero manual overhead.</p>
+    <p>The Local SEO Agent follows a complete 5-stage local search workflow that covers every deliverable from GBP optimization through monthly reporting:</p>
 
     <div class="flow-container">
       <div class="flow-step">
@@ -547,8 +547,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Proposal Data Intake</h4>
-          <p>Reads the signed proposal and onboarding data packet (from the Onboarding Agent). Extracts service scope, timeline, and deliverable requirements.</p>
+          <h4>GBP Audit & Optimization</h4>
+          <p>Analyzes the client's Google Business Profile for completeness, accuracy, and optimization opportunities. Generates recommendations for categories, attributes, descriptions, and photo strategy to improve visibility and rankings.</p>
         </div>
       </div>
 
@@ -558,8 +558,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Sprint Timeline Generation</h4>
-          <p>Builds a sprint-based project plan with phases, milestones, and due dates mapped to the contract terms.</p>
+          <h4>Citation Audit & Cleanup</h4>
+          <p>Crawls major directories and data aggregators to find existing citations. Identifies NAP inconsistencies, duplicate listings, and missing directories — then generates correction instructions for each platform and aggregator.</p>
         </div>
       </div>
 
@@ -569,8 +569,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Deliverable Mapping</h4>
-          <p>Assigns specific deliverables to each sprint with dependencies. Content can't start before the audit is complete, link building can't start before content is approved.</p>
+          <h4>Review Monitoring & Response</h4>
+          <p>Monitors new reviews across Google, Yelp, and industry-specific directories. Drafts personalized responses for each review — maintaining the client's brand voice while addressing specific feedback, whether positive, neutral, or negative.</p>
         </div>
       </div>
 
@@ -580,8 +580,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Progress Tracking</h4>
-          <p>As you complete deliverables, the agent updates the timeline and flags anything that's behind schedule or blocked.</p>
+          <h4>Review Generation Strategy</h4>
+          <p>Builds a review request workflow: identifies happy customers, generates request templates, and suggests optimal timing for outreach. Tracks review velocity and sentiment over time to show client impact and identify service improvements.</p>
         </div>
       </div>
 
@@ -590,50 +590,51 @@
           <div class="flow-num">5</div>
         </div>
         <div class="flow-content">
-          <h4>Client Communication</h4>
-          <p>Generates status updates and progress reports formatted for client delivery at each milestone checkpoint.</p>
+          <h4>Monthly Local Reporting</h4>
+          <p>Generates a local SEO performance report covering GBP insights, ranking positions for local keywords, review metrics, and citation health — formatted and ready for client delivery with actionable recommendations.</p>
         </div>
       </div>
     </div>
 
     <!-- Image placeholder: How It Works -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Local SEO Workflow / Report Preview</span>
     </div>
 
     <h2 id="what-it-outputs">What It Outputs</h2>
 
-    <p>Every time you run the Project Plan Agent, you get a complete project management package with zero manual formatting:</p>
+    <p>Every time you run the Local SEO Agent, you get a complete local search package ready to implement and report on:</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Project Plan</span><span class="output-row-tag">Customized per client</span></div>
-    <div class="output-row"><span class="output-row-name">Milestone Timeline</span><span class="output-row-tag">With dependencies</span></div>
-    <div class="output-row"><span class="output-row-name">Deliverable Tracker</span><span class="output-row-tag">Auto-updating</span></div>
-    <div class="output-row"><span class="output-row-name">Client Status Updates</span><span class="output-row-tag">At each checkpoint</span></div>
-    <div class="output-row"><span class="output-row-name">Onboarding Agent Integration</span><span class="output-row-tag">Structured intake</span></div>
+    <div class="output-row"><span class="output-row-name">GBP Optimization Plan</span><span class="output-row-tag">Actionable checklist</span></div>
+    <div class="output-row"><span class="output-row-name">Citation Audit Report</span><span class="output-row-tag">With corrections</span></div>
+    <div class="output-row"><span class="output-row-name">Review Responses</span><span class="output-row-tag">Drafted per review</span></div>
+    <div class="output-row"><span class="output-row-name">Review Request Templates</span><span class="output-row-tag">Customized</span></div>
+    <div class="output-row"><span class="output-row-name">Local Ranking Tracker</span><span class="output-row-tag">Maps Pack positions</span></div>
+    <div class="output-row"><span class="output-row-name">Monthly Local SEO Report</span><span class="output-row-tag">Client-facing</span></div>
 
     <!-- Image placeholder: What It Outputs -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Output Examples / Reports</span>
     </div>
 
     <h2 id="who-its-for">Who It's For</h2>
 
-    <p>This agent is built for operators who are managing multiple client projects and can't afford to drop the ball on timelines or deliverables.</p>
+    <p>This agent is built for agencies and operators managing local clients who need scalable local SEO delivery without hiring additional staff or spending hours on manual GBP and citation management.</p>
 
     <ul>
-      <li><strong>Solo operators managing multiple clients</strong> who need structure without hiring a project manager</li>
-      <li><strong>Agency teams</strong> who want consistent delivery across all accounts without manual tracking</li>
-      <li><strong>Operators scaling past 5 clients</strong> who can't keep everything in their head anymore</li>
+      <li><strong>Agencies serving local businesses</strong> (lawyers, dentists, contractors, restaurants) who need scalable local SEO delivery</li>
+      <li><strong>Solo operators</strong> managing 10+ local clients who can't manually manage every GBP and citation</li>
+      <li><strong>Teams adding local SEO</strong> as a service line who need a systematized delivery process</li>
     </ul>
 
     <h2 id="training-included">Training Included</h2>
 
-    <p>The Project Plan Agent comes with complete training on sprint-based delivery, dependency management, and client communication templates. Learn the system, then deploy the agent to execute it flawlessly across all clients.</p>
+    <p>The Local SEO Agent comes with complete local search training covering GBP optimization, citation strategy, review workflows, and multi-location management. You'll learn the full system, then deploy the agent to execute it at scale.</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Delivery Model</span><span class="output-row-tag">3 videos</span></div>
-    <div class="output-row"><span class="output-row-name">Project Plan Agent Setup</span><span class="output-row-tag">2 videos · 1 template</span></div>
-    <div class="output-row"><span class="output-row-name">Dependency Management</span><span class="output-row-tag">1 video</span></div>
-    <div class="output-row"><span class="output-row-name">Client Communication Templates</span><span class="output-row-tag">1 video · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">Local SEO Fundamentals</span><span class="output-row-tag">4 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Local SEO Agent Setup</span><span class="output-row-tag">2 videos · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">GBP Optimization Deep Dive</span><span class="output-row-tag">3 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Citation & Review Workflows</span><span class="output-row-tag">3 videos · 2 templates</span></div>
 
     <!-- Image placeholder: Training Included -->
     <div class="img-placeholder">
@@ -642,17 +643,17 @@
 
     <h2 id="faq">Frequently Asked Questions</h2>
 
-    <h3>Do I need project management software?</h3>
-    <p>No. The agent runs inside Claude and generates everything as documents you can use however you want — paste into Notion, Asana, or just keep as standalone files.</p>
+    <h3>Does it manage GBP directly?</h3>
+    <p>It generates all the optimization recommendations and content, but you apply the changes through the GBP dashboard. This keeps you in control of the client's listing.</p>
 
-    <h3>Can I customize sprint lengths?</h3>
-    <p>Yes. Default sprints are 2-week cycles, but you can configure any cadence that matches your delivery model.</p>
+    <h3>How many local clients can I manage?</h3>
+    <p>Members typically manage 15-25 local clients with this agent. The bottleneck shifts from manual work to strategic oversight.</p>
 
-    <h3>How does it connect to other agents?</h3>
-    <p>It receives data from the Onboarding Agent and feeds deliverable requirements to the WQA, Content, and Link Building agents. Everything flows through the project plan.</p>
+    <h3>Does it work for multi-location businesses?</h3>
+    <p>Yes. The agent handles multi-location audits and generates location-specific recommendations. The training covers the multi-location workflow in detail.</p>
 
-    <h3>What if my project scope changes mid-engagement?</h3>
-    <p>Update the agent with the new scope and it regenerates the timeline. Dependencies and milestones adjust automatically.</p>
+    <h3>Can it draft responses in the client's voice?</h3>
+    <p>Yes. You train the agent on the client's brand voice and response style during setup. It adapts tone based on whether the review is positive, neutral, or negative.</p>
 
   </div>
 
@@ -664,20 +665,20 @@
       <ul class="agent-nav-list">
         <li><a href="/agent-sales-light.html">Sales Agent</a></li>
         <li><a href="/agent-onboarding-light.html">Onboarding Agent</a></li>
-        <li><a href="#" class="current">Project Manager Agent</a></li>
+        <li><a href="/agent-project-manager-light.html">Project Manager Agent</a></li>
         <li><a href="/agent-technical-seo-light.html">Technical SEO Agent</a></li>
         <li><a href="/agent-content-light.html">Content Agent</a></li>
         <li><a href="/agent-link-building-light.html">Link Building Agent</a></li>
-        <li><a href="/agent-local-seo-light.html">Local SEO Agent</a></li>
+        <li><a href="#" class="current">Local SEO Agent</a></li>
         <li><a href="/agent-reporting-light.html">Reporting Agent</a></li>
         <li><a href="/agent-strategy-light.html">Strategy Agent</a></li>
       </ul>
     </div>
 
     <div class="sidebar-cta">
-      <div class="sc-label">Ready to deliver on time?</div>
-      <h4>Get the Project Plan Agent today.</h4>
-      <p>Included with every Blueprint membership. Build your first project plan in minutes.</p>
+      <div class="sc-label">Ready to scale local?</div>
+      <h4>Get the Local SEO Agent today.</h4>
+      <p>Manage more local clients without more manual work.</p>
       <a href="/sign-up.html">Get Instant Access &rarr;</a>
     </div>
 
@@ -686,8 +687,8 @@
 
 <!-- BOTTOM CTA (yellow) -->
 <div class="bottom-cta">
-  <h2>Stop managing projects<br>manually.</h2>
-  <p>The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies — so you deliver on time, every time.</p>
+  <h2>Stop managing local<br>SEO manually.</h2>
+  <p>The Local SEO Agent handles GBP, citations, and reviews at scale — so you deliver results for every local client without drowning in busywork.</p>
   <a href="/sign-up.html" class="btn-yellow">Get Instant Access &rarr;</a>
 </div>
 
@@ -699,7 +700,6 @@
     <div>
       <div class="footer-col-title">Features</div>
       <ul class="footer-links">
-        <li><a href="/blueprint-os-landing.html">Agency OS</a></li>
         <li><a href="/coaching/">Coaching</a></li>
         <li><a href="/agency-training/">Video Training</a></li>
         <li><a href="/bootcamps/">Live Bootcamps</a></li>

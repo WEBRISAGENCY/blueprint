@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automate Project Management | The Blueprint Training</title>
+<title>Automate Technical SEO Audits | The Blueprint Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -154,55 +154,45 @@
   .page-body a { color: #2563EB; }
 
   .page-body h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(28px, 3.5vw, 44px); line-height: 1.0;
-    letter-spacing: 0.02em; text-transform: uppercase; color: #0B0E1A;
-    margin: 52px 0 18px; padding-top: 52px; border-top: 1px solid var(--border);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+    font-size: 24px; letter-spacing: 0.05em; text-transform: uppercase;
+    color: #0B0E1A; margin-top: 56px; margin-bottom: 24px;
   }
-  .page-body h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .page-body h2:first-child { margin-top: 0; }
 
   .page-body h3 {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-    font-size: 20px; letter-spacing: 0.05em; text-transform: uppercase;
-    color: #0B0E1A; margin: 32px 0 12px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 17px; letter-spacing: 0.05em; text-transform: uppercase;
+    color: #0B0E1A; margin-top: 32px; margin-bottom: 16px;
   }
 
-  .page-body ul {
-    list-style: none; margin-bottom: 24px;
-    display: flex; flex-direction: column; gap: 10px;
+  .page-body ul, .page-body ol {
+    margin: 0 0 24px 24px; padding-left: 0;
   }
-  .page-body ul li {
-    display: flex; align-items: flex-start; gap: 12px;
-    font-size: 16px; color: var(--gray-light); line-height: 1.6;
-    padding: 10px 16px; background: var(--bg-light); border-left: 2px solid rgba(247,198,0,0.4);
+  .page-body li {
+    margin-bottom: 12px; line-height: 1.7; color: var(--gray-light);
   }
-  .page-body ul li::before { content: '\2192'; color: var(--yellow); flex-shrink: 0; font-size: 13px; margin-top: 2px; }
-  .page-body ul li strong { color: #0B0E1A; }
+
+  .img-placeholder {
+    background: var(--bg-light);
+    border: 1px dashed rgba(0,0,0,0.12);
+    height: 320px; display: flex; align-items: center; justify-content: center;
+    margin: 48px 0; border-radius: 4px;
+    font-size: 14px; color: var(--gray);
+  }
 
   .callout {
-    background: rgba(247,198,0,0.05); border: 1px solid rgba(247,198,0,0.2);
-    border-left: 4px solid var(--yellow); padding: 24px 28px; margin: 32px 0;
+    background: var(--bg-light);
+    border-left: 4px solid var(--yellow);
+    padding: 28px; margin: 32px 0;
   }
   .callout-label {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: #0B0E1A; margin-bottom: 10px;
-  }
-  .callout p { font-size: 16px; color: var(--gray-light); line-height: 1.7; margin-bottom: 0; }
-
-  /* Image placeholder */
-  .img-placeholder {
-    background: var(--bg-light); border: 1px dashed rgba(0,0,0,0.12);
-    aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
-    margin: 32px 0;
-  }
-  .img-placeholder span {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
     font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(0,0,0,0.18);
+    color: #0B0E1A; display: block; margin-bottom: 8px;
   }
+  .callout p { margin-bottom: 0; }
 
-  /* ── HOW IT WORKS — visual linear flow ── */
   .flow-container { margin: 32px 0; }
 
   .flow-step {
@@ -500,8 +490,8 @@
   <div class="hero-inner">
     <div class="hero-text">
       <div class="page-cat-badge">AI Agent · SEO Sprints</div>
-      <h1 class="page-title">Automate project<br><span>management.</span></h1>
-      <p class="page-intro">Never miss a deadline or deliverable again. The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies automatically — so every client gets a structured, on-time delivery without you micromanaging the process.</p>
+      <h1 class="page-title">Automate technical<br><span>SEO audits.</span></h1>
+      <p class="page-intro">Deliver comprehensive technical audits in hours instead of days. The Website Quality Audit Agent crawls sites, analyzes technical health, evaluates content quality and EEAT signals, and generates prioritized findings your clients can actually act on.</p>
       <a href="/sign-up.html" class="hero-cta">Get Started &rarr;</a>
     </div>
     <div class="hero-media">
@@ -520,25 +510,25 @@
 
     <h2 id="what-it-does">What It Does</h2>
 
-    <p>The Project Plan Agent generates custom project plans from signed proposals. It builds sprint-based timelines with milestones, deliverables, and dependencies — then updates dynamically as work progresses. No more spreadsheets, no more Gantt charts built from scratch for every client.</p>
+    <p>The most robust agent in the Blueprint library. It crawls a client's site, runs a full technical audit covering crawlability, indexation, site speed, schema, internal linking — then layers on content quality analysis, EEAT signal evaluation, and link profile assessment. The output is a prioritized findings report with specific recommendations, not a generic checklist.</p>
 
-    <p>You upload the signed proposal and onboarding data packet. The agent extracts service scope, timeline, and deliverable requirements, then builds a sprint-based project plan with phases, milestones, due dates mapped to contract terms, and all dependencies clearly mapped. Content can't start before the audit is complete. Link building can't start before content is approved. Every deliverable has a clear path to completion.</p>
+    <p>You provide a client URL and the agent initiates a comprehensive crawl. It collects technical data across crawlability, indexation, site architecture, page speed, mobile usability, and schema markup. Then it evaluates that data against Blueprint's technical SEO standards, identifies issues, categorizes them by severity, and maps each finding to its impact on rankings and user experience.</p>
 
-    <p>As work progresses, you update the agent with completed deliverables and it automatically regenerates the timeline, flags anything behind schedule or blocked, and generates client status reports at each milestone. Everything stays in sync without manual tracking.</p>
+    <p>But it goes beyond the technical layer. The agent analyzes content quality signals, thin content, duplicate content, and EEAT indicators across the site. It evaluates the backlink profile, internal linking structure, anchor text distribution, and identifies toxic or low-quality links. Everything gets packaged into a client-ready audit report with executive summary, prioritized findings by impact, specific recommendations, and a suggested implementation timeline.</p>
 
     <!-- Image placeholder: What It Does -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Technical Audit Report / Findings Interface</span>
     </div>
 
     <div class="callout">
       <div class="callout-label">Why this matters</div>
-      <p>When you're running multiple clients, things fall through the cracks. Missed deadlines and forgotten deliverables destroy trust. This agent keeps every project on track automatically.</p>
+      <p>Technical audits are the foundation of every SEO engagement. But they take forever to do well — most agencies spend 8-15 hours per audit. This agent delivers the same depth in a fraction of the time, so you can audit more clients, faster, without sacrificing quality.</p>
     </div>
 
     <h2 id="how-it-works">How It Works</h2>
 
-    <p>The Project Plan Agent follows a 5-step process that turns signed proposals into managed, tracked projects with zero manual overhead.</p>
+    <p>The WQA Agent follows a five-stage process. Here's what happens when you feed it a client URL:</p>
 
     <div class="flow-container">
       <div class="flow-step">
@@ -547,8 +537,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Proposal Data Intake</h4>
-          <p>Reads the signed proposal and onboarding data packet (from the Onboarding Agent). Extracts service scope, timeline, and deliverable requirements.</p>
+          <h4>Site Crawl &amp; Data Collection</h4>
+          <p>You provide the client URL and the agent initiates a comprehensive crawl. It collects technical data across crawlability, indexation, site architecture, page speed, mobile usability, and schema markup.</p>
         </div>
       </div>
 
@@ -558,8 +548,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Sprint Timeline Generation</h4>
-          <p>Builds a sprint-based project plan with phases, milestones, and due dates mapped to the contract terms.</p>
+          <h4>Technical Health Analysis</h4>
+          <p>The agent evaluates crawl data against Blueprint's technical SEO standards. It identifies issues, categorizes them by severity, and maps each finding to its impact on rankings and user experience.</p>
         </div>
       </div>
 
@@ -569,8 +559,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Deliverable Mapping</h4>
-          <p>Assigns specific deliverables to each sprint with dependencies. Content can't start before the audit is complete, link building can't start before content is approved.</p>
+          <h4>Content &amp; EEAT Evaluation</h4>
+          <p>Goes beyond technical — analyzes content quality signals, thin content, duplicate content, and EEAT indicators (authorship, citations, expertise signals) across the site.</p>
         </div>
       </div>
 
@@ -580,8 +570,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Progress Tracking</h4>
-          <p>As you complete deliverables, the agent updates the timeline and flags anything that's behind schedule or blocked.</p>
+          <h4>Link Profile Assessment</h4>
+          <p>Evaluates the site's backlink profile, internal linking structure, anchor text distribution, and identifies toxic or low-quality links that need attention.</p>
         </div>
       </div>
 
@@ -590,50 +580,52 @@
           <div class="flow-num">5</div>
         </div>
         <div class="flow-content">
-          <h4>Client Communication</h4>
-          <p>Generates status updates and progress reports formatted for client delivery at each milestone checkpoint.</p>
+          <h4>Prioritized Report Generation</h4>
+          <p>Packages everything into a client-ready audit report with executive summary, prioritized findings by impact, specific recommendations, and a suggested implementation timeline.</p>
         </div>
       </div>
     </div>
 
     <!-- Image placeholder: How It Works -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Audit Process Flow / Report Preview</span>
     </div>
 
     <h2 id="what-it-outputs">What It Outputs</h2>
 
-    <p>Every time you run the Project Plan Agent, you get a complete project management package with zero manual formatting:</p>
+    <p>Every time you run the WQA Agent, you get a complete technical audit package ready to present to the client:</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Project Plan</span><span class="output-row-tag">Customized per client</span></div>
-    <div class="output-row"><span class="output-row-name">Milestone Timeline</span><span class="output-row-tag">With dependencies</span></div>
-    <div class="output-row"><span class="output-row-name">Deliverable Tracker</span><span class="output-row-tag">Auto-updating</span></div>
-    <div class="output-row"><span class="output-row-name">Client Status Updates</span><span class="output-row-tag">At each checkpoint</span></div>
-    <div class="output-row"><span class="output-row-name">Onboarding Agent Integration</span><span class="output-row-tag">Structured intake</span></div>
+    <div class="output-row"><span class="output-row-name">Technical Audit Report</span><span class="output-row-tag">Client-ready</span></div>
+    <div class="output-row"><span class="output-row-name">Prioritized Issue List</span><span class="output-row-tag">By severity &amp; impact</span></div>
+    <div class="output-row"><span class="output-row-name">Content Quality Assessment</span><span class="output-row-tag">EEAT signals</span></div>
+    <div class="output-row"><span class="output-row-name">Link Profile Analysis</span><span class="output-row-tag">Internal + external</span></div>
+    <div class="output-row"><span class="output-row-name">Implementation Roadmap</span><span class="output-row-tag">Sequenced by priority</span></div>
+    <div class="output-row"><span class="output-row-name">Project Plan Agent Data Packet</span><span class="output-row-tag">Structured handoff</span></div>
 
     <!-- Image placeholder: What It Outputs -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Output Examples / Audit Report</span>
     </div>
 
     <h2 id="who-its-for">Who It's For</h2>
 
-    <p>This agent is built for operators who are managing multiple client projects and can't afford to drop the ball on timelines or deliverables.</p>
+    <p>This agent is built for agencies and consultants who deliver audits as a core service and need to produce them faster without cutting corners.</p>
 
     <ul>
-      <li><strong>Solo operators managing multiple clients</strong> who need structure without hiring a project manager</li>
-      <li><strong>Agency teams</strong> who want consistent delivery across all accounts without manual tracking</li>
-      <li><strong>Operators scaling past 5 clients</strong> who can't keep everything in their head anymore</li>
+      <li><strong>Agencies that sell audits as a standalone service</strong> and need to produce them faster without cutting corners</li>
+      <li><strong>Solo operators</strong> who want to deliver enterprise-level audit depth without a team of specialists</li>
+      <li><strong>Growing agencies</strong> who need to audit 5-10 new prospects per month as part of their sales process</li>
     </ul>
 
     <h2 id="training-included">Training Included</h2>
 
-    <p>The Project Plan Agent comes with complete training on sprint-based delivery, dependency management, and client communication templates. Learn the system, then deploy the agent to execute it flawlessly across all clients.</p>
+    <p>The WQA Agent comes with complete training on technical SEO fundamentals, agent setup and configuration, content and EEAT analysis, interpreting and presenting findings, and customizing for your specific niche.</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Delivery Model</span><span class="output-row-tag">3 videos</span></div>
-    <div class="output-row"><span class="output-row-name">Project Plan Agent Setup</span><span class="output-row-tag">2 videos · 1 template</span></div>
-    <div class="output-row"><span class="output-row-name">Dependency Management</span><span class="output-row-tag">1 video</span></div>
-    <div class="output-row"><span class="output-row-name">Client Communication Templates</span><span class="output-row-tag">1 video · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">Technical SEO Fundamentals</span><span class="output-row-tag">8 videos</span></div>
+    <div class="output-row"><span class="output-row-name">WQA Agent Setup &amp; Configuration</span><span class="output-row-tag">3 videos · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">Content &amp; EEAT Analysis</span><span class="output-row-tag">4 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Interpreting &amp; Presenting Findings</span><span class="output-row-tag">3 videos · 1 template</span></div>
+    <div class="output-row"><span class="output-row-name">Customizing for Your Niche</span><span class="output-row-tag">2 videos</span></div>
 
     <!-- Image placeholder: Training Included -->
     <div class="img-placeholder">
@@ -642,17 +634,17 @@
 
     <h2 id="faq">Frequently Asked Questions</h2>
 
-    <h3>Do I need project management software?</h3>
-    <p>No. The agent runs inside Claude and generates everything as documents you can use however you want — paste into Notion, Asana, or just keep as standalone files.</p>
+    <h3>How long does a full audit take?</h3>
+    <p>Most members generate a complete audit in 1-2 hours. Compare that to the 8-15 hours most agencies spend doing it manually.</p>
 
-    <h3>Can I customize sprint lengths?</h3>
-    <p>Yes. Default sprints are 2-week cycles, but you can configure any cadence that matches your delivery model.</p>
+    <h3>Can I white-label the audit report?</h3>
+    <p>Yes. The output is fully customizable — add your branding, adjust the sections, change the formatting to match your agency's style.</p>
 
-    <h3>How does it connect to other agents?</h3>
-    <p>It receives data from the Onboarding Agent and feeds deliverable requirements to the WQA, Content, and Link Building agents. Everything flows through the project plan.</p>
+    <h3>Does it replace manual review?</h3>
+    <p>It handles 80-90% of the work. You should still review the findings and add your expert commentary before presenting to the client — that's where your expertise adds the most value.</p>
 
-    <h3>What if my project scope changes mid-engagement?</h3>
-    <p>Update the agent with the new scope and it regenerates the timeline. Dependencies and milestones adjust automatically.</p>
+    <h3>What tools does it integrate with?</h3>
+    <p>The agent works with data from Screaming Frog, Ahrefs, Search Console, and PageSpeed Insights. The training covers exactly how to feed this data in.</p>
 
   </div>
 
@@ -664,8 +656,8 @@
       <ul class="agent-nav-list">
         <li><a href="/agent-sales-light.html">Sales Agent</a></li>
         <li><a href="/agent-onboarding-light.html">Onboarding Agent</a></li>
-        <li><a href="#" class="current">Project Manager Agent</a></li>
-        <li><a href="/agent-technical-seo-light.html">Technical SEO Agent</a></li>
+        <li><a href="/agent-project-manager-light.html">Project Manager Agent</a></li>
+        <li><a href="#" class="current">Technical SEO Agent</a></li>
         <li><a href="/agent-content-light.html">Content Agent</a></li>
         <li><a href="/agent-link-building-light.html">Link Building Agent</a></li>
         <li><a href="/agent-local-seo-light.html">Local SEO Agent</a></li>
@@ -675,9 +667,9 @@
     </div>
 
     <div class="sidebar-cta">
-      <div class="sc-label">Ready to deliver on time?</div>
-      <h4>Get the Project Plan Agent today.</h4>
-      <p>Included with every Blueprint membership. Build your first project plan in minutes.</p>
+      <div class="sc-label">Ready to audit faster?</div>
+      <h4>Get the WQA Agent today.</h4>
+      <p>The most comprehensive agent in the library. Deploy it on your first client this week.</p>
       <a href="/sign-up.html">Get Instant Access &rarr;</a>
     </div>
 
@@ -686,8 +678,8 @@
 
 <!-- BOTTOM CTA (yellow) -->
 <div class="bottom-cta">
-  <h2>Stop managing projects<br>manually.</h2>
-  <p>The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies — so you deliver on time, every time.</p>
+  <h2>Stop spending days<br>on audits.</h2>
+  <p>The WQA Agent delivers comprehensive technical audits in hours — so you can audit more clients, close more deals, and deliver results faster.</p>
   <a href="/sign-up.html" class="btn-yellow">Get Instant Access &rarr;</a>
 </div>
 
@@ -699,7 +691,6 @@
     <div>
       <div class="footer-col-title">Features</div>
       <ul class="footer-links">
-        <li><a href="/blueprint-os-landing.html">Agency OS</a></li>
         <li><a href="/coaching/">Coaching</a></li>
         <li><a href="/agency-training/">Video Training</a></li>
         <li><a href="/bootcamps/">Live Bootcamps</a></li>

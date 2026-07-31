@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automate Project Management | The Blueprint Training</title>
+<title>Automate Client Reporting | The Blueprint Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -500,8 +500,8 @@
   <div class="hero-inner">
     <div class="hero-text">
       <div class="page-cat-badge">AI Agent · SEO Sprints</div>
-      <h1 class="page-title">Automate project<br><span>management.</span></h1>
-      <p class="page-intro">Never miss a deadline or deliverable again. The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies automatically — so every client gets a structured, on-time delivery without you micromanaging the process.</p>
+      <h1 class="page-title">Automate client<br><span>reporting.</span></h1>
+      <p class="page-intro">Never spend another Sunday night building client reports. The Reporting Agent pulls data from GA4, Search Console, and your SEO tools, then generates branded reports with narrative insights — on schedule, every month, for every client.</p>
       <a href="/sign-up.html" class="hero-cta">Get Started &rarr;</a>
     </div>
     <div class="hero-media">
@@ -520,25 +520,25 @@
 
     <h2 id="what-it-does">What It Does</h2>
 
-    <p>The Project Plan Agent generates custom project plans from signed proposals. It builds sprint-based timelines with milestones, deliverables, and dependencies — then updates dynamically as work progresses. No more spreadsheets, no more Gantt charts built from scratch for every client.</p>
+    <p>The Reporting Agent connects to your clients' GA4, Search Console, Google Business Profile, call tracking, and rank tracking tools — then generates fully branded monthly reports with performance data AND written narratives that explain what happened, why it matters, and what's planned next.</p>
 
-    <p>You upload the signed proposal and onboarding data packet. The agent extracts service scope, timeline, and deliverable requirements, then builds a sprint-based project plan with phases, milestones, due dates mapped to contract terms, and all dependencies clearly mapped. Content can't start before the audit is complete. Link building can't start before content is approved. Every deliverable has a clear path to completion.</p>
+    <p>Most agencies lose clients because clients don't see the work. It's not that the SEO is bad — it's that clients never get a clear picture of what was done and what it accomplished. This agent solves that by automating the entire reporting process: data pull, analysis, narrative writing, and scheduled delivery.</p>
 
-    <p>As work progresses, you update the agent with completed deliverables and it automatically regenerates the timeline, flags anything behind schedule or blocked, and generates client status reports at each milestone. Everything stays in sync without manual tracking.</p>
+    <p>Set up a client's data connections once, configure the reporting schedule, and the agent handles everything else. Reports arrive in their inbox on whatever cadence they expect — weekly, bi-weekly, or monthly — without you thinking about it.</p>
 
     <!-- Image placeholder: What It Does -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Report Output / Agent Interface</span>
     </div>
 
     <div class="callout">
       <div class="callout-label">Why this matters</div>
-      <p>When you're running multiple clients, things fall through the cracks. Missed deadlines and forgotten deliverables destroy trust. This agent keeps every project on track automatically.</p>
+      <p>Reporting is the #1 reason agencies lose clients. Not because the work is bad, but because clients don't see the work. Consistent, insightful reporting is what keeps clients paying month after month. This agent makes it automatic.</p>
     </div>
 
     <h2 id="how-it-works">How It Works</h2>
 
-    <p>The Project Plan Agent follows a 5-step process that turns signed proposals into managed, tracked projects with zero manual overhead.</p>
+    <p>The Reporting Agent follows a five-step process: connect data sources, analyze performance, write narratives, assemble the report, and deliver on schedule. Here's what happens each reporting cycle:</p>
 
     <div class="flow-container">
       <div class="flow-step">
@@ -547,8 +547,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Proposal Data Intake</h4>
-          <p>Reads the signed proposal and onboarding data packet (from the Onboarding Agent). Extracts service scope, timeline, and deliverable requirements.</p>
+          <h4>Data Connection &amp; Pull</h4>
+          <p>Connects to the client's GA4, Search Console, GBP, call tracking, and rank tracking tools. Pulls all performance data for the reporting period automatically.</p>
         </div>
       </div>
 
@@ -558,8 +558,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Sprint Timeline Generation</h4>
-          <p>Builds a sprint-based project plan with phases, milestones, and due dates mapped to the contract terms.</p>
+          <h4>Metric Analysis</h4>
+          <p>Analyzes the data for trends, anomalies, and significant changes. Identifies what improved, what declined, and what needs attention — with context on why.</p>
         </div>
       </div>
 
@@ -569,8 +569,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Deliverable Mapping</h4>
-          <p>Assigns specific deliverables to each sprint with dependencies. Content can't start before the audit is complete, link building can't start before content is approved.</p>
+          <h4>Narrative Generation</h4>
+          <p>Writes human-readable performance narratives for each section. Not just "traffic went up 12%" — but explaining what drove the increase, which pages contributed, and how it connects to the work delivered.</p>
         </div>
       </div>
 
@@ -580,8 +580,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Progress Tracking</h4>
-          <p>As you complete deliverables, the agent updates the timeline and flags anything that's behind schedule or blocked.</p>
+          <h4>Report Assembly</h4>
+          <p>Packages everything into a branded report template: executive summary, traffic overview, keyword rankings, content performance, conversion data, and next month's priorities.</p>
         </div>
       </div>
 
@@ -590,50 +590,50 @@
           <div class="flow-num">5</div>
         </div>
         <div class="flow-content">
-          <h4>Client Communication</h4>
-          <p>Generates status updates and progress reports formatted for client delivery at each milestone checkpoint.</p>
+          <h4>Scheduled Delivery</h4>
+          <p>Reports can be generated on any cadence — weekly, bi-weekly, or monthly. Set it once per client and the agent delivers on schedule without you thinking about it.</p>
         </div>
       </div>
     </div>
 
     <!-- Image placeholder: How It Works -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Process Flow / Report Preview</span>
     </div>
 
     <h2 id="what-it-outputs">What It Outputs</h2>
 
-    <p>Every time you run the Project Plan Agent, you get a complete project management package with zero manual formatting:</p>
+    <p>Every time the Reporting Agent runs, clients receive a comprehensive, branded report with data and insights:</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Project Plan</span><span class="output-row-tag">Customized per client</span></div>
-    <div class="output-row"><span class="output-row-name">Milestone Timeline</span><span class="output-row-tag">With dependencies</span></div>
-    <div class="output-row"><span class="output-row-name">Deliverable Tracker</span><span class="output-row-tag">Auto-updating</span></div>
-    <div class="output-row"><span class="output-row-name">Client Status Updates</span><span class="output-row-tag">At each checkpoint</span></div>
-    <div class="output-row"><span class="output-row-name">Onboarding Agent Integration</span><span class="output-row-tag">Structured intake</span></div>
+    <div class="output-row"><span class="output-row-name">Branded Client Report</span><span class="output-row-tag">Fully formatted</span></div>
+    <div class="output-row"><span class="output-row-name">Executive Summary</span><span class="output-row-tag">High-level insights</span></div>
+    <div class="output-row"><span class="output-row-name">Performance Narratives</span><span class="output-row-tag">Per section</span></div>
+    <div class="output-row"><span class="output-row-name">Month-Over-Month Comparisons</span><span class="output-row-tag">With context</span></div>
+    <div class="output-row"><span class="output-row-name">Next Month Action Plan</span><span class="output-row-tag">Priorities listed</span></div>
 
     <!-- Image placeholder: What It Outputs -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Output Examples / Report Samples</span>
     </div>
 
     <h2 id="who-its-for">Who It's For</h2>
 
-    <p>This agent is built for operators who are managing multiple client projects and can't afford to drop the ball on timelines or deliverables.</p>
+    <p>This agent is built for agencies that want to eliminate reporting from their workload entirely — and clients that deserve professional, consistent communication about their results.</p>
 
     <ul>
-      <li><strong>Solo operators managing multiple clients</strong> who need structure without hiring a project manager</li>
-      <li><strong>Agency teams</strong> who want consistent delivery across all accounts without manual tracking</li>
-      <li><strong>Operators scaling past 5 clients</strong> who can't keep everything in their head anymore</li>
+      <li><strong>Agencies that dread reporting week</strong> and want to eliminate the Sunday night scramble</li>
+      <li><strong>Solo operators managing 10+ clients</strong> who can't spend 2-3 hours per report every month</li>
+      <li><strong>Teams that want every client</strong> to receive the same professional reporting experience regardless of who manages the account</li>
     </ul>
 
     <h2 id="training-included">Training Included</h2>
 
-    <p>The Project Plan Agent comes with complete training on sprint-based delivery, dependency management, and client communication templates. Learn the system, then deploy the agent to execute it flawlessly across all clients.</p>
+    <p>The Reporting Agent comes with complete training on setting up data connections, customizing report templates, and automating delivery schedules for all your clients.</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Delivery Model</span><span class="output-row-tag">3 videos</span></div>
-    <div class="output-row"><span class="output-row-name">Project Plan Agent Setup</span><span class="output-row-tag">2 videos · 1 template</span></div>
-    <div class="output-row"><span class="output-row-name">Dependency Management</span><span class="output-row-tag">1 video</span></div>
-    <div class="output-row"><span class="output-row-name">Client Communication Templates</span><span class="output-row-tag">1 video · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">Reporting Fundamentals</span><span class="output-row-tag">3 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Reporting Agent Setup</span><span class="output-row-tag">2 videos · 1 template</span></div>
+    <div class="output-row"><span class="output-row-name">Data Connection Walkthrough</span><span class="output-row-tag">2 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Narrative Customization</span><span class="output-row-tag">1 video · 1 template</span></div>
 
     <!-- Image placeholder: Training Included -->
     <div class="img-placeholder">
@@ -642,17 +642,17 @@
 
     <h2 id="faq">Frequently Asked Questions</h2>
 
-    <h3>Do I need project management software?</h3>
-    <p>No. The agent runs inside Claude and generates everything as documents you can use however you want — paste into Notion, Asana, or just keep as standalone files.</p>
+    <h3>What tools does it connect to?</h3>
+    <p>GA4, Google Search Console, Google Business Profile, and most major rank tracking tools. The training walks you through connecting each data source.</p>
 
-    <h3>Can I customize sprint lengths?</h3>
-    <p>Yes. Default sprints are 2-week cycles, but you can configure any cadence that matches your delivery model.</p>
+    <h3>Can I customize the report template?</h3>
+    <p>Yes. You control the sections, branding, and level of detail. Some members create different templates for different client tiers.</p>
 
-    <h3>How does it connect to other agents?</h3>
-    <p>It receives data from the Onboarding Agent and feeds deliverable requirements to the WQA, Content, and Link Building agents. Everything flows through the project plan.</p>
+    <h3>Does it write the narrative sections automatically?</h3>
+    <p>Yes. The agent generates performance narratives that explain what happened and why. You can review and edit before sending, or send as-is once you trust the output.</p>
 
-    <h3>What if my project scope changes mid-engagement?</h3>
-    <p>Update the agent with the new scope and it regenerates the timeline. Dependencies and milestones adjust automatically.</p>
+    <h3>How long does it take to generate a report?</h3>
+    <p>Under 10 minutes per client once data sources are connected. Compare that to the 2-3 hours most agencies spend per report manually.</p>
 
   </div>
 
@@ -664,20 +664,20 @@
       <ul class="agent-nav-list">
         <li><a href="/agent-sales-light.html">Sales Agent</a></li>
         <li><a href="/agent-onboarding-light.html">Onboarding Agent</a></li>
-        <li><a href="#" class="current">Project Manager Agent</a></li>
+        <li><a href="/agent-project-manager-light.html">Project Manager Agent</a></li>
         <li><a href="/agent-technical-seo-light.html">Technical SEO Agent</a></li>
         <li><a href="/agent-content-light.html">Content Agent</a></li>
         <li><a href="/agent-link-building-light.html">Link Building Agent</a></li>
         <li><a href="/agent-local-seo-light.html">Local SEO Agent</a></li>
-        <li><a href="/agent-reporting-light.html">Reporting Agent</a></li>
+        <li><a href="#" class="current">Reporting Agent</a></li>
         <li><a href="/agent-strategy-light.html">Strategy Agent</a></li>
       </ul>
     </div>
 
     <div class="sidebar-cta">
-      <div class="sc-label">Ready to deliver on time?</div>
-      <h4>Get the Project Plan Agent today.</h4>
-      <p>Included with every Blueprint membership. Build your first project plan in minutes.</p>
+      <div class="sc-label">Ready to automate reports?</div>
+      <h4>Get the Reporting Agent today.</h4>
+      <p>Professional, branded reports for every client — on schedule, every month.</p>
       <a href="/sign-up.html">Get Instant Access &rarr;</a>
     </div>
 
@@ -686,8 +686,8 @@
 
 <!-- BOTTOM CTA (yellow) -->
 <div class="bottom-cta">
-  <h2>Stop managing projects<br>manually.</h2>
-  <p>The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies — so you deliver on time, every time.</p>
+  <h2>Stop dreading<br>reporting week.</h2>
+  <p>The Reporting Agent pulls your data, writes the narratives, and delivers branded reports on schedule — so you never lose a client over communication again.</p>
   <a href="/sign-up.html" class="btn-yellow">Get Instant Access &rarr;</a>
 </div>
 
@@ -699,7 +699,6 @@
     <div>
       <div class="footer-col-title">Features</div>
       <ul class="footer-links">
-        <li><a href="/blueprint-os-landing.html">Agency OS</a></li>
         <li><a href="/coaching/">Coaching</a></li>
         <li><a href="/agency-training/">Video Training</a></li>
         <li><a href="/bootcamps/">Live Bootcamps</a></li>

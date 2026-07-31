@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automate Project Management | The Blueprint Training</title>
+<title>Automate Content Production | The Blueprint Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -115,193 +115,150 @@
     background: var(--yellow); color: var(--black);
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 18px 44px; text-decoration: none; transition: all 0.2s;
+    padding: 18px 44px; text-decoration: none; transition: background 0.15s;
   }
-  .hero-cta:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+  .hero-cta:hover { background: var(--yellow-dark); }
 
   .hero-media {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    aspect-ratio: 16/10;
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-  }
-  .hero-media-label {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.2);
+    position: relative; aspect-ratio: 1; background: #111421;
+    border: 1px solid rgba(247,198,0,0.1); display: flex;
+    align-items: center; justify-content: center;
   }
   .hero-media-play {
-    width: 64px; height: 64px; border-radius: 50%;
-    background: rgba(247,198,0,0.15); border: 2px solid rgba(247,198,0,0.3);
+    width: 80px; height: 80px; background: rgba(247,198,0,0.15);
+    border: 2px solid var(--yellow); border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   }
-  .hero-media-play svg { width: 24px; height: 24px; fill: var(--yellow); margin-left: 3px; }
+  .hero-media-play svg { width: 32px; height: 32px; fill: var(--yellow); margin-left: 4px; }
 
-  /* ── MAIN LAYOUT (light) ── */
+  /* ── LAYOUT: page-body + sidebar ── */
   .page-layout {
-    max-width: 1200px; margin: 0 auto;
-    padding: 56px 24px 96px;
-    display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start;
-    background: var(--white);
+    max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+    display: grid; grid-template-columns: 1fr 280px; gap: 48px;
   }
 
-  /* Body prose (light theme) */
-  .page-body { min-width: 0; }
-  .page-body p { font-size: 17px; line-height: 1.85; color: var(--gray-light); margin-bottom: 24px; }
-  .page-body p strong { color: #0B0E1A; }
-  .page-body a { color: #2563EB; }
-
+  .page-body { }
   .page-body h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(28px, 3.5vw, 44px); line-height: 1.0;
-    letter-spacing: 0.02em; text-transform: uppercase; color: #0B0E1A;
-    margin: 52px 0 18px; padding-top: 52px; border-top: 1px solid var(--border);
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4vw, 48px);
+    text-transform: uppercase; letter-spacing: 0.02em; margin: 56px 0 24px;
   }
-  .page-body h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
-
+  .page-body h2:first-child { margin-top: 0; }
   .page-body h3 {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-    font-size: 20px; letter-spacing: 0.05em; text-transform: uppercase;
-    color: #0B0E1A; margin: 32px 0 12px;
+    font-family: 'Figtree', sans-serif; font-size: 18px; font-weight: 700;
+    margin: 32px 0 12px; color: #0B0E1A;
   }
+  .page-body h4 {
+    font-family: 'Figtree', sans-serif; font-size: 16px; font-weight: 700;
+    margin: 0 0 12px;
+  }
+  .page-body p { font-size: 16px; line-height: 1.7; margin-bottom: 20px; color: #4B5563; }
+  .page-body ul { margin: 0 0 20px 20px; }
+  .page-body ul li { margin-bottom: 10px; font-size: 16px; line-height: 1.7; color: #4B5563; }
+  .page-body strong { font-weight: 700; }
 
-  .page-body ul {
-    list-style: none; margin-bottom: 24px;
-    display: flex; flex-direction: column; gap: 10px;
+  .img-placeholder {
+    background: var(--bg-light); border: 1px solid var(--border);
+    aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
+    margin: 36px 0; color: #999;
   }
-  .page-body ul li {
-    display: flex; align-items: flex-start; gap: 12px;
-    font-size: 16px; color: var(--gray-light); line-height: 1.6;
-    padding: 10px 16px; background: var(--bg-light); border-left: 2px solid rgba(247,198,0,0.4);
-  }
-  .page-body ul li::before { content: '\2192'; color: var(--yellow); flex-shrink: 0; font-size: 13px; margin-top: 2px; }
-  .page-body ul li strong { color: #0B0E1A; }
 
   .callout {
-    background: rgba(247,198,0,0.05); border: 1px solid rgba(247,198,0,0.2);
-    border-left: 4px solid var(--yellow); padding: 24px 28px; margin: 32px 0;
+    background: rgba(247,198,0,0.08); border-left: 4px solid var(--yellow);
+    padding: 28px 24px; margin: 36px 0;
   }
   .callout-label {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: #0B0E1A; margin-bottom: 10px;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--yellow); display: block; margin-bottom: 12px;
   }
-  .callout p { font-size: 16px; color: var(--gray-light); line-height: 1.7; margin-bottom: 0; }
+  .callout p { margin: 0; }
 
-  /* Image placeholder */
-  .img-placeholder {
-    background: var(--bg-light); border: 1px dashed rgba(0,0,0,0.12);
-    aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
-    margin: 32px 0;
-  }
-  .img-placeholder span {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(0,0,0,0.18);
-  }
-
-  /* ── HOW IT WORKS — visual linear flow ── */
-  .flow-container { margin: 32px 0; }
-
+  .flow-container { margin: 36px 0; }
   .flow-step {
-    display: grid; grid-template-columns: 56px 1fr; gap: 0; position: relative;
+    display: grid; grid-template-columns: 80px 1fr; gap: 20px; margin-bottom: 28px;
   }
-  .flow-step:last-child .flow-line { display: none; }
-
-  .flow-indicator {
-    display: flex; flex-direction: column; align-items: center;
-    position: relative; z-index: 2;
-  }
+  .flow-indicator { display: flex; flex-direction: column; align-items: center; }
   .flow-num {
-    width: 48px; height: 48px; background: var(--yellow);
+    width: 48px; height: 48px; background: var(--yellow); color: #0B0E1A;
+    font-family: 'Bebas Neue', sans-serif; font-size: 24px; font-weight: 700;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--black);
-    flex-shrink: 0;
   }
   .flow-line {
-    width: 2px; flex: 1; background: rgba(247,198,0,0.25); min-height: 20px;
+    width: 2px; height: 36px; background: var(--border); margin-top: 8px;
   }
+  .flow-step:last-child .flow-line { display: none; }
+  .flow-content h4 { margin-bottom: 8px; }
+  .flow-content p { margin: 0; }
 
-  .flow-content {
-    padding: 8px 0 36px 24px;
-  }
-  .flow-content h4 {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-    font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase;
-    color: #0B0E1A; margin-bottom: 8px;
-  }
-  .flow-content p { font-size: 16px; color: var(--gray-light); line-height: 1.7; margin-bottom: 0; }
-
-  /* Output rows */
   .output-row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 11px 16px; background: var(--bg-light);
-    border-left: 2px solid rgba(247,198,0,0.35); margin-bottom: 2px; gap: 16px;
+    display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center;
+    padding: 16px 20px; border-bottom: 1px solid var(--border);
   }
-  .output-row-name { font-size: 15px; color: #0B0E1A; }
+  .output-row:first-child { border-top: 1px solid var(--border); }
+  .output-row-name { font-weight: 600; color: #0B0E1A; }
   .output-row-tag {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--gray); white-space: nowrap; flex-shrink: 0;
+    background: var(--bg-light); color: #666;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
+    font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 6px 12px;
   }
 
-  /* Sidebar (light) */
+  /* ── SIDEBAR ── */
   .sidebar { position: sticky; top: 90px; }
-
+  .agent-nav-box {
+    background: var(--bg-light); padding: 28px 24px;
+    border-radius: 4px; margin-bottom: 24px;
+  }
   .s-label {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: #0B0E1A; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #666; margin-bottom: 16px; display: block;
   }
-  .s-label::before { content:''; display:block; width:20px; height:2px; background:var(--yellow); }
-
-  /* Agent nav (all agents) */
-  .agent-nav-box {
-    background: var(--white); border: 1px solid var(--border); padding: 24px; margin-bottom: 24px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  .agent-nav-list { list-style: none; margin: 0; padding: 0; }
+  .agent-nav-list li { margin-bottom: 12px; }
+  .agent-nav-list a {
+    color: #0B0E1A; text-decoration: none; font-size: 15px; font-weight: 500;
+    transition: color 0.15s;
   }
-  .agent-nav-list { list-style: none; display: flex; flex-direction: column; }
-  .agent-nav-list li a {
-    display: block; padding: 9px 0; font-size: 14px; color: var(--gray);
-    text-decoration: none; border-bottom: 1px solid var(--border); transition: color 0.2s; line-height: 1.4;
-  }
-  .agent-nav-list li:last-child a { border-bottom: none; }
-  .agent-nav-list li a:hover { color: #0B0E1A; }
-  .agent-nav-list li a.current { color: #0B0E1A; font-weight: 600; }
+  .agent-nav-list a:hover { color: var(--yellow); }
+  .agent-nav-list a.current { color: var(--yellow); font-weight: 700; }
 
   .sidebar-cta { background: var(--yellow); padding: 28px 24px; }
   .sidebar-cta .sc-label {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px;
-    letter-spacing: 0.16em; text-transform: uppercase; color: rgba(11,14,26,0.5); margin-bottom: 10px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(11,14,26,0.5); display: block; margin-bottom: 8px;
   }
   .sidebar-cta h4 {
-    font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1.0;
-    text-transform: uppercase; color: var(--black); margin-bottom: 12px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 24px;
+    text-transform: uppercase; letter-spacing: 0.02em;
+    margin-bottom: 12px; color: #0B0E1A;
   }
   .sidebar-cta p { font-size: 14px; color: rgba(11,14,26,0.65); line-height: 1.6; margin-bottom: 20px; }
   .sidebar-cta a {
-    display: block; text-align: center; background: var(--black); color: var(--yellow);
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px;
-    letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 20px; text-decoration: none;
+    display: inline-block; background: #0B0E1A; color: var(--yellow);
+    text-decoration: none; font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 14px; letter-spacing: 0.08em;
+    padding: 12px 20px; transition: background 0.15s;
   }
   .sidebar-cta a:hover { background: #111; }
 
-  /* ── BOTTOM CTA (yellow) ── */
+  /* ── BOTTOM CTA ── */
   .bottom-cta {
     background: var(--yellow); padding: 80px 24px; text-align: center;
     position: relative; overflow: hidden;
   }
   .bottom-cta::before {
     content: ''; position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(11,14,26,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(11,14,26,0.04) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(11,14,26,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11,14,26,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
+    pointer-events: none;
   }
   .bottom-cta h2 {
-    font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 0.95;
-    text-transform: uppercase; color: #0B0E1A; margin-bottom: 14px; position: relative;
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 6vw, 64px);
+    text-transform: uppercase; letter-spacing: 0.01em;
+    color: #0B0E1A; margin-bottom: 16px; position: relative;
   }
   .bottom-cta p { font-size: 16px; color: rgba(11,14,26,0.65); max-width: 520px; margin: 0 auto 32px; line-height: 1.7; position: relative; }
   .btn-yellow {
@@ -309,31 +266,10 @@
     background: #0B0E1A; color: var(--yellow);
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 18px 44px; text-decoration: none; transition: all 0.2s;
+    padding: 18px 44px; text-decoration: none; transition: background 0.15s;
     position: relative;
   }
-  .btn-yellow:hover { background: #1a1e30; transform: translateY(-2px); }
-
-  /* ── FOOTER (dark) ── */
-  footer {
-    background: #111421 !important; border-top: 1px solid rgba(247,198,0,0.15) !important;
-    padding: 40px 24px;
-  }
-  .footer-inner {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-  }
-  .footer-copy { font-size: 13px; color: #8A90A8; }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { font-size: 13px; color: #8A90A8; text-decoration: none; }
-  .footer-links a:hover { color: #fff; }
-
-  @media (max-width: 960px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-media { max-width: 480px; }
-    .page-layout { grid-template-columns: 1fr; gap: 48px; }
-    .sidebar { position: static; }
-  }
+  .btn-yellow:hover { background: #1a1d2e; }
 
     /* ─── FOOTER ─── */
   footer {
@@ -450,7 +386,22 @@
     .footer-nav { grid-template-columns: 1fr; gap: 36px; }
   }
 
-  .footer-partner-badge{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;opacity:0.5;transition:opacity 0.2s}.footer-partner-badge:hover{opacity:0.8}.footer-partner-label{font-family:"Barlow Condensed",sans-serif;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em}.footer-partner-logo{height:22px;width:auto;filter:brightness(0) invert(1)}
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .nav-inner { height: auto; padding: 12px 24px; flex-wrap: wrap; }
+    .nav-links { justify-content: flex-start; }
+    .nav-right { width: 100%; margin-left: 0; margin-top: 12px; justify-content: flex-start; gap: 12px; }
+    .page-hero { padding-top: 100px; }
+    .hero-inner { padding-bottom: 32px; }
+    .page-layout { padding: 40px 24px; }
+  }
+.footer-partner-badge{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;opacity:0.5;transition:opacity 0.2s}.footer-partner-badge:hover{opacity:0.8}.footer-partner-label{font-family:"Barlow Condensed",sans-serif;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em}.footer-partner-logo{height:22px;width:auto;filter:brightness(0) invert(1)}
 .social-showcase{padding:48px 24px 40px;border-top:1px solid rgba(255,255,255,0.06);}
 .social-showcase-cards{position:relative;max-width:960px;height:460px;margin:0 auto 40px;}
 .showcase-card{position:absolute;width:18%;background:#fff;border-radius:8px;padding:6px;box-shadow:0 6px 24px rgba(0,0,0,0.3);}
@@ -471,37 +422,31 @@
 </style>
 </head>
 <body>
+
 <!-- NAV -->
-<div class="nav-bar">
+<nav class="nav-bar">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <img src="assets/blueprint logo svg.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
     </a>
-
     <div class="nav-links">
-      <a href="/about.html" class="nav-item-link">About</a>
-      <a href="/reviews.html" class="nav-item-link">Results</a>
-      <a href="/program.html" class="nav-item-link">Program</a>
-      <a href="https://www.youtube.com/@theblueprinttraining" target="_blank" class="nav-item-link">Videos</a>
-      <a href="/blog/" class="nav-item-link">Knowledge</a>
+      <a href="/" class="nav-item-link">Agents</a>
     </div>
-
     <div class="nav-right">
-      <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
-      <a href="/sign-up.html" class="nav-cta-btn">Get Started</a>
+      <a href="https://www.skool.com/blueprint" class="nav-login">Sign In</a>
+      <a href="/sign-up.html" class="nav-cta-btn">Join Now</a>
     </div>
-
   </div>
-</div>
+</nav>
 
-<!-- HERO (dark, 50/50 split) -->
+<!-- HERO -->
 <section class="page-hero">
   <div class="hero-grid"></div>
   <div class="hero-inner">
     <div class="hero-text">
       <div class="page-cat-badge">AI Agent · SEO Sprints</div>
-      <h1 class="page-title">Automate project<br><span>management.</span></h1>
-      <p class="page-intro">Never miss a deadline or deliverable again. The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies automatically — so every client gets a structured, on-time delivery without you micromanaging the process.</p>
+      <h1 class="page-title">Automate content<br><span>production.</span></h1>
+      <p class="page-intro">Produce more content, faster, without sacrificing quality. The Content Agent handles the entire workflow — from gap analysis and topic research to outlines, drafts, and on-page optimization — mapped to your client's funnel and target keywords.</p>
       <a href="/sign-up.html" class="hero-cta">Get Started &rarr;</a>
     </div>
     <div class="hero-media">
@@ -520,25 +465,21 @@
 
     <h2 id="what-it-does">What It Does</h2>
 
-    <p>The Project Plan Agent generates custom project plans from signed proposals. It builds sprint-based timelines with milestones, deliverables, and dependencies — then updates dynamically as work progresses. No more spreadsheets, no more Gantt charts built from scratch for every client.</p>
-
-    <p>You upload the signed proposal and onboarding data packet. The agent extracts service scope, timeline, and deliverable requirements, then builds a sprint-based project plan with phases, milestones, due dates mapped to contract terms, and all dependencies clearly mapped. Content can't start before the audit is complete. Link building can't start before content is approved. Every deliverable has a clear path to completion.</p>
-
-    <p>As work progresses, you update the agent with completed deliverables and it automatically regenerates the timeline, flags anything behind schedule or blocked, and generates client status reports at each milestone. Everything stays in sync without manual tracking.</p>
+    <p>End-to-end content workflow automation. The Content Agent starts with a content audit and gap analysis, builds a strategic content roadmap, then produces content from outline through final draft with full on-page optimization. Every piece is mapped to funnel stage and target keywords — not random blog posts, but strategic content that drives rankings.</p>
 
     <!-- Image placeholder: What It Does -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Content Workflow / Agent Interface</span>
     </div>
 
     <div class="callout">
       <div class="callout-label">Why this matters</div>
-      <p>When you're running multiple clients, things fall through the cracks. Missed deadlines and forgotten deliverables destroy trust. This agent keeps every project on track automatically.</p>
+      <p>Content is the most time-consuming deliverable in SEO. Most agencies either produce too little (because it takes too long) or produce too much low-quality content (because they're rushing). This agent gives you volume AND quality.</p>
     </div>
 
     <h2 id="how-it-works">How It Works</h2>
 
-    <p>The Project Plan Agent follows a 5-step process that turns signed proposals into managed, tracked projects with zero manual overhead.</p>
+    <p>The Content Agent follows a five-stage workflow to deliver strategic, SEO-optimized content at scale. Here's how it transforms content production from a bottleneck into a repeatable, high-quality system:</p>
 
     <div class="flow-container">
       <div class="flow-step">
@@ -547,8 +488,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Proposal Data Intake</h4>
-          <p>Reads the signed proposal and onboarding data packet (from the Onboarding Agent). Extracts service scope, timeline, and deliverable requirements.</p>
+          <h4>Content Audit & Gap Analysis</h4>
+          <p>Analyzes the client's existing content against competitor coverage and keyword opportunities. Identifies gaps, thin content to improve, and pages that should be consolidated or removed.</p>
         </div>
       </div>
 
@@ -558,8 +499,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Sprint Timeline Generation</h4>
-          <p>Builds a sprint-based project plan with phases, milestones, and due dates mapped to the contract terms.</p>
+          <h4>Content Roadmap Generation</h4>
+          <p>Builds a prioritized content calendar with topics mapped to target keywords, search intent, funnel stage, and estimated traffic impact. Every piece has a strategic reason for existing.</p>
         </div>
       </div>
 
@@ -569,8 +510,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Deliverable Mapping</h4>
-          <p>Assigns specific deliverables to each sprint with dependencies. Content can't start before the audit is complete, link building can't start before content is approved.</p>
+          <h4>Outline & Brief Creation</h4>
+          <p>For each content piece, generates a detailed outline with target keyword, secondary keywords, search intent, recommended word count, heading structure, and internal linking targets.</p>
         </div>
       </div>
 
@@ -580,8 +521,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Progress Tracking</h4>
-          <p>As you complete deliverables, the agent updates the timeline and flags anything that's behind schedule or blocked.</p>
+          <h4>Draft Production</h4>
+          <p>Writes full drafts based on the outlines — incorporating client context, industry expertise, and EEAT signals. Not generic AI content, but strategically structured pieces that match the client's voice.</p>
         </div>
       </div>
 
@@ -590,50 +531,52 @@
           <div class="flow-num">5</div>
         </div>
         <div class="flow-content">
-          <h4>Client Communication</h4>
-          <p>Generates status updates and progress reports formatted for client delivery at each milestone checkpoint.</p>
+          <h4>On-Page Optimization</h4>
+          <p>Applies technical on-page SEO: title tags, meta descriptions, schema markup recommendations, internal linking, image alt text, and readability optimization.</p>
         </div>
       </div>
     </div>
 
     <!-- Image placeholder: How It Works -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Process Flow / Content Output</span>
     </div>
 
     <h2 id="what-it-outputs">What It Outputs</h2>
 
-    <p>Every time you run the Project Plan Agent, you get a complete project management package with zero manual formatting:</p>
+    <p>Every run of the Content Agent delivers a complete content package, ready for review and publication:</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Project Plan</span><span class="output-row-tag">Customized per client</span></div>
-    <div class="output-row"><span class="output-row-name">Milestone Timeline</span><span class="output-row-tag">With dependencies</span></div>
-    <div class="output-row"><span class="output-row-name">Deliverable Tracker</span><span class="output-row-tag">Auto-updating</span></div>
-    <div class="output-row"><span class="output-row-name">Client Status Updates</span><span class="output-row-tag">At each checkpoint</span></div>
-    <div class="output-row"><span class="output-row-name">Onboarding Agent Integration</span><span class="output-row-tag">Structured intake</span></div>
+    <div class="output-row"><span class="output-row-name">Content Gap Analysis</span><span class="output-row-tag">Vs. competitors</span></div>
+    <div class="output-row"><span class="output-row-name">Content Roadmap</span><span class="output-row-tag">Prioritized calendar</span></div>
+    <div class="output-row"><span class="output-row-name">Content Briefs & Outlines</span><span class="output-row-tag">Per piece</span></div>
+    <div class="output-row"><span class="output-row-name">Full Content Drafts</span><span class="output-row-tag">SEO-optimized</span></div>
+    <div class="output-row"><span class="output-row-name">On-Page Optimization Guide</span><span class="output-row-tag">Per page</span></div>
+    <div class="output-row"><span class="output-row-name">Project Plan Agent Integration</span><span class="output-row-tag">Delivery tracking</span></div>
 
     <!-- Image placeholder: What It Outputs -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Output Examples / Content Samples</span>
     </div>
 
     <h2 id="who-its-for">Who It's For</h2>
 
-    <p>This agent is built for operators who are managing multiple client projects and can't afford to drop the ball on timelines or deliverables.</p>
+    <p>This agent is built for teams that need to scale content production without adding headcount. If you're currently bottlenecked on content delivery, this fixes that.</p>
 
     <ul>
-      <li><strong>Solo operators managing multiple clients</strong> who need structure without hiring a project manager</li>
-      <li><strong>Agency teams</strong> who want consistent delivery across all accounts without manual tracking</li>
-      <li><strong>Operators scaling past 5 clients</strong> who can't keep everything in their head anymore</li>
+      <li><strong>Agencies that include content in their SEO retainer</strong> but struggle to produce enough volume at the right quality</li>
+      <li><strong>Solo operators</strong> who need to deliver 8-12 pieces per month per client without a writing team</li>
+      <li><strong>Teams that want to scale content production</strong> without proportionally scaling headcount</li>
     </ul>
 
     <h2 id="training-included">Training Included</h2>
 
-    <p>The Project Plan Agent comes with complete training on sprint-based delivery, dependency management, and client communication templates. Learn the system, then deploy the agent to execute it flawlessly across all clients.</p>
+    <p>The Content Agent comes with complete training on content strategy, implementation, quality control, and customization. You'll learn the framework, then deploy the agent to execute it consistently.</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Delivery Model</span><span class="output-row-tag">3 videos</span></div>
-    <div class="output-row"><span class="output-row-name">Project Plan Agent Setup</span><span class="output-row-tag">2 videos · 1 template</span></div>
-    <div class="output-row"><span class="output-row-name">Dependency Management</span><span class="output-row-tag">1 video</span></div>
-    <div class="output-row"><span class="output-row-name">Client Communication Templates</span><span class="output-row-tag">1 video · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">Content Strategy Fundamentals</span><span class="output-row-tag">6 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Content Agent Setup & Configuration</span><span class="output-row-tag">3 videos · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">Brief & Outline Workflow</span><span class="output-row-tag">4 videos · 3 templates</span></div>
+    <div class="output-row"><span class="output-row-name">Draft Quality Control</span><span class="output-row-tag">4 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Client-Specific Customization</span><span class="output-row-tag">3 videos</span></div>
 
     <!-- Image placeholder: Training Included -->
     <div class="img-placeholder">
@@ -642,17 +585,17 @@
 
     <h2 id="faq">Frequently Asked Questions</h2>
 
-    <h3>Do I need project management software?</h3>
-    <p>No. The agent runs inside Claude and generates everything as documents you can use however you want — paste into Notion, Asana, or just keep as standalone files.</p>
+    <h3>Does this produce generic AI content?</h3>
+    <p>No. The agent is trained on your client's brand voice, industry context, and target audience. The training shows you exactly how to customize the output so it doesn't read like generic AI text.</p>
 
-    <h3>Can I customize sprint lengths?</h3>
-    <p>Yes. Default sprints are 2-week cycles, but you can configure any cadence that matches your delivery model.</p>
+    <h3>How many pieces can it produce per month?</h3>
+    <p>Most members produce 8-15 fully optimized pieces per client per month. The bottleneck shifts from production to review — which is where your expertise adds the most value.</p>
 
-    <h3>How does it connect to other agents?</h3>
-    <p>It receives data from the Onboarding Agent and feeds deliverable requirements to the WQA, Content, and Link Building agents. Everything flows through the project plan.</p>
+    <h3>Can I use it for different content types?</h3>
+    <p>Yes. Blog posts, landing pages, service pages, location pages, and pillar content. The agent adapts the structure and approach based on the content type and search intent.</p>
 
-    <h3>What if my project scope changes mid-engagement?</h3>
-    <p>Update the agent with the new scope and it regenerates the timeline. Dependencies and milestones adjust automatically.</p>
+    <h3>Does it handle images and media?</h3>
+    <p>It generates image recommendations, alt text, and placement suggestions. You'll still need to source or create the actual images, but the agent tells you exactly what you need and where.</p>
 
   </div>
 
@@ -664,9 +607,9 @@
       <ul class="agent-nav-list">
         <li><a href="/agent-sales-light.html">Sales Agent</a></li>
         <li><a href="/agent-onboarding-light.html">Onboarding Agent</a></li>
-        <li><a href="#" class="current">Project Manager Agent</a></li>
+        <li><a href="/agent-project-manager-light.html">Project Manager Agent</a></li>
         <li><a href="/agent-technical-seo-light.html">Technical SEO Agent</a></li>
-        <li><a href="/agent-content-light.html">Content Agent</a></li>
+        <li><a href="#" class="current">Content Agent</a></li>
         <li><a href="/agent-link-building-light.html">Link Building Agent</a></li>
         <li><a href="/agent-local-seo-light.html">Local SEO Agent</a></li>
         <li><a href="/agent-reporting-light.html">Reporting Agent</a></li>
@@ -675,9 +618,9 @@
     </div>
 
     <div class="sidebar-cta">
-      <div class="sc-label">Ready to deliver on time?</div>
-      <h4>Get the Project Plan Agent today.</h4>
-      <p>Included with every Blueprint membership. Build your first project plan in minutes.</p>
+      <div class="sc-label">Ready to scale content?</div>
+      <h4>Get the Content Agent today.</h4>
+      <p>Produce more content, at higher quality, without adding headcount.</p>
       <a href="/sign-up.html">Get Instant Access &rarr;</a>
     </div>
 
@@ -686,8 +629,8 @@
 
 <!-- BOTTOM CTA (yellow) -->
 <div class="bottom-cta">
-  <h2>Stop managing projects<br>manually.</h2>
-  <p>The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies — so you deliver on time, every time.</p>
+  <h2>Stop bottlenecking<br>on content.</h2>
+  <p>The Content Agent produces SEO-optimized content at scale — from gap analysis to published draft — so you deliver more without hiring more.</p>
   <a href="/sign-up.html" class="btn-yellow">Get Instant Access &rarr;</a>
 </div>
 
@@ -699,7 +642,6 @@
     <div>
       <div class="footer-col-title">Features</div>
       <ul class="footer-links">
-        <li><a href="/blueprint-os-landing.html">Agency OS</a></li>
         <li><a href="/coaching/">Coaching</a></li>
         <li><a href="/agency-training/">Video Training</a></li>
         <li><a href="/bootcamps/">Live Bootcamps</a></li>

@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automate Project Management | The Blueprint Training</title>
+<title>Automate SEO Strategy | The Blueprint Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -500,8 +500,8 @@
   <div class="hero-inner">
     <div class="hero-text">
       <div class="page-cat-badge">AI Agent · SEO Sprints</div>
-      <h1 class="page-title">Automate project<br><span>management.</span></h1>
-      <p class="page-intro">Never miss a deadline or deliverable again. The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies automatically — so every client gets a structured, on-time delivery without you micromanaging the process.</p>
+      <h1 class="page-title">Automate SEO<br><span>strategy.</span></h1>
+      <p class="page-intro">Build data-driven SEO strategies in minutes, not days. The Strategy Agent analyzes keyword opportunities, maps content to search intent, and generates prioritized action plans — so every client gets a custom strategy backed by real data.</p>
       <a href="/sign-up.html" class="hero-cta">Get Started &rarr;</a>
     </div>
     <div class="hero-media">
@@ -520,25 +520,16 @@
 
     <h2 id="what-it-does">What It Does</h2>
 
-    <p>The Project Plan Agent generates custom project plans from signed proposals. It builds sprint-based timelines with milestones, deliverables, and dependencies — then updates dynamically as work progresses. No more spreadsheets, no more Gantt charts built from scratch for every client.</p>
-
-    <p>You upload the signed proposal and onboarding data packet. The agent extracts service scope, timeline, and deliverable requirements, then builds a sprint-based project plan with phases, milestones, due dates mapped to contract terms, and all dependencies clearly mapped. Content can't start before the audit is complete. Link building can't start before content is approved. Every deliverable has a clear path to completion.</p>
-
-    <p>As work progresses, you update the agent with completed deliverables and it automatically regenerates the timeline, flags anything behind schedule or blocked, and generates client status reports at each milestone. Everything stays in sync without manual tracking.</p>
-
-    <!-- Image placeholder: What It Does -->
-    <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
-    </div>
+    <p>The AI SEO Strategy Builder takes audit findings, keyword data, and competitive intelligence and synthesizes them into a prioritized SEO strategy. It maps keywords to content opportunities, identifies quick wins vs. long-term plays, and generates a phased action plan with clear deliverables for each stage.</p>
 
     <div class="callout">
       <div class="callout-label">Why this matters</div>
-      <p>When you're running multiple clients, things fall through the cracks. Missed deadlines and forgotten deliverables destroy trust. This agent keeps every project on track automatically.</p>
+      <p>Most agencies skip the strategy phase because it takes too long. They jump straight from audit to execution. But without a strategy, you're just doing random SEO tasks. This agent makes strategy fast enough to actually do it for every client.</p>
     </div>
 
     <h2 id="how-it-works">How It Works</h2>
 
-    <p>The Project Plan Agent follows a 5-step process that turns signed proposals into managed, tracked projects with zero manual overhead.</p>
+    <p>The Strategy Agent synthesizes data and builds a phased roadmap in minutes. Here's how it transforms raw audit and keyword data into a structured, actionable strategy:</p>
 
     <div class="flow-container">
       <div class="flow-step">
@@ -547,8 +538,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Proposal Data Intake</h4>
-          <p>Reads the signed proposal and onboarding data packet (from the Onboarding Agent). Extracts service scope, timeline, and deliverable requirements.</p>
+          <h4>Data Synthesis</h4>
+          <p>Ingests audit findings (from the WQA Agent), keyword research data, competitor analysis, and client goals. Synthesizes everything into a unified picture of the opportunity landscape.</p>
         </div>
       </div>
 
@@ -558,8 +549,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Sprint Timeline Generation</h4>
-          <p>Builds a sprint-based project plan with phases, milestones, and due dates mapped to the contract terms.</p>
+          <h4>Keyword Opportunity Mapping</h4>
+          <p>Identifies the highest-value keyword opportunities based on search volume, competition, current rankings, and business relevance. Groups keywords by topic clusters and search intent.</p>
         </div>
       </div>
 
@@ -569,8 +560,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Deliverable Mapping</h4>
-          <p>Assigns specific deliverables to each sprint with dependencies. Content can't start before the audit is complete, link building can't start before content is approved.</p>
+          <h4>Quick Win Identification</h4>
+          <p>Flags pages and keywords where small improvements (title tag updates, content additions, internal linking) can drive immediate ranking improvements. These become Sprint 1 deliverables.</p>
         </div>
       </div>
 
@@ -580,8 +571,8 @@
           <div class="flow-line"></div>
         </div>
         <div class="flow-content">
-          <h4>Progress Tracking</h4>
-          <p>As you complete deliverables, the agent updates the timeline and flags anything that's behind schedule or blocked.</p>
+          <h4>Long-Term Roadmap</h4>
+          <p>Builds a phased strategy for competitive keywords that require sustained effort — new content, link building, technical improvements. Each phase has clear milestones and expected timelines.</p>
         </div>
       </div>
 
@@ -590,50 +581,52 @@
           <div class="flow-num">5</div>
         </div>
         <div class="flow-content">
-          <h4>Client Communication</h4>
-          <p>Generates status updates and progress reports formatted for client delivery at each milestone checkpoint.</p>
+          <h4>Action Plan Generation</h4>
+          <p>Produces a detailed action plan with specific tasks, priorities, assigned agents (Content, Link Building, Technical), and expected impact. Ready to feed directly into the Project Plan Agent.</p>
         </div>
       </div>
     </div>
 
     <!-- Image placeholder: How It Works -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Strategy Flow / Opportunity Map</span>
     </div>
 
     <h2 id="what-it-outputs">What It Outputs</h2>
 
-    <p>Every time you run the Project Plan Agent, you get a complete project management package with zero manual formatting:</p>
+    <p>Every time you run the Strategy Agent, you get a complete strategy package ready to present to clients:</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Project Plan</span><span class="output-row-tag">Customized per client</span></div>
-    <div class="output-row"><span class="output-row-name">Milestone Timeline</span><span class="output-row-tag">With dependencies</span></div>
-    <div class="output-row"><span class="output-row-name">Deliverable Tracker</span><span class="output-row-tag">Auto-updating</span></div>
-    <div class="output-row"><span class="output-row-name">Client Status Updates</span><span class="output-row-tag">At each checkpoint</span></div>
-    <div class="output-row"><span class="output-row-name">Onboarding Agent Integration</span><span class="output-row-tag">Structured intake</span></div>
+    <div class="output-row"><span class="output-row-name">SEO Strategy Document</span><span class="output-row-tag">Client-ready</span></div>
+    <div class="output-row"><span class="output-row-name">Keyword Opportunity Map</span><span class="output-row-tag">Prioritized clusters</span></div>
+    <div class="output-row"><span class="output-row-name">Quick Wins List</span><span class="output-row-tag">Immediate impact</span></div>
+    <div class="output-row"><span class="output-row-name">Phased Roadmap</span><span class="output-row-tag">3-6 month plan</span></div>
+    <div class="output-row"><span class="output-row-name">Action Plan with Agent Assignments</span><span class="output-row-tag">Per deliverable</span></div>
+    <div class="output-row"><span class="output-row-name">Project Plan Agent Integration</span><span class="output-row-tag">Structured handoff</span></div>
 
     <!-- Image placeholder: What It Outputs -->
     <div class="img-placeholder">
-      <span>Image — Project Plan Output / Timeline</span>
+      <span>Image — Output Examples / Strategy Document</span>
     </div>
 
     <h2 id="who-its-for">Who It's For</h2>
 
-    <p>This agent is built for operators who are managing multiple client projects and can't afford to drop the ball on timelines or deliverables.</p>
+    <p>This agent is built for agencies and operators who understand that strategy is the foundation of results.</p>
 
     <ul>
-      <li><strong>Solo operators managing multiple clients</strong> who need structure without hiring a project manager</li>
-      <li><strong>Agency teams</strong> who want consistent delivery across all accounts without manual tracking</li>
-      <li><strong>Operators scaling past 5 clients</strong> who can't keep everything in their head anymore</li>
+      <li><strong>Agencies that want to deliver strategic value</strong> — not just execute tasks</li>
+      <li><strong>Solo operators</strong> who need to present professional, data-backed strategies during the sales process</li>
+      <li><strong>Teams</strong> that want every client to start with a clear, prioritized roadmap instead of ad-hoc SEO tasks</li>
     </ul>
 
     <h2 id="training-included">Training Included</h2>
 
-    <p>The Project Plan Agent comes with complete training on sprint-based delivery, dependency management, and client communication templates. Learn the system, then deploy the agent to execute it flawlessly across all clients.</p>
+    <p>The Strategy Agent comes with complete training on building and presenting SEO strategies that close deals and deliver results:</p>
 
-    <div class="output-row"><span class="output-row-name">Sprint-Based Delivery Model</span><span class="output-row-tag">3 videos</span></div>
-    <div class="output-row"><span class="output-row-name">Project Plan Agent Setup</span><span class="output-row-tag">2 videos · 1 template</span></div>
-    <div class="output-row"><span class="output-row-name">Dependency Management</span><span class="output-row-tag">1 video</span></div>
-    <div class="output-row"><span class="output-row-name">Client Communication Templates</span><span class="output-row-tag">1 video · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">SEO Strategy Fundamentals</span><span class="output-row-tag">4 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Strategy Agent Setup &amp; Configuration</span><span class="output-row-tag">2 videos · 2 templates</span></div>
+    <div class="output-row"><span class="output-row-name">Keyword Clustering &amp; Intent Mapping</span><span class="output-row-tag">3 videos</span></div>
+    <div class="output-row"><span class="output-row-name">Building Phased Roadmaps</span><span class="output-row-tag">2 videos · 1 template</span></div>
+    <div class="output-row"><span class="output-row-name">Presenting Strategy to Clients</span><span class="output-row-tag">2 videos</span></div>
 
     <!-- Image placeholder: Training Included -->
     <div class="img-placeholder">
@@ -642,17 +635,17 @@
 
     <h2 id="faq">Frequently Asked Questions</h2>
 
-    <h3>Do I need project management software?</h3>
-    <p>No. The agent runs inside Claude and generates everything as documents you can use however you want — paste into Notion, Asana, or just keep as standalone files.</p>
+    <h3>Do I need to do a full audit first?</h3>
+    <p>The Strategy Agent works best with audit data from the WQA Agent, but it can also work with keyword research and competitive data alone. The audit data makes the strategy more specific and actionable.</p>
 
-    <h3>Can I customize sprint lengths?</h3>
-    <p>Yes. Default sprints are 2-week cycles, but you can configure any cadence that matches your delivery model.</p>
+    <h3>Can I use this during the sales process?</h3>
+    <p>Yes. Many members use a lightweight version of the strategy output as part of their proposal — showing prospects exactly what they'd do and why. It's a powerful closing tool.</p>
 
-    <h3>How does it connect to other agents?</h3>
-    <p>It receives data from the Onboarding Agent and feeds deliverable requirements to the WQA, Content, and Link Building agents. Everything flows through the project plan.</p>
+    <h3>How does it prioritize recommendations?</h3>
+    <p>By estimated impact vs. effort. Quick wins (high impact, low effort) come first, followed by medium-term improvements, then long-term competitive plays. Every recommendation includes a rationale.</p>
 
-    <h3>What if my project scope changes mid-engagement?</h3>
-    <p>Update the agent with the new scope and it regenerates the timeline. Dependencies and milestones adjust automatically.</p>
+    <h3>Does it work for e-commerce?</h3>
+    <p>Yes. The agent has modes for local SEO, e-commerce, SaaS, and service businesses. The keyword clustering and intent mapping adapt based on the business model.</p>
 
   </div>
 
@@ -662,22 +655,22 @@
     <div class="agent-nav-box">
       <div class="s-label">All Agents</div>
       <ul class="agent-nav-list">
-        <li><a href="/agent-sales-light.html">Sales Agent</a></li>
-        <li><a href="/agent-onboarding-light.html">Onboarding Agent</a></li>
-        <li><a href="#" class="current">Project Manager Agent</a></li>
-        <li><a href="/agent-technical-seo-light.html">Technical SEO Agent</a></li>
-        <li><a href="/agent-content-light.html">Content Agent</a></li>
-        <li><a href="/agent-link-building-light.html">Link Building Agent</a></li>
-        <li><a href="/agent-local-seo-light.html">Local SEO Agent</a></li>
-        <li><a href="/agent-reporting-light.html">Reporting Agent</a></li>
-        <li><a href="/agent-strategy-light.html">Strategy Agent</a></li>
+        <li><a href="/agent-sales-light.html">Sales</a></li>
+        <li><a href="/agent-onboarding-light.html">Onboarding</a></li>
+        <li><a href="/agent-project-manager-light.html">Project Manager</a></li>
+        <li><a href="/agent-technical-seo-light.html">Technical SEO</a></li>
+        <li><a href="/agent-content-light.html">Content</a></li>
+        <li><a href="/agent-link-building-light.html">Link Building</a></li>
+        <li><a href="/agent-local-seo-light.html">Local SEO</a></li>
+        <li><a href="/agent-reporting-light.html">Reporting</a></li>
+        <li><a href="#" class="current">Strategy</a></li>
       </ul>
     </div>
 
     <div class="sidebar-cta">
-      <div class="sc-label">Ready to deliver on time?</div>
-      <h4>Get the Project Plan Agent today.</h4>
-      <p>Included with every Blueprint membership. Build your first project plan in minutes.</p>
+      <div class="sc-label">Ready to strategize smarter?</div>
+      <h4>Get the Strategy Agent today.</h4>
+      <p>Data-driven strategies for every client. Deploy it on your first engagement this week.</p>
       <a href="/sign-up.html">Get Instant Access &rarr;</a>
     </div>
 
@@ -686,8 +679,8 @@
 
 <!-- BOTTOM CTA (yellow) -->
 <div class="bottom-cta">
-  <h2>Stop managing projects<br>manually.</h2>
-  <p>The Project Plan Agent builds sprint timelines, tracks milestones, and manages dependencies — so you deliver on time, every time.</p>
+  <h2>Stop doing random<br>SEO tasks.</h2>
+  <p>The Strategy Agent builds prioritized, data-driven strategies for every client — so you deliver results that compound, not just busy work.</p>
   <a href="/sign-up.html" class="btn-yellow">Get Instant Access &rarr;</a>
 </div>
 
@@ -699,7 +692,6 @@
     <div>
       <div class="footer-col-title">Features</div>
       <ul class="footer-links">
-        <li><a href="/blueprint-os-landing.html">Agency OS</a></li>
         <li><a href="/coaching/">Coaching</a></li>
         <li><a href="/agency-training/">Video Training</a></li>
         <li><a href="/bootcamps/">Live Bootcamps</a></li>
