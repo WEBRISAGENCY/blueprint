@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOP — Set Up Pipeline Auto-Sync</title>
+<style>
+  :root {
+    --ink: #202124;
+    --muted: #5f6368;
+    --rule: #dadce0;
+    --blue: #1a73e8;
+    --page: #ffffff;
+    --canvas: #f1f3f4;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--canvas);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 16px;
+  }
+  .page {
+    background: var(--page);
+    max-width: 816px;              /* 8.5in */
+    margin: 0 auto;
+    padding: 84px 96px 96px;       /* ~1in margins */
+    box-shadow: 0 1px 3px rgba(60,64,67,.24), 0 4px 12px rgba(60,64,67,.10);
+    border-radius: 2px;
+  }
+  .doc-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    margin: 0 0 4px;
+  }
+  .doc-sub { color: var(--muted); font-size: 13px; margin: 0 0 26px; }
+  h2 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 30px 0 8px;
+    padding-top: 6px;
+  }
+  h3 { font-size: 15px; font-weight: 700; margin: 20px 0 6px; }
+  p, li { font-size: 14.5px; line-height: 1.65; }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0 0 14px; padding-left: 26px; }
+  li { margin: 0 0 7px; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { font-weight: 700; }
+  hr { border: none; border-top: 1px solid var(--rule); margin: 26px 0; }
+  code {
+    font-family: "Roboto Mono", "SF Mono", Menlo, Consolas, monospace;
+    background: #f1f3f4;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 12.5px;
+  }
+  .callout {
+    border-left: 3px solid var(--blue);
+    background: #e8f0fe;
+    color: #174ea6;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13.5px;
+    margin: 6px 0 16px;
+  }
+  .lede { font-size: 15px; }
+  .meta { color: var(--muted); font-size: 13.5px; margin: 0 0 6px; }
+  table { border-collapse: collapse; width: 100%; margin: 6px 0 16px; }
+  th, td {
+    border: 1px solid var(--rule);
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 13.5px;
+    vertical-align: top;
+  }
+  th { background: #f8f9fa; font-weight: 700; }
+  .arrow { text-align: center; color: var(--muted); width: 36px; }
+  .footer-note { color: var(--muted); font-size: 13px; font-style: italic; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; max-width: none; padding: 0.6in 0.8in; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <h1 class="doc-title">SOP — Set Up Pipeline Auto-Sync</h1>
+    <p class="doc-sub">Blueprint Agency OS · Standard Operating Procedure</p>
+
+    <p class="lede"><strong>What this does:</strong> connects wherever your leads come in (Calendly, HubSpot, Google Calendar, Cal.com, a booking form, etc.) to your Agency OS pipeline, so every new booking or contact shows up as a lead automatically — no manual entry. Claude checks your source on a schedule you set and adds new leads to the <strong>Awaiting Discovery</strong> stage.</p>
+    <p class="meta"><strong>Time to set up:</strong> ~5 minutes. You only do this once.</p>
+
+    <hr>
+
+    <h2>Before you start</h2>
+    <p>You'll need:</p>
+    <ul>
+      <li><strong>Agency OS connected to Claude.</strong> In the app, go to <strong>Settings → Claude connection</strong> and follow the steps if you haven't already.</li>
+      <li><strong>Your lead source connected to Claude.</strong> Whatever you use to capture leads/bookings (Calendly, HubSpot, Google Calendar, etc.) needs to be added as a connector in Claude — see Step 1.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Step 1 — Connect your lead source to Claude</h2>
+    <ol>
+      <li>Open Claude → <strong>Settings → Connectors</strong>.</li>
+      <li>Find and connect the tool your leads come from:
+        <ul>
+          <li><strong>Calendly</strong> — for booked discovery calls.</li>
+          <li><strong>HubSpot</strong> (or another CRM) — for new contacts/deals.</li>
+          <li><strong>Google Calendar</strong> — if calls land on your calendar directly.</li>
+          <li><strong>A website/booking form</strong> — connect the tool it feeds (e.g. your CRM or spreadsheet).</li>
+        </ul>
+      </li>
+      <li>Authorize it when prompted. Once it shows "Connected," you're set.</li>
+    </ol>
+    <div class="callout">If you're not sure which one holds your new leads, pick the tool where a new prospect <em>first</em> appears after they book or inquire.</div>
+
+    <hr>
+
+    <h2>Step 2 — Copy the setup prompt</h2>
+    <ol>
+      <li>In Agency OS, go to <strong>Settings → Automation</strong>.</li>
+      <li>Click <strong>Copy prompt</strong> on the "Auto-sync your pipeline" card.</li>
+    </ol>
+    <p>The prompt tells Claude exactly how to build your sync — you don't need to write anything.</p>
+
+    <hr>
+
+    <h2>Step 3 — Paste it into Claude</h2>
+    <ol>
+      <li>Open a Claude chat that has <strong>both</strong> your Agency OS connector and your lead-source connector enabled.</li>
+      <li>Paste the prompt and send it.</li>
+      <li>Claude will ask <strong>which tool</strong> your leads come from and <strong>how often</strong> to check (e.g. every morning or hourly). Answer both.</li>
+    </ol>
+
+    <hr>
+
+    <h2>Step 4 — Review the field mapping</h2>
+    <p>Claude will look at a real booking/contact from your tool and show you how it plans to map the fields onto an Agency OS lead — for example:</p>
+    <table>
+      <thead>
+        <tr><th>Your form/tool field</th><th class="arrow"></th><th>Agency OS lead field</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Full name</td><td class="arrow">→</td><td>Contact name</td></tr>
+        <tr><td>Work email</td><td class="arrow">→</td><td>Email</td></tr>
+        <tr><td>Company / website</td><td class="arrow">→</td><td>Company, Website</td></tr>
+        <tr><td>"What's your budget?"</td><td class="arrow">→</td><td>Expected deal value</td></tr>
+        <tr><td>Other intake questions</td><td class="arrow">→</td><td>Saved on the lead as qualification answers</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Check it, then confirm.</strong> If a field is mapped wrong or you want an intake question captured differently, just tell Claude in plain language (e.g. "map 'Monthly budget' to expected deal value") and it'll adjust. Nothing goes live until you approve.</p>
+
+    <hr>
+
+    <h2>Step 5 — Choose the schedule</h2>
+    <p>Tell Claude how often to sync:</p>
+    <ul>
+      <li><strong>Hourly</strong> — best if you book calls throughout the day and want them to appear fast.</li>
+      <li><strong>Every morning</strong> — fine for most; you start each day with the pipeline current.</li>
+    </ul>
+    <p>Claude creates a recurring <strong>"Pipeline auto-sync"</strong> task on that cadence.</p>
+
+    <hr>
+
+    <h2>Step 6 — Verify the first run</h2>
+    <ol>
+      <li>Ask Claude to <strong>run it once now</strong> so you can see it work.</li>
+      <li>Open the <strong>Pipeline</strong> in Agency OS and confirm your recent bookings show up as leads in <strong>Awaiting Discovery</strong>, with their details and intake answers attached.</li>
+      <li>If anything looks off, tell Claude what to fix — then you're done.</li>
+    </ol>
+
+    <hr>
+
+    <h2>Managing it later</h2>
+    <ul>
+      <li><strong>See it / pause it / change the schedule:</strong> ask Claude "show me my scheduled tasks" (or manage them in Claude's scheduled-tasks area). You can pause the sync, change how often it runs, or delete it anytime.</li>
+      <li><strong>Change the mapping:</strong> just tell Claude "update my pipeline sync so [field] maps to [lead field]."</li>
+      <li><strong>Add a second source:</strong> run the setup again for another tool (e.g. Calendly <em>and</em> a website form) — Claude keeps both flowing into the same pipeline.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Good to know / troubleshooting</h2>
+    <ul>
+      <li><strong>No duplicates.</strong> The sync matches on email, so a lead that already exists is updated, not duplicated. Running it more than once is safe.</li>
+      <li><strong>New leads land in "Awaiting Discovery."</strong> Drag them onward as they progress; the sync won't move cards you've already advanced.</li>
+      <li><strong>"Claude can't see my bookings."</strong> Make sure the lead-source connector is enabled in that chat and shows "Connected" (Step 1). Re-authorize if needed.</li>
+      <li><strong>A field isn't coming through.</strong> It's usually a mapping gap — tell Claude which intake question to capture and it'll update the task.</li>
+      <li><strong>Missing company/website.</strong> Bookings without those still create a lead; just fill the gaps in the app or your intake form.</li>
+    </ul>
+
+    <hr>
+
+    <p class="footer-note">Pipeline auto-sync runs in Claude and keeps your Agency OS pipeline current. Set it once, and new leads show up on their own.</p>
+  </div>
+</body>
+</html>
