@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timeline — design options</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Figtree',sans-serif;color:#0B0E1A;background:#EDEEF2}
+  .tag{max-width:1040px;margin:0 auto;padding:40px 24px 0}
+  .tag h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#1E3A5F}
+  .tag p{font-size:14px;color:#6B7280;margin-top:4px;max-width:760px}
+  .card{max-width:1040px;margin:14px auto 0;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:56px 44px;box-shadow:0 14px 34px -22px rgba(15,23,42,.3)}
+  .navy{background:#132c54}
+  .navy .t2-title,.navy .t3-title,.navy .t4-title,.navy .t1-title{color:#fff}
+
+  /* ---------- 1. Milestone cards + connector ---------- */
+  .t1{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+  .t1::before{content:'';position:absolute;top:15px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,#1E3A5F,#F7C600)}
+  .t1-col{position:relative;padding-top:44px}
+  .t1-dot{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:#1E3A5F;border:3px solid #fff;box-shadow:0 0 0 2px #1E3A5F}
+  .t1-col:last-child .t1-dot{background:#F7C600;box-shadow:0 0 0 2px #F7C600}
+  .t1-cardbox{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:22px 20px;box-shadow:0 10px 26px -20px rgba(15,23,42,.4)}
+  .t1-col:last-child .t1-cardbox{border-color:rgba(247,198,0,.5);background:rgba(247,198,0,.04)}
+  .t1-year{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.08em;color:#1E3A5F;margin-bottom:8px}
+  .t1-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.02em;text-transform:uppercase;line-height:1;margin-bottom:10px}
+  .t1-desc{font-size:13.5px;color:#6B7280;line-height:1.6}
+  .t1-now{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#0B0E1A;background:#F7C600;padding:3px 9px;border-radius:99px;margin-bottom:8px}
+
+  /* ---------- 2. Vertical alternating ---------- */
+  .t2{position:relative;max-width:760px;margin:0 auto}
+  .t2::before{content:'';position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:2px;background:linear-gradient(#1E3A5F,#F7C600)}
+  .t2-row{position:relative;display:grid;grid-template-columns:1fr 1fr;margin-bottom:34px}
+  .t2-node{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:#1E3A5F;border:3px solid #fff;box-shadow:0 0 0 2px #1E3A5F;z-index:1}
+  .t2-row:last-child .t2-node{background:#F7C600;box-shadow:0 0 0 2px #F7C600}
+  .t2-box{padding:0 34px}
+  .t2-row:nth-child(even) .t2-box{grid-column:1;text-align:right}
+  .t2-row:nth-child(odd) .t2-box{grid-column:2}
+  .t2-year{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#1E3A5F;margin-bottom:4px}
+  .t2-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.02em;text-transform:uppercase;line-height:1;margin-bottom:8px}
+  .t2-desc{font-size:13.5px;color:#6B7280;line-height:1.6}
+
+  /* ---------- 3. Numbered stepper (navy) ---------- */
+  .t3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+  .t3-col{text-align:center;padding:0 22px;position:relative}
+  .t3-col::before{content:'';position:absolute;top:29px;left:-50%;width:100%;height:2px;background:rgba(255,255,255,.15)}
+  .t3-col:first-child::before{display:none}
+  .t3-col:last-child::after{content:'';position:absolute;top:29px;right:50%;width:100%;height:2px;background:linear-gradient(90deg,transparent,#F7C600)}
+  .t3-num{width:58px;height:58px;border-radius:50%;background:#0e2143;border:2px solid rgba(255,255,255,.2);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:24px;margin:0 auto 18px;position:relative;z-index:1}
+  .t3-col:last-child .t3-num{background:#F7C600;border-color:#F7C600;color:#0B0E1A}
+  .t3-year{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#F7C600;margin-bottom:6px}
+  .t3-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.02em;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:10px}
+  .t3-desc{font-size:13px;color:rgba(255,255,255,.62);line-height:1.6}
+
+  /* ---------- 4. Roadmap chevrons ---------- */
+  .t4{display:flex;gap:14px;align-items:stretch}
+  .t4-step{flex:1;background:#F7F8FA;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:24px 22px;position:relative}
+  .t4-step:not(:last-child)::after{content:'→';position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:#c2c8d2;font-size:20px;z-index:1}
+  .t4-step:last-child{background:#132c54;border-color:#132c54}
+  .t4-year{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#1E3A5F;margin-bottom:8px}
+  .t4-step:last-child .t4-year{color:#F7C600}
+  .t4-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.02em;text-transform:uppercase;line-height:1;margin-bottom:10px}
+  .t4-step:last-child .t4-title{color:#fff}
+  .t4-desc{font-size:13px;color:#6B7280;line-height:1.6}
+  .t4-step:last-child .t4-desc{color:rgba(255,255,255,.66)}
+  .t4-here{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#0B0E1A;background:#F7C600;padding:3px 9px;border-radius:99px;margin-bottom:8px}
+
+  @media(max-width:760px){
+    .t1,.t3,.t4{grid-template-columns:1fr;display:block}
+    .t1::before{display:none}.t1-col{padding-left:34px;padding-top:0;margin-bottom:20px}.t1-dot{left:8px;top:6px;transform:none}
+    .t4{flex-direction:column}.t4-step::after{display:none}
+    .t3-col{margin-bottom:22px}.t3-col::before,.t3-col::after{display:none}
+    .t2::before{left:16px}.t2-row{grid-template-columns:1fr}.t2-node{left:16px}.t2-box{grid-column:1 !important;text-align:left !important;padding:0 0 0 44px}
+  }
+</style>
+</head>
+<body>
+
+  <div class="tag"><h3>Option 1 — Milestone cards on a track</h3><p>Each era becomes a card hung off a connector line, with a node dot. The current era (2026) is accented yellow with a "Now" tag. Clean and modern.</p></div>
+  <div class="card"><div class="t1">
+    <div class="t1-col"><div class="t1-dot"></div><div class="t1-cardbox"><div class="t1-year">2017 – 2019</div><div class="t1-title">The 5 Phases of SEO</div><p class="t1-desc">Our original framework broke SEO delivery into five clear phases. Thousands of agencies adopted it as their foundation.</p></div></div>
+    <div class="t1-col"><div class="t1-dot"></div><div class="t1-cardbox"><div class="t1-year">2020 – 2025</div><div class="t1-title">SEO Sprints</div><p class="t1-desc">We rebuilt the phases into a leaner, productized model with fixed timelines and predictable margins.</p></div></div>
+    <div class="t1-col"><div class="t1-dot"></div><div class="t1-cardbox"><span class="t1-now">Now</span><div class="t1-year">2026</div><div class="t1-title">The One-Person Agency</div><p class="t1-desc">The same Sprint methodology, now powered by AI agents that automate the heavy lifting.</p></div></div>
+  </div></div>
+
+  <div class="tag"><h3>Option 2 — Vertical alternating</h3><p>A center spine with eras alternating left and right. Reads like a story, great on mobile, and gives each era room to breathe.</p></div>
+  <div class="card"><div class="t2">
+    <div class="t2-row"><div class="t2-node"></div><div class="t2-box"><div class="t2-year">2017 – 2019</div><div class="t2-title">The 5 Phases of SEO</div><p class="t2-desc">Our original framework broke SEO delivery into five clear phases — the first repeatable process for agencies.</p></div></div>
+    <div class="t2-row"><div class="t2-node"></div><div class="t2-box"><div class="t2-year">2020 – 2025</div><div class="t2-title">SEO Sprints</div><p class="t2-desc">A leaner, faster, productized model built for profitability. It became the industry standard.</p></div></div>
+    <div class="t2-row"><div class="t2-node"></div><div class="t2-box"><div class="t2-year">2026</div><div class="t2-title">The One-Person Agency</div><p class="t2-desc">The proven Sprint methodology, now powered by AI agents. One person, the output of a full team.</p></div></div>
+  </div></div>
+
+  <div class="tag"><h3>Option 3 — Numbered stepper (dark)</h3><p>A navy band with big numbered nodes connected by a track that "completes" in yellow at the current step. Feels like progress toward now.</p></div>
+  <div class="card navy"><div class="t3">
+    <div class="t3-col"><div class="t3-num">1</div><div class="t3-year">2017 – 2019</div><div class="t3-title">The 5 Phases of SEO</div><p class="t3-desc">The original framework — five clear phases that gave agencies a repeatable process.</p></div>
+    <div class="t3-col"><div class="t3-num">2</div><div class="t3-year">2020 – 2025</div><div class="t3-title">SEO Sprints</div><p class="t3-desc">A leaner, productized model built for profitability. The industry standard.</p></div>
+    <div class="t3-col"><div class="t3-num">3</div><div class="t3-year">2026</div><div class="t3-title">The One-Person Agency</div><p class="t3-desc">The same methodology, now powered by AI agents that do the heavy lifting.</p></div>
+  </div></div>
+
+  <div class="tag"><h3>Option 4 — Roadmap chevrons</h3><p>Three connected steps with arrows, ending in a highlighted navy "you are here" card for 2026. Compact and directional.</p></div>
+  <div class="card"><div class="t4">
+    <div class="t4-step"><div class="t4-year">2017 – 2019</div><div class="t4-title">The 5 Phases of SEO</div><p class="t4-desc">Five clear phases — the first repeatable delivery process for agencies.</p></div>
+    <div class="t4-step"><div class="t4-year">2020 – 2025</div><div class="t4-title">SEO Sprints</div><p class="t4-desc">A leaner, productized model built for profitability and predictable margins.</p></div>
+    <div class="t4-step"><span class="t4-here">You are here</span><div class="t4-year">2026</div><div class="t4-title">The One-Person Agency</div><p class="t4-desc">The proven Sprint methodology, now powered by AI agents.</p></div>
+  </div></div>
+
+  <div style="height:60px"></div>
+</body>
+</html>

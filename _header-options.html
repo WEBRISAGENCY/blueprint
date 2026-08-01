@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Header / Nav — design options</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Figtree',sans-serif;color:#0B0E1A;background:#EDEEF2;padding-bottom:80px}
+  .tag{max-width:1160px;margin:0 auto;padding:40px 24px 10px}
+  .tag h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#1E3A5F}
+  .tag p{font-size:14px;color:#6B7280;margin-top:4px;max-width:760px}
+  .stage{max-width:1160px;margin:0 auto;padding:0 24px}
+  .frame{border:1px solid rgba(0,0,0,.1);border-radius:12px;overflow:hidden;box-shadow:0 12px 30px -18px rgba(15,23,42,.3)}
+  .peek{height:120px;background:#132c54;position:relative;overflow:hidden}
+  .peek::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,.06) 1px,transparent 1px);background-size:44px 44px}
+  .peek span{position:absolute;left:32px;top:34px;font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:.02em;color:#fff;line-height:1}
+  .peek span b{color:#F7C600;font-weight:400}
+
+  /* shared bits */
+  .beta{height:36px;background:#0B0E1A;color:#fff;display:flex;align-items:center;justify-content:center;gap:9px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid rgba(247,198,0,.45)}
+  .beta .bd{background:#F7C600;color:#0B0E1A;font-weight:800;font-size:10px;letter-spacing:.1em;padding:2px 8px;border-radius:99px}
+  .beta .arw{color:#F7C600;font-weight:800}
+  .lg{height:34px;width:auto;display:block}
+  .link{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.05em;text-decoration:none;position:relative;padding-bottom:3px}
+  .link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:#F7C600;transform:scaleX(0);transform-origin:left;transition:transform .2s}
+  .link:hover::after{transform:scaleX(1)}
+  .cta-y{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.05em;padding:0 28px;display:flex;align-items:center;text-decoration:none;transition:background .15s}
+  .cta-y:hover{background:#D9AE00}
+  .cta-y.round{border-radius:8px;height:44px}
+
+  /* 1 — refined classic */
+  .h1{background:#fff;display:flex;align-items:stretch;height:74px;padding:0 28px}
+  .h1 .logo{display:flex;align-items:center;padding-right:24px;margin-right:22px;border-right:1px solid rgba(0,0,0,.1)}
+  .h1 .nav{display:flex;align-items:center;gap:30px;flex:1;justify-content:center}
+  .h1 .link{color:#1E3A5F}
+  .h1 .right{display:flex;align-items:center;gap:22px}
+  .h1 .login{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.05em;color:#1E3A5F;text-decoration:none}
+
+  /* 2 — two-tier utility */
+  .h2top{background:#132c54;height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 28px}
+  .h2top .u{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+  .h2top .ur{display:flex;align-items:center;gap:18px}
+  .h2top .ur a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#F7C600;text-decoration:none}
+  .h2top .ur i{width:15px;height:15px;border-radius:3px;background:rgba(255,255,255,.25);display:inline-block}
+  .h2main{background:#fff;display:flex;align-items:stretch;height:66px;padding:0 28px}
+  .h2main .logo{display:flex;align-items:center;margin-right:auto}
+  .h2main .nav{display:flex;align-items:center;gap:28px;position:absolute;left:50%;transform:translateX(-50%);height:66px}
+  .h2wrap{position:relative}
+  .h2main .link{color:#1E3A5F}
+  .h2main .right{display:flex;align-items:center}
+
+  /* 3 — dark bar */
+  .h3{background:#132c54;display:flex;align-items:stretch;height:74px;padding:0 28px;position:relative}
+  .h3::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,.05) 1px,transparent 1px);background-size:44px 44px}
+  .h3 .logo,.h3 .nav,.h3 .right{position:relative}
+  .h3 .logo{display:flex;align-items:center;margin-right:22px}
+  .h3 .nav{display:flex;align-items:center;gap:30px;flex:1;justify-content:center}
+  .h3 .link{color:#fff}
+  .h3 .right{display:flex;align-items:center;gap:22px}
+  .h3 .login{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.05em;color:#fff;text-decoration:none}
+
+  /* 4 — floating pill */
+  .h4{background:#fff;padding:20px 24px;display:flex;justify-content:center}
+  .pill{display:flex;align-items:center;gap:26px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:999px;box-shadow:0 16px 40px -20px rgba(15,23,42,.4);padding:9px 12px 9px 26px}
+  .pill .logo{display:flex;align-items:center;padding-right:20px;border-right:1px solid rgba(0,0,0,.1)}
+  .pill .nav{display:flex;align-items:center;gap:24px}
+  .pill .link{color:#1E3A5F;font-size:20px}
+  .pill .cta-y.round{border-radius:999px;height:42px;padding:0 24px}
+
+  /* 5 — split SaaS */
+  .h5{background:#fff;display:flex;align-items:center;height:72px;padding:0 28px;gap:34px}
+  .h5 .logo{display:flex;align-items:center}
+  .h5 .nav{display:flex;align-items:center;gap:26px}
+  .h5 .link{color:#1E3A5F;font-size:20px}
+  .h5 .right{margin-left:auto;display:flex;align-items:center;gap:14px}
+  .h5 .login-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1E3A5F;text-decoration:none;border:1.5px solid rgba(30,58,95,.3);padding:11px 20px;border-radius:8px}
+  .h5 .cta-sq{background:#F7C600;color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:12px 22px;border-radius:8px;text-decoration:none}
+</style>
+</head>
+<body>
+
+  <div class="tag"><h3>Option 1 — Refined classic (current, cleaned up)</h3><p>White bar, logo with a divider, centered links with an animated yellow underline on hover, text login, square yellow CTA. Familiar but tighter.</p></div>
+  <div class="stage"><div class="frame">
+    <div class="beta"><span class="bd">Beta</span>Agency OS is now in open beta — explore the platform<span class="arw">&rarr;</span></div>
+    <div class="h1">
+      <div class="logo"><img class="lg" src="assets/blueprint blue logo.svg" alt="Blueprint"></div>
+      <div class="nav"><a class="link" href="#">About</a><a class="link" href="#">Results</a><a class="link" href="#">Program</a><a class="link" href="#">Videos</a></div>
+      <div class="right"><a class="login" href="#">Login</a><a class="cta-y" href="#">Become A Member</a></div>
+    </div>
+    <div class="peek"><span>Build the <b>one-person</b> agency.</span></div>
+  </div></div>
+
+  <div class="tag"><h3>Option 2 — Two-tier with utility strip</h3><p>A slim navy strip on top (tagline left, login + socials right), then the main white row with centered links and yellow CTA. Adds polish and a home for secondary links.</p></div>
+  <div class="stage"><div class="frame">
+    <div class="beta"><span class="bd">Beta</span>Agency OS is now in open beta — explore the platform<span class="arw">&rarr;</span></div>
+    <div class="h2wrap">
+      <div class="h2top"><div class="u">AI-powered systems for modern agencies</div><div class="ur"><a href="#">Login</a><i></i><i></i><i></i></div></div>
+      <div class="h2main">
+        <div class="logo"><img class="lg" src="assets/blueprint blue logo.svg" alt="Blueprint"></div>
+        <div class="nav"><a class="link" href="#">About</a><a class="link" href="#">Results</a><a class="link" href="#">Program</a><a class="link" href="#">Videos</a></div>
+        <div class="right"><a class="cta-y" href="#">Become A Member</a></div>
+      </div>
+    </div>
+    <div class="peek"><span>Build the <b>one-person</b> agency.</span></div>
+  </div></div>
+
+  <div class="tag"><h3>Option 3 — Dark bar (ties into the hero)</h3><p>Navy header with the grid texture, white logo and links, yellow CTA. Feels premium and blends into the hero/ethos sections instead of contrasting white.</p></div>
+  <div class="stage"><div class="frame">
+    <div class="beta"><span class="bd">Beta</span>Agency OS is now in open beta — explore the platform<span class="arw">&rarr;</span></div>
+    <div class="h3">
+      <div class="logo"><img class="lg" src="assets/white blueprint logo.png" alt="Blueprint"></div>
+      <div class="nav"><a class="link" href="#">About</a><a class="link" href="#">Results</a><a class="link" href="#">Program</a><a class="link" href="#">Videos</a></div>
+      <div class="right"><a class="login" href="#">Login</a><a class="cta-y" href="#">Become A Member</a></div>
+    </div>
+    <div class="peek" style="background:#0e2447"><span>Build the <b>one-person</b> agency.</span></div>
+  </div></div>
+
+  <div class="tag"><h3>Option 4 — Floating pill</h3><p>A centered rounded pill with a soft shadow, logo + links + rounded CTA inside. Modern SaaS look, sits above the hero rather than as a full-width slab.</p></div>
+  <div class="stage"><div class="frame">
+    <div class="beta"><span class="bd">Beta</span>Agency OS is now in open beta — explore the platform<span class="arw">&rarr;</span></div>
+    <div class="h4">
+      <div class="pill">
+        <div class="logo"><img class="lg" src="assets/blueprint blue logo.svg" alt="Blueprint"></div>
+        <div class="nav"><a class="link" href="#">About</a><a class="link" href="#">Results</a><a class="link" href="#">Program</a><a class="link" href="#">Videos</a></div>
+        <a class="cta-y round" href="#">Become A Member</a>
+      </div>
+    </div>
+    <div class="peek"><span>Build the <b>one-person</b> agency.</span></div>
+  </div></div>
+
+  <div class="tag"><h3>Option 5 — Split SaaS (links by logo, buttons right)</h3><p>Logo left with links right beside it, then an outline Login button and a solid yellow CTA on the far right. Uses Barlow (not Bebas) for a more app-like, product feel.</p></div>
+  <div class="stage"><div class="frame">
+    <div class="beta"><span class="bd">Beta</span>Agency OS is now in open beta — explore the platform<span class="arw">&rarr;</span></div>
+    <div class="h5">
+      <div class="logo"><img class="lg" src="assets/blueprint blue logo.svg" alt="Blueprint"></div>
+      <div class="nav"><a class="link" href="#">About</a><a class="link" href="#">Results</a><a class="link" href="#">Program</a><a class="link" href="#">Videos</a></div>
+      <div class="right"><a class="login-btn" href="#">Login</a><a class="cta-sq" href="#">Become A Member</a></div>
+    </div>
+    <div class="peek"><span>Build the <b>one-person</b> agency.</span></div>
+  </div></div>
+
+</body>
+</html>

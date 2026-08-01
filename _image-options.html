@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder image — styling options</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Figtree',sans-serif;color:#0B0E1A;background:#EDEEF2}
+  .tag{max-width:1040px;margin:0 auto;padding:38px 24px 0}
+  .tag h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#1E3A5F}
+  .tag p{font-size:14px;color:#6B7280;margin-top:4px;max-width:760px}
+  .card{max-width:1040px;margin:14px auto 0;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:56px 44px;box-shadow:0 14px 34px -22px rgba(15,23,42,.3)}
+  .stage{display:grid;grid-template-columns:420px 1fr;gap:56px;align-items:center}
+  .stage .copy h4{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:.02em;text-transform:uppercase;line-height:1;margin-bottom:12px}
+  .stage .copy h4 span{color:#F7C600}
+  .stage .copy p{font-size:15px;color:#6B7280;line-height:1.7}
+  .IMG{display:block;width:100%;height:auto}
+
+  /* A rounded + shadow */
+  .a{border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(15,23,42,.5);border:1px solid rgba(0,0,0,.06)}
+  .a .IMG{border-radius:16px}
+
+  /* B offset yellow block */
+  .b{position:relative;padding:0 18px 18px 0}
+  .b::before{content:'';position:absolute;right:0;bottom:0;width:82%;height:82%;background:#F7C600;border-radius:14px;z-index:0}
+  .b img{position:relative;z-index:1;border-radius:14px;box-shadow:0 24px 50px -26px rgba(15,23,42,.5)}
+
+  /* C yellow corner brackets */
+  .c{position:relative;padding:14px}
+  .c::before,.c::after{content:'';position:absolute;width:64px;height:64px;border:3px solid #F7C600}
+  .c::before{top:0;left:0;border-right:none;border-bottom:none}
+  .c::after{bottom:0;right:0;border-left:none;border-top:none}
+  .c img{border-radius:4px;display:block;width:100%}
+
+  /* D navy frame + grid + badge */
+  .d{position:relative;padding:16px;background:#132c54;border-radius:16px;overflow:hidden}
+  .d::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,.08) 1px,transparent 1px);background-size:34px 34px}
+  .d img{position:relative;z-index:1;border-radius:10px;display:block;width:100%}
+  .d .badge{position:absolute;z-index:2;left:28px;bottom:28px;display:inline-flex;align-items:center;gap:8px;background:#F7C600;color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:99px}
+
+  /* E duotone + yellow ring */
+  .e{position:relative;border-radius:16px;padding:8px;background:#fff;border:2px solid #F7C600;box-shadow:0 24px 50px -28px rgba(15,23,42,.45)}
+  .e .wrap{position:relative;border-radius:10px;overflow:hidden}
+  .e img{display:block;width:100%;filter:grayscale(.15) contrast(1.03)}
+  .e .wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,44,84,.12),rgba(19,44,84,.28));mix-blend-mode:multiply}
+
+  @media(max-width:760px){.stage{grid-template-columns:1fr;gap:32px}}
+</style>
+</head>
+<body>
+
+  <div class="tag"><h3>Option A — Rounded + soft shadow</h3><p>Clean and minimal: rounded corners, a deep soft shadow, hairline border. Lets the photo do the work.</p></div>
+  <div class="card"><div class="stage">
+    <div class="a"><img class="IMG" src="assets/extracted-about-0-44aaf24b.webp" alt="Ryan Stewart"></div>
+    <div class="copy"><h4>Built from <span>real agencies.</span></h4><p>The quote text sits here to the right, as it does on the page.</p></div>
+  </div></div>
+
+  <div class="tag"><h3>Option B — Offset yellow block</h3><p>A yellow rectangle sits behind the photo, offset to the bottom-right. Adds brand color and depth — editorial and confident.</p></div>
+  <div class="card"><div class="stage">
+    <div class="b"><img class="IMG" src="assets/extracted-about-0-44aaf24b.webp" alt="Ryan Stewart"></div>
+    <div class="copy"><h4>Built from <span>real agencies.</span></h4><p>The quote text sits here to the right, as it does on the page.</p></div>
+  </div></div>
+
+  <div class="tag"><h3>Option C — Yellow corner brackets</h3><p>L-shaped yellow brackets frame two corners. Subtle, techy, on-brand accent without covering the image.</p></div>
+  <div class="card"><div class="stage">
+    <div class="c"><img class="IMG" src="assets/extracted-about-0-44aaf24b.webp" alt="Ryan Stewart"></div>
+    <div class="copy"><h4>Built from <span>real agencies.</span></h4><p>The quote text sits here to the right, as it does on the page.</p></div>
+  </div></div>
+
+  <div class="tag"><h3>Option D — Navy frame with grid + badge</h3><p>Photo inset in a navy grid-textured frame with a small "Founder" badge. Ties into the hero/ethos sections.</p></div>
+  <div class="card"><div class="stage">
+    <div class="d"><img class="IMG" src="assets/extracted-about-0-44aaf24b.webp" alt="Ryan Stewart"><span class="badge">Ryan Stewart · Founder</span></div>
+    <div class="copy"><h4>Built from <span>real agencies.</span></h4><p>The quote text sits here to the right, as it does on the page.</p></div>
+  </div></div>
+
+  <div class="tag"><h3>Option E — Yellow ring + subtle duotone</h3><p>A yellow border ring with a slight navy duotone wash over the photo for a cohesive, premium feel.</p></div>
+  <div class="card"><div class="stage">
+    <div class="e"><div class="wrap"><img class="IMG" src="assets/extracted-about-0-44aaf24b.webp" alt="Ryan Stewart"></div></div>
+    <div class="copy"><h4>Built from <span>real agencies.</span></h4><p>The quote text sits here to the right, as it does on the page.</p></div>
+  </div></div>
+
+  <div style="height:60px"></div>
+</body>
+</html>

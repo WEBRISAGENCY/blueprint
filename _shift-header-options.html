@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shift header — terminal variations</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Figtree',sans-serif;color:#0B0E1A;background:#EDEEF2}
+  .tag{max-width:1000px;margin:0 auto;padding:38px 24px 0}
+  .tag h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#1E3A5F}
+  .tag p{font-size:14px;color:#6B7280;margin-top:4px;max-width:760px}
+  .card{max-width:1000px;margin:14px auto 0;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:40px;box-shadow:0 14px 34px -22px rgba(15,23,42,.3);background:#fff;overflow:hidden}
+  .sub{font-size:16px;color:#6B7280;line-height:1.7;max-width:700px;margin:26px auto 0;text-align:center}
+  .mono{font-family:'Space Mono',monospace}
+
+  /* window chrome */
+  .win{border-radius:12px;overflow:hidden;box-shadow:0 22px 44px -26px rgba(15,23,42,.55)}
+  .bar{display:flex;align-items:center;gap:8px;padding:12px 16px}
+  .bar i{width:11px;height:11px;border-radius:50%}
+  .bar i:nth-child(1){background:#ff5f56}.bar i:nth-child(2){background:#ffbd2e}.bar i:nth-child(3){background:#27c93f}
+  .bar span{margin-left:10px;font-family:'Space Mono',monospace;font-size:12px}
+  .cur{display:inline-block;width:.5ch;height:.86em;background:#F7C600;margin-left:8px;vertical-align:-3px;animation:blink 1s step-end infinite}
+  @keyframes blink{50%{opacity:0}}
+  .hl{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+
+  /* V1 clean dark */
+  .v1 .bar{background:#11151f}.v1 .bar span{color:#7c8598}
+  .v1 .body{background:#0e1220;padding:44px 40px 46px}
+  .v1 .p{font-family:'Space Mono',monospace;font-size:13px;color:#F7C600;margin-bottom:18px}
+  .v1 .hl{font-size:clamp(46px,6.2vw,84px);color:#fff}
+  .v1 .done{font-family:'Space Mono',monospace;font-size:12px;color:#5f6b80;margin-top:18px}
+
+  /* V2 boot log */
+  .v2 .bar{background:#0b0f18;border-bottom:1px solid rgba(255,255,255,.06)}.v2 .bar span{color:#7c8598}
+  .v2 .body{background:#0b0f18;padding:36px 40px 42px}
+  .v2 .log{font-family:'Space Mono',monospace;font-size:13px;line-height:2;color:#8b94a7}
+  .v2 .log b{color:#27c93f;font-weight:400}
+  .v2 .log em{color:#e8ebf2;font-style:normal}
+  .v2 .rule{height:1px;background:rgba(255,255,255,.08);margin:20px 0}
+  .v2 .hl{font-size:clamp(44px,6vw,80px);color:#fff}
+  .v2 .status{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:12px;color:#27c93f;margin-top:16px}
+  .v2 .status .d{width:8px;height:8px;border-radius:50%;background:#27c93f;box-shadow:0 0 8px #27c93f}
+
+  /* V3 light window */
+  .v3 .win{border:1px solid rgba(0,0,0,.1);box-shadow:0 18px 40px -26px rgba(15,23,42,.35)}
+  .v3 .bar{background:#f1f3f6;border-bottom:1px solid rgba(0,0,0,.08)}.v3 .bar span{color:#9aa2b1}
+  .v3 .body{background:#fff;padding:44px 40px 46px}
+  .v3 .p{font-family:'Space Mono',monospace;font-size:13px;color:#1a7a1a;margin-bottom:16px}
+  .v3 .p .path{color:#94a0b3}
+  .v3 .hl{font-size:clamp(46px,6.2vw,84px);color:#0B0E1A}
+  .v3 .hl u{text-decoration:none;background:linear-gradient(180deg,transparent 60%,#F7C600 60%,#F7C600 92%,transparent 92%)}
+
+  /* V4 code editor */
+  .v4 .bar{background:#15100a;gap:0;padding:0}
+  .v4 .tab{display:flex;align-items:center;gap:8px;padding:12px 18px;background:#1c150c;font-family:'Space Mono',monospace;font-size:12px;color:#F7C600;border-right:1px solid rgba(255,255,255,.06)}
+  .v4 .tab .dot{width:8px;height:8px;border-radius:50%;background:#F7C600}
+  .v4 .body{background:#12100c;display:flex}
+  .v4 .gutter{font-family:'Space Mono',monospace;font-size:14px;line-height:2.1;color:#5a5140;padding:36px 14px 40px;text-align:right;user-select:none;border-right:1px solid rgba(255,255,255,.06)}
+  .v4 .code{padding:36px 32px 40px;flex:1}
+  .v4 .code .c1{font-family:'Space Mono',monospace;font-size:14px;line-height:2.1;color:#7c8a5a}
+  .v4 .code .c2{font-family:'Space Mono',monospace;font-size:14px;line-height:2.1;color:#c9b98f}
+  .v4 .code .c2 .k{color:#e0a24a}
+  .v4 .hl{font-size:clamp(40px,5.4vw,72px);color:#fff;margin:6px 0}
+
+  /* V5 AI prompt/response */
+  .v5 .win{border:1px solid rgba(255,255,255,.08)}
+  .v5 .bar{background:#0c1322}.v5 .bar span{color:#6d7890}
+  .v5 .body{background:#0c1322;padding:30px 34px 0}
+  .v5 .u{display:flex;gap:12px;align-items:flex-start;margin-bottom:22px}
+  .v5 .u .who{font-family:'Space Mono',monospace;font-size:12px;color:#6d7890;flex-shrink:0;padding-top:4px}
+  .v5 .u .txt{font-family:'Space Mono',monospace;font-size:14px;color:#aeb7c9}
+  .v5 .r{display:flex;gap:12px;align-items:flex-start}
+  .v5 .r .av{width:26px;height:26px;border-radius:7px;background:#F7C600;color:#0B0E1A;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;flex-shrink:0}
+  .v5 .hl{font-size:clamp(40px,5.4vw,74px);color:#fff}
+  .v5 .foot{background:#0a1020;border-top:1px solid rgba(255,255,255,.07);padding:12px 34px;display:flex;align-items:center;gap:9px;font-family:'Space Mono',monospace;font-size:12px;color:#6d7890}
+  .v5 .foot .d{width:8px;height:8px;border-radius:50%;background:#27c93f;box-shadow:0 0 8px #27c93f}
+</style>
+</head>
+<body>
+
+  <div class="tag"><h3>V1 — Clean dark terminal</h3><p>Refined version of what you saw: one command, the headline as output, blinking cursor, subtle "process complete" line. Supporting copy sits below the window.</p></div>
+  <div class="card"><div class="v1"><div class="win">
+    <div class="bar"><i></i><i></i><i></i><span>agency-os — bash</span></div>
+    <div class="body">
+      <div class="p">$ ./blueprint --run</div>
+      <div class="hl">We flipped the agency model.<span class="cur"></span></div>
+      <div class="done"># process complete · exit 0</div>
+    </div>
+  </div>
+  <p class="sub">The Blueprint is the modern operating system for your agency — the software to run clients, projects, and reporting, plus everything that makes you great at running it: training, AI agents, SOPs, live coaching, and a community of 3,000+ owners.</p>
+  </div></div>
+
+  <div class="tag"><h3>V2 — Boot / system log</h3><p>A short boot sequence of green "ok" lines, then the headline lands as the result with a live "system online" status. Feels like the OS spinning up.</p></div>
+  <div class="card"><div class="v2"><div class="win">
+    <div class="bar"><i></i><i></i><i></i><span>blueprint@os: ~</span></div>
+    <div class="body">
+      <div class="log">$ blueprint init<br>[<b>ok</b>] migrating <em>clients &amp; projects</em><br>[<b>ok</b>] deploying <em>AI agents</em><br>[<b>ok</b>] syncing <em>reporting &amp; billing</em></div>
+      <div class="rule"></div>
+      <div class="hl">We flipped the agency model.</div>
+      <div class="status"><span class="d"></span>system online</div>
+    </div>
+  </div>
+  <p class="sub">The Blueprint is the modern operating system for your agency — the software to run clients, projects, and reporting, plus everything that makes you great at running it: training, AI agents, SOPs, live coaching, and a community of 3,000+ owners.</p>
+  </div></div>
+
+  <div class="tag"><h3>V3 — Light window (fits the light section)</h3><p>Same terminal idea but light-themed to match the section it lives in. Green prompt, dark headline with a yellow marker under "model."</p></div>
+  <div class="card"><div class="v3"><div class="win">
+    <div class="bar"><i></i><i></i><i></i><span>agency-os</span></div>
+    <div class="body">
+      <div class="p"><span class="path">~/agency</span> $ blueprint start</div>
+      <div class="hl">We flipped the agency <u>model.</u></div>
+    </div>
+  </div>
+  <p class="sub">The Blueprint is the modern operating system for your agency — the software to run clients, projects, and reporting, plus everything that makes you great at running it: training, AI agents, SOPs, live coaching, and a community of 3,000+ owners.</p>
+  </div></div>
+
+  <div class="tag"><h3>V4 — Code editor</h3><p>Line-number gutter, a green comment, and the headline as the assigned value in a config file tab. More "engineered product" than pure terminal.</p></div>
+  <div class="card"><div class="v4"><div class="win">
+    <div class="bar"><div class="tab"><span class="dot"></span>blueprint.config</div></div>
+    <div class="body">
+      <div class="gutter">01<br>02<br>03<br>04</div>
+      <div class="code">
+        <div class="c1">// the old agency model is deprecated</div>
+        <div class="c2"><span class="k">export const</span> mission =</div>
+        <div class="hl">We flipped the agency model.</div>
+        <div class="c2">;</div>
+      </div>
+    </div>
+  </div>
+  <p class="sub">The Blueprint is the modern operating system for your agency — the software to run clients, projects, and reporting, plus everything that makes you great at running it: training, AI agents, SOPs, live coaching, and a community of 3,000+ owners.</p>
+  </div></div>
+
+  <div class="tag"><h3>V5 — Prompt / response (AI style)</h3><p>Reads like a Claude prompt: a request line, then the "Blueprint OS" responds with the headline, plus a running status bar. Ties to the Claude integration story.</p></div>
+  <div class="card"><div class="v5"><div class="win">
+    <div class="bar"><i></i><i></i><i></i><span>blueprint os</span></div>
+    <div class="body">
+      <div class="u"><span class="who">&gt;</span><span class="txt">rebuild the agency for the AI era</span></div>
+      <div class="r"><span class="av">B</span><div class="hl">We flipped the agency model.</div></div>
+      <div style="height:26px"></div>
+    </div>
+    <div class="foot"><span class="d"></span>running · blueprint OS · connected to Claude</div>
+  </div>
+  <p class="sub">The Blueprint is the modern operating system for your agency — the software to run clients, projects, and reporting, plus everything that makes you great at running it: training, AI agents, SOPs, live coaching, and a community of 3,000+ owners.</p>
+  </div></div>
+
+  <div style="height:60px"></div>
+</body>
+</html>

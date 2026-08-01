@@ -210,6 +210,11 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   .dash-cta{display:inline-flex;align-items:center;gap:8px;margin-top:24px;background:#2563EB;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:12px 22px;border-radius:8px;text-decoration:none;transition:background .15s}
   .dash-cta:hover{background:#1d4fd7}
 </style>
+<style>
+  /* FAQ: single centered column, no answer clipping, breathing room above footer */
+  .faq-accordion{grid-template-columns:1fr !important;max-width:780px;margin-left:auto !important;margin-right:auto !important}
+  .faq-item.open .faq-answer{max-height:700px !important}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
