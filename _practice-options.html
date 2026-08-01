@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We Practice What We Preach — vertical image options</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Figtree',sans-serif;color:#0B0E1A;background:#F2F3F6}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  .opt-tag{max-width:1040px;margin:0 auto;padding:38px 24px 6px;border-top:1px solid rgba(0,0,0,.08)}
+  .opt-tag:first-child{border-top:none}
+  .opt-tag h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#1E3A5F}
+  .opt-tag p{font-size:14px;color:#6B7280;margin-top:4px;max-width:720px}
+  .sec{padding:44px 0 60px}
+  .sec-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F7C600;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+  .sec-label::before{content:'';width:28px;height:2px;background:#F7C600}
+  .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4.4vw,48px);line-height:.95;letter-spacing:.02em;text-transform:uppercase;margin-bottom:14px}
+  .sec-title span{color:#F7C600}
+  .sec-sub{font-size:15px;color:#6B7280;line-height:1.65;max-width:600px}
+  .vimg{aspect-ratio:286/420;object-fit:cover;display:block;border-radius:12px}
+
+  /* A — compact centered portrait cards */
+  .a-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px}
+  .a-item{text-align:center}
+  .a-item .vimg{width:100%;max-width:220px;margin:0 auto 20px;box-shadow:0 18px 40px -22px rgba(15,23,42,.4)}
+  .a-plat{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F7C600;margin-bottom:6px}
+  .a-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.02em;text-transform:uppercase;margin-bottom:8px}
+  .a-desc{font-size:14px;color:#6B7280;line-height:1.6;margin-bottom:14px;max-width:280px;margin-left:auto;margin-right:auto}
+  .a-link{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1E3A5F;text-decoration:none;border-bottom:2px solid #F7C600;padding-bottom:2px}
+
+  /* B — poster frame, overlay caption */
+  .b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px;justify-items:center}
+  .b-card{width:100%;max-width:230px}
+  .b-frame{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 20px 44px -22px rgba(15,23,42,.5)}
+  .b-frame .vimg{width:100%;border-radius:0}
+  .b-frame .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,26,0) 45%,rgba(11,14,26,.86) 100%)}
+  .b-cap{position:absolute;left:14px;right:14px;bottom:14px;color:#fff}
+  .b-badge{display:inline-flex;align-items:center;gap:6px;background:#F7C600;color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:8px}
+  .b-cap h3{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+  .b-under{text-align:center;margin-top:14px}
+  .b-under p{font-size:13px;color:#6B7280;line-height:1.55;margin-bottom:10px}
+  .b-under a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#1E3A5F;text-decoration:none;border-bottom:2px solid #F7C600;padding-bottom:2px}
+
+  /* C — horizontal rows, small portrait left */
+  .c-list{margin-top:40px;display:flex;flex-direction:column}
+  .c-row{display:flex;gap:28px;align-items:center;padding:26px 0;border-top:1px solid rgba(0,0,0,.08)}
+  .c-row:first-child{border-top:none}
+  .c-row .vimg{width:132px;flex-shrink:0;box-shadow:0 14px 32px -18px rgba(15,23,42,.45)}
+  .c-txt{flex:1}
+  .c-plat{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F7C600;margin-bottom:6px}
+  .c-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.02em;text-transform:uppercase;line-height:1;margin-bottom:8px}
+  .c-desc{font-size:14.5px;color:#6B7280;line-height:1.6;margin-bottom:12px;max-width:460px}
+  .c-link{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1E3A5F;text-decoration:none;border-bottom:2px solid #F7C600;padding-bottom:2px}
+
+  /* D — dark phone-screen frames */
+  .d-sec{background:#132c54;border-radius:20px;position:relative;overflow:hidden}
+  .d-sec::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(247,198,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(247,198,0,.05) 1px,transparent 1px);background-size:56px 56px}
+  .d-inner{position:relative;padding:52px 40px}
+  .d-inner .sec-title{color:#fff}.d-inner .sec-sub{color:rgba(255,255,255,.72)}
+  .d-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px;justify-items:center}
+  .d-card{width:100%;max-width:215px;text-align:center}
+  .d-screen{padding:7px;background:#0B0E1A;border:1px solid rgba(255,255,255,.14);border-radius:20px;box-shadow:0 22px 46px -20px rgba(0,0,0,.6);margin-bottom:16px}
+  .d-screen .vimg{width:100%;border-radius:13px}
+  .d-plat{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#F7C600;margin-bottom:6px}
+  .d-plat .dot{width:6px;height:6px;border-radius:50%;background:#F7C600}
+  .d-title{font-family:'Bebas Neue',sans-serif;font-size:23px;letter-spacing:.02em;text-transform:uppercase;color:#fff;margin-bottom:10px;line-height:1}
+  .d-link{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#0B0E1A;background:#F7C600;padding:9px 18px;border-radius:8px;text-decoration:none;display:inline-block}
+
+  @media(max-width:820px){
+    .a-grid,.b-grid,.d-grid{grid-template-columns:1fr 1fr}
+    .c-row{gap:18px}
+  }
+  @media(max-width:520px){.a-grid,.b-grid,.d-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+  <div class="opt-tag">
+    <h3>Option A — Compact centered portraits</h3>
+    <p>Native 2:3 images capped at 220px so they stay sharp. Platform label, title, short description, and an underlined link. Airy and simple.</p>
+  </div>
+  <section class="sec"><div class="wrap">
+    <div class="sec-label">Proof</div>
+    <h2 class="sec-title">We practice what <span>we preach.</span></h2>
+    <p class="sec-sub">We put our strategies, frameworks, and results out in public every week.</p>
+    <div class="a-grid">
+      <div class="a-item"><img class="vimg" src="assets/youtube%20bpt.png" alt="YouTube"><div class="a-plat">YouTube</div><div class="a-title">Long-form video</div><p class="a-desc">Deep-dive videos on SEO, agency ops, and AI automation. New every week.</p><a class="a-link" href="#">Watch &rarr;</a></div>
+      <div class="a-item"><img class="vimg" src="assets/instagram%20bpt.png" alt="Instagram"><div class="a-plat">Instagram</div><div class="a-title">Daily insights</div><p class="a-desc">Quick tips and short-form breakdowns of what's working right now.</p><a class="a-link" href="#">Follow &rarr;</a></div>
+      <div class="a-item"><img class="vimg" src="assets/books%20bpt.png" alt="Books"><div class="a-plat">Amazon</div><div class="a-title">Two books</div><p class="a-desc">Agency growth and SEO methodology, in print. Browse reviews on Amazon.</p><a class="a-link" href="#">Shop &rarr;</a></div>
+    </div>
+  </div></section>
+
+  <div class="opt-tag">
+    <h3>Option B — Poster frames with overlay</h3>
+    <p>Even smaller (230px), treated like posters: title + badge sit over the bottom of the image with a scrim, with a one-line caption and link beneath. Gallery feel.</p>
+  </div>
+  <section class="sec"><div class="wrap">
+    <div class="sec-label">Proof</div>
+    <h2 class="sec-title">We practice what <span>we preach.</span></h2>
+    <p class="sec-sub">We put our strategies, frameworks, and results out in public every week.</p>
+    <div class="b-grid">
+      <div class="b-card"><div class="b-frame"><img class="vimg" src="assets/youtube%20bpt.png" alt="YouTube"><div class="scrim"></div><div class="b-cap"><span class="b-badge">YouTube</span><h3>Long-form video</h3></div></div><div class="b-under"><p>SEO, agency ops, and AI automation — new every week.</p><a href="#">Watch on YouTube &rarr;</a></div></div>
+      <div class="b-card"><div class="b-frame"><img class="vimg" src="assets/instagram%20bpt.png" alt="Instagram"><div class="scrim"></div><div class="b-cap"><span class="b-badge">Instagram</span><h3>Daily insights</h3></div></div><div class="b-under"><p>Quick tips and short-form breakdowns, daily.</p><a href="#">Follow on Instagram &rarr;</a></div></div>
+      <div class="b-card"><div class="b-frame"><img class="vimg" src="assets/books%20bpt.png" alt="Books"><div class="scrim"></div><div class="b-cap"><span class="b-badge">Amazon</span><h3>Two books</h3></div></div><div class="b-under"><p>Agency growth and SEO methodology, in print.</p><a href="#">Shop on Amazon &rarr;</a></div></div>
+    </div>
+  </div></section>
+
+  <div class="opt-tag">
+    <h3>Option C — Horizontal rows</h3>
+    <p>The smallest images (132px) sit left with text to the right, three stacked rows with dividers. Lots of room for copy; images stay tiny and crisp.</p>
+  </div>
+  <section class="sec"><div class="wrap">
+    <div class="sec-label">Proof</div>
+    <h2 class="sec-title">We practice what <span>we preach.</span></h2>
+    <p class="sec-sub">We put our strategies, frameworks, and results out in public every week.</p>
+    <div class="c-list">
+      <div class="c-row"><img class="vimg" src="assets/youtube%20bpt.png" alt="YouTube"><div class="c-txt"><div class="c-plat">YouTube</div><div class="c-title">Long-form video</div><p class="c-desc">Deep-dive videos on SEO strategy, agency operations, AI automation, and everything we're building inside our own agency. New content every week.</p><a class="c-link" href="#">Watch on YouTube &rarr;</a></div></div>
+      <div class="c-row"><img class="vimg" src="assets/instagram%20bpt.png" alt="Instagram"><div class="c-txt"><div class="c-plat">Instagram</div><div class="c-title">Daily insights</div><p class="c-desc">Quick tips, behind-the-scenes clips, and short-form breakdowns of what's working right now. Follow along for daily insights you can use immediately.</p><a class="c-link" href="#">Follow on Instagram &rarr;</a></div></div>
+      <div class="c-row"><img class="vimg" src="assets/books%20bpt.png" alt="Books"><div class="c-txt"><div class="c-plat">Amazon</div><div class="c-title">Two books</div><p class="c-desc">Two published books covering agency growth, SEO methodology, and the systems that power everything we teach. Grab a copy and browse reviews on Amazon.</p><a class="c-link" href="#">Shop on Amazon &rarr;</a></div></div>
+    </div>
+  </div></section>
+
+  <div class="opt-tag">
+    <h3>Option D — Dark phone-screen frames</h3>
+    <p>Vertical images read as phone screens inside slim bezels on a navy strip. Small (215px), premium, and ties into the hero/ethos sections.</p>
+  </div>
+  <section class="sec"><div class="wrap">
+    <div class="d-sec"><div class="d-inner">
+      <div class="sec-label">Proof</div>
+      <h2 class="sec-title">We practice what <span>we preach.</span></h2>
+      <p class="sec-sub">We put our strategies, frameworks, and results out in public every week.</p>
+      <div class="d-grid">
+        <div class="d-card"><div class="d-screen"><img class="vimg" src="assets/youtube%20bpt.png" alt="YouTube"></div><div class="d-plat"><span class="dot"></span>YouTube</div><div class="d-title">Long-form video</div><a class="d-link" href="#">Watch &rarr;</a></div>
+        <div class="d-card"><div class="d-screen"><img class="vimg" src="assets/instagram%20bpt.png" alt="Instagram"></div><div class="d-plat"><span class="dot"></span>Instagram</div><div class="d-title">Daily insights</div><a class="d-link" href="#">Follow &rarr;</a></div>
+        <div class="d-card"><div class="d-screen"><img class="vimg" src="assets/books%20bpt.png" alt="Books"></div><div class="d-plat"><span class="dot"></span>Amazon</div><div class="d-title">Two books</div><a class="d-link" href="#">Shop &rarr;</a></div>
+      </div>
+    </div></div>
+  </div></section>
+
+</body>
+</html>

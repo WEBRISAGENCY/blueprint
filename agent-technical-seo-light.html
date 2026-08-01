@@ -461,6 +461,17 @@
 </style>
 </head>
 <body>
+<style>
+  .beta-bar{position:fixed;top:0;left:0;right:0;z-index:9998;height:38px;display:flex;align-items:center;justify-content:center;gap:9px;background:#0B0E1A;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:0 16px;border-bottom:1px solid rgba(247,198,0,.45)}
+  .beta-bar:hover{background:#12172a}
+  .beta-bar .badge{background:#F7C600;color:#0B0E1A;font-weight:800;font-size:10px;letter-spacing:.1em;padding:2px 8px;border-radius:99px}
+  .beta-bar .arw{color:#F7C600;font-weight:800;transition:transform .15s}
+  .beta-bar:hover .arw{transform:translateX(3px)}
+  html{padding-top:38px !important}
+  .nav-bar{top:38px !important}
+  @media(max-width:600px){.beta-bar{font-size:11px;letter-spacing:.03em;gap:7px}}
+</style>
+<a class="beta-bar" href="/agency-os/"><span class="badge">Beta</span><span>Agency OS is now in open beta — explore the platform</span><span class="arw">&rarr;</span></a>
 <!-- NAV -->
 <div class="nav-bar">
   <div class="nav-inner">
