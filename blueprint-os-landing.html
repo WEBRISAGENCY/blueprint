@@ -549,7 +549,7 @@
 
   /* ===== Site footer (matches blueprint homepage) ===== */
   footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0}
-  .footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.2fr 0.8fr 0.8fr 1fr;gap:48px}
+  .footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:48px}
   .footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px}
   .footer-col-title::before{content:'';display:block;width:16px;height:2px;background:var(--yellow)}
   .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
@@ -558,7 +558,7 @@
   .footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s}
   .footer-cta-btn:hover{filter:brightness(1.05)}
   .social-showcase{padding:48px 24px 40px;border-top:1px solid rgba(255,255,255,0.06)}
-  .social-showcase-cards{position:relative;max-width:960px;height:460px;margin:0 auto 40px}
+  .social-showcase-cards{position:relative;max-width:960px;height:330px;margin:0 auto 12px}
   .showcase-card{position:absolute;width:18%;background:#fff;border-radius:8px;padding:6px;box-shadow:0 6px 24px rgba(0,0,0,0.3)}
   .showcase-card-center{width:20%}
   .showcase-thumb{width:100%;aspect-ratio:9/16;border-radius:4px;position:relative;overflow:hidden}
@@ -583,13 +583,13 @@
   @media(max-width:768px){
     .footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px}
     .footer-bottom{flex-direction:column;gap:12px;text-align:center}
-    .social-showcase-cards{height:340px;max-width:680px}
+    .social-showcase-cards{height:270px;max-width:680px}
     .showcase-card{width:20%}.showcase-card-center{width:22%}
     .social-showcase-icons{gap:28px}.showcase-icon-circle{width:44px;height:44px}
   }
   @media(max-width:480px){
     .footer-nav{grid-template-columns:1fr;gap:32px}
-    .social-showcase-cards{height:260px;max-width:480px}
+    .social-showcase-cards{height:200px;max-width:480px}
     .showcase-play{width:28px;height:28px}
     .showcase-play-tri{border-left-width:8px;border-top-width:5px;border-bottom-width:5px}
     .showcase-views{font-size:10px;bottom:4px;left:4px}.showcase-views svg{width:10px;height:10px}
@@ -1389,18 +1389,22 @@
 <!-- FOOTER (matches blueprint homepage) -->
 <footer>
   <div class="footer-nav">
-    <div>
+    <div style="grid-column:span 2">
       <div class="footer-col-title">Features</div>
-      <ul class="footer-links">
-        <li><a href="/blueprint-os-landing.html">Agency OS</a></li>
-        <li><a href="/coaching/">Coaching</a></li>
-        <li><a href="/agency-training/">Video Training</a></li>
-        <li><a href="/bootcamps/">Live Bootcamps</a></li>
-        <li><a href="/agents/">AI Agents</a></li>
-        <li><a href="/slack-channel/">Community</a></li>
-        <li><a href="/seo-sprints-training/">SEO Sprints</a></li>
-        <li><a href="/templates-and-sops/">Templates &amp; SOPs</a></li>
-      </ul>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+        <ul class="footer-links">
+          <li><a href="/blueprint-os-landing.html">Agency OS</a></li>
+          <li><a href="/coaching/">Coaching</a></li>
+          <li><a href="/agency-training/">Video Training</a></li>
+          <li><a href="/bootcamps/">Live Bootcamps</a></li>
+        </ul>
+        <ul class="footer-links">
+          <li><a href="/agents/">AI Agents</a></li>
+          <li><a href="/slack-channel/">Community</a></li>
+          <li><a href="/seo-sprints-training/">SEO Sprints</a></li>
+          <li><a href="/templates-and-sops/">Templates &amp; SOPs</a></li>
+        </ul>
+      </div>
     </div>
     <div>
       <div class="footer-col-title">Company</div>
@@ -1418,15 +1422,6 @@
         <li><a href="/get-started.html">Book a Call</a></li>
       </ul>
       <a href="/sign-up.html" class="footer-cta-btn">Get Started &rarr;</a>
-    </div>
-    <div>
-      <div class="footer-col-title">Follow Us</div>
-      <ul class="footer-links">
-        <li><a href="https://www.instagram.com/theblueprint.training/" target="_blank">Instagram</a></li>
-        <li><a href="https://www.facebook.com/theblueprinttraining/" target="_blank">Facebook</a></li>
-        <li><a href="https://www.youtube.com/@theblueprinttraining" target="_blank">YouTube</a></li>
-        <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
-      </ul>
     </div>
   </div>
 
@@ -1490,10 +1485,6 @@
       <a href="/terms-and-conditions/">Terms</a>
       <a href="mailto:elena@theblueprint.training">Contact</a>
     </div>
-    <a href="https://loganix.com/" target="_blank" class="footer-partner-badge">
-      <span class="footer-partner-label">Platinum Partner</span>
-      <img src="assets/loganix logo.svg" alt="Loganix" class="footer-partner-logo">
-    </a>
   </div>
 </footer>
 
