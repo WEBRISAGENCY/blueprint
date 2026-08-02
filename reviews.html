@@ -125,22 +125,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- HERO -->
+<style>
+.hero-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;text-align:left}
+.hero-left{animation:fadeUp 0.5s ease both}
+.hero-left .hero-badge{margin-bottom:22px}
+.hero-left h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,5vw,80px);line-height:0.92;letter-spacing:-0.01em;margin-bottom:22px;color:#FFFFFF}
+.hero-left h1 span{color:#FFFFFF}
+.hero-left .hero-sub{margin:0 0 36px;max-width:520px}
+.hero-right{animation:fadeUp 0.5s 0.2s ease both;position:relative}
+.shawn-photo{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 70px rgba(0,0,0,0.45)}
+.shawn-photo img{display:block;width:100%;height:auto}
+.shawn-playbtn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:#F7C600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,0.45);transition:transform 0.2s,background 0.2s;z-index:3;padding:0}
+.shawn-playbtn:hover{transform:translate(-50%,-50%) scale(1.08);background:#FFD426}
+.shawn-playbtn svg{width:32px;height:32px;display:block}
+.shawn-playbtn::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(247,198,0,0.55);animation:pulseRing 2.2s ease-out infinite;pointer-events:none}
+.shawn-playbtn.playing::before{animation:none;opacity:0}
+@keyframes pulseRing{0%{transform:scale(1);opacity:0.75}100%{transform:scale(1.4);opacity:0}}
+.shawn-name{position:absolute;bottom:0;left:0;right:0;padding:56px 20px 18px;background:linear-gradient(to top,rgba(11,14,26,0.94),rgba(11,14,26,0.55) 55%,transparent);display:flex;flex-direction:column;z-index:2}
+.shawn-name .shawn-win{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,3vw,34px);color:#F7C600;letter-spacing:0.02em;line-height:1;margin-bottom:8px}
+.shawn-name strong{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#FFFFFF;letter-spacing:0.03em;line-height:1;font-weight:400}
+.shawn-name span{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-top:5px}
+@media(max-width:900px){
+.hero-inner{grid-template-columns:1fr;gap:44px}
+.hero-left{text-align:center}
+.hero-left .hero-sub{margin-left:auto;margin-right:auto}
+.hero-right{max-width:440px;margin:0 auto;width:100%}
+}
+</style>
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
 
-  <div class="hero-badge">500+ Results From Real Agency Owners</div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">500+ Results From Real Agency Owners</div>
+      <h1>
+        The proof is<br><span>in the <span class="wins-animate">wins<canvas class="wins-particles" id="winsCanvas"></canvas></span>.</span>
+      </h1>
+      <p class="hero-sub">
+        Don't take our word for it. Here are hundreds of testimonials from agency owners who used The Blueprint to grow their revenue, land better clients, and build the business they wanted.
+      </p>
+      <a href="/sign-up.html" class="btn-primary">Become A Member</a>
+    </div>
 
-  <h1>
-    The proof is<br><span>in the <span class="wins-animate">wins<canvas class="wins-particles" id="winsCanvas"></canvas></span>.</span>
-  </h1>
-
-  <p class="hero-sub">
-    Don't take our word for it. Here are hundreds of testimonials from agency owners who used The Blueprint to grow their revenue, land better clients, and build the business they wanted.
-  </p>
-
-  <a href="/sign-up.html" class="btn-primary" style="animation:fadeUp 0.5s 0.3s ease both;">Become A Member</a>
+    <div class="hero-right">
+      <div class="shawn-photo">
+        <img src="assets/shawn-lee.jpg" alt="Shawn Lee, CEO of Dentist Nerds" loading="eager">
+        <button class="shawn-playbtn" id="shawnPlayBtn" aria-label="Play Shawn's voice testimonial">
+          <svg id="shawnPlayIcon" viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="shawnPauseIcon" viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true" style="display:none;"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        </button>
+        <div class="shawn-name">
+          <div class="shawn-win">$45K &rarr; $100K/mo</div>
+          <strong>Shawn Lee</strong>
+          <span>CEO, Dentist Nerds</span>
+        </div>
+      </div>
+      <audio id="shawnAudio" preload="none" src="https://www.buzzsprout.com/1433407/episodes/19588026-voicenote-the-blueprint-took-me-to-100k.mp3?client_source=twitter_card"></audio>
+    </div>
+  </div>
 </section>
+<script>
+(function(){
+  var audio=document.getElementById('shawnAudio');
+  var btn=document.getElementById('shawnPlayBtn');
+  var playIcon=document.getElementById('shawnPlayIcon');
+  var pauseIcon=document.getElementById('shawnPauseIcon');
+  if(!audio||!btn)return;
+  btn.addEventListener('click',function(){ if(audio.paused){audio.play();}else{audio.pause();} });
+  audio.addEventListener('play',function(){playIcon.style.display='none';pauseIcon.style.display='block';btn.classList.add('playing');});
+  audio.addEventListener('pause',function(){playIcon.style.display='block';pauseIcon.style.display='none';btn.classList.remove('playing');});
+  audio.addEventListener('ended',function(){playIcon.style.display='block';pauseIcon.style.display='none';btn.classList.remove('playing');});
+})();
+</script>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
