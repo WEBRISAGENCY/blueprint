@@ -73,6 +73,26 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 .tcard-reacts{font-size:12px;color:var(--gray)}
 @media(max-width:820px){.tcards{columns:1}}
 @media(max-width:640px){.tcards{columns:1}}
+
+/* Video testimonial carousel */
+.vc-wrap{position:relative;margin-top:48px}
+.vc-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 18px;-webkit-overflow-scrolling:touch}
+.vc-track::-webkit-scrollbar{height:6px}
+.vc-track::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.15);border-radius:3px}
+.vc-card{position:relative;flex:0 0 300px;scroll-snap-align:start;border-radius:14px;overflow:hidden;cursor:pointer;border:1px solid rgba(0,0,0,0.08);box-shadow:0 8px 30px rgba(0,0,0,0.12);background:#132c54;aspect-ratio:3/4;transition:transform .2s,box-shadow .2s}
+.vc-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(0,0,0,0.2)}
+.vc-card img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.vc-play{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;background:#F7C600;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.45);transition:transform .2s}
+.vc-card:hover .vc-play{transform:translate(-50%,-50%) scale(1.08)}
+.vc-play svg{width:26px;height:26px;margin-left:3px;display:block}
+.vc-info{position:absolute;left:0;right:0;bottom:0;padding:48px 18px 16px;background:linear-gradient(to top,rgba(11,14,26,0.94),rgba(11,14,26,0.4) 60%,transparent);display:flex;flex-direction:column}
+.vc-info strong{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;letter-spacing:0.03em;line-height:1;font-weight:400}
+.vc-info span{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#F7C600;margin-top:5px}
+.vc-arrow{position:absolute;top:44%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:#fff;border:1px solid rgba(0,0,0,0.1);box-shadow:0 6px 20px rgba(0,0,0,0.18);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .2s,transform .2s;color:#132c54}
+.vc-arrow svg{width:22px;height:22px}
+.vc-arrow:hover{background:#F7C600;transform:translateY(-50%) scale(1.06)}
+.vc-prev{left:-12px}.vc-next{right:-12px}
+@media(max-width:768px){.vc-card{flex-basis:240px}.vc-arrow{display:none}}
 </style>
 </head>
 <body>
@@ -1199,128 +1219,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title" style="color:#0B0E1A;">Hear it directly <span style="color:#0B0E1A;">from members.</span></h2>
     <p class="section-body">Agency owners across every niche and experience level sharing exactly what The Blueprint did for their business.</p>
 
-    <div class="videos-grid">
-      <div class="video-card" onclick="openWistia('nxapa95aat')">
-        <div class="video-thumb" id="thumb-nxapa95aat"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Jonathan Schlossberg</div><div class="video-role">Founder, Guud Marketing</div></div>
+    <div class="vc-wrap">
+      <button class="vc-arrow vc-prev" onclick="vcScroll(-1)" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="vc-track" id="vcTrack">
+        <div class="vc-card" onclick="openWistia('oxe1fdsm4k')" role="button" tabindex="0" aria-label="Play Shawn Lee's video testimonial">
+          <img src="assets/shawn-lee%201.jpg" alt="Shawn Lee" loading="lazy">
+          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="vc-info"><strong>Shawn Lee</strong><span>Founder, Dentist Nerds</span></div>
+        </div>
+        <div class="vc-card" onclick="openWistia('lde7qfvavx')" role="button" tabindex="0" aria-label="Play James Reynolds's video testimonial">
+          <img src="assets/james%20reynolds.jpg" alt="James Reynolds" loading="lazy">
+          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="vc-info"><strong>James Reynolds</strong><span>CEO, SEO Sherpa</span></div>
+        </div>
+        <div class="vc-card" onclick="openWistia('445oicznxz')" role="button" tabindex="0" aria-label="Play John Saunders's video testimonial">
+          <img src="assets/john%20sunders.jpg" alt="John Saunders" loading="lazy">
+          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="vc-info"><strong>John Saunders</strong><span>Founder, 5Four Digital</span></div>
+        </div>
+        <div class="vc-card" onclick="openWistia('57e9i2akkn')" role="button" tabindex="0" aria-label="Play Brendan Hufford's video testimonial">
+          <img src="assets/brendan%20hufford.jpg" alt="Brendan Hufford" loading="lazy">
+          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="vc-info"><strong>Brendan Hufford</strong><span>Founder, 100 Days of SEO</span></div>
+        </div>
+        <div class="vc-card" onclick="openWistia('wobum962ls')" role="button" tabindex="0" aria-label="Play Tim Hanson's video testimonial">
+          <img src="assets/tim%20hanson.jpg" alt="Tim Hanson" loading="lazy">
+          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="vc-info"><strong>Tim Hanson</strong><span>Founder, Explore Digital</span></div>
+        </div>
+        <div class="vc-card" onclick="openWistia('35hbqgd631')" role="button" tabindex="0" aria-label="Play Kyle Klement's video testimonial">
+          <img src="assets/kyle.jpg" alt="Kyle Klement" loading="lazy">
+          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="vc-info"><strong>Kyle Klement</strong><span>Founder, Vet Marketing Firm</span></div>
+        </div>
       </div>
-      <div class="video-card" onclick="openWistia('5vk74n41xs')">
-        <div class="video-thumb" id="thumb-5vk74n41xs"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Kyle Gustin</div><div class="video-role">Blueprint Member</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('lde7qfvavx')">
-        <div class="video-thumb" id="thumb-lde7qfvavx"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">James Reynolds</div><div class="video-role">CEO, SEO Sherpa</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('djs0g1x80j')">
-        <div class="video-thumb" id="thumb-djs0g1x80j"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">John Saunders</div><div class="video-role">Founder, 5Four Digital</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('57e9i2akkn')">
-        <div class="video-thumb" id="thumb-57e9i2akkn"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Brendan Hufford</div><div class="video-role">Founder, 100 Days of SEO</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('7lkfq37umu')">
-        <div class="video-thumb" id="thumb-7lkfq37umu"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Alex Quin</div><div class="video-role">Founder, UADV Media</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('1es957wmeq')">
-        <div class="video-thumb" id="thumb-1es957wmeq"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Skyler Reeves</div><div class="video-role">CEO, Ardent Growth</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('ixutmikmtl')">
-        <div class="video-thumb" id="thumb-ixutmikmtl"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Blueprint Member</div><div class="video-role">The Blueprint Training</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('xw9n3wx82u')">
-        <div class="video-thumb" id="thumb-xw9n3wx82u"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Joe Babi</div><div class="video-role">Founder, Joseph Paul Digital</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('dwyh5dqbwj')">
-        <div class="video-thumb" id="thumb-dwyh5dqbwj"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Matt Caron</div><div class="video-role">Blueprint Member</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('cxqrq4ecvr')">
-        <div class="video-thumb" id="thumb-cxqrq4ecvr"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Ameet Mehta</div><div class="video-role">Blueprint Member</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('vkpxp5feug')">
-        <div class="video-thumb" id="thumb-vkpxp5feug"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Jimmy Mitchell</div><div class="video-role">Founder, My Online Guy</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('ld2kyhpiiq')">
-        <div class="video-thumb" id="thumb-ld2kyhpiiq"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Christopher Schroeder</div><div class="video-role">Sr SEO, SpotHero</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('vbh00n9umf')">
-        <div class="video-thumb" id="thumb-vbh00n9umf"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Robert Ong</div><div class="video-role">Blueprint Member</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('35hbqgd631')">
-        <div class="video-thumb" id="thumb-35hbqgd631"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Kyle Klement</div><div class="video-role">Founder, Vet Marketing Firm</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('qflqjhhsxy')">
-        <div class="video-thumb" id="thumb-qflqjhhsxy"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Justin Thomas</div><div class="video-role">Founder, Journey Engine</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('445oicznxz')">
-        <div class="video-thumb" id="thumb-445oicznxz"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">John Saunders</div><div class="video-role">Founder, 5Four Digital</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('wobum962ls')">
-        <div class="video-thumb" id="thumb-wobum962ls"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Tim Hanson</div><div class="video-role">Founder, Explore Digital</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('z7u8q88e2c')">
-        <div class="video-thumb" id="thumb-z7u8q88e2c"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Blueprint Member</div><div class="video-role">The Blueprint Training</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('lwq2frb2b7')">
-        <div class="video-thumb" id="thumb-lwq2frb2b7"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Adam Collins</div><div class="video-role">Founder, Ignite SEO</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('ydz3jzugni')">
-        <div class="video-thumb" id="thumb-ydz3jzugni"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Rowena Bolo</div><div class="video-role">Founder, The Craving Shift</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('8d0e533nji')">
-        <div class="video-thumb" id="thumb-8d0e533nji"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Moritz Hotzel</div><div class="video-role">Founder, BookedOut Dentist</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('y335aeu4ge')">
-        <div class="video-thumb" id="thumb-y335aeu4ge"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Tessah</div><div class="video-role">Blueprint Member</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('8pt4w0jp2c')">
-        <div class="video-thumb" id="thumb-8pt4w0jp2c"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Eugene</div><div class="video-role">Blueprint Member</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('r3okuahe2w')">
-        <div class="video-thumb" id="thumb-r3okuahe2w"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Chris Pahor</div><div class="video-role">Blueprint Member</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('o8o1bcldr0')">
-        <div class="video-thumb" id="thumb-o8o1bcldr0"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Dominik Jedro</div><div class="video-role">Blueprint Member</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('utu4zmkejo')">
-        <div class="video-thumb" id="thumb-utu4zmkejo"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Kevin Gallagher</div><div class="video-role">Founder, Stargazer Digital</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('oxe1fdsm4k')">
-        <div class="video-thumb" id="thumb-oxe1fdsm4k"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Shawn Lee</div><div class="video-role">Founder, Dentist Nerds</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('ircl7amzmp')">
-        <div class="video-thumb" id="thumb-ircl7amzmp"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Blair Witkowski</div><div class="video-role">Blueprint Member</div></div>
-      </div>
-      <div class="video-card" onclick="openWistia('zhut7q6sun')">
-        <div class="video-thumb" id="thumb-zhut7q6sun"><div class="video-play">▶</div></div>
-        <div class="video-info"><div class="video-name">Blueprint Member</div><div class="video-role">The Blueprint Training</div></div>
-      </div>
+      <button class="vc-arrow vc-next" onclick="vcScroll(1)" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
+    <script>
+    function vcScroll(dir){var t=document.getElementById('vcTrack');if(!t)return;var c=t.querySelector('.vc-card');var w=c?c.offsetWidth+20:320;t.scrollBy({left:dir*w,behavior:'smooth'});}
+    </script>
   </div>
 </section>
 
