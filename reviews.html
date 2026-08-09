@@ -96,7 +96,8 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 
 /* Coverflow video carousel */
 .cf{position:relative;height:460px;margin-top:44px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.cf-card{position:absolute;width:300px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#132c54;border:1px solid rgba(0,0,0,0.08);box-shadow:0 18px 50px rgba(0,0,0,0.28);transition:transform .45s cubic-bezier(.4,0,.2,1),opacity .45s;cursor:pointer;will-change:transform,opacity}
+.cf-card{position:absolute;width:300px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#132c54;border:1px solid rgba(0,0,0,0.06);box-shadow:0 10px 26px rgba(0,0,0,0.14);transition:transform .45s cubic-bezier(.4,0,.2,1),opacity .45s,box-shadow .45s;cursor:pointer;will-change:transform,opacity}
+.cf-card.active{box-shadow:0 20px 44px rgba(0,0,0,0.22)}
 .cf-card img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .cf-play{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:#F7C600;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;transition:opacity .3s}
 .cf-card.active .cf-play{opacity:1}
@@ -1234,8 +1235,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- VIDEO TESTIMONIALS -->
 <section class="videos">
   <div class="container">
-    <h2 class="section-title" style="color:#0B0E1A;">Hear it directly <span style="color:#0B0E1A;">from members.</span></h2>
-    <p class="section-body">Agency owners across every niche and experience level sharing exactly what The Blueprint did for their business.</p>
+    <div style="text-align:center;max-width:740px;margin:0 auto 8px;">
+      <h2 class="section-title" style="color:#0B0E1A;">Hear it directly <span style="color:#0B0E1A;">from members.</span></h2>
+      <p class="section-body" style="margin:16px auto 0;">Agency owners across every niche and experience level sharing exactly what The Blueprint did for their business.</p>
+    </div>
 
     <div class="cf" id="cfStage">
       <button class="cf-arrow cf-prev" onclick="cfMove(-1)" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
@@ -1276,9 +1279,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var stage=document.getElementById('cfStage'); if(!stage) return;
       var cards=[].slice.call(stage.querySelectorAll('.cf-card')); var active=0;
       function layout(){
+        var n=cards.length, half=Math.floor(n/2);
         var w=window.innerWidth; var sp=w<480?150:(w<768?175:215);
         cards.forEach(function(c,i){
-          var off=i-active, abs=Math.abs(off);
+          var off=i-active; if(off>half) off-=n; if(off<-half) off+=n;
+          var abs=Math.abs(off);
           var scale=off===0?1:(abs===1?0.82:0.66);
           var op=abs>2?0:(off===0?1:(abs===1?0.62:0.32));
           c.style.transform='translateX('+(off*sp)+'px) scale('+scale+')';
