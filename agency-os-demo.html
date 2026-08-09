@@ -49,7 +49,7 @@
 
     <div style="position:relative;max-width:720px;margin:34px auto 56px">
       <div style="position:absolute;inset:16px 34px;border-radius:24px;background:radial-gradient(58% 60% at 50% 50%, rgba(37,99,235,.45), rgba(37,99,235,.12) 55%, transparent 72%);filter:blur(26px);animation:bptGlow 3.2s ease-in-out infinite;pointer-events:none;z-index:0"></div>
-      <div onclick="openModal()" style="position:relative;z-index:1;border-radius:20px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,.12);box-shadow:0 46px 100px -40px rgba(0,0,0,.75)">
+      <div id="videoTile" onclick="playVideo()" style="position:relative;z-index:1;border-radius:20px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,.12);box-shadow:0 46px 100px -40px rgba(0,0,0,.75)">
         <div style="position:relative;width:100%;aspect-ratio:16/9;background:#101527">
           <!-- Replace with the real thumbnail -->
           <img src="assets/agency-os-demo-poster.jpg" alt="Agency OS demo" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
@@ -217,17 +217,7 @@
   </div>
 </footer>
 
-<!-- ══ EMAIL MODAL ══ -->
-<div id="emailModal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(11,14,26,.78);align-items:center;justify-content:center;padding:24px">
-  <div style="position:relative;width:100%;max-width:520px;background:#fff;border-radius:22px;padding:44px 38px 34px;box-shadow:0 46px 100px -40px rgba(0,0,0,.7)">
-    <button type="button" class="modal-close" onclick="closeModal()" style="position:absolute;top:14px;right:16px;width:38px;height:38px;border-radius:11px;border:1px solid #e6e9f0;background:#fff;color:#6b7280;font-size:22px;line-height:1;cursor:pointer">&times;</button>
-    <h3 style="font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;line-height:1.05;font-size:30px;color:#0B0E1A;margin-bottom:22px">Where Should We Send the Demo?</h3>
-    <form onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:12px">
-      <input class="optin-input" type="email" id="optinEmail" required placeholder="Enter your email address" style="width:100%;font-family:'Figtree',sans-serif;font-size:16px;color:#0B0E1A;background:#f4f6fb;border:1px solid #e6e9f0;border-radius:11px;padding:15px 16px">
-      <button type="submit" class="cta-yellow" style="width:100%;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:19px;padding:15px 20px;border-radius:11px;border:none;cursor:pointer;background:#F7C600;color:#0B0E1A">Watch the Demo</button>
-    </form>
-  </div>
-</div>
+<!-- (email opt-in removed — the play button plays the video inline) -->
 
 </div>
 
@@ -246,38 +236,13 @@ function recalc(){
 }
 recalc();
 
-function openModal(){
-  var m = document.getElementById('emailModal');
-  m.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(){
-  document.getElementById('emailModal').style.display = 'none';
-  document.body.style.overflow = '';
-}
-document.getElementById('emailModal').addEventListener('click', function(e){
-  if (e.target === this) closeModal();
-});
-
-function handleSubmit(e){
-  e.preventDefault();
-  var email = document.getElementById('optinEmail').value;
-  var btn = e.target.querySelector('button[type=submit]');
-  btn.textContent = 'Submitting...';
-  btn.disabled = true;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: 'email_optin', email: email });
-  fetch('/.netlify/functions/ac-subscribe', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email })
-  })
-  .then(function(res){ return res.json(); })
-  .then(function(data){
-    if (data.success) { window.location.href = '/agency-os-demo-watch'; }
-    else { btn.textContent = 'Watch the Demo'; btn.disabled = false; alert('Something went wrong. Please try again.'); }
-  })
-  .catch(function(){ btn.textContent = 'Watch the Demo'; btn.disabled = false; alert('Something went wrong. Please try again.'); });
+function playVideo(){
+  var t = document.getElementById('videoTile');
+  if (!t) return;
+  t.onclick = null;
+  t.style.cursor = 'default';
+  // Swap the poster tile for an inline player and start it.
+  t.innerHTML = '<video src="assets/ageny%20sales%20video.mp4" poster="assets/agency-os-demo-poster.jpg" controls autoplay playsinline style="display:block;width:100%;aspect-ratio:16/9;background:#000"></video>';
 }
 </script>
 </body>
