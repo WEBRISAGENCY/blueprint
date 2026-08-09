@@ -93,6 +93,24 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 .vc-arrow:hover{background:#F7C600;transform:translateY(-50%) scale(1.06)}
 .vc-prev{left:-12px}.vc-next{right:-12px}
 @media(max-width:768px){.vc-card{flex-basis:240px}.vc-arrow{display:none}}
+
+/* Coverflow video carousel */
+.cf{position:relative;height:460px;margin-top:44px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cf-card{position:absolute;width:300px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#132c54;border:1px solid rgba(0,0,0,0.08);box-shadow:0 18px 50px rgba(0,0,0,0.28);transition:transform .45s cubic-bezier(.4,0,.2,1),opacity .45s;cursor:pointer;will-change:transform,opacity}
+.cf-card img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.cf-play{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:#F7C600;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;transition:opacity .3s}
+.cf-card.active .cf-play{opacity:1}
+.cf-play svg{width:26px;height:26px;margin-left:3px;display:block;fill:#0B0E1A}
+.cf-info{position:absolute;left:0;right:0;bottom:0;padding:54px 18px 18px;background:linear-gradient(to top,rgba(11,14,26,.94),rgba(11,14,26,.35) 60%,transparent);opacity:0;transition:opacity .3s}
+.cf-card.active .cf-info{opacity:1}
+.cf-info strong{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#fff;letter-spacing:.03em;display:block;line-height:1;font-weight:400}
+.cf-info span{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F7C600;margin-top:6px;display:block}
+.cf-arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:#fff;border:1px solid rgba(0,0,0,.1);box-shadow:0 6px 20px rgba(0,0,0,.18);cursor:pointer;display:flex;align-items:center;justify-content:center;color:#132c54;z-index:20;transition:background .2s,transform .2s}
+.cf-arrow:hover{background:#F7C600;transform:translateY(-50%) scale(1.06)}
+.cf-arrow svg{width:22px;height:22px}
+.cf-prev{left:8px}.cf-next{right:8px}
+@media(max-width:768px){.cf{height:400px}.cf-card{width:236px}}
+@media(max-width:480px){.cf{height:360px}.cf-card{width:200px}.cf-arrow{width:44px;height:44px}}
 </style>
 </head>
 <body>
@@ -1219,44 +1237,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title" style="color:#0B0E1A;">Hear it directly <span style="color:#0B0E1A;">from members.</span></h2>
     <p class="section-body">Agency owners across every niche and experience level sharing exactly what The Blueprint did for their business.</p>
 
-    <div class="vc-wrap">
-      <button class="vc-arrow vc-prev" onclick="vcScroll(-1)" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-      <div class="vc-track" id="vcTrack">
-        <div class="vc-card" onclick="openWistia('oxe1fdsm4k')" role="button" tabindex="0" aria-label="Play Shawn Lee's video testimonial">
+    <div class="cf" id="cfStage">
+      <button class="cf-arrow cf-prev" onclick="cfMove(-1)" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="cf-card" data-vid="oxe1fdsm4k" role="button" tabindex="0" aria-label="Play Shawn Lee's video testimonial">
           <img src="assets/shawn-lee%201.jpg" alt="Shawn Lee" loading="lazy">
-          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="vc-info"><strong>Shawn Lee</strong><span>Founder, Dentist Nerds</span></div>
+          <div class="cf-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="cf-info"><strong>Shawn Lee</strong><span>Founder, Dentist Nerds</span></div>
         </div>
-        <div class="vc-card" onclick="openWistia('lde7qfvavx')" role="button" tabindex="0" aria-label="Play James Reynolds's video testimonial">
+        <div class="cf-card" data-vid="lde7qfvavx" role="button" tabindex="0" aria-label="Play James Reynolds's video testimonial">
           <img src="assets/james%20reynolds.jpg" alt="James Reynolds" loading="lazy">
-          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="vc-info"><strong>James Reynolds</strong><span>CEO, SEO Sherpa</span></div>
+          <div class="cf-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="cf-info"><strong>James Reynolds</strong><span>CEO, SEO Sherpa</span></div>
         </div>
-        <div class="vc-card" onclick="openWistia('445oicznxz')" role="button" tabindex="0" aria-label="Play John Saunders's video testimonial">
+        <div class="cf-card" data-vid="445oicznxz" role="button" tabindex="0" aria-label="Play John Saunders's video testimonial">
           <img src="assets/john%20sunders.jpg" alt="John Saunders" loading="lazy">
-          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="vc-info"><strong>John Saunders</strong><span>Founder, 5Four Digital</span></div>
+          <div class="cf-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="cf-info"><strong>John Saunders</strong><span>Founder, 5Four Digital</span></div>
         </div>
-        <div class="vc-card" onclick="openWistia('57e9i2akkn')" role="button" tabindex="0" aria-label="Play Brendan Hufford's video testimonial">
+        <div class="cf-card" data-vid="57e9i2akkn" role="button" tabindex="0" aria-label="Play Brendan Hufford's video testimonial">
           <img src="assets/brendan%20hufford.jpg" alt="Brendan Hufford" loading="lazy">
-          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="vc-info"><strong>Brendan Hufford</strong><span>Founder, 100 Days of SEO</span></div>
+          <div class="cf-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="cf-info"><strong>Brendan Hufford</strong><span>Founder, 100 Days of SEO</span></div>
         </div>
-        <div class="vc-card" onclick="openWistia('wobum962ls')" role="button" tabindex="0" aria-label="Play Tim Hanson's video testimonial">
+        <div class="cf-card" data-vid="wobum962ls" role="button" tabindex="0" aria-label="Play Tim Hanson's video testimonial">
           <img src="assets/tim%20hanson.jpg" alt="Tim Hanson" loading="lazy">
-          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="vc-info"><strong>Tim Hanson</strong><span>Founder, Explore Digital</span></div>
+          <div class="cf-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="cf-info"><strong>Tim Hanson</strong><span>Founder, Explore Digital</span></div>
         </div>
-        <div class="vc-card" onclick="openWistia('35hbqgd631')" role="button" tabindex="0" aria-label="Play Kyle Klement's video testimonial">
+        <div class="cf-card" data-vid="35hbqgd631" role="button" tabindex="0" aria-label="Play Kyle Klement's video testimonial">
           <img src="assets/kyle.jpg" alt="Kyle Klement" loading="lazy">
-          <div class="vc-play"><svg viewBox="0 0 24 24" fill="#0B0E1A" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="vc-info"><strong>Kyle Klement</strong><span>Founder, Vet Marketing Firm</span></div>
+          <div class="cf-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="cf-info"><strong>Kyle Klement</strong><span>Founder, Vet Marketing Firm</span></div>
         </div>
-      </div>
-      <button class="vc-arrow vc-next" onclick="vcScroll(1)" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      <button class="cf-arrow cf-next" onclick="cfMove(1)" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
     <script>
-    function vcScroll(dir){var t=document.getElementById('vcTrack');if(!t)return;var c=t.querySelector('.vc-card');var w=c?c.offsetWidth+20:320;t.scrollBy({left:dir*w,behavior:'smooth'});}
+    (function(){
+      var stage=document.getElementById('cfStage'); if(!stage) return;
+      var cards=[].slice.call(stage.querySelectorAll('.cf-card')); var active=0;
+      function layout(){
+        var w=window.innerWidth; var sp=w<480?150:(w<768?175:215);
+        cards.forEach(function(c,i){
+          var off=i-active, abs=Math.abs(off);
+          var scale=off===0?1:(abs===1?0.82:0.66);
+          var op=abs>2?0:(off===0?1:(abs===1?0.62:0.32));
+          c.style.transform='translateX('+(off*sp)+'px) scale('+scale+')';
+          c.style.opacity=op; c.style.zIndex=String(10-abs);
+          c.style.pointerEvents=abs>2?'none':'auto';
+          c.classList.toggle('active',off===0);
+        });
+      }
+      window.cfMove=function(d){active=(active+d+cards.length)%cards.length; layout();};
+      cards.forEach(function(c,i){c.addEventListener('click',function(){ if(i===active){openWistia(c.getAttribute('data-vid'));} else {active=i; layout();} });});
+      layout(); window.addEventListener('resize',layout);
+    })();
     </script>
   </div>
 </section>
