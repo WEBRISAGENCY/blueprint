@@ -188,96 +188,139 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .coach-callout a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#F7C600;text-decoration:none;border-bottom:2px solid rgba(247,198,0,.5);padding-bottom:2px;transition:.2s}
   .coach-callout a:hover{color:#fff;border-color:#fff}
 </style>
-<section class="pricing" style="padding-top:130px;">
-  <div class="container">
-    <h1 class="pricing-title">Join <span>The Blueprint Training</span></h1>
-    <p class="pricing-sub">One price unlocks everything The Blueprint Training has to offer — the Agency OS software, the full training library, done-for-you AI agents, SOPs and templates, live coaching, and the community. No tiers, no upsells.</p>
-    <div class="pricing-inner">
-      <div class="pricing-card">
-        <div id="planMonthly">
-          <div class="pricing-amount"><span>$</span>199<small>/mo</small></div>
-          <div class="pricing-period">No contracts. Cancel anytime.</div>
+<section id="pricing" class="pricing-getstarted" style="padding:92px 24px;color:#3d4457;background:#f4f6fb">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:#2563EB;margin-bottom:14px">Get started</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;line-height:1.05;font-size:clamp(32px,4.8vw,60px);color:#0B0E1A;margin-bottom:16px">One investment. Unlimited access.</h2>
+    <p data-lead-nowrap="true" style="font-size:17px;line-height:1.65;color:#6b7280;white-space:nowrap;margin:0 0 42px">Your membership includes <b style="color:#0B0E1A">1 on 1 onboarding</b> and <b style="color:#0B0E1A">migration support</b> to get you up and running quickly.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:44px;align-items:start">
+      <div>
+        <div style="background:#fff;border-radius:16px;padding:26px 26px 24px;box-shadow:0 34px 80px -34px rgba(0,0,0,.7)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-bottom:14px">
+            <span style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6b7280">Your agency stack — monthly</span>
+            <label style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#6b7280">Team size
+              <select id="seats" onchange="recalc()" style="font-family:'Figtree',sans-serif;font-size:13px;font-weight:700;color:#0B0E1A;background:#f4f6fb;border:1px solid #e6e9f0;border-radius:9px;padding:6px 10px">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+              </select>
+            </label>
+          </div>
+
+          <div data-cmp-row="true" style="display:grid;grid-template-columns:minmax(0,1fr) 132px 108px;align-items:end">
+            <span></span>
+            <span style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#6b7280;text-align:right;padding:0 8px 8px 0">Your Stack</span>
+            <span style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#2563EB;text-align:left;border-left:1px solid #e6e9f0;padding:0 0 8px 14px">Agency OS</span>
+          </div>
+
+          <div data-cmp-row="true" style="display:grid;grid-template-columns:minmax(0,1fr) 132px 108px;align-items:stretch;border-top:1px solid #e6e9f0">
+            <div style="padding:13px 0"><div style="font-weight:700;font-size:15px;color:#0B0E1A">CRM &amp; pipeline</div><small style="display:block;font-size:12px;color:#9aa2b1">HubSpot, Close, Pipedrive</small></div>
+            <div data-rate="90" data-type="seat" style="padding:13px 8px 13px 0;font-weight:800;font-size:15px;color:#3d4457;display:flex;align-items:center;justify-content:flex-end;font-variant-numeric:tabular-nums"></div>
+            <div style="font-weight:700;font-size:12.5px;color:#2563EB;border-left:1px solid #e6e9f0;padding:13px 0 13px 14px;display:flex;align-items:center;justify-content:center">Included</div>
+          </div>
+          <div data-cmp-row="true" style="display:grid;grid-template-columns:minmax(0,1fr) 132px 108px;align-items:stretch;border-top:1px solid #e6e9f0">
+            <div style="padding:13px 0"><div style="font-weight:700;font-size:15px;color:#0B0E1A">Project management</div><small style="display:block;font-size:12px;color:#9aa2b1">Asana, Monday, ClickUp</small></div>
+            <div data-rate="15" data-type="seat" style="padding:13px 8px 13px 0;font-weight:800;font-size:15px;color:#3d4457;display:flex;align-items:center;justify-content:flex-end;font-variant-numeric:tabular-nums"></div>
+            <div style="font-weight:700;font-size:12.5px;color:#2563EB;border-left:1px solid #e6e9f0;padding:13px 0 13px 14px;display:flex;align-items:center;justify-content:center">Included</div>
+          </div>
+          <div data-cmp-row="true" style="display:grid;grid-template-columns:minmax(0,1fr) 132px 108px;align-items:stretch;border-top:1px solid #e6e9f0">
+            <div style="padding:13px 0"><div style="font-weight:700;font-size:15px;color:#0B0E1A">Client reporting</div><small style="display:block;font-size:12px;color:#9aa2b1">AgencyAnalytics, DashThis</small></div>
+            <div data-rate="200" data-type="flat" style="padding:13px 8px 13px 0;font-weight:800;font-size:15px;color:#3d4457;display:flex;align-items:center;justify-content:flex-end;font-variant-numeric:tabular-nums"></div>
+            <div style="font-weight:700;font-size:12.5px;color:#2563EB;border-left:1px solid #e6e9f0;padding:13px 0 13px 14px;display:flex;align-items:center;justify-content:center">Included</div>
+          </div>
+          <div data-cmp-row="true" style="display:grid;grid-template-columns:minmax(0,1fr) 132px 108px;align-items:stretch;border-top:1px solid #e6e9f0">
+            <div style="padding:13px 0"><div style="font-weight:700;font-size:15px;color:#0B0E1A">Client portal</div><small style="display:block;font-size:12px;color:#9aa2b1">SPP, Ignition</small></div>
+            <div data-rate="90" data-type="flat" style="padding:13px 8px 13px 0;font-weight:800;font-size:15px;color:#3d4457;display:flex;align-items:center;justify-content:flex-end;font-variant-numeric:tabular-nums"></div>
+            <div style="font-weight:700;font-size:12.5px;color:#2563EB;border-left:1px solid #e6e9f0;padding:13px 0 13px 14px;display:flex;align-items:center;justify-content:center">Included</div>
+          </div>
+          <div data-cmp-row="true" style="display:grid;grid-template-columns:minmax(0,1fr) 132px 108px;align-items:stretch;border-top:1px solid #e6e9f0">
+            <div style="padding:13px 0"><div style="font-weight:700;font-size:15px;color:#0B0E1A">AI assistant &amp; workflows</div><small style="display:block;font-size:12px;color:#9aa2b1">assorted add-ons</small></div>
+            <div data-rate="60" data-type="seat" style="padding:13px 8px 13px 0;font-weight:800;font-size:15px;color:#3d4457;display:flex;align-items:center;justify-content:flex-end;font-variant-numeric:tabular-nums"></div>
+            <div style="font-weight:700;font-size:12.5px;color:#2563EB;border-left:1px solid #e6e9f0;padding:13px 0 13px 14px;display:flex;align-items:center;justify-content:center">Included</div>
+          </div>
+
+          <div data-cmp-row="true" style="display:grid;grid-template-columns:minmax(0,1fr) 132px 108px;align-items:stretch;border-top:2px solid #e6e9f0">
+            <div style="padding:16px 0 4px"><div style="font-weight:800;font-size:15px;color:#0B0E1A">Monthly total</div><small style="display:block;font-size:12px;color:#9aa2b1">Everything, all-in</small></div>
+            <div id="stackTotal" style="padding:16px 8px 4px 0;font-family:'Bebas Neue',sans-serif;font-size:22px;color:#dc2626;text-decoration:line-through;display:flex;align-items:center;justify-content:flex-end;font-variant-numeric:tabular-nums"></div>
+            <div style="border-left:1px solid #e6e9f0;padding:16px 0 4px 14px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:1;color:#2563EB">$199<span style="font-family:'Figtree',sans-serif;font-size:12px;font-weight:700;color:#6b7280">/mo</span></span>
+            </div>
+          </div>
+
+          <a class="cta-yellow" href="https://blueprint.spiffy.co/checkout/bpt-program" style="display:flex;align-items:center;justify-content:center;margin-top:16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:19px;padding:15px 20px;border-radius:11px;background:#F7C600;color:#0B0E1A">Get instant access</a>
         </div>
-
-        <ul class="pricing-features">
-          <li>Agency OS — the all-in-one software to run clients, projects, reporting, and billing (with Claude integration)</li>
-          <li>Training suite with modules covering sales, fulfillment, leveraging AI and more</li>
-          <li>SOPs and template suite used by Ryan Stewart's 8 figure agency</li>
-          <li>Private community of agency owners with 24/7 access</li>
-          <li>2x weekly live coaching calls with Ryan Stewart and David Krevitt</li>
-          <li>On-demand Q&amp;A support from the Blueprint team</li>
-          <li>All future updates, new agents, and releases included</li>
-        </ul>
-
-        <a href="https://blueprint.spiffy.co/checkout/bpt-program" class="btn-pricing">Get Instant Access — $199/mo</a>
-        <div class="pricing-note">🔒 Secure checkout.</div>
+        <p style="margin:14px 0 0;font-size:12.5px;color:#9aa2b1">Prices shown are typical market rates for comparison. Your stack may vary.</p>
       </div>
 
-      <div class="pricing-breakdown">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#8A90A8; margin-bottom:8px;">What you'll be able to do</div>
-
-        <div class="breakdown-item">
-          <div class="breakdown-icon">📈</div>
+      <div>
+        <style>
+          @keyframes bptShine{to{background-position:200% center}}
+          @keyframes bptPop{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+          .bpt-more{display:inline-block;background:linear-gradient(90deg,#2563EB,#7C3AED,#EC4899,#2563EB);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;transform-origin:left center;animation:bptShine 3.5s linear infinite,bptPop 2.4s ease-in-out infinite}
+          @media(prefers-reduced-motion:reduce){.bpt-more{animation:none}}
+        </style>
+        <div style="padding:8px 0 20px">
+          <div class="bpt-more" style="font-family:'Bebas Neue',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;font-size:clamp(26px,3vw,34px);line-height:1.05;margin-bottom:8px">But wait… there's more!</div>
+          <p style="font-size:15px;line-height:1.6;color:#6b7280;margin:0">Your membership comes with all of the following bonuses as well.</p>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:22px 0 20px;border-top:1px solid #e6e9f0">
+          <div style="flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.25);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563EB" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+          </div>
           <div>
-            <div class="breakdown-title">Deliver better results for your clients</div>
-            <div class="breakdown-desc">Follow a proven fulfillment system that consistently drives measurable outcomes</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;font-size:19px;line-height:1.15;color:#0B0E1A;margin-bottom:5px">Agency OS</div>
+            <p style="font-size:14.5px;line-height:1.6;color:#6b7280">The all-in-one software to run clients, projects, reporting, and billing — with Claude integration.</p>
           </div>
         </div>
-
-        <div class="breakdown-item">
-          <div class="breakdown-icon">⚡</div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid #e6e9f0">
+          <div style="flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.25);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563EB" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"></path></svg>
+          </div>
           <div>
-            <div class="breakdown-title">Streamline your entire service delivery</div>
-            <div class="breakdown-desc">SOPs and templates for every stage of the client lifecycle, from onboarding to reporting</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;font-size:19px;line-height:1.15;color:#0B0E1A;margin-bottom:5px">Training Suite</div>
+            <p style="font-size:14.5px;line-height:1.6;color:#6b7280">Modules covering sales, fulfillment, leveraging AI, and more.</p>
           </div>
         </div>
-
-        <div class="breakdown-item">
-          <div class="breakdown-icon">🤖</div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid #e6e9f0">
+          <div style="flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.25);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563EB" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="15" y2="17"></line></svg>
+          </div>
           <div>
-            <div class="breakdown-title">Automate tedious tasks with done-for-you AI agents</div>
-            <div class="breakdown-desc">Deploy pre-built agents that handle proposals, audits, content, link building, and reporting</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;font-size:19px;line-height:1.15;color:#0B0E1A;margin-bottom:5px">SOPs &amp; Templates</div>
+            <p style="font-size:14.5px;line-height:1.6;color:#6b7280">A full suite with exact processes to deliver marketing services to clients.</p>
           </div>
         </div>
-
-        <div class="breakdown-item">
-          <div class="breakdown-icon">💰</div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid #e6e9f0">
+          <div style="flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.25);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563EB" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path></svg>
+          </div>
           <div>
-            <div class="breakdown-title">Centralize your software stack and reduce cost</div>
-            <div class="breakdown-desc">Replace your CRM, project management, reporting, and client portal tools with one platform — for a fraction of the price</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;font-size:19px;line-height:1.15;color:#0B0E1A;margin-bottom:5px">Private Community</div>
+            <p style="font-size:14.5px;line-height:1.6;color:#6b7280">Agency owners you can reach 24/7.</p>
           </div>
         </div>
-
-        <div class="breakdown-item">
-          <div class="breakdown-icon">✨</div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid #e6e9f0">
+          <div style="flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.25);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563EB" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg>
+          </div>
           <div>
-            <div class="breakdown-title">Integrate your agency's services with Claude</div>
-            <div class="breakdown-desc">Connect the platform to Claude and hand off real work — onboarding, audits, proposals, and reporting</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;font-size:19px;line-height:1.15;color:#0B0E1A;margin-bottom:5px">Live Coaching</div>
+            <p style="font-size:14.5px;line-height:1.6;color:#6b7280">Two calls a week with Ryan Stewart and Blueprint coaches.</p>
           </div>
         </div>
-
-        <div class="breakdown-item">
-          <div class="breakdown-icon">👥</div>
-          <div>
-            <div class="breakdown-title">Know exactly who to hire, where to find them, and how to pay them</div>
-            <div class="breakdown-desc">Build a lean team so you can pull yourself out of client services for good</div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid #e6e9f0">
+          <div style="flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.25);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563EB" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
           </div>
-        </div>
-
-        <div class="breakdown-item">
-          <div class="breakdown-icon">🏢</div>
           <div>
-            <div class="breakdown-title">Become a true CEO</div>
-            <div class="breakdown-desc">Work on the business, not in it. The system, agents, and team do the rest.</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;font-size:19px;line-height:1.15;color:#0B0E1A;margin-bottom:5px">Q&amp;A Support</div>
+            <p style="font-size:14.5px;line-height:1.6;color:#6b7280">On-demand answers from the Blueprint team.</p>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Coaching callout -->
-    <div class="coach-callout">
-      <span>Interested in coaching?</span>
-      <a href="/get-started.html">Inquire for details &rarr;</a>
     </div>
   </div>
 </section>
@@ -622,6 +665,23 @@ document.addEventListener('click',function(e){
     document.querySelectorAll('.nav-item-btn').forEach(function(b){b.classList.remove('open');});
   }
 });
+</script>
+
+<script>
+(function(){
+  function money(n){return '$'+n.toLocaleString('en-US')+'/mo';}
+  window.recalc=function(){
+    var s=document.getElementById('seats'); if(!s) return;
+    var seats=Number(s.value), total=0;
+    document.querySelectorAll('[data-rate]').forEach(function(el){
+      var rate=Number(el.dataset.rate);
+      var amt=el.dataset.type==='seat'?rate*seats:rate;
+      total+=amt; el.textContent=money(amt);
+    });
+    var t=document.getElementById('stackTotal'); if(t) t.textContent=money(total);
+  };
+  recalc();
+})();
 </script>
 </body>
 </html>
