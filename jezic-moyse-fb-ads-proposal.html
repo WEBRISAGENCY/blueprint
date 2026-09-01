@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jezic &amp; Moyse — Facebook &amp; Instagram Ads Proposal | WEBRIS</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#1a1a1f;font-family:'Inter',sans-serif;padding:24px 0;}
+.slide-wrap{width:100%;display:flex;justify-content:center;margin-bottom:16px;}
+.slide{width:1280px;height:720px;background:#f8f7f4;
+  background-image:linear-gradient(rgba(158,124,46,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(158,124,46,.03) 1px,transparent 1px);
+  background-size:64px 64px;position:relative;overflow:hidden;flex-shrink:0;transform-origin:top center;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.35);}
+.ab{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#9e7c2e,#c8a44e);z-index:20;}
+.ft{position:absolute;bottom:0;left:0;right:0;height:38px;background:rgba(248,247,244,.92);border-top:1px solid rgba(0,0,0,.06);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 44px;z-index:20;}
+.ft-logo{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1a1a1f;}
+.ft-logo span{color:#9e7c2e;}
+.ft-c{font-size:12px;color:#8a8892;letter-spacing:.04em;position:absolute;left:50%;transform:translateX(-50%);}
+.ft-r{font-size:12px;color:#8a8892;}
+.si{padding:30px 44px 58px;height:100%;display:flex;flex-direction:column;}
+.ey{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9e7c2e;margin-bottom:5px;}
+.slide-title{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:#1a1a1f;line-height:1.1;margin-bottom:3px;}
+.slide-src{font-size:14px;color:#8a8892;letter-spacing:.01em;margin-bottom:16px;}
+.card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.04);}
+.card-h{font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#8a8892;margin-bottom:8px;}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+.kpi{border-radius:12px;padding:14px 18px;}
+.kpi-l{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#8a8892;margin-bottom:5px;}
+.kpi-v{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:800;color:#1a1a1f;line-height:1;}
+.kpi-m{font-size:12.5px;color:#8a8892;margin-top:5px;}
+.kpi-gold{background:linear-gradient(135deg,rgba(158,124,46,.1),rgba(158,124,46,.04));border:1px solid rgba(158,124,46,.2);}
+.kpi-blue{background:linear-gradient(135deg,rgba(59,130,246,.09),rgba(59,130,246,.03));border:1px solid rgba(59,130,246,.18);}
+.kpi-green{background:linear-gradient(135deg,rgba(22,163,74,.09),rgba(22,163,74,.03));border:1px solid rgba(22,163,74,.18);}
+.kpi-purple{background:linear-gradient(135deg,rgba(139,92,246,.09),rgba(139,92,246,.03));border:1px solid rgba(139,92,246,.18);}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex:1;min-height:0;}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1;min-height:0;}
+.pcard{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.04);padding:18px 20px;display:flex;flex-direction:column;}
+.pcard .tag{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9e7c2e;margin-bottom:10px;}
+.pcard h3{font-family:'Space Grotesk',sans-serif;font-size:18px;color:#1a1a1f;margin-bottom:8px;font-weight:700;}
+.pcard p{font-size:13px;color:#5a5862;line-height:1.55;}
+.li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#3f3d47;line-height:1.5;margin-bottom:10px;}
+.li:last-child{margin-bottom:0;}
+.dot{width:20px;height:20px;border-radius:50%;background:rgba(158,124,46,.12);border:1px solid rgba(158,124,46,.3);color:#9e7c2e;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-family:'Space Grotesk',sans-serif;}
+.li b{color:#1a1a1f;}
+.inv-t{width:100%;border-collapse:collapse;}
+.inv-t td{padding:13px 4px;font-size:15px;color:#3f3d47;border-bottom:1px solid rgba(0,0,0,.07);}
+.inv-t td.r{text-align:right;font-family:'Space Grotesk',sans-serif;font-weight:700;color:#1a1a1f;}
+.inv-t tr.total td{border-bottom:none;border-top:2px solid rgba(158,124,46,.35);font-size:17px;padding-top:15px;}
+.inv-t tr.total td.r{font-size:24px;color:#9e7c2e;}
+.pill{display:inline-block;padding:4px 11px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.06em;background:rgba(158,124,46,.12);color:#9e7c2e;}
+.disc{font-size:10.5px;color:rgba(0,0,0,.4);font-style:italic;margin-top:10px;line-height:1.5;}
+@media print{
+  body{background:#fff;padding:0;}
+  @page{size:1280px 720px;margin:0;}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+  .slide-wrap{display:block!important;page-break-after:always!important;width:1280px!important;height:720px!important;margin:0!important;}
+  .slide{width:1280px!important;height:720px!important;transform:none!important;border-radius:0!important;box-shadow:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═════ COVER ═════ -->
+<div class="slide-wrap"><div class="slide">
+  <div class="ab"></div>
+  <div style="position:absolute;right:-80px;top:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(158,124,46,.07) 0%,transparent 65%);z-index:1;"></div>
+  <div style="position:absolute;left:-100px;bottom:-100px;width:360px;height:360px;background:radial-gradient(circle,rgba(158,124,46,.04) 0%,transparent 65%);z-index:1;"></div>
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:60px 80px;">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#1a1a1f;margin-bottom:44px;">WEB<span style="color:#9e7c2e;">R</span>IS</div>
+    <div style="width:72px;height:3px;background:linear-gradient(90deg,#9e7c2e,#c8a44e);border-radius:2px;margin-bottom:44px;"></div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:50px;font-weight:700;color:#1a1a1f;line-height:1.05;margin-bottom:10px;">Facebook &amp; Instagram Ads</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#3f3d47;margin-bottom:18px;">Personal Injury Client Acquisition</div>
+    <div style="font-size:20px;font-weight:600;color:#9e7c2e;letter-spacing:.05em;margin-bottom:40px;">Prepared for Jezic &amp; Moyse, LLC</div>
+    <div style="display:flex;gap:16px;align-items:center;font-size:13px;color:#8a8892;letter-spacing:.04em;">
+      <span>Meta Ads Strategy</span><span style="color:rgba(158,124,46,.3);">·</span>
+      <span>Bilingual Creative</span><span style="color:rgba(158,124,46,.3);">·</span>
+      <span>Lead Generation</span><span style="color:rgba(158,124,46,.3);">·</span>
+      <span>The DMV</span>
+    </div>
+    <div style="position:absolute;bottom:44px;font-size:16px;color:#c8c5be;letter-spacing:.06em;">August 2026 &nbsp;·&nbsp; Confidential</div>
+  </div>
+</div></div>
+
+<!-- ═════ THE OPPORTUNITY ═════ -->
+<div class="slide-wrap"><div class="slide">
+  <div class="ab"></div>
+  <div class="si">
+    <div class="ey">The Opportunity · 01</div>
+    <div class="slide-title">You Own The Courtroom. You're Leaving The Feed Empty.</div>
+    <div class="slide-src">Jezic &amp; Moyse, LLC — Silver Spring, MD · Serving Maryland, Virginia &amp; D.C.</div>
+    <div class="kpi-row">
+      <div class="kpi kpi-gold"><div class="kpi-l">Firm Credibility</div><div class="kpi-v">Top&nbsp;10</div><div class="kpi-m">Super Lawyers in MD · Washingtonian Best Lawyers</div></div>
+      <div class="kpi kpi-blue"><div class="kpi-l">Trust Signal</div><div class="kpi-v">100s</div><div class="kpi-m">Google reviews — the exact proof PI ads convert on</div></div>
+      <div class="kpi kpi-green"><div class="kpi-l">Untapped Edge</div><div class="kpi-v">EN + ES</div><div class="kpi-m">Bilingual firm in a heavily Hispanic county</div></div>
+      <div class="kpi kpi-purple"><div class="kpi-l">The Gap</div><div class="kpi-v">PI</div><div class="kpi-m">A real injury practice, marketed like an afterthought</div></div>
+    </div>
+    <div class="card" style="flex:1;min-height:0;padding:20px 24px;display:flex;flex-direction:column;justify-content:center;">
+      <div class="card-h">The Case For Paid Social</div>
+      <p style="font-size:15.5px;color:#3f3d47;line-height:1.7;">
+        Jezic &amp; Moyse is a household name for criminal defense in the DMV — 130+ jury trials, Super Lawyers, decades of results.
+        But personal injury is a <b>different buyer on a different timeline</b>. An accident victim isn't searching a lawyer's trial record at 9pm
+        the night of a crash — they're scrolling Facebook and Instagram, hurting, unsure, and one thumb-stop away from calling <i>someone</i>.
+        Right now that someone is Morgan &amp; Morgan and every billboard firm in Maryland. Your reputation already beats theirs —
+        we just need to put it in front of injury victims <b>before</b> they call the 1-800 number. That's what this engagement does.
+      </p>
+    </div>
+  </div>
+  <div class="ft"><div class="ft-logo">WEB<span>R</span>IS</div><div class="ft-c">Jezic &amp; Moyse, LLC · August 2026</div><div class="ft-r">Confidential</div></div>
+</div></div>
+
+<!-- ═════ THE STRATEGY / FUNNEL ═════ -->
+<div class="slide-wrap"><div class="slide">
+  <div class="ab"></div>
+  <div class="si">
+    <div class="ey">The Strategy · 02</div>
+    <div class="slide-title">A Full-Funnel Injury Acquisition Engine</div>
+    <div class="slide-src">Meta (Facebook + Instagram) built around how accident victims actually decide</div>
+    <div class="three">
+      <div class="pcard">
+        <div class="tag">Top of Funnel</div>
+        <h3>Capture The Moment</h3>
+        <p>Short-form video and "did you know" creative aimed at recent auto, truck, and slip-and-fall victims across the DMV — in <b>English and Spanish</b>. Goal: interrupt the scroll and plant the firm before the insurance adjuster calls.</p>
+        <div style="margin-top:auto;padding-top:12px;"><span class="pill">Awareness · Video Views</span></div>
+      </div>
+      <div class="pcard">
+        <div class="tag">Middle of Funnel</div>
+        <h3>Make The Case</h3>
+        <p>Results, real reviews, attorney authority, and "you pay nothing unless we win" messaging. Instant lead forms + a dedicated injury landing page turn attention into a phone number and a case summary — 24/7.</p>
+        <div style="margin-top:auto;padding-top:12px;"><span class="pill">Lead Forms · Landing Page</span></div>
+      </div>
+      <div class="pcard">
+        <div class="tag">Bottom of Funnel</div>
+        <h3>Close The Loop</h3>
+        <p>Retargeting for anyone who watched, clicked, or half-filled a form, plus instant lead routing to intake so no lead goes cold. We feed intake's "signed vs. junk" back into targeting every week.</p>
+        <div style="margin-top:auto;padding-top:12px;"><span class="pill">Retargeting · Intake Sync</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><div class="ft-logo">WEB<span>R</span>IS</div><div class="ft-c">Jezic &amp; Moyse, LLC · August 2026</div><div class="ft-r">Confidential</div></div>
+</div></div>
+
+<!-- ═════ WHAT WE RUN ═════ -->
+<div class="slide-wrap"><div class="slide">
+  <div class="ab"></div>
+  <div class="si">
+    <div class="ey">Scope · 03</div>
+    <div class="slide-title">What We Build &amp; Run Every Month</div>
+    <div class="slide-src">Managed end-to-end by WEBRIS — you approve, we execute</div>
+    <div class="two">
+      <div class="pcard" style="justify-content:space-between;">
+        <div>
+          <div class="li"><span class="dot">1</span><div><b>Campaign management</b> — full build, testing, and daily optimization of Facebook &amp; Instagram lead campaigns targeting injury victims across MD / VA / DC.</div></div>
+          <div class="li"><span class="dot">2</span><div><b>Bilingual creative production</b> — static ads, short-form video scripts, and UGC-style hooks in <b>English and Spanish</b>, refreshed continuously to beat fatigue.</div></div>
+          <div class="li"><span class="dot">3</span><div><b>Landing page + instant forms</b> — a dedicated, conversion-built injury page and Meta Instant Forms so leads come in 24/7.</div></div>
+          <div class="li"><span class="dot">4</span><div><b>Tracking &amp; attribution</b> — Meta Pixel + Conversions API and lead routing into your intake / CRM so every dollar is traceable.</div></div>
+        </div>
+      </div>
+      <div class="pcard" style="justify-content:space-between;">
+        <div>
+          <div class="li"><span class="dot">5</span><div><b>Audiences &amp; retargeting</b> — geo-targeted prospecting plus retargeting of video viewers, site visitors, and form drop-offs.</div></div>
+          <div class="li"><span class="dot">6</span><div><b>Weekly optimization</b> — budget shifts, creative swaps, and audience tuning against cost-per-qualified-lead, not vanity metrics.</div></div>
+          <div class="li"><span class="dot">7</span><div><b>Intake feedback loop</b> — a weekly "signed vs. unqualified" review so spend chases <b>cases</b>, not clicks.</div></div>
+          <div class="li"><span class="dot">8</span><div><b>Monthly reporting</b> — a clear dashboard: spend, leads, cost per lead, and signed-case trend, reviewed on a call.</div></div>
+        </div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px dashed rgba(158,124,46,.3);font-size:12.5px;color:#8a8892;">
+          Creative direction and copy follow the WEBRIS legal-ad playbook — plain, emotional, insurance-company-as-the-enemy — proven on injury campaigns.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><div class="ft-logo">WEB<span>R</span>IS</div><div class="ft-c">Jezic &amp; Moyse, LLC · August 2026</div><div class="ft-r">Confidential</div></div>
+</div></div>
+
+<!-- ═════ PROJECTIONS ═════ -->
+<div class="slide-wrap"><div class="slide">
+  <div class="ab"></div>
+  <div class="si">
+    <div class="ey">The Model · 04</div>
+    <div class="slide-title">What $10K/Month In Ad Spend Can Return</div>
+    <div class="slide-src">Illustrative 6-month model at $10,000/mo media budget — a planning target, not a guarantee</div>
+    <div class="kpi-row">
+      <div class="kpi kpi-blue"><div class="kpi-l">Blended Cost / Lead</div><div class="kpi-v" style="font-size:34px;">$60–95</div><div class="kpi-m">Improves as the account exits learning</div></div>
+      <div class="kpi kpi-gold"><div class="kpi-l">Qualified Leads / Mo</div><div class="kpi-v">~150</div><div class="kpi-m">At maturity (months 4–6)</div></div>
+      <div class="kpi kpi-green"><div class="kpi-l">Signed PI Cases / Mo</div><div class="kpi-v">5–7</div><div class="kpi-m">Assumes a healthy intake process</div></div>
+      <div class="kpi kpi-purple"><div class="kpi-l">Break-Even</div><div class="kpi-v" style="font-size:30px;">1 case</div><div class="kpi-m">A single signed PI fee can cover months of investment</div></div>
+    </div>
+    <div class="card" style="flex:1;min-height:0;padding:14px 20px 16px;display:flex;flex-direction:column;">
+      <div class="card-h">Projected Qualified Leads &amp; Signed Cases — Months 1–6</div>
+      <div style="flex:1;min-height:0;position:relative;"><canvas id="projChart"></canvas></div>
+    </div>
+    <div class="disc">Projections are illustrative planning estimates based on typical personal-injury Meta lead-generation benchmarks and assume a $10,000/mo media budget, timely creative approvals, and an active intake process converting leads to signed cases. Actual cost per lead, lead volume, and signed cases will vary with market conditions, competition, case types, and intake performance. No specific result is guaranteed.</div>
+  </div>
+  <div class="ft"><div class="ft-logo">WEB<span>R</span>IS</div><div class="ft-c">Jezic &amp; Moyse, LLC · August 2026</div><div class="ft-r">Confidential</div></div>
+</div></div>
+
+<!-- ═════ INVESTMENT ═════ -->
+<div class="slide-wrap"><div class="slide">
+  <div class="ab"></div>
+  <div class="si">
+    <div class="ey">Investment · 05</div>
+    <div class="slide-title">Simple, Transparent Pricing</div>
+    <div class="slide-src">Management and media are billed separately — you always own the ad account and the data</div>
+    <div class="two">
+      <div class="pcard">
+        <div class="card-h">What's Included In Management</div>
+        <div class="li"><span class="dot">✓</span><div>Full Meta campaign strategy, build &amp; daily management</div></div>
+        <div class="li"><span class="dot">✓</span><div>Bilingual creative — static, video scripts &amp; ongoing refresh</div></div>
+        <div class="li"><span class="dot">✓</span><div>Dedicated injury landing page + instant lead forms</div></div>
+        <div class="li"><span class="dot">✓</span><div>Pixel + Conversions API tracking &amp; lead routing to intake</div></div>
+        <div class="li"><span class="dot">✓</span><div>Retargeting, weekly optimization &amp; monthly reporting call</div></div>
+        <div class="li"><span class="dot">✓</span><div>Intake feedback loop — spend optimized to signed cases</div></div>
+      </div>
+      <div class="pcard" style="justify-content:center;">
+        <table class="inv-t">
+          <tr><td>WEBRIS Management Retainer</td><td class="r">$3,500<span style="font-size:12px;color:#8a8892;font-weight:500;">/mo</span></td></tr>
+          <tr><td>Recommended Meta Ad Spend<div style="font-size:11.5px;color:#8a8892;margin-top:2px;">Paid directly to Meta — never touches our margin</div></td><td class="r">$10,000<span style="font-size:12px;color:#8a8892;font-weight:500;">/mo</span></td></tr>
+          <tr class="total"><td>Total Monthly Investment</td><td class="r">$13,500<span style="font-size:13px;color:#8a8892;font-weight:500;">/mo</span></td></tr>
+        </table>
+        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+          <span class="pill">90-day initial term</span>
+          <span class="pill">Then month-to-month</span>
+          <span class="pill">You own the ad account</span>
+        </div>
+        <div style="margin-top:14px;font-size:12.5px;color:#8a8892;line-height:1.6;">Media budget can scale up or down as we find the winning campaigns — the $10K/mo recommendation is the level we're modeling this proposal against.</div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><div class="ft-logo">WEB<span>R</span>IS</div><div class="ft-c">Jezic &amp; Moyse, LLC · August 2026</div><div class="ft-r">Confidential</div></div>
+</div></div>
+
+<!-- ═════ TIMELINE + NEXT STEPS ═════ -->
+<div class="slide-wrap"><div class="slide">
+  <div class="ab"></div>
+  <div class="si">
+    <div class="ey">Launch · 06</div>
+    <div class="slide-title">From Signed To Live In About Two Weeks</div>
+    <div class="slide-src">A clear onboarding path — most of the lift is on us</div>
+    <div class="three" style="flex:none;margin-bottom:16px;">
+      <div class="pcard"><div class="tag">Week 1</div><h3>Foundation</h3><p>Kickoff call, ad account &amp; Business Manager access, Pixel/CAPI + tracking setup, intake &amp; lead-routing plan, and creative brief for the first English + Spanish concepts.</p></div>
+      <div class="pcard"><div class="tag">Week 2</div><h3>Build &amp; Launch</h3><p>Landing page + instant forms live, first creative batch produced and approved, campaigns structured and launched into the DMV market.</p></div>
+      <div class="pcard"><div class="tag">Weeks 3+</div><h3>Optimize &amp; Scale</h3><p>Exit the learning phase, kill losers, scale winners, expand audiences and case types, and hold the weekly intake feedback loop.</p></div>
+    </div>
+    <div class="card" style="flex:1;min-height:0;padding:20px 24px;display:flex;align-items:center;gap:28px;">
+      <div style="flex:1;">
+        <div class="card-h">Next Step</div>
+        <p style="font-size:16px;color:#3f3d47;line-height:1.7;">Approve this proposal and we'll send the onboarding kit and kickoff invite the same day. We'll have your first injury campaigns live within roughly two weeks — and start turning the feed into signed cases.</p>
+      </div>
+      <div style="flex-shrink:0;text-align:right;border-left:2px solid rgba(158,124,46,.3);padding-left:28px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#1a1a1f;">Ryan Stewart</div>
+        <div style="font-size:13px;color:#8a8892;margin-bottom:10px;">WEBRIS</div>
+        <div style="font-size:14px;color:#9e7c2e;font-weight:600;">ryan@webris.org</div>
+        <div style="font-size:13px;color:#8a8892;margin-top:6px;">webris.org</div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><div class="ft-logo">WEB<span>R</span>IS</div><div class="ft-c">Jezic &amp; Moyse, LLC · August 2026</div><div class="ft-r">Confidential</div></div>
+</div></div>
+
+<script>
+(function(){
+  var ctx=document.getElementById('projChart');
+  if(!ctx||!window.Chart)return;
+  var months=['Month 1','Month 2','Month 3','Month 4','Month 5','Month 6'];
+  new Chart(ctx,{
+    data:{labels:months,datasets:[
+      {type:'bar',label:'Qualified leads / mo',data:[105,128,145,158,164,170],backgroundColor:'rgba(158,124,46,.75)',borderRadius:5,yAxisID:'y',order:2},
+      {type:'line',label:'Signed cases / mo',data:[4,5,6,6,7,7],borderColor:'#16a34a',backgroundColor:'#16a34a',borderWidth:3,tension:.35,pointRadius:4,pointBackgroundColor:'#16a34a',yAxisID:'y1',order:1}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{font:{family:'Inter',size:12},color:'#5a5862',usePointStyle:true,padding:16}}},
+      scales:{
+        y:{position:'left',beginAtZero:true,grid:{color:'rgba(0,0,0,.05)'},ticks:{color:'#8a8892',font:{family:'Inter',size:11}},title:{display:true,text:'Qualified leads',color:'#9e7c2e',font:{family:'Inter',size:11,weight:'600'}}},
+        y1:{position:'right',beginAtZero:true,max:12,grid:{drawOnChartArea:false},ticks:{color:'#16a34a',font:{family:'Inter',size:11}},title:{display:true,text:'Signed cases',color:'#16a34a',font:{family:'Inter',size:11,weight:'600'}}},
+        x:{grid:{display:false},ticks:{color:'#8a8892',font:{family:'Inter',size:12}}}
+      }}
+  });
+})();
+</script>
+</body>
+</html>

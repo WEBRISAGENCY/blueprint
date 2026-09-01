@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agency OS — Pipeline &amp; CRM Automations (Claude prompts)</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1e2330; --muted:#6b7280; --line:#e6e8ec;
+    --primary:#2b59ff; --primary-ink:#ffffff; --accent:#0f766e;
+    --code-bg:#0f1424; --code-ink:#e8ecf6; --chip:#eef2ff; --chip-ink:#3b5bff;
+    --ok:#16a34a; --warn:#b45309; --warnbg:#fff7ed;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:40px 22px 80px;}
+  header.head{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:30px;}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);}
+  h1{font-size:30px;line-height:1.15;margin:.35em 0 .2em;letter-spacing:-.01em;}
+  h2{font-size:21px;margin:2.2em 0 .5em;letter-spacing:-.01em;}
+  h3{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:1.6em 0 .5em;}
+  p{margin:.55em 0;} .lead{font-size:16.5px;color:#374151;}
+  a{color:var(--primary);text-decoration:none;} a:hover{text-decoration:underline;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:0 1px 2px rgba(16,24,40,.04);margin:18px 0;}
+  .step{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line);}
+  .step:first-child{border-top:0;}
+  .num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--primary);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .chip{display:inline-block;background:var(--chip);color:var(--chip-ink);font-weight:700;font-size:12px;padding:2px 9px;border-radius:999px;margin:0 3px 3px 0;}
+  table{width:100%;border-collapse:collapse;margin:.6em 0;font-size:14px;}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+  code.inline{background:#eef1f6;padding:1px 6px;border-radius:5px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#0f1424;}
+  .placeholder{color:#b45309;font-weight:700;}
+  .promptbox{position:relative;background:var(--code-bg);border-radius:12px;margin:14px 0 6px;}
+  .promptbox .bar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .promptbox .bar span{color:#aeb7d6;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;}
+  .copybtn{background:var(--primary);color:#fff;border:0;border-radius:8px;padding:7px 14px;font-weight:700;font-size:13px;cursor:pointer;transition:background .15s;}
+  .copybtn:hover{background:#1e46e0;} .copybtn.done{background:var(--ok);}
+  pre.prompt{margin:0;padding:16px 18px;max-height:420px;overflow:auto;color:var(--code-ink);
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.6;white-space:pre-wrap;}
+  pre.prompt .ph{color:#ffcf7a;font-weight:700;}
+  .note{background:var(--warnbg);border:1px solid #fed7aa;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px;}
+  .note b{color:var(--warn);}
+  .tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);}
+  .pill{background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase;}
+  ul{margin:.5em 0 .5em 1.1em;padding:0;} li{margin:.3em 0;}
+  .muted{color:var(--muted);} .small{font-size:13px;}
+  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="head">
+  <div class="eyebrow">Agency OS · Training</div>
+  <h1>Automating your Pipeline &amp; CRM with Claude</h1>
+  <p class="lead">Two ready-to-use Claude automations that keep your Agency OS pipeline current on their own: one turns booked sales calls into pipeline leads, the other attaches call recordings and AI-written notes to the right lead. Copy a prompt, fill in a few values, and tell Claude to run it on a schedule.</p>
+</header>
+
+<div class="card">
+  <h3 style="margin-top:0">What you'll set up</h3>
+  <div class="step"><div class="num">1</div><div><b>Pipeline Auto-Sync</b> — every booked discovery/sales call on your scheduler becomes a lead in your pipeline's first column, deduped by email so it never doubles up. <span class="tag">Runs twice a day.</span></div></div>
+  <div class="step"><div class="num">2</div><div><b>Call Recording Sync</b> — new Zoom / Google Meet recordings are matched to the right lead, and Claude writes a structured recap from the transcript and attaches the recording + notes to that lead's card. <span class="tag">Runs twice a day.</span></div></div>
+  <p class="small muted" style="margin-top:10px">Both run unattended on a schedule and are safe to re-run — the dedupe rules mean an overlap never creates duplicates.</p>
+</div>
+
+<h2>Before you start — connect these &amp; grab 5 values</h2>
+<p>In Claude, connect the tools each automation needs (Settings → Connectors), then collect the values below. You'll paste them into the prompts wherever you see an <span class="placeholder">ORANGE PLACEHOLDER</span>.</p>
+
+<h3>Connectors to enable</h3>
+<p>
+  <span class="chip">Calendar / scheduler (Calendly)</span>
+  <span class="chip">Zoom</span>
+  <span class="chip">Google Drive</span>
+  <span class="chip">Your Agency OS database (Supabase)</span>
+</p>
+<p class="small muted">Use whichever recording tools you actually use — if you only run Zoom, you can drop the Google Meet step, and vice-versa.</p>
+
+<h3>Values to fill in</h3>
+<table>
+  <tr><th>Placeholder</th><th>What it is</th><th>Where to find it</th></tr>
+  <tr><td><code class="inline">{{ACCOUNT_ID}}</code></td><td>Your Agency OS account (tenant) id — scopes every read/write to your data.</td><td>Ask your Agency OS admin, or in Claude: "what's my Agency OS account_id?" It's a UUID.</td></tr>
+  <tr><td><code class="inline">{{DB_PROJECT_ID}}</code></td><td>The Agency OS database (Supabase) project id the automations write to.</td><td>Agency OS admin / your Supabase project URL. Looks like <code class="inline">qaqz…rbc</code>.</td></tr>
+  <tr><td><code class="inline">{{DISCOVERY_EVENT_TYPES}}</code></td><td>The exact names of the scheduler event types that are real sales calls (so we ignore internal meetings).</td><td>Your Calendly event type names, e.g. "Discovery Call", "Strategy Session".</td></tr>
+  <tr><td><code class="inline">{{ACTIVE_STATUSES}}</code></td><td>The pipeline statuses that count as "still in play" (recordings only attach to these).</td><td>Your pipeline column keys. In Claude: "list the distinct status values in my leads table."</td></tr>
+  <tr><td><code class="inline">{{RECORDING_TITLE_FORMAT}}</code></td><td>How your call recordings are titled, so Claude can pull the prospect's name out.</td><td>Check a recent Zoom topic, e.g. "<i>Prospect Name: Event Type</i>".</td></tr>
+</table>
+
+<div class="note"><b>Tip:</b> Ask Claude to fetch the tricky ones for you before you schedule anything — e.g. paste <i>"Using my Agency OS database connector, run: <code class="inline">SELECT DISTINCT status FROM public.leads;</code> and tell me the values"</i> to fill in <code class="inline">{{ACTIVE_STATUSES}}</code>.</div>
+
+<!-- ======================= AUTOMATION 1 ======================= -->
+<h2>1 · Pipeline Auto-Sync <span class="pill">scheduler → pipeline</span></h2>
+<p>Turns new bookings on your scheduler into pipeline leads. Paste this into Claude, replace the placeholders, then say: <i>"Run this every day at 7am and 4pm."</i></p>
+
+<div class="promptbox">
+  <div class="bar"><span>Pipeline Auto-Sync — prompt</span><button class="copybtn" data-target="p1">Copy prompt</button></div>
+  <pre class="prompt" id="p1">You are running my agency's "Pipeline Auto-Sync." Each run, pull new bookings from my scheduler and turn them into pipeline leads in my Agency OS database. This prompt is self-contained; you have no memory of prior runs.
+
+CONNECTORS
+- Scheduler: use the connected Calendly MCP (tools named ...users-get_current_user, ...meetings-list_events, ...meetings-list_event_invitees). Load them via ToolSearch if not already available.
+- Database: use the connected Supabase MCP (execute_sql) against my Agency OS project, project_id = <span class="ph">{{DB_PROJECT_ID}}</span>. Load it via ToolSearch if needed. All writes target public.leads with account_id = '<span class="ph">{{ACCOUNT_ID}}</span>'.
+
+STEP 1 — Ground in the scheduler
+Call users-get_current_user; keep resource.uri.
+
+STEP 2 — Find recent bookings (self-healing window)
+Call meetings-list_events with user = that uri, status = 'active', count = 100, sort = 'start_time:asc', and min_start_time = (now minus 30 days in UTC, format 2026-01-02T03:04:05.000000Z). If pagination.next_page_token is present, keep paging until all events are retrieved. From the returned events, KEEP ONLY:
+  (a) events whose "name" is exactly one of my sales-call event types: <span class="ph">{{DISCOVERY_EVENT_TYPES}}</span> (ignore all other event types, e.g. "30 Minute Meeting"), AND
+  (b) events whose "created_at" is within the last 14 days.
+Why this window: a healthy daily run only needs ~1 day of look-back, but a 14-day created_at window (over a 30-day start_time pull) means any run that is skipped, delayed, or fails is automatically caught up on the next run instead of dropping bookings permanently. Because Step 4 dedupes by email, re-seeing an already-synced booking is safe and never creates a duplicate — err on the side of a wider window.
+If none qualify, write a one-line summary saying "No new bookings" and stop.
+
+STEP 3 — Get invitee detail for each kept event
+For each kept event, call meetings-list_event_invitees with uri = the event uri. Read the (active) invitee: name, email, timezone, questions_and_answers (array of {question, answer}), and tracking (utm_source/medium/campaign). Also keep the event start_time and event name.
+
+Build these mapped fields per invitee:
+- contact_name = invitee name (or "Unknown")
+- email = invitee email (lowercased for matching)
+- phone = answer to the question containing "Phone"
+- website = answer to the question containing "Website"/"URL", normalized to https://<domain> (strip http/https/www and any path). If not a real domain (e.g. "none", "N/A", a sentence), set website = null.
+- company_name = the website domain if present, else the contact_name
+- budget_range = answer to the question about monthly spend/budget if present
+- custom_fields (jsonb) = {
+    "source": "Calendly",
+    "event_type": <event name>,
+    "booking_datetime": <event start_time>,
+    "qualification": <the full questions_and_answers array>,
+    "utm": <the tracking object>,
+    "last_synced": <current UTC timestamp>
+  }
+- notes = a short readable summary of the Q&A (one line per question: "Q — A")
+Do NOT set expected_deal_value (leave it null; I fill it manually). Do NOT set status (let it take the table default so the lead lands in the first pipeline column, exactly like a manually-created lead).
+
+STEP 4 — Upsert into public.leads (dedupe by email, never duplicate)
+For each invitee, first check for an existing lead:
+  SELECT id, custom_fields FROM public.leads
+  WHERE account_id = '<span class="ph">{{ACCOUNT_ID}}</span>' AND lower(email) = '<email>' LIMIT 1;
+- If a row exists: UPDATE it — merge the new custom_fields into the existing (custom_fields || new_extra), and fill phone/website/budget_range/company_name only if the existing value is null/empty. DO NOT change its status or stage. Count it as "updated".
+- If no row exists: INSERT a new lead with account_id, company_name, contact_name, email, phone, website, source='Calendly', budget_range, custom_fields (omit status so the DB default applies). Count it as "added".
+Escape single quotes in all string values (double them), or use Postgres dollar-quoting ($tag$...$tag$). Use one execute_sql per lead; if one fails, continue and note it. Because the Step 2 window is intentionally wide, most rows on a normal run will already exist and should be skipped/updated — that is expected, not an error.
+
+STEP 5 — Summary
+Post a short summary of this run:
+- "Added N new leads: <company/contact list>"
+- "Updated M existing leads: <list>"
+- "Skipped K already-in-pipeline"
+- Any errors.
+Keep it to a few lines.</pre>
+</div>
+<p class="small muted">Then tell Claude: <b>"Schedule this to run every day at 7:00am and 4:00pm."</b></p>
+
+<!-- ======================= AUTOMATION 2 ======================= -->
+<h2>2 · Call Recording Sync <span class="pill">recordings → lead notes</span></h2>
+<p>Finds new call recordings, matches them to the right lead, writes a structured recap from the transcript, and attaches the recording link + notes to that lead's card. Paste, replace placeholders, then say: <i>"Run this every day at 9pm and 7am."</i></p>
+
+<div class="promptbox">
+  <div class="bar"><span>Call Recording Sync — prompt</span><button class="copybtn" data-target="p2">Copy prompt</button></div>
+  <pre class="prompt" id="p2">You are running my agency's "Call Recording Sync." Each run, find new Zoom and Google Meet recordings of calls with prospects and attach them to the matching ACTIVE lead in my Agency OS pipeline. Self-contained; no memory of prior runs.
+
+Run this TWICE DAILY: a late-evening main pass (catches same-day calls after Zoom finishes processing them) and an early-morning backstop that sweeps up anything still processing overnight. Both runs are identical — the dedupe rules in STEP 4 make the overlap harmless.
+
+CONNECTORS (load via ToolSearch if not already available)
+- Zoom: the connected Zoom MCP — recordings_list, get_meeting_assets.
+- Google Drive: the connected Drive MCP — search_files.
+- Database: Supabase MCP execute_sql, project_id = <span class="ph">{{DB_PROJECT_ID}}</span>, table public.leads, account_id = '<span class="ph">{{ACCOUNT_ID}}</span>'.
+
+IMPORTANT — where the app reads recorded calls from:
+Agency OS renders a lead's recorded calls from **metadata.calls** (a jsonb array on public.leads). Each call object MUST use exactly these keys (the shape the app's own "Add call" form writes):
+{ "url": <recording link>, "date": "YYYY-MM-DD", "title": <call title>, "source": "zoom"|"google meet", "summary": <call notes written from the transcript> }
+Do NOT write to custom_fields — the app ignores it and the call will not appear on the card.
+
+STEP 1 — Load active leads
+Active statuses are the ones still in play (NOT not-qualified, deal-lost, or spam). Use my active set:
+SELECT id, trim(contact_name) AS name, lower(trim(email)) AS email, status,
+jsonb_array_length(COALESCE(metadata->'calls','[]'::jsonb)) AS n_calls, metadata->>'last_contact' AS last_contact
+FROM public.leads
+WHERE account_id='<span class="ph">{{ACCOUNT_ID}}</span>'
+AND status IN (<span class="ph">{{ACTIVE_STATUSES}}</span>);
+Do NOT select the whole metadata column for every lead — it blows the token limit. Select only the scalar fields above.
+NOTE — statuses are stored in lowercase_snake form. If you see an unfamiliar status, run a `GROUP BY status` first to re-derive the active set rather than assuming.
+NOTE — contact_name values sometimes have leading/trailing whitespace or differ in case. Match with trim()+lower() (or a LIKE fallback) so you don't miss a lead.
+NOTE — a lead's status is NOT evidence about whether a call happened. Only recordings_list and Drive tell you that.
+
+STEP 2 — Zoom recordings (last 3 days)
+Call recordings_list with from = (today minus 3 days, yyyy-mm-dd) and to = today, page_size 100 (page through if needed). Use UTC dates. For each meeting:
+- Parse the topic, formatted "<span class="ph">{{RECORDING_TITLE_FORMAT}}</span>" (e.g. "David Klain: Discovery Call"). Take the prospect name out of it. If the topic has no name/event shape (e.g. "Team Working Session"), it's an internal meeting — skip it.
+- Match that name (case-insensitive, trimmed) to an active lead's contact_name.
+- Skip any meeting whose recording_files are all still status "processing" — no transcript yet. Report it as pending so the next run picks it up.
+- ALWAYS PULL THE TRANSCRIPT AND WRITE NOTES. Call get_meeting_assets(meetingId = the meeting uuid, DOUBLE-URL-encoded: replace '=' with %253D, '/' with %252F, '+' with %252B).
+- get_meeting_assets output routinely exceeds the token limit and gets saved to a file on the host filesystem that bash CANNOT reach. Use the Read tool, or delegate to a subagent via the Agent tool so the large blob stays out of your main context; ask it to return the recap plus the play_url and a transcript sanity-check.
+- TRANSCRIPT LOCATION: the transcript lives at `recording.transcripts[0].timeline[]`, each item having `ts`, `end_ts`, `display_name`, `text`. Do NOT look for `.meeting_transcript.transcript_items[]`. There is often no summary/participants field — the raw transcript is the source of truth.
+- Write a substantive, factual recap in the "summary" field using these all-caps sections with prose under each, blank line between: ATTENDEES / CURRENT SITUATION / WHAT THEY WANT / RECOMMENDATION / PRICING-TERMS / NEXT STEPS. Quote specific numbers and names verbatim. Write ONLY from what was actually said — do NOT invent. If a section has nothing, write "Not discussed."
+- Build the call object:
+  { "url": <share_url from recordings_list>, "date": <recording date YYYY-MM-DD>, "title": <event type + M/D>, "source": "zoom", "summary": <notes per above> }
+- URL CAVEAT: get_meeting_assets returns a different play_url than recordings_list, and Zoom rotates share URLs. Always store the recordings_list share_url so it stays consistent run to run.
+
+STEP 3 — Google Meet recordings (last 3 days)
+search_files with query: title contains 'Recording' and mimeType = 'video/mp4' and modifiedTime > '<today minus 3 days>T00:00:00Z'. Meet recordings are titled like "<names> - YYYY/MM/DD HH:MM TZ - Recording". Ignore edited/marketing clips. Parse attendee names and match to an active lead. For notes, find the matching Meet transcript/Gemini notes Doc in the same Drive folder and read it, then write the same kind of recap. If no transcript can be found, note briefly that the recording is attached for review. Build the call object with "source":"google meet", "url": the file viewUrl, "date": from the title, "title": a short label, "summary": the notes.
+NOTE — if this search returns empty, sanity-check by running `title contains 'Recording'` with no date filter to tell a genuine empty from a broken connector.
+
+STEP 4 — Attach to the lead (append to metadata.calls, never duplicate)
+For each matched lead, read its current metadata.calls array (may be absent). Treat a call as ALREADY ATTACHED — and skip it — if EITHER:
+  (a) its "url" already appears in the array, OR
+  (b) an existing entry has the same "source" AND "date" AND "title".
+Rule (b) matters because Zoom rotates share URLs. When (b) fires but the URL differs, skip the append and mention the URL drift in the summary.
+For each genuinely new call, append it, then write:
+UPDATE public.leads
+SET metadata = COALESCE(metadata,'{}'::jsonb) || jsonb_build_object('calls', <full merged array>),
+    updated_at = now()
+WHERE id = <lead id>;
+Also bump last_contact WITHOUT regressing it — only if the newest attached recording date is more recent than the existing metadata.last_contact:
+UPDATE public.leads
+SET metadata = metadata || jsonb_build_object('last_contact', <recording date>)
+WHERE id = <lead id>
+AND COALESCE(metadata->>'last_contact','0001-01-01') < <recording date>;
+Do NOT change status. Escape single quotes (dollar-quoting like $notes$...$notes$ is easiest for multi-line notes). Never write to custom_fields.
+
+STEP 5 — Verify + summary
+After writing, re-SELECT jsonb_array_length(metadata->'calls') and the new entry's title/source/summary length for each updated lead to confirm the append landed. Then post a short summary: "Attached N recordings to M leads: <lead — platform — date list>", plus any recordings that matched no active lead (so I can check), any still processing (next run gets them), and any errors. Be precise about what you verified vs. inferred.</pre>
+</div>
+<p class="small muted">Then tell Claude: <b>"Schedule this to run every day at 9:00pm and 7:00am."</b></p>
+
+<!-- ======================= SAVING / REUSING ======================= -->
+<h2>How Claude saves these so you can reuse them</h2>
+<div class="card">
+  <p>When you tell Claude to <b>"run this on a schedule,"</b> it saves the prompt as a <b>scheduled task</b> — a reusable instruction file that Claude re-runs automatically at the times you set. You don't paste it again; it just runs. You can manage them anytime by asking Claude in plain language:</p>
+  <ul>
+    <li><b>See them:</b> "List my scheduled tasks."</li>
+    <li><b>Change timing:</b> "Change the Call Recording Sync to run at 10pm instead."</li>
+    <li><b>Run once now:</b> "Run the Pipeline Auto-Sync now."</li>
+    <li><b>Pause / remove:</b> "Turn off the Pipeline Auto-Sync." / "Delete it."</li>
+    <li><b>Edit the logic:</b> "In my Call Recording Sync, also include the 'nurturing' status as active."</li>
+  </ul>
+  <p class="small muted">Keep this document as your master copy. If a task ever gets deleted or you're setting Claude up on a new machine, paste the prompt above again and re-schedule it — the placeholders are the only thing you need to refill.</p>
+</div>
+
+<div class="note"><b>Good to know:</b> both automations are <b>read-mostly and idempotent</b> — safe to run as often as you like. Pipeline Auto-Sync dedupes by email; Call Recording Sync dedupes by URL and by source+date+title. Running twice a day (or re-running by hand) will never create duplicate leads or double-attach a recording.</p>
+
+<footer>
+  Agency OS — Pipeline &amp; CRM automation training. Replace every <span class="placeholder">{{PLACEHOLDER}}</span> with your own values before scheduling. Questions? Ask Claude to walk you through any step.
+</footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = document.getElementById(btn.getAttribute('data-target'));
+      // Copy the human-readable text (placeholders included), not the HTML markup.
+      var text = pre.innerText;
+      navigator.clipboard.writeText(text).then(function(){
+        var old = btn.textContent;
+        btn.textContent = '✓ Copied';
+        btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1800);
+      }).catch(function(){
+        // Fallback: select the text so the user can copy manually.
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      });
+    });
+  });
+</script>
+</body>
+</html>
