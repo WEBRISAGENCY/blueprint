@@ -247,7 +247,7 @@
   .ai{padding:96px 0;background:#fff;text-align:center}
   .ai .eyebrow{display:block;margin-bottom:14px}
   .ai h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;line-height:1.05;font-size:clamp(30px,4.2vw,56px);color:var(--ink);margin-bottom:14px}
-  .ai p.lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:620px;margin:0 auto 24px}
+  .ai p.lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:620px;margin:0 auto 56px}
   /* relationship: platform <-> Claude Desktop */
   .rel{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;max-width:960px;margin:0 auto}
   .rel-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 26px;text-align:left;box-shadow:0 26px 60px -40px rgba(15,23,42,.45)}
@@ -277,14 +277,14 @@
   .ai-chips .chip.hot{border-color:#2563EB;color:#2563EB;box-shadow:0 8px 22px -12px rgba(37,99,235,.5)}
   .ai-note{margin-top:22px;font-size:14px;color:var(--muted)}
   /* data source logos floating around the hub */
-  .rel-stage{position:relative;max-width:1080px;margin:0 auto;padding:18px 0}
+  .rel-stage{position:relative;max-width:1080px;margin:0 auto;padding:60px 0}
   .rel-stage > .rel{position:relative;z-index:2}
   .float-logo{position:absolute;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:#fff;border:1px solid #e9ecf3;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px -14px rgba(15,23,42,.5);z-index:1;animation:floaty 6s ease-in-out infinite}
   .float-logo svg{width:26px;height:26px;display:block}
   .float-logo .lt{font-family:'Figtree',sans-serif;font-size:21px;font-weight:800;line-height:1}
   @keyframes floaty{0%,100%{margin-top:0}50%{margin-top:-9px}}
   @media(prefers-reduced-motion:reduce){.float-logo{animation:none}}
-  @media(max-width:820px){.rel-stage{padding:14px 0}.float-logo{width:42px;height:42px}.float-logo svg{width:22px;height:22px}.float-logo .lt{font-size:18px}}
+  @media(max-width:820px){.rel-stage{padding:44px 0}.float-logo{width:42px;height:42px}.float-logo svg{width:22px;height:22px}.float-logo .lt{font-size:18px}}
   @media(max-width:560px){.float-logo{display:none}}
   @media(max-width:760px){
     .rel{grid-template-columns:1fr;gap:8px}
@@ -762,6 +762,38 @@
   .tl-i .ic{width:22px;height:22px;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(37,99,235,.1);color:#2563EB;font-size:10px;font-weight:800}
   .tl-i .tx{font-size:12.5px;color:var(--app-ink);font-weight:600;line-height:1.4}
   .tl-i .tx small{display:block;font-weight:600;color:#9aa2b1;font-size:11px;margin-top:1px}
+
+  /* ===== Mobile fixes ===== */
+  @media(max-width:900px){
+    .hero{padding:44px 0 30px;overflow:hidden}
+    .hero h1{max-width:100%}
+    .hero h1 .line,.hero h1 .hl{font-size:clamp(32px,10.5vw,52px) !important;white-space:normal;display:inline}
+    .hero h1 .line{display:block}
+    .hero .sub{font-size:16.5px;padding:0 4px}
+    /* truncate the tall product mock instead of squeezing it */
+    .shot{margin-top:32px;padding:0 16px}
+    .shot .app{max-height:360px;overflow:hidden;
+      -webkit-mask-image:linear-gradient(180deg,#000 68%,rgba(0,0,0,0));mask-image:linear-gradient(180deg,#000 68%,rgba(0,0,0,0))}
+
+    /* the six benefit rows become accordions */
+    .row5{display:block;padding:0;border-top:1px solid var(--line)}
+    .row5:first-of-type{border-top:1px solid var(--line);padding-top:0}
+    .row5:last-of-type{border-bottom:1px solid var(--line)}
+    .r5-head{position:relative;padding:20px 40px 20px 0;cursor:pointer}
+    .r5-head:after{content:"";position:absolute;right:8px;top:50%;width:9px;height:9px;margin-top:-6px;
+      border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);
+      transform:rotate(45deg);transition:transform .25s ease}
+    .row5.open .r5-head:after{transform:rotate(-135deg);margin-top:-2px}
+    .r5-n{margin-bottom:7px}
+    .r5-t{font-size:20px;line-height:1.25;margin-bottom:0}
+    .row5 .r5-p,.row5 .r5-v{display:none}
+    .row5.open .r5-p{display:block;margin:0 0 20px;max-width:none}
+    .row5.open .r5-v{display:block;margin-bottom:24px}
+    .r5-v{overflow-x:auto}
+  }
+  @media(max-width:520px){
+    .m2cols{grid-template-columns:repeat(2,1fr)}
+  }
 </style>
 </head>
 <body>
@@ -1233,14 +1265,31 @@
     </div>
     </div>
 
+    <div class="ai-flows">
+      <div class="flabel">CRM tools available to Claude</div>
+      <div class="ai-chips">
+        <span class="tool-chip">leads_create</span>
+        <span class="tool-chip">leads_list</span>
+        <span class="tool-chip">leads_get</span>
+        <span class="tool-chip">leads_update</span>
+        <span class="tool-chip">leads_transition</span>
+        <span class="tool-chip">followups_create</span>
+        <span class="tool-chip">followups_list</span>
+        <span class="tool-chip">followups_complete</span>
+        <span class="tool-chip">pipeline_summary</span>
+      </div>
+      <p class="ai-note">Plus a stage-mapped import, so bringing a pipeline over from another CRM is one conversation.</p>
+    </div>
 
     <div class="fw" id="tour">
-      <script src="https://fast.wistia.com/player.js" async></script>
-      <script src="https://fast.wistia.com/embed/8ywkdstxw9.js" async type="module"></script>
-      <style>wistia-player[media-id='8ywkdstxw9']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/8ywkdstxw9/swatch');display:block;filter:blur(5px);padding-top:56.25%;}</style>
-      <div class="video" style="cursor:default;">
-        <wistia-player media-id="8ywkdstxw9" seo="false" aspect="1.7777777777777777" style="position:absolute;inset:0;width:100%;height:100%;"></wistia-player>
+      <div class="video" id="tourVideo" data-embed="" role="button" tabindex="0" aria-label="Play the walkthrough">
+        <div class="poster">
+          <span class="lbl">The pipeline · in tandem with Claude</span>
+          <div class="play"></div>
+          <span class="wm">BLUEPRINT<b>OS</b></span>
+        </div>
       </div>
+      <p class="fw-hint">Watch a deal go from booking to won client.</p>
     </div>
   </div>
 </section>
@@ -1648,6 +1697,22 @@
     tv.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playTour(); } });
   }
 
+  /* Mobile: turn the benefit rows into accordions (desktop CSS ignores the classes) */
+  document.querySelectorAll('.row5').forEach(function(row, i){
+    var txt = row.firstElementChild;
+    if(!txt) return;
+    var n = txt.querySelector('.r5-n'), t = txt.querySelector('.r5-t');
+    if(!n || !t) return;
+    var head = document.createElement('div');
+    head.className = 'r5-head';
+    txt.insertBefore(head, n);
+    head.appendChild(n); head.appendChild(t);
+    if(i === 0) row.classList.add('open');
+    head.addEventListener('click', function(){
+      if(window.matchMedia('(min-width:901px)').matches) return;
+      row.classList.toggle('open');
+    });
+  });
 </script>
 
 </body>
