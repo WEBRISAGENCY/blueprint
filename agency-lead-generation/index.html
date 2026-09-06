@@ -125,6 +125,46 @@ footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;
 @media(max-width:768px){.social-showcase-cards{height:340px;max-width:680px;}.showcase-card{width:20%;}.showcase-card-center{width:22%;}.social-showcase-icons{gap:28px;}.showcase-icon-circle{width:44px;height:44px;}}
 @media(max-width:480px){.social-showcase-cards{height:260px;max-width:480px;}.showcase-play{width:28px;height:28px;}.showcase-play-tri{border-left-width:8px;border-top-width:5px;border-bottom-width:5px;}.showcase-views{font-size:10px;bottom:4px;left:4px;}.showcase-views svg{width:10px;height:10px;}.social-showcase-icons{gap:20px;}.showcase-icon-circle{width:40px;height:40px;}.showcase-icon-link span{font-size:10px;}}
 </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+<style>
+  /* Blog post template v2: dark Anton hero, left-aligned two-column layout, sticky Agency OS promo */
+  .article-hero{background:#0B0E1A !important;padding-bottom:0 !important}
+  .article-hero-grid{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) !important;background-size:46px 46px !important}
+  .article-hero::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1200px;height:620px;background:radial-gradient(ellipse at 50% 0%,rgba(37,99,235,.30) 0%,rgba(37,99,235,.10) 40%,transparent 72%);pointer-events:none}
+  .article-hero-inner{max-width:1180px !important;margin:0 auto !important;padding:28px 0 40px !important;text-align:left;z-index:1}
+  .article-hero-inner > *{max-width:820px}
+  .article-breadcrumb,.article-breadcrumb a{color:#8A90A8 !important}
+  .article-breadcrumb span[style]{color:#C8CEDF !important}
+  .article-title{font-family:'Anton',sans-serif !important;font-weight:400 !important;letter-spacing:-0.005em !important;line-height:1.05 !important;font-size:clamp(34px,4.4vw,58px) !important;color:#fff !important}
+  .article-meta-row{border-color:rgba(255,255,255,.12) !important;border-bottom:none !important;padding-bottom:0 !important}
+  .article-meta-divider{background:rgba(255,255,255,.15) !important}
+  .article-hero .author-name,.article-hero .author-name a{color:#fff !important}
+  .article-hero .author-title,.article-hero .article-meta-item{color:#8A90A8 !important}
+  .article-hero .article-meta-item strong{color:#C8CEDF !important}
+  .article-content{max-width:1228px !important;margin:0 auto !important;padding:56px 24px 72px !important;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:64px;align-items:start}
+  .article-body{max-width:780px;min-width:0}
+  .article-body h2{font-family:'Anton',sans-serif !important;font-weight:400 !important;letter-spacing:-0.005em !important;line-height:1.1 !important;font-size:clamp(24px,2.6vw,34px) !important}
+  .article-side{position:sticky;top:140px}
+  .os-promo{background:#0B0E1A;color:#fff;border-radius:16px;padding:26px 24px 24px;position:relative;overflow:hidden;border:1px solid rgba(247,198,0,.25);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+  .os-promo::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+  .os-promo::after{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:420px;height:260px;background:radial-gradient(ellipse,rgba(37,99,235,.35),transparent 70%);pointer-events:none}
+  .os-promo > *{position:relative;z-index:1}
+  .os-promo .ey{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#F7C600;margin-bottom:14px}
+  .os-promo .ey i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#F7C600;box-shadow:0 0 0 4px rgba(247,198,0,.18)}
+  .os-promo h3{font-family:'Anton',sans-serif;font-weight:400;font-size:26px;line-height:1.08;letter-spacing:-0.005em;text-transform:uppercase;margin:0 0 10px}
+  .os-promo h3 span{color:#F7C600}
+  .os-promo p{font-size:14px;line-height:1.6;color:#C8CEDF;margin:0 0 16px}
+  .os-promo ul{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:8px}
+  .os-promo li{font-size:13.5px;color:#E5E7EB;display:flex;gap:9px;align-items:flex-start;line-height:1.45}
+  .os-promo li::before{content:'✓';color:#F7C600;font-weight:800;flex-shrink:0}
+  .os-promo .btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#F7C600;color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.06em;text-transform:uppercase;padding:13px 18px;border-radius:9px;text-decoration:none;transition:.15s}
+  .os-promo .btn:hover{background:#D9AE00}
+  .os-promo .sub{display:block;text-align:center;margin-top:12px;font-size:12.5px;color:#8A90A8}
+  .os-promo .sub a{color:#C8CEDF}
+  .author-bio{max-width:1228px !important;margin:0 auto !important}
+  .author-bio-card{max-width:780px}
+  @media (max-width:1000px){.article-content{grid-template-columns:1fr;gap:40px}.article-side{position:static}.article-body{max-width:none}}
+</style>
 </head>
 <body>
 <!-- AGENCY OS BETA BAR -->
@@ -468,6 +508,22 @@ footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;
 <text x="390" y="167" text-anchor="middle" font-size="12" fill="#0B0E1A" font-weight="600">Target: 15-20 booked calls/month from multiple channels by Day 90</text>
 </svg>
 </article>
+<aside class="article-side">
+  <div class="os-promo">
+    <div class="ey"><i></i>Agency OS · Open Beta</div>
+    <h3>Run your entire agency <span>from one platform.</span></h3>
+    <p>The software The Blueprint members use to run clients, projects and reporting, with Claude built in.</p>
+    <ul>
+      <li>Pipeline &amp; CRM built for agencies</li>
+      <li>Sprints, tasks and deliverables per client</li>
+      <li>Live client reporting from GA4, Ads, Meta and GBP</li>
+      <li>Hand the busywork to Claude</li>
+    </ul>
+    <a class="btn" href="/agency-os/">Explore Agency OS &rarr;</a>
+    <span class="sub">Included with membership. <a href="/sign-up.html">See pricing</a></span>
+  </div>
+</aside>
+
 </div>
 
 <div class="author-bio">
