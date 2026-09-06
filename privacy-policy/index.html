@@ -128,6 +128,23 @@ footer{background:#111421;border-top:1px solid rgba(247,198,0,0.15);padding:0}
 <body>
 
 <!-- NAV -->
+<style>
+/* Compact top nav + Knowledge dropdown (site-wide) */
+.nav-bar .nav-item-link{font-size:20px !important;padding:0 14px !important;letter-spacing:.05em !important}
+.nav-bar .nav-login{font-size:19px !important;padding:0 14px !important}
+.nav-bar .nav-cta-btn{font-size:19px !important;padding:0 26px !important}
+.nav-bar .nav-logo{padding-right:16px !important}
+.knd{position:relative;display:flex;align-items:stretch}
+.knd-arr{font-size:10px;opacity:.55;margin-left:5px;display:inline-block;transition:transform .2s}
+.knd:hover .knd-arr,.knd:focus-within .knd-arr{transform:rotate(180deg)}
+.knd-menu{display:none;position:absolute;top:100%;left:0;min-width:250px;z-index:400;background:#fff;border-top:2px solid #1E3A5F;border:1px solid rgba(0,0,0,.08);border-top:2px solid #1E3A5F;box-shadow:0 8px 24px rgba(0,0,0,.10);padding:6px 0}
+.knd:hover .knd-menu,.knd:focus-within .knd-menu{display:block}
+.knd-row{display:flex;flex-direction:column;gap:2px;padding:12px 18px;text-decoration:none;border-left:3px solid transparent;transition:background .15s,border-color .15s}
+.knd-row:hover{background:#F5F7FA;border-left-color:#1E3A5F}
+.knd-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1E3A5F}
+.knd-desc{font-family:'Figtree',sans-serif;font-size:12px;color:#6B7280;white-space:nowrap}
+@media (max-width:1100px){.nav-bar .nav-item-link{font-size:18px !important;padding:0 10px !important}.nav-bar .nav-cta-btn{padding:0 18px !important;font-size:17px !important}}
+</style>
 <div class="nav-bar">
   <div class="nav-inner">
     <a class="nav-logo" href="/index.html">
@@ -136,10 +153,15 @@ footer{background:#111421;border-top:1px solid rgba(247,198,0,0.15);padding:0}
     <div class="nav-links">
       <a class="nav-item-link" href="/about.html">About</a>
       <a class="nav-item-link" href="/reviews.html">Results</a>
-      <a class="nav-item-link" href="/program.html">Program</a>
+      <a class="nav-item-link" href="/program.html">Training</a>
       <a class="nav-item-link" href="/agency-os/">Agency OS</a>
-<a class="nav-item-link" href="https://www.youtube.com/@theblueprinttraining" target="_blank">Videos</a>
-      <a class="nav-item-link" href="/blog/">Knowledge</a>
+      <div class="knd">
+        <a class="nav-item-link knd-btn" href="/blog/" aria-haspopup="true">Knowledge <span class="knd-arr" aria-hidden="true">&#9662;</span></a>
+        <div class="knd-menu">
+          <a class="knd-row" href="/blog/"><span class="knd-name">Blog</span><span class="knd-desc">Playbooks, templates and agency strategy</span></a>
+          <a class="knd-row" href="https://www.youtube.com/@theblueprinttraining" target="_blank" rel="noopener"><span class="knd-name">Videos</span><span class="knd-desc">Free training on YouTube</span></a>
+        </div>
+      </div>
     </div>
     <div class="nav-right">
       <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
@@ -161,9 +183,10 @@ footer{background:#111421;border-top:1px solid rgba(247,198,0,0.15);padding:0}
     <a href="/index.html">Home</a>
     <a href="/about.html">About</a>
     <a href="/reviews.html">Results</a>
-    <a href="/program.html">Program</a>
+    <a href="/program.html">Training</a>
     <a href="/agency-os/">Agency OS</a>
-    <a href="/blog/">Knowledge</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://www.youtube.com/@theblueprinttraining" target="_blank">Videos</a>
     <a href="https://www.skool.com/the-blueprint-training">Login</a>
   </nav>
   <div class="mobile-menu-socials">
@@ -296,7 +319,7 @@ footer .footer-cta-btn:hover{filter:brightness(1.05)}
       <ul class="footer-links">
         <li><a href="/about.html">About</a></li>
         <li><a href="/reviews.html">Results</a></li>
-        <li><a href="/program.html">Program</a></li>
+        <li><a href="/program.html">Training</a></li>
         <li><a href="/blog/">Knowledge</a></li>
       </ul>
     </div>
