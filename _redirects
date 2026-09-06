@@ -5,7 +5,7 @@
 # Format: /old-path /new-path statusCode
 
 # --- Legacy redirects (from WP Redirection plugin) ---
-/results/                                               /reviews/                                                                   301
+/results/                                               /reviews.html                                                                 301
 /tools/monthly-seo-report/                              https://theblueprint.training                                          301
 /trainings/link-building/                               https://theblueprint.training                                          301
 /agency-templates/                                      https://theblueprint.training                                          301
@@ -167,3 +167,75 @@
 
 /blueprint-os-landing.html  /agency-os/  301
 /blueprint-os-landing  /agency-os/  301
+
+# --- Sitemap fixes (Sep 2026): old Yoast sitemaps -> new static sitemap ---
+/sitemap_index.xml   /sitemap.xml   301
+/page-sitemap.xml    /sitemap.xml   301
+/post-sitemap.xml    /sitemap.xml   301
+/sitemap.xml.gz      /sitemap.xml   301
+
+# --- Duplicate blog copies: /blog/slug/ -> canonical /slug/ ---
+/blog/agency-lead-generation/*   /agency-lead-generation/:splat   301
+/blog/agency-lead-generation     /agency-lead-generation/         301
+/blog/agency-positioning/*   /agency-positioning/:splat   301
+/blog/agency-positioning     /agency-positioning/         301
+/blog/agency-pricing-models/*   /agency-pricing-models/:splat   301
+/blog/agency-pricing-models     /agency-pricing-models/         301
+/blog/agency-website-template/*   /agency-website-template/:splat   301
+/blog/agency-website-template     /agency-website-template/         301
+/blog/ai-seo-process/*   /ai-seo-process/:splat   301
+/blog/ai-seo-process     /ai-seo-process/         301
+/blog/best-seo-tool-stack/*   /best-seo-tool-stack/:splat   301
+/blog/best-seo-tool-stack     /best-seo-tool-stack/         301
+/blog/bigger-agency-clients/*   /bigger-agency-clients/:splat   301
+/blog/bigger-agency-clients     /bigger-agency-clients/         301
+/blog/blueprint-affiliate-program/*   /blueprint-affiliate-program/:splat   301
+/blog/blueprint-affiliate-program     /blueprint-affiliate-program/         301
+/blog/build-authority-links-for-clients/*   /build-authority-links-for-clients/:splat   301
+/blog/build-authority-links-for-clients     /build-authority-links-for-clients/         301
+/blog/client-questionnaire-template/*   /client-questionnaire-template/:splat   301
+/blog/client-questionnaire-template     /client-questionnaire-template/         301
+/blog/content-brief-template/*   /content-brief-template/:splat   301
+/blog/content-brief-template     /content-brief-template/         301
+/blog/content-marketing-for-agencies/*   /content-marketing-for-agencies/:splat   301
+/blog/content-marketing-for-agencies     /content-marketing-for-agencies/         301
+/blog/generate-leads-meta-ads/*   /generate-leads-meta-ads/:splat   301
+/blog/generate-leads-meta-ads     /generate-leads-meta-ads/         301
+/blog/how-to-productize-services/*   /how-to-productize-services/:splat   301
+/blog/how-to-productize-services     /how-to-productize-services/         301
+/blog/keyword-research/*   /keyword-research/:splat   301
+/blog/keyword-research     /keyword-research/         301
+/blog/link-building-for-dentists/*   /link-building-for-dentists/:splat   301
+/blog/link-building-for-dentists     /link-building-for-dentists/         301
+/blog/link-building-strategy/*   /link-building-strategy/:splat   301
+/blog/link-building-strategy     /link-building-strategy/         301
+/blog/local-seo/*   /local-seo/:splat   301
+/blog/local-seo     /local-seo/         301
+/blog/local-seo-training/*   /local-seo-training/:splat   301
+/blog/local-seo-training     /local-seo-training/         301
+/blog/make-money-seo/*   /make-money-seo/:splat   301
+/blog/make-money-seo     /make-money-seo/         301
+/blog/moz-vs-semrush-vs-ahrefs/*   /moz-vs-semrush-vs-ahrefs/:splat   301
+/blog/moz-vs-semrush-vs-ahrefs     /moz-vs-semrush-vs-ahrefs/         301
+/blog/niches-for-your-agency/*   /niches-for-your-agency/:splat   301
+/blog/niches-for-your-agency     /niches-for-your-agency/         301
+/blog/project-management-seo/*   /project-management-seo/:splat   301
+/blog/project-management-seo     /project-management-seo/         301
+/blog/seo-agency-project-management/*   /seo-agency-project-management/:splat   301
+/blog/seo-agency-project-management     /seo-agency-project-management/         301
+/blog/seo-competitive-analysis/*   /seo-competitive-analysis/:splat   301
+/blog/seo-competitive-analysis     /seo-competitive-analysis/         301
+/blog/seo-content-training/*   /seo-content-training/:splat   301
+/blog/seo-content-training     /seo-content-training/         301
+/blog/seo-deliverables/*   /seo-deliverables/:splat   301
+/blog/seo-deliverables     /seo-deliverables/         301
+/blog/seo-proposal/*   /seo-proposal/:splat   301
+/blog/seo-proposal     /seo-proposal/         301
+/blog/seo-proposal-template/*   /seo-proposal-template/:splat   301
+/blog/seo-proposal-template     /seo-proposal-template/         301
+/blog/seo-report/*   /seo-report/:splat   301
+/blog/seo-report     /seo-report/         301
+/blog/seo-roi/*   /seo-roi/:splat   301
+/blog/seo-roi     /seo-roi/         301
+/blog/seo-templates-every-agency-needs/*   /seo-templates-every-agency-needs/:splat   301
+/blog/seo-templates-every-agency-needs     /seo-templates-every-agency-needs/         301
