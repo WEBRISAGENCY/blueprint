@@ -216,6 +216,15 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   .faq-accordion{grid-template-columns:1fr !important;max-width:780px;margin-left:auto !important;margin-right:auto !important}
   .faq-item.open .faq-answer{max-height:700px !important}
 </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+<style>
+  .hero-headline{font-family:'Anton',sans-serif !important;text-transform:uppercase;letter-spacing:-0.005em;line-height:1.02}
+  .hero{background:#0B0E1A !important}
+  .hero-grid{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) !important;background-size:46px 46px !important}
+  .hero-glow{top:0 !important;width:1200px !important;height:620px !important;background:radial-gradient(ellipse at 50% 0%,rgba(37,99,235,.30) 0%,rgba(37,99,235,.10) 40%,transparent 72%) !important}
+  .hero-headline .blueprint-text{paint-order:stroke fill;-webkit-text-stroke:2px #FFFFFF;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .section-title,.final-cta-headline{font-family:'Anton',sans-serif !important;text-transform:uppercase;letter-spacing:-0.005em;line-height:1.05}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -255,6 +264,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .knd-row:hover{background:#F5F7FA;border-left-color:#1E3A5F}
 .knd-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1E3A5F}
 .knd-desc{font-family:'Figtree',sans-serif;font-size:12px;color:#6B7280;white-space:nowrap}
+.knd-login{align-self:stretch}
+.knd-login .nav-login{display:flex;align-items:center;height:100%}
+.knd-menu-r{left:auto;right:0;min-width:270px}
 @media (max-width:1100px){.nav-bar .nav-item-link{font-size:18px !important;padding:0 10px !important}.nav-bar .nav-cta-btn{padding:0 18px !important;font-size:17px !important}}
 </style>
 <div class="nav-bar">
@@ -273,12 +285,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="knd-menu">
           <a class="knd-row" href="/blog/"><span class="knd-name">Blog</span><span class="knd-desc">Playbooks, templates and agency strategy</span></a>
           <a class="knd-row" href="https://www.youtube.com/@theblueprinttraining" target="_blank" rel="noopener"><span class="knd-name">Videos</span><span class="knd-desc">Free training on YouTube</span></a>
+          <a class="knd-row" href="/help/"><span class="knd-name">Help Center</span><span class="knd-desc">Agency OS guides and support</span></a>
         </div>
       </div>
     </div>
 
     <div class="nav-right">
-      <a href="https://www.skool.com/the-blueprint-training" class="nav-login">Login</a>
+      <div class="knd knd-login">
+        <a class="nav-login knd-btn" href="https://www.skool.com/the-blueprint-training">Login <span class="knd-arr" aria-hidden="true">&#9662;</span></a>
+        <div class="knd-menu knd-menu-r">
+          <a class="knd-row" href="https://www.skool.com/the-blueprint-training"><span class="knd-name">Blueprint Training</span><span class="knd-desc">Courses, coaching calls and community</span></a>
+          <a class="knd-row" href="https://app.theblueprint.training/sign-in"><span class="knd-name">Agency OS</span><span class="knd-desc">Sign in to the software</span></a>
+        </div>
+      </div>
       <a class="nav-cta-btn" href="/sign-up.html">Become A Member</a>
     </div>
 
@@ -304,7 +323,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/agency-os/">Agency OS</a>
     <a href="/blog/">Blog</a>
     <a href="https://www.youtube.com/@theblueprinttraining" target="_blank">Videos</a>
-    <a href="https://www.skool.com/the-blueprint-training">Login</a>
+    <a href="/help/">Help Center</a>
+    <a href="https://www.skool.com/the-blueprint-training">Login: Blueprint Training</a>
+    <a href="https://app.theblueprint.training/sign-in">Login: Agency OS</a>
   </nav>
   <div class="mobile-menu-socials">
     <a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube">
@@ -329,7 +350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="trusted-badge">3,000+ Agencies Trained Over 9 Years</div>
 
-  <h1 class="hero-headline hero-headline-desktop">
+  <h1 class="hero-headline hero-headline-desktop" style="font-size:80px;font-weight:400;">
     Get <span class="blueprint-text">"The Blueprint"</span> For Building<br>A 7 Figure Agency In 2026.
   </h1>
   <h1 class="hero-headline hero-headline-mobile">
@@ -378,7 +399,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- THE SHIFT -->
 <section class="shift">
   <div class="container">
-    <h2 class="section-title" style="text-align:center;">Most agencies are stuck using<br>an outdated operating system.</h2>
+    <h2 class="section-title" style="text-align:center; font-weight:400;">Most agencies are stuck using<br>an outdated operating system.</h2>
     <p class="section-body" style="margin-bottom: 48px; text-align:center; max-width:720px; margin-left:auto; margin-right:auto;">The Blueprint is the modern operating system for your agency — the software to run clients, projects, and reporting, plus everything that makes you great at running it: training, AI agents, SOPs, live coaching, and a community of 3,000+ owners.</p>
 
     <!-- Watch: intro video -->
@@ -436,7 +457,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- WHAT'S INSIDE -->
 <section class="modules" id="curriculum">
   <div class="container">
-    <h2 class="section-title" style="color: #0B0E1A;">An entire ecosystem proven to grow your agency.</h2>
+    <h2 class="section-title" style="color: #0B0E1A; font-weight:400;">An entire ecosystem proven to grow your agency.</h2>
     <p class="section-body">Blueprint membership gives you access to all trainings, AI agents, templates and community. Plus, it gives you access to updates and future releases.</p>
 
     <div class="dash-hint-wrap" style="position:relative;">
@@ -835,7 +856,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </svg>
   </div>
   <div class="container">
-    <h2 class="section-title" style="text-align:center; color:#FFFFFF;">The Blueprint System.<br><span class="electric-text">Now Supercharged With AI.</span></h2>
+    <h2 class="section-title" style="text-align:center; color:#FFFFFF; font-weight:500;">The Blueprint System.<br><span class="electric-text">Now Supercharged With AI.</span></h2>
     <p style="text-align:center; font-size:17px; color:rgba(255,255,255,0.75); max-width:640px; margin:0 auto 48px; line-height:1.7;">Your membership comes with access to a full suite of AI Agents built specifically to execute The Blueprint framework. Simply download and install into Claude and customize to your agency branding and guidelines.</p>
 
     <div class="os-hub">
@@ -877,7 +898,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Header -->
     <div>
-      <h2 class="section-title" style="color: #0B0E1A;">Real agencies. Real results.</h2>
+      <h2 class="section-title" style="color: #0B0E1A; font-weight:500;">Real agencies. Real results.</h2>
       <p class="section-body" style="margin-top:16px; max-width:700px;">Since 2015, Blueprint members have used these exact systems to land clients, scale revenue, and build agencies they're proud of. These are just a few of the hundreds of wins shared every week in our community.</p>
     </div>
 
@@ -1016,7 +1037,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="pricing" id="pricing">
   <div class="container">
     <p class="section-label">GET STARTED</p>
-    <h2 class="section-title">One investment. <span>Unlimited access.</span></h2>
+    <h2 class="section-title" style="font-weight:500;">One investment. <span>Unlimited access.</span></h2>
 
     <div class="pricing-inner">
       <div class="pricing-card">
@@ -1226,6 +1247,7 @@ footer .footer-cta-btn:hover{filter:brightness(1.05)}
           <li><a href="/agency-os/crm.html">CRM</a></li>
           <li><a href="/agency-os/project-management.html">Project Management</a></li>
           <li><a href="/agency-os/reporting.html">Client Reporting</a></li>
+          <li><a href="/help/">Help Center</a></li>
           </ul>
         </div>
       </div>
