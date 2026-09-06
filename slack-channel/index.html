@@ -713,25 +713,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FOOTER -->
+<style>
+/* Unified footer (site-wide) */
+footer .footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:48px}
+footer .footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+footer .footer-col-title::before{content:'';display:block;width:16px;height:2px;background:#F7C600}
+footer .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+footer .footer-links li a{font-family:'Figtree',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+footer .footer-links li a:hover{color:#F7C600}
+footer .footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#F7C600;color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s}
+footer .footer-cta-btn:hover{filter:brightness(1.05)}
+@media (max-width:768px){footer .footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px}footer .footer-nav > div[style*="span 2"]{grid-column:1 / -1}}
+@media (max-width:480px){footer .footer-nav{grid-template-columns:1fr;gap:36px}footer .footer-nav > div[style*="span 2"] > div{grid-template-columns:1fr !important}}
+</style>
 <footer>
   <div class="footer-nav">
-    <div>
-      <div class="footer-col-title">Features</div>
-      <ul class="footer-links">
-        <li><a href="/coaching/">Coaching</a></li>
-        <li><a href="/agency-training/">Video Training</a></li>
-        <li><a href="/bootcamps/">Live Bootcamps</a></li>
-        <li><a href="/agents/">AI Agents</a></li>
-        <li><a href="/slack-channel/">Community</a></li>
-        <li><a href="/seo-sprints-training/">SEO Sprints</a></li>
-        <li><a href="/templates-and-sops/">Templates &amp; SOPs</a></li>
-      </ul>
-<div class="footer-col-title" style="margin-top:28px">Agency OS</div><ul class="footer-links">
-<li><a href="/agency-os/">Agency OS</a></li>
-<li><a href="/agency-os/crm.html">CRM</a></li>
-<li><a href="/agency-os/project-management.html">Project Management</a></li>
-<li><a href="/agency-os/reporting.html">Client Reporting</a></li>
-</ul>
+    <div style="grid-column:span 2">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+        <div>
+          <div class="footer-col-title">Features</div>
+          <ul class="footer-links">
+          <li><a href="/coaching/">Coaching</a></li>
+          <li><a href="/agency-training/">Video Training</a></li>
+          <li><a href="/bootcamps/">Live Bootcamps</a></li>
+          <li><a href="/agents/">AI Agents</a></li>
+          <li><a href="/slack-channel/">Community</a></li>
+          <li><a href="/seo-sprints-training/">SEO Sprints</a></li>
+          <li><a href="/templates-and-sops/">Templates &amp; SOPs</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Agency OS</div>
+          <ul class="footer-links">
+          <li><a href="/agency-os/">Agency OS</a></li>
+          <li><a href="/agency-os/crm.html">CRM</a></li>
+          <li><a href="/agency-os/project-management.html">Project Management</a></li>
+          <li><a href="/agency-os/reporting.html">Client Reporting</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div>
       <div class="footer-col-title">Company</div>
@@ -750,21 +770,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
       <a href="/sign-up.html" class="footer-cta-btn">Get Started &rarr;</a>
     </div>
-  
-
-    <div>
-      <div class="footer-col-title">Follow Us</div>
-      <ul class="footer-links">
-        <li><a href="https://www.instagram.com/theblueprint.training/" target="_blank">Instagram</a></li>
-        <li><a href="https://www.facebook.com/theblueprinttraining/" target="_blank">Facebook</a></li>
-        <li><a href="https://www.youtube.com/@theblueprinttraining" target="_blank">YouTube</a></li>
-        <li><a href="https://www.linkedin.com/company/the-blueprint-training/" target="_blank">LinkedIn</a></li>
-      </ul>
-    </div>
-
   </div>
-  
-  <!-- Social content showcase -->
   <div class="social-showcase">
     <div class="social-showcase-cards">
       <div class="showcase-card" style="transform:rotate(-6deg);z-index:1;top:30px;left:0;">

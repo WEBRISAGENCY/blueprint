@@ -1591,6 +1591,19 @@
   </div>
 </section>
 <!-- FOOTER (matches blueprint homepage) -->
+<style>
+/* Unified footer (site-wide) */
+footer .footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:48px}
+footer .footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+footer .footer-col-title::before{content:'';display:block;width:16px;height:2px;background:#F7C600}
+footer .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+footer .footer-links li a{font-family:'Figtree',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+footer .footer-links li a:hover{color:#F7C600}
+footer .footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#F7C600;color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s}
+footer .footer-cta-btn:hover{filter:brightness(1.05)}
+@media (max-width:768px){footer .footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px}footer .footer-nav > div[style*="span 2"]{grid-column:1 / -1}}
+@media (max-width:480px){footer .footer-nav{grid-template-columns:1fr;gap:36px}footer .footer-nav > div[style*="span 2"] > div{grid-template-columns:1fr !important}}
+</style>
 <footer>
   <div class="footer-nav">
     <div style="grid-column:span 2">
