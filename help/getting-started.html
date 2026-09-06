@@ -261,6 +261,18 @@ a{color:var(--navy)}
 @media (max-width:1000px){.cat-grid{grid-template-columns:repeat(2,1fr)}.hp-two{grid-template-columns:1fr}.cbox{position:static}.art{grid-template-columns:1fr;gap:24px}.side{display:none}.mtoc{display:block;margin-bottom:8px}.contact-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.cat-grid{grid-template-columns:1fr}.help-main{padding-top:100px}.hp-hero{padding:48px 20px 44px}.stuck{padding:22px}}
 </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+<style>
+  /* Anton headline treatment (matches homepage) */
+  .hp-hero{background:#0B0E1A !important}
+  .hp-hero::before{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) !important;background-size:46px 46px !important}
+  .hp-hero::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1200px;height:620px;background:radial-gradient(ellipse at 50% 0%,rgba(37,99,235,.30) 0%,rgba(37,99,235,.10) 40%,transparent 72%);pointer-events:none}
+  .hp-hero h1,.body h1,.hp-cats h2,.sec-h,.cbox h2,.stuck h3{font-family:'Anton',sans-serif !important;font-weight:400 !important;text-transform:uppercase;letter-spacing:-0.005em !important;line-height:1.05 !important}
+  .hp-hero h1{font-size:clamp(36px,4.8vw,60px) !important;line-height:1.02 !important}
+  .body h1{font-size:clamp(30px,3.6vw,46px) !important}
+  .hp-cats h2,.sec-h,.cbox h2{font-size:26px !important}
+  .stuck h3{font-size:24px !important}
+</style>
 </head>
 <body>
 <!-- AGENCY OS BETA BAR -->
