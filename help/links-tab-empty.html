@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Links tab is empty | Help Center | The Blueprint Training</title>
 <link rel="canonical" href="https://theblueprint.training/help/links-tab-empty.html">
-<meta name="description" content="The Links tab matches backlinks from your central link workbook to the client&#x27;s website domain. Two things have to be true.">
+<meta name="description" content="Links live in the app now. Add rows on the client&#x27;s Links tab or assign them from the master Links list; no spreadsheet needed.">
 <link rel="icon" href="/favicon.ico">
 <meta property="og:title" content="The Links tab is empty | Help Center | The Blueprint Training">
-<meta property="og:description" content="The Links tab matches backlinks from your central link workbook to the client&#x27;s website domain. Two things have to be true.">
+<meta property="og:description" content="Links live in the app now. Add rows on the client&#x27;s Links tab or assign them from the master Links list; no spreadsheet needed.">
 <meta property="og:image" content="https://theblueprint.training/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -414,24 +414,25 @@ a{color:var(--navy)}
     <div class="crumb"><a href="/help/">Help Center</a> &rsaquo; <a href="/help/clients-projects.html">Clients &amp; Projects</a></div>
     <h1>The Links tab is empty</h1>
     <div class="meta"><span class="pill">Clients &amp; Projects</span><span>Agency OS</span><span>Updated September 2026</span></div>
-    <p class="lead">The Links tab matches backlinks from your central link workbook to the client&#x27;s website domain. Two things have to be true.</p>
+    <p class="lead">Links live in the app now. Add rows on the client&#x27;s Links tab or assign them from the master Links list; no spreadsheet needed.</p>
     <div class="prose">
-<p>The <strong>Links</strong> tab is read-only. It shows backlinks from your agency's central <strong>link workbook</strong> (a Google Sheet) that match the client's <strong>website domain</strong>. For it to show anything, both of these must be true:</p>
+<p>The <strong>Links</strong> tab is an editable grid that lives inside Agency OS. There is no spreadsheet to connect. Each row is a backlink you built for the client: status, date, type, source domain, cost, live URL, target page, and anchor. Rows show up on a client's Links tab in two ways:</p>
 <ol>
-<li>The link workbook is connected in <strong>Settings → Integrations</strong>.</li>
-<li>The client has a <strong>website</strong> set on their client card.</li>
+<li>You add them directly on that client's Links tab with <strong>+ Add link</strong>.</li>
+<li>You add them on the master <strong>Links</strong> page (left sidebar, or "View Master List" on any client's Links tab) and assign the row to the client.</li>
 </ol>
-<h2>Read the banner</h2>
+<h2>If the tab is empty</h2>
 <ul>
-<li><strong>"No website set"</strong>: open the client card (pencil icon) and add the website. This is also what report domain-matching uses.</li>
-<li><strong>"No link workbook connected"</strong>: go to Settings → Integrations and connect the workbook, either by picking it privately from Google Drive or pasting a public sheet URL.</li>
+<li><strong>No rows yet:</strong> nothing has been added for this client. Add a row here, or open the master list and assign existing rows to the client.</li>
+<li><strong>Rows exist but sit on the master list unassigned:</strong> open the master Links page and set the Client column on each row.</li>
+<li><strong>Migrating from a Google Sheet:</strong> ask Claude to import it. With the connector live, say "import the link workbook at [sheet URL] into Agency OS" and it maps rows to clients by target domain. This is a one-time import, not a sync, so the app stays the source of truth afterwards.</li>
 </ul>
-<h2>Then sync</h2>
-<p>Click <strong>Sync now</strong> on the Links tab. Rows in the workbook whose target domain matches the client's website will appear.</p>
-<h2>Still empty?</h2>
-<p>Check that the domain in the workbook matches exactly (with or without www is fine, but a different domain or a subdomain won't match). If the website and workbook are both set, the domain has rows in the sheet, and Sync still returns nothing, <a href="/help/contact.html">contact support</a> with the client name and the sheet URL.</p>
+<h2>Link performance in reports</h2>
+<p>The Organic performance report's link section reads the target pages from this tab and pairs them with Search Console clicks and impressions. Add links here and they appear in the next report refresh.</p>
+<h2>Still stuck?</h2>
+<p>If rows are assigned to the client and still don't show, <a href="/help/contact.html">contact support</a> with the client name.</p>
 </div>
-    <div class="tags"><a class="tag" href="/help/?q=links">#links</a><a class="tag" href="/help/?q=backlinks">#backlinks</a><a class="tag" href="/help/?q=workbook">#workbook</a><a class="tag" href="/help/?q=troubleshooting">#troubleshooting</a></div>
+    <div class="tags"><a class="tag" href="/help/?q=links">#links</a><a class="tag" href="/help/?q=backlinks">#backlinks</a><a class="tag" href="/help/?q=master list">#master list</a><a class="tag" href="/help/?q=import">#import</a></div>
     <div class="related"><h3>Related articles</h3><a href="/help/projects-sprints-tasks.html">Projects, sprints, tasks and deliverables explained &rarr;</a><a href="/help/content-production-board.html">Running content production from the Content tab &rarr;</a><a href="/help/share-a-client-report.html">Sharing a read-only report with a client &rarr;</a></div>
     <div class="stuck">
   <div><h3>Still stuck?</h3><p>Send us the details and a real person will get back to you within one business day.</p></div>
