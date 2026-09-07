@@ -146,7 +146,7 @@ footer .footer-cta-btn:hover{filter:brightness(1.05)}
 .lgn-desc{font-family:'Figtree',sans-serif;font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.35}
 .lgn-arr{margin-left:auto;padding-left:8px;flex-shrink:0;color:rgba(255,255,255,.35);font-size:16px;transition:transform .15s,color .15s}
 .lgn-row:hover .lgn-arr{transform:translateX(3px);color:#F7C600}
-.prose h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:.02em;color:var(--ink);margin:26px 0 8px;display:flex;align-items:center;gap:10px}.prose h3 .pill{font-size:11px}</style>
+.prose .shot{margin:14px 0 18px;border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 40px -24px rgba(11,14,26,.45);background:var(--bg)}.prose .shot .chrome{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#e9edf4;border-bottom:1px solid var(--line)}.prose .shot .chrome span{width:8px;height:8px;border-radius:50%;background:#cfd6e2}.prose .shot .chrome em{margin-left:8px;font-style:normal;font-size:12px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:6px;flex:1}.prose .shot img{display:block;width:100%;height:auto}.prose h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:.02em;color:var(--ink);margin:26px 0 8px;display:flex;align-items:center;gap:10px}.prose h3 .pill{font-size:11px}</style>
 <style>
 :root{--navy:#1E3A5F;--navy-deep:#132c54;--yellow:#F7C600;--ink:#0B0E1A;--muted:#6B7280;--line:rgba(0,0,0,.08);--bg:#F5F6F8;--blue:#2563EB}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -418,7 +418,7 @@ a{color:var(--navy)}
     <div class="prose">
 <p>Agency OS is $199/mo flat and includes the CRM, project management, content board, links tracker, Today view, team capacity, the client reporting portal, the Claude connector, email logging, file storage, and the audit engines. What it does not include is the data. The Performance tab, the Website Quality Audit, the Local SEO audit, and Proposals all read from tools you already own or can sign up for in a few minutes.</p>
 <p>You set each one up once under <strong>Settings → Integrations</strong>. One API key per tool, agency wide. Every client rides on the same keys, and clients never see them.</p>
-<div class="callout">Prices below are list prices from each vendor's pricing page as of September 2026. Vendors change plans often, so verify before you budget. There is also a <a href="/agency-os/setup.html">visual version of this page</a> with screenshots you can share with your team.</div>
+<div class="callout">Prices below are list prices from each vendor's pricing page as of September 2026. Vendors change plans often, so verify before you budget.</div>
 <table class="tbl"><tr><th>Tool</th><th>What it powers</th><th>Needed?</th></tr>
 <tr><td><strong>Claude</strong></td><td>The Agency OS connector</td><td>Required</td></tr>
 <tr><td><strong>Windsor.ai</strong></td><td>GA4, Search Console, GBP, Google Ads, Meta, Bing, CallRail, social</td><td>Required</td></tr>
@@ -430,6 +430,7 @@ a{color:var(--navy)}
 </table>
 <h2>Required</h2>
 <h3>Claude <span class="pill">Required</span></h3>
+<figure class="shot"><div class="chrome"><span></span><span></span><span></span><em>claude.com/pricing</em></div><img src="/assets/agency-os-setup/claude.jpg" alt="Screenshot of the Claude website" loading="lazy" width="1000" height="524"></figure>
 <p>Runs the Agency OS connector. Create tasks, apply project plans, pull reports, and ask &quot;what should I work on today&quot; from Claude Desktop.</p>
 <p><strong>Who needs it</strong></p>
 <ul><li>Anyone who wants to talk to Agency OS through Claude</li><li>Reporting-only staff can skip it</li></ul>
@@ -437,6 +438,7 @@ a{color:var(--navy)}
 <ul><li>Pro: $20/user/mo ($17 on annual)</li><li>Team: $25/seat/mo standard, $125/seat premium</li><li>Free tier works for light use</li></ul>
 <p><strong>Data you need:</strong> Nothing. Sign in and connect.</p>
 <h3>Windsor.ai <span class="pill">Required</span></h3>
+<figure class="shot"><div class="chrome"><span></span><span></span><span></span><em>windsor.ai</em></div><img src="/assets/agency-os-setup/windsor.jpg" alt="Screenshot of the Windsor.ai website" loading="lazy" width="1000" height="524"></figure>
 <p>One key that brokers every Google and social source: GA4, Search Console, Google Business Profile insights, Google Ads, Bing Ads, Meta Ads, TikTok, YouTube, LinkedIn, X, Facebook Pages, CallRail. Powers the Performance tab, WQA, and Local SEO audits.</p>
 <p><strong>Price</strong></p>
 <ul><li>Standard $118/mo: 7 data sources, 75 accounts</li><li>Plus $299/mo: 10 sources, 200 accounts</li><li>Professional $598/mo: 14 sources, 500 accounts</li><li>Annual saves about 16%</li></ul>
@@ -444,6 +446,7 @@ a{color:var(--navy)}
 <ul><li>&quot;Data sources&quot; are connector types. GA4 is one, GSC is one, Meta is one</li><li>&quot;Accounts&quot; are client properties</li><li>A 20-client SEO plus paid shop fits Standard. Add paid and organic social and you need Plus</li><li>Free tier keeps only 30 days of history, so it will not fill a 12-month trend</li></ul>
 <p><strong>Data you need:</strong> Connect each client&#x27;s GA4, GSC, GBP, and ad accounts inside Windsor first. Agency OS auto-detects them.</p>
 <h3>Ahrefs or SEMrush <span class="pill">Required</span></h3>
+<figure class="shot"><div class="chrome"><span></span><span></span><span></span><em>ahrefs.com</em></div><img src="/assets/agency-os-setup/ahrefs.jpg" alt="Screenshot of the Ahrefs or SEMrush website" loading="lazy" width="1000" height="524"></figure>
 <p>Rankings, keywords, backlinks, and domain metrics. Used by WQA, Proposals, Local SEO audits, and the SEO Performance tab. If both are connected, Agency OS uses Ahrefs.</p>
 <p><strong>Ahrefs</strong></p>
 <ul><li>Lite $129/mo, Standard $249/mo, Advanced $449/mo</li><li>API and MCP access included on all plans</li><li>Rows per request: Lite 100, Standard 250, Advanced 500</li><li>Standard is the sweet spot for audits</li></ul>
@@ -451,6 +454,7 @@ a{color:var(--navy)}
 <ul><li>Advanced plan required for API, about $456/mo billed annually</li><li>API units are bought separately on top</li><li>Ahrefs is the cheaper path if you are starting fresh</li></ul>
 <p><strong>Data you need:</strong> The API key, plus each client&#x27;s root domain</p>
 <h3>Screaming Frog <span class="pill">Required</span></h3>
+<figure class="shot"><div class="chrome"><span></span><span></span><span></span><em>screamingfrog.co.uk</em></div><img src="/assets/agency-os-setup/screamingfrog.jpg" alt="Screenshot of the Screaming Frog website" loading="lazy" width="1000" height="524"></figure>
 <p>The site crawl you upload into a Website Quality Audit. Agency OS reads the export and turns findings into the plan.</p>
 <p><strong>Price</strong></p>
 <ul><li>Free up to 500 URLs</li><li>Licence £199/yr per user (about $260) for unlimited crawling</li></ul>
@@ -459,6 +463,7 @@ a{color:var(--navy)}
 
 <h2>Not required (depends on what you sell)</h2>
 <h3>Local Falcon <span class="pill">Not required</span></h3>
+<figure class="shot"><div class="chrome"><span></span><span></span><span></span><em>localfalcon.com</em></div><img src="/assets/agency-os-setup/localfalcon.jpg" alt="Screenshot of the Local Falcon website" loading="lazy" width="1000" height="524"></figure>
 <p>Map-pack grid scans. The core dataset for Local SEO audits and the local rank section of reporting.</p>
 <p><strong>Price</strong></p>
 <ul><li>Starter $24.99/mo: 7,500 credits</li><li>Basic $49.99/mo: 15,150 credits</li><li>Pro $99.99/mo: 31,250 credits</li><li>Premium $199.99/mo: 63,150 credits</li><li>API included on all plans. Annual is roughly two months free</li></ul>
@@ -467,6 +472,7 @@ a{color:var(--navy)}
 <p><strong>Data you need</strong></p>
 <ul><li>The API key</li><li>Each client&#x27;s Google Place ID, or leave it blank and we match by website domain</li></ul>
 <h3>DataForSEO <span class="pill">Not required</span></h3>
+<figure class="shot"><div class="chrome"><span></span><span></span><span></span><em>dataforseo.com</em></div><img src="/assets/agency-os-setup/dataforseo.jpg" alt="Screenshot of the DataForSEO website" loading="lazy" width="1000" height="524"></figure>
 <p>Google Business Profile data, reviews, and keyword SERP sweeps for Local SEO audits. Replaces the need for GBP OAuth.</p>
 <p><strong>Price</strong></p>
 <ul><li>Pay as you go, $50 minimum deposit</li><li>Business Data and SERP calls cost fractions of a cent each</li><li>Most agencies spend under $20/mo</li></ul>
@@ -475,6 +481,7 @@ a{color:var(--navy)}
 <p><strong>Data you need</strong></p>
 <ul><li>API login (email) and API password from DataForSEO → API Access</li><li>These are not your dashboard login</li></ul>
 <h3>Google Workspace <span class="pill">Not required</span></h3>
+<figure class="shot"><div class="chrome"><span></span><span></span><span></span><em>workspace.google.com</em></div><img src="/assets/agency-os-setup/workspace.jpg" alt="Screenshot of the Google Workspace website" loading="lazy" width="1000" height="524"></figure>
 <p>Drive client folders (audits, proposals, and reports get filed there) and Gmail for email logging.</p>
 <p><strong>Who needs it:</strong> The agency account that owns the client folders</p>
 <p><strong>Price</strong></p>

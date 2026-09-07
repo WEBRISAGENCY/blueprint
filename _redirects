@@ -239,3 +239,7 @@
 /blog/seo-roi     /seo-roi/         301
 /blog/seo-templates-every-agency-needs/*   /seo-templates-every-agency-needs/:splat   301
 /blog/seo-templates-every-agency-needs     /seo-templates-every-agency-needs/         301
+
+# Agency OS setup stack moved into the Help Center
+/agency-os/setup-deck.html   /help/software-and-data-you-need.html   301
+/agency-os/setup.html        /help/software-and-data-you-need.html   301
