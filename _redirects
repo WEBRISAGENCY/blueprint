@@ -29,10 +29,10 @@
 /content-calendar/                                      https://lemon-attempt-fd4.notion.site/Blueprint-Community-Content-Calendar-Recordings-7d8cec6e2a194022aca40059072f5c6a 301
 /fix-agency-pricing/                                    https://theblueprint.training                                          301
 /all/                                                   https://theblueprint.training                                          301
-/strategy-call/                                         /get-started/                                                               301
+/strategy-call/                                         /sign-up.html                                                               301
 /about-old/                                             https://theblueprint.training                                          301
-/demo/                                                  /get-started/                                                               301
-/strategy-call-old/                                     /get-started/                                                               301
+/demo/                                                  /sign-up.html                                                               301
+/strategy-call-old/                                     /sign-up.html                                                               301
 /group/                                                 https://theblueprint.training                                          301
 /trainings/agency-sales/                                https://theblueprint.training                                          301
 /tools/seo-proposal-template/                           https://theblueprint.training                                          301
@@ -243,3 +243,8 @@
 # Agency OS setup stack moved into the Help Center
 /agency-os/setup-deck.html   /help/software-and-data-you-need.html   301
 /agency-os/setup.html        /help/software-and-data-you-need.html   301
+
+# Get started → Sign up (forced so the old static file does not win)
+/get-started          /sign-up.html   301!
+/get-started/         /sign-up.html   301!
+/get-started.html     /sign-up.html   301!
