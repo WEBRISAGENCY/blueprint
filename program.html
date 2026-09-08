@@ -880,6 +880,170 @@ sh.querySelectorAll('.subtabs .subtab').forEach(function(x){x.addEventListener('
 </section>
 
 <!-- FINAL CTA (We built this) -->
+<!-- PRICING (mirrors the home page) -->
+<style>
+.pricing{background:var(--dark)}
+.pricing-inner{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:start;margin-top:60px}
+.pricing-card{background:var(--black);border:2px solid var(--yellow);padding:48px;position:relative}
+.pricing-card-badge{position:absolute;top:-14px;left:40px;background:var(--yellow);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 16px}
+.pricing-plan{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:24px}
+.pricing-amount{font-family:'Bebas Neue',sans-serif;font-size:84px;line-height:1;color:var(--white);margin-bottom:8px;text-align:left}
+.pricing-amount span{font-size:36px;color:var(--gray)}
+.pricing-period{font-size:14px;color:var(--gray);margin-bottom:36px;text-align:left}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.pricing-features li{display:flex;align-items:flex-start;gap:12px;font-size:16px;color:var(--gray-light);line-height:1.5}
+.pricing-features li::before{content:'✓';color:var(--yellow);font-weight:700;flex-shrink:0;margin-top:1px}
+.btn-pricing{display:block;width:100%;background:var(--yellow);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.08em;text-transform:uppercase;padding:18px 32px;text-align:center;text-decoration:none;transition:all 0.2s;margin-bottom:16px}
+.btn-pricing:hover{background:var(--yellow-dark);box-shadow:0 8px 30px rgba(245,200,0,0.2)}
+.pricing-note{text-align:center;font-size:13px;color:var(--gray);line-height:1.6}
+.pricing-breakdown{padding-top:16px}
+.breakdown-item{display:flex;align-items:flex-start;gap:16px;padding:24px 0;border-bottom:1px solid rgba(0,0,0,0.08)}
+.breakdown-item:first-child{border-top:1px solid rgba(0,0,0,0.08)}
+.breakdown-icon{width:40px;height:40px;background:rgba(245,200,0,0.08);border:1px solid rgba(245,200,0,0.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.breakdown-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:4px}
+.breakdown-desc{font-size:14px;color:var(--gray);line-height:1.5}
+.breakdown-value{margin-left:auto;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--yellow);white-space:nowrap;padding-left:24px}
+.breakdown-total{display:flex;justify-content:space-between;align-items:center;padding:24px 0 0}
+.breakdown-total-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray)}
+.breakdown-total-value{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--yellow)}
+.breakdown-total-value s{color:var(--gray);font-size:28px;margin-right:16px}
+.pricing-toggle-wrap{display:flex;gap:0;margin-bottom:28px;border:1px solid rgba(247,198,0,0.25);border-radius:2px;overflow:hidden;width:fit-content}
+.pricing-toggle-btn{background:transparent;border:none;color:var(--gray);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;padding:10px 24px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;position:relative}
+.pricing-toggle-btn.active{background:var(--yellow);color:var(--black)}
+.pricing-toggle-btn.active .toggle-save-badge{background:rgba(0,0,0,0.15);color:var(--black)}
+.pricing-amount small{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--gray);margin-left:4px}
+.pricing{background:#1E3A5F !important;position:relative}
+.pricing::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(245,200,0,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(245,200,0,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.pricing .section-label{color:#F7C600 !important}
+.pricing .section-label::before{background:#F7C600 !important}
+.pricing .section-title{color:#FFFFFF !important}
+.pricing .section-title span{color:#F7C600 !important}
+.pricing p{color:#8A90A8 !important}
+.pricing-card{background:#2A4F7A !important;border-color:rgba(247,198,0,0.3) !important}
+.pricing-card:hover{border-color:rgba(247,198,0,0.5) !important;background:#345D8C !important}
+.pricing-card-badge{background:#F7C600 !important;color:#0B0E1A !important}
+.pricing-plan{color:#F7C600 !important}
+.pricing-amount{color:#FFFFFF !important}
+.pricing-amount span{color:#8A90A8 !important}
+.pricing-amount small{color:#8A90A8 !important}
+.pricing-period{color:#8A90A8 !important}
+.pricing-features li{color:#C8CEDF !important}
+.pricing-features li::before{color:#F7C600 !important}
+.pricing .btn-pricing{background:#F7C600 !important;color:#0B0E1A !important}
+.pricing .btn-pricing:hover{background:#D4A81D !important}
+.pricing-note{color:#8A90A8 !important}
+.pricing-toggle-wrap{background:rgba(255,255,255,0.05) !important;border-color:rgba(255,255,255,0.1) !important}
+.pricing-toggle-btn{color:#8A90A8 !important;background:transparent !important}
+.pricing-toggle-btn.active{background:#F7C600 !important;color:#0B0E1A !important}
+.pricing-breakdown{border-color:rgba(255,255,255,0.1) !important}
+.pricing-breakdown div[style]{color:#8A90A8 !important}
+.breakdown-item{border-color:rgba(255,255,255,0.08) !important}
+.breakdown-icon{background:rgba(247,198,0,0.1) !important;border-color:rgba(247,198,0,0.2) !important}
+.breakdown-title{color:#FFFFFF !important}
+.breakdown-desc{color:#8A90A8 !important}
+.breakdown-value{color:#F7C600 !important}
+@media (max-width:900px){.pricing-inner{grid-template-columns:1fr !important;gap:32px !important}.pricing-card{padding:32px 24px !important}}
+@media (max-width:600px){.pricing-card{padding:24px 16px !important}.pricing-amount{font-size:56px !important}.pricing-features li{font-size:14px !important}}
+.pricing{padding:96px 24px}.pricing .container{max-width:1200px;margin:0 auto}.pricing .section-label{color:#F7C600;text-align:center;justify-content:center}.pricing .section-title{text-align:center}
+</style>
+<section class="pricing" id="pricing">
+  <div class="container">
+    <p class="section-label">GET STARTED</p>
+    <h2 class="section-title" style="font-weight:500;">One investment. <span>Unlimited access.</span></h2>
+
+    <div class="pricing-inner">
+      <div class="pricing-card">
+        <div class="pricing-card-badge" style="background:#E53E3E;color:#fff;">🔥 Limited Time Sale</div>
+        <div class="pricing-plan">The One-Person Agency</div>
+
+        <!-- Monthly pricing -->
+        <div id="planMonthly">
+          <div style="display:flex;align-items:baseline;gap:16px;">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(255,255,255,0.35);text-decoration:line-through;text-decoration-color:#E53E3E;text-decoration-thickness:3px;">$299</span>
+            <div class="pricing-amount"><span>$</span>199<small>/mo</small></div>
+          </div>
+          <div class="pricing-period">No contracts. Cancel anytime.</div>
+        </div>
+
+        <ul class="pricing-features">
+          <li>Agency OS — the all-in-one Software to run clients, projects, reporting, and billing (with Claude integration)</li>
+          <li>Training suite with modules covering sales, fulfillment, leveraging AI and more</li>
+          <li>SOPs and template suite used by Ryan Stewart's 8 figure agency</li>
+          <li>Private community of agency owners with 24/7 access</li>
+          <li>2x weekly live coaching calls with Ryan Stewart and David Krevitt</li>
+          <li>On-demand Q&amp;A support from the Blueprint team</li>
+          <li>All future updates, new agents, and releases included</li>
+        </ul>
+
+        <a href="https://blueprint.spiffy.co/checkout/bpt-program" class="btn-pricing" id="btnEnroll">Get Instant Access — $199/mo</a>
+        <div class="pricing-note">🔒 Secure checkout.</div>
+      </div>
+
+      <div class="pricing-breakdown">
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gray); margin-bottom:8px;">What you'll be able to do</div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">📈</div>
+          <div>
+            <div class="breakdown-title">Deliver better results for your clients</div>
+            <div class="breakdown-desc">Follow a proven fulfillment system that consistently drives measurable outcomes</div>
+          </div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">⚡</div>
+          <div>
+            <div class="breakdown-title">Streamline your entire service delivery</div>
+            <div class="breakdown-desc">SOPs and templates for every stage of the client lifecycle, from onboarding to reporting</div>
+          </div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">🤖</div>
+          <div>
+            <div class="breakdown-title">Automate tedious tasks with done-for-you AI agents</div>
+            <div class="breakdown-desc">Deploy pre-built agents that handle proposals, audits, content, link building, and reporting</div>
+          </div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">💰</div>
+          <div>
+            <div class="breakdown-title">Centralize your software stack and reduce cost</div>
+            <div class="breakdown-desc">Replace your CRM, project management, reporting, and client portal tools with one platform — for a fraction of the price</div>
+          </div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">✨</div>
+          <div>
+            <div class="breakdown-title">Integrate your agency's services with Claude</div>
+            <div class="breakdown-desc">Connect the platform to Claude and hand off real work — onboarding, audits, proposals, and reporting</div>
+          </div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">👥</div>
+          <div>
+            <div class="breakdown-title">Know exactly who to hire, where to find them, and how to pay them</div>
+            <div class="breakdown-desc">Build a lean team so you can pull yourself out of client services for good</div>
+          </div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-icon">🏢</div>
+          <div>
+            <div class="breakdown-title">Become a true CEO</div>
+            <div class="breakdown-desc">Work on the business, not in it. The system, agents, and team do the rest.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <section class="wb-cta">
   <div class="wb-inner">
     <div class="wb-photo">
