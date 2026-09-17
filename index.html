@@ -94,8 +94,8 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   }
   /* Shift section intro video */
   .shift-video{max-width:820px;margin:0 auto 44px}
-  .sv-frame{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#0B0E1A;cursor:pointer;box-shadow:0 34px 80px -34px rgba(15,23,42,.5);border:1px solid rgba(0,0,0,.08)}
-  .sv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .sv-frame{position:relative;border-radius:16px;overflow:hidden;background:#0B0E1A;box-shadow:0 34px 80px -34px rgba(15,23,42,.5);border:1px solid rgba(0,0,0,.08)}
+  .sv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.sv-frame wistia-player{display:block;width:100%}
   .sv-poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:radial-gradient(700px 380px at 50% 25%, rgba(37,99,235,.28), transparent 60%),#0B0E1A}
   .sv-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#F7C600}
   .sv-play{width:78px;height:78px;border-radius:50%;background:#F7C600;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(247,198,0,.4)}
@@ -426,14 +426,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title" style="text-align:center; font-weight:400;">Most agencies are stuck using<br>an outdated operating system.</h2>
     <p class="section-body" style="margin-bottom: 48px; text-align:center; max-width:720px; margin-left:auto; margin-right:auto;">The Blueprint is the modern operating system for your agency — the software to run clients, projects, and reporting, plus everything that makes you great at running it: training, AI agents, SOPs, live coaching, and a community of 3,000+ owners.</p>
 
-    <!-- Watch: intro video -->
+    <!-- Watch: intro video (Wistia) -->
     <div class="shift-video">
-      <!-- Paste your embed URL into data-embed (e.g. https://www.youtube.com/embed/VIDEO_ID?autoplay=1). Until then it shows the poster. -->
-      <div class="sv-frame" id="shiftVideo" data-embed="" role="button" tabindex="0" aria-label="Play the video">
-        <div class="sv-poster">
-          <span class="sv-label">Watch</span>
-          <div class="sv-play"></div>
-        </div>
+      <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/ewj221zjjy.js" async type="module"></script><style>wistia-player[media-id='ewj221zjjy']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ewj221zjjy/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+      <div class="sv-frame">
+        <wistia-player media-id="ewj221zjjy" seo="false" aspect="1.7777777777777777"></wistia-player>
       </div>
     </div>
 
@@ -1371,6 +1368,5 @@ footer .footer-cta-btn:hover{filter:brightness(1.05)}
   }
 })();
 </script>
-<script>(function(){var v=document.getElementById('shiftVideo');if(!v)return;v.addEventListener('click',function(){var u=v.dataset.embed;if(!u)return;v.innerHTML='<iframe src="'+u+'" title="Video" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>';});});</script>
 </body>
 </html>
