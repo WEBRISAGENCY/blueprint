@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Google Drive folders or push-to-Sheets isn&#x27;t working | Help Center | The Blueprint Training</title>
-<link rel="canonical" href="https://theblueprint.training/help/google-drive-not-working.html">
-<meta name="description" content="Usually Google isn&#x27;t connected, or the grant has aged out and needs a reconnect.">
+<title>Shared drives don&#x27;t show when picking a Google Drive folder | Help Center | The Blueprint Training</title>
+<link rel="canonical" href="https://theblueprint.training/help/google-shared-drives-not-showing.html">
+<meta name="description" content="Agency OS only sees Drive folders it created or you opened for it. Here is why shared drives are missing and what to do about it.">
 <link rel="icon" href="/favicon.ico">
-<meta property="og:title" content="Google Drive folders or push-to-Sheets isn&#x27;t working | Help Center | The Blueprint Training">
-<meta property="og:description" content="Usually Google isn&#x27;t connected, or the grant has aged out and needs a reconnect.">
+<meta property="og:title" content="Shared drives don&#x27;t show when picking a Google Drive folder | Help Center | The Blueprint Training">
+<meta property="og:description" content="Agency OS only sees Drive folders it created or you opened for it. Here is why shared drives are missing and what to do about it.">
 <meta property="og:image" content="https://theblueprint.training/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -406,28 +406,37 @@ a{color:var(--navy)}
 <div class="wrap art">
   <aside class="side">
   <h4>Help topics</h4>
-  <ul><li><a href="/help/getting-started.html">🚀&nbsp; Getting Started</a></li><li><a href="/help/pipeline-crm.html">📊&nbsp; Pipeline &amp; CRM</a></li><li><a href="/help/clients-projects.html">🗂️&nbsp; Clients &amp; Projects</a></li><li><a href="/help/reporting.html">📈&nbsp; Performance Reporting</a></li><li><a href="/help/claude.html">✨&nbsp; Claude Connector</a></li><li><a href="/help/team-access.html">👥&nbsp; Team &amp; Access</a></li><li><a href="/help/billing.html">💳&nbsp; Billing &amp; Account</a></li><li><a class="on" href="/help/integrations.html">🔌&nbsp; Integrations</a></li><ul class="sub"><li><a href="/help/software-and-data-you-need.html">What software and data do I need to run Agency OS?</a></li><li><a href="/help/integrations-api-keys.html">Integrations and API keys: Windsor.ai, Ahrefs, Local Falcon, DataForSEO, GBP</a></li><li><a class="on" href="/help/google-drive-not-working.html">Google Drive folders or push-to-Sheets isn&#x27;t working</a></li><li><a href="/help/connect-asana.html">Connecting Asana to import project boards</a></li><li><a href="/help/google-shared-drives-not-showing.html">Shared drives don&#x27;t show when picking a Google Drive folder</a></li></ul></ul>
+  <ul><li><a href="/help/getting-started.html">🚀&nbsp; Getting Started</a></li><li><a href="/help/pipeline-crm.html">📊&nbsp; Pipeline &amp; CRM</a></li><li><a href="/help/clients-projects.html">🗂️&nbsp; Clients &amp; Projects</a></li><ul class="sub"><li><a href="/help/integrations-api-keys.html">Integrations and API keys: Windsor.ai, Ahrefs, Local Falcon, DataForSEO, GBP</a></li><li><a href="/help/google-drive-not-working.html">Google Drive folders or push-to-Sheets isn&#x27;t working</a></li><li><a href="/help/connect-asana.html">Connecting Asana to import project boards</a></li><li><a class="on" href="/help/google-shared-drives-not-showing.html">Shared drives don&#x27;t show when picking a Google Drive folder</a></li></ul><li><a href="/help/reporting.html">📈&nbsp; Performance Reporting</a></li><li><a href="/help/claude.html">✨&nbsp; Claude Connector</a></li><li><a href="/help/team-access.html">👥&nbsp; Team &amp; Access</a></li><li><a href="/help/billing.html">💳&nbsp; Billing &amp; Account</a></li><li><a class="on" href="/help/integrations.html">🔌&nbsp; Integrations</a></li></ul>
   <h4 style="margin-top:28px">Need a hand?</h4>
   <ul><li><a href="/help/contact.html">Contact support</a></li><li><a href="https://www.skool.com/the-blueprint-training" target="_blank" rel="noopener">Community</a></li><li><a href="https://app.theblueprint.training/sign-in">Agency OS login</a></li></ul>
 </aside>
   <article class="body">
     <div class="crumb"><a href="/help/">Help Center</a> &rsaquo; <a href="/help/integrations.html">Integrations</a></div>
-    <h1>Google Drive folders or push-to-Sheets isn&#x27;t working</h1>
+    <h1>Shared drives don&#x27;t show when picking a Google Drive folder</h1>
     <div class="meta"><span class="pill">Integrations</span><span>Agency OS</span><span>Updated September 2026</span></div>
-    <p class="lead">Usually Google isn&#x27;t connected, or the grant has aged out and needs a reconnect.</p>
+    <p class="lead">Agency OS only sees Drive folders it created or you opened for it. Here is why shared drives are missing and what to do about it.</p>
     <div class="prose">
-<p>Auto-creating Drive folders, pushing content to a Sheet and publishing a report to Docs all run through the Google connection in <strong>Settings → Integrations</strong>.</p>
-<h2>Check the connection</h2>
-<ol>
-<li>Open <strong>Settings → Integrations → Google</strong>.</li>
-<li>It should show <strong>Connected</strong> with a recent date. If it warns the grant is old, click <strong>Reconnect</strong>. Google tokens issued in testing mode can expire after about seven days.</li>
-</ol>
-<h2>Scopes</h2>
-<p>The base connection uses a non-sensitive Drive scope, which is all that folders, Sheets and Docs need. Analytics and Search Console access is an opt-in <strong>"Also grant…"</strong> step that may require a verified OAuth client, so it's expected to be unavailable until that's configured. Reporting uses Windsor for those anyway.</p>
-<p>If Google is freshly connected with the right scopes and Drive actions still error, <a href="/help/contact.html">contact support</a> with the exact error text.</p>
+<p>You connected Google Drive, the connection says it worked, but the folder picker only shows your own My Drive folders. The shared drive where your team actually keeps client work is nowhere.</p>
+
+<h2>Why it happens</h2>
+<p>Agency OS requests the narrowest Google Drive permission available: access to files it creates, plus files you explicitly open for it. It deliberately does not request permission to read your entire Drive, because that would mean handing a third party every document in your organisation, including ones that have nothing to do with client work.</p>
+<p>A shared drive folder that Agency OS did not create and that you have not explicitly picked falls outside that permission. It is not a bug, and reconnecting will not change it.</p>
+
+<h2>What to do</h2>
+<ul>
+<li><strong>Let Agency OS create the folder.</strong> The smoothest path. Set up the client's Drive folder from inside the app and it lands in a folder the app can see and manage. Move it into your shared drive afterwards if you like; access is granted per file, so it keeps working.</li>
+<li><strong>Pick the folder through the Google picker.</strong> Where the app offers a picker rather than a list, choosing a shared drive folder there grants access to that specific folder. Typing or pasting a folder ID will not, because the grant comes from the act of picking.</li>
+<li><strong>Check you can open it in Drive yourself.</strong> Agency OS inherits your access exactly. A shared drive you are only a commenter on will not accept files.</li>
+</ul>
+
+<h2>If the folder still does not appear</h2>
+<p>Shared drives can be locked down at the Google Workspace level so that external apps cannot be granted access at all, regardless of your own permissions. Your Workspace admin can confirm this under Drive sharing settings. If that is the restriction, create the client folder in My Drive instead and share it with the team.</p>
+
+<h2>Still stuck?</h2>
+<p><a href="/help/contact.html">Contact support</a> with a screenshot of the picker and the name of the shared drive.</p>
 </div>
-    <div class="tags"><a class="tag" href="/help/?q=google">#google</a><a class="tag" href="/help/?q=drive">#drive</a><a class="tag" href="/help/?q=sheets">#sheets</a><a class="tag" href="/help/?q=docs">#docs</a><a class="tag" href="/help/?q=oauth">#oauth</a><a class="tag" href="/help/?q=troubleshooting">#troubleshooting</a></div>
-    <div class="related"><h3>Related articles</h3><a href="/help/integrations-api-keys.html">Integrations and API keys: Windsor.ai, Ahrefs, Local Falcon, DataForSEO, GBP &rarr;</a><a href="/help/links-tab-empty.html">The Links tab is empty &rarr;</a><a href="/help/report-empty-not-connected.html">My performance report is empty or says &quot;not connected&quot; &rarr;</a></div>
+    <div class="tags"><a class="tag" href="/help/?q=google drive">#google drive</a><a class="tag" href="/help/?q=shared drive">#shared drive</a><a class="tag" href="/help/?q=folders">#folders</a><a class="tag" href="/help/?q=permissions">#permissions</a><a class="tag" href="/help/?q=integrations">#integrations</a></div>
+    <div class="related"><h3>Related articles</h3><a href="/help/google-drive-not-working.html">Google Drive folders or push-to-Sheets is not working &rarr;</a><a href="/help/connect-data-sources.html">Connecting a client data sources (the Data tab) &rarr;</a><a href="/help/integrations-api-keys.html">Integrations and API keys: Windsor.ai, Ahrefs, Local Falcon, DataForSEO, GBP &rarr;</a></div>
     <div class="stuck">
   <div><h3>Still stuck?</h3><p>Send us the details and a real person will get back to you within one business day.</p></div>
   <a class="btn-y" href="/help/contact.html">Contact support &rarr;</a>
