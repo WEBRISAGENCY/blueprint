@@ -35,7 +35,7 @@
 /strategy-call-old/                                     /sign-up.html                                                               301
 /group/                                                 https://theblueprint.training                                          301
 /trainings/agency-sales/                                https://theblueprint.training                                          301
-/tools/seo-proposal-template/                           https://theblueprint.training                                          301
+/tools/seo-proposal-template/                           /seo-proposal/                                                              301
 /bp3-framework/                                         https://theblueprint.training                                          301
 /trainings/competitive-analysis/                        https://theblueprint.training                                          301
 /tools/organic-traffic-projection/                      https://trafficprojection.com/seo-forecasting/                              301
@@ -100,7 +100,6 @@
 /agency-growth/                                         https://theblueprint.training                                          301
 # /agency-lead-generation/ - static page exists, no redirect needed
 /agency-offer-creation/                                 https://theblueprint.training                                          301
-/blended-search/                                        https://theblueprint.training                                          301
 # /blog/ - static page exists, no redirect needed
 /charge-more-services/                                  https://theblueprint.training                                          301
 /expand-ranking-radius/                                 https://theblueprint.training                                          301
@@ -231,8 +230,8 @@
 /blog/seo-deliverables     /seo-deliverables/         301
 /blog/seo-proposal/*   /seo-proposal/:splat   301
 /blog/seo-proposal     /seo-proposal/         301
-/blog/seo-proposal-template/*   /seo-proposal-template/:splat   301
-/blog/seo-proposal-template     /seo-proposal-template/         301
+/blog/seo-proposal-template/*   /seo-proposal/   301
+/blog/seo-proposal-template     /seo-proposal/         301
 /blog/seo-report/*   /seo-report/:splat   301
 /blog/seo-report     /seo-report/         301
 /blog/seo-roi/*   /seo-roi/:splat   301
@@ -248,3 +247,7 @@
 /get-started          /sign-up.html   301!
 /get-started/         /sign-up.html   301!
 /get-started.html     /sign-up.html   301!
+
+# SEO proposal consolidation (Nov 2026): template post merged into /seo-proposal/
+/seo-proposal-template/*   /seo-proposal/   301!
+/seo-proposal-template     /seo-proposal/   301!
