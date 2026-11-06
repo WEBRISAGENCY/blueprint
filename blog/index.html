@@ -551,7 +551,7 @@
 .kb-t-delivery{background:#0f3b45;color:#5fe0c8}
 .kb-t-leads{background:#2a1f4d;color:#b9a6ff}
 .kb-t-none{background:#1d2333;color:#fff}
-.kb-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.kb-body{padding:24px 24px 22px;display:flex;flex-direction:column;flex:1}
 .kb-chips{display:flex;gap:6px;flex-wrap:wrap;min-height:22px;margin-bottom:10px}
 .kb-chip{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px}
 .kb-sales{background:#fff4c2;color:#7a5d00}
@@ -563,10 +563,20 @@
 .kb-meta img{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:top}
 .kb-meta span{display:flex;flex-direction:column;font-family:'Figtree',sans-serif;font-size:13px;line-height:1.3;color:#5a6476}
 .kb-meta b{color:#132c54;font-size:14px}
-.kb-feat{display:grid;grid-template-columns:1.25fr 1fr;margin-bottom:40px}
+.kb-feat{margin-bottom:40px;background:#132c54;border-color:#132c54;border-left:6px solid #F7C600}
+.kb-feat .kb-title{color:#fff}
+.kb-feat .kb-desc{color:rgba(255,255,255,.75)}
+.kb-feat .kb-meta{border-top-color:rgba(255,255,255,.12)}
+.kb-feat .kb-meta b{color:#fff}
+.kb-feat .kb-meta span{color:rgba(255,255,255,.6)}
+.kb-feat .kb-new{color:#F7C600}
+.kb-card{border-top:4px solid #e3e7ef}
+.kb-card[data-cats^=sales]{border-top-color:#F7C600}
+.kb-card[data-cats^=delivery]{border-top-color:#2bb39a}
+.kb-card[data-cats^=leads]{border-top-color:#7c63e6}
 .kb-feat .kb-thumb{aspect-ratio:auto;min-height:340px;height:100%}
-.kb-feat .kb-body{padding:36px 36px 32px;justify-content:center}
-.kb-feat .kb-title{font-size:32px;line-height:1.15}
+.kb-feat .kb-body{padding:40px 44px 36px;max-width:860px}
+.kb-feat .kb-title{font-size:36px;line-height:1.15}
 .kb-feat .kb-desc{font-size:17px;-webkit-line-clamp:4;flex:none}
 .kb-new{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#b08b00;margin-bottom:12px}
 .kb-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px}
@@ -575,7 +585,7 @@
 .kb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .kb-empty{display:none;text-align:center;font-family:'Figtree',sans-serif;color:#5a6476;padding:48px 0}
 .kb-hide{display:none!important}
-@media (max-width:980px){.kb-grid{grid-template-columns:repeat(2,1fr)}.kb-feat{grid-template-columns:1fr}.kb-feat .kb-thumb{min-height:0;aspect-ratio:16/9}}
+@media (max-width:980px){.kb-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.kb-hero{padding:120px 16px 36px}.kb-main{padding:32px 16px 56px}.kb-grid{grid-template-columns:1fr}.kb-search{flex:1 1 100%}.kb-feat .kb-body{padding:22px}.kb-feat .kb-title{font-size:24px}.kb-f{font-size:14px;padding:8px 12px}}
 </style>
 </head>
@@ -725,7 +735,7 @@
 
     <article class="kb-feat" data-cats="sales" data-q="best crm for marketing agencies in 2026 the best crm for marketing agencies, compared: what agencies need that software-sales crms miss, agency os vs. hubspot, highlevel and pipedrive, and how to set up your pipeline.">
       <a class="kb-link" href="/best-crm-for-agencies/" aria-label="Best CRM for Marketing Agencies in 2026"></a>
-      <div class="kb-thumb"><img src="/assets/blog/best-crm-for-agencies/agency-os-pipeline.webp" alt="" loading="eager"></div>
+      
       <div class="kb-body">
         <div class="kb-new">Latest article</div>
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
@@ -738,7 +748,7 @@
     <div class="kb-grid" id="articlesGrid">
     <article class="kb-card" data-feat="1" data-cats="sales" data-q="best crm for marketing agencies in 2026 the best crm for marketing agencies, compared: what agencies need that software-sales crms miss, agency os vs. hubspot, highlevel and pipedrive, and how to set up your pipeline.">
       <a class="kb-link" href="/best-crm-for-agencies/" aria-label="Best CRM for Marketing Agencies in 2026"></a>
-      <div class="kb-thumb"><img src="/assets/blog/best-crm-for-agencies/agency-os-pipeline.webp" alt="" loading="lazy"></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">Best CRM for Marketing Agencies in 2026</h2>
@@ -748,7 +758,7 @@
     </article>
     <article class="kb-card" data-cats="sales" data-q="how to build a ppc proposal that closes deals (template) how to build a ppc proposal that closes: the five numbers to get first, the cost-per-customer equation, a slide-by-slide template, and how to price ppc management.">
       <a class="kb-link" href="/ppc-proposal/" aria-label="How to Build a PPC Proposal That Closes Deals (Template)"></a>
-      <div class="kb-thumb"><img src="/assets/blog/ppc-proposal/agency-os-ppc-forecast.webp" alt="" loading="lazy"></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">How to Build a PPC Proposal That Closes Deals (Template)</h2>
@@ -758,7 +768,7 @@
     </article>
     <article class="kb-card" data-cats="sales" data-q="how to sell seo services (without a sales rep) how to sell seo services without a sales rep: the one-person agency sales team. you run the calls, ai does the analysis, the proposal and the follow-up schedule.">
       <a class="kb-link" href="/how-to-sell-seo/" aria-label="How to Sell SEO Services (Without a Sales Rep)"></a>
-      <div class="kb-thumb"><img src="/assets/blog/how-to-sell-seo/sales-process-after.webp" alt="" loading="lazy"></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">How to Sell SEO Services (Without a Sales Rep)</h2>
@@ -768,7 +778,7 @@
     </article>
     <article class="kb-card" data-cats="sales" data-q="seo proposal generator: how agency os builds every slide how the agency os seo proposal generator works: the data it pulls, the four gates, all 19 sections and the logic behind every slide.">
       <a class="kb-link" href="/seo-proposal-generator/" aria-label="SEO Proposal Generator: How Agency OS Builds Every Slide"></a>
-      <div class="kb-thumb"><img src="/assets/blog/seo-proposal-generator/seo-proposal-generator-cover.webp" alt="" loading="lazy"></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">SEO Proposal Generator: How Agency OS Builds Every Slide</h2>
@@ -778,7 +788,7 @@
     </article>
     <article class="kb-card" data-cats="delivery sales" data-q="website quality audit: how to run one start to finish (with ai) how to run a website quality audit in about 30 minutes: technical fixes, a content audit and a content roadmap, pushed straight into a project plan.">
       <a class="kb-link" href="/how-to-run-a-website-quality-audit/" aria-label="Website Quality Audit: How to Run One Start to Finish (With AI)"></a>
-      <div class="kb-thumb"><img src="/assets/blog/website-quality-audit/website-quality-audit-cover.webp" alt="" loading="lazy"></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">Website Quality Audit: How to Run One Start to Finish (With AI)</h2>
@@ -788,7 +798,7 @@
     </article>
     <article class="kb-card" data-cats="sales" data-q="is seo dead? why your agency needs to sell blended search zero-click searches hit nearly 70%. here&#x27;s why selling seo alone is killing agencies, and how the blended search model keeps clients paying.">
       <a class="kb-link" href="/blended-search/" aria-label="Is SEO Dead? Why Your Agency Needs To Sell Blended Search"></a>
-      <div class="kb-thumb"><img src="/assets/blog/blended-search/blended-search-cover.webp" alt="" loading="lazy"></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">Is SEO Dead? Why Your Agency Needs To Sell Blended Search</h2>
@@ -796,9 +806,19 @@
         <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2026-11-06">Nov 6, 2026</time></span></div>
       </div>
     </article>
+    <article class="kb-card" data-cats="sales" data-q="7 seo pricing models for agencies and consultants the 7 seo and agency pricing models, who carries the risk in each, what we actually charge at webris, and the floor, band and ceiling method for setting your number.">
+      <a class="kb-link" href="/agency-pricing-models/" aria-label="7 SEO Pricing Models for Agencies and Consultants"></a>
+      
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">7 SEO Pricing Models for Agencies and Consultants</h2>
+        <p class="kb-desc">The 7 SEO and agency pricing models, who carries the risk in each, what we actually charge at WEBRIS, and the floor, band and ceiling method for setting your number.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2026-11-06">Nov 6, 2026</time></span></div>
+      </div>
+    </article>
     <article class="kb-card" data-cats="sales" data-q="seo proposal: how to build one that closes deals in 2026 an seo proposal that closes: a slide-by-slide template, a real $4,000/month example, the data to pull, how to price it, and how to build it in minutes.">
       <a class="kb-link" href="/seo-proposal/" aria-label="SEO Proposal: How To Build One That Closes Deals in 2026"></a>
-      <div class="kb-thumb"><img src="/assets/blog/seo-proposal/seo-proposal-cover.webp" alt="" loading="lazy"></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">SEO Proposal: How To Build One That Closes Deals in 2026</h2>
@@ -808,7 +828,7 @@
     </article>
     <article class="kb-card" data-cats="leads" data-q="generate 15 - 20 qualified leads with meta ads the agency owner playbook for generating leads with meta ads. learn how to generate leads with meta ads profitably and predictably.">
       <a class="kb-link" href="/generate-leads-meta-ads/" aria-label="Generate 15 - 20 Qualified Leads With Meta Ads"></a>
-      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
         <h2 class="kb-title">Generate 15 - 20 Qualified Leads With Meta Ads</h2>
@@ -818,7 +838,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="how to scale seo as a solo marketer: a complete ai-powered workflow the complete ai seo process and workflow built for solo agency owners. automate your seo delivery without sacrificing quality.">
       <a class="kb-link" href="/ai-seo-process/" aria-label="How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow</h2>
@@ -828,7 +848,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="these 3 links will rank any dentist website in google use this 3-tier link building system built specifically for dental clients. rank dentists higher with proven link building for dentists.">
       <a class="kb-link" href="/link-building-for-dentists/" aria-label="These 3 Links Will Rank Any Dentist Website In Google"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">These 3 Links Will Rank Any Dentist Website In Google</h2>
@@ -838,7 +858,7 @@
     </article>
     <article class="kb-card" data-cats="leads" data-q="how to generate predictable leads for your agency stop chasing the wrong lead sources. learn the complete agency lead generation playbook used by top-performing agency owners in 2026.">
       <a class="kb-link" href="/agency-lead-generation/" aria-label="How To Generate Predictable Leads For Your Agency"></a>
-      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
         <h2 class="kb-title">How To Generate Predictable Leads For Your Agency</h2>
@@ -848,7 +868,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="how to build your own seo report (free template) build your own seo report with this free template. show clients real results and keep them retained with clear reporting.">
       <a class="kb-link" href="/seo-report/" aria-label="How to Build Your Own SEO Report (FREE Template)"></a>
-      <div class="kb-thumb"><img src="https://i.ytimg.com/vi/Lzz_mKDbzjk/hqdefault.jpg" alt="" loading="lazy"></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">How to Build Your Own SEO Report (FREE Template)</h2>
@@ -858,7 +878,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="how to get high authority links for your seo clients the agency playbook for building authority links that move rankings. learn how to build authority links for clients at scale.">
       <a class="kb-link" href="/build-authority-links-for-clients/" aria-label="How to Get High Authority Links For Your SEO Clients"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">How to Get High Authority Links For Your SEO Clients</h2>
@@ -868,7 +888,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="6 local seo ranking factors to dominate the maps pack for your clients master the 6 local seo ranking factors that determine maps pack visibility. a complete local seo guide built for agency professionals.">
       <a class="kb-link" href="/local-seo/" aria-label="6 Local SEO Ranking Factors to Dominate the Maps Pack For Your Clients"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">6 Local SEO Ranking Factors to Dominate the Maps Pack For Your Clients</h2>
@@ -878,7 +898,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="how to create seo content that ranks (and banks) learn a revenue-first seo content strategy framework. create content that drives traffic and converts -- built for agency teams.">
       <a class="kb-link" href="/seo-content-training/" aria-label="How To Create SEO Content That Ranks (and Banks)"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">How To Create SEO Content That Ranks (and Banks)</h2>
@@ -888,7 +908,7 @@
     </article>
     <article class="kb-card" data-cats="sales delivery" data-q="how to make easy money selling local seo to clients get local seo training that teaches you to rank clients in the maps pack. practical, agency-focused local seo training you can apply today.">
       <a class="kb-link" href="/local-seo-training/" aria-label="How To Make Easy Money Selling Local SEO To Clients"></a>
-      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">How To Make Easy Money Selling Local SEO To Clients</h2>
@@ -896,19 +916,9 @@
         <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-06-29">Jun 29, 2024</time></span></div>
       </div>
     </article>
-    <article class="kb-card" data-cats="sales" data-q="7 seo pricing models for agencies and consultants the 7 seo and agency pricing models, who carries the risk in each, what we actually charge at webris, and the floor, band and ceiling method for setting your number.">
-      <a class="kb-link" href="/agency-pricing-models/" aria-label="7 SEO Pricing Models for Agencies and Consultants"></a>
-      <div class="kb-thumb"><img src="/assets/blog/agency-pricing-models/pricing-19-models.webp" alt="" loading="lazy"></div>
-      <div class="kb-body">
-        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
-        <h2 class="kb-title">7 SEO Pricing Models for Agencies and Consultants</h2>
-        <p class="kb-desc">The 7 SEO and agency pricing models, who carries the risk in each, what we actually charge at WEBRIS, and the floor, band and ceiling method for setting your number.</p>
-        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-06-29">Jun 29, 2024</time></span></div>
-      </div>
-    </article>
     <article class="kb-card" data-cats="delivery" data-q="seo client onboarding questionnaire [free template] download our seo client onboarding questionnaire template. collect the right information from new clients to start projects faster.">
       <a class="kb-link" href="/client-questionnaire-template/" aria-label="SEO Client Onboarding Questionnaire [FREE Template]"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">SEO Client Onboarding Questionnaire [FREE Template]</h2>
@@ -918,7 +928,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="the ultimate guide to seo agency project management set up seo agency project management with clear workflows, roles, and communication systems that scale as your client roster grows.">
       <a class="kb-link" href="/seo-agency-project-management/" aria-label="The Ultimate Guide to SEO Agency Project Management"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">The Ultimate Guide to SEO Agency Project Management</h2>
@@ -928,7 +938,7 @@
     </article>
     <article class="kb-card" data-cats="leads" data-q="3 agency niches guaranteed to generate millions in revenue find the best niches for seo agencies with this guide to picking a profitable vertical. stop being a generalist and start winning.">
       <a class="kb-link" href="/niches-for-your-agency/" aria-label="3 Agency Niches GUARANTEED To Generate Millions In Revenue"></a>
-      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
         <h2 class="kb-title">3 Agency Niches GUARANTEED To Generate Millions In Revenue</h2>
@@ -938,7 +948,7 @@
     </article>
     <article class="kb-card" data-cats="leads" data-q="the 5-page agency website [free template] use this 5-page agency website template formula that actually converts visitors into leads. built and tested by real agency owners.">
       <a class="kb-link" href="/agency-website-template/" aria-label="The 5-Page Agency Website [FREE Template]"></a>
-      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
         <h2 class="kb-title">The 5-Page Agency Website [FREE Template]</h2>
@@ -948,7 +958,7 @@
     </article>
     <article class="kb-card" data-cats="" data-q="earn recurring revenue by friends to the blueprint training join the blueprint training affiliate program and earn 20% recurring commissions. recommend the program you trust to fellow agency owners.">
       <a class="kb-link" href="/blueprint-affiliate-program/" aria-label="Earn Recurring Revenue by Friends to The Blueprint Training"></a>
-      <div class="kb-thumb kb-tile kb-t-none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Blueprint</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"></div>
         <h2 class="kb-title">Earn Recurring Revenue by Friends to The Blueprint Training</h2>
@@ -958,7 +968,7 @@
     </article>
     <article class="kb-card" data-cats="sales delivery" data-q="how to productize your agency&#x27;s services follow this 6-step playbook to productize your agency services. stop trading time for money and build scalable service packages.">
       <a class="kb-link" href="/how-to-productize-services/" aria-label="HOW to Productize Your Agency&#x27;s Services"></a>
-      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">HOW to Productize Your Agency&#x27;s Services</h2>
@@ -968,7 +978,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="31 seo deliverables ready to use on client campaigns the complete list of seo deliverables every agency should offer. know exactly what to include in your client engagements.">
       <a class="kb-link" href="/seo-deliverables/" aria-label="31 SEO Deliverables Ready To Use On Client Campaigns"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">31 SEO Deliverables Ready To Use On Client Campaigns</h2>
@@ -978,7 +988,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="steal our agency&#x27;s project management system for seo scale your agency to 100+ clients with proven seo project management systems. workflows and processes that keep delivery on track.">
       <a class="kb-link" href="/project-management-seo/" aria-label="Steal Our Agency&#x27;s Project Management System for SEO"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">Steal Our Agency&#x27;s Project Management System for SEO</h2>
@@ -988,7 +998,7 @@
     </article>
     <article class="kb-card" data-cats="sales" data-q="13 ways to make money using seo explore 7 proven models to make money with seo -- from freelancing to building a full agency. find the path that fits your goals.">
       <a class="kb-link" href="/make-money-seo/" aria-label="13 Ways to Make Money Using SEO"></a>
-      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">13 Ways to Make Money Using SEO</h2>
@@ -998,7 +1008,7 @@
     </article>
     <article class="kb-card" data-cats="leads" data-q="5 pieces of content that will fill your agency&#x27;s pipeline learn the 5-post content marketing framework built for agencies. attract inbound leads with content marketing for agencies that works.">
       <a class="kb-link" href="/content-marketing-for-agencies/" aria-label="5 Pieces of Content That Will Fill Your Agency&#x27;s Pipeline"></a>
-      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
         <h2 class="kb-title">5 Pieces of Content That Will Fill Your Agency&#x27;s Pipeline</h2>
@@ -1008,7 +1018,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="content briefs: a marketing agency&#x27;s best friend use this content brief template to create seo content that actually ranks. the exact format top agencies use for consistent results.">
       <a class="kb-link" href="/content-brief-template/" aria-label="Content Briefs: A Marketing Agency&#x27;s Best Friend"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">Content Briefs: A Marketing Agency&#x27;s Best Friend</h2>
@@ -1018,7 +1028,7 @@
     </article>
     <article class="kb-card" data-cats="leads sales" data-q="the complete guide to agency positioning most agencies struggle because they skip positioning. learn how to niche down and build an agency positioning strategy that attracts ideal clients.">
       <a class="kb-link" href="/agency-positioning/" aria-label="The Complete Guide to Agency Positioning"></a>
-      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">The Complete Guide to Agency Positioning</h2>
@@ -1028,7 +1038,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="the essential seo stack. these are the only tools you need, nothing more. these 8 seo tools can run your entire agency. build the best seo tool stack without wasting money on redundant subscriptions.">
       <a class="kb-link" href="/best-seo-tool-stack/" aria-label="The Essential SEO Stack. These Are The Only Tools You Need, Nothing More."></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">The Essential SEO Stack. These Are The Only Tools You Need, Nothing More.</h2>
@@ -1038,7 +1048,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="5 seo templates every agency needs download 7 essential seo templates every agency needs. streamline your workflow with proven templates for proposals, reports, and more.">
       <a class="kb-link" href="/seo-templates-every-agency-needs/" aria-label="5 SEO Templates Every Agency Needs"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">5 SEO Templates Every Agency Needs</h2>
@@ -1048,7 +1058,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="steal our agency&#x27;s link building strategy (free template) build a complete link building strategy using this proven agency framework. earn high-quality backlinks that drive rankings and revenue.">
       <a class="kb-link" href="/link-building-strategy/" aria-label="Steal Our Agency&#x27;s Link Building Strategy (Free Template)"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">Steal Our Agency&#x27;s Link Building Strategy (Free Template)</h2>
@@ -1058,7 +1068,7 @@
     </article>
     <article class="kb-card" data-cats="sales leads" data-q="how to land bigger clients for your agency ready to move upmarket? use this proven playbook to land bigger agency clients who pay more and stay longer.">
       <a class="kb-link" href="/bigger-agency-clients/" aria-label="How to Land Bigger Clients for Your Agency"></a>
-      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span><span class="kb-chip kb-leads">Lead Generation</span></div>
         <h2 class="kb-title">How to Land Bigger Clients for Your Agency</h2>
@@ -1068,7 +1078,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="steal our agency&#x27;s keyword research process + template master the agency keyword research process that drives real revenue. learn keyword research for seo the way top agencies do it.">
       <a class="kb-link" href="/keyword-research/" aria-label="Steal Our Agency&#x27;s Keyword Research Process + Template"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">Steal Our Agency&#x27;s Keyword Research Process + Template</h2>
@@ -1078,7 +1088,7 @@
     </article>
     <article class="kb-card" data-cats="delivery sales" data-q="how to run an seo competitive audit follow this 8-step seo competitive analysis framework to uncover gaps and outrank your clients competitors in organic search.">
       <a class="kb-link" href="/seo-competitive-analysis/" aria-label="How to Run An SEO Competitive Audit"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span><span class="kb-chip kb-sales">Sales</span></div>
         <h2 class="kb-title">How to Run An SEO Competitive Audit</h2>
@@ -1088,7 +1098,7 @@
     </article>
     <article class="kb-card" data-cats="delivery" data-q="ahrefs vs semrush vs moz comparison - which is better? ahrefs vs semrush vs moz -- which seo tool is best for agencies? a detailed comparison to help you pick the right platform.">
       <a class="kb-link" href="/moz-vs-semrush-vs-ahrefs/" aria-label="Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?"></a>
-      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?</h2>
@@ -1098,7 +1108,7 @@
     </article>
     <article class="kb-card" data-cats="sales delivery" data-q="how to calculate the roi of seo learn how to calculate and forecast seo roi for your clients. prove the value of organic search with data-driven projections.">
       <a class="kb-link" href="/seo-roi/" aria-label="How to Calculate the ROI of SEO"></a>
-      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      
       <div class="kb-body">
         <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span><span class="kb-chip kb-delivery">Service Delivery</span></div>
         <h2 class="kb-title">How to Calculate the ROI of SEO</h2>
