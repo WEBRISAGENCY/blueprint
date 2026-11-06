@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Knowledge | The Blueprint Training</title>
 <link rel="canonical" href="https://theblueprint.training/blog/">
-<meta name="description" content="Browse The Blueprint Training knowledge hub. Free articles, guides, and templates to help you build and scale your SEO agency.">
+<meta name="description" content="Free playbooks, templates and walkthroughs for SEO agency owners: sales, service delivery and lead generation, from The Blueprint Training.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -515,6 +515,69 @@
   @media (max-width:1100px){.hero h1{white-space:normal !important}}
   .wb-cta h2,.cta-strip h2{font-family:'Anton',sans-serif !important;font-weight:400;text-transform:uppercase;letter-spacing:-0.005em;line-height:1.05;font-size:clamp(34px,4.6vw,60px) !important}
 </style>
+<style>
+.kb-hero{background:#0B0E1A;position:relative;overflow:hidden;padding:150px 24px 56px}
+.kb-hero:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px}
+.kb-hero:after{content:'';position:absolute;width:640px;height:640px;right:-200px;top:-320px;background:radial-gradient(circle,rgba(247,198,0,.18),transparent 65%)}
+.kb-wrap{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.kb-ey{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#F7C600;display:flex;align-items:center;gap:10px}
+.kb-ey:before{content:'';width:24px;height:2px;background:#F7C600}
+.kb-hero h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(48px,7vw,84px);line-height:.95;color:#fff;letter-spacing:.01em;margin:14px 0 14px}
+.kb-hero h1 span{color:#F7C600}
+.kb-hero p{font-family:'Figtree',sans-serif;font-size:18px;line-height:1.6;color:rgba(255,255,255,.7);max-width:620px}
+.kb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:36px}
+.kb-filters{display:flex;gap:8px;flex-wrap:wrap}
+.kb-f{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);padding:10px 16px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .15s}
+.kb-f i{font-style:normal;font-size:12px;background:rgba(255,255,255,.12);border-radius:999px;padding:1px 8px}
+.kb-f:hover{border-color:#F7C600}
+.kb-f.on{background:#F7C600;color:#0B0E1A;border-color:#F7C600}
+.kb-f.on i{background:rgba(11,14,26,.12)}
+.kb-search{position:relative;flex:0 1 300px}
+.kb-search input{width:100%;font-family:'Figtree',sans-serif;font-size:15px;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:11px 16px 11px 40px;outline:none}
+.kb-search input::placeholder{color:rgba(255,255,255,.45)}
+.kb-search input:focus{border-color:#F7C600}
+.kb-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:rgba(255,255,255,.5)}
+.kb-main{background:#f5f6f9;padding:48px 24px 80px}
+.kb-card,.kb-feat{position:relative;background:#fff;border:1px solid rgba(19,44,84,.09);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.kb-card:hover,.kb-feat:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(19,44,84,.12)}
+.kb-link{position:absolute;inset:0;z-index:2}
+.kb-thumb{aspect-ratio:16/9;background:#132c54;overflow:hidden}
+.kb-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.kb-card:hover .kb-thumb img,.kb-feat:hover .kb-thumb img{transform:scale(1.03)}
+.kb-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;color:#F7C600;background:#132c54}
+.kb-tile:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:28px 28px}
+.kb-tile svg{width:52px;height:52px;position:relative}
+.kb-tile span{position:relative;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.kb-t-delivery{background:#0f3b45;color:#5fe0c8}
+.kb-t-leads{background:#2a1f4d;color:#b9a6ff}
+.kb-t-none{background:#1d2333;color:#fff}
+.kb-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.kb-chips{display:flex;gap:6px;flex-wrap:wrap;min-height:22px;margin-bottom:10px}
+.kb-chip{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px}
+.kb-sales{background:#fff4c2;color:#7a5d00}
+.kb-delivery{background:#d9f5ef;color:#0d5c4f}
+.kb-leads{background:#ebe5ff;color:#4b3a99}
+.kb-title{font-family:'Figtree',sans-serif;font-weight:800;font-size:20px;line-height:1.3;color:#132c54;margin:0 0 10px}
+.kb-desc{font-family:'Figtree',sans-serif;font-size:15px;line-height:1.55;color:#5a6476;margin:0 0 18px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.kb-meta{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid rgba(19,44,84,.08)}
+.kb-meta img{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:top}
+.kb-meta span{display:flex;flex-direction:column;font-family:'Figtree',sans-serif;font-size:13px;line-height:1.3;color:#5a6476}
+.kb-meta b{color:#132c54;font-size:14px}
+.kb-feat{display:grid;grid-template-columns:1.25fr 1fr;margin-bottom:40px}
+.kb-feat .kb-thumb{aspect-ratio:auto;min-height:340px;height:100%}
+.kb-feat .kb-body{padding:36px 36px 32px;justify-content:center}
+.kb-feat .kb-title{font-size:32px;line-height:1.15}
+.kb-feat .kb-desc{font-size:17px;-webkit-line-clamp:4;flex:none}
+.kb-new{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#b08b00;margin-bottom:12px}
+.kb-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px}
+.kb-head h2{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:38px;color:#132c54;letter-spacing:.02em;margin:0}
+.kb-head span{font-family:'Figtree',sans-serif;font-size:14px;color:#5a6476}
+.kb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.kb-empty{display:none;text-align:center;font-family:'Figtree',sans-serif;color:#5a6476;padding:48px 0}
+.kb-hide{display:none!important}
+@media (max-width:980px){.kb-grid{grid-template-columns:repeat(2,1fr)}.kb-feat{grid-template-columns:1fr}.kb-feat .kb-thumb{min-height:0;aspect-ratio:16/9}}
+@media (max-width:640px){.kb-hero{padding:120px 16px 36px}.kb-main{padding:32px 16px 56px}.kb-grid{grid-template-columns:1fr}.kb-search{flex:1 1 100%}.kb-feat .kb-body{padding:22px}.kb-feat .kb-title{font-size:24px}.kb-f{font-size:14px;padding:8px 12px}}
+</style>
 </head>
 <body>
 <!-- NAV -->
@@ -644,502 +707,435 @@
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="container">
-    <div class="hero-inner" style="justify-content:center;">
-      <div style="text-align:center;">
-        <h1 style="white-space:nowrap;">The Blueprint <span>Knowledge Base.</span></h1>
+<section class="kb-hero">
+  <div class="kb-wrap">
+    <div class="kb-ey">The Blueprint Training</div>
+    <h1>The Agency <span>Knowledge Base</span></h1>
+    <p>Free playbooks, templates and walkthroughs on how to sell, deliver and fill the pipeline for an SEO agency. Built from what works inside WEBRIS first.</p>
+    <div class="kb-bar">
+      <div class="kb-filters" role="tablist" aria-label="Filter articles by category"><button class="kb-f on" data-f="all">All <i>37</i></button><button class="kb-f" data-f="sales">Sales <i>15</i></button><button class="kb-f" data-f="delivery">Service Delivery <i>21</i></button><button class="kb-f" data-f="leads">Lead Generation <i>7</i></button></div>
+      <label class="kb-search"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="kbQ" placeholder="Search articles" aria-label="Search articles"></label>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="kb-main">
+  <div class="kb-wrap">
+
+    <article class="kb-feat" data-cats="sales" data-q="best crm for marketing agencies in 2026 the best crm for marketing agencies, compared: what agencies need that software-sales crms miss, agency os vs. hubspot, highlevel and pipedrive, and how to set up your pipeline.">
+      <a class="kb-link" href="/best-crm-for-agencies/" aria-label="Best CRM for Marketing Agencies in 2026"></a>
+      <div class="kb-thumb"><img src="/assets/blog/best-crm-for-agencies/agency-os-pipeline.webp" alt="" loading="eager"></div>
+      <div class="kb-body">
+        <div class="kb-new">Latest article</div>
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">Best CRM for Marketing Agencies in 2026</h2>
+        <p class="kb-desc">The best CRM for marketing agencies, compared: what agencies need that software-sales CRMs miss, Agency OS vs. HubSpot, HighLevel and Pipedrive, and how to set up your pipeline.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2026-11-06">Nov 6, 2026</time></span></div>
       </div>
+    </article>
+    <div class="kb-head"><h2 id="kbLabel">All Articles</h2><span id="kbCount">37 articles</span></div>
+    <div class="kb-grid" id="articlesGrid">
+    <article class="kb-card" data-feat="1" data-cats="sales" data-q="best crm for marketing agencies in 2026 the best crm for marketing agencies, compared: what agencies need that software-sales crms miss, agency os vs. hubspot, highlevel and pipedrive, and how to set up your pipeline.">
+      <a class="kb-link" href="/best-crm-for-agencies/" aria-label="Best CRM for Marketing Agencies in 2026"></a>
+      <div class="kb-thumb"><img src="/assets/blog/best-crm-for-agencies/agency-os-pipeline.webp" alt="" loading="lazy"></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">Best CRM for Marketing Agencies in 2026</h2>
+        <p class="kb-desc">The best CRM for marketing agencies, compared: what agencies need that software-sales CRMs miss, Agency OS vs. HubSpot, HighLevel and Pipedrive, and how to set up your pipeline.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2026-11-06">Nov 6, 2026</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales" data-q="how to build a ppc proposal that closes deals (template) how to build a ppc proposal that closes: the five numbers to get first, the cost-per-customer equation, a slide-by-slide template, and how to price ppc management.">
+      <a class="kb-link" href="/ppc-proposal/" aria-label="How to Build a PPC Proposal That Closes Deals (Template)"></a>
+      <div class="kb-thumb"><img src="/assets/blog/ppc-proposal/agency-os-ppc-forecast.webp" alt="" loading="lazy"></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">How to Build a PPC Proposal That Closes Deals (Template)</h2>
+        <p class="kb-desc">How to build a PPC proposal that closes: the five numbers to get first, the cost-per-customer equation, a slide-by-slide template, and how to price PPC management.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2026-11-06">Nov 6, 2026</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales" data-q="how to sell seo services (without a sales rep) how to sell seo services without a sales rep: the one-person agency sales team. you run the calls, ai does the analysis, the proposal and the follow-up schedule.">
+      <a class="kb-link" href="/how-to-sell-seo/" aria-label="How to Sell SEO Services (Without a Sales Rep)"></a>
+      <div class="kb-thumb"><img src="/assets/blog/how-to-sell-seo/sales-process-after.webp" alt="" loading="lazy"></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">How to Sell SEO Services (Without a Sales Rep)</h2>
+        <p class="kb-desc">How to sell SEO services without a sales rep: the one-person agency sales team. You run the calls, AI does the analysis, the proposal and the follow-up schedule.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2026-11-06">Nov 6, 2026</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales" data-q="seo proposal generator: how agency os builds every slide how the agency os seo proposal generator works: the data it pulls, the four gates, all 19 sections and the logic behind every slide.">
+      <a class="kb-link" href="/seo-proposal-generator/" aria-label="SEO Proposal Generator: How Agency OS Builds Every Slide"></a>
+      <div class="kb-thumb"><img src="/assets/blog/seo-proposal-generator/seo-proposal-generator-cover.webp" alt="" loading="lazy"></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">SEO Proposal Generator: How Agency OS Builds Every Slide</h2>
+        <p class="kb-desc">How the Agency OS SEO proposal generator works: the data it pulls, the four gates, all 19 sections and the logic behind every slide.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2026-11-06">Nov 6, 2026</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery sales" data-q="website quality audit: how to run one start to finish (with ai) how to run a website quality audit in about 30 minutes: technical fixes, a content audit and a content roadmap, pushed straight into a project plan.">
+      <a class="kb-link" href="/how-to-run-a-website-quality-audit/" aria-label="Website Quality Audit: How to Run One Start to Finish (With AI)"></a>
+      <div class="kb-thumb"><img src="/assets/blog/website-quality-audit/website-quality-audit-cover.webp" alt="" loading="lazy"></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">Website Quality Audit: How to Run One Start to Finish (With AI)</h2>
+        <p class="kb-desc">How to run a website quality audit in about 30 minutes: technical fixes, a content audit and a content roadmap, pushed straight into a project plan.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2026-11-06">Nov 6, 2026</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales" data-q="seo proposal: how to build one that closes deals in 2026 an seo proposal that closes: a slide-by-slide template, a real $4,000/month example, the data to pull, how to price it, and how to build it in minutes.">
+      <a class="kb-link" href="/seo-proposal/" aria-label="SEO Proposal: How To Build One That Closes Deals in 2026"></a>
+      <div class="kb-thumb"><img src="/assets/blog/seo-proposal/seo-proposal-cover.webp" alt="" loading="lazy"></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">SEO Proposal: How To Build One That Closes Deals in 2026</h2>
+        <p class="kb-desc">An SEO proposal that closes: a slide-by-slide template, a real $4,000/month example, the data to pull, how to price it, and how to build it in minutes.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2026-11-06">Nov 6, 2026</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="leads" data-q="generate 15 - 20 qualified leads with meta ads the agency owner playbook for generating leads with meta ads. learn how to generate leads with meta ads profitably and predictably.">
+      <a class="kb-link" href="/generate-leads-meta-ads/" aria-label="Generate 15 - 20 Qualified Leads With Meta Ads"></a>
+      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
+        <h2 class="kb-title">Generate 15 - 20 Qualified Leads With Meta Ads</h2>
+        <p class="kb-desc">The agency owner playbook for generating leads with Meta Ads. Learn how to generate leads with Meta Ads profitably and predictably.</p>
+        <div class="kb-meta"><img src="/assets/elena-author.png" alt="Elena Dimova"><span><b>Elena Dimova</b><time datetime="2025-07-14">Jul 14, 2025</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="how to scale seo as a solo marketer: a complete ai-powered workflow the complete ai seo process and workflow built for solo agency owners. automate your seo delivery without sacrificing quality.">
+      <a class="kb-link" href="/ai-seo-process/" aria-label="How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow</h2>
+        <p class="kb-desc">The complete AI SEO process and workflow built for solo agency owners. Automate your SEO delivery without sacrificing quality.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2025-02-04">Feb 4, 2025</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="these 3 links will rank any dentist website in google use this 3-tier link building system built specifically for dental clients. rank dentists higher with proven link building for dentists.">
+      <a class="kb-link" href="/link-building-for-dentists/" aria-label="These 3 Links Will Rank Any Dentist Website In Google"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">These 3 Links Will Rank Any Dentist Website In Google</h2>
+        <p class="kb-desc">Use this 3-tier link building system built specifically for dental clients. Rank dentists higher with proven link building for dentists.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-12-10">Dec 10, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="leads" data-q="how to generate predictable leads for your agency stop chasing the wrong lead sources. learn the complete agency lead generation playbook used by top-performing agency owners in 2026.">
+      <a class="kb-link" href="/agency-lead-generation/" aria-label="How To Generate Predictable Leads For Your Agency"></a>
+      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
+        <h2 class="kb-title">How To Generate Predictable Leads For Your Agency</h2>
+        <p class="kb-desc">Stop chasing the wrong lead sources. Learn the complete agency lead generation playbook used by top-performing agency owners in 2026.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-10-24">Oct 24, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="how to build your own seo report (free template) build your own seo report with this free template. show clients real results and keep them retained with clear reporting.">
+      <a class="kb-link" href="/seo-report/" aria-label="How to Build Your Own SEO Report (FREE Template)"></a>
+      <div class="kb-thumb"><img src="https://i.ytimg.com/vi/Lzz_mKDbzjk/hqdefault.jpg" alt="" loading="lazy"></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">How to Build Your Own SEO Report (FREE Template)</h2>
+        <p class="kb-desc">Build your own SEO report with this free template. Show clients real results and keep them retained with clear reporting.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-09-20">Sep 20, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales" data-q="is seo dead? why your agency needs to sell blended search zero-click searches hit nearly 70%. here&#x27;s why selling seo alone is killing agencies, and how the blended search model keeps clients paying.">
+      <a class="kb-link" href="/blended-search/" aria-label="Is SEO Dead? Why Your Agency Needs To Sell Blended Search"></a>
+      <div class="kb-thumb"><img src="/assets/blog/blended-search/blended-search-cover.webp" alt="" loading="lazy"></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">Is SEO Dead? Why Your Agency Needs To Sell Blended Search</h2>
+        <p class="kb-desc">Zero-click searches hit nearly 70%. Here&#x27;s why selling SEO alone is killing agencies, and how the blended search model keeps clients paying.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-09-10">Sep 10, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="how to get high authority links for your seo clients the agency playbook for building authority links that move rankings. learn how to build authority links for clients at scale.">
+      <a class="kb-link" href="/build-authority-links-for-clients/" aria-label="How to Get High Authority Links For Your SEO Clients"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">How to Get High Authority Links For Your SEO Clients</h2>
+        <p class="kb-desc">The agency playbook for building authority links that move rankings. Learn how to build authority links for clients at scale.</p>
+        <div class="kb-meta"><img src="/assets/elena-author.png" alt="Elena Dimova"><span><b>Elena Dimova</b><time datetime="2024-08-29">Aug 29, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="6 local seo ranking factors to dominate the maps pack for your clients master the 6 local seo ranking factors that determine maps pack visibility. a complete local seo guide built for agency professionals.">
+      <a class="kb-link" href="/local-seo/" aria-label="6 Local SEO Ranking Factors to Dominate the Maps Pack For Your Clients"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">6 Local SEO Ranking Factors to Dominate the Maps Pack For Your Clients</h2>
+        <p class="kb-desc">Master the 6 local SEO ranking factors that determine Maps Pack visibility. A complete local SEO guide built for agency professionals.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-08-26">Aug 26, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="how to create seo content that ranks (and banks) learn a revenue-first seo content strategy framework. create content that drives traffic and converts -- built for agency teams.">
+      <a class="kb-link" href="/seo-content-training/" aria-label="How To Create SEO Content That Ranks (and Banks)"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">How To Create SEO Content That Ranks (and Banks)</h2>
+        <p class="kb-desc">Learn a revenue-first SEO content strategy framework. Create content that drives traffic and converts -- built for agency teams.</p>
+        <div class="kb-meta"><img src="/assets/elena-author.png" alt="Elena Dimova"><span><b>Elena Dimova</b><time datetime="2024-07-02">Jul 2, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales delivery" data-q="how to make easy money selling local seo to clients get local seo training that teaches you to rank clients in the maps pack. practical, agency-focused local seo training you can apply today.">
+      <a class="kb-link" href="/local-seo-training/" aria-label="How To Make Easy Money Selling Local SEO To Clients"></a>
+      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">How To Make Easy Money Selling Local SEO To Clients</h2>
+        <p class="kb-desc">Get local SEO training that teaches you to rank clients in the Maps Pack. Practical, agency-focused local SEO training you can apply today.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-06-29">Jun 29, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales" data-q="7 seo pricing models for agencies and consultants discover 7 proven seo pricing models for agencies. most agencies undercharge -- learn how to price your services for maximum profitability.">
+      <a class="kb-link" href="/agency-pricing-models/" aria-label="7 SEO Pricing Models for Agencies and Consultants"></a>
+      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">7 SEO Pricing Models for Agencies and Consultants</h2>
+        <p class="kb-desc">Discover 7 proven SEO pricing models for agencies. Most agencies undercharge -- learn how to price your services for maximum profitability.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-06-29">Jun 29, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="seo client onboarding questionnaire [free template] download our seo client onboarding questionnaire template. collect the right information from new clients to start projects faster.">
+      <a class="kb-link" href="/client-questionnaire-template/" aria-label="SEO Client Onboarding Questionnaire [FREE Template]"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">SEO Client Onboarding Questionnaire [FREE Template]</h2>
+        <p class="kb-desc">Download our SEO client onboarding questionnaire template. Collect the right information from new clients to start projects faster.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-06-28">Jun 28, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="the ultimate guide to seo agency project management set up seo agency project management with clear workflows, roles, and communication systems that scale as your client roster grows.">
+      <a class="kb-link" href="/seo-agency-project-management/" aria-label="The Ultimate Guide to SEO Agency Project Management"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">The Ultimate Guide to SEO Agency Project Management</h2>
+        <p class="kb-desc">Set up SEO agency project management with clear workflows, roles, and communication systems that scale as your client roster grows.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-05-27">May 27, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="leads" data-q="3 agency niches guaranteed to generate millions in revenue find the best niches for seo agencies with this guide to picking a profitable vertical. stop being a generalist and start winning.">
+      <a class="kb-link" href="/niches-for-your-agency/" aria-label="3 Agency Niches GUARANTEED To Generate Millions In Revenue"></a>
+      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
+        <h2 class="kb-title">3 Agency Niches GUARANTEED To Generate Millions In Revenue</h2>
+        <p class="kb-desc">Find the best niches for SEO agencies with this guide to picking a profitable vertical. Stop being a generalist and start winning.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-03-27">Mar 27, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="leads" data-q="the 5-page agency website [free template] use this 5-page agency website template formula that actually converts visitors into leads. built and tested by real agency owners.">
+      <a class="kb-link" href="/agency-website-template/" aria-label="The 5-Page Agency Website [FREE Template]"></a>
+      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
+        <h2 class="kb-title">The 5-Page Agency Website [FREE Template]</h2>
+        <p class="kb-desc">Use this 5-page agency website template formula that actually converts visitors into leads. Built and tested by real agency owners.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2024-02-15">Feb 15, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="" data-q="earn recurring revenue by friends to the blueprint training join the blueprint training affiliate program and earn 20% recurring commissions. recommend the program you trust to fellow agency owners.">
+      <a class="kb-link" href="/blueprint-affiliate-program/" aria-label="Earn Recurring Revenue by Friends to The Blueprint Training"></a>
+      <div class="kb-thumb kb-tile kb-t-none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Blueprint</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"></div>
+        <h2 class="kb-title">Earn Recurring Revenue by Friends to The Blueprint Training</h2>
+        <p class="kb-desc">Join the Blueprint Training affiliate program and earn 20% recurring commissions. Recommend the program you trust to fellow agency owners.</p>
+        <div class="kb-meta"><img src="/assets/elena-author.png" alt="Elena Dimova"><span><b>Elena Dimova</b><time datetime="2024-01-03">Jan 3, 2024</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales delivery" data-q="how to productize your agency&#x27;s services follow this 6-step playbook to productize your agency services. stop trading time for money and build scalable service packages.">
+      <a class="kb-link" href="/how-to-productize-services/" aria-label="HOW to Productize Your Agency&#x27;s Services"></a>
+      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">HOW to Productize Your Agency&#x27;s Services</h2>
+        <p class="kb-desc">Follow this 6-step playbook to productize your agency services. Stop trading time for money and build scalable service packages.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2023-12-15">Dec 15, 2023</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="31 seo deliverables ready to use on client campaigns the complete list of seo deliverables every agency should offer. know exactly what to include in your client engagements.">
+      <a class="kb-link" href="/seo-deliverables/" aria-label="31 SEO Deliverables Ready To Use On Client Campaigns"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">31 SEO Deliverables Ready To Use On Client Campaigns</h2>
+        <p class="kb-desc">The complete list of SEO deliverables every agency should offer. Know exactly what to include in your client engagements.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2023-11-18">Nov 18, 2023</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="steal our agency&#x27;s project management system for seo scale your agency to 100+ clients with proven seo project management systems. workflows and processes that keep delivery on track.">
+      <a class="kb-link" href="/project-management-seo/" aria-label="Steal Our Agency&#x27;s Project Management System for SEO"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">Steal Our Agency&#x27;s Project Management System for SEO</h2>
+        <p class="kb-desc">Scale your agency to 100+ clients with proven SEO project management systems. Workflows and processes that keep delivery on track.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2023-07-18">Jul 18, 2023</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales" data-q="13 ways to make money using seo explore 7 proven models to make money with seo -- from freelancing to building a full agency. find the path that fits your goals.">
+      <a class="kb-link" href="/make-money-seo/" aria-label="13 Ways to Make Money Using SEO"></a>
+      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">13 Ways to Make Money Using SEO</h2>
+        <p class="kb-desc">Explore 7 proven models to make money with SEO -- from freelancing to building a full agency. Find the path that fits your goals.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2022-08-12">Aug 12, 2022</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="leads" data-q="5 pieces of content that will fill your agency&#x27;s pipeline learn the 5-post content marketing framework built for agencies. attract inbound leads with content marketing for agencies that works.">
+      <a class="kb-link" href="/content-marketing-for-agencies/" aria-label="5 Pieces of Content That Will Fill Your Agency&#x27;s Pipeline"></a>
+      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span></div>
+        <h2 class="kb-title">5 Pieces of Content That Will Fill Your Agency&#x27;s Pipeline</h2>
+        <p class="kb-desc">Learn the 5-post content marketing framework built for agencies. Attract inbound leads with content marketing for agencies that works.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2022-06-21">Jun 21, 2022</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="content briefs: a marketing agency&#x27;s best friend use this content brief template to create seo content that actually ranks. the exact format top agencies use for consistent results.">
+      <a class="kb-link" href="/content-brief-template/" aria-label="Content Briefs: A Marketing Agency&#x27;s Best Friend"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">Content Briefs: A Marketing Agency&#x27;s Best Friend</h2>
+        <p class="kb-desc">Use this content brief template to create SEO content that actually ranks. The exact format top agencies use for consistent results.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2022-06-06">Jun 6, 2022</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="leads sales" data-q="the complete guide to agency positioning most agencies struggle because they skip positioning. learn how to niche down and build an agency positioning strategy that attracts ideal clients.">
+      <a class="kb-link" href="/agency-positioning/" aria-label="The Complete Guide to Agency Positioning"></a>
+      <div class="kb-thumb kb-tile kb-t-leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span>Lead Generation</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-leads">Lead Generation</span><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">The Complete Guide to Agency Positioning</h2>
+        <p class="kb-desc">Most agencies struggle because they skip positioning. Learn how to niche down and build an agency positioning strategy that attracts ideal clients.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2022-02-23">Feb 23, 2022</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="the essential seo stack. these are the only tools you need, nothing more. these 8 seo tools can run your entire agency. build the best seo tool stack without wasting money on redundant subscriptions.">
+      <a class="kb-link" href="/best-seo-tool-stack/" aria-label="The Essential SEO Stack. These Are The Only Tools You Need, Nothing More."></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">The Essential SEO Stack. These Are The Only Tools You Need, Nothing More.</h2>
+        <p class="kb-desc">These 8 SEO tools can run your entire agency. Build the best SEO tool stack without wasting money on redundant subscriptions.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2022-01-13">Jan 13, 2022</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="5 seo templates every agency needs download 7 essential seo templates every agency needs. streamline your workflow with proven templates for proposals, reports, and more.">
+      <a class="kb-link" href="/seo-templates-every-agency-needs/" aria-label="5 SEO Templates Every Agency Needs"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">5 SEO Templates Every Agency Needs</h2>
+        <p class="kb-desc">Download 7 essential SEO templates every agency needs. Streamline your workflow with proven templates for proposals, reports, and more.</p>
+        <div class="kb-meta"><img src="/assets/elena-author.png" alt="Elena Dimova"><span><b>Elena Dimova</b><time datetime="2021-11-10">Nov 10, 2021</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="steal our agency&#x27;s link building strategy (free template) build a complete link building strategy using this proven agency framework. earn high-quality backlinks that drive rankings and revenue.">
+      <a class="kb-link" href="/link-building-strategy/" aria-label="Steal Our Agency&#x27;s Link Building Strategy (Free Template)"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">Steal Our Agency&#x27;s Link Building Strategy (Free Template)</h2>
+        <p class="kb-desc">Build a complete link building strategy using this proven agency framework. Earn high-quality backlinks that drive rankings and revenue.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2021-09-13">Sep 13, 2021</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales leads" data-q="how to land bigger clients for your agency ready to move upmarket? use this proven playbook to land bigger agency clients who pay more and stay longer.">
+      <a class="kb-link" href="/bigger-agency-clients/" aria-label="How to Land Bigger Clients for Your Agency"></a>
+      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span><span class="kb-chip kb-leads">Lead Generation</span></div>
+        <h2 class="kb-title">How to Land Bigger Clients for Your Agency</h2>
+        <p class="kb-desc">Ready to move upmarket? Use this proven playbook to land bigger agency clients who pay more and stay longer.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2021-08-13">Aug 13, 2021</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="steal our agency&#x27;s keyword research process + template master the agency keyword research process that drives real revenue. learn keyword research for seo the way top agencies do it.">
+      <a class="kb-link" href="/keyword-research/" aria-label="Steal Our Agency&#x27;s Keyword Research Process + Template"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">Steal Our Agency&#x27;s Keyword Research Process + Template</h2>
+        <p class="kb-desc">Master the agency keyword research process that drives real revenue. Learn keyword research for SEO the way top agencies do it.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2021-01-14">Jan 14, 2021</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery sales" data-q="how to run an seo competitive audit follow this 8-step seo competitive analysis framework to uncover gaps and outrank your clients competitors in organic search.">
+      <a class="kb-link" href="/seo-competitive-analysis/" aria-label="How to Run An SEO Competitive Audit"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span><span class="kb-chip kb-sales">Sales</span></div>
+        <h2 class="kb-title">How to Run An SEO Competitive Audit</h2>
+        <p class="kb-desc">Follow this 8-step SEO competitive analysis framework to uncover gaps and outrank your clients competitors in organic search.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2020-01-06">Jan 6, 2020</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="delivery" data-q="ahrefs vs semrush vs moz comparison - which is better? ahrefs vs semrush vs moz -- which seo tool is best for agencies? a detailed comparison to help you pick the right platform.">
+      <a class="kb-link" href="/moz-vs-semrush-vs-ahrefs/" aria-label="Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?"></a>
+      <div class="kb-thumb kb-tile kb-t-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l2.5 2.5L16 7"/><path d="M8 16h8"/></svg><span>Service Delivery</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?</h2>
+        <p class="kb-desc">Ahrefs vs Semrush vs Moz -- which SEO tool is best for agencies? A detailed comparison to help you pick the right platform.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2019-05-02">May 2, 2019</time></span></div>
+      </div>
+    </article>
+    <article class="kb-card" data-cats="sales delivery" data-q="how to calculate the roi of seo learn how to calculate and forecast seo roi for your clients. prove the value of organic search with data-driven projections.">
+      <a class="kb-link" href="/seo-roi/" aria-label="How to Calculate the ROI of SEO"></a>
+      <div class="kb-thumb kb-tile kb-t-sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Sales</span></div>
+      <div class="kb-body">
+        <div class="kb-chips"><span class="kb-chip kb-sales">Sales</span><span class="kb-chip kb-delivery">Service Delivery</span></div>
+        <h2 class="kb-title">How to Calculate the ROI of SEO</h2>
+        <p class="kb-desc">Learn how to calculate and forecast SEO ROI for your clients. Prove the value of organic search with data-driven projections.</p>
+        <div class="kb-meta"><img src="/assets/ryan about page.webp" alt="Ryan Stewart"><span><b>Ryan Stewart</b><time datetime="2019-04-02">Apr 2, 2019</time></span></div>
+      </div>
+    </article>
     </div>
+    <p class="kb-empty" id="kbEmpty">No articles match that search.</p>
   </div>
 </section>
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.kb-f')),cards=[].slice.call(document.querySelectorAll('#articlesGrid .kb-card')),
+      feat=document.querySelector('.kb-feat'),q=document.getElementById('kbQ'),lab=document.getElementById('kbLabel'),
+      cnt=document.getElementById('kbCount'),empty=document.getElementById('kbEmpty'),cur='all';
+  var names={all:'All Articles',sales:'Sales',delivery:'Service Delivery',leads:'Lead Generation'};
+  function run(){
+    var t=(q.value||'').trim().toLowerCase(),n=0,plain=cur==='all'&&!t;
+    feat.classList.toggle('kb-hide',!plain);
+    cards.forEach(function(c){
+      var ok=(cur==='all'||(' '+c.dataset.cats+' ').indexOf(' '+cur+' ')>-1)&&(!t||c.dataset.q.indexOf(t)>-1);
+      if(plain&&c.dataset.feat)ok=false;
+      c.classList.toggle('kb-hide',!ok);if(ok)n++;
+    });
+    var total=n+(plain?1:0);
+    lab.textContent=names[cur];cnt.textContent=total+(total===1?' article':' articles');
+    empty.style.display=total?'none':'block';
+    btns.forEach(function(b){b.classList.toggle('on',b.dataset.f===cur);b.setAttribute('aria-selected',b.dataset.f===cur)});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){cur=b.dataset.f;try{history.replaceState(null,'',cur==='all'?location.pathname:'#'+cur)}catch(e){}run()})});
+  q.addEventListener('input',run);
+  var h=location.hash.slice(1);if(names[h])cur=h;
+  run();
+})();
+</script>
 
-
-
-
-<!-- RECENT ARTICLES GRID -->
-<section class="articles">
-  <div class="container">
-
-    <div class="articles-grid" id="articlesGrid">
-<a href="/best-crm-for-agencies/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Best CRM for Marketing Agencies in 2026</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/ppc-proposal/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How to Build a PPC Proposal That Closes Deals (Template)</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/how-to-sell-seo/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How to Sell SEO Services (Without a Sales Rep)</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/seo-proposal-generator/" class="article-card">
-<div class="article-body">
-          <div class="article-title">SEO Proposal Generator: How Agency OS Builds Every Slide</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/how-to-run-a-website-quality-audit/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Website Quality Audit: How to Run One Start to Finish (With AI)</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/blended-search/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Is SEO Dead? Why Your Agency Needs To Sell Blended Search</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/generate-leads-meta-ads/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Generate 15 - 20 Qualified Leads With Meta Ads</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/elena-author-headshot.jpg" alt="Elena Dimova"></div>
-              <span class="article-author-name">Elena Dimova</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/ai-seo-process/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How to Scale SEO as a Solo Marketer: A Complete AI-Powered Workflow</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/link-building-for-dentists/" class="article-card">
-<div class="article-body">
-          <div class="article-title">These 3 Links Will Rank Any Dentist Website In Google</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/agency-lead-generation/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How To Generate Predictable Leads For Your Agency</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/seo-report/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How to Build Your Own SEO Report (FREE Template)</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/build-authority-links-for-clients/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How to Get High Authority Links For Your SEO Clients</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/elena-author-headshot.jpg" alt="Elena Dimova"></div>
-              <span class="article-author-name">Elena Dimova</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/local-seo/" class="article-card">
-<div class="article-body">
-          <div class="article-title">6 Local SEO Ranking Factors to Dominate the Maps Pack For Your Clients</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/seo-content-training/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How To Create SEO Content That Ranks (and Banks)</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/elena-author-headshot.jpg" alt="Elena Dimova"></div>
-              <span class="article-author-name">Elena Dimova</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/local-seo-training/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How To Make Easy Money Selling Local SEO To Clients</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/agency-pricing-models/" class="article-card">
-<div class="article-body">
-          <div class="article-title">7 SEO Pricing Models for Agencies and Consultants</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/client-questionnaire-template/" class="article-card">
-<div class="article-body">
-          <div class="article-title">SEO Client Onboarding Questionnaire [FREE Template]</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/seo-agency-project-management/" class="article-card">
-<div class="article-body">
-          <div class="article-title">The Ultimate Guide to SEO Agency Project Management</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/niches-for-your-agency/" class="article-card">
-<div class="article-body">
-          <div class="article-title">3 Agency Niches GUARANTEED To Generate Millions In Revenue</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/agency-website-template/" class="article-card">
-<div class="article-body">
-          <div class="article-title">The 5-Page Agency Website [FREE Template]</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/blueprint-affiliate-program/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Earn Recurring Revenue by Friends to The Blueprint Training</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/elena-author-headshot.jpg" alt="Elena Dimova"></div>
-              <span class="article-author-name">Elena Dimova</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/how-to-productize-services/" class="article-card">
-<div class="article-body">
-          <div class="article-title">HOW to Productize Your Agency&#x27;s Services</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/seo-deliverables/" class="article-card">
-        <div class="article-body">
-          <div class="article-title">31 SEO Deliverables Ready To Use On Client Campaigns</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/project-management-seo/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Steal Our Agency&#x27;s Project Management System for SEO</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/seo-proposal/" class="article-card">
-<div class="article-body">
-          <div class="article-title">SEO Proposal: How To Build One That Closes Deals in 2026</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/make-money-seo/" class="article-card">
-<div class="article-body">
-          <div class="article-title">13 Ways to Make Money Using SEO</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/content-marketing-for-agencies/" class="article-card">
-<div class="article-body">
-          <div class="article-title">5 Pieces of Content That Will Fill Your Agency&#x27;s Pipeline</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/content-brief-template/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Content Briefs: A Marketing Agency&#x27;s Best Friend</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/agency-positioning/" class="article-card">
-<div class="article-body">
-          <div class="article-title">The Complete Guide to Agency Positioning</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/best-seo-tool-stack/" class="article-card">
-<div class="article-body">
-          <div class="article-title">The Essential SEO Stack. These Are The Only Tools You Need, Nothing More.</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/seo-templates-every-agency-needs/" class="article-card">
-<div class="article-body">
-          <div class="article-title">5 SEO Templates Every Agency Needs</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/elena-author-headshot.jpg" alt="Elena Dimova"></div>
-              <span class="article-author-name">Elena Dimova</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/link-building-strategy/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Steal Our Agency&#x27;s Link Building Strategy (Free Template)</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/bigger-agency-clients/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How to Land Bigger Clients for Your Agency</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/keyword-research/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Steal Our Agency&#x27;s Keyword Research Process + Template</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/seo-competitive-analysis/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How to Run An SEO Competitive Audit</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-<a href="/moz-vs-semrush-vs-ahrefs/" class="article-card">
-<div class="article-body">
-          <div class="article-title">Ahrefs vs SEMrush vs Moz Comparison - Which Is Better?</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/seo-roi/" class="article-card">
-<div class="article-body">
-          <div class="article-title">How to Calculate the ROI of SEO</div>
-          <div class="article-footer">
-            <div class="article-author">
-              <div class="meta-avatar" style="width:28px;height:28px;"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
-              <span class="article-author-name">Ryan Stewart</span>
-            </div>
-            <span class="article-arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-
-    
-
-  </div>
-</section>
 
 <!-- CTA STRIP -->
 <div class="cta-strip">
