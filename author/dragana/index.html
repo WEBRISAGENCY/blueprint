@@ -8,9 +8,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dragana Dimovska -- Project Manager | The Blueprint Training</title>
+<title>Dragana Dimovska -- Customer Success | The Blueprint Training</title>
 <link rel="canonical" href="https://theblueprint.training/author/dragana/">
-<meta name="description" content="Dragana Dimovska is the Project Manager at The Blueprint Training. With 6 years of content production and storytelling experience, she drives Blueprint's content strategy.">
+<meta name="description" content="Dragana Dimovska, Customer Success at The Blueprint Training. With 6 years of experience in content production and storytelling marketing, I&#x27;m the driving...">
 <link rel="icon" type="image/svg+xml" href="/assets/blueprint blue logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-x:hidden}
+
+/* -- NAV -- */
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#FFFFFF;box-shadow:0 1px 8px rgba(0,0,0,0.08),0 2px 24px rgba(0,0,0,0.04)}
 .nav-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:flex;align-items:stretch;height:86px;padding:0 32px}
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;padding-right:28px;border-right:none;margin-right:4px;flex-shrink:0}
@@ -46,6 +48,8 @@ body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-
 .mobile-menu-socials a:hover{opacity:1}
 .mobile-menu-cta{display:block;text-align:center;margin-top:32px;background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:16px 32px;text-decoration:none}
 .mobile-menu-cta:hover{background:#D9AE00}
+
+/* -- HERO -- */
 .author-hero{background:#132c54;padding:140px 24px 80px;position:relative;overflow:hidden}
 .author-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px}
 .author-hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:64px}
@@ -63,9 +67,22 @@ body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-
 .author-photo-wrap{position:relative;width:380px;height:440px}
 .author-photo-accent{position:absolute;bottom:0;right:-20px;width:320px;height:320px;border-radius:50%;background:#F7C600;opacity:0.15}
 .author-photo-img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:bottom}
+
+/* -- ARTICLES -- */
 .articles-section{padding:80px 24px;max-width:1100px;margin:0 auto}
 .articles-heading{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:0.02em;color:#132c54;margin-bottom:40px}
-.no-articles{font-size:16px;color:#6B7280;line-height:1.6}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.article-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.08)}
+.article-card-thumb{width:100%;aspect-ratio:16/9;background:#1E3A5F;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.article-card-thumb img{width:100%;height:100%;object-fit:cover}
+.article-card-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.article-card-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.02em;line-height:1.2;color:#132c54;margin-bottom:12px;flex:1}
+.article-card-meta{display:flex;align-items:center;gap:10px;font-size:13px;color:#6B7280}
+.article-card-avatar{width:28px;height:28px;border-radius:50%;overflow:hidden;flex-shrink:0}
+.article-card-avatar img{width:100%;height:100%;object-fit:cover}
+
+/* -- FOOTER -- */
 .footer{background:#0B0E1A;padding:64px 24px 0}
 .footer-inner{max-width:1100px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08)}
@@ -80,6 +97,8 @@ body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-
 .footer-legal{display:flex;gap:24px}
 .footer-legal a{color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.15s}
 .footer-legal a:hover{color:rgba(255,255,255,0.7)}
+
+/* -- RESPONSIVE -- */
 @media(max-width:900px){
   .nav-links{display:none !important}
   .nav-right{display:none !important}
@@ -97,9 +116,64 @@ body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-
   .author-hero-name{font-size:48px}
   .author-hero-socials{justify-content:center}
   .author-hero-bio{max-width:100%}
+  .articles-grid{grid-template-columns:1fr}
+  .articles-heading{font-size:32px;margin-bottom:24px}
   .footer-grid{grid-template-columns:1fr;gap:32px}
 }
+@media(min-width:901px) and (max-width:1100px){
+  .articles-grid{grid-template-columns:repeat(2,1fr)}
+}
 .footer-partner-badge{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;opacity:0.5;transition:opacity 0.2s}.footer-partner-badge:hover{opacity:0.8}.footer-partner-label{font-family:"Barlow Condensed",sans-serif;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em}.footer-partner-logo{height:22px;width:auto;filter:brightness(0) invert(1)}</style>
+<style>
+.author-photo-wrap{width:400px;height:560px}
+.author-photo-img{object-fit:cover;object-position:top center;border-radius:14px;box-shadow:16px 16px 0 #F7C600}
+.author-photo-accent{display:none}
+.author-hero-photo{flex:0 0 400px}
+.ab-wrap{max-width:1100px;margin:0 auto;padding:72px 24px 0}
+.ab-h{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:.02em;color:#132c54;margin-bottom:12px}
+.ab-sub{font-size:17px;line-height:1.65;color:#4a5568;max-width:720px;margin-bottom:32px}
+.ab-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;margin:-40px auto 0;padding:0 24px;position:relative;z-index:2}
+.ab-stat{background:#fff;border:1px solid rgba(19,44,84,.1);border-radius:10px;padding:22px 20px;box-shadow:0 10px 30px rgba(19,44,84,.08)}
+.ab-stat b{display:block;font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:#132c54}
+.ab-stat span{display:block;margin-top:6px;font-size:14.5px;color:#4a5568;line-height:1.4}
+.ab-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ab-card{background:#fff;border:1px solid rgba(19,44,84,.1);border-radius:10px;padding:26px 24px;display:flex;flex-direction:column}
+.ab-card .ey{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#b08b00;margin-bottom:8px}
+.ab-card h3{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.02em;color:#132c54;margin-bottom:10px}
+.ab-card p{font-size:15.5px;line-height:1.6;color:#4a5568;flex:1}
+.ab-card a{margin-top:16px;font-weight:700;color:#132c54;text-decoration:none;font-size:15px}
+.ab-card a:hover{color:#b08b00}
+.ab-tl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:3px solid #132c54}
+.ab-tl>div{padding:22px 22px 0 0}
+.ab-tl .yr{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;letter-spacing:.08em;color:#b08b00}
+.ab-tl h4{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#132c54;margin:6px 0 8px;letter-spacing:.02em}
+.ab-tl p{font-size:15px;line-height:1.6;color:#4a5568}
+.ab-chips{display:flex;flex-wrap:wrap;gap:10px}
+.ab-chips a{display:inline-block;padding:10px 16px;border:1px solid rgba(19,44,84,.18);border-radius:999px;color:#132c54;font-weight:600;font-size:15px;text-decoration:none;background:#fff}
+.ab-chips a:hover{border-color:#F7C600;background:#fffbe6}
+@media(max-width:900px){
+.author-photo-wrap{width:260px;height:364px}.author-hero-photo{flex:none;width:260px}
+.author-photo-img{box-shadow:10px 10px 0 #F7C600}
+.ab-stats{grid-template-columns:repeat(2,1fr);margin-top:24px}
+.ab-cards,.ab-tl{grid-template-columns:1fr}
+.ab-tl>div{padding:18px 0 0}
+.ab-h{font-size:34px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Dragana Dimovska", "url": "https://theblueprint.training/author/dragana/", "jobTitle": "Customer Success", "worksFor": {"@type": "Organization", "name": "The Blueprint Training", "url": "https://theblueprint.training/"}, "knowsAbout": ["Content production", "Storytelling marketing", "Customer success", "Video scripts"], "image": "https://theblueprint.training/assets/dragana-author.png"}</script>
+<style>
+.ab-team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ab-mate{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;background:#fff;border:1px solid rgba(19,44,84,.1);border-radius:10px;padding:20px 10px;text-decoration:none;transition:box-shadow .2s}
+.ab-mate:hover{box-shadow:0 10px 30px rgba(19,44,84,.1)}
+.ab-mate img,.ab-mate .ini{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:top}
+.ab-mate .ini,.author-ini{display:flex;align-items:center;justify-content:center;background:#132c54;color:#F7C600;font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.04em}
+.ab-mate b{font-size:15px;color:#132c54}
+.ab-mate span{font-size:13px;color:#4a5568}
+.author-ini{width:100%;height:100%;border-radius:14px;box-shadow:16px 16px 0 #F7C600;font-size:120px;position:relative;z-index:1}
+.ab-stats.s3{grid-template-columns:repeat(3,1fr)}
+.ab-stats.s2{grid-template-columns:repeat(2,1fr);max-width:760px}
+.author-photo-wrap.sq{height:400px}
+@media (max-width:768px){.ab-team{grid-template-columns:1fr 1fr}.ab-stats.s3{grid-template-columns:1fr}.author-photo-wrap.sq{height:260px}.author-ini{font-size:80px}}
+</style>
 </head>
 <body>
 
@@ -196,6 +270,7 @@ body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-
   </div>
 </div>
 
+<!-- Mobile menu overlay -->
 <div id="mobileMenu" class="mobile-menu-overlay">
   <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
   <nav class="mobile-menu-nav">
@@ -211,9 +286,15 @@ body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-
     <a href="https://app.theblueprint.training/sign-in">Login: Agency OS</a>
   </nav>
   <div class="mobile-menu-socials">
-    <a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg></a>
-    <a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg></a>
-    <a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg></a>
+    <a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg>
+    </a>
   </div>
   <a href="/sign-up.html" class="mobile-menu-cta">Get Started - $199/mo</a>
 </div>
@@ -224,13 +305,9 @@ body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-
   <div class="author-hero-inner">
     <div class="author-hero-text">
       <h1 class="author-hero-name">Dragana Dimovska</h1>
-      <div class="author-hero-title">Project Manager, The Blueprint Training</div>
-      <div class="author-hero-socials">
-        <a href="mailto:elena@theblueprint.training" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
-      </div>
-      <div class="about-heading">About Me</div>
+      <div class="author-hero-title">Customer Success, The Blueprint Training</div>
+      <div class="author-hero-socials"></div>
+      <div class="about-heading">About Dragana</div>
       <div class="author-hero-bio">
         <p>With 6 years of experience in content production and storytelling marketing, I'm the driving force behind Blueprint's content strategy. From blog posts to video scripts, I make sure every piece of content delivers real value to agency owners.</p>
         <p>As a Gen Z marketer who grew up on the internet, I bring a fresh perspective to everything we publish. My goal is to make the Blueprint's proven processes as clear and actionable as possible.</p>
@@ -239,16 +316,46 @@ body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-
     <div class="author-hero-photo">
       <div class="author-photo-wrap">
         <div class="author-photo-accent"></div>
-        <img class="author-photo-img" src="/assets/dragana-author.png" alt="Dragana Dimovska">
+        <img class="author-photo-img" src="/assets/dragana-author.png" alt="Dragana Dimovska, Customer Success at The Blueprint Training">
       </div>
     </div>
   </div>
 </section>
 
-<!-- ARTICLES -->
-<section class="articles-section">
-  <h2 class="articles-heading">Latest Articles by Dragana</h2>
-  <p class="no-articles">Dragana is currently focused on content strategy and production behind the scenes. Articles coming soon.</p>
+<!-- AUTHOR DEPTH -->
+<div class="ab-stats s2">
+  <div class="ab-stat"><b>6 yrs</b><span>Experience in content production and storytelling marketing</span></div>
+  <div class="ab-stat"><b>Blog + video</b><span>Blog posts and video scripts for Blueprint</span></div>
+</div>
+
+<section class="ab-wrap">
+  <h2 class="ab-h">What Dragana Helps Members With</h2>
+  <p class="ab-sub">The creative force behind Blueprint content, and dedicated to making sure every member gets the support they need.</p>
+  <div class="ab-cards">
+    <div class="ab-card"><div class="ey">Content</div><h3>Blueprint content</h3><p>Blog posts and video scripts that make the Blueprint processes clear and actionable.</p><a href="/blog/">Read the blog →</a></div>
+    <div class="ab-card"><div class="ey">Success</div><h3>Customer success</h3><p>Making sure members get value from the program, not just access to it.</p><a href="/program.html">See the program →</a></div>
+    <div class="ab-card"><div class="ey">Support</div><h3>Member support</h3><p>Helping members when they get stuck.</p><a href="/coaching/">Coaching and community →</a></div>
+  </div>
+</section>
+
+<section class="ab-wrap">
+  <h2 class="ab-h">The Rest of the Team</h2>
+  <p class="ab-sub">The people behind the program. Members reach all of us through the community and the twice-weekly live calls.</p>
+  <div class="ab-team">
+    <a class="ab-mate" href="/author/ryan/"><img src="/assets/ryan-stewart-author.webp" alt="Ryan Stewart" loading="lazy"><b>Ryan Stewart</b><span>Founder & CEO</span></a>
+    <a class="ab-mate" href="/author/david/"><img src="/assets/dkrevitt.webp" alt="David Krevitt" loading="lazy"><b>David Krevitt</b><span>AI Coach</span></a>
+    <a class="ab-mate" href="/author/elena/"><img src="/assets/elena-author.png" alt="Elena Dimova" loading="lazy"><b>Elena Dimova</b><span>Head of Operations</span></a>
+    <a class="ab-mate" href="/author/jan/"><img src="/assets/jan-schroeder-author.webp" alt="Jan Shroeder" loading="lazy"><b>Jan Shroeder</b><span>Acquisition</span></a>
+    <a class="ab-mate" href="/author/andres/"><div class="ini">AV</div><b>Andres Viana</b><span>Support Lead</span></a>
+    <a class="ab-mate" href="/author/russ/"><div class="ini">RR</div><b>Russ Rigaud</b><span>Technical Support</span></a>
+  </div>
+</section>
+
+<section class="ab-wrap" style="padding-bottom:72px">
+  <div class="ab-card" style="flex-direction:row;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:#132c54;border:0">
+    <div><h3 style="color:#fff;margin:0">Work with Dragana inside The Blueprint</h3><p style="color:rgba(255,255,255,.7);margin-top:6px">Training, SOPs, live coaching and Agency OS in one membership.</p></div>
+    <a href="/sign-up.html" style="margin:0;background:#F7C600;color:#0B0E1A;padding:14px 26px;border-radius:6px">Join The Blueprint Training →</a>
+  </div>
 </section>
 
 <!-- FOOTER -->

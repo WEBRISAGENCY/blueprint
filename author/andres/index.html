@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andres Viana -- Support Lead | The Blueprint Training</title>
+<link rel="canonical" href="https://theblueprint.training/author/andres/">
+<meta name="description" content="Andres Viana, Support Lead at The Blueprint Training. Andres is the Support Lead at The Blueprint Training. A numbers and automation enthusiast, he manages...">
+<link rel="icon" type="image/svg+xml" href="/assets/blueprint blue logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#FFFFFF;color:#0B0E1A;font-family:'Figtree',sans-serif;overflow-x:hidden}
+
+/* -- NAV -- */
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#FFFFFF;box-shadow:0 1px 8px rgba(0,0,0,0.08),0 2px 24px rgba(0,0,0,0.04)}
+.nav-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:flex;align-items:stretch;height:86px;padding:0 32px}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;padding-right:28px;border-right:none;margin-right:4px;flex-shrink:0}
+.nav-links{display:flex;align-items:stretch;flex:1;justify-content:center}
+.nav-item-link{display:flex;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.06em;color:#1E3A5F;padding:0 20px;text-decoration:none;transition:color 0.15s;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.nav-item-link:hover{color:#132c54}
+.nav-right{display:flex;align-items:center;margin-left:auto}
+.nav-login{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;color:#1E3A5F;background:none;border:none;cursor:pointer;padding:0 20px;text-decoration:none;transition:color 0.15s}
+.nav-login:hover{color:#132c54}
+.nav-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:0 36px;text-decoration:none;transition:background 0.15s;display:flex;align-items:center;height:100%}
+.nav-cta-btn:hover{background:#D9AE00}
+.mobile-nav-controls{display:none;align-items:center;gap:12px;margin-left:auto}
+.mobile-hamburger{background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px;width:28px}
+.mobile-hamburger span{display:block;height:2px;width:100%;background:#1E3A5F;border-radius:2px;transition:all 0.3s}
+.mobile-cta-btn{background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.06em;padding:8px 20px;text-decoration:none;white-space:nowrap}
+.mobile-cta-btn:hover{background:#D9AE00}
+.mobile-menu-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#132c54;flex-direction:column;padding:80px 32px 40px;overflow-y:auto}
+.mobile-menu-overlay.open{display:flex}
+.mobile-menu-close{position:absolute;top:14px;right:16px;z-index:10000;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);color:#fff;font-size:28px;cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:6px;font-family:sans-serif;font-weight:300}
+.mobile-menu-nav{display:flex;flex-direction:column;gap:0}
+.mobile-menu-nav a{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:0.06em;color:#C8CEDF;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);transition:color 0.2s}
+.mobile-menu-nav a:hover{color:#F7C600}
+.mobile-menu-socials{display:flex;gap:20px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1)}
+.mobile-menu-socials a{opacity:0.6;transition:opacity 0.2s}
+.mobile-menu-socials a:hover{opacity:1}
+.mobile-menu-cta{display:block;text-align:center;margin-top:32px;background:#F7C600;color:#0B0E1A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;padding:16px 32px;text-decoration:none}
+.mobile-menu-cta:hover{background:#D9AE00}
+
+/* -- HERO -- */
+.author-hero{background:#132c54;padding:140px 24px 80px;position:relative;overflow:hidden}
+.author-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px}
+.author-hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:64px}
+.author-hero-text{flex:1;color:#fff}
+.author-hero-name{font-family:'Bebas Neue',sans-serif;font-size:72px;letter-spacing:0.02em;line-height:1;margin-bottom:8px;color:#fff}
+.author-hero-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F7C600;margin-bottom:28px}
+.author-hero-socials{display:flex;gap:16px;margin-bottom:32px}
+.author-hero-socials a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);color:#fff;text-decoration:none;transition:all 0.2s}
+.author-hero-socials a:hover{border-color:#F7C600;background:rgba(247,198,0,0.1)}
+.author-hero-socials a svg{width:18px;height:18px}
+.about-heading{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.04em;color:#F7C600;margin-bottom:16px}
+.author-hero-bio{font-size:16px;line-height:1.7;color:rgba(255,255,255,0.85);max-width:520px}
+.author-hero-bio p{margin-bottom:14px}
+.author-hero-photo{flex:0 0 380px;position:relative}
+.author-photo-wrap{position:relative;width:380px;height:440px}
+.author-photo-accent{position:absolute;bottom:0;right:-20px;width:320px;height:320px;border-radius:50%;background:#F7C600;opacity:0.15}
+.author-photo-img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:bottom}
+
+/* -- ARTICLES -- */
+.articles-section{padding:80px 24px;max-width:1100px;margin:0 auto}
+.articles-heading{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:0.02em;color:#132c54;margin-bottom:40px}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.article-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.08)}
+.article-card-thumb{width:100%;aspect-ratio:16/9;background:#1E3A5F;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.article-card-thumb img{width:100%;height:100%;object-fit:cover}
+.article-card-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.article-card-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.02em;line-height:1.2;color:#132c54;margin-bottom:12px;flex:1}
+.article-card-meta{display:flex;align-items:center;gap:10px;font-size:13px;color:#6B7280}
+.article-card-avatar{width:28px;height:28px;border-radius:50%;overflow:hidden;flex-shrink:0}
+.article-card-avatar img{width:100%;height:100%;object-fit:cover}
+
+/* -- FOOTER -- */
+.footer{background:#0B0E1A;padding:64px 24px 0}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-col-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.08em;color:#F7C600;margin-bottom:20px}
+.footer-col a{display:block;color:rgba(255,255,255,0.6);text-decoration:none;font-size:15px;padding:6px 0;transition:color 0.15s}
+.footer-col a:hover{color:#fff}
+.footer-socials{display:flex;gap:16px;margin-top:12px}
+.footer-socials a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);transition:background 0.2s}
+.footer-socials a:hover{background:rgba(247,198,0,0.2)}
+.footer-socials svg{width:18px;height:18px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:24px 0;font-size:13px;color:rgba(255,255,255,0.35)}
+.footer-legal{display:flex;gap:24px}
+.footer-legal a{color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.15s}
+.footer-legal a:hover{color:rgba(255,255,255,0.7)}
+
+/* -- RESPONSIVE -- */
+@media(max-width:900px){
+  .nav-links{display:none !important}
+  .nav-right{display:none !important}
+  .mobile-nav-controls{display:flex !important}
+  .nav-inner{height:54px !important;justify-content:flex-start !important;padding:0 16px !important}
+  .nav-logo{border-right:none !important;margin-right:0 !important;padding-right:0 !important}
+  .nav-logo img{height:27px !important;width:auto !important}
+  .mobile-cta-btn .mobile-cta-full{display:none !important}
+  .mobile-cta-btn .mobile-cta-short{display:inline !important}
+  .author-hero{padding:100px 24px 48px}
+  .author-hero-inner{flex-direction:column-reverse;text-align:center;gap:32px}
+  .author-hero-photo{flex:none;width:240px}
+  .author-photo-wrap{width:240px;height:280px;margin:0 auto}
+  .author-photo-accent{width:200px;height:200px;right:-10px}
+  .author-hero-name{font-size:48px}
+  .author-hero-socials{justify-content:center}
+  .author-hero-bio{max-width:100%}
+  .articles-grid{grid-template-columns:1fr}
+  .articles-heading{font-size:32px;margin-bottom:24px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+}
+@media(min-width:901px) and (max-width:1100px){
+  .articles-grid{grid-template-columns:repeat(2,1fr)}
+}
+.footer-partner-badge{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;opacity:0.5;transition:opacity 0.2s}.footer-partner-badge:hover{opacity:0.8}.footer-partner-label{font-family:"Barlow Condensed",sans-serif;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em}.footer-partner-logo{height:22px;width:auto;filter:brightness(0) invert(1)}</style>
+<style>
+.author-photo-wrap{width:400px;height:560px}
+.author-photo-img{object-fit:cover;object-position:top center;border-radius:14px;box-shadow:16px 16px 0 #F7C600}
+.author-photo-accent{display:none}
+.author-hero-photo{flex:0 0 400px}
+.ab-wrap{max-width:1100px;margin:0 auto;padding:72px 24px 0}
+.ab-h{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:.02em;color:#132c54;margin-bottom:12px}
+.ab-sub{font-size:17px;line-height:1.65;color:#4a5568;max-width:720px;margin-bottom:32px}
+.ab-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;margin:-40px auto 0;padding:0 24px;position:relative;z-index:2}
+.ab-stat{background:#fff;border:1px solid rgba(19,44,84,.1);border-radius:10px;padding:22px 20px;box-shadow:0 10px 30px rgba(19,44,84,.08)}
+.ab-stat b{display:block;font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:#132c54}
+.ab-stat span{display:block;margin-top:6px;font-size:14.5px;color:#4a5568;line-height:1.4}
+.ab-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ab-card{background:#fff;border:1px solid rgba(19,44,84,.1);border-radius:10px;padding:26px 24px;display:flex;flex-direction:column}
+.ab-card .ey{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#b08b00;margin-bottom:8px}
+.ab-card h3{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.02em;color:#132c54;margin-bottom:10px}
+.ab-card p{font-size:15.5px;line-height:1.6;color:#4a5568;flex:1}
+.ab-card a{margin-top:16px;font-weight:700;color:#132c54;text-decoration:none;font-size:15px}
+.ab-card a:hover{color:#b08b00}
+.ab-tl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:3px solid #132c54}
+.ab-tl>div{padding:22px 22px 0 0}
+.ab-tl .yr{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;letter-spacing:.08em;color:#b08b00}
+.ab-tl h4{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#132c54;margin:6px 0 8px;letter-spacing:.02em}
+.ab-tl p{font-size:15px;line-height:1.6;color:#4a5568}
+.ab-chips{display:flex;flex-wrap:wrap;gap:10px}
+.ab-chips a{display:inline-block;padding:10px 16px;border:1px solid rgba(19,44,84,.18);border-radius:999px;color:#132c54;font-weight:600;font-size:15px;text-decoration:none;background:#fff}
+.ab-chips a:hover{border-color:#F7C600;background:#fffbe6}
+@media(max-width:900px){
+.author-photo-wrap{width:260px;height:364px}.author-hero-photo{flex:none;width:260px}
+.author-photo-img{box-shadow:10px 10px 0 #F7C600}
+.ab-stats{grid-template-columns:repeat(2,1fr);margin-top:24px}
+.ab-cards,.ab-tl{grid-template-columns:1fr}
+.ab-tl>div{padding:18px 0 0}
+.ab-h{font-size:34px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Andres Viana", "url": "https://theblueprint.training/author/andres/", "jobTitle": "Support Lead", "worksFor": {"@type": "Organization", "name": "The Blueprint Training", "url": "https://theblueprint.training/"}, "knowsAbout": ["Technical support", "Automation", "Customer support operations"]}</script>
+<style>
+.ab-team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ab-mate{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;background:#fff;border:1px solid rgba(19,44,84,.1);border-radius:10px;padding:20px 10px;text-decoration:none;transition:box-shadow .2s}
+.ab-mate:hover{box-shadow:0 10px 30px rgba(19,44,84,.1)}
+.ab-mate img,.ab-mate .ini{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:top}
+.ab-mate .ini,.author-ini{display:flex;align-items:center;justify-content:center;background:#132c54;color:#F7C600;font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.04em}
+.ab-mate b{font-size:15px;color:#132c54}
+.ab-mate span{font-size:13px;color:#4a5568}
+.author-ini{width:100%;height:100%;border-radius:14px;box-shadow:16px 16px 0 #F7C600;font-size:120px;position:relative;z-index:1}
+.ab-stats.s3{grid-template-columns:repeat(3,1fr)}
+.ab-stats.s2{grid-template-columns:repeat(2,1fr);max-width:760px}
+.author-photo-wrap.sq{height:400px}
+@media (max-width:768px){.ab-team{grid-template-columns:1fr 1fr}.ab-stats.s3{grid-template-columns:1fr}.author-photo-wrap.sq{height:260px}.author-ini{font-size:80px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<!-- AGENCY OS LIVE BAR -->
+<style>
+  .beta-bar{position:fixed;top:0;left:0;right:0;z-index:9998;height:38px;display:flex;align-items:center;justify-content:center;gap:9px;background:#0B0E1A;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:0 16px;border-bottom:1px solid rgba(247,198,0,.45)}
+  .beta-bar:hover{background:#12172a}
+  .beta-bar .badge{background:#F7C600;color:#0B0E1A;font-weight:800;font-size:10px;letter-spacing:.1em;padding:2px 8px;border-radius:99px}
+  .beta-bar .arw{color:#F7C600;font-weight:800;transition:transform .15s}
+  .beta-bar:hover .arw{transform:translateX(3px)}
+  html{padding-top:38px !important}
+  .nav-bar{top:38px !important}
+  @media(max-width:600px){.beta-bar{font-size:11px;letter-spacing:.03em;gap:7px}}
+</style>
+<a class="beta-bar" href="/agency-os/"><span class="badge">Live</span><span>Agency OS is live — the software included with every Blueprint membership</span><span class="arw">&rarr;</span></a>
+<style>
+/* Compact top nav + Knowledge dropdown (site-wide) */
+.nav-bar .nav-item-link{font-size:20px !important;padding:0 14px !important;letter-spacing:.05em !important}
+.nav-bar .nav-login{font-size:19px !important;padding:0 14px !important}
+.nav-bar .nav-cta-btn{font-size:19px !important;padding:0 26px !important}
+.nav-bar .nav-logo{padding-right:16px !important}
+.knd{position:relative;display:flex;align-items:stretch}
+.knd-arr{font-size:10px;opacity:.55;margin-left:5px;display:inline-block;transition:transform .2s}
+.knd:hover .knd-arr,.knd:focus-within .knd-arr{transform:rotate(180deg)}
+.knd-menu{display:none;position:absolute;top:100%;left:0;min-width:250px;z-index:400;background:#fff;border-top:2px solid #1E3A5F;border:1px solid rgba(0,0,0,.08);border-top:2px solid #1E3A5F;box-shadow:0 8px 24px rgba(0,0,0,.10);padding:6px 0}
+.knd:hover .knd-menu,.knd:focus-within .knd-menu{display:block}
+.knd-row{display:flex;flex-direction:column;gap:2px;padding:12px 18px;text-decoration:none;border-left:3px solid transparent;transition:background .15s,border-color .15s}
+.knd-row:hover{background:#F5F7FA;border-left-color:#1E3A5F}
+.knd-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1E3A5F}
+.knd-desc{font-family:'Figtree',sans-serif;font-size:12px;color:#6B7280;white-space:nowrap}
+.knd-login{align-self:stretch}
+.knd-login .nav-login{display:flex;align-items:center;height:100%}
+.lgn-menu{display:none;position:absolute;top:100%;right:0;z-index:400;width:350px;background:#0B0E1A;border-radius:0 0 14px 14px;border:1px solid rgba(255,255,255,.08);border-top:3px solid #F7C600;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);padding:10px;overflow:hidden}
+.knd-login:hover .lgn-menu,.knd-login:focus-within .lgn-menu{display:block}
+.lgn-head{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:8px 10px 10px}
+.lgn-row{display:flex;align-items:center;gap:14px;padding:12px;border-radius:10px;text-decoration:none;transition:background .15s}
+.lgn-row:hover{background:rgba(255,255,255,.07)}
+.lgn-ico{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.lgn-ico svg{width:20px;height:20px}
+.lgn-ico-os{background:rgba(247,198,0,.15);border-color:rgba(247,198,0,.4);color:#F7C600}
+.lgn-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.lgn-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;color:#fff;line-height:1}
+.lgn-desc{font-family:'Figtree',sans-serif;font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.35}
+.lgn-arr{margin-left:auto;padding-left:8px;flex-shrink:0;color:rgba(255,255,255,.35);font-size:16px;transition:transform .15s,color .15s}
+.lgn-row:hover .lgn-arr{transform:translateX(3px);color:#F7C600}
+@media (max-width:1100px){.nav-bar .nav-item-link{font-size:18px !important;padding:0 10px !important}.nav-bar .nav-cta-btn{padding:0 18px !important;font-size:17px !important}}
+</style>
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/index.html">
+      <img src="/assets/blueprint blue logo.svg" alt="The Blueprint Training" style="height:40px; width:auto;">
+    </a>
+    <div class="nav-links">
+      <a class="nav-item-link" href="/about.html">About</a>
+      <a class="nav-item-link" href="/reviews.html">Results</a>
+      <a class="nav-item-link" href="/program.html">Training</a>
+      <a class="nav-item-link" href="/agency-os/">Agency OS</a>
+      <div class="knd">
+        <a class="nav-item-link knd-btn" href="/blog/" aria-haspopup="true">Knowledge <span class="knd-arr" aria-hidden="true">&#9662;</span></a>
+        <div class="knd-menu">
+          <a class="knd-row" href="/blog/"><span class="knd-name">Blog</span><span class="knd-desc">Playbooks, templates and agency strategy</span></a>
+          <a class="knd-row" href="https://www.youtube.com/@theblueprinttraining" target="_blank" rel="noopener"><span class="knd-name">Videos</span><span class="knd-desc">Free training on YouTube</span></a>
+          <a class="knd-row" href="/help/"><span class="knd-name">Help Center</span><span class="knd-desc">Agency OS guides and support</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="knd knd-login">
+        <a class="nav-login knd-btn" href="https://www.skool.com/the-blueprint-training">Login <span class="knd-arr" aria-hidden="true">&#9662;</span></a>
+        <div class="lgn-menu">
+          <div class="lgn-head">Sign in to</div>
+          <a class="lgn-row" href="https://www.skool.com/the-blueprint-training">
+            <span class="lgn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg></span>
+            <span class="lgn-txt"><span class="lgn-name">Training</span><span class="lgn-desc">Courses, coaching calls and community</span></span>
+            <span class="lgn-arr">&rarr;</span>
+          </a>
+          <a class="lgn-row" href="https://app.theblueprint.training/sign-in">
+            <span class="lgn-ico lgn-ico-os"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H13L13 2z"/></svg></span>
+            <span class="lgn-txt"><span class="lgn-name">Agency OS</span><span class="lgn-desc">Sign in to the software</span></span>
+            <span class="lgn-arr">&rarr;</span>
+          </a>
+        </div>
+      </div>
+      <a class="nav-cta-btn" href="/sign-up.html">Become A Member</a>
+    </div>
+
+    <div class="mobile-nav-controls">
+      <button class="mobile-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="/sign-up.html" class="mobile-cta-btn"><span class="mobile-cta-full">Get Started</span><span class="mobile-cta-short" style="display:none;">Become a Member</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile menu overlay -->
+<div id="mobileMenu" class="mobile-menu-overlay">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
+  <nav class="mobile-menu-nav">
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/reviews.html">Results</a>
+    <a href="/program.html">Training</a>
+    <a href="/agency-os/">Agency OS</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://www.youtube.com/@theblueprinttraining" target="_blank">Videos</a>
+    <a href="/help/">Help Center</a>
+    <a href="https://www.skool.com/the-blueprint-training">Login: Blueprint Training</a>
+    <a href="https://app.theblueprint.training/sign-in">Login: Agency OS</a>
+  </nav>
+  <div class="mobile-menu-socials">
+    <a href="https://www.youtube.com/channel/UClsdQiThuvzgqYTaw4F96lg" target="_blank" aria-label="YouTube">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.instagram.com/theblueprint.training/" target="_blank" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.facebook.com/TheBlueprint.Training" target="_blank" aria-label="Facebook">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg>
+    </a>
+  </div>
+  <a href="/sign-up.html" class="mobile-menu-cta">Get Started - $199/mo</a>
+</div>
+
+<!-- HERO -->
+<section class="author-hero">
+  <div class="author-hero-grid"></div>
+  <div class="author-hero-inner">
+    <div class="author-hero-text">
+      <h1 class="author-hero-name">Andres Viana</h1>
+      <div class="author-hero-title">Support Lead, The Blueprint Training</div>
+      <div class="author-hero-socials"></div>
+      <div class="about-heading">About Andres</div>
+      <div class="author-hero-bio">
+        <p>Andres is the Support Lead at The Blueprint Training. A numbers and automation enthusiast, he manages all technical support operations for the program.</p>
+        <p>His goal is a seamless experience for the team and for every member, whether the question is about the training, the community or Agency OS.</p>
+      </div>
+    </div>
+    <div class="author-hero-photo">
+      <div class="author-photo-wrap sq">
+        <div class="author-ini" role="img" aria-label="Andres Viana">AV</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR DEPTH -->
+
+<section class="ab-wrap">
+  <h2 class="ab-h">What Andres Helps Members With</h2>
+  <p class="ab-sub">When something in the program or the software needs fixing, it ends up with Andres.</p>
+  <div class="ab-cards">
+    <div class="ab-card"><div class="ey">Support</div><h3>Technical support</h3><p>Owning the support queue so member questions get answered and closed.</p><a href="/coaching/">Coaching and community →</a></div>
+    <div class="ab-card"><div class="ey">Automation</div><h3>Systems and automation</h3><p>Turning repeat issues into fixes that don't need a ticket.</p><a href="/agency-os/">Explore Agency OS →</a></div>
+    <div class="ab-card"><div class="ey">Experience</div><h3>Member experience</h3><p>Making the program work smoothly from the first login on.</p><a href="/program.html">See the program →</a></div>
+  </div>
+</section>
+
+<section class="ab-wrap">
+  <h2 class="ab-h">The Rest of the Team</h2>
+  <p class="ab-sub">The people behind the program. Members reach all of us through the community and the twice-weekly live calls.</p>
+  <div class="ab-team">
+    <a class="ab-mate" href="/author/ryan/"><img src="/assets/ryan-stewart-author.webp" alt="Ryan Stewart" loading="lazy"><b>Ryan Stewart</b><span>Founder & CEO</span></a>
+    <a class="ab-mate" href="/author/david/"><img src="/assets/dkrevitt.webp" alt="David Krevitt" loading="lazy"><b>David Krevitt</b><span>AI Coach</span></a>
+    <a class="ab-mate" href="/author/elena/"><img src="/assets/elena-author.png" alt="Elena Dimova" loading="lazy"><b>Elena Dimova</b><span>Head of Operations</span></a>
+    <a class="ab-mate" href="/author/dragana/"><img src="/assets/dragana-author.png" alt="Dragana Dimovska" loading="lazy"><b>Dragana Dimovska</b><span>Customer Success</span></a>
+    <a class="ab-mate" href="/author/jan/"><img src="/assets/jan-schroeder-author.webp" alt="Jan Shroeder" loading="lazy"><b>Jan Shroeder</b><span>Acquisition</span></a>
+    <a class="ab-mate" href="/author/russ/"><div class="ini">RR</div><b>Russ Rigaud</b><span>Technical Support</span></a>
+  </div>
+</section>
+
+<section class="ab-wrap" style="padding-bottom:72px">
+  <div class="ab-card" style="flex-direction:row;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:#132c54;border:0">
+    <div><h3 style="color:#fff;margin:0">Work with Andres inside The Blueprint</h3><p style="color:rgba(255,255,255,.7);margin-top:6px">Training, SOPs, live coaching and Agency OS in one membership.</p></div>
+    <a href="/sign-up.html" style="margin:0;background:#F7C600;color:#0B0E1A;padding:14px 26px;border-radius:6px">Join The Blueprint Training →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<style>
+footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0}
+footer .footer-bottom{max-width:1200px;margin:0 auto;padding:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between}
+footer .footer-copy{font-size:13px;color:rgba(255,255,255,0.3)}
+footer .footer-legal a{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;margin:0 12px;transition:color 0.2s}
+footer .footer-legal a:hover{color:rgba(255,255,255,0.6)}
+@media (max-width:768px){footer .footer-bottom{flex-direction:column;gap:12px;text-align:center}}
+</style>
+<style>
+/* Unified footer (site-wide) */
+footer .footer-nav{max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:48px}
+footer .footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+footer .footer-col-title::before{content:'';display:block;width:16px;height:2px;background:#F7C600}
+footer .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+footer .footer-links li a{font-family:'Figtree',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+footer .footer-links li a:hover{color:#F7C600}
+footer .footer-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#F7C600;color:#0B0E1A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all 0.2s}
+footer .footer-cta-btn:hover{filter:brightness(1.05)}
+@media (max-width:768px){footer .footer-nav{grid-template-columns:1fr 1fr;gap:40px 24px;padding:48px 24px 36px}footer .footer-nav > div[style*="span 2"]{grid-column:1 / -1}}
+@media (max-width:480px){footer .footer-nav{grid-template-columns:1fr;gap:36px}footer .footer-nav > div[style*="span 2"] > div{grid-template-columns:1fr !important}}
+</style>
+<footer>
+  <div class="footer-nav">
+    <div style="grid-column:span 2">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+        <div>
+          <div class="footer-col-title">Features</div>
+          <ul class="footer-links">
+          <li><a href="/coaching/">Coaching</a></li>
+          <li><a href="/agency-training/">Video Training</a></li>
+          <li><a href="/bootcamps/">Live Bootcamps</a></li>
+          <li><a href="/agents/">AI Agents</a></li>
+          <li><a href="/slack-channel/">Community</a></li>
+          <li><a href="/seo-sprints-training/">SEO Sprints</a></li>
+          <li><a href="/templates-and-sops/">Templates &amp; SOPs</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Agency OS</div>
+          <ul class="footer-links">
+          <li><a href="/agency-os/">Agency OS</a></li>
+          <li><a href="/agency-os/crm.html">CRM</a></li>
+          <li><a href="/agency-os/project-management.html">Project Management</a></li>
+          <li><a href="/agency-os/reporting.html">Client Reporting</a></li>
+          <li><a href="/help/">Help Center</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/reviews.html">Results</a></li>
+        <li><a href="/program.html">Training</a></li>
+        <li><a href="/blog/">Knowledge</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Account</div>
+      <ul class="footer-links" style="margin-bottom:24px;">
+        <li><a href="https://www.skool.com/blueprint" target="_blank">Log In</a></li>
+        <li><a href="/sign-up.html">Book a Call</a></li>
+      </ul>
+      <a href="/sign-up.html" class="footer-cta-btn">Get Started &rarr;</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; The Blueprint Training | The One-Person Agency. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms-and-conditions/">Terms</a>
+      <a href="mailto:elena@theblueprint.training">Contact</a>
+    </div>
+    <a href="https://loganix.com/" target="_blank" class="footer-partner-badge">
+      <span class="footer-partner-label">Platinum Partner</span>
+      <img src="/assets/loganix logo.svg" alt="Loganix" class="footer-partner-logo">
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
