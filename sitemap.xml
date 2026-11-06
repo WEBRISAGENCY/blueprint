@@ -101,6 +101,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://theblueprint.training/ppc-proposal/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://theblueprint.training/privacy-policy/</loc>
     <lastmod>2026-07-09</lastmod>
     <priority>0.3</priority>
@@ -248,6 +253,11 @@
   <url>
     <loc>https://theblueprint.training/seo-content-training/</loc>
     <lastmod>2026-07-09</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theblueprint.training/seo-proposal-generator/</loc>
+    <lastmod>2026-11-06</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
