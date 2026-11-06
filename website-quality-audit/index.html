@@ -523,17 +523,18 @@ footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;
 <h2 id="step-1-upload-the-crawl-and-run-the-audit">Step 1: Upload the Crawl and Run the Audit</h2>
 <div markdown="0"><figure class="pf"><div class="vs"><div class="col good"><h5>Export 1: the full crawl</h5><ul><li><span class="mk ok">✓</span>Crawl the entire website</li><li><span class="mk ok">✓</span>Click Export</li><li><span class="mk ok">✓</span>Save the file</li></ul></div><div class="col good"><h5>Export 2: internal links</h5><ul><li><span class="mk ok">✓</span>Bulk Export</li><li><span class="mk ok">✓</span>Links, then All Inlinks</li><li><span class="mk ok">✓</span>Save the file</li></ul></div></div><figcaption>Two Screaming Frog exports. Upload both before you run the audit.</figcaption></figure></div>
 <p>Go to <strong>Tools, then Website Quality Audit</strong>, and start a new audit.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/website-quality-audit/wqa-tools.webp" alt="Agency OS Tools page showing the Proposal Builder and the Website Quality Audit" loading="lazy" width="728" height="459"><figcaption>The Website Quality Audit lives under Tools in Agency OS.<span class="src">Source: Agency OS, The Blueprint Training audit, November 6, 2026</span></figcaption></figure></div>
 <p>You need two exports from Screaming Frog. The full crawl of the site, and the internal links file (Bulk Export, then Links, then All Inlinks).</p>
 <p>Upload both. They turn green when they're ready. Then click <strong>Run audit.</strong></p>
 
 <h3>What Happens While It Runs</h3>
-<div markdown="0"><figure class="pf"><div class="split"><div><b>○</b><span>Circles</span><p>The tool is working on its own. Nothing for you to do.</p></div><div class="hl"><b>□</b><span>Squares</span><p>A decision is waiting for you. You'll get a notification.</p></div></div><figcaption>How to read the progress tracker at the top of the audit.</figcaption></figure></div>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/website-quality-audit/wqa-progress-tracker.webp" alt="Website quality audit progress tracker in Agency OS showing completed steps, the technical pass in progress and the content pass next" loading="lazy" width="1051" height="372"><figcaption>Circles are automatic steps. Squares are decisions waiting for you.<span class="src">Source: Agency OS, The Blueprint Training audit, November 6, 2026</span></figcaption></figure></div>
 <p>It takes a few minutes. The tool is ingesting huge CSV files plus Search Console, GA4 and Ahrefs data.</p>
 <p>You'll see the progress at the top. <strong>Circles are automatic steps. Squares are decisions for you.</strong></p>
 <p>The first thing it does is read the site and classify every page.</p>
 
 <h3>Check the Rules Before You Start</h3>
-<div markdown="0"><figure class="pf"><div class="kick">What you can change in the audit rules</div><div class="chips"><span>Thresholds</span><span>Page classifications</span><span>URL patterns</span><span>Page types</span></div><figcaption>All the logic the audit uses is visible and editable.</figcaption></figure></div>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/website-quality-audit/wqa-audit-list.webp" alt="Website Quality Audit home in Agency OS with the Rules button and two audits ready for review" loading="lazy" width="1074" height="535"><figcaption>The audit home. The Rules button is top right, next to Set up a new audit.<span class="src">Source: Agency OS, The Blueprint Training audit, November 6, 2026</span></figcaption></figure></div>
 <p>Before you run anything, look at the rules. That's all the logic the audit uses.</p>
 <p>You can set your own thresholds and change the page classifications. <strong>If you have questions about any of it, ask Claude.</strong> It'll explain it better than I can.</p>
 <hr>
@@ -564,19 +565,20 @@ footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;
 <p>Those are the most important technical problems. Everything else is secondary.</p>
 
 <h3>Read the Summary First</h3>
-<div markdown="0"><figure class="pf"><div class="kick">What's on the Summary tab</div><div class="chips"><span>Organic performance over time</span><span>Branded vs. non-branded clicks</span><span>Traffic by page type</span><span>Top keywords</span><span>Status codes</span><span>Content length</span><span>Most and least linked pages</span><span>Dead links</span></div><figcaption>Context for any new website before you start making decisions.</figcaption></figure></div>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/website-quality-audit/wqa-performance-summary.webp" alt="Website quality audit summary report showing organic sessions, conversions, search clicks, impressions and organic performance over time" loading="lazy" width="1019" height="785"><figcaption>The Summary report for our own site.<span class="src">Source: Agency OS, The Blueprint Training audit, November 6, 2026</span></figcaption></figure></div>
 <p>The audit has two sub-tabs. The <strong>Summary</strong> is where the final data lands.</p>
 <p>I'm not going to pretend it's the world's best report. It's there to give you context on a new website.</p>
 <p>On our site it showed something we needed to see. <strong>The home page is carrying the whole website. Our blog posts have dropped close to zero over time.</strong></p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/website-quality-audit/wqa-page-type-chart.webp" alt="Organic sessions by page type over time, with the home page holding steady and blog posts declining toward zero" loading="lazy" width="1004" height="389"><figcaption>Organic sessions by page type. The home page carries the site while blog traffic falls.<span class="src">Source: Agency OS, The Blueprint Training audit, November 6, 2026</span></figcaption></figure></div>
 
 <h3>Filter the Page-Level Recommendations</h3>
-<div markdown="0"><figure class="pf"><table class="ft "><thead><tr><th>Filter</th><th>What it shows you</th></tr></thead><tbody><tr><td><b>Has recommendations</b></td><td>Only pages with something to fix</td></tr><tr><td><b>404 errors</b></td><td>Pages returning not found</td></tr><tr><td><b>Not indexable</b></td><td>Pages search engines can't index, and why</td></tr></tbody></table><figcaption>A few of the ways to slice the page-level data.</figcaption></figure></div>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/website-quality-audit/wqa-page-grid.webp" alt="Page-level audit grid in Agency OS listing each URL with its page type, main keyword, impressions and position, plus a count of recommendations" loading="lazy" width="1051" height="892"><figcaption>The page-level audit view. The numbers on the left are recommendations for that page.<span class="src">Source: Agency OS, The Blueprint Training audit, November 6, 2026</span></figcaption></figure></div>
 <p>Switch to the audit view. The small numbers next to each page are technical recommendations. Some pages have four or five.</p>
 <p>It's basically a spreadsheet. For every page you get keywords, impressions, rankings, intent, Ahrefs volume, click data, GA4 data, traffic trend, title and meta description.</p>
 <p><strong>Literally every piece of data you could want is in there.</strong> Click any page to open all of it.</p>
 
 <h3>Example: A Canonical Pointing the Wrong Way</h3>
-<div markdown="0"><figure class="pf"><div class="map"><div class="row"><div class="a">Internal links point to</div><span>→</span><div class="b">/reviews/</div></div><div class="row"><div class="a">Canonical tag points to</div><span>→</span><div class="b">/reviews.html</div></div></div><figcaption>The audit flagged our reviews page: the canonical disagreed with the internal links.</figcaption></figure></div>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/website-quality-audit/wqa-canonical-finding.webp" alt="Agency OS finding: review canonicals pointing elsewhere across 81 pages, with what was observed, why it matters and example URLs including /reviews pointing to /reviews.html" loading="lazy" width="1051" height="612"><figcaption>The real finding from our audit, with /reviews pointing its canonical at /reviews.html.<span class="src">Source: Agency OS, The Blueprint Training audit, November 6, 2026</span></figcaption></figure></div>
 <p>Here's a real one from our site. Our reviews page is an important page, and its canonical pointed to the .html version of the URL.</p>
 <p>But all of our internal links point to the clean version. <a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls">Google's documentation</a> says linking consistently to your canonical URL "helps Google understand your preference." Ours were sending mixed signals.</p>
 <p>The audit's recommendation said exactly that: change the canonical.</p>
@@ -589,9 +591,10 @@ footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;
 <p>For two URLs redirecting to a dead page, I edited the wording to "set up a redirect from these two pages" and approved it.</p>
 
 <h3>Bulk Approve From the Summary View</h3>
-<div markdown="0"><figure class="pf"><div class="split"><div class="hl"><b>80</b><span>Pages, one finding</span><p>Canonicals pointing the wrong way, grouped into a single decision.</p></div><div><b>1</b><span>Click</span><p>Approve or reject the whole group, or go one by one.</p></div></div><figcaption>An example of a grouped finding on a bigger website.</figcaption></figure></div>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/website-quality-audit/wqa-findings-summary.webp" alt="Grouped technical findings in Agency OS with severity, workstream, page counts and approve or reject buttons" loading="lazy" width="1051" height="655"><figcaption>Seven grouped findings from our audit, ready to approve or reject.<span class="src">Source: Agency OS, The Blueprint Training audit, November 6, 2026</span></figcaption></figure></div>
 <p>You don't have to go page by page. The Summary view groups the findings.</p>
-<p>On bigger websites, you'll see things like 80 pages with canonicals pointing in the wrong direction. It pulls examples so you can check them, then lets you approve them one by one or all at once.</p>
+<p>On our own site, it grouped 81 pages with canonicals pointing elsewhere into a single finding. It pulls examples so you can check them, then lets you approve them one by one or all at once.</p>
+<p>You can see the 404 I rejected in there too: the /book-goodies/ page.</p>
 
 <h3>Ask Claude to Explain Anything</h3>
 <div markdown="0"><figure class="pf"><div class="vs"><div class="col bad"><h5>A normal audit tool</h5><ul><li><span class="mk no">✕</span>A list of errors</li><li><span class="mk no">✕</span>Technical jargon</li><li><span class="mk no">✕</span>You figure out what matters</li></ul></div><div class="col good"><h5>Agency OS + Claude</h5><ul><li><span class="mk ok">✓</span>"Break finding two down for me"</li><li><span class="mk ok">✓</span>"Show me the page and why it happened"</li><li><span class="mk ok">✓</span>"Approve this, reject that"</li></ul></div></div><figcaption>Agency OS connects to Claude, or ChatGPT through the MCP.</figcaption></figure></div>
