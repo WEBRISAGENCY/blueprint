@@ -1,0 +1,38 @@
+name: Announce new Agency OS release
+
+# When a push to main adds a new release page (release-notes/<date-slug>/index.html),
+# post it to the Blueprint member Slack channel and email the whole Blueprint list.
+# Only newly added release pages trigger it, so edits to an existing release never resend.
+
+on:
+  push:
+    branches: [main]
+    paths: ["release-notes/**"]
+
+concurrency: announce-release
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Find new release pages
+        id: find
+        run: |
+          BEFORE="${{ github.event.before }}"
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then BEFORE="HEAD~1"; fi
+          NEW=$(git diff --name-only --diff-filter=A "$BEFORE" "${{ github.sha }}" | grep -E '^release-notes/20[0-9]{2}-[0-9]{2}-[0-9]{2}-[^/]+/index\.html$' || true)
+          echo "Found: $NEW"
+          echo "pages=$(echo $NEW)" >> "$GITHUB_OUTPUT"
+      - name: Announce
+        if: steps.find.outputs.pages != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          AC_API_URL: ${{ secrets.AC_API_URL }}
+          AC_API_KEY: ${{ secrets.AC_API_KEY }}
+          AC_LIST_ID: ${{ secrets.AC_LIST_ID }}
+          AC_FROM_EMAIL: ${{ secrets.AC_FROM_EMAIL }}
+          AC_FROM_NAME: ${{ secrets.AC_FROM_NAME }}
+        run: python3 scripts/announce_release.py ${{ steps.find.outputs.pages }}
