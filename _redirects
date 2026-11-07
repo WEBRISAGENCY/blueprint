@@ -254,3 +254,7 @@
 # Release notes moved to their own section (Nov 2026)
 /help/whats-new.html   /release-notes/   301!
 /help/whats-new        /release-notes/   301!
+# Release dates corrected from the production history (Nov 2026)
+/release-notes/2026-10-01-client-call-recordings/   /release-notes/2026-09-24-client-call-recordings/   301!
+/release-notes/2026-10-14-client-portal/            /release-notes/2026-10-13-client-portal/            301!
+/release-notes/2026-11-05-proposal-builder/         /release-notes/2026-10-06-proposal-builder/         301!
