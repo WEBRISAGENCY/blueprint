@@ -189,6 +189,8 @@
 /blog/blueprint-affiliate-program     /blueprint-affiliate-program/         301!
 /blog/build-authority-links-for-clients/*   /build-authority-links-for-clients/:splat   301!
 /blog/build-authority-links-for-clients     /build-authority-links-for-clients/         301!
+/blog/chatgpt-ads-setup/*   /chatgpt-ads-setup/:splat   301!
+/blog/chatgpt-ads-setup     /chatgpt-ads-setup/         301!
 /blog/client-questionnaire-template/*   /client-questionnaire-template/:splat   301!
 /blog/client-questionnaire-template     /client-questionnaire-template/         301!
 /blog/content-brief-template/*   /content-brief-template/:splat   301!
