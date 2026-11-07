@@ -250,3 +250,7 @@
 # SEO proposal consolidation (Nov 2026): template post merged into /seo-proposal/
 /seo-proposal-template/*   /seo-proposal/   301!
 /seo-proposal-template     /seo-proposal/   301!
+
+# Release notes moved to their own section (Nov 2026)
+/help/whats-new.html   /release-notes/   301!
+/help/whats-new        /release-notes/   301!
