@@ -630,6 +630,16 @@
 <script src="https://fast.wistia.com/player.js" async></script>
 <script src="https://fast.wistia.com/embed/ewj221zjjy.js" async type="module"></script>
 <style>wistia-player[media-id='ewj221zjjy']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ewj221zjjy/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+<style>
+/* Feature tabs: one-line carousel */
+.spot-car{position:relative;display:flex;align-items:center;gap:10px;margin-bottom:40px}
+.spot-car .spot-tabs{flex:1;min-width:0;flex-wrap:nowrap !important;overflow-x:auto;justify-content:safe center;scroll-behavior:smooth;scroll-snap-type:x proximity;scrollbar-width:none;margin-bottom:0 !important;padding:2px 2px 4px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%)}
+.spot-car .spot-tabs::-webkit-scrollbar{display:none}
+.spot-car .spot-tab{flex:0 0 auto;white-space:nowrap;scroll-snap-align:center}
+.spot-arw{flex:0 0 auto;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s,opacity .15s}
+.spot-arw:hover{background:rgba(255,255,255,.16)}
+.spot-arw[disabled]{opacity:.3;cursor:default}
+</style>
 </head>
 <body>
 
@@ -1028,17 +1038,16 @@
 <section class="spot" id="features">
   <div class="wrap">
     <h2>A deeper look at the features</h2>
-    <p class="spot-sub">Go under the hood on the tools you'll use every day: pipeline, proposals, project delivery, client portals, reporting, audits, financials and AI. We ship new features every week. <a href="/release-notes/" style="color:inherit;font-weight:700;text-decoration:underline">See what's new &rarr;</a></p>
-    <div class="spot-tabs" id="spotTabs">
+    <p class="spot-sub">Go under the hood on the tools you'll use every day: pipeline, proposals, project delivery, reporting, audits, financials and AI. We ship new features every week. <a href="/release-notes/" style="color:inherit;font-weight:700;text-decoration:underline">See what's new &rarr;</a></p>
+    <div class="spot-car"><button type="button" class="spot-arw" data-dir="-1" aria-label="Previous features"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><div class="spot-tabs" id="spotTabs">
       <button class="spot-tab on" data-spot="pipeline">Pipeline &amp; CRM</button>
       <button class="spot-tab" data-spot="proposals">Proposal Builder</button>
       <button class="spot-tab" data-spot="pm">Project Management</button>
-      <button class="spot-tab" data-spot="portal">Client Portals</button>
       <button class="spot-tab" data-spot="reporting">Dashboards &amp; Reporting</button>
       <button class="spot-tab" data-spot="wqa">Website Audit</button>
       <button class="spot-tab" data-spot="agency">Agency Management</button>
       <button class="spot-tab" data-spot="ai">AI Workflows</button>
-    </div>
+    </div><button type="button" class="spot-arw" data-dir="1" aria-label="More features"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
 
     <!-- Pipeline & CRM -->
     <div class="spot-panel on" data-panel="pipeline">
@@ -1152,47 +1161,13 @@
       </div>
     </div>
 
-        <!-- Client portals -->
-    <div class="spot-panel" data-panel="portal">
-      <div class="spot-head">
-        <div class="spot-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h3"/></svg></div>
-        <div>
-          <h3>Client portals</h3>
-          <p>Every client gets a private, read-only portal at their own link, with an optional passcode. They see the same plan, content, performance, links and call recaps your team works from, and book time with you. The work you are already doing becomes work they can see.</p>
-          <a class="spot-more" href="/release-notes/2026-10-13-client-portal/">See the client portal release <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-      <div class="apwin">
-        <aside class="apside">
-          <div class="apws"><span class="mk">TBT</span><span class="nm">WEBRIS<small>Agency OS</small></span></div>
-          <div class="apgrp">Operations</div>
-          <div class="apnav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/></svg>Today</div>
-          <div class="apnav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg>Pipeline</div>
-          <div class="apnav on"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/></svg>Clients</div>
-          <div class="apnav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>Tools</div>
-          <div class="apnav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Admin</div>
-        </aside>
-        <div class="apmain">
-          <div class="aptop"><div class="t">Rivera Law · Client portal</div><div class="s">Shared by link · Passcode on · Read only</div></div>
-          <div class="aptabs"><span class="aptab on">Plan</span><span class="aptab">Content</span><span class="aptab">Performance</span><span class="aptab">Links</span><span class="aptab">Calls</span></div>
-          <div class="aptbl">
-            <div class="hd"><span>Status</span><span>Owner</span><span>Bucket</span><span>Task</span><span>Due</span></div>
-            <div class="rw"><span class="apst" style="--c:#22c55e">Completed</span><span class="apown"><span class="av">M</span>María</span><span><span class="apbk" style="background:#dcfce7;color:#15803d">Local</span></span><span>Google Business Profile cleanup</span><span class="apdue">Oct 28</span></div>
-            <div class="rw"><span class="apst" style="--c:#3b82f6">Working</span><span class="apown"><span class="av">D</span>David</span><span><span class="apbk" style="background:#fce7f3;color:#be185d">Content</span></span><span>4 practice area pages</span><span class="apdue">Nov 12</span></div>
-            <div class="rw"><span class="apst" style="--c:#6b7280">Scheduled</span><span class="apown"><span class="av">M</span>María</span><span><span class="apbk" style="background:#ffedd5;color:#c2410c">Links</span></span><span>6 link placements</span><span class="apdue">Nov 30</span></div>
-            <div class="rw"><span class="apst" style="--c:#8b5cf6">Booked</span><span class="apown"><span class="av">R</span>Ryan</span><span><span class="apbk" style="background:#e0e7ff;color:#3730a3">Call</span></span><span>Monthly strategy call</span><span class="apdue">Nov 18</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Dashboards & Reporting -->
+        <!-- Dashboards & Reporting -->
     <div class="spot-panel" data-panel="reporting">
       <div class="spot-head">
         <div class="spot-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div>
         <div>
           <h3>Client dashboards &amp; reporting</h3>
-          <p>Live performance for every client — ad spend, leads, rankings, and ROI pulled together automatically. Share a clean, branded report in a click.</p>
+          <p>Live performance for every client: ad spend, leads, rankings and ROI, pulled together automatically. Share a report in a click, export it to PDF, or give the client a private portal with their results, plan and content.</p>
           <a class="spot-more" href="reporting.html">Learn more about Client Reporting <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
@@ -1301,8 +1276,8 @@
       <div class="spot-head">
         <div class="spot-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
         <div>
-          <h3>AI workflows with Claude</h3>
-          <p>Hand off the busywork. Ask Claude to onboard a client, run an audit, or build a report — it does the work through the BPT skills and writes every result back into the platform.</p>
+          <h3>AI workflows with Claude or ChatGPT</h3>
+          <p>Hand off the busywork. Agency OS connects to both Claude and ChatGPT. Ask either one to onboard a client, run an audit, or build a report — it does the work through the BPT skills and writes every result back into the platform.</p>
         </div>
       </div>
       <div class="apwin">
@@ -1318,15 +1293,15 @@
         </aside>
         <div class="apmain">
           <div class="apai">
-            <div class="h">Onboard clients with Claude</div>
-            <div class="p">Connect Agency OS to Claude, paste the prompt, and Claude sets up each new client for you — record, project plan, Drive folder, and reporting sources.</div>
+            <div class="h">Onboard clients with Claude or ChatGPT</div>
+            <div class="p">Connect Agency OS to Claude or ChatGPT, paste the prompt, and it sets up each new client for you — record, project plan, Drive folder, and reporting sources.</div>
             <ol>
-              <li><b>1.</b>Connect the Agency OS MCP in Claude</li>
+              <li><b>1.</b>Connect the Agency OS MCP in Claude or ChatGPT</li>
               <li><b>2.</b>Paste the prompt below</li>
-              <li><b>3.</b>Claude does the work and syncs it back to the app</li>
+              <li><b>3.</b>Your AI assistant does the work and syncs it back to the app</li>
             </ol>
             <div class="apbox">
-              <div class="bh"><span class="l">Claude prompt · onboarding</span><span class="c">Copy prompt</span></div>
+              <div class="bh"><span class="l">Prompt · onboarding</span><span class="c">Copy prompt</span></div>
               <pre>You have access to my Blueprint Agency OS workspace through its connector. Read the onboarding spreadsheet and, for each client, create the record (company, contact, email, website, service, retainer, status), apply the matching project-plan template, set up the Drive folder, and dedupe by domain. Confirm before creating.</pre>
             </div>
           </div>
@@ -1340,7 +1315,7 @@
 <section class="ai" id="claude">
   <div class="wrap">
     <h2>One fully integrated workflow</h2>
-    <p class="lead">Agency OS pulls live data from every tool in your stack — analytics, search, ads, reviews, and rank tracking — into one source of truth, then connects directly to Claude so they run as one. A fully managed, fully automated agency workflow.</p>
+    <p class="lead">Agency OS pulls live data from every tool in your stack — analytics, search, ads, reviews, and rank tracking — into one source of truth, then connects directly to Claude or ChatGPT so they run as one. A fully managed, fully automated agency workflow.</p>
 
     <div class="rel-stage">
       <div class="rel">
@@ -1370,13 +1345,13 @@
         <div class="head">
           <div class="logo"><svg width="26" height="26" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"><line x1="60" y1="50" x2="92" y2="50"/><line x1="58.7" y1="55" x2="86.4" y2="71"/><line x1="55" y1="58.7" x2="71" y2="86.4"/><line x1="50" y1="60" x2="50" y2="92"/><line x1="45" y1="58.7" x2="29" y2="86.4"/><line x1="41.3" y1="55" x2="13.6" y2="71"/><line x1="40" y1="50" x2="8" y2="50"/><line x1="41.3" y1="45" x2="13.6" y2="29"/><line x1="45" y1="41.3" x2="29" y2="13.6"/><line x1="50" y1="40" x2="50" y2="8"/><line x1="55" y1="41.3" x2="71" y2="13.6"/><line x1="58.7" y1="45" x2="86.4" y2="29"/></svg></div>
           <div>
-            <div class="name">Claude Desktop</div>
+            <div class="name">Claude or ChatGPT</div>
             <div class="sub">Your workflow assistant</div>
           </div>
         </div>
         <ul class="rel-pts">
           <li>Pull any workflow down to work on</li>
-          <li>Claude does the heavy lifting</li>
+          <li>Claude or ChatGPT does the heavy lifting</li>
           <li>Push the finished work back up to the team</li>
         </ul>
       </div>
@@ -1592,7 +1567,7 @@
           <div class="ab"><span class="ab-ic">⚡</span><div><div class="ab-t">Streamline your entire service delivery</div><div class="ab-d">SOPs and templates for every stage of the client lifecycle, from onboarding to reporting</div></div></div>
           <div class="ab"><span class="ab-ic">🤖</span><div><div class="ab-t">Automate tedious tasks with done-for-you AI agents</div><div class="ab-d">Deploy pre-built agents that handle proposals, audits, content, link building, and reporting</div></div></div>
           <div class="ab"><span class="ab-ic">💰</span><div><div class="ab-t">Centralize your software stack and reduce cost</div><div class="ab-d">Replace your CRM, project management, reporting, and client portal tools with one platform — for a fraction of the price</div></div></div>
-          <div class="ab"><span class="ab-ic">✨</span><div><div class="ab-t">Integrate your agency's services with Claude</div><div class="ab-d">Connect the platform to Claude and hand off real work — onboarding, audits, proposals, and reporting</div></div></div>
+          <div class="ab"><span class="ab-ic">✨</span><div><div class="ab-t">Integrate your agency's services with Claude or ChatGPT</div><div class="ab-d">Connect the platform to Claude or ChatGPT and hand off real work — onboarding, audits, proposals, and reporting</div></div></div>
           <div class="ab"><span class="ab-ic">👥</span><div><div class="ab-t">Know exactly who to hire, where to find them, and how to pay them</div><div class="ab-d">Build a lean team so you can pull yourself out of client services for good</div></div></div>
           <div class="ab"><span class="ab-ic">🏢</span><div><div class="ab-t">Become a true CEO</div><div class="ab-d">Work on the business, not in it. The system, agents, and team do the rest.</div></div></div>
         </div>
@@ -1609,7 +1584,7 @@
     <div class="faq-list">
       <details class="faq-item" open>
         <summary>What exactly is Agency OS?<span class="qic"></span></summary>
-        <p>Agency OS is the all-in-one platform that runs your agency — sales pipeline &amp; CRM, client projects and delivery, live client reporting, and billing — all in one place. It also connects directly to Claude, so AI agents can do real work (onboarding, audits, proposals, reporting) and sync it straight back into the platform.</p>
+        <p>Agency OS is the all-in-one platform that runs your agency — sales pipeline &amp; CRM, client projects and delivery, live client reporting, and billing — all in one place. It also connects directly to Claude and ChatGPT, so AI agents can do real work (onboarding, audits, proposals, reporting) and sync it straight back into the platform.</p>
       </details>
       <details class="faq-item">
         <summary>Is it included in The Blueprint Training membership?<span class="qic"></span></summary>
@@ -1618,6 +1593,10 @@
       <details class="faq-item">
         <summary>Can it replace my current tools?<span class="qic"></span></summary>
         <p>That's the point. Agency OS consolidates your CRM, project management, client reporting/dashboards, and billing into one platform — so you can cancel the pile of separate subscriptions you're paying for (and paying more for at scale).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does Agency OS work with ChatGPT, or only Claude?<span class="qic"></span></summary>
+        <p>Both. Agency OS connects to Claude and to ChatGPT through the same connector, so your team can use whichever one you already pay for. Either one can read your clients, pipeline and projects, do the work, and write the results back into the platform.</p>
       </details>
       <details class="faq-item">
         <summary>Does Agency OS build sales proposals?<span class="qic"></span></summary>
@@ -1637,7 +1616,7 @@
       </details>
       <details class="faq-item">
         <summary>Do I need to know how to code or use AI?<span class="qic"></span></summary>
-        <p>No. Agency OS is built for agency operators, not engineers. Claude handles the technical and AI-heavy work — you just ask it in plain English and the results appear back in your dashboard.</p>
+        <p>No. Agency OS is built for agency operators, not engineers. Claude or ChatGPT handles the technical and AI-heavy work — you just ask it in plain English and the results appear back in your dashboard.</p>
       </details>
     </div>
   </div>
@@ -1867,5 +1846,16 @@ footer .footer-cta-btn:hover{filter:brightness(1.05)}
   window.addEventListener('resize', () => placeVisual(document.querySelector('#acc .acc-item.open')));
 </script>
 
+
+<script>
+(function(){
+  var t=document.getElementById('spotTabs'); if(!t) return;
+  var car=t.parentNode, arws=car.querySelectorAll('.spot-arw');
+  function upd(){var max=t.scrollWidth-t.clientWidth-2;arws[0].disabled=t.scrollLeft<=2;arws[1].disabled=t.scrollLeft>=max;var fits=max<=0;arws.forEach(function(a){a.style.display=fits?'none':''});}
+  arws.forEach(function(a){a.addEventListener('click',function(){t.scrollBy({left:a.dataset.dir*t.clientWidth*0.6,behavior:'smooth'})})});
+  t.querySelectorAll('.spot-tab').forEach(function(b){b.addEventListener('click',function(){b.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'})})});
+  t.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+})();
+</script>
 </body>
 </html>
