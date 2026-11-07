@@ -626,6 +626,8 @@
   .faq-item[open] summary .qic:after{transform:scaleY(0);opacity:0}
   .faq-item[open] summary{color:var(--ink)}
   .faq-item p{margin:0;padding:0 2px 22px;font-size:15px;line-height:1.65;color:var(--body);max-width:68ch}
+.hv-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:14px}
+@media (max-width:860px){.hv-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 <script src="https://fast.wistia.com/player.js" async></script>
 <script src="https://fast.wistia.com/embed/ewj221zjjy.js" async type="module"></script>
@@ -765,12 +767,14 @@
       <aside class="sb">
         <div class="ws"><span class="n">WEBRIS</span><span class="cv">▾</span></div>
         <div class="grp">Operations</div>
-        <div class="nav-item" data-view="today"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Today</div>
-        <div class="nav-item" data-view="pipeline"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>Pipeline</div>
-        <div class="nav-item on" data-view="clients"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>Clients</div>
-        <div class="nav-item" data-view="admin"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Admin</div>
+        <div class="nav-item" data-view="today"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>Today</div>
+        <div class="nav-item" data-view="pipeline"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"></path></svg>Pipeline</div>
+        <div class="nav-item on" data-view="clients"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg>Clients</div>
+        <div class="nav-item" data-view="tools"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"></path></svg>Tools</div>
+        <div class="nav-item" data-view="library"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"></path><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"></path></svg>Library</div>
+        <div class="nav-item" data-view="admin"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Admin</div>
         <div class="grp">System</div>
-        <div class="nav-item" data-view="settings"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</div>
+        <div class="nav-item" data-view="settings"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</div>
         <div class="sb-id"><span class="av">R</span><span><span class="nm">Ryan</span><br><span class="em">ryan@webris.org</span></span></div>
       </aside>
 
@@ -780,109 +784,137 @@
         <!-- Today -->
         <div class="screen" data-screen="today">
           <div class="scr-h">Today</div>
-          <div class="scr-sub">Wednesday · 3 clients need attention</div>
+          <div class="scr-sub">My notifications · comments, tasks, follow-ups and content in one list</div>
           <div class="kpis">
-            <div class="kpi"><div class="l">Open pipeline</div><div class="v">$182k</div><div class="s">14 active leads</div></div>
-            <div class="kpi"><div class="l">MRR</div><div class="v green">$47k</div><div class="s">18 clients</div></div>
-            <div class="kpi"><div class="l">Tasks due</div><div class="v">6</div><div class="s">this week</div></div>
+            <div class="kpi"><div class="l">Due today</div><div class="v">6</div><div class="s">tasks across 4 clients</div></div>
             <div class="kpi"><div class="l">Follow-ups</div><div class="v red">3</div><div class="s">overdue</div></div>
+            <div class="kpi"><div class="l">Mentions</div><div class="v">4</div><div class="s">unread comments</div></div>
+            <div class="kpi"><div class="l">Content</div><div class="v green">2</div><div class="s">ready for review</div></div>
           </div>
-          <div class="panel-h" style="margin-top:2px">PIPELINE FOLLOW-UPS</div>
-          <div class="m2row"><span class="t">Cutter Law — proposal</span><span class="st" style="background:#fee2e2;color:#b91c1c">Overdue 2d</span></div>
-          <div class="m2row"><span class="t">Bright Dental — check in</span><span class="st" style="background:#fef3c7;color:#a16207">Today</span></div>
-          <div class="m2row"><span class="t">Acme Plumbing — proposal</span><span class="st" style="background:#e0f2fe;color:#0369a1">In 3 days</span></div>
+          <div class="m2row"><span class="t">Cutter Law · proposal follow-up <span class="meta">· Sales</span></span><span class="st" style="background:#fee2e2;color:#b91c1c">Overdue 2d</span></div>
+          <div class="m2row"><span class="t">María commented on "4 practice area pages" <span class="meta">· Rivera Law</span></span><span class="st" style="background:#dbeafe;color:#1d4ed8">Reply</span></div>
+          <div class="m2row"><span class="t">Blog: emergency dentist guide moved to Review <span class="meta">· Peak Dental</span></span><span class="st" style="background:#fef3c7;color:#a16207">Review</span></div>
+          <div class="m2row"><span class="t">Monthly report summary <span class="meta">· run by AI</span></span><span class="st" style="background:#dcfce7;color:#15803d">Done</span></div>
         </div>
 
-        <!-- Pipeline -->
         <div class="screen" data-screen="pipeline">
           <div class="scr-h">Pipeline</div>
-          <div class="scr-sub">18 deals · $182k open</div>
-          <div class="m2cols" style="grid-template-columns:repeat(4,1fr)">
-            <div class="m2col"><h6 style="color:#06b6d4">Discovery</h6>
-              <div class="m2card"><div class="t">Acme Plumbing</div><div class="s">$2,500/mo</div></div>
-              <div class="m2card"><div class="t">Jos Family Law</div></div>
+          <div class="scr-sub">Booked calls land here automatically · drop a card on Deal Won to create the client</div>
+          <div class="m2cols" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+            <div class="m2col"><h6 style="color:#06b6d4">Awaiting Discovery</h6>
+              <div class="m2card"><div class="t">Acme Plumbing</div><div class="s">Call Thu 2:00 PM</div><span class="chip" style="background:rgba(6,182,212,.15);color:#0891b2">Qualified</span></div>
+              <div class="m2card"><div class="t">Jos Family Law</div><div class="s">Call Fri 10:30 AM</div></div>
             </div>
-            <div class="m2col"><h6 style="color:#8b5cf6">Analysis</h6>
-              <div class="m2card"><div class="t">NK Patent Law</div></div>
+            <div class="m2col"><h6 style="color:#8b5cf6">Awaiting Proposal</h6>
+              <div class="m2card"><div class="t">NK Patent Law</div><div class="s">Call recorded · recap ready</div><span class="chip" style="background:rgba(139,92,246,.15);color:#7c3aed">Generate proposal</span></div>
             </div>
-            <div class="m2col"><h6 style="color:#f97316">Proposal</h6>
-              <div class="m2card"><div class="t">Cutter Law</div><span class="chip" style="background:rgba(247,198,0,.2);color:#a06e00">⏰ Follow up</span></div>
+            <div class="m2col"><h6 style="color:#f97316">Proposal Sent</h6>
+              <div class="m2card"><div class="t">Cutter Law</div><div class="s">$4,500/mo</div><span class="chip" style="background:rgba(247,198,0,.2);color:#a06e00">Follow up today</span></div>
+              <div class="m2card"><div class="t">Bright Roofing</div><div class="s">SEO + Google Ads</div></div>
             </div>
-            <div class="m2col"><h6 style="color:#22c55e">Won</h6>
-              <div class="m2card"><div class="t">WEBRIS</div><span class="chip" style="background:rgba(34,197,94,.16);color:#15803d">Live</span></div>
-              <div class="m2card"><div class="t">Ligori Law</div></div>
+            <div class="m2col"><h6 style="color:#22c55e">Deal Won</h6>
+              <div class="m2card"><div class="t">Rivera Law</div><div class="s">$6,000/mo</div><span class="chip" style="background:rgba(34,197,94,.16);color:#15803d">Client created</span></div>
             </div>
           </div>
         </div>
 
-        <!-- Clients (default) -->
         <div class="screen on" data-screen="clients">
         <div class="cli-head">
           <span class="back">← All clients</span>
-          <h2>WEBRIS</h2>
+          <h2>Rivera Law</h2>
           <span class="status"><span class="d"></span>Active</span>
-          <span class="tag">Meta Ads</span>
+          <span class="tag">SEO</span>
+          <span class="tag">Google Ads</span>
+          <span style="margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: #2563EB; background: rgba(37,99,235,.09); border: 1px solid rgba(37,99,235,.18); border-radius: 999px; padding: 5px 12px;">Client portal live</span>
         </div>
 
         <div class="kpis">
-          <div class="kpi"><div class="l">Deliverables</div><div class="v">5</div></div>
-          <div class="kpi"><div class="l">Delayed</div><div class="v red">1</div><div class="s">past due date</div></div>
-          <div class="kpi"><div class="l">Completed</div><div class="v green">4</div></div>
-          <div class="kpi"><div class="l">By Claude</div><div class="v">1</div><div class="s">of 5 tasks</div></div>
+          <div class="kpi"><div class="l">Plan</div><div class="v">12<span style="font-size: 18px; color: #9aa2b1;"> / 18</span></div><div class="s">tasks done this sprint</div></div>
+          <div class="kpi"><div class="l">Leads · 30 days</div><div class="v green">62</div><div class="s">▲ 18% vs last month</div></div>
+          <div class="kpi"><div class="l">Calls</div><div class="v">3</div><div class="s">recorded, with recaps</div></div>
+          <div class="kpi"><div class="l">Run by AI</div><div class="v">5</div><div class="s">Claude or ChatGPT</div></div>
         </div>
 
-        <div class="tabs" id="tabs">
-          <div class="tab">Tasks</div><div class="tab">Timeline</div><div class="tab">Deliverables</div>
-          <div class="tab">Content</div><div class="tab">Links</div><div class="tab on">Performance</div>
-          <div class="tab data">Data</div>
+        <div class="tabs">
+          <div class="tab">Overview</div><div class="tab on">Plan</div><div class="tab">Content</div>
+          <div class="tab">Links</div><div class="tab">Performance</div><div class="tab">Calls</div>
+          <div class="tab">Assets</div><div class="tab">Portal</div>
         </div>
 
-        <div class="subtabs" id="subtabs">
-          <div class="subtab"><span class="d" style="background:#eab308"></span>Organic (SEO)</div>
-          <div class="subtab on"><span class="d"></span>Paid Social</div>
-          <div class="subtab"><span class="d" style="background:#a855f7"></span>Paid Search (PPC + LSA)</div>
+        <div class="hv-grid">
+          <div style="background: #ffffff; border: 1px solid var(--app-border); border-radius: 14px; padding: 14px 16px;">
+            <div class="panel-h">Sprint 2 <b>· Local SEO</b></div>
+            <div class="m2row"><span class="t">Google Business Profile cleanup</span><span style="display: flex; align-items: center; gap: 8px;"><span class="meta">María</span><span class="st" style="background:#dcfce7;color:#15803d">Done</span></span></div>
+            <div class="m2row"><span class="t">4 practice area pages <span class="meta">· checklist 3/5</span></span><span style="display: flex; align-items: center; gap: 8px;"><span class="meta">David</span><span class="st" style="background:#dbeafe;color:#1d4ed8">Working</span></span></div>
+            <div class="m2row"><span class="t">Monthly performance summary</span><span style="display: flex; align-items: center; gap: 8px;"><span class="st" style="background:#fdf0ea;color:#c2410c">AI</span><span class="st" style="background:#dcfce7;color:#15803d">Done</span></span></div>
+            <div class="m2row"><span class="t">6 link placements</span><span style="display: flex; align-items: center; gap: 8px;"><span class="meta">María</span><span class="st" style="background:#fef3c7;color:#a16207">Review</span></span></div>
+            <div class="m2row"><span class="t">Fix pages flagged in the audit <span class="meta">· recurring</span></span><span style="display: flex; align-items: center; gap: 8px;"><span class="meta">David</span><span class="st" style="background:#f1f5f9;color:#64748b">Scheduled</span></span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="background: #ffffff; border: 1px solid var(--app-border); border-radius: 14px; padding: 14px 16px;">
+              <div class="panel-h">Latest call</div>
+              <div style="font-size: 14px; font-weight: 800; color: var(--app-ink);">Monthly check-in · Nov 4</div>
+              <div style="font-size: 12.5px; color: #5b6472; line-height: 1.5; margin-top: 4px;">Recap: approved the new location pages, wants weekend calls routed to the answering service.</div>
+            </div>
+            <div style="background: #ffffff; border: 1px solid var(--app-border); border-radius: 14px; padding: 14px 16px;">
+              <div class="panel-h">Performance <b>· last 30 days</b></div>
+              <div style="display: flex; gap: 18px;">
+                <div><div style="font-size: 22px; font-weight: 800; color: var(--app-ink);">$41</div><div style="font-size: 11px; color: #9aa2b1;">cost per lead</div></div>
+                <div><div style="font-size: 22px; font-weight: 800; color: var(--app-ink);">#2</div><div style="font-size: 11px; color: #9aa2b1;">avg. map rank</div></div>
+                <div><div style="font-size: 22px; font-weight: 800; color: var(--app-ink);">14</div><div style="font-size: 11px; color: #9aa2b1;">links built</div></div>
+              </div>
+            </div>
+            <div style="background: #0b0e1a; border-radius: 14px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.2); flex-shrink: 0;"></span>
+              <div><div style="font-size: 13.5px; font-weight: 800; color: #ffffff;">Claude or ChatGPT connected</div><div style="font-size: 11.5px; color: rgba(255,255,255,.6);">Reads and updates this client through the Agency OS MCP</div></div>
+            </div>
+          </div>
+        </div>
         </div>
 
-        <div class="panel-h">FACEBOOK ADS <b>· Windsor.ai · Meta Ads</b></div>
-        <div class="metarow">
-          <div class="mcard"><div class="l">Spend (30d)</div><div class="v">$9,271</div><div class="mom up">▲ +270.2% MoM</div></div>
-          <div class="mcard"><div class="l">Conversions</div><div class="v">27</div><div class="mom up">▲ +440% MoM</div></div>
-          <div class="mcard"><div class="l">Cost per lead</div><div class="v">$343</div></div>
-          <div class="mcard"><div class="l">CTR</div><div class="v">5.16%</div></div>
+        <div class="screen" data-screen="tools">
+          <div class="scr-h">Tools</div>
+          <div class="scr-sub">Work the platform runs on your clients' data · every tool can also run from Claude or ChatGPT</div>
+          <div class="kpis">
+            <div class="kpi"><div class="l">Proposal Builder</div><div class="v" style="font-size:20px">SEO + Paid</div><div class="s">from the lead's call notes</div></div>
+            <div class="kpi"><div class="l">Website Quality Audit</div><div class="v" style="font-size:20px">Every page</div><div class="s">crawl + Search Console + GA4</div></div>
+          </div>
+          <div class="m2row"><span class="t">Proposal · Bright Roofing <span class="meta">· SEO + Google Ads + LSA</span></span><span class="st" style="background:#dcfce7;color:#15803d">Deck ready</span></div>
+          <div class="m2row"><span class="t">Proposal · NK Patent Law <span class="meta">· SEO, Local and GEO</span></span><span class="st" style="background:#dbeafe;color:#1d4ed8">Outline</span></div>
+          <div class="m2row"><span class="t">Website Quality Audit · Peak Dental <span class="meta">· 214 pages</span></span><span class="st" style="background:#fef3c7;color:#a16207">In review</span></div>
+          <div class="m2row"><span class="t">Website Quality Audit · Rivera Law <span class="meta">· 96 pages</span></span><span class="st" style="background:#dcfce7;color:#15803d">Sent to plan</span></div>
         </div>
-        <div class="chart">
-          <div class="l">Daily spend · last 30 days</div>
-          <svg viewBox="0 0 620 130" width="100%" height="120" preserveAspectRatio="none">
-            <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#2563EB" stop-opacity=".22"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
-            </linearGradient></defs>
-            <path d="M0,88 C40,84 60,70 90,74 C120,78 140,58 170,64 C200,70 220,50 250,60 C280,70 300,66 330,54 C360,42 380,58 410,50 C440,42 460,30 490,36 C520,42 550,26 590,20 L620,18 L620,130 L0,130 Z" fill="url(#g)"/>
-            <path d="M0,88 C40,84 60,70 90,74 C120,78 140,58 170,64 C200,70 220,50 250,60 C280,70 300,66 330,54 C360,42 380,58 410,50 C440,42 460,30 490,36 C520,42 550,26 590,20 L620,18" fill="none" stroke="#2563EB" stroke-width="2.5"/>
-          </svg>
-        </div>
-        </div><!-- /clients screen -->
 
-        <!-- Admin -->
+        <div class="screen" data-screen="library">
+          <div class="scr-h">Library</div>
+          <div class="scr-sub">Ready-to-run prompts for Claude or ChatGPT, with step-by-step setup</div>
+          <div class="m2row"><span class="t">New lead auto-sync <span class="meta">· booked calls become leads</span></span><span class="st" style="background:#dbeafe;color:#1d4ed8">Pipeline</span></div>
+          <div class="m2row"><span class="t">Sales Assistant Agent <span class="meta">· briefs, recaps, open proposals</span></span><span class="st" style="background:#dbeafe;color:#1d4ed8">Sales</span></div>
+          <div class="m2row"><span class="t">Add sales call recordings and notes to CRM</span><span class="st" style="background:#dbeafe;color:#1d4ed8">Sales</span></div>
+          <div class="m2row"><span class="t">Add client call recordings <span class="meta">· recap on the client</span></span><span class="st" style="background:#dcfce7;color:#15803d">Clients</span></div>
+          <div class="m2row"><span class="t">CRM import · Asana import</span><span class="st" style="background:#f1f5f9;color:#64748b">Setup</span></div>
+        </div>
+
         <div class="screen" data-screen="admin">
-          <div class="scr-h">Admin · Billing</div>
-          <div class="scr-sub">Realized revenue · March</div>
+          <div class="scr-h">Admin · Clients &amp; billing</div>
+          <div class="scr-sub">Admin only · revenue by client and service</div>
           <table class="m2tbl">
-            <tr><td>WEBRIS</td><td>Meta Ads</td><td class="r">$9,271</td></tr>
-            <tr><td>Cutter Law</td><td>SEO</td><td class="r">$2,500</td></tr>
-            <tr><td>O&rsquo;Bryan Law Offices</td><td>SEO + PPC</td><td class="r">$3,800</td></tr>
-            <tr><td>Ligori Law</td><td>SEO</td><td class="r">$1,800</td></tr>
-          </table>
-          <div class="m2foot"><span>Realized</span><span class="g">$17,371</span></div>
+            <tbody><tr><td>Rivera Law</td><td>SEO + Google Ads</td><td class="r">$6,000/mo</td></tr>
+            <tr><td>Cutter Law</td><td>SEO</td><td class="r">$2,500/mo</td></tr>
+            <tr><td>Halcyon HVAC</td><td>Meta Ads</td><td class="r">$3,200/mo</td></tr>
+            <tr><td>Peak Dental</td><td>Local SEO</td><td class="r">$1,800/mo</td></tr>
+          </tbody></table>
+          <div class="m2foot"><span>Monthly recurring</span><span class="g">$13,500</span></div>
         </div>
 
-        <!-- Settings -->
         <div class="screen" data-screen="settings">
-          <div class="scr-h">Settings · Pipeline stages</div>
-          <div class="scr-sub">Rename or hide any stage</div>
-          <div class="m2row"><span class="t">Awaiting Discovery</span><span class="st" style="background:#dcfce7;color:#15803d">Shown</span></div>
-          <div class="m2row"><span class="t">Proposal Sent</span><span class="st" style="background:#dcfce7;color:#15803d">Shown</span></div>
-          <div class="m2row"><span class="t">Deal Won — Live</span><span class="st" style="background:#dcfce7;color:#15803d">Shown</span></div>
-          <div class="m2row"><span class="t">Not Qualified</span><span class="st" style="background:#f1f5f9;color:#64748b">Hidden</span></div>
+          <div class="scr-h">Settings</div>
+          <div class="scr-sub">Your agency, your team and your connections</div>
+          <div class="m2row"><span class="t">Agency profile <span class="meta">· name, logo, currency</span></span><span class="st" style="background:#dcfce7;color:#15803d">Set</span></div>
+          <div class="m2row"><span class="t">Team <span class="meta">· 4 members, roles and profiles</span></span><span class="st" style="background:#dbeafe;color:#1d4ed8">Invite</span></div>
+          <div class="m2row"><span class="t">Integrations <span class="meta">· Search Console, GA4, ads, CallRail</span></span><span class="st" style="background:#dcfce7;color:#15803d">Connected</span></div>
+          <div class="m2row"><span class="t">Pipeline stages and task statuses</span><span class="st" style="background:#f1f5f9;color:#64748b">Edit</span></div>
+          <div class="m2row"><span class="t">Claude and ChatGPT connector</span><span class="st" style="background:#dcfce7;color:#15803d">Connected</span></div>
         </div>
       </div>
     </div>
@@ -920,12 +952,12 @@
           <div class="acc-body"><div class="accent"></div><p>Prove ROI without the Sunday-night report scramble. Always-live dashboards, PDF exports and a private client portal show clients the work and the results, so they stay.</p></div>
         </div>
         <div class="acc-item" data-panel="ops">
-          <div class="acc-head">Know if you're actually profitable <span class="chev">⌄</span></div>
-          <div class="acc-body"><div class="accent"></div><p>See the health of the business at a glance — revenue, margins, burn, and team capacity — and make decisions on real numbers instead of a gut feeling.</p></div>
+          <div class="acc-head">Automate repetitive client tasks <span class="chev">⌄</span></div>
+          <div class="acc-body"><div class="accent"></div><p>The work you repeat for every client runs from Tools. The Website Quality Audit scores every page and turns approved findings into a plan. The Proposal Builder turns a sales call into a finished deck. Library prompts handle onboarding, call recaps and lead sync through Claude or ChatGPT.</p></div>
         </div>
         <div class="acc-item" data-panel="ai">
-          <div class="acc-head">Do 3× the work without hiring <span class="chev">⌄</span></div>
-          <div class="acc-body"><div class="accent"></div><p>Offload the busywork to AI agents that do the actual work — audits, proposals, onboarding, reports — so a lean team punches far above its weight.</p></div>
+          <div class="acc-head">Run it all from Claude or ChatGPT <span class="chev">⌄</span></div>
+          <div class="acc-body"><div class="accent"></div><p>Agency OS plugs straight into Claude and ChatGPT. Ask in plain English and your AI reads your clients, pipeline and plans, does the work, and writes the result back to the platform. A lean team gets 3× the work done without hiring.</p></div>
         </div>
       </div>
     </div>
@@ -983,24 +1015,23 @@
 
           <!-- Operations -->
           <div class="mock2" data-panel="ops">
-            <div class="m2h">Admin · Billing</div><div class="m2hs">Realized revenue this month</div>
-            <table class="m2tbl">
-              <tr><td>WEBRIS</td><td class="r">$9,271</td></tr>
-              <tr><td>Cutter Law</td><td class="r">$2,500</td></tr>
-              <tr><td>O&rsquo;Bryan Law Offices</td><td class="r">$3,800</td></tr>
-              <tr><td>Ligori Law</td><td class="r">$1,800</td></tr>
-            </table>
-            <div class="m2foot"><span>Realized · March</span><span class="g">$17,371</span></div>
+            <div class="m2h">Tools</div><div class="m2hs">Work the platform runs on your clients' data</div>
+            <div class="m2row"><span class="t">Website Quality Audit · Peak Dental</span><span class="st" style="background:#fef3c7;color:#a16207">214 pages to review</span></div>
+            <div class="m2row"><span class="t">Proposal Builder · Bright Roofing</span><span class="st" style="background:#dcfce7;color:#15803d">Deck ready</span></div>
+            <div class="m2row"><span class="t">Client onboarding · Halcyon HVAC</span><span class="st" style="background:#dbeafe;color:#1d4ed8">Plan applied</span></div>
+            <div class="m2row"><span class="t">Call recaps · 3 client calls</span><span class="st" style="background:#dcfce7;color:#15803d">Filed</span></div>
+            <div class="m2row"><span class="t">New lead sync · 2 bookings</span><span class="st" style="background:#dbeafe;color:#1d4ed8">Added to pipeline</span></div>
           </div>
 
           <!-- AI -->
           <div class="mock2" data-panel="ai">
-            <div class="m2h">Claude · connected</div><div class="m2hs">Hand off the work — it lands back in the app</div>
+            <div class="m2h">Claude or ChatGPT · connected</div><div class="m2hs">Ask in plain English. The work lands back in Agency OS.</div>
             <div class="m2ai">
-              <div class="act">✨ Run a Website Quality Audit <span class="b">RUN</span></div>
-              <div class="act">✨ Draft a proposal for a new lead <span class="b">RUN</span></div>
-              <div class="act">✨ Onboard a won client <span class="b">RUN</span></div>
-              <div class="done">✓ 12 deliverables created · project plan applied · Drive folder built</div>
+              <div class="act" style="background:#0b0e1a;color:#ffffff;border-color:#0b0e1a">"Onboard Halcyon HVAC and draft their first month's plan." <span class="b">YOU</span></div>
+              <div class="act">Read the won deal and call recap <span class="b">DONE</span></div>
+              <div class="act">Applied the Onboarding plan and built the Drive folder <span class="b">DONE</span></div>
+              <div class="act">Drafted 12 tasks for Sprint 1 <span class="b">DONE</span></div>
+              <div class="done">✓ Synced to Agency OS · your team sees it now</div>
             </div>
           </div>
 
