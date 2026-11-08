@@ -1,0 +1,276 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>One-Person Agency Bootcamp</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style id="page-css">
+/* Layout: a single white document page on a light desk, editorial doc treatment in Blueprint navy and blue (deliberately single light theme) */
+:root{
+  --desk:#f8f9fa; --page:#ffffff; --ink:#202124; --head:#16213d; --text:#3c4043; --muted:#5f6368;
+  --gold:#2868d5; --gold-deep:#253662; --gold-link:#1f56b8; --gold-soft:#eaf1fc; --rule:#e8eaed; --cell:#d9d9d9; --zebra:#f7f9fc; --thead:#253662;
+  --warn:#a3360d; --warn-soft:#fbe9e2;
+  --f-body:"Inter",-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--desk);color:var(--ink);font-family:var(--f-body);line-height:1.7;-webkit-font-smoothing:antialiased}
+.toolbar{max-width:816px;margin:22px auto 0;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;color:#6b6d70;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.toolbar-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.status.dirty{color:var(--gold-link);font-weight:600}
+.toolbar button{font:inherit;background:transparent;border:1px solid #d7d6d3;border-radius:3px;color:var(--muted);padding:6px 10px;cursor:pointer}
+.toolbar button:hover{background:#eef2f8}
+.toolbar button.primary{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
+.toolbar button:disabled{opacity:.45;cursor:default;background:transparent;color:var(--muted);border-color:#d7d6d3}
+.toolbar button:focus-visible,.mini:focus-visible,.x:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.editing .toolbar [data-act=toggle]{background:var(--gold-soft);border-color:var(--gold)}
+.page-wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.page{max-width:816px;margin:18px auto 40px;padding:72px 96px 80px;background:var(--page);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.08);border-radius:2px}
+.doc-header{padding-bottom:27px;margin-bottom:36px;border-bottom:2px solid var(--gold)}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;flex:none}
+.brand svg{display:block;height:48px;width:auto;max-width:100%}
+.doc-meta{white-space:pre-line;font-size:12px;line-height:1.65;color:var(--muted);text-align:right;margin:0}
+h1{font-size:28px;font-weight:700;color:var(--head);line-height:1.3;margin:0 0 15px;letter-spacing:-.015em}
+h2{font-size:20px;font-weight:600;color:var(--head);line-height:1.35;margin:44px 0 13px;padding-bottom:7px;border-bottom:1px solid var(--rule);text-wrap:balance}
+h3{font-size:16px;font-weight:600;color:var(--head);line-height:1.45;margin:23px 0 8px}
+p,li{font-size:14.5px;color:var(--text)}
+p{margin:0 0 14px}
+strong{font-weight:600;color:var(--ink)}
+.emphasis{border-left:3px solid var(--gold);padding:8px 0 8px 16px;margin:18px 0 23px;color:var(--ink)}
+ul{padding-left:21px;margin:10px 0 18px}
+li{margin:0 0 6px}
+li::marker{color:var(--gold-deep)}
+.day-meta{font-size:13px;color:var(--muted);margin:-4px 0 12px}
+.day-meta b{font-weight:600;color:var(--ink)}
+.group-lab{font-size:14.5px;font-weight:600;color:var(--head);margin:20px 0 6px}
+.tbl{overflow-x:auto;margin:16px 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--cell);padding:10px 13px;text-align:left;vertical-align:top;line-height:1.5}
+thead{background:var(--thead);color:#fff}
+thead th{font-weight:600;font-size:13px}
+tbody tr:nth-child(even){background:var(--zebra)}
+tfoot{background:var(--gold-soft);color:var(--head)}
+tfoot td{font-weight:600}
+tfoot.off{background:var(--warn-soft);color:var(--warn)}
+td.min,th.min{width:72px;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.min{color:var(--gold-link);font-weight:600}
+td.act,th.act{width:40px;text-align:center}
+th.date,td.date{width:128px}
+th.theme{width:30%}
+td.date a{color:var(--gold-link);text-decoration:underline;text-underline-offset:3px}
+section{scroll-margin-top:16px}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.blocks td:nth-child(1){width:36%}
+.blocks td:nth-child(1) strong{display:block}
+.who{display:inline-block;font-size:11.5px;font-weight:600;color:var(--gold-link);background:var(--gold-soft);border-radius:3px;padding:0 6px;margin-top:3px}
+.note{font-size:13px;color:var(--muted)}
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0 8px}
+.person{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:start;min-width:0}
+.pbody{min-width:0}
+.avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;display:block;background:var(--gold-soft)}
+.avatar.ini{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:var(--gold-deep);border:2px solid var(--gold)}
+.person .pname{font-weight:600;color:var(--head);font-size:15px}
+.person ul.pbio{margin:6px 0 0;padding-left:18px}
+.person ul.pbio li{font-size:13.5px;margin:0 0 4px}
+.person ul.pbio b{font-weight:600;color:var(--gold-deep)}
+.person .prole{font-size:13px;color:var(--muted);margin-top:2px}
+.person .pteach{font-size:13.5px;color:var(--text);margin-top:6px}
+.person .pteach b{font-weight:600;color:var(--gold-deep)}
+@media(max-width:600px){.people{grid-template-columns:1fr}}
+.sources a{color:var(--gold-link);text-decoration:underline;text-underline-offset:3px}
+.sources li{font-size:13.5px}
+.doc-footer{display:flex;justify-content:space-between;gap:20px;margin-top:40px;padding-top:17px;border-top:1px solid var(--rule);font-size:11px;line-height:1.5;color:#777}
+.mini{font:600 12px var(--f-body);border:1px dashed var(--gold);background:transparent;color:var(--gold-link);border-radius:3px;padding:4px 10px;cursor:pointer}
+.mini:hover{background:var(--gold-soft)}
+.x{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:16px;line-height:1;padding:2px 6px;border-radius:3px}
+.x:hover{color:var(--warn);background:var(--warn-soft)}
+.adds{display:flex;gap:8px;flex-wrap:wrap;margin:-8px 0 18px}
+[contenteditable=true]{outline:1px dashed var(--gold);outline-offset:3px;cursor:text;min-width:1ch}
+[contenteditable=true]:focus{outline:2px solid var(--gold)}
+[contenteditable=true]:empty::before{content:"Add text";color:#9aa0a6}
+@media(max-width:860px){.page{padding:48px 54px 60px}}
+@media(max-width:600px){.brand svg{height:40px}.toolbar{align-items:flex-start;flex-direction:column;gap:8px}.page-wrap{padding-left:0;padding-right:0}.page{margin:13px 0 0;padding:32px max(20px,env(safe-area-inset-right,0px)) 40px max(20px,env(safe-area-inset-left,0px));box-shadow:none;border-radius:0}.doc-meta{text-align:left}h1{font-size:25px}p,li{font-size:15px}th,td{padding:9px 9px;font-size:13px}.doc-footer{flex-direction:column;gap:6px}}
+</style>
+<div id="app"></div>
+<script type="application/json" id="bootcamp-state">{"title":"The One-Person Agency","meta":"Starts Monday, Nov 30, 2026 · 2 pm EST","lede":"The traditional SEO agency is dead - AI has rapidly changed the way you need to run your business. The One Person Agency program focuses on how to properly leverage AI to deliver high quality results for your clients, while ensuring you still have a place in the market. You will walk away with a complete roadmap to modernize your agency from top to bottom.","format":"10 live sessions taught over Zoom, every weekday from Monday, Nov 30 to Friday, Dec 11, 2 to 4 pm EST. Each session is 2 hours with Q&A at the end. Everything is recorded and added to your training platform so you can rewatch it as often as you want. The program is retaught every 90 days to keep up with the pace of AI and the changing search landscape.","overview":[{"day":"Mon, Nov 30","theme":"Agency Foundations","ms":"The AI shift, the one-person agency model, your niche and blended offer, and the AI stack: models, agents, MCP and skills."},{"day":"Tue, Dec 1","theme":"Getting Clients: The Website","ms":"Build your agency site with Claude, publish it on Vercel or Netlify, and write content built for search and AI discovery."},{"day":"Wed, Dec 2","theme":"Getting Clients: Content and Ads","ms":"Long-form and short-form video, distribution, and Facebook ads to fill your pipeline."},{"day":"Thu, Dec 3","theme":"Closing Clients (Sales + Onboarding)","ms":"Qualification, discovery, proposals and follow-up in Agency OS, then kickoff and the whole-page baseline."},{"day":"Fri, Dec 4","theme":"The Website Quality Audit","ms":"Run the Website Quality Audit in Agency OS and turn the findings into a prioritized roadmap."},{"day":"Mon, Dec 7","theme":"Local SEO","ms":"The Agency OS local SEO tool, GBP, citations, location pages and reviews."},{"day":"Tue, Dec 8","theme":"Content Creation","ms":"Using AI to research, write and scale content through repeatable systems: plans, briefs, drafting, QC and publishing."},{"day":"Wed, Dec 9","theme":"Link Building","ms":"Link prospecting, quality checks, acquisition and vendor QC, ending with the SEO sprint backlog."},{"day":"Thu, Dec 10","theme":"The Paid Model (LSAs + PPC)","ms":"LSAs and PPC run in house, managed by a sub you vet and audit with AI."},{"day":"Fri, Dec 11","theme":"Reporting, retention and the 30-day plan","ms":"Blended reporting, AI-prepared updates, client communication, retention and your 30-day plan."}],"prework":{"intro":"Students finish this before Day 1. It isn't a live session: it gets every account working so live time goes to teaching. The core stack costs about $355/mo, plus $24.99/mo for Local Falcon if you offer local SEO, and ad spend.","checklist":["Create every account in the tool stack below","Connect Agency OS to Claude and link GSC, GA4, GBP, Google Ads and LSAs","Run one test prompt and one test Agency OS pull","Post an intro in the community","Join setup office hours if anything breaks"],"tools":[{"tool":"Blueprint membership (includes Agency OS)","use":"Pipeline, proposals, WQA, local tool and reporting (all days)","level":"Membership","price":"$199/mo"},{"tool":"Claude","use":"AI work, the Agency OS connector and the site build (all days)","level":"Pro minimum, Max for heavy daily use","price":"Pro $20/mo ($17/mo billed yearly), Max from $100/mo"},{"tool":"Google Workspace","use":"Business email and the login behind every Google tool (pre-work)","level":"Business Starter","price":"$7/user/mo yearly, $8.40 flexible"},{"tool":"Netlify or Vercel","use":"Hosting the agency site (Day 2)","level":"Netlify Free or Personal; Vercel Pro, since Hobby is non-commercial only","price":"Netlify $0 to $9/mo, Vercel $20/mo"},{"tool":"GitHub","use":"Storing and deploying the site code (Day 2)","level":"Free","price":"$0"},{"tool":"Meta Business Suite and Ads Manager","use":"Running Facebook ads (Day 3)","level":"Free account","price":"$0 plus ad spend"},{"tool":"Google Search Console, GA4, Google Business Profile","use":"Baselines, the WQA, local and reporting (Days 4 to 10)","level":"Free","price":"$0"},{"tool":"Google Ads and LSAs","use":"Paid search and LSAs (Day 9)","level":"Free account","price":"$0 plus ad spend"},{"tool":"Ahrefs or Semrush","use":"Keyword, competitor and link research (Days 5, 7 and 8)","level":"Ahrefs Lite or Semrush Pro","price":"Ahrefs $129/mo, Semrush $139.95/mo"},{"tool":"DataForSEO","use":"SEO data through the API: SERPs, keywords and rankings for AI workflows","level":"Pay as you go","price":"$50 minimum top-up, then usage-based"},{"tool":"Local Falcon (required if you offer local SEO)","use":"Map pack grid rank tracking for local clients (Day 6)","level":"Starter","price":"$24.99/mo"}],"note":"Core stack: membership, Claude Pro, Workspace, Ahrefs Lite and Netlify Free. Add Local Falcon for local SEO clients."},"days":[{"num":"1","title":"Agency Foundations","lead":"Ryan + David","target":120,"groups":[{"label":"The business (Ryan)","blocks":[{"n":"Where AI is now, and what it does to agencies and search","m":15,"w":"","d":"Models went from chatting to doing work, and the headcount model breaks. Live demo: a full search presence pull on a prospect, then take apart the blended results page (LSAs, ads, map pack, organic, AI answers)."},{"n":"Where you fit and the operating model","m":10,"w":"","d":"You, plus AI, plus subs. Customer, problem, offer, delivery and management, mapped to the bootcamp days."},{"n":"Niche, ideal client and the blended offer","m":25,"w":"","d":"Depth beats breadth, using law firms as the case study. The foundational sprint, ongoing SEO and local, plus paid and LSAs run by subs, with pricing, margins and proof."}]},{"label":"The AI stack (David + Ryan)","blocks":[{"n":"Models, context, prompts and QC","m":15,"w":"David","d":"Why better context means better output. Nothing goes out unchecked."},{"n":"Agents, tools, MCP and skills","m":20,"w":"David","d":"How they connect and how the opening demo worked. Live build: connect a tool and run a skill."},{"n":"Agency OS tour","m":5,"w":"Ryan","d":"Pipeline, clients, projects and the connector."},{"n":"Meet the example client and map the workflow","m":10,"w":"","d":"The firm's \"before\" results page, then tag every task as AI, owner or sub."},{"n":"Homework","m":5,"w":"","d":"Finish the workflow map and draft your positioning statement and offer sheet with AI."},{"n":"Q&A","m":15,"w":"","d":"Open questions from the session."}]}],"when":"Mon, Nov 30, 2 to 4 pm EST"},{"num":"2","title":"Getting Clients: The Website","lead":"Ryan","target":120,"groups":[{"label":"","blocks":[{"n":"The site's job","m":10,"w":"","d":"Rank, get cited by AI answers, and turn visitors into calls."},{"n":"Build the site with Claude","m":30,"w":"","d":"Live build from the Day 1 offer sheet."},{"n":"Publish on Vercel or Netlify","m":15,"w":"","d":"Domain, deploy, forms and analytics."},{"n":"Site structure for SEO and GEO","m":15,"w":"","d":"Service pages, location pages, schema and internal links."},{"n":"Writing site content for search and AI discovery","m":25,"w":"","d":"Answer-first pages, proof and FAQs, drafted with AI and checked by you."},{"n":"Homework","m":10,"w":"","d":"Get your site live."},{"n":"Q&A","m":15,"w":"","d":"Open questions from the session."}]}],"when":"Tue, Dec 1, 2 to 4 pm EST"},{"num":"3","title":"Getting Clients: Content and Ads","lead":"Ryan","target":120,"groups":[{"label":"","blocks":[{"n":"Your agency is client zero","m":5,"w":"","d":"The same blended thinking, applied to your own pipeline."},{"n":"The content engine","m":5,"w":"","d":"One core idea becomes a long-form video, clips and posts."},{"n":"Long-form video","m":25,"w":"","d":"Topics, scripting with AI, recording setup, and editing with Claude, then publishing to YouTube."},{"n":"Short-form video","m":20,"w":"","d":"Claude finds the best moments in your transcript, cuts the clips and writes the hooks and captions. Posting cadence."},{"n":"Distribution and lead capture","m":10,"w":"","d":"Where your buyers are, and the audit as a lead magnet."},{"n":"Facebook ads","m":30,"w":"","d":"Campaign setup, offer, budget, creative from your videos, and reading the results."},{"n":"Homework","m":10,"w":"","d":"Record your first long-form video and cut three clips."},{"n":"Q&A","m":15,"w":"","d":"Open questions from the session."}]}],"when":"Wed, Dec 2, 2 to 4 pm EST"},{"num":"4","title":"Closing Clients: Sales and Onboarding","lead":"Ryan","target":120,"groups":[{"label":"","blocks":[{"n":"Pipeline and qualification","m":10,"w":"","d":"Agency OS stages, fit criteria and how to disqualify fast."},{"n":"Discovery","m":15,"w":"","d":"Whole-page questions, budget, intake and goals, with an AI briefing before every call."},{"n":"Proposals","m":25,"w":"","d":"Whole-page snapshot and blended forecast. Live demo in the Agency OS proposal builder."},{"n":"Follow-up","m":10,"w":"","d":"Cadence and AI-drafted messages. The owner approves every message."},{"n":"Role play","m":15,"w":"","d":"Discovery call with the example client."},{"n":"Kickoff","m":15,"w":"","d":"Goals, access checklist, expectations and communication cadence."},{"n":"Whole-page baseline","m":10,"w":"","d":"Rankings, map pack, LSAs, ads, AI answers, leads and cases."},{"n":"Homework","m":5,"w":"","d":"Run a discovery call and build a proposal in Agency OS for a real prospect."},{"n":"Q&A","m":15,"w":"","d":"Open questions from the session."}]}],"when":"Thu, Dec 3, 2 to 4 pm EST"},{"num":"5","title":"The Website Quality Audit","lead":"Cesar","target":120,"groups":[{"label":"","blocks":[{"n":"Why the WQA comes first","m":10,"w":"","d":"Every sprint, recommendation and forecast after it is built on it. It sets the baseline and decides the order of work."},{"n":"Running the WQA in Agency OS","m":30,"w":"","d":"Live on the example client: the crawl, the data pull and a decision for every page."},{"n":"Reading the output","m":10,"w":"","d":"What matters and what's noise."},{"n":"Technical SEO, structure and pages","m":15,"w":"","d":"Crawl and indexation issues, site architecture, and a keep, merge, redirect or build call for every page."},{"n":"Content, authority and conversion","m":15,"w":"","d":"Content gaps against the competitors that rank, the backlink profile, and how well each page turns visitors into calls."},{"n":"Local landing pages","m":0,"w":"","d":"Map and scope the location pages the local sprint will build."},{"n":"Findings to roadmap","m":15,"w":"","d":"Impact vs effort, and sequencing channels so paid and LSAs bring in cases while SEO ramps up."},{"n":"Homework","m":10,"w":"","d":"Run a WQA on your own client or a prospect and build the roadmap."},{"n":"Q&A","m":15,"w":"","d":"Open questions from the session."}]}],"when":"Fri, Dec 4, 2 to 4 pm EST"},{"num":"6","title":"Local SEO","lead":"Cesar","target":120,"groups":[{"label":"","blocks":[{"n":"Local on the results page","m":10,"w":"","d":"The map pack, LSAs and organic share the same signals."},{"n":"The Agency OS local SEO tool","m":15,"w":"","d":"A tour of the tool that runs the local sprint step by step, from NAP to reviews."},{"n":"NAP and competitive research","m":10,"w":"","d":"Lock the firm's exact name, address and phone, then benchmark the map pack competitors on categories, reviews and grid rankings in Local Falcon."},{"n":"GBP optimization","m":25,"w":"","d":"Primary and secondary categories, services, description, photos, posts and Q&A, set against what the top competitors do."},{"n":"Aggregators and citations","m":10,"w":"","d":"Submit to the data aggregators, then build and clean up citations so every listing matches the NAP."},{"n":"Location pages","m":15,"w":"","d":"Build the location pages scoped in the WQA, with local proof, reviews and schema."},{"n":"Review system","m":10,"w":"","d":"A repeatable process to ask every client for a review and respond to every review that comes in."},{"n":"Homework","m":10,"w":"","d":"Run the local sprint on your own client."},{"n":"Q&A","m":15,"w":"","d":"Open questions from the session."}]}],"when":"Mon, Dec 7, 2 to 4 pm EST"},{"num":"7","title":"Content Creation","lead":"Cesar + Ryan","target":120,"groups":[{"label":"","blocks":[{"n":"The content system","m":0,"w":"","d":"Why AI-written content works now, and why it fails without a system behind it."},{"n":"Research at scale","m":0,"w":"","d":"Turn the keyword universe, WQA gaps and paid search terms into a content plan with AI."},{"n":"Briefs as prompts","m":0,"w":"","d":"Generate answer-first briefs from the plan, built for search and AI retrieval."},{"n":"AI drafting","m":0,"w":"","d":"Skills and templates that write in the client's voice, fed with expert input and first-party data."},{"n":"Quality control","m":0,"w":"","d":"Automated checks for accuracy, voice and SEO, then a human sign-off before anything goes live."},{"n":"Publishing and internal linking","m":0,"w":"","d":"Push approved pages live and link them into the site."},{"n":"Scaling the system","m":0,"w":"","d":"Run dozens of pages a month across multiple clients without adding headcount."},{"n":"Homework","m":0,"w":"","d":"Build your content system and produce three pages for your client."},{"n":"Q&A","m":0,"w":"","d":"Open questions from the session."}]}],"when":"Tue, Dec 8, 2 to 4 pm EST"},{"num":"8","title":"Link Building","lead":"Cesar","target":120,"groups":[{"label":"","blocks":[{"n":"Why authority matters","m":5,"w":"","d":"What the WQA showed."},{"n":"Link prospecting","m":20,"w":"","d":"Find targets from competitor backlinks, local sites and legal or industry resources."},{"n":"Quality assessment","m":20,"w":"","d":"What makes a link worth having, and red flags."},{"n":"Acquisition","m":25,"w":"","d":"Outreach, partnerships and vetting link vendors."},{"n":"QC on vendor work","m":15,"w":"","d":"Auditing link lists with AI."},{"n":"Sprint backlog","m":15,"w":"","d":"Every SEO task gets an owner (AI, owner or sub) and a next step."},{"n":"Homework","m":5,"w":"","d":"Build and score a link prospect list for your client."},{"n":"Q&A","m":15,"w":"","d":"Open questions from the session."}]}],"when":"Wed, Dec 9, 2 to 4 pm EST"},{"num":"9","title":"The Paid Model: LSAs and PPC","lead":"Francisco","target":120,"groups":[{"label":"","blocks":[{"n":"The paid model","m":10,"w":"","d":"Run paid in house, hire a sub to manage it, and own every account."},{"n":"LSAs","m":30,"w":"","d":"How they work, verification, budget, the link to reviews, and lead disputes."},{"n":"PPC planning","m":20,"w":"","d":"Keyword table, click prices and the forecast."},{"n":"Account structure and landing pages","m":15,"w":"","d":"What a good build looks like."},{"n":"Managing the paid sub","m":15,"w":"","d":"Finding and vetting them, what a good sub reports, and red flags."},{"n":"AI audits of sub work","m":10,"w":"","d":"Search terms, budget pacing and lead quality."},{"n":"Homework","m":5,"w":"","d":"Build a keyword table and an LSA setup checklist for your client."},{"n":"Q&A","m":15,"w":"","d":"Open questions from the session."}]}],"when":"Thu, Dec 10, 2 to 4 pm EST"},{"num":"10","title":"Reporting, Retention and the 30-Day Plan","lead":"Ryan","target":120,"groups":[{"label":"","blocks":[{"n":"Blended reporting","m":25,"w":"","d":"Cost per case by channel, completed work and next steps."},{"n":"AI-prepared reports","m":15,"w":"","d":"Live demo with human verification."},{"n":"Client communication","m":15,"w":"","d":"Meetings, cadence and delivering bad news."},{"n":"Scope and retention","m":15,"w":"","d":"Scope creep, upsells and renewals."},{"n":"Example client wrap-up","m":10,"w":"","d":"Before and after, and the client's 30-day plan."},{"n":"Workshop","m":20,"w":"","d":"Build your own 30-day implementation plan."},{"n":"Close and next steps","m":5,"w":"","d":"What happens after the bootcamp: the recordings, the coaching calls and the next cohort."},{"n":"Q&A","m":15,"w":"","d":"Open questions from the session."}]}],"when":"Fri, Dec 11, 2 to 4 pm EST"}],"sources":{"asof":"Tool prices as of Nov 8, 2026","links":[{"t":"Blueprint membership","u":"https://theblueprint.training/program"},{"t":"Claude pricing","u":"https://claude.com/pricing"},{"t":"Vercel pricing","u":"https://vercel.com/pricing"},{"t":"Netlify pricing","u":"https://netlify.com/pricing.md"},{"t":"Ahrefs pricing","u":"https://ahrefs.com/pricing?plan=awt"},{"t":"Semrush pricing (SEO.com, updated Oct 1, 2026)","u":"https://www.seo.com/blog/semrush-pricing/"},{"t":"DataForSEO pricing","u":"https://dataforseo.com/pricing"},{"t":"Local Falcon pricing","u":"https://localfalcon.com/pricing"},{"t":"Google Workspace pricing (Dupple, checked Oct 12, 2026)","u":"https://dupple.com/learn/google-workspace-pricing"}]},"instructors":[{"name":"Ryan Stewart","role":"Founder and CEO of WEBRIS, a law-firm-only digital marketing agency, and founder of The Blueprint Training","teaches":"Agency foundations, getting clients, sales and onboarding, managing subs, reporting","photo":"16039f79b40de904dd0d80059344435a"},{"name":"Cesar Cobo","role":"Head of Search at WEBRIS","teaches":"The Website Quality Audit, local SEO, content creation and link building","photo":"92a23dcfdcf27e3e58d7634d1e47bfe2"},{"name":"Francisco Wiles","role":"Director of Paid Media at WEBRIS","teaches":"The paid model: LSAs and PPC","photo":"08bdd07d999b12dd191fe44f072a43c9"},{"name":"David Krevitt","role":"Lead AI Coach at The Blueprint Training and builder of the Agency OS platform","teaches":"AI foundations: models, context, agents, MCP and skills","photo":"9ffdec7d1f543679b4f74e0a3c6f2aef"}]}</script>
+<script id="page-js">
+(function(){
+  var FONT_HREF="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
+  var FALLBACK_RESET=":root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}";
+  var LOGO='<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Blueprint Training" width="197" height="58" viewBox="0 0 197 58" fill="none"> <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V5.30833V9.55418V47.4196V56.9742H9.47588H46.5931H56.069V47.4196V25.9902V16.4356H46.5931H40.4178V9.55418V4.2306V0H0ZM9.34483 9.49571H30.9624V16.3984H26.2753H16.7325V25.9827V30.992V40.5758H26.2753H30.9624H40.5052V30.992V25.9827H46.7241V47.4785H9.34483V9.49571ZM24.9195 31.6524H31.1494V25.3219H24.9195V31.6524Z" fill="#253662"/> <path d="M77.7674 14.3236V3.1441H81.798V0.0800781H70.0862V3.1441H74.0956V14.3236H77.7674ZM86.7292 14.3236V8.73387H91.3718V14.3236H95.0436V0.0800781H91.3718V5.62844H86.7292V0.0800781H83.0574V14.3236H86.7292ZM107.825 14.3236V11.4045H101.199V8.58895H106.812V5.66985H101.199V2.99918H107.825V0.0800781H97.527V14.3236H107.825Z" fill="#253662"/> <path d="M80.1957 36.0424C81.9016 36.0424 83.1272 35.6803 83.8726 34.9561C84.618 34.232 84.9906 33.1537 84.9906 31.7211C84.9906 30.4775 84.7678 29.5723 84.3221 29.0056C83.8764 28.4389 83.1311 28.0374 82.086 27.8013V27.7069C83.0542 27.4865 83.7573 27.0811 84.1953 26.4908C84.6333 25.9004 84.8523 25.0307 84.8523 23.8815C84.8523 22.5119 84.4681 21.4887 83.6997 20.8118C82.9313 20.1348 81.771 19.7964 80.2188 19.7964H72.2427V36.0424H80.1957ZM78.7665 26.2664H76.2307V23.1023H78.7665C79.3659 23.1023 79.8 23.1416 80.069 23.2203C80.3379 23.299 80.5223 23.4486 80.6222 23.669C80.7221 23.8894 80.772 24.2278 80.772 24.6843C80.772 25.1251 80.7183 25.4557 80.6107 25.6761C80.5031 25.8965 80.311 26.05 80.0344 26.1366C79.7577 26.2231 79.3351 26.2664 78.7665 26.2664ZM78.8818 32.7365H76.2307V29.407H78.8818C79.4657 29.407 79.8999 29.4503 80.1842 29.5369C80.4685 29.6235 80.6606 29.7848 80.7605 30.021C80.8604 30.2571 80.9104 30.6192 80.9104 31.1072C80.9104 31.5794 80.8566 31.9258 80.749 32.1462C80.6414 32.3665 80.4493 32.52 80.1727 32.6066C79.8961 32.6932 79.4657 32.7365 78.8818 32.7365ZM98.1535 36.0424V32.5476H91.8602V19.7964H87.8491V36.0424H98.1535ZM106.591 36.2313C108.573 36.2313 110.002 36.0187 110.878 35.5937C111.754 35.1687 112.319 34.4563 112.573 33.4567C112.826 32.4571 112.953 30.871 112.953 28.6986V19.7964H108.942V29.5723C108.942 30.69 108.904 31.4614 108.827 31.8864C108.75 32.3115 108.558 32.5948 108.25 32.7365C107.943 32.8782 107.39 32.949 106.591 32.949C105.792 32.949 105.238 32.8782 104.931 32.7365C104.624 32.5948 104.431 32.3115 104.355 31.8864C104.278 31.4614 104.239 30.69 104.239 29.5723V19.7964H100.228V28.6986C100.228 30.871 100.355 32.4571 100.609 33.4567C100.862 34.4563 101.427 35.1687 102.303 35.5937C103.179 36.0187 104.608 36.2313 106.591 36.2313ZM127.453 36.0424V32.7129H120.215V29.5015H126.347V26.172H120.215V23.1259H127.453V19.7964H116.204V36.0424H127.453ZM134.392 36.0424V30.8238H137.919C139.348 30.8238 140.428 30.5955 141.158 30.139C141.888 29.6825 142.364 29.0686 142.587 28.2972C142.81 27.5258 142.921 26.5341 142.921 25.3219C142.921 24.031 142.802 22.9999 142.564 22.2286C142.326 21.4572 141.845 20.859 141.123 20.4339C140.401 20.0089 139.333 19.7964 137.919 19.7964H130.381V36.0424H134.392ZM136.259 27.5416H134.392V23.1023H136.259C137.089 23.1023 137.677 23.1534 138.023 23.2557C138.368 23.3581 138.595 23.5548 138.703 23.8461C138.81 24.1373 138.864 24.6292 138.864 25.3219C138.864 26.0146 138.81 26.5065 138.703 26.7977C138.595 27.089 138.365 27.2857 138.011 27.3881C137.658 27.4904 137.074 27.5416 136.259 27.5416ZM149.376 36.0424V30.3515H152.165L154.24 36.0424H158.435L155.992 29.8557C156.837 29.4779 157.402 28.8718 157.686 28.0374C157.971 27.2031 158.113 26.2192 158.113 25.0858C158.113 23.8579 157.994 22.8779 157.755 22.1459C157.517 21.4139 157.025 20.8393 156.28 20.4221C155.535 20.005 154.432 19.7964 152.972 19.7964H145.365V36.0424H149.376ZM151.451 27.0929H149.376V23.1023H151.497C152.327 23.1023 152.914 23.1495 153.26 23.2439C153.606 23.3384 153.825 23.5155 153.917 23.7752C154.009 24.035 154.056 24.4797 154.056 25.1094C154.056 25.7233 154.002 26.1602 153.894 26.4199C153.787 26.6797 153.56 26.8568 153.214 26.9512C152.868 27.0457 152.28 27.0929 151.451 27.0929ZM164.982 36.0424V19.7964H160.971V36.0424H164.982ZM172.082 36.0424V26.7623H172.198L177.684 36.0424H181.442V19.7964H177.592V28.2263H177.477L172.382 19.7964H168.256V36.0424H172.082ZM191.838 36.0424V23.2912H196.241V19.7964H183.447V23.2912H187.827V36.0424H191.838Z" fill="#2868D5"/> <path d="M78.7141 56.8715V45.1056H82.6757V41.8809H71.1643V45.1056H75.1051V56.8715H78.7141ZM87.5641 56.8715V51.6204H90.0738L91.9405 56.8715H95.7154L93.5168 51.1628C94.2773 50.8142 94.7855 50.255 95.0413 49.4851C95.2971 48.7152 95.425 47.8074 95.425 46.7615C95.425 45.6285 95.3178 44.7243 95.1035 44.0488C94.8892 43.3734 94.4467 42.8432 93.7761 42.4583C93.1054 42.0733 92.1133 41.8809 90.7997 41.8809H83.9551V56.8715H87.5641ZM89.4308 48.6135H87.5641V44.9313H89.4723C90.219 44.9313 90.7479 44.9748 91.059 45.062C91.3701 45.1492 91.5671 45.3126 91.6501 45.5522C91.7331 45.7919 91.7746 46.2023 91.7746 46.7833C91.7746 47.3498 91.7262 47.7529 91.6294 47.9926C91.5326 48.2322 91.3286 48.3957 91.0175 48.4828C90.7064 48.57 90.1775 48.6135 89.4308 48.6135ZM99.7534 56.8715L100.562 54.0389H105.644L106.494 56.8715H110.165L105.602 41.8809H100.707L96.1444 56.8715H99.7534ZM104.794 50.9667H101.392L103.03 45.2363H103.134L104.794 50.9667ZM114.867 56.8715V41.8809H111.258V56.8715H114.867ZM120.71 56.8715V48.3085H120.813L125.75 56.8715H129.131V41.8809H125.667V49.6594H125.563L120.979 41.8809H117.267V56.8715H120.71ZM135.139 56.8715V41.8809H131.53V56.8715H135.139ZM140.982 56.8715V48.3085H141.085L146.022 56.8715H149.402V41.8809H145.939V49.6594H145.835L141.251 41.8809H137.538V56.8715H140.982ZM157.879 57.0458C158.584 57.0458 159.404 56.9986 160.337 56.9041C161.27 56.8097 162.096 56.6899 162.815 56.5446V48.1124H157.485V50.9885H159.455V53.9954C158.999 54.0389 158.522 54.0607 158.024 54.0607C157.125 54.0607 156.479 53.9445 156.085 53.7121C155.691 53.4797 155.432 53.0548 155.307 52.4375C155.183 51.8201 155.12 50.7997 155.12 49.3762C155.12 47.8074 155.203 46.7252 155.369 46.1296C155.535 45.5341 155.871 45.16 156.375 45.0075C156.88 44.855 157.817 44.7787 159.186 44.7787C160.015 44.7787 161.205 44.8804 162.753 45.0838V42.2077C162.532 42.1351 161.917 42.0334 160.907 41.9026C159.898 41.7719 158.882 41.7065 157.858 41.7065C156.075 41.7065 154.733 41.9353 153.835 42.3929C152.936 42.8505 152.317 43.6131 151.978 44.6807C151.639 45.7483 151.47 47.3135 151.47 49.3762C151.47 51.5841 151.636 53.2146 151.968 54.2677C152.3 55.3208 152.908 56.0471 153.793 56.4466C154.678 56.846 156.04 57.0458 157.879 57.0458Z" fill="#253662"/> </svg>';
+  var S=JSON.parse(document.getElementById("bootcamp-state").textContent);
+  var app=document.getElementById("app");
+  var editing=false, dirty=false, readOnly=true, saving=false, art=null, assets=null, msg="";
+  var picker=document.createElement("input");picker.type="file";picker.accept="image/*";picker.hidden=true;picker.id="photo-picker";document.body.appendChild(picker);var pickFor=-1;
+
+  function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+  function get(p){return p.split(".").reduce(function(o,k){return o[k];},S);}
+  function put(p,v){var ks=p.split(".");var last=ks.pop();var o=ks.reduce(function(o,k){return o[k];},S);o[last]=v;}
+  function ed(p,tag,cls){tag=tag||"span";var v=get(p);
+    return "<"+tag+(cls?" class=\""+cls+"\"":"")+" data-p=\""+p+"\""+(editing?" contenteditable=\"true\" spellcheck=\"true\"":"")+">"+esc(v)+"</"+tag+">";}
+  function act(a,args,label,cls){return "<button type=\"button\" class=\""+(cls||"mini")+"\" data-act=\""+a+"\" data-args=\""+args+"\">"+label+"</button>";}
+  function dayTotal(d){var t=0;d.groups.forEach(function(g){g.blocks.forEach(function(b){t+=(+b.m||0);});});return t;}
+  function totalChip(d,i){var t=dayTotal(d),tg=+d.target||0;var off=tg&&t!==tg;
+    return "<span class=\"total"+(off?" off":"")+"\" data-total=\""+i+"\">"+t+" min"+(off?" of "+tg:"")+"</span>";}
+
+  function renderBar(){
+    var s=saving?"Saving":(dirty?"Unsaved changes":(msg||(readOnly?"View only":"All changes saved")));
+    var h="<span>Editable bootcamp outline</span><div class=\"toolbar-actions\"><span class=\"status"+(dirty&&!saving?" dirty":"")+"\" role=\"status\">"+esc(s)+"</span>";
+    if(!readOnly){
+      h+="<button type=\"button\" data-act=\"toggle\" data-args=\"\">"+(editing?"Finish editing":"Edit text")+"</button>";
+      h+="<button type=\"button\" class=\"primary\" data-act=\"save\" data-args=\"\""+(dirty&&!saving?"":" disabled")+">Save</button>";
+    }
+    return h+"</div>";
+  }
+  function xCell(a,args){return editing?"<td class=\"act\">"+act(a,args,"&times;","x")+"</td>":"";}
+  function xHead(){return editing?"<th class=\"act\"></th>":"";}
+  function renderOverview(){
+    var rows=S.overview.map(function(r,i){var b="overview."+i+".";var d=S.days[i];
+      var dateCell=(!editing&&d)?"<a href=\"#day-"+esc(d.num)+"\">"+esc(r.day)+"</a>":ed(b+"day");
+      return "<tr><td class=\"min date\">"+dateCell+"</td><td>"+ed(b+"theme")+"</td><td>"+ed(b+"ms")+"</td>"+xCell("delRow",i)+"</tr>";}).join("");
+    return "<section id=\"overview\"><h2>Format</h2>"+ed("format","p","emphasis")+
+      "<div class=\"tbl\"><table><thead><tr><th class=\"date\">Date</th><th class=\"theme\">Theme</th><th>What's covered</th>"+xHead()+"</tr></thead><tbody>"+rows+"</tbody></table></div>"+
+      (editing?"<div class=\"adds\">"+act("addRow","","+ Add row")+"</div>":"")+"</section>";
+  }
+  function renderInstructors(){
+    var L=S.instructors||[];
+    return "<section id=\"instructors\"><h2>Instructors</h2><div class=\"people\">"+L.map(function(x,i){var b="instructors."+i+".";
+      var ini=String(x.name||"").split(/\s+/).map(function(w){return w.charAt(0);}).join("").slice(0,2).toUpperCase();
+        var av=x.photo?"<img class=\"avatar\" src=\"/_blob/"+esc(x.photo)+"\" alt=\""+esc(x.name)+"\" onerror=\"this.replaceWith(Object.assign(document.createElement('div'),{className:'avatar ini',textContent:'"+esc(ini)+"'}))\">":"<div class=\"avatar ini\" aria-hidden=\"true\">"+esc(ini)+"</div>";
+        var up=(editing&&assets)?"<div class=\"adds\" style=\"margin:8px 0 0\">"+act("photo",i,x.photo?"Change photo":"Upload photo")+(x.photo?act("nophoto",i,"Remove photo"):"")+"</div>":"";
+        return "<div class=\"person\">"+av+"<div class=\"pbody\">"+ed(b+"name","div","pname")+"<ul class=\"pbio\"><li>"+ed(b+"role")+"</li><li><b>Teaches:</b> "+ed(b+"teaches")+"</li></ul>"+up+(editing?"<div class=\"adds\" style=\"margin:8px 0 0\">"+act("delPerson",i,"Remove instructor")+"</div>":"")+"</div></div>";}).join("")+"</div>"+
+      (editing?"<div class=\"adds\">"+act("addPerson","","+ Add instructor")+"</div>":"")+"</section>";
+  }
+  function renderPrework(){
+    var P=S.prework;
+    var items=P.checklist.map(function(c,i){return "<li>"+ed("prework.checklist."+i)+(editing?" "+act("delCheck",i,"&times;","x"):"")+"</li>";}).join("");
+    var rows=P.tools.map(function(t,i){var b="prework.tools."+i+".";
+      return "<tr><td><strong>"+ed(b+"tool")+"</strong></td><td>"+ed(b+"use")+"</td><td>"+ed(b+"level")+"</td><td>"+ed(b+"price")+"</td>"+xCell("delTool",i)+"</tr>";}).join("");
+    return "<section id=\"prework\"><h2>Pre-Work: Setup and Tool Stack</h2>"+ed("prework.intro","p")+
+      "<h3>Setup checklist</h3><ul>"+items+"</ul>"+(editing?"<div class=\"adds\">"+act("addCheck","","+ Add item")+"</div>":"")+
+      "<h3>Tool stack</h3><div class=\"tbl\"><table><thead><tr><th>Tool</th><th>Used for</th><th>Level needed</th><th>Price</th>"+xHead()+"</tr></thead><tbody>"+rows+"</tbody></table></div>"+
+      (editing?"<div class=\"adds\">"+act("addTool","","+ Add tool")+"</div>":"")+ed("prework.note","p","note")+"</section>";
+  }
+  function footRow(d,i){var t=dayTotal(d),tg=+d.target||0,off=tg&&t!==tg;
+    return "<tfoot data-total=\""+i+"\""+(off?" class=\"off\"":"")+"><tr><td class=\"min\">"+t+" min</td><td colspan=\""+(editing?3:2)+"\">"+(off?"Planned "+tg+" min. Adjust the blocks to fit.":"Total session time")+"</td></tr></tfoot>";}
+  function renderDay(d,i){
+    var b="days."+i+".";
+    var multi=d.groups.length>1;
+    var groups=d.groups.map(function(g,j){
+      var gb=b+"groups."+j+".";
+      var rows=g.blocks.map(function(x,k){var p=gb+"blocks."+k+".";
+        return "<tr><td><strong>"+ed(p+"n")+"</strong>"+((editing||x.w)?"<span class=\"who\">"+(editing?"Who: ":"")+ed(p+"w")+"</span>":"")+"</td><td>"+ed(p+"d")+"</td>"+xCell("delBlock",i+","+j+","+k)+"</tr>";}).join("");
+      var foot="";
+      return ((multi||g.label||editing)&&(g.label||editing)?ed(gb+"label","div","group-lab"):"")+
+        "<div class=\"tbl\"><table class=\"blocks\"><thead><tr><th>Block</th><th>What's covered</th>"+xHead()+"</tr></thead><tbody>"+rows+"</tbody>"+foot+"</table></div>"+
+        (editing?"<div class=\"adds\">"+act("addBlock",i+","+j,"+ Add block")+"</div>":"");
+    }).join("");
+    return "<section id=\"day-"+esc(d.num)+"\"><h2>Day "+ed(b+"num")+": "+ed(b+"title")+"</h2><p class=\"day-meta\"><b>When:</b> "+ed(b+"when")+" &nbsp;·&nbsp; <b>Lead:</b> "+ed(b+"lead")+"</p>"+groups+"</section>";
+  }
+  function renderSources(){
+    return "<section class=\"sources\" id=\"sources\"><h2>Sources</h2>"+ed("sources.asof","p","note")+"<ul>"+
+      S.sources.links.map(function(l){return "<li><a href=\""+esc(l.u)+"\" target=\"_blank\" rel=\"noopener noreferrer\">"+esc(l.t)+"</a></li>";}).join("")+"</ul></section>";
+  }
+  function render(){
+    var y=window.scrollY;
+    app.className=editing?"editing":"";
+    app.innerHTML="<div class=\"toolbar\" id=\"bar\" aria-label=\"Document tools\">"+renderBar()+"</div><div class=\"page-wrap\"><main class=\"page\">"+
+      "<header class=\"doc-header\"><div class=\"brand-row\"><div class=\"brand\">"+LOGO+"</div>"+ed("meta","p","doc-meta")+"</div></header>"+
+      ed("title","h1")+ed("lede","p")+
+      renderOverview()+renderInstructors()+renderPrework()+S.days.map(renderDay).join("")+renderSources()+
+      "<footer class=\"doc-footer\"><span>The Blueprint Training</span><span>November 2026</span></footer></main></div>";
+    window.scrollTo(0,y);
+  }
+  function refreshBar(){var bar=document.getElementById("bar");if(bar)bar.innerHTML=renderBar();}
+  function markDirty(){if(!dirty){dirty=true;msg="";refreshBar();}}
+
+  app.addEventListener("input",function(e){
+    var el=e.target.closest("[data-p]");if(!el)return;
+    var p=el.getAttribute("data-p");var v=el.textContent;
+    if(/\.m$/.test(p)||/\.target$/.test(p)){v=parseInt(v,10);if(isNaN(v))v=0;}
+    put(p,v);markDirty();
+    var m=p.match(/^days\.(\d+)\./);
+    if(m){var i=+m[1];var chip=app.querySelector("[data-total=\""+i+"\"]");if(chip)chip.outerHTML=footRow(S.days[i],i);}
+  });
+  app.addEventListener("keydown",function(e){
+    var el=e.target.closest("[contenteditable]");if(el&&e.key==="Enter"){e.preventDefault();el.blur();}
+  });
+  app.addEventListener("paste",function(e){
+    var el=e.target.closest("[contenteditable]");if(!el)return;e.preventDefault();
+    var t=(e.clipboardData||window.clipboardData).getData("text/plain").replace(/\s+/g," ");
+    var sel=window.getSelection();if(!sel.rangeCount)return;var r=sel.getRangeAt(0);r.deleteContents();r.insertNode(document.createTextNode(t));r.collapse(false);
+    el.dispatchEvent(new Event("input",{bubbles:true}));
+  });
+  app.addEventListener("click",function(e){
+    var b=e.target.closest("[data-act]");if(!b)return;
+    var a=b.getAttribute("data-act"),args=(b.getAttribute("data-args")||"").split(",").map(Number);
+    if(a==="toggle"){editing=!editing;render();return;}
+    if(a==="save"){save();return;}
+    if(a==="addBlock"){S.days[args[0]].groups[args[1]].blocks.push({n:"New block",m:15,w:"",d:""});}
+    else if(a==="delBlock"){S.days[args[0]].groups[args[1]].blocks.splice(args[2],1);}
+    else if(a==="addCheck"){S.prework.checklist.push("New item");}
+    else if(a==="delCheck"){S.prework.checklist.splice(args[0],1);}
+    else if(a==="addTool"){S.prework.tools.push({tool:"New tool",use:"",level:"",price:""});}
+    else if(a==="delTool"){S.prework.tools.splice(args[0],1);}
+    else if(a==="addRow"){S.overview.push({day:"",theme:"New row",ms:""});}
+    else if(a==="delRow"){S.overview.splice(args[0],1);}
+    else if(a==="photo"){pickFor=args[0];picker.value="";picker.click();return;}
+    else if(a==="nophoto"){delete S.instructors[args[0]].photo;}
+    else if(a==="addPerson"){(S.instructors=S.instructors||[]).push({name:"Name",role:"Role",teaches:""});}
+    else if(a==="delPerson"){S.instructors.splice(args[0],1);}
+    else return;
+    markDirty();render();
+  });
+
+
+  function shrink(file){return new Promise(function(res){
+    var img=new Image(),u=URL.createObjectURL(file);
+    img.onload=function(){var k=Math.min(1,400/Math.max(img.width,img.height));var c=document.createElement("canvas");c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);
+      c.getContext("2d").drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(u);c.toBlob(function(b){res(b||file);},"image/jpeg",0.86);};
+    img.onerror=function(){URL.revokeObjectURL(u);res(file);};img.src=u;});}
+  picker.addEventListener("change",function(){
+    var f=picker.files&&picker.files[0],i=pickFor;if(!f||i<0||!assets)return;
+    msg="Uploading photo";refreshBar();
+    shrink(f).then(function(b){return assets.upload(b);}).then(function(r){S.instructors[i].photo=r.id;msg="";markDirty();render();})
+    .catch(function(){msg="Photo upload didn't go through. Try a JPG or PNG.";refreshBar();});
+  });
+  function buildDoc(){
+    var st=document.head&&document.head.querySelector("style");
+    var reset=(st&&st.textContent)||FALLBACK_RESET;
+    var css=document.getElementById("page-css").textContent;
+    var js=document.getElementById("page-js").textContent;
+    var json=JSON.stringify(S).replace(/</g,"\\u003c");
+    return "<!doctype html><html><head><meta charset=utf8><meta name=viewport content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><style>"+reset+"</style></head><body>"+
+      "<title>One-Person Agency Bootcamp</title>\n<meta name=\"claude:viewport-fit-sides\" content=\"cover\">\n<link rel=\"stylesheet\" href=\""+FONT_HREF+"\">\n"+
+      "<style id=\"page-css\">"+css+"</style>\n<div id=\"app\"></div>\n"+
+      "<script type=\"application/json\" id=\"bootcamp-state\">"+json+"<\/script>\n"+
+      "<script id=\"page-js\">"+js+"<\/script></body></html>";
+  }
+  function save(){
+    if(!art||saving||!dirty)return;
+    saving=true;refreshBar();
+    art.publish(buildDoc()).then(function(){saving=false;dirty=false;msg="Saved";refreshBar();})
+    .catch(function(err){
+      saving=false;var c=err&&err.code;
+      if(c==="conflict"){msg="Someone saved first. Loading their version.";}
+      else if(["not_writer","not_granted","not_declared","consent_required","capability_disabled","capability_removed"].indexOf(c)>=0){readOnly=true;editing=false;dirty=false;msg="This view is read-only.";render();return;}
+      else if(c==="rate_limited"){msg="Saving too often. Wait a moment, then save again.";}
+      else if(c==="too_large"){msg="The page is too large to save. Remove some content and try again.";}
+      else {msg="Save didn't go through. Try again in a moment.";}
+      refreshBar();
+    });
+  }
+
+  render();
+  if(window.claude&&window.claude.use){
+    Promise.all([window.claude.use("artifact"),window.claude.use("user"),window.claude.use("assets")]).then(function(r){
+      art=r[0];var u=r[1];assets=r[2]||null;
+      var can=u&&typeof u.canEdit==="function"?u.canEdit():null;
+      readOnly=!art||can===false;
+      render();
+    }).catch(function(){readOnly=true;render();});
+  }
+})();
+</script>
+</body></html>
