@@ -4,10 +4,13 @@ name: Announce new Agency OS release
 # post it to the Blueprint member Slack channel and email the whole Blueprint list.
 # Only newly added release pages trigger it, so edits to an existing release never resend.
 
+# PAUSED (Nov 7, 2026): automatic sending is off while the announcement is refined.
+# To turn it back on, replace the workflow_dispatch trigger below with:
+#   push:
+#     branches: [main]
+#     paths: ["release-notes/**"]
 on:
-  push:
-    branches: [main]
-    paths: ["release-notes/**"]
+  workflow_dispatch:
 
 concurrency: announce-release
 

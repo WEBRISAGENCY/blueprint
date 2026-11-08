@@ -332,7 +332,12 @@
   </url>
   <url>
     <loc>https://theblueprint.training/seo-report/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theblueprint.training/ai-visibility-tracking/</loc>
+    <lastmod>2026-11-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
