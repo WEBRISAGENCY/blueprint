@@ -622,4 +622,20 @@
     <loc>https://theblueprint.training/release-notes/2026-10-29-chatgpt-connector/</loc>
     <lastmod>2026-10-29</lastmod>
   </url>
+
+  <url>
+    <loc>https://theblueprint.training/seo-deliverables/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theblueprint.training/seo-templates-every-agency-needs/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theblueprint.training/agency-bootcamp</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
