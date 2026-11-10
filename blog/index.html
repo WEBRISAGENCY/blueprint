@@ -1250,6 +1250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   btns.forEach(function(b){b.addEventListener('click',function(){cur=b.dataset.f;try{history.replaceState(null,'',cur==='all'?location.pathname:'#'+cur)}catch(e){}run()})});
   q.addEventListener('input',run);
   var h=location.hash.slice(1);if(names[h])cur=h;
+  try{var qp=new URLSearchParams(location.search).get('q');if(qp){q.value=qp;}}catch(e){}
   run();
 })();
 </script>
