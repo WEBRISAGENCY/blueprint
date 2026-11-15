@@ -15,9 +15,9 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Content Brief Template: How Agencies Create SEO Content That Ranks</title>
+<title>Content Brief Template for AI Writing (So It Isn't Slop)</title>
 <link rel="canonical" href="https://theblueprint.training/content-brief-template/">
-<meta name="description" content="Use this content brief template to create SEO content that actually ranks. The exact format top agencies use for consistent results.">
+<meta name="description" content="A content brief template built for AI writing: the facts, sources, banned patterns and staged prompts that stop AI drafts from coming out as slop.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -172,6 +172,204 @@ footer{background:#111421;border-top:1px solid rgba(255,255,255,0.06);padding:0;
   .author-bio-card{max-width:780px}
   @media (max-width:1000px){.article-content{grid-template-columns:1fr;gap:40px}.article-side{position:static}.article-body{max-width:none}}
 </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Content Brief Template: How to Brief AI So the Draft Isn't Slop">
+<meta property="og:description" content="A content brief template built for AI writing: the facts, sources, banned patterns and staged prompts that stop AI drafts from coming out as slop.">
+<meta property="og:url" content="https://theblueprint.training/content-brief-template/">
+<meta property="og:image" content="https://theblueprint.training/assets/blog/content-brief-template/brief-page-outline.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Content Brief Template: How to Brief AI So the Draft Isn't Slop", "description": "A content brief template built for AI writing: the facts, sources, banned patterns and staged prompts that stop AI drafts from coming out as slop.", "datePublished": "2022-06-06", "dateModified": "2026-11-15", "mainEntityOfPage": "https://theblueprint.training/content-brief-template/", "image": "https://theblueprint.training/assets/blog/content-brief-template/brief-page-outline.webp", "author": {"@type": "Person", "name": "Ryan Stewart", "url": "https://theblueprint.training/author/ryan/", "jobTitle": "Founder, The Blueprint Training and WEBRIS", "worksFor": [{"@type": "Organization", "name": "The Blueprint Training", "url": "https://theblueprint.training/"}, {"@type": "Organization", "name": "WEBRIS", "url": "https://webris.org/"}], "sameAs": ["https://www.linkedin.com/in/thedigitalmarketingconsultant/", "https://twitter.com/ryanwashere", "https://webris.org/", "https://webris.org/lawyer-up-podcast/", "https://www.amazon.com/stores/author/B0847Q4Z1K/allbooks"]}, "publisher": {"@type": "Organization", "name": "The Blueprint Training", "url": "https://theblueprint.training/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What should a content brief for AI include?", "acceptedAnswer": {"@type": "Answer", "text": "The keyword and page type, the title, H1, slug and meta description, the client's own facts and opinions, an outline with a source for every claim, banned writing patterns, a voice sample and staged prompts."}}, {"@type": "Question", "name": "Does Google penalize AI-written content?", "acceptedAnswer": {"@type": "Answer", "text": "No. Google says appropriate use of AI isn't against its guidelines. It penalizes scaled content abuse: many pages generated to manipulate rankings without adding value, however they're made."}}, {"@type": "Question", "name": "How do you stop AI from making up statistics?", "acceptedAnswer": {"@type": "Answer", "text": "Give it the sources. Put the source next to every claim in the outline, paste in the source text, and ban any statistic that isn't in the brief."}}, {"@type": "Question", "name": "How do you make AI content not sound like AI?", "acceptedAnswer": {"@type": "Answer", "text": "Ban the common patterns by name, like warm-up intros and filler words, give it a sample of the voice you want, and write one section at a time so you can correct it early."}}, {"@type": "Question", "name": "Who should write the content brief, AI or a person?", "acceptedAnswer": {"@type": "Answer", "text": "A person. AI can draft the outline, but someone has to check the search results, choose the page type, collect the client's facts and confirm every source."}}]}</script>
+<style>
+:root{--navy:#0B0E1A;--navy2:#1B2A4A;--paper:#FBF9F4;--paperline:#ECE7DB;--green:#15803D;--red:#B91C1C;--muted:#6B7280;--line:#E3E5EA}
+.article-body .pf{background:var(--paper);border:1px solid var(--paperline);border-radius:10px;padding:28px;margin:4px 0 28px;color:var(--navy);line-height:1.35}
+.article-body .pf figcaption{margin-top:18px;padding-top:12px;border-top:1px solid var(--paperline);font-size:14px;color:var(--muted)}
+.article-body .pf figcaption .src{display:block;margin-top:4px;font-size:12.5px}
+.article-body .pf table.ft{margin:0;font-size:17px;background:transparent}
+.article-body .pf .ft th{color:#8A7F66;border-bottom:2px solid var(--navy)}
+.article-body .pf .ft td{border-bottom:1px solid var(--paperline);padding:14px 12px}
+.article-body .pf .ft.center td:not(:first-child),.article-body .pf .ft.center th:not(:first-child){text-align:center}
+.article-body .mk{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;font-weight:800;font-size:16px;flex:none;color:#fff}
+.article-body .mk.ok{background:var(--green)}
+.article-body .mk.no{background:var(--red)}
+.article-body .mk.q{background:var(--navy2)}
+.article-body .chk{list-style:none;margin:0!important;display:grid;gap:14px}
+.article-body .chk.c2{grid-template-columns:1fr 1fr}
+.article-body .chk li{display:flex;gap:14px;align-items:flex-start;margin:0!important}
+.article-body .chk b{display:block;font-size:20px;line-height:1.25}
+.article-body .chk span{display:block;color:var(--muted);font-size:15.5px;margin-top:2px}
+.article-body .chk+.chk{margin-top:18px!important;padding-top:18px;border-top:2px dashed var(--paperline)}
+.article-body .vs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.article-body .vs .col{background:#fff;border:1px solid var(--paperline);border-radius:8px;padding:20px}
+.article-body .vs h5{font:400 24px Anton,sans-serif;text-transform:uppercase;margin-bottom:14px}
+.article-body .vs .bad h5{color:var(--red)}
+.article-body .vs .good h5{color:var(--green)}
+.article-body .vs ul{list-style:none;margin:0!important}
+.article-body .vs li{display:flex;gap:10px;align-items:center;font-size:18px;font-weight:600;margin-bottom:12px!important}
+.article-body .vs .bad li{color:#6B7280;text-decoration:line-through;text-decoration-color:rgba(185,28,28,.5)}
+.article-body .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.article-body .tri>div{background:#fff;border:1px solid var(--paperline);border-radius:8px;padding:18px;display:flex;flex-direction:column}
+.article-body .tri em,.article-body .big3 em,.article-body .flow em{font:400 30px Anton,sans-serif;color:var(--yellow);font-style:normal;-webkit-text-stroke:.5px #B08B00}
+.article-body .tri b{font-size:21px;margin:4px 0 6px}
+.article-body .tri p{font-size:15.5px;color:var(--muted);flex:1;margin:0 0 12px}
+.article-body .fix{display:flex;gap:8px;align-items:center;font-weight:700;font-size:15px;color:var(--green)}
+.article-body .fix .mk{width:22px;height:22px;font-size:13px}
+.article-body .kick{font:800 13px Figtree;text-transform:uppercase;letter-spacing:.7px;color:#8A7F66;margin-bottom:12px}
+.article-body .chart{width:100%;height:auto;display:block}
+.article-body .chart .cl{font:700 22px Figtree;fill:#0B0E1A}
+.article-body .chart .cv{font:400 36px Anton;fill:#0B0E1A}
+.article-body .chart .ax{font:600 13px Figtree;fill:#6B7280;text-anchor:middle}
+.article-body .chart .lg{font:700 17px Figtree}
+.article-body .serp{display:grid;gap:8px;margin-bottom:16px}
+.article-body .serp .z{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:12px;background:#fff;border:1px solid var(--paperline);border-left:6px solid var(--navy2);border-radius:6px;padding:12px 14px}
+.article-body .serp .z em{font:400 26px Anton;font-style:normal}
+.article-body .serp .z b{font-size:18px}
+.article-body .serp .z span{font-size:14px;color:var(--muted)}
+.article-body .serp .z1,.article-body .serp .z2{border-left-color:#F7C600}
+.article-body .serp .z3{border-left-color:#2F6BFF}
+.article-body .serp .z4{border-left-color:#15803D}
+.article-body .serp .z6{border-left-color:#7C3AED;margin-top:10px}
+.article-body .shot{border:2px dashed #C9BFA6;border-radius:8px;background:repeating-linear-gradient(135deg,#fff,#fff 12px,#FAF6EC 12px,#FAF6EC 24px);padding:26px;text-align:center;color:#6B5E3E}
+.article-body .shot svg{display:block;margin:0 auto 6px}
+.article-body .shot b{display:block;font:800 13px Figtree;text-transform:uppercase;letter-spacing:.8px}
+.article-body .shot p{margin:8px auto;font-size:17px;color:var(--navy);max-width:520px}
+.article-body .shot span{font-size:13px}
+.article-body .shot.data{border-color:#9DB5E8;color:#2F4F8F;background:repeating-linear-gradient(135deg,#fff,#fff 12px,#F2F6FD 12px,#F2F6FD 24px)}
+.article-body .big3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.article-body .big3 div{background:#fff;border:1px solid var(--paperline);border-radius:8px;padding:20px}
+.article-body .big3 b{display:block;font-size:22px;line-height:1.2;margin-top:4px}
+.article-body .map .row{display:grid;grid-template-columns:1fr 28px 1fr;align-items:center;margin-bottom:10px}
+.article-body .map .a{background:#fff;border:1px solid var(--paperline);padding:12px 14px;border-radius:6px;font-weight:600;font-size:16.5px}
+.article-body .map .b{background:var(--navy);color:#fff;padding:12px 14px;border-radius:6px;font-weight:700;font-size:16.5px}
+.article-body .map i,.article-body .flow>i{font-style:normal;text-align:center;font-weight:800;color:#B08B00;font-size:20px}
+.article-body .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.article-body .split>div{background:#fff;border:1px solid var(--paperline);border-radius:8px;padding:22px}
+.article-body .split b{font:400 64px/1 Anton;display:block}
+.article-body .split span{font-weight:800;font-size:20px;display:block;margin:6px 0}
+.article-body .split p{margin:0;color:var(--muted);font-size:16px}
+.article-body .split .hl{background:var(--navy);color:#fff;border-color:var(--navy)}
+.article-body .split .hl b{color:var(--yellow)}
+.article-body .split .hl p{color:#B5BACB}
+.article-body .secs{list-style:none;margin:0!important;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.article-body .secs li{display:grid;grid-template-columns:36px 1fr;column-gap:10px;background:#fff;border:1px solid var(--paperline);border-left:6px solid var(--navy2);border-radius:6px;padding:10px 12px;margin:0!important}
+.article-body .secs li.pl{border-left-color:var(--yellow);background:#FFFBEA}
+.article-body .secs em{grid-row:span 2;font:400 26px Anton;font-style:normal;align-self:center}
+.article-body .secs b{font-size:17px}
+.article-body .secs span{font-size:14px;color:var(--muted)}
+.article-body .legend{display:flex;gap:18px;margin-top:12px;font-size:14px;font-weight:700}
+.article-body .legend span:before{content:"";display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+.article-body .legend .au:before{background:var(--navy2)}
+.article-body .legend .pl:before{background:var(--yellow)}
+.article-body .gridwrap{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.article-body .grid{display:grid;grid-template-columns:repeat(7,42px);gap:4px}
+.article-body .grid span{height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px}
+.article-body .gl p{font-size:17px;margin-bottom:10px}
+.article-body .note,.article-body .fn{font-size:14px!important;color:var(--muted);margin:12px 0 0!important}
+.article-body .tl .tlh,.article-body .tl .tlr{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:10px}
+.article-body .tl .tlh{grid-template-columns:120px repeat(6,1fr)}
+.article-body .tl .tlh span{font-weight:800;font-size:13px;color:#8A7F66;text-align:center}
+.article-body .tlr{margin-top:8px}
+.article-body .tlr>span{font-weight:700;font-size:16px}
+.article-body .tlt{display:grid;grid-template-columns:repeat(6,1fr);background:#fff;border:1px solid var(--paperline);border-radius:6px;height:30px;padding:4px}
+.article-body .tlt i{background:var(--navy2);border-radius:4px}
+.article-body .tlr:nth-child(odd) .tlt i{background:#C9A100}
+.article-body .ph{color:#9A6B00;font-weight:700;background:#FFF4C2;padding:1px 6px;border-radius:4px}
+.article-body .bands>div{border-radius:6px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.article-body .bands b{font:400 26px Anton;text-transform:uppercase}
+.article-body .bands span{font-size:15.5px;text-align:right}
+.article-body .b3{background:var(--navy);color:#fff}
+.article-body .b2{background:#fff;border:1px solid var(--paperline)}
+.article-body .b1{background:#EFEAE0;color:#6B5E3E}
+.article-body .bands .here{background:var(--yellow);font-weight:800;justify-content:center;font-size:18px;padding:12px;margin:6px 0;border:3px dashed var(--navy)}
+.article-body .bands .b2{margin-bottom:6px}
+.article-body .calc>div{display:flex;justify-content:space-between;align-items:center;padding:14px 4px;border-bottom:1px solid var(--paperline);font-size:18px}
+.article-body .calc .tot{border-bottom:3px solid var(--navy);font-weight:800}
+.article-body .ceil{display:grid;grid-template-columns:1.6fr 1fr;gap:12px;align-items:end}
+.article-body .ceil>div{border-radius:8px;padding:22px}
+.article-body .ceil span{display:block;font-weight:700}
+.article-body .ceil b{display:block;font:400 48px/1.05 Anton;margin:8px 0 2px}
+.article-body .ceil em{font-style:normal;color:inherit;opacity:.75;font-size:14px}
+.article-body .ceil .pi{background:var(--navy);color:#fff;min-height:200px}
+.article-body .ceil .pi b{color:var(--yellow)}
+.article-body .ceil .pw{background:#fff;border:1px solid var(--paperline)}
+.article-body .ceil .pw b{font-size:26px}
+.article-body .arrow{margin-top:14px;font-weight:800;color:#9A7A00;font-size:16px}
+.article-body .ft.obj td:first-child{font-weight:700;color:var(--navy);width:38%}
+.article-body .flow{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap}
+.article-body .flow .st{flex:1 1 110px;background:#fff;border:1px solid var(--paperline);border-radius:8px;padding:14px}
+.article-body .flow .st b{display:block;font-size:17px;line-height:1.2;margin:2px 0 4px}
+.article-body .flow .st span{font-size:13.5px;color:var(--muted)}
+.article-body .flow>i{align-self:center}
+.article-body .flow+.shot{margin-top:16px}
+.article-body .gq{background:#fff!important;color:var(--navy)!important;border-left:6px solid #2F6BFF!important;font-size:22px!important;margin-bottom:16px!important}
+.article-body .gq cite{display:block;margin-top:10px;font-size:14px;font-style:normal;color:var(--muted);font-weight:600}
+.article-body .cta{background:var(--navy);color:#fff;padding:36px 32px;border-radius:10px;margin-top:8px}
+.article-body .cta h2{color:#fff!important}
+.article-body .cta p{color:#C9CDDA}
+.article-body .btn{display:inline-block;background:var(--yellow);color:var(--navy)!important;font:800 18px 'Barlow Condensed',sans-serif;text-transform:uppercase;padding:16px 26px;text-decoration:none;margin-top:6px}
+.article-body .bio{display:flex;gap:16px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line);font-size:16px}
+.article-body .bio b{color:var(--navy)}
+.article-body .bio p{margin:4px 0 0}
+.article-body .pf{font-family:Figtree,sans-serif}
+.article-body .pf p{font-size:inherit;line-height:1.4;color:inherit;margin-bottom:0}
+.article-body .pf ul,.article-body .pf ol{padding-left:0;list-style:none;margin-bottom:0}
+.article-body .pf li{font-size:inherit;line-height:1.35;color:inherit;padding:0;display:flex}
+.article-body .secs li{display:grid}
+.article-body .vs h5,.article-body .tri em,.article-body .big3 em,.article-body .flow em,.article-body .secs em,.article-body .split b,.article-body .bands b,.article-body .ceil b,.article-body .serp .z em{font-family:Anton,sans-serif}
+.article-body .shot p{margin:8px auto}
+.article-body .gq{border-left:6px solid #2F6BFF;background:#fff}.article-body .gq p{font-style:normal;font-size:20px;color:#0B0E1A;font-weight:600}
+.article-body .toc{background:#F7F8FA;border:1px solid rgba(0,0,0,.08);padding:20px 24px;margin:28px 0}
+.article-body .toc b{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#6B7280}
+.article-body .toc ol{margin:10px 0 0;padding-left:20px;columns:2;column-gap:28px}.article-body .toc li{font-size:15px;line-height:1.5;padding:2px 0;break-inside:avoid}
+.article-body .toc a{text-decoration:none;color:#1E3A5F;font-weight:600}
+.article-body hr{border:0;height:4px;width:56px;background:#F7C600;margin:48px 0 0}
+.article-body hr+h2{border-top:none;padding-top:24px}
+.article-body .post-cta{background:#0B0E1A;padding:32px 28px;margin-top:40px}
+.article-body .post-cta h2{color:#fff;border:none;padding:0;margin:0 0 12px}
+.article-body .post-cta p{color:#C8CEDF}
+.article-body .post-cta .btn{display:inline-block;background:#F7C600;color:#0B0E1A;text-decoration:none;font:800 18px 'Barlow Condensed',sans-serif;text-transform:uppercase;padding:14px 24px}
+.article-body table{width:100%;border-collapse:collapse}
+.article-body .chk .mk,.article-body .vs .mk,.article-body .fix .mk{color:#fff;display:inline-grid;margin:0;font-size:15px;line-height:1}
+.article-body .chk li>div>span{color:#6B7280}
+.article-body .pf{max-width:100%;overflow:hidden}
+@media (max-width:720px){.article-body .pf table{display:block;overflow-x:auto;font-size:14px}.article-body .ft.center th,.article-body .ft.center td{padding:10px 6px}}
+@media (max-width:720px){.article-body .nav nav{display:none}
+.article-body .post{font-size:18px}
+.article-body .toc ol{columns:1}
+.article-body .vs,.article-body .tri,.article-body .big3,.article-body .split,.article-body .secs,.article-body .ceil,.article-body .chk.c2{grid-template-columns:1fr}
+.article-body .pf{padding:18px}
+.article-body .map .row{grid-template-columns:1fr;gap:4px}
+.article-body .map i{transform:rotate(90deg)}
+.article-body .gridwrap{grid-template-columns:1fr}
+.article-body .grid{grid-template-columns:repeat(7,1fr)}
+.article-body .grid span{height:auto;aspect-ratio:1}
+.article-body .tl .tlh,.article-body .tl .tlr{grid-template-columns:86px 1fr}
+.article-body .tl .tlh{grid-template-columns:86px repeat(6,1fr)}
+.article-body .serp .z{grid-template-columns:32px 1fr}
+.article-body .serp .z span{grid-column:2}
+.article-body .bands>div{flex-direction:column;align-items:flex-start}
+.article-body .bands span{text-align:left}
+.article-body .post table{display:block;overflow-x:auto}}
+
+.article-body .toc summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:#0B0E1A;min-height:44px}
+.article-body .toc summary::-webkit-details-marker{display:none}
+.article-body .toc summary::after{content:"";margin-left:auto;width:9px;height:9px;border-right:2px solid #0B0E1A;border-bottom:2px solid #0B0E1A;transform:rotate(45deg);transition:transform .2s}
+.article-body .toc details[open] summary::after{transform:rotate(-135deg)}
+.article-body .toc .toc-n{font-family:Figtree,sans-serif;font-weight:600;font-size:13px;letter-spacing:0;text-transform:none;color:#6B7280}
+.article-body .toc details[open] ol{margin-top:6px}
+
+.article-body .shotfig{padding:14px}.article-body .shotfig img{margin:0;border:1px solid #ECE7DB;border-radius:6px;width:100%;height:auto;display:block}
+.article-body .chips{display:flex;flex-wrap:wrap;gap:10px}.article-body .chips span{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid #ECE7DB;border-radius:999px;padding:10px 16px;font-weight:700;font-size:16px;color:#6B7280}
+.article-body .chips span.on{border-color:#15803D;color:#0B0E1A;background:#F0FAF3}.article-body .chips .mk{width:22px;height:22px;font-size:12px;color:#fff;display:inline-grid}
+.article-body .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px}.article-body .flow>i{display:none}.article-body .ft.tpl td{font-size:15px;padding:10px 8px}.article-body .ft.tpl td:first-child{white-space:nowrap}.article-body .tall img{max-width:480px;margin:0 auto}
+@media (max-width:720px){.article-body .flow{grid-template-columns:1fr 1fr !important}}
+.article-body .secs{grid-template-columns:1fr 1fr 1fr !important}.article-body .secs li{grid-template-columns:30px 1fr !important;align-items:center}.article-body .secs em{grid-row:auto !important;font-size:22px}
+@media (max-width:720px){.article-body .secs{grid-template-columns:1fr 1fr !important}}
+
+.article-body .gq+.gq{margin-top:10px}
+.article-body .deckwrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:6px;overflow:hidden;border:1px solid #ECE7DB;background:#0B0E1A}.article-body .deckwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+</style>
+<style>.article-body .answer-first{border-left:3px solid #F7C600;padding:6px 0 6px 16px;margin:24px 0}</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -301,146 +499,214 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="/blog/">Knowledge</a><span>/</span>
 <span style="color:var(--gray-light);">Article</span>
 </div>
-<h1 class="article-title">Content Brief Template: How to Create SEO Content That Ranks</h1>
+<h1 class="article-title">Content Brief Template: How to Brief AI So the Draft Isn't Slop</h1>
 <div class="article-meta-row">
 <div class="article-author-block">
 <div class="author-avatar"><img src="../assets/ryan about page.webp" alt="Ryan Stewart"></div>
 <div><div class="author-name"><a href="/author/ryan/" style="text-decoration:none;color:inherit;">Ryan Stewart</a></div><div class="author-title">Founder, The Blueprint Training</div></div>
 </div>
 <div class="article-meta-divider"></div>
-<div class="article-meta-item"><strong>Published:</strong> Jun 6, 2022</div><div class="article-meta-divider"></div><div class="article-meta-item"><strong>Last updated:</strong> Jun 09, 2022</div>
+<div class="article-meta-item"><strong>Published:</strong> Jun 6, 2022</div><div class="article-meta-divider"></div><div class="article-meta-item"><strong>Updated:</strong> Nov 15, 2026</div><div class="article-meta-divider"></div><div class="article-meta-item"><strong>Read:</strong> 12 min</div>
 </div>
 </div>
 </section>
 
 <div class="article-content">
 <article class="article-body">
-<p>If you're writing content for SEO clients without using content briefs, you're doing it the hard way. Without a brief, every piece of content involves guesswork from the writer, multiple revision rounds, and a final product that probably isn't optimized for the right keywords anyway.</p>
-
-<p>A solid content brief fixes all of this. It tells the writer exactly what to produce -- target keyword, search intent, structure, word count, internal links, and competitive context -- so the first draft comes back 80 to 90 percent ready to publish.</p>
-
-<p>This guide covers what goes into a content brief, why it matters for agency profitability, and how to build a template you can reuse across every client.</p>
-
-<h2>Why Content Briefs Matter for Agencies</h2>
-
-<p>Without briefs, content production looks like this: you give a writer a topic, they write whatever they think makes sense, you edit it heavily, send it back, they revise, you edit again, and eventually something gets published that sort of targets the right keyword. That process eats 4 to 6 hours per article.</p>
-
-<p>With a well-built brief, the writer has clear direction from the start. Revisions drop by 50 to 70 percent. The content actually targets the right keyword with the right intent. And your team can focus on strategy instead of rewriting articles.</p>
-
-<svg viewBox="0 0 780 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:32px 0;font-family:'Figtree',sans-serif;">
-<rect width="780" height="220" fill="#F7F8FA" rx="4"/>
-<text x="390" y="28" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#6B7280" letter-spacing="0.1em">CONTENT PRODUCTION: WITH BRIEFS VS. WITHOUT</text>
-<rect x="40" y="55" width="340" height="70" rx="4" fill="#FFF" stroke="#E5E7EB"/>
-<text x="210" y="82" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#DC2626">WITHOUT BRIEF</text>
-<text x="210" y="105" text-anchor="middle" font-size="12" fill="#6B7280">3-4 revision rounds | 5-6 hrs/article | inconsistent SEO</text>
-<rect x="400" y="55" width="340" height="70" rx="4" fill="#FFF" stroke="#F7C600" stroke-width="2"/>
-<text x="570" y="82" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#059669">WITH BRIEF</text>
-<text x="570" y="105" text-anchor="middle" font-size="12" fill="#374151">1 revision round | 2-3 hrs/article | optimized from start</text>
-<!-- Bottom stats -->
-<rect x="40" y="145" width="220" height="55" rx="4" fill="#1E3A5F"/>
-<text x="150" y="170" text-anchor="middle" font-size="12" fill="#FFF" font-weight="600">Time saved per article</text>
-<text x="150" y="190" text-anchor="middle" font-size="18" fill="#F7C600" font-weight="700">50-60%</text>
-<rect x="280" y="145" width="220" height="55" rx="4" fill="#1E3A5F"/>
-<text x="390" y="170" text-anchor="middle" font-size="12" fill="#FFF" font-weight="600">Revision rounds reduced</text>
-<text x="390" y="190" text-anchor="middle" font-size="18" fill="#F7C600" font-weight="700">2-3 fewer</text>
-<rect x="520" y="145" width="220" height="55" rx="4" fill="#1E3A5F"/>
-<text x="630" y="170" text-anchor="middle" font-size="12" fill="#FFF" font-weight="600">Content quality</text>
-<text x="630" y="190" text-anchor="middle" font-size="18" fill="#F7C600" font-weight="700">Consistent</text>
-</svg>
-
-<p>The other benefit: content briefs make your process scalable. Any writer -- in-house, freelance, or AI-assisted -- can pick up a brief and produce quality work. You're not dependent on one person who "just knows" how to write for that client.</p>
-
-<h2>What Goes Into a Content Brief</h2>
-
-<p>A good brief is comprehensive enough to eliminate guesswork but concise enough to create in 20 to 30 minutes. Here's what to include:</p>
-
-<h3>1. Target Keyword and Search Intent</h3>
-
-<p>The primary keyword the content should rank for, plus the search intent behind it. Is the searcher looking for information, comparing options, or ready to buy? This determines the entire angle of the piece.</p>
-<p>Don't have the keyword yet? Here's <a href="/keyword-research/">how to do keyword research</a> so every brief starts with one.</p>
-
-<p>Include two to three secondary keywords and any related terms the writer should naturally incorporate.</p>
-
-<h3>2. Content Type and Word Count</h3>
-
-<p>Blog post, landing page, comparison article, how-to guide, listicle? Specify the format. Include a target word count based on what's currently ranking for the keyword. If the top results average 2,500 words, your brief should target that range.</p>
-
-<h3>3. Target Audience</h3>
-
-<p>Who is reading this? A marketing director at a mid-size company? A small business owner doing their own SEO? The audience determines the level of technical detail, the examples you use, and the tone of the writing.</p>
-
-<h3>4. Outline and Heading Structure</h3>
-
-<p>Provide a recommended H2/H3 structure based on SERP analysis. Look at what the top-ranking pages cover and make sure your outline hits those topics (plus anything they're missing). This is the highest-value section of the brief -- it essentially maps out the article.</p>
-
-<h3>5. Competitor References</h3>
-
-<p>Link to two to three top-ranking articles for the target keyword. Tell the writer what these pieces do well and where they fall short. The goal isn't to copy them -- it's to understand the baseline and do better.</p>
-
-<h3>6. Internal and External Links</h3>
-
-<p>List specific internal pages to link to within the content. This is easy to forget but critical for SEO. Also note any authoritative external sources the writer should reference.</p>
-
-<h3>7. Content Optimization Notes</h3>
-
-<p>If you use a tool like Surfer SEO or Clearscope, include the report link or the recommended NLP terms. This gives the writer a checklist for on-page optimization that they can verify themselves before submitting.</p>
-
-<h3>8. Brand Voice and Style Notes</h3>
-
-<p>Link to the client's brand guidelines or include a quick summary: formal vs. casual, technical vs. accessible, use of humor, any terminology to use or avoid. This prevents briefs from producing content that sounds nothing like the brand.</p>
-
-<svg viewBox="0 0 780 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:32px 0;font-family:'Figtree',sans-serif;">
-<rect width="780" height="340" fill="#F7F8FA" rx="4"/>
-<text x="390" y="28" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#6B7280" letter-spacing="0.1em">CONTENT BRIEF TEMPLATE STRUCTURE</text>
-<!-- Left column -->
-<rect x="40" y="55" width="340" height="260" rx="4" fill="#FFF" stroke="#E5E7EB"/>
-<text x="210" y="80" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#374151">STRATEGY SECTION</text>
-<line x1="60" y1="92" x2="360" y2="92" stroke="#E5E7EB"/>
-<circle cx="70" cy="112" r="5" fill="#F7C600"/><text x="84" y="116" font-size="12" fill="#374151">Target keyword + intent</text>
-<circle cx="70" cy="138" r="5" fill="#F7C600"/><text x="84" y="142" font-size="12" fill="#374151">Secondary keywords (2-3)</text>
-<circle cx="70" cy="164" r="5" fill="#F7C600"/><text x="84" y="168" font-size="12" fill="#374151">Target audience</text>
-<circle cx="70" cy="190" r="5" fill="#F7C600"/><text x="84" y="194" font-size="12" fill="#374151">Content type + word count</text>
-<circle cx="70" cy="216" r="5" fill="#F7C600"/><text x="84" y="220" font-size="12" fill="#374151">Competitor references (2-3 URLs)</text>
-<circle cx="70" cy="242" r="5" fill="#F7C600"/><text x="84" y="246" font-size="12" fill="#374151">Surfer/Clearscope report link</text>
-<text x="210" y="290" text-anchor="middle" font-size="11" fill="#6B7280">Completed by: SEO strategist (you)</text>
-<!-- Right column -->
-<rect x="400" y="55" width="340" height="260" rx="4" fill="#FFF" stroke="#F7C600" stroke-width="2"/>
-<text x="570" y="80" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#374151">WRITING SECTION</text>
-<line x1="420" y1="92" x2="720" y2="92" stroke="#E5E7EB"/>
-<circle cx="430" cy="112" r="5" fill="#1E3A5F"/><text x="444" y="116" font-size="12" fill="#374151">Recommended H2/H3 outline</text>
-<circle cx="430" cy="138" r="5" fill="#1E3A5F"/><text x="444" y="142" font-size="12" fill="#374151">Key points per section</text>
-<circle cx="430" cy="164" r="5" fill="#1E3A5F"/><text x="444" y="168" font-size="12" fill="#374151">Internal links to include</text>
-<circle cx="430" cy="190" r="5" fill="#1E3A5F"/><text x="444" y="194" font-size="12" fill="#374151">External source references</text>
-<circle cx="430" cy="216" r="5" fill="#1E3A5F"/><text x="444" y="220" font-size="12" fill="#374151">Brand voice / style notes</text>
-<circle cx="430" cy="242" r="5" fill="#1E3A5F"/><text x="444" y="246" font-size="12" fill="#374151">CTA and conversion goal</text>
-<text x="570" y="290" text-anchor="middle" font-size="11" fill="#6B7280">Used by: writer (internal, freelance, or AI)</text>
-</svg>
-
-<h2>Building the Brief: The Process</h2>
-
-<p>Creating a content brief should take 20 to 30 minutes once you have a template. Here's the workflow:</p>
-
+<p>AI writes most first drafts now.</p>
+<p>And most of them read the same: a soft intro, three "crucial" points, a summary nobody asked for.</p>
+<p><strong>That's not an AI problem. It's a brief problem. AI fills every gap in the brief with the most average sentence it can find. Here's a content brief template built for AI writers, every field explained, so the draft comes back usable instead of slop.</strong></p>
+<p class="answer-first"><strong>How do you write a content brief for AI?</strong> Give the AI everything it can't know or guess: the search intent, the exact title, H1 and meta description, the client's own facts and numbers, a source for every claim, a voice sample, and a list of banned writing patterns. Then prompt in stages: context first, then the outline, then one section at a time. A person edits the draft against the brief before it ships.</p>
+<p>Every screenshot of the template below comes from the content brief used inside The Blueprint Training. The example is a service page for a made-up Miami estate planning firm.</p>
+<p><strong>Here's the short version:</strong></p>
 <ul>
-<li><strong>Step 1:</strong> Run the target keyword through Ahrefs or SEMrush. Note the search volume, keyword difficulty, and what's currently ranking.</li>
-<li><strong>Step 2:</strong> Analyze the top 3 to 5 results. What topics do they cover? What's their structure? Where are the gaps?</li>
-<li><strong>Step 3:</strong> Build an outline based on your analysis. Add any unique angles or data that would make your content stand out.</li>
-<li><strong>Step 4:</strong> Run the keyword through Surfer or Clearscope to get NLP term recommendations.</li>
-<li><strong>Step 5:</strong> Fill in the template with all the above, plus internal links, brand notes, and any specific instructions for the writer.</li>
+<li><strong>AI invents what you leave out.</strong> Facts, sources and opinions have to be in the brief.</li>
+<li><strong>Google doesn't penalize AI content.</strong> It penalizes content with no value, however it's made.</li>
+<li><strong>Ban the slop patterns by name.</strong> "Write well" does nothing. "No warm-up intros" works.</li>
+<li><strong>The brief is the editor's checklist.</strong> If the draft breaks it, it goes back.</li>
 </ul>
+<nav class="toc"><details><summary>In this guide <span class="toc-n">14 sections</span></summary><ol>
+<li><a href="#why-ai-drafts-come-out-as-slop">Why AI Drafts Come Out as Slop</a></li>
+<li><a href="#ai-makes-up-sources-especially-on-niche-topics">AI Makes Up Sources, Especially on Niche Topics</a></li>
+<li><a href="#what-google-says-about-ai-content">What Google Says About AI Content</a></li>
+<li><a href="#the-content-brief-template-for-ai-writing">The Content Brief Template for AI Writing</a></li>
+<li><a href="#check-the-search-results-before-ai-writes-anything">Check the Search Results Before AI Writes Anything</a></li>
+<li><a href="#lock-the-title-h1-slug-and-meta-description">Lock the Title, H1, Slug and Meta Description</a></li>
+<li><a href="#give-the-ai-what-it-cant-know">Give the AI What It Can't Know</a></li>
+<li><a href="#put-a-source-next-to-every-claim">Put a Source Next to Every Claim</a></li>
+<li><a href="#ban-the-slop-patterns-by-name">Ban the Slop Patterns by Name</a></li>
+<li><a href="#give-it-a-voice-sample">Give It a Voice Sample</a></li>
+<li><a href="#prompt-in-stages-not-all-at-once">Prompt in Stages, Not All at Once</a></li>
+<li><a href="#edit-the-draft-against-the-brief">Edit the Draft Against the Brief</a></li>
+<li><a href="#ai-content-brief-faqs">AI Content Brief FAQs</a></li>
+<li><a href="#plan-and-track-content-in-agency-os">Plan and Track Content in Agency OS</a></li>
+</ol></details></nav><hr>
 
-<p>Once you've done this a few times, it becomes second nature. The template stays the same -- you're just filling in different data for each keyword.</p>
+<h2 id="why-ai-drafts-come-out-as-slop">Why AI Drafts Come Out as Slop</h2>
+<p><strong>AI writes the most likely next sentence.</strong> Without specific facts and rules, the most likely sentence is the generic one.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/brief-written-page.webp" alt="AI-written draft for Living Wills in Miami, FL that opens by saying thinking about the future can be overwhelming, before reaching the definition of a living will" loading="lazy"><figcaption>An AI first draft from the example brief. The answer doesn't show up until the second section. Source: The Blueprint Training content brief template</figcaption></figure></div>
+<p>Look at the opening line of that draft: <em>"Thinking about the future can be overwhelming..."</em></p>
+<p>Nobody searching "florida living will" needs to hear that. They want to know what it is, what Florida requires and how to get one.</p>
+<p>Slop has the same causes every time:</p>
+<ul>
+<li>❌ <strong>No facts in the brief,</strong> so the AI writes about the topic instead of the client.</li>
+<li>❌ <strong>No sources,</strong> so it guesses, or invents them.</li>
+<li>❌ <strong>No banned patterns,</strong> so you get warm-up intros and "crucial" everywhere.</li>
+<li>❌ <strong>One giant prompt,</strong> so it writes 1,500 words before you can steer it.</li>
+</ul>
+<p>Every field in the template below fixes one of these.</p>
+<hr>
 
-<h2>Using AI to Speed Up Brief Creation</h2>
+<h2 id="ai-makes-up-sources-especially-on-niche-topics">AI Makes Up Sources, Especially on Niche Topics</h2>
+<p><strong>When AI cites sources on its own, a lot of them are fake or wrong.</strong> And it gets worse the more specialized the topic.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/jmir-ai-citation-fabrication.webp" alt="JMIR Mental Health study results: GPT-4o generated 176 citations, 35 or 19.9 percent fabricated, 64 of 141 real citations with errors, fabrication of 28 and 29 percent on less familiar topics versus 6 percent on major depressive disorder, and a conclusion that nearly two-thirds of citations were fabricated or inaccurate" loading="lazy"><figcaption>Citation accuracy in GPT-4o literature reviews. Source: Linardon et al., JMIR Mental Health, November 12, 2025</figcaption></figure></div>
+<p>A <a href="https://mental.jmir.org/2025/1/e80371" target="_blank" rel="noopener">2025 study in JMIR Mental Health</a> asked GPT-4o for six literature reviews. Of 176 citations, 35 (19.9%) didn't exist. Of the 141 real ones, 64 (45.4%) had errors.</p>
+<p>Read that again: <strong>nearly two-thirds were fabricated or inaccurate.</strong></p>
+<p>The part agencies should care about: fabrication was 6% on the most familiar topic and 28 to 29% on the less familiar ones. Client work is almost always niche. Florida living will law. Roof repair in one county. Truck accident claims in one state.</p>
+<p>So the brief supplies the sources. The AI doesn't pick them.</p>
+<hr>
+<h2 id="what-google-says-about-ai-content">What Google Says About AI Content</h2>
+<p><strong>Google doesn't rank content lower because AI wrote it.</strong> It ranks content lower when it's unoriginal and adds nothing.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/google-ai-content-guidance.webp" alt="Google Search Central blog post from February 8, 2023, Google Search's guidance about AI-generated content, with the section Rewarding high-quality content, however it is produced" loading="lazy"><figcaption>Google's position on AI content, unchanged since 2023. Source: Google Search Central Blog, February 8, 2023</figcaption></figure></div>
+<p>Google's <a href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener">guidance on AI-generated content</a> says it plainly: "Appropriate use of AI or automation is not against our guidelines."</p>
+<p>What is against them is mass-producing pages to manipulate rankings. Google's spam policies call that <a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener">scaled content abuse</a>, and the first example is "using generative AI tools or other similar tools to generate many pages without adding value for users."</p>
+<p>The line between the two is the brief. <strong>A brief full of the client's facts, sources and opinions adds value. A keyword and a word count doesn't.</strong></p>
+<hr>
 
-<p>In 2026, AI can handle a lot of the grunt work in brief creation. Feed Claude or ChatGPT the top-ranking URLs for your keyword and ask it to generate a recommended outline, identify content gaps, and suggest NLP terms. You still need to validate the output against actual SERP data, but it cuts brief creation time from 30 minutes to 10.</p>
+<h2 id="the-content-brief-template-for-ai-writing">The Content Brief Template for AI Writing</h2>
+<p><strong>The template is one Google Doc with five tabs:</strong> the brief, writer instructions, AI prompts, the page outline and the written page.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/seo-templates/content-brief-template.webp" alt="Content Brief Template in Google Docs with fields for topic, primary and secondary keywords, word count, page type, title, H1 and slug, and document tabs for writer instructions, AI prompts, page outline and written page" loading="lazy"><figcaption>The top of the brief, with the document tabs on the left. Source: The Blueprint Training content brief template</figcaption></figure></div>
+<p>Keeping it in one file matters even more with AI. The prompts, the outline and the draft sit together, so the editor can see exactly what the AI was told.</p>
+<p>Here's each part, and the slop it prevents:</p>
+<figure class="pf"><table class="ft"><thead><tr><th>Brief field</th><th>What it stops</th></tr></thead><tbody>
+<tr><td>Keyword, page type and search check</td><td>A well-written page Google won't rank for that search</td></tr>
+<tr><td>Title, H1, slug and meta</td><td>Keyword-stuffed headings the AI makes up at the end</td></tr>
+<tr><td>Client facts and opinions</td><td>Generic copy that could be on any competitor's site</td></tr>
+<tr><td>A source for every claim</td><td>Made-up statistics and citations</td></tr>
+<tr><td>Banned patterns</td><td>Warm-up intros, filler words, summary paragraphs</td></tr>
+<tr><td>Voice sample</td><td>The flat, polite AI tone</td></tr>
+<tr><td>Staged prompts</td><td>1,500 words written before anyone could steer it</td></tr>
+</tbody></table><figcaption>Each field in the brief and the AI writing problem it prevents.</figcaption></figure>
+<hr>
 
-<p>Some agencies are also using AI to generate first drafts from briefs, then having human editors polish the content. This works well when the brief is detailed enough -- which is exactly why investing in better briefs pays compounding returns.</p>
+<h2 id="check-the-search-results-before-ai-writes-anything">Check the Search Results Before AI Writes Anything</h2>
+<p><strong>Search the keyword on Google before you pick the page type.</strong> AI can't tell you what Google wants to rank. The results can.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/serp-florida-living-will.webp" alt="Google results for florida living will led by a Living Will PDF from the Florida Attorney General, People also ask questions about lawyers, notarization and downsides, and a Living Will PDF form from the Florida Agency for Health Care Administration" loading="lazy"><figcaption>The top organic results for "florida living will" are government PDF forms. Source: Google search, US, November 2026</figcaption></figure></div>
+<p>The example brief targets "florida living will" with a law firm service page. What actually ranks: a living will form from the Florida Attorney General and another from the state health agency. The Florida Bar's consumer guide is next.</p>
+<p><strong>People searching that keyword want the form, not a lawyer.</strong> AI will happily write a perfect service page for it. It still won't rank.</p>
+<p>Fix it in the brief, before anything gets written:</p>
+<ul>
+<li>✅ <strong>Change the page type.</strong> A guide to Florida's living will rules, with the form linked.</li>
+<li>✅ <strong>Or change the keyword.</strong> "Living will lawyer Miami" fits a service page.</li>
+</ul>
+<p>Pull secondary keywords from People Also Ask, and set the word count from the pages that rank. More in <a href="/keyword-research/">how to do keyword research</a>.</p>
+<hr>
 
-<h2>Get the Template</h2>
+<h2 id="lock-the-title-h1-slug-and-meta-description">Lock the Title, H1, Slug and Meta Description</h2>
+<p><strong>Write these four fields yourself.</strong> Left to AI, they come back with the keyword four times and no reason to click.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/brief-title-h1-slug-meta.webp" alt="Content brief fields for recommended word count of 1200 and page type Service Page, followed by fields for title, H1, slug and meta description" loading="lazy"><figcaption>The on-page fields, filled in by the strategist before the AI starts. Source: The Blueprint Training content brief template</figcaption></figure></div>
+<ul>
+<li><strong>Title:</strong> the keyword plus a reason to click. Google wants title text that's <a href="https://developers.google.com/search/docs/appearance/title-link" target="_blank" rel="noopener">descriptive and concise</a>, without keyword stuffing.</li>
+<li><strong>H1:</strong> close to the title, not a copy of it.</li>
+<li><strong>Slug:</strong> short, lowercase, usually the keyword.</li>
+<li><strong>Meta description:</strong> a direct answer. Google may show it as the snippet <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener">when it describes the page better</a> than the page text does.</li>
+</ul>
+<p>Then give them to the AI as fixed. It writes the page under your H1, not its own.</p>
+<hr>
+<h2 id="give-the-ai-what-it-cant-know">Give the AI What It Can't Know</h2>
+<p><strong>AI knows the topic. It doesn't know the client.</strong> Everything that makes the page different has to come from the brief.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/claude-prompting-be-clear.webp" alt="Claude prompting best practices: be clear and direct, think of Claude as a brilliant but new employee who lacks context on your norms and workflows, and a key test of showing the prompt to a colleague with minimal context" loading="lazy"><figcaption>Anthropic's own advice: treat the model like a brilliant new employee with no context. Source: Claude Platform Docs, prompting best practices</figcaption></figure></div>
+<p>Anthropic's <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">prompting guide</a> says to treat the model like "a brilliant but new employee who lacks context on your norms and workflows." You wouldn't hand a new writer a keyword and walk away.</p>
+<p>Put these in the brief, from the client call or intake form:</p>
+<ul>
+<li><strong>Real numbers:</strong> years in business, cases handled, results, prices or fees.</li>
+<li><strong>How they actually do it:</strong> the steps, the timeline, what happens on the first call.</li>
+<li><strong>Their opinions:</strong> what they tell every client, what competitors get wrong.</li>
+<li><strong>Local details:</strong> the courts, the cities, the state rules that apply.</li>
+</ul>
+<p>If you don't have one of these, mark it in the brief as a gap and ask the client. Don't let the AI fill it in.</p>
+<hr>
 
-<p>The brief is one of ten documents every client needs. See the full list in <a href="/seo-templates-every-agency-needs/">SEO templates every agency needs</a>.</p>
-<p>The full content brief template system -- including Google Sheets trackers, brief templates for different content types, and training videos on the entire process -- is available inside <a href="https://theblueprint.training/sign-up">The Blueprint Training</a>. It's one of the most used templates in the program because it directly impacts how fast (and profitably) agencies can produce content at scale.</p>
+<h2 id="put-a-source-next-to-every-claim">Put a Source Next to Every Claim</h2>
+<p><strong>The outline lists every section, what it covers and the source for each claim.</strong> This is the single biggest fix for made-up facts.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/brief-page-outline.webp" alt="Page outline with sections for the introduction, what is a living will and legal requirements in Florida, each bullet followed by a citation such as Florida Statutes 765.302, the Mayo Clinic, the American Bar Association and the National Institute on Aging" loading="lazy"><figcaption>Each point in the outline comes with the source the AI should use. Source: The Blueprint Training content brief template</figcaption></figure></div>
+<p>In the example, the legal requirements section cites Florida Statutes § 765.303 and § 765.305. The definitions cite the Mayo Clinic and the National Institute on Aging.</p>
+<p>Paste the actual text of each source into the prompt, or attach it, not just the name. That way the AI writes from the source instead of from memory.</p>
+<p>Use government, court, academic and non-profit sources. The template's rule is in red: <strong>never link to competitors.</strong> Find the original source they quoted instead.</p>
+<hr>
 
+<h2 id="ban-the-slop-patterns-by-name">Ban the Slop Patterns by Name</h2>
+<p><strong>"Write in a clear, engaging style" changes nothing.</strong> Naming the exact patterns you don't want does.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/brief-writer-instructions.webp" alt="Writer and editor instructions: get straight to the point in the introduction and avoid warming up the reader, keep H2s unique, make the meta description a direct answer, link statistics to non-profit or government sources, never link to competitors, and add internal links" loading="lazy"><figcaption>The writer rules, including a ban on the AI habit of "warming up" the reader. Source: The Blueprint Training content brief template</figcaption></figure></div>
+<p>The template already bans the worst one: rule #2 says the intro must answer the question, and calls out "warming up" the reader as a classic AI habit. Add the rest to your writer instructions:</p>
+<ul>
+<li>❌ <strong>Warm-up intros:</strong> "In today's fast-paced world...", "Thinking about the future can be overwhelming..."</li>
+<li>❌ <strong>Filler adjectives:</strong> crucial, vital, essential, invaluable, seamless, robust.</li>
+<li>❌ <strong>Padding verbs:</strong> delve, navigate, leverage, unlock, empower.</li>
+<li>❌ <strong>Lists of three for rhythm,</strong> not because there are three things.</li>
+<li>❌ <strong>Summary paragraphs</strong> that repeat what the section just said.</li>
+<li>❌ <strong>Any statistic</strong> that isn't in the outline's sources.</li>
+</ul>
+<p>And the positive rules:</p>
+<ul>
+<li>✅ <strong>Answer first,</strong> in the first two sentences.</li>
+<li>✅ <strong>Short paragraphs,</strong> no more than three sentences.</li>
+<li>✅ <strong>Every claim backed</strong> by a number, a source or the client's own experience.</li>
+</ul>
+<hr>
+
+<h2 id="give-it-a-voice-sample">Give It a Voice Sample</h2>
+<p><strong>Show the AI what good looks like.</strong> A sample of the client's best page does more than a paragraph describing their tone.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/claude-prompting-examples.webp" alt="Claude prompting best practices on using examples effectively: examples are one of the most reliable ways to steer output format, tone and structure, make them relevant, diverse and structured, and include 3 to 5 examples for best results" loading="lazy"><figcaption>Examples steer tone and structure more reliably than descriptions. Source: Claude Platform Docs, prompting best practices</figcaption></figure></div>
+<p>Anthropic calls examples "one of the most reliable ways to steer Claude's output format, tone, and structure," and suggests three to five of them.</p>
+<p>Add a voice field to the brief with one or two pages the client already likes. Their about page and a service page they wrote themselves usually work. Tell the AI to match the sentence length and tone, not copy the content.</p>
+<hr>
+
+<h2 id="prompt-in-stages-not-all-at-once">Prompt in Stages, Not All at Once</h2>
+<p><strong>Don't paste the whole brief and ask for a page.</strong> Give the context, then the outline, then write one section at a time.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/brief-ai-prompts.webp" alt="AI Prompts tab with Prompt 1 describing a Miami estate planning attorney, the firm, the page type, a professional tone, paragraphs of no more than three sentences and a 2,000 word limit, ending with do not start writing yet, and Prompt 2 handing over the outline" loading="lazy"><figcaption>Prompt 1 sets the context and ends with "DO NOT START WRITING YET." Source: The Blueprint Training content brief template</figcaption></figure></div>
+<p>The template's prompts work in this order:</p>
+<ol>
+<li><strong>Context.</strong> Who the client is, the page type, tone, paragraph length and word limit. It ends with "DO NOT START WRITING YET."</li>
+<li><strong>Outline.</strong> Paste the outline with its sources.</li>
+<li><strong>One section at a time.</strong> Review each one before you ask for the next.</li>
+</ol>
+<p>Writing in sections lets you catch a bad intro before it sets the tone for the next 1,500 words. More on where AI fits in delivery in the <a href="/ai-seo-process/">AI SEO process</a>.</p>
+<hr>
+<h2 id="edit-the-draft-against-the-brief">Edit the Draft Against the Brief</h2>
+<p><strong>The brief is also the editor's checklist.</strong> AI drafts break the rules, even good ones. Someone has to check.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/google-helpful-content-questions.webp" alt="Google Search Central page Creating helpful, reliable, people-first content, listing content and quality questions such as whether the content provides original information and whether the page title gives a helpful summary" loading="lazy"><figcaption>Google's own questions for judging a page work as a final check. Source: Google Search Central</figcaption></figure></div>
+<p>The example draft fails two checks in its first 150 words. The intro warms up instead of answering. And a leftover line says <em>"These references provide a clear understanding..."</em> when no references were ever linked.</p>
+<p>Check every draft for:</p>
+<ul>
+<li>✅ The answer in the first two sentences.</li>
+<li>✅ Every statistic matches a source in the outline.</li>
+<li>✅ None of the banned patterns.</li>
+<li>✅ The client's facts and opinions are actually in it.</li>
+<li>✅ Internal links to the matching service page and related posts.</li>
+</ul>
+<p>Then run it past Google's <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">helpful content questions</a>. The first one is the hardest for AI: does it provide original information, reporting, research or analysis? If the brief had the client's facts in it, the answer is yes.</p>
+<p>For the other templates around the brief, see <a href="/seo-templates-every-agency-needs/">SEO templates every agency needs</a>. For how briefs fit a content plan, see <a href="/seo-content-training/">SEO content strategy</a>.</p>
+<hr>
+
+<h2 id="ai-content-brief-faqs">AI Content Brief FAQs</h2>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/content-brief-template/google-scaled-content-abuse.webp" alt="Google spam policy for scaled content abuse: many pages generated to manipulate rankings and not help users, with examples including using generative AI tools to generate many pages without adding value for users" loading="lazy"><figcaption>What Google actually penalizes: scaled pages with no added value. Source: Google Search Central spam policies</figcaption></figure></div>
+<h3>What should a content brief for AI include?</h3>
+<p>The keyword and page type, the title, H1, slug and meta description, the client's own facts and opinions, an outline with a source for every claim, banned writing patterns, a voice sample and staged prompts.</p>
+<h3>Does Google penalize AI-written content?</h3>
+<p>No. Google says appropriate use of AI isn't against its guidelines. It penalizes scaled content abuse: many pages generated to manipulate rankings without adding value, however they're made.</p>
+<h3>How do you stop AI from making up statistics?</h3>
+<p>Give it the sources. Put the source next to every claim in the outline, paste in the source text, and ban any statistic that isn't in the brief.</p>
+<h3>How do you make AI content not sound like AI?</h3>
+<p>Ban the common patterns by name, like warm-up intros and filler words, give it a sample of the voice you want, and write one section at a time so you can correct it early.</p>
+<h3>Who should write the content brief, AI or a person?</h3>
+<p>A person. AI can draft the outline, but someone has to check the search results, choose the page type, collect the client's facts and confirm every source.</p>
+<hr>
+
+<h2 id="plan-and-track-content-in-agency-os">Plan and Track Content in Agency OS</h2>
+<p>Agency OS turns the website audit into a content plan for each client, then tracks every published page's impressions and clicks in the monthly report.</p>
+<div markdown="0"><figure class="pf shotfig"><img src="/assets/blog/seo-report/agency-os-content-performance.webp" alt="Content table listing published pages with title, URL, publish date, 30-day impressions and clicks, each with percentage change" loading="lazy"><figcaption>Published pages and their results in an Agency OS client report. Source: Agency OS</figcaption></figure></div>
+<p>Blueprint members get the software, this content brief template and two live coaching calls a week. <a href="/sign-up.html">Join The Blueprint</a> and stop publishing AI drafts that sound like everyone else's.</p>
 </article>
 <aside class="article-side">
   <div class="os-promo">
