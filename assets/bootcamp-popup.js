@@ -30,8 +30,10 @@
     ".bptp-card{position:relative;box-sizing:border-box;width:100%;max-width:820px;max-height:calc(100vh - 32px);overflow:auto;display:grid;grid-template-columns:44% 1fr;background:#fff;color:#0B0E1A;border-radius:18px;box-shadow:0 30px 80px -20px rgba(11,14,26,.45);transform:translateY(12px) scale(.98);transition:transform .3s ease;text-align:left}" +
     ".bptp-in .bptp-card{transform:none}" +
     ".bptp-card:focus{outline:none}" +
-    ".bptp-media{position:relative;display:block;min-height:100%;background:#0B0E1A url('/assets/bootcamp-popup.webp') 38% center/cover no-repeat}" +
-    ".bptp-play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:999px;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .2s ease}" +
+    ".bptp-media{position:relative;display:block;overflow:hidden;min-height:320px;background:#0B0E1A}" +
+    ".bptp-media picture,.bptp-media img{position:absolute;top:0;left:0;width:100%;height:100%;display:block}" +
+    ".bptp-media img{object-fit:cover;object-position:38% center}" +
+    ".bptp-play{position:absolute;left:20px;bottom:20px;width:56px;height:56px;border-radius:999px;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .2s ease}" +
     ".bptp-media:hover .bptp-play{transform:scale(1.07)}" +
     ".bptp-body{padding:48px 44px 40px;display:flex;flex-direction:column}" +
     ".bptp-x{position:absolute;top:12px;right:12px;z-index:2;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:0;border-radius:999px;background:#f1f2f5;color:#4b5263;cursor:pointer;padding:0;transition:background .15s ease,color .15s ease}" +
@@ -47,7 +49,7 @@
     ".bptp-btn:hover{background:#1e2538;color:#fff}" +
     ".bptp-btn svg{color:#F7C600;transition:transform .15s ease}" +
     ".bptp-btn:hover svg{transform:translateX(3px)}" +
-    "@media (max-width:680px){.bptp-card{grid-template-columns:1fr;max-width:420px}.bptp-media{min-height:0;aspect-ratio:16/9;background-position:center 30%}.bptp-body{padding:26px 24px 24px}.bptp-h{font-size:36px}.bptp-p{font-size:16px;margin-bottom:22px}.bptp-x{background:rgba(255,255,255,.92)}}" +
+    "@media (max-width:680px){.bptp-card{grid-template-columns:1fr;max-width:420px}.bptp-media{min-height:0;height:0;padding-top:56.25%}.bptp-media img{object-position:center 30%}.bptp-body{padding:26px 24px 24px}.bptp-h{font-size:36px}.bptp-p{font-size:16px;margin-bottom:22px}.bptp-x{background:rgba(255,255,255,.92)}}" +
     "@media (prefers-reduced-motion:reduce){.bptp-wrap,.bptp-card,.bptp-play,.bptp-btn svg{transition:none}}";
 
   var html = "" +
@@ -56,7 +58,7 @@
         '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
       "</button>" +
       '<a class="bptp-media" data-bptp="image" href="' + TARGET + '" aria-label="Watch the bootcamp overview" tabindex="-1">' +
-        '<span class="bptp-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="#0B0E1A"/></svg></span>' +
+        '<picture><source srcset="/assets/bootcamp-ryan.webp" type="image/webp"><img src="/assets/bootcamp-ryan.jpg" alt="" width="760" height="509" decoding="async"></picture><span class="bptp-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="#0B0E1A"/></svg></span>' +
       "</a>" +
       '<div class="bptp-body">' +
         '<p class="bptp-tag"><span class="bptp-dot" aria-hidden="true"></span>Live bootcamp · Starts Nov 30</p>' +
