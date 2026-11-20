@@ -5,7 +5,7 @@
   var DELAY_MS = 3000;
   var KEY = "bpt_bootcamp_popup";
   var HIDE_DAYS_CLOSED = 7;   // after the X, wait a week before showing again
-  var HIDE_DAYS_CLICKED = 30; // after Yes or Tell me more, wait a month
+  var HIDE_DAYS_CLICKED = 30; // after clicking through, wait a month
 
   // Pages where the pop-up would get in the way (funnels, checkout, internal docs)
   var SKIP = [/^\/agency-bootcamp/, /^\/sign-up/, /^\/thank-you/, /^\/get-started/, /^\/presale/,
@@ -25,43 +25,44 @@
   function snooze(days) { store(false, String(Date.now() + days * 864e5)); }
 
   var css = "" +
-    ".bptp-wrap{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(5,7,14,.72);opacity:0;transition:opacity .25s ease;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}" +
+    ".bptp-wrap{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(11,14,26,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;transition:opacity .3s ease;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}" +
     ".bptp-wrap.bptp-in{opacity:1}" +
-    ".bptp-card{position:relative;box-sizing:border-box;width:100%;max-width:520px;max-height:calc(100vh - 32px);overflow:auto;background:#0B0E1A;color:#fff;border:1px solid #23293d;border-top:5px solid #F7C600;border-radius:16px;padding:44px 40px 36px;box-shadow:0 40px 90px -30px rgba(0,0,0,.8);transform:translateY(16px);transition:transform .25s ease;text-align:left}" +
+    ".bptp-card{position:relative;box-sizing:border-box;width:100%;max-width:820px;max-height:calc(100vh - 32px);overflow:auto;display:grid;grid-template-columns:44% 1fr;background:#fff;color:#0B0E1A;border-radius:18px;box-shadow:0 30px 80px -20px rgba(11,14,26,.45);transform:translateY(12px) scale(.98);transition:transform .3s ease;text-align:left}" +
     ".bptp-in .bptp-card{transform:none}" +
     ".bptp-card:focus{outline:none}" +
-    ".bptp-x{position:absolute;top:10px;right:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;padding:0}" +
-    ".bptp-x:hover{background:rgba(255,255,255,.18)}" +
-    ".bptp-x:focus-visible,.bptp-btn:focus-visible{outline:3px solid #4A9FD5;outline-offset:3px}" +
-    ".bptp-eyebrow{margin:0 0 14px;padding-right:48px;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:#F7C600}" +
-    ".bptp-h{margin:0 0 14px;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:800;font-size:40px;line-height:1.02;text-transform:uppercase;color:#fff}" +
-    ".bptp-p{margin:0 0 10px;font-size:17px;line-height:1.5;color:#c9d2e3}" +
-    ".bptp-p b{color:#fff}" +
-    ".bptp-q{margin:22px 0 14px;font-size:19px;font-weight:700;color:#fff}" +
-    ".bptp-row{display:flex;gap:12px}" +
-    ".bptp-btn{flex:1;display:flex;align-items:center;justify-content:center;min-height:54px;box-sizing:border-box;padding:12px 18px;border-radius:10px;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;cursor:pointer;white-space:nowrap}" +
-    ".bptp-yes{background:#F7C600;color:#0B0E1A;border:2px solid #F7C600}" +
-    ".bptp-yes:hover{background:#ffd52e;border-color:#ffd52e}" +
-    ".bptp-more{background:transparent;color:#fff;border:2px solid #5b6480}" +
-    ".bptp-more:hover{border-color:#fff}" +
-    "@media (max-width:480px){.bptp-card{padding:40px 22px 24px}.bptp-h{font-size:32px}.bptp-p{font-size:16px}.bptp-row{flex-direction:column}}" +
-    "@media (prefers-reduced-motion:reduce){.bptp-wrap,.bptp-card{transition:none}}";
+    ".bptp-media{position:relative;display:block;min-height:100%;background:#0B0E1A url('/assets/bootcamp-popup.webp') 38% center/cover no-repeat}" +
+    ".bptp-play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:999px;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .2s ease}" +
+    ".bptp-media:hover .bptp-play{transform:scale(1.07)}" +
+    ".bptp-body{padding:48px 44px 40px;display:flex;flex-direction:column}" +
+    ".bptp-x{position:absolute;top:12px;right:12px;z-index:2;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:0;border-radius:999px;background:#f1f2f5;color:#4b5263;cursor:pointer;padding:0;transition:background .15s ease,color .15s ease}" +
+    ".bptp-x:hover{background:#e4e6eb;color:#0B0E1A}" +
+    ".bptp-x:focus-visible,.bptp-btn:focus-visible,.bptp-media:focus-visible{outline:3px solid #2868d5;outline-offset:3px}" +
+    ".bptp-tag{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:0 0 18px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6368}" +
+    ".bptp-dot{width:8px;height:8px;border-radius:999px;background:#e5484d;box-shadow:0 0 0 4px rgba(229,72,77,.15)}" +
+    ".bptp-h{margin:0 0 14px;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:800;font-size:44px;line-height:.98;text-transform:uppercase;letter-spacing:.005em;color:#0B0E1A}" +
+    ".bptp-h span{box-shadow:inset 0 -.32em 0 #F7C600}" +
+    ".bptp-p{margin:0 0 28px;font-size:17px;line-height:1.55;color:#4b5263}" +
+    ".bptp-p b{color:#0B0E1A;font-weight:700}" +
+    ".bptp-btn{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;box-sizing:border-box;padding:14px 22px;border-radius:12px;background:#0B0E1A;color:#fff;font-size:17px;font-weight:700;text-decoration:none;cursor:pointer;transition:background .15s ease}" +
+    ".bptp-btn:hover{background:#1e2538;color:#fff}" +
+    ".bptp-btn svg{color:#F7C600;transition:transform .15s ease}" +
+    ".bptp-btn:hover svg{transform:translateX(3px)}" +
+    "@media (max-width:680px){.bptp-card{grid-template-columns:1fr;max-width:420px}.bptp-media{min-height:0;aspect-ratio:16/9;background-position:center 30%}.bptp-body{padding:26px 24px 24px}.bptp-h{font-size:36px}.bptp-p{font-size:16px;margin-bottom:22px}.bptp-x{background:rgba(255,255,255,.92)}}" +
+    "@media (prefers-reduced-motion:reduce){.bptp-wrap,.bptp-card,.bptp-play,.bptp-btn svg{transition:none}}";
 
   var html = "" +
     '<div class="bptp-card" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="bptp-h" aria-describedby="bptp-d">' +
       '<button type="button" class="bptp-x" aria-label="Close">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
       "</button>" +
-      '<p class="bptp-eyebrow">Live bootcamp · Starts Mon, Nov 30</p>' +
-      '<h2 class="bptp-h" id="bptp-h">AI is killing the traditional SEO agency.</h2>' +
-      '<div id="bptp-d">' +
-        '<p class="bptp-p">The One-Person Agency Program is a 10-day live bootcamp that gives you the full roadmap to run a lean, AI-powered agency.</p>' +
-        '<p class="bptp-p"><b>Free for Blueprint members.</b> $599 early bird for everyone else.</p>' +
-      "</div>" +
-      '<p class="bptp-q">Want to save your seat?</p>' +
-      '<div class="bptp-row">' +
-        '<a class="bptp-btn bptp-yes" data-bptp="yes" href="' + TARGET + '#pricing">Yes</a>' +
-        '<a class="bptp-btn bptp-more" data-bptp="more" href="' + TARGET + '">Tell me more</a>' +
+      '<a class="bptp-media" data-bptp="image" href="' + TARGET + '" aria-label="Watch the bootcamp overview" tabindex="-1">' +
+        '<span class="bptp-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="#0B0E1A"/></svg></span>' +
+      "</a>" +
+      '<div class="bptp-body">' +
+        '<p class="bptp-tag"><span class="bptp-dot" aria-hidden="true"></span>Live bootcamp · Starts Nov 30</p>' +
+        '<h2 class="bptp-h" id="bptp-h">Your agency needs a <span>new playbook.</span></h2>' +
+        '<p class="bptp-p" id="bptp-d">10 live sessions on running a lean, AI-powered agency, taught by Ryan Stewart and the WEBRIS team. <b>Free for Blueprint members.</b></p>' +
+        '<a class="bptp-btn" data-bptp="cta" href="' + TARGET + '">See the bootcamp<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>' +
       "</div>" +
     "</div>";
 
@@ -70,7 +71,7 @@
     if (!document.querySelector('link[href*="Barlow+Condensed"]')) {
       var f = document.createElement("link");
       f.rel = "stylesheet";
-      f.href = "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Figtree:wght@400;700&display=swap";
+      f.href = "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Figtree:wght@400;700&display=swap";
       document.head.appendChild(f);
     }
     var st = document.createElement("style");
@@ -87,7 +88,7 @@
     requestAnimationFrame(function () { wrap.classList.add("bptp-in"); });
 
     var closeBtn = wrap.querySelector(".bptp-x");
-    var focusables = wrap.querySelectorAll("button, a[href]");
+    var focusables = wrap.querySelectorAll(".bptp-x, .bptp-btn");
     wrap.querySelector(".bptp-card").focus({ preventScroll: true });
 
     function close() {
