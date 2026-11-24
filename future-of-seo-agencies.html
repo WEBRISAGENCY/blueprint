@@ -327,6 +327,7 @@ var WATCH_URL = '/future-of-seo-agencies-watch';
       var btn=f.querySelector('.btn'); btn.disabled=true; btn.textContent='Unlocking the video...';
       window.dataLayer=window.dataLayer||[];
       window.dataLayer.push({event:'vsl_optin'});
+      try{ if(typeof window.fbq==='function'){ window.fbq('track','Lead',{content_name:'Future of SEO agencies VSL', content_category:'vsl_optin'}); } }catch(_){}
       var done=false, go=function(){ if(done) return; done=true; location.href = WATCH_URL + (location.search || ''); };
       setTimeout(go, 6000); /* never leave someone stuck if the server is slow */
       fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
