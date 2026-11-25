@@ -242,10 +242,9 @@
 /agency-os/setup-deck.html   /help/software-and-data-you-need.html   301
 /agency-os/setup.html        /help/software-and-data-you-need.html   301
 
-# Get started → Sign up (forced so the old static file does not win)
-/get-started          /sign-up.html   301!
-/get-started/         /sign-up.html   301!
-/get-started.html     /sign-up.html   301!
+# /get-started is the Agency OS paid signup lander (get-started.html).
+# It used to be forced to /sign-up.html; that redirect was removed Nov 2026 so
+# the page can serve itself.
 
 # SEO proposal consolidation (Nov 2026): template post merged into /seo-proposal/
 /seo-proposal-template/*   /seo-proposal/   301!

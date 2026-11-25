@@ -3,3 +3,6 @@
 *.mp4
 _to_delete/
 meta-audiences/
+
+# Large source video files: GitHub rejects anything over 100MB.
+*.mov
