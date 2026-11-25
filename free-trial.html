@@ -44,6 +44,8 @@ src="https://www.facebook.com/tr?id=702253184199010&ev=PageView&noscript=1"></no
 <meta name="twitter:image" content="https://theblueprint.training/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/ewj221zjjy.js" async type="module"></script>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700;800&family=Bebas+Neue&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* Blueprint — generated from tokens.json */
@@ -898,6 +900,17 @@ body { padding-top: 122px; }
   background: rgba(15, 23, 42, .04); border-color: var(--bpt-line, #e6e9f0);
   color: var(--bpt-body, #3d4457);
 }
+.ln-video {
+  position: relative; border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 24px 60px rgba(8,13,28,.38);
+  background: #0b0e1a;
+}
+.ln-video wistia-player { display: block; width: 100%; }
+wistia-player[media-id='ewj221zjjy']:not(:defined) {
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ewj221zjjy/swatch');
+  display: block; filter: blur(5px); padding-top: 56.25%;
+}
 .ln-hero--light .ln-video { border-color: var(--bpt-line, #e6e9f0); }
 
 /* ---- Phone (390) ---- */
@@ -911,8 +924,7 @@ body { padding-top: 122px; }
   .ln-lead { font-size: 15.5px; }
   .ln-hero-ctas { flex-direction: column; align-items: stretch; }
   .ln-hero-ctas > * { width: 100%; }
-  .ln-video { aspect-ratio: 16 / 11; }
-  .ln-video .play { width: 64px; height: 64px; }
+  .ln-video { border-radius: 12px; }
   .ln-chips { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
   .ln-chip { flex: 0 0 auto; }
   .ln-panel { padding: 18px 14px; }
@@ -1018,11 +1030,7 @@ body { padding-top: 122px; }
 
       <div style="flex: 1 1 440px; min-width: 0">
         <div class="ln-video">
-          
-          <button class="play" type="button" aria-label="Play the demo">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="var(--bpt-ink, #0b0e1a)" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
-          </button>
-          <span class="dur">4 min</span>
+          <wistia-player media-id="ewj221zjjy" seo="false" aspect="1.7777777777777777"></wistia-player>
         </div>
         <p class="ln-hero-note" style="margin: 14px 0 0; text-align: center; font-size: 13.5px">
           A full walkthrough of a real client workspace. No signup, no sales call.
