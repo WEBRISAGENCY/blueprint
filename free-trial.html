@@ -400,42 +400,23 @@ a:hover { color: var(--bpt-blue-deep); }
 /* Agency OS — website UI kit. Section-level CSS on top of the global brand sheet. */
 @import url('../../styles.css');
 
-body { padding-top: 122px; }
-@media (max-width: 900px) { body { padding-top: 90px; } }
-
-/* ── BETA BAR ─────────────────────────────────────────── */
-.beta-bar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 110; height: 36px;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  background: var(--bpt-ink); color: var(--bpt-yellow);
-  font-size: 12.5px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
-  padding: 0 14px; white-space: nowrap; overflow: hidden;
-}
-.beta-bar b { color: #fff; }
+body { padding-top: 86px; }
+@media (max-width: 900px) { body { padding-top: 54px; } }
 
 /* ── NAV ──────────────────────────────────────────────── */
-.nav-bar { position: fixed; top: 36px; left: 0; right: 0; z-index: 100; background: #fff; box-shadow: var(--shadow-nav); }
+.nav-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; box-shadow: var(--shadow-nav); }
 .nav-inner { max-width: var(--container-wide); margin: 0 auto; display: flex; align-items: stretch; height: 86px; padding: 0 32px; }
 .nav-logo { display: flex; align-items: center; padding-right: 28px; flex-shrink: 0; }
 .nav-logo img { height: 40px; width: auto; }
-.nav-links { display: flex; align-items: stretch; flex: 1; justify-content: center; }
-.nav-link {
-  display: flex; align-items: center; font-family: var(--font-nav); font-size: 24px;
-  letter-spacing: .06em; color: #1E3A5F; padding: 0 20px; cursor: pointer;
-  border-bottom: 3px solid transparent; transition: color var(--dur-fast) var(--ease);
-}
-.nav-link:hover { color: #132c54; }
-.nav-link.is-active { color: var(--bpt-blue); border-bottom-color: var(--bpt-yellow); }
 .nav-right { display: flex; align-items: center; margin-left: auto; }
-.nav-login { font-family: var(--font-nav); font-size: 22px; letter-spacing: .06em; color: #1E3A5F; padding: 0 20px; cursor: pointer; }
-.nav-login:hover { color: #132c54; }
 .nav-cta {
   background: var(--bpt-yellow); color: var(--bpt-ink); font-family: var(--font-nav);
   font-size: 22px; letter-spacing: .06em; padding: 0 36px; display: flex; align-items: center;
   height: 100%; cursor: pointer; transition: background var(--dur-fast) var(--ease); border: 0;
 }
 .nav-cta:hover { background: #D9AE00; }
-@media (max-width: 900px) { .nav-links, .nav-right { display: none; } .nav-inner { height: 54px; padding: 0 16px; } .nav-logo img { height: 27px; } }
+.nav-cta { white-space: nowrap; }
+@media (max-width: 900px) { .nav-inner { height: 54px; padding: 0 16px; } .nav-logo img { height: 27px; } .nav-cta { font-size: 16px; padding: 0 16px; } }
 
 /* ── HERO ─────────────────────────────────────────────── */
 .hero { position: relative; padding: 70px 0 40px; text-align: center; color: #fff; }
@@ -687,6 +668,20 @@ body { padding-top: 122px; }
   font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: 20px;
 }
 .ln-cta:hover { background: var(--bpt-yellow-dark, #e0b200); }
+/* ── WHAT'S INCLUDED CARD ─────────────────────────────── */
+.ln-incl-price { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding: 22px 0 4px; }
+.ln-incl-price .big { font-family: var(--font-display, 'Anton', sans-serif); font-size: 52px; line-height: 1; color: var(--bpt-blue, #2563eb); }
+.ln-incl-price .per { font-size: 15px; font-weight: 600; color: var(--bpt-muted, #6b7280); }
+.ln-incl-sub { margin: 6px 0 0; font-size: 14px; font-weight: 600; color: var(--bpt-body, #3d4457); }
+.ln-incl-list { list-style: none; margin: 20px 0 24px; padding: 0; display: grid; gap: 13px; }
+.ln-incl-row { display: flex; align-items: flex-start; gap: 11px; font-size: 15.5px; font-weight: 600; line-height: 1.45; }
+.ln-incl-ck {
+  flex: 0 0 auto; width: 21px; height: 21px; margin-top: 1px; border-radius: 50%;
+  background: var(--bpt-success, #16a34a); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.ln-incl-ck svg { width: 12px; height: 12px; }
+@media (max-width: 560px) { .ln-incl-price .big { font-size: 42px; } .ln-incl-row { font-size: 14.5px; } }
 .ln-fine { margin: 16px 0 0; font-size: 12.5px; line-height: 1.6; color: rgba(255,255,255,.5); }
 
 /* The benefit rows beside the stack card */
@@ -887,6 +882,7 @@ body { padding-top: 122px; }
 .ln-hero--light .ln-hero-fx .trace g[fill^="rgba(247"] { fill: rgba(224, 178, 0, .8); }
 .ln-hero--light .ln-hero-fx .bolt { color: var(--bpt-yellow-dark, #e0b200); opacity: .3; }
 .ln-hero--light .ln-eyebrow { color: var(--bpt-blue, #2563eb); }
+.ln-hero-h1 { font-size: clamp(34px, 4.6vw, 64px); }
 .ln-hero--light .ln-h2 { color: var(--bpt-ink, #0b0e1a); }
 .ln-hero--light .ln-lead { color: var(--bpt-muted, #6b7280); }
 .ln-hero--light .ln-lead b { color: var(--bpt-ink, #0b0e1a); }
@@ -917,15 +913,18 @@ wistia-player[media-id='ewj221zjjy']:not(:defined) {
 @media (max-width: 560px) {
   .ln-wrap { padding: 0 16px; }
   .ln-sec { padding: 44px 0; }
-  .nav-links { display: none; }
   .nav-inner { gap: 10px; }
-  .nav-cta { padding: 0 14px; font-size: 13px; }
+  .nav-cta { padding: 0 14px; font-size: 15px; }
   .ln-h2 { font-size: clamp(26px, 8.5vw, 36px); }
+  .ln-hero-h1 { font-size: clamp(34px, 11vw, 46px); line-height: 1.04; }
+  .ln-hero .ln-wrap > div:first-child { text-align: center; }
+  .ln-hero .ln-lead { margin-left: auto; margin-right: auto; }
   .ln-lead { font-size: 15.5px; }
   .ln-hero-ctas { flex-direction: column; align-items: stretch; }
   .ln-hero-ctas > * { width: 100%; }
   .ln-video { border-radius: 12px; }
-  .ln-chips { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
+  .ln-chips { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 0; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; }
+  .ln-chips::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .ln-chip { flex: 0 0 auto; }
   .ln-panel { padding: 18px 14px; }
   .ln-kan { grid-template-columns: 1fr; }
@@ -965,19 +964,10 @@ wistia-player[media-id='ewj221zjjy']:not(:defined) {
 
 <div class="ln">
 
-  <div class="beta-bar">14-day free trial — <b>the full platform, cancel any time</b></div>
-
   <div class="nav-bar">
     <div class="nav-inner">
       <a class="nav-logo" href="#top"><span style="font-family: var(--font-nav, 'Bebas Neue', sans-serif); font-size: 26px; letter-spacing: .06em; color: var(--bpt-blue-deep, #253662)">BLUEPRINT<b style="color: var(--bpt-blue, #2563eb)">OS</b></span></a>
-      <div class="nav-links">
-        <a class="nav-link" href="#features">Features</a>
-        <a class="nav-link" href="#workflow">Workflow</a>
-        <a class="nav-link" href="#pricing">Pricing</a>
-        <a class="nav-link" href="#faq">FAQ</a>
-      </div>
       <div class="nav-right">
-        <a class="nav-login" href="https://app.theblueprint.training/sign-in">Login</a>
         <a class="nav-cta ln-cta--green" href="https://app.theblueprint.training/sign-up?plan=month" style="text-decoration: none; display: inline-flex; align-items: center">Claim free trial</a>
       </div>
     </div>
@@ -1015,7 +1005,7 @@ wistia-player[media-id='ewj221zjjy']:not(:defined) {
 
       <div style="flex: 1 1 460px; min-width: 0">
         <span class="ln-eyebrow">TRY FREE FOR 14 DAYS</span>
-        <h1 class="ln-h2" style="font-size: var(--fs-hero, clamp(30px, 4.6vw, 64px))">
+        <h1 class="ln-h2 ln-hero-h1">
           Run your entire agency from a <span style="color: var(--bpt-blue, #2563eb)">single dashboard.</span>
         </h1>
         <p class="ln-lead" style="max-width: 540px">Clients, projects, reporting, and billing in one place, wired directly into Claude so the busywork runs itself.&nbsp;</p>
@@ -1208,37 +1198,26 @@ wistia-player[media-id='ewj221zjjy']:not(:defined) {
         <div>
           <div class="ln-stack">
             <div class="ln-stack-head">
-              <span class="ln-stack-ttl">Your agency stack — monthly</span>
-              <span class="ln-seats">
-                <label for="seats-t">Team size</label>
-                <select id="seats-t" name="seats">
-                  <option>1</option><option>3</option><option selected="">5</option><option>10</option><option>20</option>
-                </select>
-              </span>
+              <span class="ln-stack-ttl">What's included</span>
             </div>
 
-            <div class="ln-stack-row"><span class="nm">CRM &amp; pipeline<small>HubSpot, Close, Pipedrive</small></span><span class="amt">$450/mo</span></div>
-            <div class="ln-stack-row"><span class="nm">Project management<small>Asana, Monday, ClickUp</small></span><span class="amt">$75/mo</span></div>
-            <div class="ln-stack-row"><span class="nm">Client reporting<small>AgencyAnalytics, DashThis</small></span><span class="amt">$200/mo</span></div>
-            <div class="ln-stack-row"><span class="nm">Client portal<small>SPP, Ignition</small></span><span class="amt">$90/mo</span></div>
-            <div class="ln-stack-row" style="border-bottom: 0"><span class="nm">AI assistant &amp; workflows<small>assorted add-ons</small></span><span class="amt">$300/mo</span></div>
+            <div class="ln-incl-price"><span class="big">$0</span><span class="per">for 14 days, then $199/mo</span></div>
+            <p class="ln-incl-sub">Everything below is unlocked from day one. No tiers, no add-ons.</p>
 
-            <div class="ln-stack-total">
-              <span class="lbl">Your stack total</span>
-              <span class="amt">$1,115/mo</span>
-            </div>
-
-            <div class="ln-stack-os">
-              <span class="nm">Agency OS<small>Free for 14 days, then everything all-in</small></span>
-              <span class="amt">$0<span>/14 days</span></span>
-            </div>
+            <ul class="ln-incl-list">
+            <li class="ln-incl-row"><span class="ln-incl-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Unlimited client campaigns</span></li>
+            <li class="ln-incl-row"><span class="ln-incl-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Unlimited seats for your team and contractors</span></li>
+            <li class="ln-incl-row"><span class="ln-incl-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Claude and ChatGPT MCP connector</span></li>
+            <li class="ln-incl-row"><span class="ln-incl-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>SEO, PPC and Meta Ad plug and play skills</span></li>
+            <li class="ln-incl-row"><span class="ln-incl-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Free migration and onboarding support</span></li>
+            <li class="ln-incl-row"><span class="ln-incl-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Full access to Blueprint Training materials and live coaching</span></li>
+            </ul>
 
             <a class="ln-cta ln-cta--green" href="https://app.theblueprint.training/sign-up?plan=month">Claim free trial</a>
             <p style="margin: 14px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--bpt-muted, #6b7280); text-align: center">
               $199/mo starts on day 14. Cancel before then and pay nothing.
             </p>
           </div>
-          <p class="ln-fine">Prices shown are typical market rates for comparison. Your stack may vary.</p>
         </div>
 
         <div class="ln-bens">
