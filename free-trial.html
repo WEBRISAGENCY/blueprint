@@ -683,6 +683,13 @@ body { padding-top: 86px; }
 .ln-incl-ck svg { width: 12px; height: 12px; }
 @media (max-width: 560px) { .ln-incl-price .big { font-size: 42px; } .ln-incl-row { font-size: 14.5px; } }
 /* ── PROGRAM BLOCK ────────────────────────────────────── */
+.ln-sticker {
+  display: inline-block; vertical-align: middle; margin-left: 10px; transform: rotate(-3deg);
+  background: var(--bpt-yellow, #f7c600); color: var(--bpt-ink, #0b0e1a);
+  font-family: var(--font-body, 'Figtree', sans-serif); font-size: 11px; font-weight: 800;
+  letter-spacing: .14em; text-transform: uppercase; padding: 5px 10px; border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(247,198,0,.28);
+}
 .ln-bens-head { padding: 0 0 22px; border-bottom: 1px solid rgba(255,255,255,.12); }
 .ln-bens-kicker {
   display: inline-block; font-family: var(--font-body, 'Figtree', sans-serif);
@@ -1233,9 +1240,8 @@ wistia-player[media-id='ewj221zjjy']:not(:defined) {
 
         <div class="ln-bens">
           <div class="ln-bens-head">
-            <span class="ln-bens-kicker">But wait, there is more</span>
-            <h3 class="ln-bens-ttl">Every account includes the full Blueprint Training program.</h3>
-            <p class="ln-bens-sub">The platform runs your agency. The program keeps you ahead of what is coming next, so your team is never learning it late.</p>
+            <span class="ln-bens-kicker">But wait, there's more!</span>
+            <h3 class="ln-bens-ttl">Full access to the Blueprint Training <span class="ln-sticker">Included</span></h3>
           </div>
           <div class="ln-ben">
             <span class="ln-ben-ic" aria-hidden="true">🎓</span>
@@ -1270,13 +1276,6 @@ wistia-player[media-id='ewj221zjjy']:not(:defined) {
             <div>
               <h3>On-demand Q&amp;A support</h3>
               <p>Ask the Blueprint team anything, any time.</p>
-            </div>
-          </div>
-          <div class="ln-ben">
-            <span class="ln-ben-ic" aria-hidden="true">🚀</span>
-            <div>
-              <h3>Every future release</h3>
-              <p>All updates, new agents and releases included.</p>
             </div>
           </div>
         </div>
