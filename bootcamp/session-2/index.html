@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>Session 2: Getting Clients: Your Website | One-Person Agency Bootcamp</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+/* Layout: one white document page on a light desk, Blueprint navy and blue (deliberately single light theme, same as the bootcamp landing page) */
+:root{--desk:#f8f9fa;--page:#ffffff;--ink:#202124;--head:#16213d;--text:#3c4043;--muted:#5f6368;--blue:#2868d5;--navy:#253662;--link:#1f56b8;--soft:#eaf1fc;--rule:#e8eaed;--cell:#d9d9d9;--zebra:#f7f9fc;
+--f-body:"Inter",-apple-system,BlinkMacSystemFont,Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+.lp-root{background:var(--desk);color:var(--ink);font-family:var(--f-body);line-height:1.7;-webkit-font-smoothing:antialiased;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.page{max-width:816px;margin:24px auto 40px;padding:72px 96px 80px;background:var(--page);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.08);border-radius:2px}
+.doc-header{padding-bottom:27px;margin-bottom:36px;border-bottom:2px solid var(--blue)}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.brand svg{display:block;height:48px;width:auto;max-width:100%}
+.doc-meta{font-size:12px;line-height:1.65;color:var(--muted);text-align:right;margin:0}
+h1{font-size:28px;font-weight:700;color:var(--head);line-height:1.3;margin:0 0 15px;letter-spacing:-.015em;text-wrap:balance}
+h2{font-size:20px;font-weight:600;color:var(--head);line-height:1.35;margin:44px 0 13px;padding-bottom:7px;border-bottom:1px solid var(--rule);text-wrap:balance}
+h3{font-size:16px;font-weight:600;color:var(--head);line-height:1.45;margin:30px 0 6px}
+h3 .n{color:var(--blue)}
+p,li{font-size:14.5px;color:var(--text)}
+p{margin:0 0 14px}
+strong{font-weight:600;color:var(--ink)}
+ul{padding-left:21px;margin:10px 0 18px}
+li{margin:0 0 6px}
+li::marker{color:var(--navy)}
+.day-meta{font-size:13px;color:var(--muted);margin:0 0 12px}
+.day-meta b{font-weight:600;color:var(--ink)}
+.group-lab{font-size:14.5px;font-weight:600;color:var(--head);margin:18px 0 6px}
+.tbl{overflow-x:auto;margin:12px 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--cell);padding:10px 13px;text-align:left;vertical-align:top;line-height:1.5;color:var(--text)}
+thead{background:var(--navy)}
+thead th{font-weight:600;font-size:13px;color:#fff}
+tbody tr:nth-child(even){background:var(--zebra)}
+tfoot td{background:var(--soft);color:var(--head);font-weight:600}
+td.min,th.min{width:64px;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.min{color:var(--link);font-weight:600}
+td.date{white-space:nowrap}
+.blocks td:nth-child(2){width:36%}
+.blocks td:nth-child(2) strong{display:block}
+.who{display:inline-block;font-size:11.5px;font-weight:600;color:var(--link);background:var(--soft);border-radius:3px;padding:0 6px;margin-top:3px}
+.note{font-size:13px;color:var(--muted)}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+@media(max-width:700px){.page{padding:40px 22px 48px;margin-top:16px}.doc-meta{text-align:left}h1{font-size:24px}}
+.slide{padding:8px 0 30px;border-bottom:1px solid var(--rule)}
+.slide:last-of-type{border-bottom:none}
+.slide h2{border-bottom:none;margin-top:34px;padding-bottom:0}
+.kicker{font-size:18px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin:30px 0 -2px}
+figure{margin:18px 0 8px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+figcaption{font-size:12.5px;color:var(--muted);margin-top:6px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pair figure{margin:0;min-width:0}
+.opens{display:flex;flex-wrap:wrap;gap:4px 16px;margin:10px 0 4px}
+.opens a{font-size:12.5px;font-weight:400;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.opens a:hover{color:var(--navy)}
+.big{font-size:40px;font-weight:700;color:var(--head);line-height:1.1;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.stats p{margin:0}
+@media(max-width:600px){.pair,.stats{grid-template-columns:1fr}}
+.lp-root{width:100%;min-height:100%;padding-top:1px;padding-bottom:1px;padding-left:16px;padding-right:16px;box-sizing:border-box}
+.checks{list-style:none;padding-left:0}
+.checks li{position:relative;padding-left:30px;margin-bottom:10px}
+.checks li::before{content:"";position:absolute;left:0;top:3px;width:16px;height:16px;border:2px solid #2868d5;border-radius:3px;background:#ffffff}
+.page>*:first-child,.page>section:first-child>*:first-child{margin-top:0}
+.agenda{list-style:none;counter-reset:ag;padding:0;margin:8px 0 0;border-top:1px solid var(--rule)}
+.agenda li{counter-increment:ag;display:flex;align-items:center;gap:16px;padding:12px 0;margin:0;border-bottom:1px solid var(--rule);font-size:15px;color:var(--ink);font-weight:500}
+.agenda li::before{content:counter(ag,decimal-leading-zero);flex:none;width:36px;height:36px;border-radius:50%;background:var(--soft);color:var(--blue);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+.sub{margin:6px 0 4px;padding-left:22px}
+.fl{display:flex;align-items:stretch;gap:6px;margin:20px 0 14px}
+.fl-step{flex:1 1 0;min-width:0;background:#f7f9fc;border:1px solid #cfd6e4;border-radius:6px;padding:12px}
+.fl-step.dark{background:#16213d;border-color:#16213d}
+.fl-t{margin:0;font-size:13.5px;font-weight:700;color:#16213d;line-height:1.35}
+.fl-d{margin:4px 0 0;font-size:12px;color:#5f6368;line-height:1.4}
+.fl-step.dark .fl-t{color:#fff}.fl-step.dark .fl-d{color:#c9d2e3}
+.fl-ar{display:flex;align-items:center;color:var(--blue);font-weight:700;font-size:18px}
+.prompt{background:#f7f9fc;border:1px solid #cfd6e4;border-left:3px solid var(--blue);border-radius:6px;padding:14px 16px;font-size:13.5px;line-height:1.6;color:#202124;margin:8px 0 16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.tree{margin:20px 0 10px}
+.tr-root{background:#16213d;color:#fff;font-weight:700;font-size:14px;text-align:center;border-radius:6px;padding:10px;max-width:300px;margin:0 auto}
+.tr-root small{display:block;font-weight:400;font-size:11.5px;color:#c9d2e3}
+.tr-line{width:2px;height:16px;background:#b8c4da;margin:0 auto}
+.tr-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;border-top:2px solid #b8c4da;padding-top:12px}
+.tr-col{display:flex;flex-direction:column;gap:6px}
+.tr-h{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);text-align:center}
+.tr-i{background:#fff;border:1px solid #cfd6e4;border-radius:6px;padding:6px;text-align:center;font-size:12.5px;font-weight:600;color:#16213d}
+.anat{margin:20px 0 10px;border:1px solid #cfd6e4;border-radius:8px;padding:14px;background:#fff;display:flex;flex-direction:column;gap:6px}
+.an-cap{margin:0 0 4px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5f6368}
+.an-b{display:flex;gap:12px;align-items:baseline;background:#f7f9fc;border:1px solid #e3e8f2;border-radius:6px;padding:9px 12px}
+.an-b b{flex:none;width:130px;font-size:13.5px;color:#16213d}
+.an-b span{font-size:13px;color:#3c4043}
+.an-b.blue{background:#eaf1fc;border-color:#b9cff3}
+.an-b.dark{background:#16213d;border-color:#16213d}.an-b.dark b{color:#fff}.an-b.dark span{color:#c9d2e3}
+.board{margin:20px 0 10px;background:#eef0f4;border:1px solid #dfe3ea;border-radius:8px;padding:14px}
+.bd-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.bd-a{background:#fff;border:1px solid #d5dbe6;border-radius:4px;height:74px;position:relative;box-shadow:0 1px 2px rgba(0,0,0,.05);background-image:linear-gradient(#e8ecf3,#e8ecf3),linear-gradient(#f0f3f8,#f0f3f8),linear-gradient(#f0f3f8,#f0f3f8);background-size:60% 6px,80% 4px,70% 4px;background-position:10px 28px,10px 42px,10px 52px;background-repeat:no-repeat}
+.bd-a span{position:absolute;left:10px;top:8px;font-size:11.5px;font-weight:600;color:#16213d}
+.bd-a.blue{background-color:#eaf1fc;border-color:#b9cff3}
+.steps{padding-left:22px;margin:10px 0 16px}.steps li{margin:0 0 7px}.steps li::marker{color:var(--blue);font-weight:700}
+.ui{margin:16px 0 12px}
+.ui-bar{display:flex;align-items:center;gap:6px;background:#e9ecf1;border:1px solid #d5dbe6;border-bottom:none;border-radius:8px 8px 0 0;padding:8px 12px}
+.ui-bar i{width:9px;height:9px;border-radius:50%;background:#c4cad5;display:block}
+.ui-bar span{margin-left:10px;flex:1;background:#fff;border-radius:4px;font-size:11.5px;color:#5f6368;padding:2px 10px}
+.ui-body{border:1px solid #d5dbe6;border-radius:0 0 8px 8px;background:#fff;padding:18px 22px}
+.ui-t{font-size:16px;font-weight:700;color:#16213d;margin:0 0 12px}
+.ui-f{margin:0 0 10px}.ui-f label{display:block;font-size:12px;font-weight:600;color:#3c4043;margin-bottom:3px}
+.ui-in{border:1px solid #cfd6e4;border-radius:5px;padding:6px 10px;font-size:13px;color:#16213d;min-height:32px;background:#fbfcfe}
+.ui-f em{display:block;font-size:11.5px;color:#5f6368;font-style:normal;margin-top:2px}
+.ui-radio{display:flex;align-items:center;gap:8px;font-size:13px;color:#16213d;margin:4px 0 12px}
+.ui-radio span{width:13px;height:13px;border:1.5px solid #8a94a6;border-radius:50%;display:inline-block;margin-left:8px}
+.ui-radio span:first-child{margin-left:0}.ui-radio span.on{border:4px solid var(--blue)}
+.ui-btn{display:inline-block;background:var(--blue);color:#fff;font-size:13px;font-weight:600;border-radius:6px;padding:7px 14px}
+.ui-btn.green{background:#1f883d}.ui-btn.teal{background:#0f8b8d}
+.ui-steps{display:flex;gap:14px;font-size:12px;margin:0 0 14px;flex-wrap:wrap}.ui-steps span{color:#8a94a6}.ui-steps .done{color:#1f883d}.ui-steps .cur{color:#16213d;font-weight:600}
+.ui-tbl{border:1px solid #d5dbe6;border-radius:6px;overflow:hidden;font-size:13px}
+.ui-tbl div{display:grid;grid-template-columns:80px 80px 1fr;border-top:1px solid #e3e8f2}.ui-tbl div:first-child{border-top:none}
+.ui-tbl span{padding:7px 10px;color:#16213d}.ui-tbl .h{background:#f3f5f9;font-weight:600}
+.ui-tbl div:not(.h) span:last-child{color:var(--blue);font-style:italic}
+.prompt{background:#FAF9F5;border:1px solid #E3DACC;border-radius:10px;padding:0;margin:10px 0 18px;overflow:hidden}
+.pr-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px 8px 14px;border-bottom:1px solid #E3DACC;background:#F5F0E8}
+.pr-l{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:#C15F3C;letter-spacing:.02em}
+.pr-ic{width:15px;height:15px;display:block}
+.pr-copy{font:600 12px/1 var(--f-body);color:#141413;background:#fff;border:1px solid #D1CFC5;border-radius:6px;padding:6px 10px;cursor:pointer}
+.pr-copy:hover{border-color:#D97757;color:#C15F3C}
+.pr-t{padding:14px 16px;font-size:13.5px;line-height:1.6;color:#141413;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.wp{margin:16px 0 8px;display:flex;border:1px solid #c3c4c7;border-radius:6px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wp-side{flex:none;width:168px;background:#1d2327;padding:8px 0}
+.wp-side div{font-size:12.5px;color:#f0f0f1;padding:6px 14px;line-height:1.3}
+.wp-side .on{background:#2271b1;color:#fff;font-weight:600}
+.wp-side .subm{background:#2c3338;padding:4px 0}.wp-side .subm div{padding:4px 14px 4px 22px;color:#c3c4c7}
+.wp-side .subm .cur{color:#fff;font-weight:600}
+.wp-main{flex:1;background:#f0f0f1;padding:18px 22px}
+.wp-main h4{margin:0 0 10px;font-size:20px;font-weight:400;color:#1d2327}
+.wp-main p{font-size:13px;color:#3c434a;margin:0 0 10px;line-height:1.5}
+.wp-main .wp-q{font-size:14px;font-weight:600;color:#1d2327;margin:12px 0 8px}
+.wp-r{display:flex;align-items:center;gap:8px;font-size:13px;color:#2c3338;margin:0 0 7px}
+.wp-r i{width:14px;height:14px;border:1px solid #8c8f94;border-radius:50%;background:#fff;display:block}
+.wp-r i.on{border:4px solid #2271b1}
+.wp-btn{display:inline-block;margin-top:10px;background:#2271b1;color:#fff;font-size:13px;border-radius:3px;padding:6px 12px}
+.shot-ph{margin:16px 0 14px}.ph-box{border:2px dashed #b9cff3;background:#f5f8fd;border-radius:8px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:24px}.ph-box b{font-size:14px;color:#16213d}.ph-box span{font-size:12.5px;color:#5f6368;max-width:420px}
+.gap td:nth-child(3){white-space:nowrap;font-weight:600}
+.gap td.k{color:#1e7d4f}.gap td.r{color:#2868d5}.gap td.b{color:#b25d00}.gap td.c{color:#c5221f}
+.paths table{table-layout:fixed}.paths th small{display:block;font-weight:400;opacity:.85}.paths td:nth-child(3){white-space:normal;font-weight:400}.paths td.k,.paths td.r,.paths td.c{font-weight:600}
+.rec .tr-i.s{margin-left:12px;font-weight:500;font-size:12px;color:#3c4043;background:#f7f9fc}
+html,body{background:#e8eaee!important;margin:0}
+.ms{display:grid;grid-template-columns:260px minmax(0,816px) 220px;gap:32px;justify-content:center;align-items:start;padding:40px 24px 64px;font-family:var(--f-body)}
+.ms-side{position:sticky;top:24px;max-height:calc(100vh - 48px);overflow:auto;font-family:var(--f-body)}
+.ms-brand{display:block;margin:0 0 18px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#253662;text-decoration:none}
+.ms-brand small{display:block;font-size:11px;font-weight:500;letter-spacing:0;text-transform:none;color:#5f6368;margin-top:2px}
+.ms-h{margin:0 0 8px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5f6368}
+.ms-nav{list-style:none;margin:0;padding:0}
+.ms-nav li{margin:0}
+.ms-nav a,.ms-nav span{display:flex;gap:10px;align-items:baseline;padding:7px 10px;border-radius:6px;font-size:13.5px;line-height:1.35;color:#3c4043;text-decoration:none}
+.ms-nav a:hover{background:#dde3ee;color:#16213d}
+.ms-nav .n{flex:none;width:20px;font-weight:700;color:#2868d5;font-variant-numeric:tabular-nums}
+.ms-nav .cur>a{background:#16213d;color:#fff}.ms-nav .cur>a .n{color:#9fc0f5}
+.ms-nav .soon span{color:#9aa0a6}.ms-nav .soon .n{color:#b6bcc6}
+.ms-nav .soon em{font-style:normal;font-size:11px;margin-left:auto;color:#9aa0a6}
+.ms-toc a{padding:6px 10px;border-left:2px solid #cfd6e4;border-radius:0;font-size:13px}
+.ms-toc a:hover{background:transparent;color:#16213d;border-left-color:#8fb0e8}
+.ms-toc a.on{border-left-color:#2868d5;color:#16213d;font-weight:600}
+.ms-inline-toc{display:none}
+.ms-main{min-width:0}
+.ms-main .lp-root{background:transparent!important;padding:0!important}
+.ms-main .page{max-width:816px!important;width:100%!important;margin:0 0 40px!important;padding:56px 96px 56px!important;background:#fff!important;box-shadow:0 1px 3px rgba(0,0,0,.10),0 4px 16px rgba(0,0,0,.06)!important;border-radius:4px!important;scroll-margin-top:24px}
+.ms-main .page:last-child{margin-bottom:0!important}
+.ms-pager{display:flex;justify-content:space-between;gap:12px;margin-top:32px}
+.ms-pager a{flex:1 1 0;background:#fff;border:1px solid #cfd6e4;border-radius:6px;padding:14px 16px;text-decoration:none;color:#16213d;font-size:14px;font-weight:600}
+.ms-pager a small{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5f6368;margin-bottom:2px}
+.ms-pager a.next{text-align:right}
+.ms-top{display:none}
+.mx,.fl{overflow-x:auto}
+@media(max-width:1260px){.ms{grid-template-columns:260px minmax(0,816px)}.ms-right{display:none}.ms-inline-toc{display:block;margin:4px 0 0 30px}.ms-inline-toc a{font-size:12.5px;padding:5px 10px}}
+@media(max-width:900px){
+.ms{display:block;padding:0 0 40px}
+.ms-left{position:fixed;inset:0 auto 0 0;width:min(300px,86vw);max-height:none;height:100vh;background:#e8eaee;padding:20px 14px;z-index:20;transform:translateX(-105%);transition:transform .2s;box-shadow:0 0 24px rgba(0,0,0,.15)}
+body.ms-open .ms-left{transform:none}
+.ms-top{display:flex;font-family:var(--f-body);position:sticky;top:0;z-index:10;align-items:center;gap:12px;background:#16213d;color:#fff;padding:10px 14px;font-size:14px;font-weight:600}
+.ms-top button{background:#2868d5;color:#fff;border:0;border-radius:6px;padding:7px 12px;font:600 13px var(--f-body);cursor:pointer}
+.ms-main{padding:12px 10px 0}
+.ms-main .page{padding:32px 20px 40px!important;margin-bottom:20px!important}
+.pair,.bs{grid-template-columns:1fr!important}
+}
+
+</style>
+</head>
+<body>
+<div class="ms-top"><button class="ms-menu" type="button" aria-label="Open the bootcamp menu">Menu</button><span>Session 2: Getting Clients: Your Website</span></div>
+<div class="ms">
+<aside class="ms-side ms-left" aria-label="Sessions"><a class="ms-brand" href="/bootcamp/session-1/">One-Person Agency Bootcamp<small>10 sessions</small></a><p class="ms-h">Sessions</p><ul class="ms-nav"><li><a href="/bootcamp/session-1/"><span class="n">1</span>Agency Foundations</a></li><li class="cur"><a href="/bootcamp/session-2/"><span class="n">2</span>Getting Clients: Your Website</a><ul class="ms-nav ms-toc ms-inline-toc"><li><a href="#intro">Intro</a></li><li><a href="#why-claude-not-wordpress">Part 1: Why Claude, Not WordPress</a></li><li><a href="#set-up-your-stack">Part 2: Set Up Your Stack</a></li><li><a href="#migrate-off-wordpress">Part 3: Migrate Off WordPress</a></li><li><a href="#publish-it">Part 4: Publish It</a></li><li><a href="#site-structure-and-tracking">Part 5: Site Structure and Tracking</a></li><li><a href="#writing-for-search-and-ai">Part 6: Writing for Search and AI</a></li><li><a href="#before-session-3">Before Session 3</a></li></ul></li><li><a href="/bootcamp/session-3/"><span class="n">3</span>Getting Clients: Content and Ads</a></li><li class="soon"><span><span class="n">4</span>Closing Clients: Sales and Onboarding<em>Soon</em></span></li><li class="soon"><span><span class="n">5</span>The Website Quality Audit<em>Soon</em></span></li><li class="soon"><span><span class="n">6</span>Local SEO<em>Soon</em></span></li><li class="soon"><span><span class="n">7</span>Content Creation<em>Soon</em></span></li><li class="soon"><span><span class="n">8</span>Link Building<em>Soon</em></span></li><li class="soon"><span><span class="n">9</span>The Paid Model: LSAs and PPC<em>Soon</em></span></li><li class="soon"><span><span class="n">10</span>Reporting, Retention and the 30-Day Plan<em>Soon</em></span></li></ul></aside>
+<div class="ms-main"><div class="lp-root">
+<main class="page" id="intro">
+<header class="doc-header"><div class="brand-row"><div class="brand"><svg aria-label="The Blueprint Training" fill="none" height="58" role="img" viewBox="0 0 197 58" width="197" xmlns="http://www.w3.org/2000/svg"> <path clip-rule="evenodd" d="M0 0V5.30833V9.55418V47.4196V56.9742H9.47588H46.5931H56.069V47.4196V25.9902V16.4356H46.5931H40.4178V9.55418V4.2306V0H0ZM9.34483 9.49571H30.9624V16.3984H26.2753H16.7325V25.9827V30.992V40.5758H26.2753H30.9624H40.5052V30.992V25.9827H46.7241V47.4785H9.34483V9.49571ZM24.9195 31.6524H31.1494V25.3219H24.9195V31.6524Z" fill="#253662" fill-rule="evenodd"></path> <path d="M77.7674 14.3236V3.1441H81.798V0.0800781H70.0862V3.1441H74.0956V14.3236H77.7674ZM86.7292 14.3236V8.73387H91.3718V14.3236H95.0436V0.0800781H91.3718V5.62844H86.7292V0.0800781H83.0574V14.3236H86.7292ZM107.825 14.3236V11.4045H101.199V8.58895H106.812V5.66985H101.199V2.99918H107.825V0.0800781H97.527V14.3236H107.825Z" fill="#253662"></path> <path d="M80.1957 36.0424C81.9016 36.0424 83.1272 35.6803 83.8726 34.9561C84.618 34.232 84.9906 33.1537 84.9906 31.7211C84.9906 30.4775 84.7678 29.5723 84.3221 29.0056C83.8764 28.4389 83.1311 28.0374 82.086 27.8013V27.7069C83.0542 27.4865 83.7573 27.0811 84.1953 26.4908C84.6333 25.9004 84.8523 25.0307 84.8523 23.8815C84.8523 22.5119 84.4681 21.4887 83.6997 20.8118C82.9313 20.1348 81.771 19.7964 80.2188 19.7964H72.2427V36.0424H80.1957ZM78.7665 26.2664H76.2307V23.1023H78.7665C79.3659 23.1023 79.8 23.1416 80.069 23.2203C80.3379 23.299 80.5223 23.4486 80.6222 23.669C80.7221 23.8894 80.772 24.2278 80.772 24.6843C80.772 25.1251 80.7183 25.4557 80.6107 25.6761C80.5031 25.8965 80.311 26.05 80.0344 26.1366C79.7577 26.2231 79.3351 26.2664 78.7665 26.2664ZM78.8818 32.7365H76.2307V29.407H78.8818C79.4657 29.407 79.8999 29.4503 80.1842 29.5369C80.4685 29.6235 80.6606 29.7848 80.7605 30.021C80.8604 30.2571 80.9104 30.6192 80.9104 31.1072C80.9104 31.5794 80.8566 31.9258 80.749 32.1462C80.6414 32.3665 80.4493 32.52 80.1727 32.6066C79.8961 32.6932 79.4657 32.7365 78.8818 32.7365ZM98.1535 36.0424V32.5476H91.8602V19.7964H87.8491V36.0424H98.1535ZM106.591 36.2313C108.573 36.2313 110.002 36.0187 110.878 35.5937C111.754 35.1687 112.319 34.4563 112.573 33.4567C112.826 32.4571 112.953 30.871 112.953 28.6986V19.7964H108.942V29.5723C108.942 30.69 108.904 31.4614 108.827 31.8864C108.75 32.3115 108.558 32.5948 108.25 32.7365C107.943 32.8782 107.39 32.949 106.591 32.949C105.792 32.949 105.238 32.8782 104.931 32.7365C104.624 32.5948 104.431 32.3115 104.355 31.8864C104.278 31.4614 104.239 30.69 104.239 29.5723V19.7964H100.228V28.6986C100.228 30.871 100.355 32.4571 100.609 33.4567C100.862 34.4563 101.427 35.1687 102.303 35.5937C103.179 36.0187 104.608 36.2313 106.591 36.2313ZM127.453 36.0424V32.7129H120.215V29.5015H126.347V26.172H120.215V23.1259H127.453V19.7964H116.204V36.0424H127.453ZM134.392 36.0424V30.8238H137.919C139.348 30.8238 140.428 30.5955 141.158 30.139C141.888 29.6825 142.364 29.0686 142.587 28.2972C142.81 27.5258 142.921 26.5341 142.921 25.3219C142.921 24.031 142.802 22.9999 142.564 22.2286C142.326 21.4572 141.845 20.859 141.123 20.4339C140.401 20.0089 139.333 19.7964 137.919 19.7964H130.381V36.0424H134.392ZM136.259 27.5416H134.392V23.1023H136.259C137.089 23.1023 137.677 23.1534 138.023 23.2557C138.368 23.3581 138.595 23.5548 138.703 23.8461C138.81 24.1373 138.864 24.6292 138.864 25.3219C138.864 26.0146 138.81 26.5065 138.703 26.7977C138.595 27.089 138.365 27.2857 138.011 27.3881C137.658 27.4904 137.074 27.5416 136.259 27.5416ZM149.376 36.0424V30.3515H152.165L154.24 36.0424H158.435L155.992 29.8557C156.837 29.4779 157.402 28.8718 157.686 28.0374C157.971 27.2031 158.113 26.2192 158.113 25.0858C158.113 23.8579 157.994 22.8779 157.755 22.1459C157.517 21.4139 157.025 20.8393 156.28 20.4221C155.535 20.005 154.432 19.7964 152.972 19.7964H145.365V36.0424H149.376ZM151.451 27.0929H149.376V23.1023H151.497C152.327 23.1023 152.914 23.1495 153.26 23.2439C153.606 23.3384 153.825 23.5155 153.917 23.7752C154.009 24.035 154.056 24.4797 154.056 25.1094C154.056 25.7233 154.002 26.1602 153.894 26.4199C153.787 26.6797 153.56 26.8568 153.214 26.9512C152.868 27.0457 152.28 27.0929 151.451 27.0929ZM164.982 36.0424V19.7964H160.971V36.0424H164.982ZM172.082 36.0424V26.7623H172.198L177.684 36.0424H181.442V19.7964H177.592V28.2263H177.477L172.382 19.7964H168.256V36.0424H172.082ZM191.838 36.0424V23.2912H196.241V19.7964H183.447V23.2912H187.827V36.0424H191.838Z" fill="#2868D5"></path> <path d="M78.7141 56.8715V45.1056H82.6757V41.8809H71.1643V45.1056H75.1051V56.8715H78.7141ZM87.5641 56.8715V51.6204H90.0738L91.9405 56.8715H95.7154L93.5168 51.1628C94.2773 50.8142 94.7855 50.255 95.0413 49.4851C95.2971 48.7152 95.425 47.8074 95.425 46.7615C95.425 45.6285 95.3178 44.7243 95.1035 44.0488C94.8892 43.3734 94.4467 42.8432 93.7761 42.4583C93.1054 42.0733 92.1133 41.8809 90.7997 41.8809H83.9551V56.8715H87.5641ZM89.4308 48.6135H87.5641V44.9313H89.4723C90.219 44.9313 90.7479 44.9748 91.059 45.062C91.3701 45.1492 91.5671 45.3126 91.6501 45.5522C91.7331 45.7919 91.7746 46.2023 91.7746 46.7833C91.7746 47.3498 91.7262 47.7529 91.6294 47.9926C91.5326 48.2322 91.3286 48.3957 91.0175 48.4828C90.7064 48.57 90.1775 48.6135 89.4308 48.6135ZM99.7534 56.8715L100.562 54.0389H105.644L106.494 56.8715H110.165L105.602 41.8809H100.707L96.1444 56.8715H99.7534ZM104.794 50.9667H101.392L103.03 45.2363H103.134L104.794 50.9667ZM114.867 56.8715V41.8809H111.258V56.8715H114.867ZM120.71 56.8715V48.3085H120.813L125.75 56.8715H129.131V41.8809H125.667V49.6594H125.563L120.979 41.8809H117.267V56.8715H120.71ZM135.139 56.8715V41.8809H131.53V56.8715H135.139ZM140.982 56.8715V48.3085H141.085L146.022 56.8715H149.402V41.8809H145.939V49.6594H145.835L141.251 41.8809H137.538V56.8715H140.982ZM157.879 57.0458C158.584 57.0458 159.404 56.9986 160.337 56.9041C161.27 56.8097 162.096 56.6899 162.815 56.5446V48.1124H157.485V50.9885H159.455V53.9954C158.999 54.0389 158.522 54.0607 158.024 54.0607C157.125 54.0607 156.479 53.9445 156.085 53.7121C155.691 53.4797 155.432 53.0548 155.307 52.4375C155.183 51.8201 155.12 50.7997 155.12 49.3762C155.12 47.8074 155.203 46.7252 155.369 46.1296C155.535 45.5341 155.871 45.16 156.375 45.0075C156.88 44.855 157.817 44.7787 159.186 44.7787C160.015 44.7787 161.205 44.8804 162.753 45.0838V42.2077C162.532 42.1351 161.917 42.0334 160.907 41.9026C159.898 41.7719 158.882 41.7065 157.858 41.7065C156.075 41.7065 154.733 41.9353 153.835 42.3929C152.936 42.8505 152.317 43.6131 151.978 44.6807C151.639 45.7483 151.47 47.3135 151.47 49.3762C151.47 51.5841 151.636 53.2146 151.968 54.2677C152.3 55.3208 152.908 56.0471 153.793 56.4466C154.678 56.846 156.04 57.0458 157.879 57.0458Z" fill="#253662"></path> </svg></div><p class="doc-meta">One-Person Agency Bootcamp · Session 2 of 10<br>Tue, Dec 1, 2026 · 2 to 4 pm EST</p></div></header><h1>Session 2: Getting Clients: Your Website</h1><p class="group-lab">What's covered today</p><ol class="agenda">
+<li>Why we build in Claude now, not WordPress</li>
+<li>Setting up your stack: website folder, GitHub and Netlify</li><li>Migrating your WordPress site into a Claude board, step by step</li>
+<li>Testing and launching the new site</li>
+<li>Site structure for SEO and AI search</li>
+<li>Writing content that ranks, gets cited and converts</li>
+<li>Action items + Q&amp;A</li></ol>
+</main>
+<main class="page" id="why-claude-not-wordpress">
+<section class="slide"><p class="kicker">PART 1 · DITCHING WORDPRESS</p><h2>Migrating from WordPress to Claude</h2><ul>
+<li>Most of your agency's site (and clients) runs on WordPress or similar CMS</li>
+<li>It made sense when you needed a developer and an admin panel to publish a page</li>
+<li>Now Claude designs, writes, codes and publishes, we no longer need a clunky CMS like WordPress</li></ul>
+<p class="group-lab">The old workflow for custom website design</p>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Designer</p><p class="fl-d">Build mockups in a design platform (Figma, et)</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">WordPress developer</p><p class="fl-d">Lay code to the design into WordPress theme</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Team</p><p class="fl-d">QA issues, adding weeks to the job</p></div></figure><p class="group-lab">The AI workflow for custom website design</p>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Claude</p><p class="fl-d">Design, write copy, write code and tracking</p></div><div class="fl-ar">→</div><div class="fl-step dark"><p class="fl-t">Push from GitHub to Netlify</p><p class="fl-d">Deploy code and changes are live in seconds</p></div></figure><ul><li>No need for designers, developers, writers, analytics people. You can do 100% of everything yourself.</li></ul></section>
+<section class="slide"><h2>WordPress vs. Claude</h2><div class="tbl"><table><thead><tr><th></th><th>WordPress</th><th>Claude</th></tr></thead><tbody>
+<tr><td><b>Security</b></td><td>A database, a login page and every plugin you install are ways in. Sites get hacked</td><td>Static HTML. No database, no login page, no plugins to break into</td></tr>
+<tr><td><b>Speed</b></td><td>Themes and plugins pile up. Pages get slow and bloated</td><td>Clean code, fast pages. A new page ships in an hour</td></tr>
+<tr><td><b>Content</b></td><td>Someone writes, formats, uploads and publishes every post by hand</td><td>Claude agents find what to write or improve, draft it and publish it. You approve</td></tr>
+<tr><td><b>The backend</b></td><td>wp-admin, plugin updates, theme conflicts, hosting panels</td><td>There is no backend to touch</td></tr>
+<tr><td><b>Where you work</b></td><td>Five different logins</td><td>Everything happens in the Claude interface</td></tr>
+<tr><td><b>Team</b></td><td>Staging sites, admin accounts, "who changed this?"</td><td>One shared board everyone can open, comment on and edit</td></tr>
+</tbody></table></div></section>
+<section class="slide"><h2>The automated content marketing engine</h2><ul>
+<li>Claude agents run around the clock on your site</li>
+<li>They analyze what's published, find what to add or improve and draft the changes</li>
+<li>You review and approve. Nothing ships without you</li></ul>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Agent audits the site</p><p class="fl-d">Rankings, gaps, outdated pages</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Drafts the change</p><p class="fl-d">New page or an update</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">You approve</p><p class="fl-d">Comment or edit on the board</p></div><div class="fl-ar">→</div><div class="fl-step dark"><p class="fl-t">Published</p><p class="fl-d">Pushed to GitHub, live in seconds</p></div></figure></section>
+<section class="slide"><ul>
+<li><b>"What about getting hacked?"</b> Our WordPress sites got hacked. Always. A static site on Netlify has nothing to break into</li>
+<li><b>"What about tracking and plugins?"</b> Tell Claude. Analytics, call tracking, forms: describe it and it's built in</li>
+<li><b>"My team needs WordPress to work together."</b> Have you used Claude artifacts? Everyone opens the same board, comments and edits</li>
+<li><b>"I'm not technical."</b> You don't need to be. You talk to Claude in plain English</li></ul></section>
+</main>
+<main class="page" id="set-up-your-stack">
+<section class="slide"><p class="kicker">PART 2 · SET UP YOUR STACK</p><h2>Before you migrate: set up your stack</h2><ul><li>Do this once, before you touch WordPress: your website folder, GitHub and Netlify</li><li>Once it is set up, every page you build in Part 3 goes straight to a live preview link, and your redirects run on Netlify</li></ul><p class="group-lab">The 3 tools, in plain English</p>
+<div class="tbl"><table><thead><tr><th>Tool</th><th>What it is</th><th>Think of it as</th><th>Cost</th></tr></thead><tbody>
+<tr><td><b>GitHub</b></td><td>Where your website's files live, with a full history of every change</td><td>Google Drive for your website</td><td>Free</td></tr>
+<tr><td><b>Netlify</b> (or Vercel)</td><td>Takes the files from GitHub and puts them on the internet. Every change you save goes live on its own</td><td>Your web host, minus the hosting panel</td><td>Free to start</td></tr>
+<tr><td><b>Your domain registrar</b></td><td>Where you bought your domain: GoDaddy, Namecheap, Squarespace, Cloudflare</td><td>The sign that points people to your site</td><td>What you pay now</td></tr>
+</tbody></table></div>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Claude</p><p class="fl-d">Your pages, designed</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">GitHub</p><p class="fl-d">Stores the files</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Netlify or Vercel</p><p class="fl-d">Puts them online</p></div><div class="fl-ar">→</div><div class="fl-step dark"><p class="fl-t">Your domain</p><p class="fl-d">Points to the site</p></div></figure><ul><li><b>Netlify or Vercel?</b> They work the same way. We use Netlify here: its free plan allows business sites. Vercel's free plan is for personal projects, so a business site needs its paid plan</li>
+</ul></section>
+<section class="slide"><h2>Two ways to set it up</h2><div class="tbl"><table><thead><tr><th>Option A: Claude does it for you</th><th>Option B: Click through it yourself</th></tr></thead><tbody>
+<tr><td>Use Claude Code (the Code tab in the Claude desktop app). It creates the repo, uploads the files and deploys the site. You just log in when it asks</td><td>Follow Setup 1 to 3 below. About 20 minutes the first time, with Claude on screen to help if you get stuck</td></tr>
+</tbody></table></div>
+<p class="group-lab">Option A prompt (Claude Code)</p>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">I've never used GitHub or Netlify. Set up my website stack for me:<br>0. Create a folder on my desktop called [myagency-website] with a simple placeholder home page (index.html) and a _migration folder that is never uploaded to GitHub.<br>
+1. If I don't have a GitHub account yet, walk me through signing up. Otherwise have me log in.<br>
+2. Create a private GitHub repository called [yoursite-website] and upload these files.<br>
+3. Connect the repository to Netlify so every change goes live on its own.<br>
+4. Give me the preview link (something.netlify.app). Do not connect my domain yet. That happens at launch.<br>
+Explain each step in plain English before you do it. Stop and ask me whenever you need me to log in or click something.</div></div>
+<p class="note">Claude can't create accounts or type passwords for you. You do the sign-ups, logins, email codes and <b>Approve</b> clicks. Claude does everything else.</p>
+<p class="group-lab">Option B helper prompt (any Claude chat)</p>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">I'm setting up GitHub and Netlify for the first time to publish my website. Walk me through it one step at a time. Tell me exactly what to click and what to type, then wait for me to say "done" before the next step. If I get stuck I'll send you a screenshot.</div></div></section>
+<section class="slide"><h2>Setup 1: Your website folder</h2><ul>
+<li>Make one folder on your desktop for your website, named after your site (example: <b>myagency-website</b>)</li>
+<li>Everything goes in here: the sitemap, the WordPress export, your logo and images, and every finished page</li>
+<li>This is the folder you connect to GitHub in Setup 2. Whatever is in it becomes your live site, so delete the <b>_migration</b> folder once the switch is done</li>
+<li>In the Claude desktop app, add this folder to your project so Claude can read from it and save pages into it</li></ul>
+<figure class="tree"><div class="tr-root">myagency-website<small>the folder on your desktop, synced to GitHub</small></div><div class="tr-line"></div><div class="tr-row">
+<div class="tr-col"><div class="tr-h">Pages</div><div class="tr-i">index.html (home)</div><div class="tr-i">services/</div><div class="tr-i">about/</div><div class="tr-i">contact/</div></div>
+<div class="tr-col"><div class="tr-h">Assets</div><div class="tr-i">images/</div><div class="tr-i">logo.svg</div><div class="tr-i">styles.css</div></div>
+<div class="tr-col"><div class="tr-h">Setup files</div><div class="tr-i">sitemap.xml</div><div class="tr-i">_redirects</div><div class="tr-i">robots.txt</div></div>
+<div class="tr-col"><div class="tr-h">_migration/</div><div class="tr-i">wordpress-export.xml</div><div class="tr-i">page-inventory.csv</div><div class="tr-i">screenshots/</div></div>
+</div></figure>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Create a folder on my desktop called [myagency-website] and set it up as the home for my new website: a folder for pages, one for images and one called _migration for my WordPress export, sitemap and screenshots. Add a simple placeholder home page (index.html) so there is something to publish, and a .gitignore so the _migration folder is never uploaded to GitHub. Keep everything for the site in this folder from now on.</div></div></section>
+<section class="slide"><h2>Setup 2: GitHub</h2><ol class="steps">
+<li>Go to <b>github.com</b> and click <b>Sign up</b>. Enter your email, a password and a username</li>
+<li>Enter the code GitHub emails you. Pick the <b>Free</b> plan</li>
+<li>Click the <b>+</b> in the top right, then <b>New repository</b></li>
+<li>Name it (example: <b>myagency-website</b>), choose <b>Private</b>, click <b>Create repository</b></li>
+<li>On the next screen, click <b>uploading an existing file</b></li>
+<li>Drag in your placeholder <b>index.html</b>. It must sit at the top level, not inside a folder. Never upload the _migration folder</li>
+<li>Click <b>Commit changes</b>. Your files are saved</li></ol>
+<figure class="ui"><div class="ui-bar"><i></i><i></i><i></i><span>github.com/new</span></div><div class="ui-body"><p class="ui-t">Create a new repository</p><div class="ui-f"><label>Repository name</label><div class="ui-in">myagency-website</div></div><div class="ui-f"><label>Description (optional)</label><div class="ui-in">My agency website</div></div><div class="ui-radio"><span class="on"></span>Private <span></span>Public</div><div class="ui-btn green">Create repository</div></div><figcaption>Simplified view of GitHub's new repository screen</figcaption></figure>
+<p class="group-lab">Or have Claude do it</p>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder [myagency-website] connected (Cowork or Claude Code). Set up GitHub for it:<br>1. Check if Git and the GitHub command line tool are installed. Install them if not.<br>2. Log me in to GitHub through the browser. If I don't have an account, open github.com/signup and wait while I create one.<br>3. Create a private repository called [myagency-website] and upload everything in the folder except _migration.<br>4. Show me the repository link when it's done.<br>Stop and tell me whenever I need to log in, enter a code or click Approve.</div></div></section>
+<section class="slide"><h2>Setup 3: Netlify</h2><ol class="steps">
+<li>Go to <b>netlify.com</b> and click <b>Sign up</b>, then <b>Sign up with GitHub</b>. Approve the access request</li>
+<li>Click <b>Add new site</b>, then <b>Import an existing project</b></li>
+<li>Pick <b>GitHub</b>, then choose your <b>myagency-website</b> repository. If you don't see it, click <b>Configure the Netlify app on GitHub</b> and give it access</li>
+<li>Leave the build settings blank (plain HTML doesn't need them) and click <b>Deploy</b></li>
+<li>In about a minute you get a live link like <b>myagency-website.netlify.app</b>. That is your preview link. Your domain stays on WordPress until launch day (Part 4)</li></ol>
+<figure class="ui"><div class="ui-bar"><i></i><i></i><i></i><span>app.netlify.com/start</span></div><div class="ui-body"><p class="ui-t">Let's deploy your project</p><div class="ui-steps"><span class="done">1. Connect to Git provider</span><span class="done">2. Select repository</span><span class="cur">3. Configure and deploy</span></div><div class="ui-f"><label>Branch to deploy</label><div class="ui-in">main</div></div><div class="ui-f"><label>Build command</label><div class="ui-in"></div><em>Leave blank</em></div><div class="ui-f"><label>Publish directory</label><div class="ui-in"></div><em>Leave blank</em></div><div class="ui-btn teal">Deploy myagency-website</div></div><figcaption>Simplified view of Netlify's import screen</figcaption></figure>
+<p class="note">Using Vercel instead? Same flow: Sign up with GitHub, <b>Add New</b>, <b>Project</b>, <b>Import</b> your repo, Framework Preset <b>Other</b>, <b>Deploy</b>.</p>
+<p class="group-lab">Or have Claude do it</p>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder [myagency-website] connected (Cowork or Claude Code). Connect my GitHub repository to Netlify:<br>1. Install the Netlify command line tool if I don't have it.<br>2. Log me in to Netlify through the browser. If I don't have an account, open netlify.com and wait while I sign up with GitHub.<br>3. Create a Netlify site linked to my [myagency-website] GitHub repository, so every change I push goes live on its own. No build command, publish the top-level folder.<br>4. Give me the preview link (something.netlify.app).<br>Do not connect my domain yet. Stop and tell me whenever I need to log in or click Approve.</div></div></section>
+</main>
+<main class="page" id="migrate-off-wordpress">
+<section class="slide"><p class="kicker">PART 3 · MIGRATING OFF WORDPRESS</p><h2>Move your whole site into one Claude board</h2><ul>
+<li>The goal: every page of your website designed on one Claude artifacts board</li>
+<li>From there you edit, update and add pages by talking to Claude or editing the board directly</li>
+<li>Then you publish it and turn WordPress off</li></ul>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Inventory</p><p class="fl-d">Every URL on the site</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Design system</p><p class="fl-d">Your brand, captured</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Content</p><p class="fl-d">Exported from WordPress</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Artifact</p><p class="fl-d">Every page rebuilt</p></div><div class="fl-ar">→</div><div class="fl-step dark"><p class="fl-t">Publish</p><p class="fl-d">GitHub to Netlify, then switch</p></div></figure><figure><img alt="A Claude artifacts board with every page of a website laid out side by side" src="s2img/claude-board.png"><figcaption>A real Claude artifacts board: every page of a website side by side (the Agency OS pages on theblueprint.training). Click any page to edit it</figcaption></figure><figure class="board"><p class="an-cap">What you end up with: your website as a Claude board</p><div class="bd-grid">
+<div class="bd-a"><span>Home</span></div><div class="bd-a"><span>Services</span></div><div class="bd-a"><span>Service: Local SEO</span></div><div class="bd-a"><span>Service: LSAs</span></div>
+<div class="bd-a"><span>Who we serve</span></div><div class="bd-a"><span>Results</span></div><div class="bd-a"><span>Case study</span></div><div class="bd-a"><span>About</span></div>
+<div class="bd-a"><span>Contact</span></div><div class="bd-a"><span>Blog</span></div><div class="bd-a"><span>Blog post</span></div><div class="bd-a blue"><span>Design system</span></div>
+</div></figure></section>
+<section class="slide"><h2>Which path are you on?</h2><ul>
+<li>Not everyone is moving a site they like. Pick your path, then follow only the steps marked for it</li>
+<li><b>Rebuilding still means redirects.</b> A new design and new copy are fine, but every old URL has to point somewhere. That's where rebuilds lose their rankings</li></ul>
+<div class="tbl gap paths"><table><colgroup><col style="width:22%"><col style="width:26%"><col style="width:26%"><col style="width:26%"></colgroup><thead><tr><th>Step</th><th>Migrate<small>Keep your content, new platform</small></th><th>Rebuild<small>Start over on what you have</small></th><th>New site<small>No site yet</small></th></tr></thead><tbody>
+<tr><td>Page inventory + Search Console</td><td class="k">Yes</td><td class="k">Yes, to find pages with traffic or links</td><td class="c">Skip</td></tr>
+<tr><td>WordPress export</td><td class="k">Yes</td><td class="r">Only for content worth keeping</td><td class="c">Skip</td></tr>
+<tr><td>Redirects</td><td class="k">Every one</td><td class="k">Every one, even pages you cut</td><td class="c">Skip</td></tr>
+<tr><td>Site structure (Part 5)</td><td>Gap analysis</td><td>Gap analysis becomes your new sitemap</td><td>Straight from the recommended page list</td></tr>
+<tr><td>Design system</td><td>From your current site, cleaned up</td><td>From scratch: your logo plus 2 or 3 sites you like</td><td>From scratch: your logo plus 2 or 3 sites you like</td></tr>
+<tr><td>Page copy</td><td>Moved over, then edited</td><td>Rewritten with the content writer</td><td>Written with the content writer</td></tr>
+<tr><td>Launch (Part 4)</td><td>Test old URLs, then switch the domain</td><td>Test old URLs, then switch the domain</td><td>Connect the domain, run the go-live checklist</td></tr>
+</tbody></table></div>
+<p class="group-lab">Migrate</p>
+<ul><li>Follow Steps 1 to 6 below in order</li></ul>
+<p class="group-lab">Rebuild</p>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected. I'm rebuilding [mysite.com] from scratch with a new design and new copy, but I'm keeping my rankings.<br>1. Pull every URL from my sitemap and Search Console through Agency OS, plus every existing redirect, and mark which pages get clicks or links.<br>2. Use my site gap analysis as the new sitemap.<br>3. Build a new design system from my logo and these sites I like: [site1], [site2], [site3].<br>4. Put every page of the new structure on a Claude board and write the copy with the content-writer skill.<br>5. Map every old URL to its new page in the redirect master list, including pages I'm cutting.<br>Wait for me after each step.</div></div>
+<p class="group-lab">New site</p>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected. I don't have a website yet. My offer: [services] for [niche] in [locations].<br>1. Build my site structure: home, one page per service, one page per niche, proof and trust pages, and location pages only if I'm local and people search for them.<br>2. Build a design system from my logo and these sites I like: [site1], [site2], [site3].<br>3. Put every page on a Claude board and write the copy with the content-writer skill.<br>Wait for me after each step. I'll publish it with Part 4.</div></div></section>
+<section class="slide"><h2>Step 1: Get a list of every page</h2><ul>
+<li>Pull your sitemap: <b>yoursite.com/sitemap_index.xml</b> (Yoast, Rank Math) or <b>yoursite.com/wp-sitemap.xml</b></li>
+<li>Or crawl the site with Screaming Frog and export the URLs</li>
+<li>Give the list to Claude</li></ul>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Here is the sitemap for my website: [paste sitemap URL or file]. Build me a page inventory: every URL, its page title, and its page type (home, service, location, case study, blog post, utility). Group the pages by template so I can see which pages share a layout. Flag any pages that look thin, outdated or duplicated so I can decide whether to keep them.</div></div></section>
+<section class="slide"><h2>Step 2: Build your design elements</h2><ul>
+<li>Screenshot one of each template: home, a service page, a blog post, contact</li>
+<li>Grab your logo, brand colors and fonts</li>
+<li>Claude turns them into a design system every page on the board will use</li></ul><figure><img alt="A design system in Claude, with Colors, Typography, Spacing, Components and Assets in the sidebar" src="s2img/design-system.png"><figcaption>A design system in Claude. Colors, typography, spacing and components are saved once, then every page you build uses them.</figcaption></figure>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">These are screenshots of my current website and my logo. Create a design system for my site: colors, fonts, headings, buttons, spacing, cards, forms, header and footer. Keep the look of my current site but make it cleaner and more modern. This is the system every page I build next will use.</div></div></section>
+<section class="slide"><h2>Step 3: Export your content</h2><ul>
+<li>In WordPress: <b>Tools, Export, All content</b>. Download the XML file and save it in your website folder</li>
+<li>That file has every page and post: titles, body copy, images and dates</li>
+<li>Claude reads it and cleans it up page by page</li></ul><figure><div class="wp"><div class="wp-side"><div>Dashboard</div><div>Posts</div><div>Media</div><div>Pages</div><div>Comments</div><div>Appearance</div><div>Plugins</div><div>Users</div><div class="on">Tools</div><div class="subm"><div>Available Tools</div><div>Import</div><div class="cur">Export</div><div>Site Health</div></div><div>Settings</div></div>
+<div class="wp-main"><h4>Export</h4><p>When you click the button below WordPress will create an XML file for you to save to your computer.</p><p class="wp-q">Choose what to export</p><div class="wp-r"><i class="on"></i>All content</div><div class="wp-r"><i></i>Posts</div><div class="wp-r"><i></i>Pages</div><div class="wp-r"><i></i>Media</div><div class="wp-btn">Download Export File</div></div></div>
+<figcaption>In your WordPress dashboard: Tools, then Export. Pick All content and click Download Export File (simplified view)</figcaption></figure>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">This is my WordPress export file. For each page in my inventory, pull out the H1, the body copy, the meta title and description, and the images it uses. Strip out page builder code and shortcodes. Keep my wording. Flag anything outdated, like old prices, dates or team members.</div></div></section>
+<section class="slide"><h2>Step 4: Build the board</h2><figure><img alt="The Artifacts section in Claude, with Docs, Slides, Sheets, Design, Data, Whiteboard and Motion under Make something new" src="s2img/claude-artifacts.png" style="height: 356px; object-fit: cover; object-position: 50% 0.0015%"><figcaption>The Artifacts section in Claude. Click <b>Design</b> under "Make something new" to start your website board. Everything you make shows up below, so you can reopen it anytime</figcaption></figure><ul>
+<li>Start a new Design artifact in Claude and name it after your site</li>
+<li>Build the home page first. Get it right before you do anything else</li>
+<li>Then one page per template, then batch the rest</li></ul>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Create a Claude design board for my website using the design system we made. Add one artboard per page in my inventory, named by URL. Start with the home page using the content from my export. Keep the same URLs. Once I approve the home page, build one service page, then use it as the template for the rest.</div></div>
+</section>
+<section class="slide"><h2>Step 5: Don't lose your rankings</h2><ul class="checks">
+<li><b>Same URLs.</b> Every page keeps its exact slug</li>
+<li><b>Same meta titles and descriptions</b>, unless you're improving them on purpose</li>
+<li><b>Carry over your existing redirects.</b> Drop them and every old link pointing at those URLs breaks. Redirects hide in more places than you think, so check all of them:<ul class="sub"><li><b>Redirect plugins:</b> Redirection, Rank Math, Yoast Premium, AIOSEO, SEOPress, Simple 301 Redirects, Safe Redirect Manager</li><li><b>WordPress itself:</b> every time a page or post slug changed, WordPress quietly redirected the old slug. These live in the database, not in any plugin, and are the ones most people miss</li><li><b>Server files:</b> .htaccess (Apache) or the nginx config</li><li><b>Your host's dashboard:</b> WP Engine, Kinsta, SiteGround and others have their own redirect rules</li><li><b>Cloudflare:</b> Page Rules, Redirect Rules and Bulk Redirects</li><li><b>Site-wide rules:</b> http to https, www or non-www, trailing slashes, and an old permalink structure (like /2019/05/post-name/)</li><li><b>Domain forwarding</b> at your registrar for old domains</li></ul></li><li><b>Build a master list of every old URL.</b> Search Console, Ahrefs, your crawl and your sitemap. You test every one of them on your Netlify preview link in Part 4, before you switch the domain</li>
+<li><b>Schema, alt text and internal links</b> carried over</li>
+<li><b>Keep the WordPress backup</b> for 30 days after you switch</li></ul>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected (Cowork or Claude Code). I'm migrating [olddomain.com] from WordPress. Don't guess: use the files I give you.<br><br><b>1. Collect every redirect.</b> Read every file in _migration: [Redirection / Rank Math / Yoast / AIOSEO export], [.htaccess or nginx rules], [host and Cloudflare redirect rules], and my WordPress export (pull every old slug WordPress saved as _wp_old_slug). Also cover site-wide rules: http to https, www vs non-www, trailing slashes, and my old permalink structure [example: /2019/05/post-name/].<br><br><b>2. Build one redirect file.</b> Write a single _redirects file in Netlify format in my website folder. Every rule is a 301. Remove duplicates. Collapse chains so every old URL points straight to its final page in one hop. Flag any loops. Never send a page to the home page just to avoid a 404: map it to the closest matching page, and list the ones you're unsure about for me to decide.<br><br><b>3. Build the master URL list.</b> Merge my Search Console export, Ahrefs Top pages and Best by links exports, my crawl and my old sitemap into one list of unique old paths, the pages with the most clicks and backlinks first. Save it as _migration/old-urls.csv. We'll test it in Part 4, before the domain switch.</div></div></section>
+<section class="slide"><h2>Step 6: Edit and update from the board</h2><ul>
+<li>Change text by clicking on it, the same way you'd edit a Google doc</li>
+<li>Leave a comment on any part of a page and Claude makes the change</li>
+<li>New page? Ask Claude to add an artboard using the same template</li>
+<li>When a page is approved, Claude saves it in your website folder and pushes it to GitHub, so it shows up on your Netlify preview link</li><li>When it looks right, launch it (Part 4)</li></ul>
+<div class="opens"><a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Open Claude</a><a href="https://www.screamingfrog.co.uk/seo-spider/" target="_blank" rel="noopener noreferrer">Screaming Frog</a></div></section>
+</main>
+<main class="page" id="publish-it">
+<section class="slide"><p class="kicker">PART 4 · PUBLISH IT</p><h2>Launch the new site</h2><ul>
+<li>GitHub and Netlify are already set up from Part 2</li>
+<li>Every page you approved in Part 3 is already live on your Netlify preview link. Your domain still points at WordPress</li>
+<li>Launching is three steps: test every old URL, switch the domain, run the go-live checklist</li></ul>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Test old URLs</p><p class="fl-d">On the preview link</p></div><div class="fl-ar">&rarr;</div><div class="fl-step"><p class="fl-t">Connect your domain</p><p class="fl-d">Point DNS at Netlify</p></div><div class="fl-ar">&rarr;</div><div class="fl-step"><p class="fl-t">Go-live checklist</p><p class="fl-d">Booking, tracking, Search Console</p></div><div class="fl-ar">&rarr;</div><div class="fl-step dark"><p class="fl-t">Live</p><p class="fl-d">WordPress can be switched off</p></div></figure></section>
+<section class="slide"><h2>Step 1: Test every old URL before you switch the domain</h2><ul>
+<li>Your site is now live on its Netlify preview address (myagency-website.netlify.app), but your domain still points at WordPress. That's the window to test</li>
+<li>Every old URL from your master list (Part 3) should land on the right page in one hop. Anything that 404s gets a redirect before launch</li>
+<li><b>Manual check:</b> Screaming Frog, Mode, List. Paste your old paths with the Netlify address in front and check the Response Codes tab for 404s and redirect chains</li>
+<li><b>Or have Claude do the whole test for you:</b></li></ul>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"/></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected (Cowork or Claude Code). My new site is live at [myagency-website.netlify.app]. Test my migration with real requests. Don't skip any URL and don't guess.<br><br><b>1. Test every old URL.</b> For every path in _migration/old-urls.csv, request it on the Netlify address without following redirects, then again following them. Record: first status code, number of hops, final URL, final status code.<br><br><b>2. Check the landing pages.</b> Open each final page and check it returns 200, has the right H1 and meta title, and its canonical tag points to itself.<br><br><b>3. Report and fix.</b> Save _migration/redirect-test.csv with every result. Give me a short summary: total URLs tested, how many pass, and every failure grouped by type (404, redirect chain, loop, lands on the home page, wrong page, missing title or canonical). Fix what you can in _redirects, push the change, re-run the test, and show me what's left that needs my decision.<br><br><b>4. Launch day.</b> When I tell you DNS has switched, run the exact same test against [mydomain.com] and report again.</div></div>
+<p class="note">Don't move to Step 2 until this report comes back clean.</p></section>
+<section class="slide"><h2>Step 2: Connect your domain</h2><ol class="steps">
+<li>In Netlify, open your site and go to <b>Domain management</b>, then <b>Add a domain</b>. Type your domain</li>
+<li>Netlify shows you the DNS records to add. Leave that tab open</li>
+<li>In a new tab, log in where you bought your domain (GoDaddy, Namecheap, etc.) and find <b>DNS</b> or <b>DNS settings</b></li>
+<li>Add the records exactly as Netlify shows them. Delete any old records that point to your WordPress host</li>
+<li>Wait. It usually takes minutes, sometimes a few hours. HTTPS turns on by itself</li></ol>
+<figure class="ui"><div class="ui-bar"><i></i><i></i><i></i><span>your registrar · DNS settings</span></div><div class="ui-body"><p class="ui-t">DNS records for myagency.com</p><div class="ui-tbl"><div class="h"><span>Type</span><span>Name</span><span>Value</span></div><div><span>A</span><span>@</span><span>copy from Netlify</span></div><div><span>CNAME</span><span>www</span><span>copy from Netlify</span></div></div></div><figcaption>What you're adding at your registrar. Use the exact values your host gives you</figcaption></figure>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"/></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">I'm connecting my domain to Netlify. Here's a screenshot of the records Netlify gave me and a screenshot of my DNS page at [registrar]. Tell me exactly what to add, change and delete, one row at a time.</div></div>
+<p class="note">Do this last, after the whole site is checked. The moment DNS switches, the new site is the live site.</p></section>
+<section class="slide"><h2>Before you call it live</h2><ul class="checks">
+<li><b>Domain connected</b> with HTTPS working</li>
+<li><b>Old URLs redirect.</b> Step 1 passed with zero 404s</li>
+<li><b>Booking works.</b> Calendar link or form tested end to end, lands in your inbox and Agency OS</li>
+<li><b>Google Tag Manager</b> on every page (Part 5). Every other tag runs through it</li>
+<li><b>GA4</b> recording visits through Tag Manager</li>
+<li><b>Conversions firing:</b> booking, form submit and phone click, each tested in Tag Assistant preview</li>
+<li><b>Ad pixels</b> through Tag Manager if you run ads: Google Ads conversion tag, Meta pixel</li>
+<li><b>Search Console.</b> Site verified and sitemap submitted</li>
+<li><b>Schema</b> passes the Rich Results Test on your home page and one service page</li>
+<li><b>Mobile check.</b> Open every page on your phone</li></ul>
+<div class="opens"><a href="https://github.com/signup" target="_blank" rel="noopener noreferrer">Sign up for GitHub</a><a href="https://app.netlify.com/signup" target="_blank" rel="noopener noreferrer">Sign up for Netlify</a><a href="https://vercel.com/signup" target="_blank" rel="noopener noreferrer">Vercel</a><a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">Claude desktop app (Claude Code)</a><a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer">Google Search Console</a><a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">Google Analytics</a><a href="https://tagmanager.google.com" target="_blank" rel="noopener noreferrer">Google Tag Manager</a><a href="https://tagassistant.google.com" target="_blank" rel="noopener noreferrer">Tag Assistant</a></div></section>
+<section class="slide"><h2>Step 3: Publishing changes from now on</h2>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Edit on the board</p><p class="fl-d">Click, type or comment</p></div><div class="fl-ar">&rarr;</div><div class="fl-step"><p class="fl-t">Tell Claude to publish</p><p class="fl-d">One prompt</p></div><div class="fl-ar">&rarr;</div><div class="fl-step"><p class="fl-t">Claude pushes to GitHub</p><p class="fl-d">From your website folder</p></div><div class="fl-ar">&rarr;</div><div class="fl-step dark"><p class="fl-t">Live in a minute</p><p class="fl-d">Netlify updates on its own</p></div></figure>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"/></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected. Publish my latest changes from my Claude board: save every page I changed into my website folder, push them to GitHub, and give me the live link once Netlify has updated. List what changed.</div></div>
+<ul><li><b>No Claude handy?</b> Download the page from the board, then in GitHub click <b>Add file</b>, <b>Upload files</b>, <b>Commit changes</b></li>
+<li><b>Something broke?</b> Every version is saved. In Netlify, go to <b>Deploys</b> and roll back with one click</li></ul></section>
+</main>
+<main class="page" id="site-structure-and-tracking">
+<section class="slide"><p class="kicker">PART 5 · SITE STRUCTURE FOR SEO AND AI SEARCH</p><h2>The pages every agency site needs</h2><ul>
+<li>You don't need to research this. Every agency selling search to a niche needs the same core pages. Use this list</li>
+<li>One page per service, plus a page for each part of a service (link building under SEO, Google Ads under PPC). The full service list is built into the prompt below</li>
+<li>Cut any service you don't sell. Add a page for anything you sell that isn't here</li>
+<li>Every page links to the pages around it, so Google and AI tools can follow the whole story</li></ul>
+<figure class="tree rec"><div class="tr-root">Home<small>who you help, what you deliver, proof</small></div><div class="tr-line"></div>
+<div class="tr-row">
+<div class="tr-col"><div class="tr-h">Services</div><div class="tr-i">One page per service you sell</div><div class="tr-i s">Plus a page for each part of it</div><div class="tr-i s">Full list comes with the prompt</div></div>
+<div class="tr-col"><div class="tr-h">Who we serve</div><div class="tr-i">[Niche] marketing</div><div class="tr-i s">One page per sub-niche</div><div class="tr-i">Locations</div><div class="tr-i s">Only if you're local</div></div>
+<div class="tr-col"><div class="tr-h">Proof</div><div class="tr-i">Results</div><div class="tr-i">Case studies</div><div class="tr-i s">One page per result</div><div class="tr-i">Reviews</div></div>
+<div class="tr-col"><div class="tr-h">Company</div><div class="tr-i">About</div><div class="tr-i">Team</div><div class="tr-i">Book a call</div><div class="tr-i">Blog</div></div>
+</div></figure>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"/></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Use the recommended page list for my agency website: SEO (with link building, content marketing and technical SEO), local SEO (with Google Business Profile), PPC (with Google Ads and Microsoft Ads), Local Services Ads, Meta ads, GEO, AEO, a [niche] marketing page plus one page per sub-niche, results, case studies, reviews, about, team, book a call and blog. I don't sell [services to cut]. I also sell [anything to add]. Build my site tree from it, with the URL for every page, and show it to me before you build anything.</div></div></section>
+<section class="slide"><h2>Gap analysis: your site today vs. what it should be</h2><ul>
+<li>Only if you have a site already. Line up the pages you have now against the recommended list above. Every difference is a page to build, rewrite, merge or cut</li>
+<li>Run it right after your page inventory (Part 3, Step 1), so the board you build is the new structure, not a copy of the old site</li>
+<li>Check what each old page brings in first, so you never cut a page that gets traffic</li></ul>
+<figure class="fl"><div class="fl-step"><p class="fl-t">What you have</p><p class="fl-d">Page inventory + Search Console</p></div><div class="fl-ar">&rarr;</div><div class="fl-step"><p class="fl-t">What you need</p><p class="fl-d">The recommended page list</p></div><div class="fl-ar">&rarr;</div><div class="fl-step"><p class="fl-t">What competitors have</p><p class="fl-d">Top 3 in your niche</p></div><div class="fl-ar">&rarr;</div><div class="fl-step dark"><p class="fl-t">Gap list</p><p class="fl-d">Build, rewrite, merge, cut</p></div></figure>
+<p class="group-lab">What you give Claude</p>
+<ul><li><b>Page inventory</b> from Part 3 (_migration/page-inventory.csv)</li>
+<li><b>Search Console pages export:</b> Performance, Pages tab, last 12 months, Export. This shows which pages get clicks</li>
+<li><b>Your offer:</b> the services, niche and locations from Session 1</li>
+<li><b>3 competitor sites</b> that rank in your niche</li></ul>
+<div class="opens"><a href="https://search.google.com/search-console/performance/search-analytics" target="_blank" rel="noopener noreferrer">Search Console Performance report</a></div>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"/></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected (Cowork or Claude Code). Do a site structure gap analysis for my website.<br>My offer: [services] for [niche] in [locations].<br>Files: _migration/page-inventory.csv and my Search Console pages export [file name].<br>Competitors: [competitor1.com], [competitor2.com], [competitor3.com].<br>1. Use the recommended page list (Part 5) as my target structure, minus services I don't sell: [list].<br>2. Read my competitors' sites and list every page type they have that I don't.<br>3. Match every page I have now to the ideal structure. Give me a table: target page, my current URL, clicks in the last 12 months, action (keep, rewrite, merge, build or cut) and why.<br>4. Never mark a page with clicks as cut. Merge it into the closest new page instead.<br>5. Add every merged, cut or renamed URL to my redirect master list, with where it should point.<br>6. Save the table as _migration/site-gap-analysis.csv and show me the new site tree.</div></div>
+<p class="group-lab">What it looks like</p>
+<div class="tbl gap"><table><thead><tr><th>Target page</th><th>Current page</th><th>Action</th><th>Why</th></tr></thead><tbody>
+<tr><td>Home</td><td>/</td><td class="r">Rewrite</td><td>Says "full-service digital marketing." Should lead with your niche and the result</td></tr>
+<tr><td>Local SEO for [niche]</td><td>/seo-services/</td><td class="r">Rewrite</td><td>Written for every industry. Keep the URL, it gets clicks</td></tr>
+<tr><td>Google Ads for [niche]</td><td>None</td><td class="b">Build</td><td>You sell it, but there's no page. All 3 competitors have one</td></tr>
+<tr><td>Who we serve: [niche]</td><td>None</td><td class="b">Build</td><td>No page tells Google or AI who you work with</td></tr>
+<tr><td>Case study: [client]</td><td>/portfolio/</td><td class="r">Rewrite</td><td>One page of logos. Split into one page per result</td></tr>
+<tr><td>About</td><td>/about-us/</td><td class="k">Keep</td><td>Fine as is. Update the photo and team</td></tr>
+<tr><td>Local SEO for [niche]</td><td>/blog/what-is-seo/</td><td class="r">Merge</td><td>Gets clicks but off-niche. Merge, then 301 to the service page</td></tr>
+<tr><td>None</td><td>/web-design/</td><td class="c">Cut</td><td>No clicks and not in your offer. 301 to home</td></tr>
+</tbody></table></div>
+<p class="group-lab">Then build from the gap list</p>
+<ul><li><b>Build:</b> each one becomes a new page on your Claude board</li>
+<li><b>Rewrite:</b> edit it on the board (Part 3, Step 6). Keep the URL if it gets clicks</li>
+<li><b>Merge and cut:</b> already on your redirect master list, so they get tested in Part 4 before launch</li></ul></section>
+<section class="slide"><h2>Schema: label everything for machines</h2><ul>
+<li>Schema is code that tells Google and AI tools exactly what each page is</li>
+<li><b>Organization</b> on the home page: name, logo, contact, social profiles</li>
+<li><b>Service</b> on every service page</li>
+<li><b>FAQPage</b> on any page with FAQs</li>
+<li>Claude writes it for you. Test it before you publish</li></ul>
+<div class="opens"><a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer">Google Rich Results Test</a><a href="https://validator.schema.org" target="_blank" rel="noopener noreferrer">Schema validator</a></div>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"/></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected. Add schema (JSON-LD in the head) to every page of my site: Organization on the home page with my name, logo, URL, phone, email and social profiles; Service on every service page; FAQPage on any page with real FAQs; BreadcrumbList on every page below the home page; Person on team pages. Use only facts already on the page. Then list each page with the schema it got, and test my home page and one service page in Google's Rich Results Test.</div></div></section>
+<section class="slide"><h2>Tracking: Tag Manager, GA4 and conversions</h2><ul>
+<li><b>Google Tag Manager goes on every page.</b> It's one container, and every other tag lives inside it: GA4, the Google Ads conversion tag, the Meta pixel, and call tracking if you ever use it</li>
+<li>That means you never touch the site code again to add or change tracking</li>
+<li><b>Track the actions that matter:</b> booking completed, form submitted, phone number clicked, email clicked</li>
+<li>You create the accounts (Tag Manager, GA4). Claude adds the code to every page and walks you through the tags</li></ul>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Create GTM + GA4</p><p class="fl-d">tagmanager.google.com, analytics.google.com</p></div><div class="fl-ar">&rarr;</div><div class="fl-step"><p class="fl-t">Claude adds GTM</p><p class="fl-d">Every page, plus conversion events</p></div><div class="fl-ar">&rarr;</div><div class="fl-step"><p class="fl-t">Tags in GTM</p><p class="fl-d">GA4, Google Ads, Meta pixel</p></div><div class="fl-ar">&rarr;</div><div class="fl-step dark"><p class="fl-t">Test, then publish</p><p class="fl-d">Tag Assistant preview</p></div></figure>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"/></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected. Set up tracking on my site.<br>1. Add my Google Tag Manager container [GTM-XXXXXXX] to every page: the script in the head and the noscript tag right after the opening body tag.<br>2. Push a dataLayer event when someone completes a booking (booking_complete), submits a form (form_submit), clicks a phone number (phone_click) or clicks an email link (email_click).<br>3. Push the changes to GitHub.<br>4. Then walk me through Tag Manager one step at a time: the GA4 tag with my measurement ID [G-XXXXXXX], a GA4 event and key event for each of those four actions, the Google Ads conversion tag and the Meta pixel if I run ads. Wait for me after each step.<br>5. Have me test every event in Tag Assistant preview before I publish the container.</div></div>
+<div class="opens"><a href="https://tagmanager.google.com" target="_blank" rel="noopener noreferrer">Google Tag Manager</a><a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">Google Analytics</a><a href="https://tagassistant.google.com" target="_blank" rel="noopener noreferrer">Tag Assistant</a></div></section>
+</main>
+<main class="page" id="writing-for-search-and-ai">
+<section class="slide"><p class="kicker">PART 6 · CONTENT DEVELOPMENT FOR DISCOVERY</p><h2>Pre trained content writer skill comes loaded into Agency OS</h2><ul>
+<li>This is the same content skill we use to write for webris.org and theblueprint.training, cleaned up so it works for your agency</li>
+<li>A skill is a set of instructions Claude loads every time you ask for that kind of work. You set it up once and every post follows the same rules</li>
+<li>You bring your voice, your offer and your results. The skill brings the process</li></ul>
+<p class="group-lab">What it does on every post</p>
+<div class="tbl"><table><thead><tr><th>Step</th><th>What Claude does</th></tr></thead><tbody>
+<tr><td><b>Research</b></td><td>Reads the live search results, finds the real questions behind the search, checks your site so it doesn't write a duplicate, then shows you a research brief and outline before writing</td></tr>
+<tr><td><b>Sources and external links</b></td><td>Links every stat to the original study or official source, with a date. Never "studies show," never a link to another agency</td></tr>
+<tr><td><b>Answer first, then prove it</b></td><td>The first lines under every heading answer the question, so Google and AI tools can quote that one paragraph. Every claim gets a number or an example, written for your buyer, not a marketer</td></tr>
+<tr><td><b>Page structure</b></td><td>Service pages follow the same order every time: the answer, proof, how it works, who it's for, FAQs from your sales calls, one call to action</td></tr>
+<tr><td><b>Chunking</b></td><td>No paragraph over two or three sentences. Lists, tables and bold key points so readers keep scrolling</td></tr>
+<tr><td><b>Images</b></td><td>An image under every heading: real screenshots, or tables and charts built from the data. No fake screenshots, no text cards</td></tr>
+<tr><td><b>Internal links</b></td><td>Links to your real pages only, then adds links to the new post from 2 or 3 older ones</td></tr>
+<tr><td><b>Your voice</b></td><td>Writes the way you talk, from a voice file built from your own calls and emails</td></tr>
+<tr><td><b>Publish</b></td><td>Builds the page in your site's design, adds schema, the sitemap and the blog index, and sends you a preview link to approve</td></tr>
+</tbody></table></div>
+<p class="group-lab">It's already in Agency OS</p>
+<ul><li>Nothing to download or install. The content writer comes with Agency OS: connect Agency OS to Claude and it's there</li>
+<li>It pulls your search data through Agency OS: Ahrefs or Semrush, Search Console and keyword volumes, from your own accounts</li>
+<li>Your content plan lives on the content board in Agency OS. Add your own agency as a client, and the same writer works on every client site you manage</li>
+<li>Test it: ask Claude "What does the content-writer skill do?"</li></ul></section>
+<section class="slide"><h2>Teach it your voice and your offer</h2><ul>
+<li>The skill writes in your voice from a file called <b>voice.md</b> in your website folder. It builds that file with you the first time</li>
+<li>Give it how you <b>talk</b>, not how you write. Polished copy just teaches it to sound like everyone else</li>
+<li>It also saves <b>offer.md</b>: what you sell and where every post sends readers</li>
+<li>Every time you fix the voice in a draft, tell Claude to update voice.md. It gets closer every post</li></ul>
+<p class="group-lab">Gather for your voice</p><ul class="checks">
+<li><b>2 to 3 sales call transcripts</b> from your call recorder, where you explain your offer and handle objections</li>
+<li><b>5 to 10 emails you wrote</b> to clients or prospects. Your own replies, not templates</li>
+<li><b>1 to 2 video or podcast transcripts</b> where you explain what you do</li>
+<li><b>5 social posts you wrote yourself</b>: LinkedIn, Facebook, wherever you post</li>
+<li><b>Your answers to the 3 questions prospects ask most.</b> Record them on your phone and paste in the transcript</li>
+<li><b>Words you never want used:</b> jargon, buzzwords, anything that doesn't sound like you</li></ul>
+<p class="group-lab">Gather for your offer</p><ul class="checks">
+<li><b>Every service you sell</b>, with prices or ranges if you share them</li>
+<li><b>Your niche</b> and any sub-niches</li>
+<li><b>The locations you serve</b>, if you're local</li>
+<li><b>3 client results with numbers</b>: before and after, time frame, what you did</li>
+<li><b>The metric your buyers care about:</b> booked jobs, signed cases, new patients</li>
+<li><b>The one page every post sends readers to</b>, usually your booking page</li></ul>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected (Cowork or Claude Code). Use the content-writer skill to run voice setup.<br>Here are samples of how I talk: [paste or attach 3 to 5 sales call transcripts, client emails or video transcripts].<br>Then interview me for offer.md: my services, my niche, the locations I serve, my best client results with numbers, and the page every post should send readers to.<br>Show me both files before you save them.</div></div></section>
+<section class="slide"><h2>Build your content plan</h2><ul>
+<li>The plan is your agency's <b>content board in Agency OS</b>. Every card is a page or post, and it moves across the board as it's written, reviewed and published</li>
+<li><b>Fix what you have first.</b> If your site has been around a while, most of the plan is merging pages that compete with each other and rewriting pages stuck on page 2 to 4 of Google</li>
+<li><b>Then fill the gaps:</b> one page for every service and niche you sell. Location pages only if you're local and people actually search for them</li>
+<li><b>Make it exhaustive.</b> No cap on the total or on any type. If 30 service pages need rebuilding and 50 blog posts are worth writing, all 80 go in. It runs on autopilot, so give it everything</li>
+<li><b>Blog posts come after the service pages</b> and each one supports a service page</li></ul>
+<p class="group-lab">Where new topics come from</p>
+<div class="tbl"><table><thead><tr><th>Source</th><th>What Claude looks for</th></tr></thead><tbody>
+<tr><td><b>Competitor gaps</b></td><td>Searches your top 3 competitors rank for that you don't rank for at all</td></tr>
+<tr><td><b>Your services + niche</b></td><td>Every search around "[service] for [niche]" and "[niche] marketing." Buyer and problem searches only</td></tr>
+<tr><td><b>Search Console</b></td><td>Searches you already show up for with no page built for them</td></tr>
+<tr><td><b>Sales calls</b></td><td>The questions prospects actually ask, in their words</td></tr>
+<tr><td><b>News</b></td><td>Law, platform and Google changes from the last 90 days that hit your buyers</td></tr>
+<tr><td><b>AI answers</b></td><td>What your buyers ask ChatGPT and Perplexity, and which pages get cited</td></tr>
+<tr><td><b>Your own data</b></td><td>Client results and studies nobody else can publish</td></tr>
+</tbody></table></div>
+<p class="group-lab">What gets cut</p>
+<ul><li><b>Cost posts and "X vs. Y" comparisons.</b> When we tested this on webris.org, "law firm SEO cost" got 40 searches a month and "SEO vs. PPC for lawyers" didn't register. They mostly attract price shoppers</li>
+<li><b>Traffic that never buys:</b> students, job seekers, event lists</li>
+<li><b>Anything that doesn't link to a service page</b> you sell</li></ul>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Use the content-writer skill to build the content plan for my agency's website in Agency OS. Add my agency as a client if it isn't there yet. Read _migration/site-gap-analysis.csv and offer.md, and pull my sitemap, Search Console data and competitor data through Agency OS.<br>My top 3 competitors: [competitor1.com], [competitor2.com], [competitor3.com].<br>The questions prospects ask most on sales calls: [paste them].<br>Make the plan exhaustive: every topic that passes the filters, no limit. Show me the plan as a table first: topic, target search, monthly searches, where I rank now, action (merge, rewrite, build or blog post), the service page it supports and why. Don't add anything to the content board until I approve it.</div></div>
+<p class="group-lab">What it looks like</p>
+<div class="tbl gap"><table><thead><tr><th>Topic</th><th>Where you are</th><th>Action</th><th>Why</th></tr></thead><tbody>
+<tr><td>Local SEO for [niche]</td><td>3 pages compete, all on page 3</td><td class="r">Merge</td><td>Your main offer, split three ways</td></tr>
+<tr><td>[Niche] marketing</td><td>Position 22</td><td class="r">Rewrite</td><td>2,400 searches a month. You're one page from the top 10</td></tr>
+<tr><td>Google Ads for [niche]</td><td>No page</td><td class="b">Build</td><td>You sell it. All 3 competitors have a page</td></tr>
+<tr><td>What [new law or Google change] means for [niche]</td><td>No page</td><td class="b">Blog post</td><td>News your buyers are searching this month. Links to your service page</td></tr>
+</tbody></table></div></section>
+<section class="slide"><h2>Write your first post with Claude</h2><ul>
+<li>Do the first few by hand so you see every step and can correct it</li>
+<li>Read the research brief before it writes. That's where you add what only you know: a result, a story, an opinion</li>
+<li>Fill every <b>[ORIGINAL INSIGHT OPPORTUNITY]</b> it flags. That first-hand proof is what gets you ranked and quoted by AI</li></ul>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Research brief</p><p class="fl-d">Questions, sources, outline</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">You approve</p><p class="fl-d">Add your proof</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Draft + images</p><p class="fl-d">Built in your site design</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Preview link</p><p class="fl-d">On Netlify, not live yet</p></div><div class="fl-ar">→</div><div class="fl-step dark"><p class="fl-t">Publish</p><p class="fl-d">Say "publish"</p></div></figure>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Run this in the Claude desktop app with my website folder connected. Use the content-writer skill to write the next topic on my agency's content board in Agency OS. Show me the research brief first and wait for my approval. Then write it, build the page in my site's design, add the internal links and push it to the drafts branch so I can check the Netlify preview link. Don't publish it until I say publish.</div></div></section>
+<section class="slide"><h2>Put it on autopilot</h2><ul>
+<li>Once a few posts come out right, schedule it. Claude writes the next post on its own every week</li>
+<li>It never publishes on its own. Every post lands on a preview link and waits for you</li>
+<li>Your job drops to 10 minutes a week: read the draft, add your proof, say "publish"</li></ul>
+<figure class="fl"><div class="fl-step"><p class="fl-t">Every Tuesday</p><p class="fl-d">Scheduled task runs</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Next topic</p><p class="fl-d">From your Agency OS content board</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">Researched + written</p><p class="fl-d">Pushed to drafts</p></div><div class="fl-ar">→</div><div class="fl-step"><p class="fl-t">You get a message</p><p class="fl-d">Preview link + what to add</p></div><div class="fl-ar">→</div><div class="fl-step dark"><p class="fl-t">You approve</p><p class="fl-d">It goes live</p></div></figure>
+<div class="prompt"><div class="pr-h"><span class="pr-l"><svg class="pr-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l1.6 6.2 5.6-3.3-3.3 5.6 6.2 1.6-6.2 1.6 3.3 5.6-5.6-3.3L12 23.5l-1.6-6.2-5.6 3.3 3.3-5.6L1.9 13.4l6.2-1.6-3.3-5.6 5.6 3.3z" fill="#D97757"></path></svg>Claude prompt</span><button class="pr-copy" type="button">Copy</button></div><div class="pr-t">Set up a scheduled task in the Claude desktop app that runs every Tuesday at 7am with my website folder connected. Each run: use the content-writer skill in scheduled mode. Take the next topic on my agency's content board in Agency OS, research it, write it in my voice, build the page with images and internal links, push it to the drafts branch only, and move the card to review with the preview link on it. Then send me the title, the Netlify preview link, the sources used and every [ORIGINAL INSIGHT OPPORTUNITY] I should fill. Never publish to the live site. If no topics are queued, tell me the plan is empty.</div></div>
+<ul><li><b>Keep your computer on and the Claude app open</b> when it runs. The task works on the website folder on your computer</li>
+<li><b>To publish,</b> open the session, add your proof and say "publish." Claude merges it and Netlify puts it live</li>
+<li><b>Running low on topics?</b> Rerun the content plan prompt once a month with fresh Search Console data</li></ul></section>
+<section class="slide"><h2>AI drafts, you make it yours</h2><ul>
+<li>Pull FAQs from your sales calls and emails. Those are the exact questions your buyers ask</li>
+<li>Add what only you know: your results, your process, your opinions</li>
+<li>Generic AI copy reads like everyone else's site. Your proof is what makes it rank, get cited and convert</li>
+<li>We go deeper on content in Session 7</li></ul></section>
+</main>
+<main class="page" id="before-session-3">
+<section class="slide"><p class="kicker">BEFORE SESSION 3</p><h2>Action items</h2>
+<p class="group-lab">Set up your stack (Part 2)</p><ul class="checks">
+<li><b>Create your website folder</b> and connect it to the Claude desktop app</li>
+<li><b>Set up GitHub and Netlify</b> and get your preview link working</li></ul>
+<p class="group-lab">Migrate and design (Parts 3 and 5)</p><ul class="checks">
+<li><b>Run your page inventory and gap analysis.</b> Know every page you're keeping, rewriting, building, merging or cutting</li>
+<li><b>Export WordPress and build your redirect master list.</b> Every old URL, every existing redirect</li>
+<li><b>Build your design system and your board.</b> Every page of the new structure on one Claude board</li></ul>
+<p class="group-lab">Launch (Part 4)</p><ul class="checks">
+<li><b>Test every old URL</b> on your preview link. Nothing left pointing at a 404</li>
+<li><b>Connect your domain</b> and run the go-live checklist: forms, booking, tracking</li>
+<li><b>Verify Search Console</b> and submit your sitemap</li></ul>
+<p class="group-lab">Content (Part 6)</p><ul class="checks">
+<li><b>Connect Agency OS to Claude</b>, add your agency as a client, and set up voice.md and offer.md</li>
+<li><b>Build your content plan</b> on the Agency OS content board and publish your first post</li>
+<li><b>Schedule the weekly autopilot</b> once the first posts come out right</li></ul>
+<ul class="checks"><li><b>Post your live link</b> in the community for feedback</li></ul></section>
+<section class="slide"><h2>Q&amp;A</h2><ul><li>Ask anything from today</li>
+<li>Tomorrow, Session 3: Getting Clients: Content and Ads. How you drive your niche to the site you just built</li></ul></section>
+</main>
+</div><nav class="ms-pager" aria-label="Sessions"><a class="prev" href="/bootcamp/session-1/"><small>Previous</small>Session 1: Agency Foundations</a><a class="next" href="/bootcamp/session-3/"><small>Next</small>Session 3: Getting Clients: Content and Ads</a></nav></div>
+<aside class="ms-side ms-right" aria-label="On this page"><p class="ms-h">On this page</p><ul class="ms-nav ms-toc"><li><a href="#intro">Intro</a></li><li><a href="#why-claude-not-wordpress">Part 1: Why Claude, Not WordPress</a></li><li><a href="#set-up-your-stack">Part 2: Set Up Your Stack</a></li><li><a href="#migrate-off-wordpress">Part 3: Migrate Off WordPress</a></li><li><a href="#publish-it">Part 4: Publish It</a></li><li><a href="#site-structure-and-tracking">Part 5: Site Structure and Tracking</a></li><li><a href="#writing-for-search-and-ai">Part 6: Writing for Search and AI</a></li><li><a href="#before-session-3">Before Session 3</a></li></ul></aside>
+</div>
+<script>
+document.addEventListener('click',function(e){var b=e.target.closest('.pr-copy');if(b){var t=b.closest('.prompt').querySelector('.pr-t').innerText;navigator.clipboard.writeText(t).then(function(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1500)});return}
+if(e.target.closest('.ms-menu')){document.body.classList.toggle('ms-open');return}
+if(e.target.closest('.ms-left a')){document.body.classList.remove('ms-open')}});
+(function(){var links=[].slice.call(document.querySelectorAll('.ms-toc a,.ms-inline-toc a'));var secs=[].slice.call(document.querySelectorAll('.ms-main .page[id]'));if(!('IntersectionObserver' in window))return;
+var cur=null;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)cur=e.target.id});links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)})},{rootMargin:'-20% 0px -70% 0px'});secs.forEach(function(s){io.observe(s)})})();
+</script>
+</body>
+</html>
